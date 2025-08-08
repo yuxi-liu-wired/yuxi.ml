@@ -39,4 +39,3 @@ To initialize the server, `curl` the deployment script:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/yuxi-liu-wired/yuxi.ml/main/server_infra/remote_deploy.sh | bash -s -- -i
 ```
-
