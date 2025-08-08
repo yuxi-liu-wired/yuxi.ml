@@ -68,7 +68,7 @@ fi
 
 if (( RELOAD )); then
   log "Reloading nginx"
-  $SUDO nginx -t && $SUDO systemctl reload nginx
+  $SUDO nginx -t && $SUDO nginx -s reload
 fi
 
 log "Done."
