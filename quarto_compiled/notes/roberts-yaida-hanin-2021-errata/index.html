@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yuxi Liu">
+<meta name="dcterms.date" content="2024-11-01">
+<meta name="description" content="Suggestions and errata for The Principles of Deep Learning Theory.">
+
+<title>Suggestions and errata for The Principles of Deep Learning Theory – Yuxi on the Wired</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Suggestions and errata for The Principles of Deep Learning Theory – Yuxi on the Wired">
+<meta property="og:description" content="Suggestions and errata for The Principles of Deep Learning Theory.">
+<meta property="og:image" content="https://yuxi.ml/notes/roberts-yaida-hanin-2021-errata/figure/algorithm_projectors_diagram.png">
+<meta property="og:site_name" content="Yuxi on the Wired">
+<meta property="og:image:height" content="356">
+<meta property="og:image:width" content="968">
+<meta name="twitter:title" content="Suggestions and errata for The Principles of Deep Learning Theory – Yuxi on the Wired">
+<meta name="twitter:description" content="Suggestions and errata for The Principles of Deep Learning Theory.">
+<meta name="twitter:image" content="https://yuxi.ml/notes/roberts-yaida-hanin-2021-errata/figure/algorithm_projectors_diagram.png">
+<meta name="twitter:image-height" content="356">
+<meta name="twitter:image-width" content="968">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/favicon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Yuxi on the Wired</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays/index.html"> 
+<span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sketches/index.html"> 
+<span class="menu-text">Sketches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../logs/index.html"> 
+<span class="menu-text">Logs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes/index.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/index.html"> 
+<span class="menu-text">Docs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about/index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:yuxi_liu@berkeley.com"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../feeds.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link active" data-scroll-target="#recommendations">Recommendations</a>
+  <ul class="collapse">
+  <li><a href="#miscellaneous-generic-recommendations" id="toc-miscellaneous-generic-recommendations" class="nav-link" data-scroll-target="#miscellaneous-generic-recommendations">Miscellaneous generic recommendations</a></li>
+  <li><a href="#feynman-diagrams" id="toc-feynman-diagrams" class="nav-link" data-scroll-target="#feynman-diagrams">Feynman diagrams</a></li>
+  <li><a href="#quartic-interaction-intuition" id="toc-quartic-interaction-intuition" class="nav-link" data-scroll-target="#quartic-interaction-intuition">Quartic interaction intuition</a></li>
+  <li><a href="#normalized-vectors" id="toc-normalized-vectors" class="nav-link" data-scroll-target="#normalized-vectors">Normalized vectors</a></li>
+  <li><a href="#shape-of-the-kernels" id="toc-shape-of-the-kernels" class="nav-link" data-scroll-target="#shape-of-the-kernels">Shape of the kernels</a></li>
+  <li><a href="#faster-solution-of-recursion-relations" id="toc-faster-solution-of-recursion-relations" class="nav-link" data-scroll-target="#faster-solution-of-recursion-relations">Faster solution of recursion relations</a></li>
+  <li><a href="#symmetry-groups" id="toc-symmetry-groups" class="nav-link" data-scroll-target="#symmetry-groups">Symmetry groups</a></li>
+  <li><a href="#dimensional-analysis" id="toc-dimensional-analysis" class="nav-link" data-scroll-target="#dimensional-analysis">Dimensional analysis</a></li>
+  <li><a href="#acausally-rising-to-meet-the-criticism" id="toc-acausally-rising-to-meet-the-criticism" class="nav-link" data-scroll-target="#acausally-rising-to-meet-the-criticism">“Acausally rising to meet the criticism”</a></li>
+  </ul></li>
+  <li><a href="#chapter-4" id="toc-chapter-4" class="nav-link" data-scroll-target="#chapter-4">Chapter 4</a></li>
+  <li><a href="#chapter-5" id="toc-chapter-5" class="nav-link" data-scroll-target="#chapter-5">Chapter 5</a></li>
+  <li><a href="#chapter-6" id="toc-chapter-6" class="nav-link" data-scroll-target="#chapter-6">Chapter 6</a></li>
+  <li><a href="#chapter-7" id="toc-chapter-7" class="nav-link" data-scroll-target="#chapter-7">Chapter 7</a></li>
+  <li><a href="#chapter-8" id="toc-chapter-8" class="nav-link" data-scroll-target="#chapter-8">Chapter 8</a></li>
+  <li><a href="#chapter-10" id="toc-chapter-10" class="nav-link" data-scroll-target="#chapter-10">Chapter 10</a></li>
+  <li><a href="#chapter-11" id="toc-chapter-11" class="nav-link" data-scroll-target="#chapter-11">Chapter 11</a></li>
+  <li><a href="#chapter" id="toc-chapter" class="nav-link" data-scroll-target="#chapter">Chapter ∞</a></li>
+  <li><a href="#errors" id="toc-errors" class="nav-link" data-scroll-target="#errors">Errors</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Suggestions and errata for The Principles of Deep Learning Theory</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">physics</div>
+    <div class="quarto-category">errata</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Suggestions and errata for The Principles of Deep Learning Theory.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yuxi Liu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>My friend: What annoying precision.</p>
+<p>Me: I call it conceptual clarity.</p>
+</blockquote>
+<p><a href="figure/reference_sheets.pdf">My hand-written reference sheets</a> while I was working through the book.</p>
+<section id="recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
+<section id="miscellaneous-generic-recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="miscellaneous-generic-recommendations">Miscellaneous generic recommendations</h3>
+<ul>
+<li><p>Add a list of the most important equations at the ends of chapters.</p></li>
+<li><p>Because SGD is so essential to modern machine learning, I feel like it’d help to compile all the comments in the book about SGD in one section. I compiled them here:</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>essentially everything we will say about gradient descent will apply to stochastic gradient descent as well.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>It doesn’t matter which loss function we used, e.g., MSE or cross-entropy,<br>
+how many steps we took to get to the minimum, or whether we used gradient descent or SGD. Said another way, algorithm independence means that these hyperparameters and training set uniquely specify the statistics of fully-trained networks in the infinite-width limit; Newton’s method is just a nice theoretical trick to leap right to the solution.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Newton’s method is a theoretical tool that lets us describe a fully-trained extremely-wide network, even if the network was trained very practically by a many-step version of (stochastic) gradient descent.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>For SGD to actually converge to a minimum, you need to decrease the learning rate over the course of training, otherwise the network will fluctuate around, but never actually reach, the minimum. Intuitively, this is because at each step the optimization problem does not include the entire training set.</p>
+</blockquote>
+<ul>
+<li>Somewhere in the book (maybe in Chapter 4?) give the following intuition for the infinite-width limit:
+<ul>
+<li>At the infinite width limit, the neural network degenerates into a sequence of continuous functions <span class="math inline">\(G^{(1)}, \dots, G^{(L)}\)</span>, such that the preactivations in the neural network, upon input <span class="math inline">\(x\)</span>, becomes independent random samples from gaussian distributions: <span class="math inline">\(z^{(l)}_{i} \sim N(0, G^{(l)}(x))\)</span>.</li>
+<li>You can then calculate how <span class="math inline">\(G^{(l+1)}(x)\)</span> is derived from <span class="math inline">\(G^{(l)}\)</span> by a simple argument with gaussians.</li>
+</ul></li>
+<li>I think it would be good to introduce kernel linear regression in a simple setting. Perhaps at “Probability, Correlation and Statistics, and All That” since it is such a simple and general technique in statistics. Then later, in the chapter on Bayesian learning, one can immediately point out that in the “6.3.2 Let’s Not Wire Together”, we are seeing just a standard kernel regression. And later, in Chapter 10, one can immediately point out that this is kernel regression where the kernel matrix is <span class="math inline">\(\Theta\)</span>.</li>
+</ul>
+</section>
+<section id="feynman-diagrams" class="level3">
+<h3 class="anchored" data-anchor-id="feynman-diagrams">Feynman diagrams</h3>
+<p>Teach some naive methods with Feynman diagrams. For some examples, see my attached sheets, which contains many Feynman diagrams (not exactly, but you get the idea). Specifically, it simplifies certain calculations to be almost tolerable.</p>
+<p><img src="figure/algorithm_projectors_diagram.png" class="img-fluid"></p>
+</section>
+<section id="quartic-interaction-intuition" class="level3">
+<h3 class="anchored" data-anchor-id="quartic-interaction-intuition">Quartic interaction intuition</h3>
+<p>For the quartic interaction, a few pictures could really make it clear. I drew some schematically:</p>
+<p><img src="figure/image_1728687316057_0.png" class="img-fluid"></p>
+<p>The pictures make it clear that one effect of quartic interaction is to create correlations between the squared preactivations of neurons. Sometimes it is a negative correlation (as in the <span class="math inline">\(c=-2\)</span> picture) and sometimes it is a positive correlation (as in the <span class="math inline">\(c = 6\)</span> picture), and sometimes it is more subtle. The <span class="math inline">\(c=2\)</span> picture has circular contours like gaussian distribution, but it does not mean that <span class="math inline">\(z_{i, \alpha}^2, z_{j, \beta}^2\)</span> are independent. The dependence is more subtle.</p>
+<p>More generally, the effect is to correlate <span class="math inline">\(z_{i, \alpha_1}z_{i, \alpha_2}\)</span> and <span class="math inline">\(z_{j, \alpha_3}z_{j, \alpha_4}\)</span>, but this is too difficult to plot. Still, these contour plots give a good mental picture.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> z_func(x, y, c):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="fl">0.2</span> <span class="op">*</span> (x<span class="op">**</span><span class="dv">4</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">4</span> <span class="op">+</span> c <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">200</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">200</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">5</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, c <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>]):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    Z <span class="op">=</span> z_func(X, Y, c)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axes[i]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    ax.set_aspect(<span class="dv">1</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    contour <span class="op">=</span> ax.contour(X, Y, Z, levels<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"c = </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    ax.set_xticks([])</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    ax.set_yticks([])</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="vs">rf"Contour plots of </span><span class="dv">$</span><span class="vs">z_</span><span class="ch">{{</span><span class="vs">i,</span><span class="ch">\a</span><span class="vs">lpha</span><span class="ch">}}</span><span class="dv">^</span><span class="vs">2 </span><span class="op">+</span><span class="vs"> z_</span><span class="ch">{{</span><span class="vs">j,</span><span class="dv">\b</span><span class="vs">eta</span><span class="ch">}}</span><span class="dv">^</span><span class="vs">2 - 0</span><span class="dv">.</span><span class="vs">2</span><span class="kw">(</span><span class="vs">z_</span><span class="ch">{{</span><span class="vs">i,</span><span class="ch">\a</span><span class="vs">lpha</span><span class="ch">}}</span><span class="dv">^</span><span class="vs">4</span><span class="op">+</span><span class="vs">z_</span><span class="ch">{{</span><span class="vs">j,</span><span class="dv">\b</span><span class="vs">eta</span><span class="ch">}}</span><span class="dv">^</span><span class="vs">4</span><span class="op">+</span><span class="vs">cz_</span><span class="ch">{{</span><span class="vs">i,</span><span class="ch">\a</span><span class="vs">lpha</span><span class="ch">}}</span><span class="dv">^</span><span class="vs">2 z_</span><span class="ch">{{</span><span class="vs">j,</span><span class="dv">\b</span><span class="vs">eta</span><span class="ch">}}</span><span class="dv">^</span><span class="vs">2</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="normalized-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="normalized-vectors">Normalized vectors</h3>
+<p>Many formulas can be made more intuitive by using the following convention on normalizing vectors:</p>
+<p>Define the <strong>normalized activation vectors</strong> <span class="math inline">\(\bar \sigma_{\alpha}^{(\ell)} := \sigma^{(\ell)}_{\alpha} / \sqrt{n_\ell}\)</span>.</p>
+<p>We can motivate this by arguing that a good neural network should have all activations in a layer roughly <span class="math inline">\(O(1)\)</span> random, and close to independent (so that they don’t collapse to a low-dimensional subspace). Then, <span class="math inline">\(\bar \sigma_{\alpha}^{(\ell)}\)</span> would have norm <span class="math inline">\(O(1)\)</span>.</p>
+<p>For example, equation (4.76) then becomes</p>
+<p><span class="math display">\[\frac{1}{n_{\ell}} V_{\left(\alpha_1 \alpha_2\right)\left(\alpha_3 \alpha_4\right)}^{(\ell+1)}  = (C_W^{(\ell+1)})^2 \mathrm{Cov}[\bar \sigma_{\alpha_1}^{(\ell)} \cdot \bar \sigma_{\alpha_2}^{(\ell)}, \bar \sigma_{\alpha_3}^{(\ell)} \cdot \bar \sigma_{\alpha_4}^{(\ell)}]\]</span></p>
+</section>
+<section id="shape-of-the-kernels" class="level3">
+<h3 class="anchored" data-anchor-id="shape-of-the-kernels">Shape of the kernels</h3>
+<p>I think the equation (6.48) is very important and should be put in Chapter 1.2. It should not be relegated to a footnote. In particular, it gives the best picture for what the kernel is actually doing. I have attached a picture showing what I meant.</p>
+<p>I think this equation + picture can be put very early on, at the start of “Chapter 1.2 Probability, Correlation and Statistics, and All That”, since if we are going to get an “effective theory” we should say up front what are the key effective variables. It took me some time to figure out that the effect of the kernel <span class="math inline">\(K\)</span> is to characterize the effective <em>shape</em> of an activation triangle!</p>
+<p>I think you can teach this effectively as follows: Given that we have two high-dimensional vectors <span class="math inline">\(y_+, y_-\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> where <span class="math inline">\(n\)</span> is a large number, distributed as <span class="math inline">\(y \sim N(0, \delta_{ij} K_{\alpha \beta})\)</span>, that is</p>
+<p><span class="math display">\[p(y_+, y_-) \propto \exp\left[-\frac 12 \sum_{i, j, \alpha, \beta} y_{+, i, \alpha}y_{-, j, \beta} K^{\alpha \beta} \delta^{ij}\right]\]</span></p>
+<p>We don’t want to know the exact orientation, just the shape of the triangle formed by <span class="math inline">\(0, y_-, y_+\)</span>. Then, we can characterize the shape of the triangle with three numbers <span class="math inline">\(Y_{[0]}, Y_{[1]}, Y_{[2]}\)</span> defined by … and we divide by <span class="math inline">\(\sqrt n\)</span> because we want to normalize the size of the triangle to be <span class="math inline">\(O(1)\)</span> even as <span class="math inline">\(n\)</span> grows towards infinity (This should remind you of the central limit theorem). Similarly, we divide <span class="math inline">\(K\)</span> by <span class="math inline">\(n\)</span> to obtain <span class="math inline">\(\hat K\)</span>. Now, it is routine to calculate</p>
+<p><span class="math display">\[
+p(\hat y_+, \hat y_-) = (4\pi^2 (4 \hat K_{[2]}\hat K_{[0]} - \hat K_{[1]}^2))^{-n/2} \exp \left[ - \frac{2\hat K_{[0]} Y_{[2]} + 2\hat K_{[2]} Y_{[0]} - \hat K_{[1]} Y_{[1]}}{4 \hat K_{[2]}\hat K_{[0]} - \hat K_{[1]}^2}\right]
+\]</span></p>
+<p>Then, a geometric argument shows that conditional on <span class="math inline">\(Y_{[1]} = 0\)</span>, the maximal likelihood estimate of <span class="math inline">\(Y_{[0]}\)</span> is <span class="math inline">\(n \hat K_{[0]} = K_{[0]}\)</span>.</p>
+</section>
+<section id="faster-solution-of-recursion-relations" class="level3">
+<h3 class="anchored" data-anchor-id="faster-solution-of-recursion-relations">Faster solution of recursion relations</h3>
+<p>There is a faster way to solve the recursion relations like Eq (9.85). I will solve it as an example:</p>
+<p>First, rewrite it as a differential equation:</p>
+<p><span class="math display">\[
+y' \approx -2p_\perp y/x + C x^{2-2p_\perp}
+\]</span></p>
+<p>where we have substituted <span class="math inline">\(y\)</span> for <span class="math inline">\(A\)</span>, and <span class="math inline">\(x\)</span> for <span class="math inline">\(\ell\)</span>.</p>
+<p>Then, plug it into Wolfram Alpha, we find the solution is <span class="math display">\[
+y = \frac{1}{3} C x^{1-p_\perp} + c_1 x^{-p_\perp-2}
+\]</span></p>
+<p>where <span class="math inline">\(c_1\)</span> is an arbitrary constant.</p>
+<p>In general, the recursion formula has not one, but two possible leading terms. In all cases that appeared in the book, the second leading term is not actually leading, so all the equations turned out exactly correct. Still, it should be pointed out.</p>
+<p>For example, the recursive equation (9.79) has, as its lowest terms, <em>two</em> terms:</p>
+<p><span class="math display">\[
+F^{(\ell)}=\frac{1}{\left(5-p_{\perp}\right)}\left[\frac{1}{\left(-a_1\right)}\right]\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \sigma_1^2}{\left(-a_1\right)}\right]\left(\frac{1}{\ell}\right)^{p_{\perp}-1} + \frac{c}{\ell^4} + \cdots
+\]</span></p>
+<p>Of course, if we assume <span class="math inline">\(p_\perp \leq 5\)</span>, then indeed we can ignore the <span class="math inline">\(c/\ell^4\)</span> term. This needs to be proven, as follows:</p>
+<p>The <span class="math inline">\(K^* = 0\)</span> universality class requires <span class="math inline">\(a_1 &lt; 0\)</span>. Given that, we have</p>
+<p><span class="math display">\[p_\perp = 1 + \frac{\frac 14 (\sigma_2/\sigma_1)^2}{a_1} \leq 1\]</span></p>
+<p>with equality reached when <span class="math inline">\(\sigma_2 = 0\)</span>.</p>
+<p>Similarly, the recursive equation (9.80) also has <em>two</em> lowest terms:</p>
+<p><span class="math display">\[
+B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \sigma_1^2}{\left(-a_1\right)}\right]^2\left(\frac{1}{\ell}\right)^{2 p_{\perp}-3} + \frac{c}{\ell^{2p_\perp}} + \cdots
+\]</span></p>
+<p>although in this case, the second term is dominated by the first regardless of what <span class="math inline">\(p_\perp\)</span> is.</p>
+<p>Similarly, Eq (10.77) on page 272 has an extra term of order <span class="math inline">\(O(1/\ell^{p_\perp})\)</span>, which is negligible only because <span class="math inline">\(p_\perp \leq 1\)</span>.</p>
+</section>
+<section id="symmetry-groups" class="level3">
+<h3 class="anchored" data-anchor-id="symmetry-groups">Symmetry groups</h3>
+<p>On page 83, the symmetry group of the indices of <span class="math inline">\(V\)</span> is the symmetry group of the square. Specifically, you can imagine labelling a square’s vertices with <span class="math inline">\(\alpha_1, \alpha_3, \alpha_2, \alpha_4\)</span>, counterclockwise. Then any rotation and reflection of the square is a permutation of its four vertices that does not change <span class="math inline">\(V\)</span>.</p>
+<p>Since the symmetry group of the square has 8 elements, this explains the factor of <span class="math inline">\(\frac 18\)</span> in (4.44). I think this improves footnote <code>7</code>.</p>
+<p>Similarly, on page 209, 210. I think the symmetries can be geometrically pictured as follows:</p>
+<ul>
+<li>For each of <span class="math inline">\(A, B, D, F, V\)</span>, write the indices clockwise on the vertices of a quadrilateral, as 1324.</li>
+<li><span class="math inline">\(A_{(12)(34)}, V_{(12)(34)}\)</span> both have symmetry of the square.</li>
+<li><span class="math inline">\(B_{(12)(34)}\)</span> has symmetry of the square in <span class="math inline">\(l=1\)</span>, and subsequently, rectangle.</li>
+<li><span class="math inline">\(D_{(12)(34)}\)</span> has symmetry of the square in <span class="math inline">\(l=1\)</span>, and subsequently, rhombus.</li>
+<li><span class="math inline">\(F_{(12)(34)}\)</span> has symmetry of the square in <span class="math inline">\(l=1\)</span>, of the rhombus in <span class="math inline">\(l=2\)</span>, and subsequently, no symmetry.</li>
+</ul>
+</section>
+<section id="dimensional-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="dimensional-analysis">Dimensional analysis</h3>
+<p>Make a table for dimensional analysis. I made one:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(z, x, \sigma\)</span></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma'\)</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(W, C_W\)</span></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(b\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C_b\)</span></td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S\)</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\lambda_{\mu\nu}\)</span></td>
+<td>Same as <span class="math inline">\(\theta_\mu \theta_\nu\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\lambda_b\)</span></td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\lambda_W\)</span></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Theta, H\)</span></td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(G, K\)</span></td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(g\)</span></td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\chi_\parallel, \chi_\perp\)</span></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(h\)</span></td>
+<td>-2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(V, D, F, B, A, P, Q\)</span></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acausally-rising-to-meet-the-criticism" class="level3">
+<h3 class="anchored" data-anchor-id="acausally-rising-to-meet-the-criticism">“Acausally rising to meet the criticism”</h3>
+<p>I don’t know if it is intended, but you used as epigraph for Chapter 5 from <em>Perceptrons</em> (1988), and have Rumelhart et al “acausally rising to meet the criticism”. In fact, they were responding to Chapter 0 of <em>Perceptrons</em> (1969):</p>
+<blockquote class="blockquote">
+<p>The sciences of computation and cybernetics began, and it seems quite rightly so, with a certain flourish of romanticism. They were laden with attractive and exciting new ideas which have already borne rich fruit. Heavy demands of rigor and caution could have held this development to a much slower pace; only the future could tell which directions were to be the best. We feel, in fact, that the solemn experts who most complained about the “exaggerated claims” of the cybernetic enthusiasts were, in the balance, much more in the wrong. But now the time has come for maturity, and this requires us to match our speculative enterprise with equally imaginative standards of criticism.</p>
+</blockquote>
+<p>The second edition of <em>Perceptrons</em> was published in 1988, during the second coming of neural networks. In their <em>Parallel Distributed Processing</em> research project, Rumelhart et al very specifically showed that 2-layered networks were able to solve problems such as XOR and symmetry recognition that were criticized in <em>Perceptrons</em> (1969). The second edition, as the authors stated, was a literal reprinting of the first edition with just an added preface and an added epilogue criticizing neural networks.</p>
+</section>
+</section>
+<section id="chapter-4" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-4">Chapter 4</h2>
+<ul>
+<li>page 86:
+<ul>
+<li>For Eq (4.46) and (4.57), add a footnote to the alert reader who is getting confused by the serial expansion. I think something like
+<ul>
+<li>“To the alert reader: If you are confused by the fact that the second term seems to have order <span class="math inline">\(O(vn^2) = O(n)\)</span>, good job paying attention! Consider proceeding directly to reading the”Marginalization over Neurons” section. But the short answer is that we can set <span class="math inline">\(1 \ll n_2 \ll n_1 = n\)</span> for now, calculate, then proceed to layer 3. When calculating layer 3, we will note that the <span class="math inline">\(O(n_2)\)</span> terms exactly cancel out, so that we can then take the <span class="math inline">\(n_2 \to n\)</span> limit and get the same outcome.”</li>
+</ul></li>
+</ul></li>
+<li>Page 88. For the derivation of Eq (4.61), explain a bit more:
+<ul>
+<li>Start with Eq (4.46). Enumerate the possible <span class="math inline">\(j_1, j_2\)</span>. The only cases where the covariance inside the bracket is nonzero are when <span class="math inline">\(j_1=i_1 \neq j_2\)</span> ( <span class="math inline">\(n\)</span> terms), <span class="math inline">\(j_2=i_1 \neq j_1\)</span> ( <span class="math inline">\(n\)</span> terms) and <span class="math inline">\(i_1=j_1=j_2\)</span> (1 term). Now, simplify using the index symmetry of <span class="math inline">\(v\)</span>.</li>
+</ul></li>
+<li>Page 103. After “In going through this calculation in your personal notes or on the margins of this book, you can explicitly see the cancellation…”, add the sentence: “The order <span class="math inline">\(n_\ell\)</span> terms in Eq (4.111) and (4.113) exactly cancel each other out.”</li>
+</ul>
+</section>
+<section id="chapter-5" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="chapter-5">Chapter 5</h2>
+<p>I think some pictures would really help explain what the kernels mean. I have drawn some by hand.</p>
+<p>The midpoint kernel.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="figure/chapter_5_midpoint_kernel.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">The midpoint kernel</figcaption>
+</figure>
+</div>
+<p>The kernel perturbation into <span class="math inline">\(K_{[̄0]}, \delta K_{[̄1]}, \delta\delta K_{[̄2]}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="figure/chapter_5_kernel_perturbation.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">The kernel perturbation into <span class="math inline">\(K_{[̄0]}, \delta K_{[̄1]}, \delta\delta K_{[̄2]}\)</span>.</figcaption>
+</figure>
+</div>
+<p>How two activation vectors (signal propagation) propagate through a critically tuned neural network at initialization.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="figure/chapter_5_criticality.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">How two activation vectors (signal propagation) propagate through a critically tuned neural network at initialization.</figcaption>
+</figure>
+</div>
+<ul>
+<li>Page 112. Add “Of course, <span class="math inline">\(g\)</span> is not a function of <span class="math inline">\(K\)</span> only, but rather depends on <span class="math inline">\(\sigma\)</span> as well. We suppress this dependence.”</li>
+<li>Page 115. For “To do so, we will find it convenient to project the full kernel matrix…”, I suggest instead of that, write this: “Because <span class="math inline">\(K\)</span> has 4 entries, it can be regarded as a vector in <span class="math inline">\(\mathbb{R}^4\)</span>. Because it is symmetric, it is in a 3-dimensional subspace. Thus, we can decompose it with three orthogonal vectors:”</li>
+<li>page 118
+<ul>
+<li>Point out that <span class="math inline">\(\hat e^u\)</span> is just the vector pointing in the angle <span class="math inline">\(45^\circ - \delta \theta\)</span> where <span class="math inline">\(\delta \theta = \frac{\delta K_{[1]}^{(\ell)}}{2 K_{00}^{(\ell)}}\)</span>, and <span class="math inline">\(\hat e^w\)</span> is <span class="math inline">\(\hat e^u\)</span> rotated by 90 degrees, since symmetric matrices always have perpendicular eigenvectors.</li>
+<li>Point out that <span class="math inline">\(\delta \theta\)</span> can be found just using <span class="math inline">\(K_{00}, \delta K_{[1]}\)</span>, saving some effort.</li>
+</ul></li>
+<li>Page 119.
+<ul>
+<li>The logical relation between <span class="math inline">\(u\)</span> and <span class="math inline">\(z_0\)</span> is unclear. In particular, it seems we have a double definition for <span class="math inline">\(z_0\)</span>.</li>
+<li>First definition: <span class="math inline">\(z_0\)</span> is the preactivation corresponding to the midpoint input. That is, <span class="math inline">\(z_0 = z^{(\ell)}_i(x_0)\)</span>.</li>
+<li>Second definition: <span class="math inline">\(\frac{u^2}{2 \lambda_u}=\frac{z_0^2}{2 K_{00}^{(\ell)}}\)</span>.</li>
+<li>If both definitions are equally true, then we must prove that they give the same <span class="math inline">\(z_0\)</span>. This is not proven, and I think it is actually false.</li>
+<li>I think <span class="math inline">\(z_0\)</span> is purely defined by the second definition, for the simple reason that everything in this page is just doing a gaussian integral in <span class="math inline">\(\mathbb{R}^2\)</span>. Definition 1 requires <span class="math inline">\(x_0\)</span> to exist, but this page does not require <span class="math inline">\(x_0\)</span> to exist. Therefore, the second definition is how <span class="math inline">\(z_0\)</span> is defined.</li>
+<li>The first “definition” is not a definition, but an interpretation. I think that it should be interpreted as this: Suppose that <span class="math inline">\(x_\pm = x_0 \pm \delta x\)</span>, then <span class="math display">\[z_0 = z_i^{(\ell)}(x_0) + O(\delta^2)\]</span></li>
+</ul></li>
+<li>page 121. Eq (5.53) should have another entry, which will be useful later: <span class="math display">\[
+\braket{(z^2 - K)\sigma \sigma }_K / (2K^2) = \braket{z\sigma' \sigma}_K / K = \underbrace{\braket{\sigma'' \sigma + \sigma' \sigma'}_K}_{\text{new}}
+\]</span></li>
+</ul>
+<p>Both equations in this can be proved by Stein’s lemma, which in this case says</p>
+<p><span class="math display">\[\braket{F(z) z}_K = K\braket{F'(z)}_K\]</span></p>
+<ul>
+<li>page 125. Add a table. Perhaps something like</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>fixed point</th>
+<th>decay rate</th>
+<th>activation function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a line (exactly marginal deformation)</td>
+<td>no decay (semi-criticality)</td>
+<td>leaky ReLU</td>
+</tr>
+<tr class="even">
+<td>zero</td>
+<td>power-law</td>
+<td>tanh, sin</td>
+</tr>
+<tr class="odd">
+<td>nonzero</td>
+<td>power-law</td>
+<td>swish, gelu</td>
+</tr>
+<tr class="even">
+<td>none</td>
+<td>none</td>
+<td>sigmoid, softplus, monomial</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>page 127. In “5.3.1 General Strategy”, The new Eq (5.53) allows us to get a much simpler condition than Eq (5.73). Solve for <span class="math inline">\(\chi_\perp(K) = \chi_\|(K)\)</span> would give us</li>
+</ul>
+<p><span class="math display">\[
+\braket{\sigma'' \sigma}_K = 0
+\]</span></p>
+<p>This then allows us to get the results by direct calculation, without checking it numerically. For example: - For many activation functions, <span class="math inline">\(\braket{\sigma'' \sigma}_K = 0\)</span> has only soluion <span class="math inline">\(K = 0\)</span>, at which point we have <span class="math inline">\(C_W = 1 / \sigma'(0)^2, C_b = -(\sigma(0) / \sigma'(0))^2\)</span>. This requires <span class="math inline">\(\sigma'(0)  \neq  0, \sigma(0) = 0\)</span>. - softplus activation - <span class="math inline">\(\sigma(z) = \ln(1+e^z)\)</span>. - Because both <span class="math inline">\(\sigma, \sigma'' &gt; 0\)</span>, there is no critical <span class="math inline">\(K\)</span>. - monomial activation - <span class="math inline">\(\sigma(z) = |z|^p\)</span>, with <span class="math inline">\(p &gt; 1\)</span>. By scale invariance, <span class="math inline">\(\braket{\sigma'' \sigma}_K = K^{p-1}\braket{\sigma'' \sigma}_1\)</span>, so <span class="math inline">\(K = 0\)</span> is the solution. But this violates the condition <span class="math inline">\(\sigma'(0) = 0\)</span>, so there is no criticality. - sigmoid activation - <span class="math inline">\(\sigma(z) = 1/(1 + e^{-z})\)</span>. Its second derivative is odd, so <span class="math inline">\(\braket{\sigma''}_K = 0\)</span>. This means <span class="math inline">\(\braket{\sigma'' \sigma}_K = \braket{(\sigma - 1/2)'' (\sigma-1/2)}_K\)</span>, at which point we reduce to the case of <span class="math inline">\(\tanh\)</span>. - Just like the case of <span class="math inline">\(\tanh\)</span>, we have <span class="math inline">\(K = 0\)</span>, but in this case we don’t have <span class="math inline">\(\sigma(0) = 0\)</span>. - tanh activation - Because <span class="math inline">\(\tanh''(z) \tanh(z) &lt; 0\)</span> except at <span class="math inline">\(z = 0\)</span>, the only critical solution is <span class="math inline">\(K = 0\)</span>. - sin activation - In the integral <span class="math display">\[
+\braket{\sin''(z) \sin(z)}_K = -\frac{1}{\sqrt{2\pi K}} \int e^{-\frac{z^2}{2K}}\sin^2(z) \; dz
+\]</span> the integrand is positive except at isolated points <span class="math inline">\(0, \pm \pi, \dots\)</span>, so the only critical solution is <span class="math inline">\(K = 0\)</span>.<br>
+- For example, the SWISH function gives</p>
+<p><img src="figure/image_1728506805876_0.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> root_scalar</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_sigma_expectation(sigma, sigma_second_derivative, K_range):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> integrand(z, K):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> sigma(z) <span class="op">*</span> sigma_second_derivative(z) <span class="op">*</span> np.exp(<span class="op">-</span>z<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">2</span><span class="op">*</span>K)) <span class="op">/</span> np.sqrt(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> K)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> expectation(K):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        result, _ <span class="op">=</span> integrate.quad(integrand, <span class="op">-</span>np.inf, np.inf, args<span class="op">=</span>(K,))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> result</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    expectations <span class="op">=</span> [expectation(K) <span class="cf">for</span> K <span class="kw">in</span> K_range]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    z_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">400</span>)  <span class="co"># Adjust range/points as needed</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    sigma_vals <span class="op">=</span> [sigma(z) <span class="cf">for</span> z <span class="kw">in</span> z_range]</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    sigma_dd_vals <span class="op">=</span> [sigma_second_derivative(z) <span class="cf">for</span> z <span class="kw">in</span> z_range]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    product_vals <span class="op">=</span> [sigma(z) <span class="op">*</span> sigma_second_derivative(z) <span class="cf">for</span> z <span class="kw">in</span> z_range]</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">12</span>))  <span class="co"># 2 rows, 1 column</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    ax1.plot(K_range, expectations)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    ax1.set_xlabel(<span class="st">'K'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    ax1.set_ylabel(<span class="st">'E[σ(z)σ</span><span class="ch">\'\'</span><span class="st">(z)]'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    ax1.set_title(<span class="st">'E[σ(z)σ</span><span class="ch">\'\'</span><span class="st">(z)] as a function of K'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    ax1.set_xscale(<span class="st">'log'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    ax1.grid(<span class="va">True</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    ax2.plot(z_range, sigma_vals, label<span class="op">=</span><span class="st">'σ(z)'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    ax2.plot(z_range, sigma_dd_vals, label<span class="op">=</span><span class="st">'σ</span><span class="ch">\'\'</span><span class="st">(z)'</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    ax2.plot(z_range, product_vals, label<span class="op">=</span><span class="st">'σ(z)σ</span><span class="ch">\'\'</span><span class="st">(z)'</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    ax2.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ax2.legend()</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    ax2.grid(<span class="va">True</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid(z):</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>z))</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid_d(z):</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> sigmoid(z)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> s)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid_dd(z):</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> sigmoid(z)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> s) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> s)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swish(z):</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="op">*</span> sigmoid(z)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swish_d(z):</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sigmoid(z) <span class="op">+</span> z <span class="op">*</span> sigmoid_d(z)</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swish_dd(z):</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> sigmoid_d(z) <span class="op">+</span> z <span class="op">*</span> sigmoid_dd(z)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>K_range <span class="op">=</span> np.exp(np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">1000</span>))</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>plot_sigma_expectation(swish, swish_dd, K_range)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_for_K(sigma, sigma_second_derivative, K_guess):</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> integrand(z, K):</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> sigma(z) <span class="op">*</span> sigma_second_derivative(z) <span class="op">*</span> np.exp(<span class="op">-</span>z<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> K)) <span class="op">/</span> np.sqrt(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> K)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> expectation(K):</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>        result, _ <span class="op">=</span> integrate.quad(integrand, <span class="op">-</span>np.inf, np.inf, args<span class="op">=</span>(K,))</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> result</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> root_scalar(expectation, x0<span class="op">=</span>K_guess, method<span class="op">=</span><span class="st">'brentq'</span>, bracket<span class="op">=</span>[<span class="fl">0.01</span><span class="op">*</span>K_guess,<span class="dv">100</span><span class="op">*</span>K_guess])</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> sol.converged:</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> sol.root</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>solve_for_K(swish, swish_dd, <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>page 133 “Lastly, let us note for all aspiring “activation designers” out there that we can…”
+<ul>
+<li>I have designed a concrete example. The general strategy is to just design a sum of linear transforms of <span class="math inline">\(\tanh\)</span>. <span class="math display">\[
+\sigma(z) = \tanh(z) - \frac 18 \tanh(2z)
+\]</span></li>
+</ul></li>
+</ul>
+<p>with <span class="math inline">\(\sigma_1 = 3/4, \sigma_5 = -48, a_1 = 0, a_2 = -16\)</span>, <span class="math inline">\(K \sim \frac{1}{\sqrt{8l}}\)</span>.</p>
+<p>I wonder if anyone has tried this so far? Does it work better for very deep networks?</p>
+<ul>
+<li>page 136: “one can check that <span class="math inline">\((-a_1) &lt; 0\)</span>” I think it’d be best to actually write the exact value, for completeness. The exact value is <span class="math inline">\(-a_1 = -3/4 &lt; 0\)</span>.</li>
+<li>page 139: It’d be nice to sketch the derivations for Eq (5.108)–(5.110). I sketch it out as follows:
+<ul>
+<li>The recursion for <span class="math inline">\(K\)</span> is Eq (4.90).</li>
+<li>The recursion for <span class="math inline">\(V\)</span> is found by plugging the formula for <span class="math inline">\(g\)</span> Eq (4.108) into Eq (4.90), and noticing that <span class="math inline">\(\chi_\|(K^l)\)</span> appears in it. Since we only need to calculate <span class="math inline">\(V^{(l+1)}\)</span> to order <span class="math inline">\(O(1)\)</span>, we need only the <span class="math inline">\(g^l = K^l + O(1/n)\)</span> part.</li>
+<li>The recursion for <span class="math inline">\(G^{\{1\}}\)</span> is by simplifying Eq (4.115).</li>
+</ul></li>
+<li>page 147: The painful integral does not have to be painful. Here’s how I did it:</li>
+</ul>
+<p>I drew on paper the contour plot of <span class="math inline">\(ReLU(z_+) ReLU(z_-)\)</span>, and noted that it looks like hyperbolas in the first quadrant. Then I drew contour plot of the normal distribution <span class="math inline">\(N(0, K^{(l)})\)</span> and noted that it is an ellipse. Now, by a squeeze in the diagonal direction, then a scaling, we can change the normal distribution into a standard normal distribution. This changes the hyperbolas into different hyperbolas. Looking at the hyperbolas, I thought “This reminds me of the hyperbolic/Lorentz transformation in special relativity.” and that’s how I figured out the trick.</p>
+<p>First, reparameterize</p>
+<p><span class="math display">\[K^{(l)} = K_d^{(l)} \begin{bmatrix} 1 &amp; \cos \psi^{(l)} \\ \cos\psi^{(l)} &amp; 1\end{bmatrix} = K_d^{(l)}\sin \psi^{(l)} \begin{bmatrix} \cosh \phi^{(l)} &amp; \sinh \phi^{(l)} \\ \sinh \phi^{(l)} &amp; \cosh \phi^{(l)}\end{bmatrix} \]</span></p>
+<p>This is useful because taking the square root of a hyperbolic transform matrix is easy: just divide the hyperbolic angle by 2.</p>
+<p>Therefore, a random variable <span class="math inline">\(z \sim N(0, K^{(l)})\)</span> is equivalent to</p>
+<p><span class="math display">\[z = \sqrt{K_d^{(l)}\sin \psi^{(l)}} \begin{bmatrix} \cosh \frac{\phi^{(l)}}{2} &amp; \sinh \frac{\phi^{(l)}}{2} \\ \sinh \frac{\phi^{(l)}}{2} &amp; \cosh \frac{\phi^{(l)}}{2} \end{bmatrix} \begin{bmatrix}x\\y\end{bmatrix}\]</span></p>
+<p>where <span class="math inline">\(x, y\)</span> are standard normal.</p>
+<p>The region of integration is <span class="math inline">\(z_+ &gt; 0, z_- &gt; 0\)</span>, which is the region bounded by two rays of slope <span class="math inline">\(-\theta_0, \frac \pi 2 + \theta_0\)</span> where</p>
+<p><span class="math display">\[\tan\theta_0 = \tanh \frac{\phi^{(l)}}{2} \implies \theta_0 = \frac\pi 4 - \frac{\psi^{(l)}}{2}\]</span></p>
+<p>Now the integral becomes</p>
+<p><span class="math display">\[
+\frac{1}{2\pi} \int e^{-\frac{x^2+y^2}{2}} \left( x \cosh\frac{\phi^{(l)}}{2} + y \sinh\frac{\phi^{(l)}}{2}\right)\left(x \sinh\frac{\phi^{(l)}}{2} + y \cosh\frac{\phi^{(l)}}{2}\right) K_d^{(l)} \sin\psi^{(l)} dxdy
+\]</span></p>
+<p>In polar coordinates, this splits to a product of two simple integrals.</p>
+</section>
+<section id="chapter-6" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-6">Chapter 6</h2>
+<ul>
+<li>page 173: It’d be good to start the section “6.3.2 Let’s Not Wire Together” by saying “In this section we derive the conditional distribution of the network’s output on the test set, conditional on the training set. We will do this by marginalizing a multivariate gaussian to derive <span class="math inline">\(z_B^{(L)}|y_A \sim N(m^\infty_{i,\beta}, \mathbb K_{\beta_1 \beta_2} \delta_{i_1i_2})\)</span>, where <span class="math inline">\(m^\infty, \mathbb K \delta\)</span> are the mean vector and the variance tensor. So if you know how to marginalize a gaussian, try to derive Eq (6.57) and Eq (6.64) yourself. (This should remind you of kernel regression and gaussian processes.) Then continue reading from Eq (6.66).”.
+<ul>
+<li>I know you are trying to make this textbook truly introductory and I appreciate that. However, I think most machine learning and physicists researchers know how to marginalize a gaussian, since it is essential for gaussian processes and statistical mechanics (and this section is basically statistical mechanics + neural network gaussian process).</li>
+<li>It took me a bit too long to figure out that this is what the section is saying (what with all those gigantic symbols and formulas), so I think stating up front what the section is about would be great.</li>
+</ul></li>
+<li>page 177: I think it’d be good to point out that kernel methods also require a matrix inversion and thus is also impractical for large datasets. To be more precise, this section is about the neural network gaussian process, which is equivalent to Bayesian kernel ridge regression.</li>
+<li>page 179: We can make it sharper: “At the infinite width limit, every single neuron (both hidden and output) is completely independent from every other neuron, and we have <span class="math display">\[
+p(z_D^{(1)}, \dots, z_D^{(L)}) =\prod_{l=1}^L \prod_{i_l} p(z_{i, D}^{(l)})
+\]</span> which makes it clear that this is as”no representation” as it gets.”<br>
+</li>
+<li>page 181. Eq (6.78) can be made even clearer like this:</li>
+</ul>
+<p><span class="math display">\[\mathbb{E}\left[\left(z_2^{(\ell)}\right)^2 \Big| \check z_1\right] - \mathbb{E}\left[\left(z_2^{(\ell)}\right)^2\right] = \left[\left(\check{z}_1^{(\ell)}\right)^2-\mathbb{E}\left[\left(z_1^{(\ell)}\right)^2\right]\right]\left[\frac{V^{(\ell)}}{2n_{\ell-1}\left(G^{(\ell)}\right)^2}\right] + O(1/n^2)\]</span></p>
+</section>
+<section id="chapter-7" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-7">Chapter 7</h2>
+<ul>
+<li>Page 196. learning-rate tensor should be explicitly called symmetric. That is, <span class="math inline">\(\lambda_{\mu \nu} = \lambda_{\nu\mu }\)</span>.</li>
+<li>Page 198. “not necessarily positive” -&gt; “not necessarily positive-definite”.</li>
+<li>Page 198.
+<ul>
+<li>“for models that overfit their training set – the test loss may even increase.” is tautological, because it is just the definition of “overfit”. I suggest this instead: “the test loss may even increase. This is what it means for the model to”overfit” its training set.”</li>
+<li>Classically, there are two meanings of “overfitting”. Back then, overfitting both means “interpolating the training set” and “performing worse on the test set”. Both meanings were thought to be the same. This allows us to say that a model has overfitted the training set without ever testing it, by using the first definition.</li>
+<li>In the age of deep learning, the two meanings are no longer the same, and so the meaning of “overfitting” is no longer clear. It should be assigned to one of them, not the other. I think it should be assigned to the second meaning, since the “over” in “overfit” implies it’s something undesirable.</li>
+<li>Perhaps the entire comment can be put in a footnote.</li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-8" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-8">Chapter 8</h2>
+<ul>
+<li>page 205. Because SGD is so essential to modern machine learning, I feel like it’d be best to say in a footnote: “To dispel any unwarranted hope, we note that this book is only going to use backpropagation exactly once: in deriving Equation (9.90).”</li>
+<li>page 244. I think the statement of “equivalence principle” is important enough that it should be properly defined, in a single sentence, on a separate line. Something like this:</li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Equivalence principle</strong>: Every block of parameters at every layer should contribute equally to learning.</p>
+</blockquote>
+<ul>
+<li>page 244. I find the phrase “As we retroactively saw in §9.2” deeply confusing. If it is “retroactive” as in “In hindsight, …” then we did <em>NOT</em> see it back then, so we cannot say we “saw” it. Indeed, this proves it is mathematically impossible to “retroactively saw” anything. I suggest saying it like this instead:
+<ul>
+<li><p>Using this new perspective, please look back to §9.2, especially equation (9.43). At criticality, if we are to satisfy the equivalence principle, we must have <span class="math display">\[
+\cdots \sim \lambda_b^{(\ell-1)} \sim \lambda_W^{(\ell-1)} A_2 K^{\star}  \sim \lambda_b^{(\ell)} \sim \lambda_W^{(\ell)} A_2 K^{\star}
+\]</span> that is,<br>
+<span class="math display">\[\cdots \sim \lambda_b^{(\ell-1)} \sim \lambda_W^{(\ell-1)}  \sim \lambda_b^{(\ell)} \sim \lambda_W^{(\ell)}\]</span></p></li>
+<li><p>Now, suppose we train multiple MLP of the same width on the same dataset, but with different depths, we would have <span class="math inline">\(\Theta^{(L)} =(\lambda_b + \lambda_W A_2 K^*) L\)</span>. Then, if we set <span class="math display">\[
+\lambda_b = \tilde \lambda_b / L, \quad \lambda_W = \tilde \lambda_W / L
+\]</span> then <span class="math inline">\(\Theta^{(L)} = (\tilde\lambda_b + \tilde\lambda_W A_2 K^*)\)</span> regardless of depth <span class="math inline">\(L\)</span>. This is beneficial in practice as it allows us to tune learning rates <span class="math inline">\(\tilde\lambda_b, \tilde\lambda_W\)</span> on a shallow and narrow network quickly, then pick the best setting, and use those to train a deep and wide network, while being reasonably certain that the learning rates would <em>transfer</em> correctly.<br>
+</p></li>
+<li><p>Intuitively, this means that with the first gradient update step, the change in each of <span class="math inline">\(b^{(l)}, W^{(l)}\)</span> contributed to changing the loss by an approximately equal portion of <span class="math inline">\(\Delta \mathcal L_A/(2L)\)</span>.</p></li>
+</ul></li>
+<li>page 245: Same comment applies for “we retroactively saw in §9.3”. I suggest this instead:
+<ul>
+<li>Using this new perspective, please look back to §9.3, especially equation (9.69). At criticality, if we are to satisfy the equivalence principle, the contribution of each layer’s weights and biases to the final NTK must be of order <span class="math inline">\(1/L\)</span> : <span class="math display">\[
+\lambda_b^{(l)} (l/L)^{p_\perp} \sim \lambda_b^{(l)} \frac 1l (l/L)^{p_\perp} \sim \frac 1L
+\]</span></li>
+</ul></li>
+</ul>
+<p>which can be satisfied by<br>
+<span class="math display">\[
+\lambda_b^{(\ell)}=\widetilde{\lambda}_b\left(\frac{1}{\ell}\right)^{p_{\perp}} L^{p_{\perp}-1},
+\quad \lambda_W^{(\ell)}=\widetilde{\lambda}_W \left(\frac{L}{\ell}\right)^{p_{\perp}-1}
+\]</span></p>
+</section>
+<section id="chapter-10" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-10">Chapter 10</h2>
+<p>For Section 10.3.2, I think this picture would help:</p>
+<p><img src="figure/chapter_10.3.2_interpolation.png" class="img-fluid"></p>
+<ul>
+<li>page 279: I think (10.110) can be explained better as follows:
+<ul>
+<li>We have to fit a function <span class="math inline">\((\epsilon_1, \epsilon_2) \mapsto \Theta_{\epsilon_1, \epsilon_2}\)</span>. Write it as <span class="math inline">\(f(x, y)\)</span>. By Taylor expansion, <span class="math display">\[f(x,y) = f(0,0) + \partial_x f(0,0) x  + \partial_x f(0,0) x + \frac 12 (\partial_{xx} f(0,0) xx + \partial_{yy} f(0,0) yy +2 \partial_{xy} f(0,0) xy) + O(x^3,y^3)\]</span></li>
+<li>If we know that <span class="math inline">\(f(x,y) = f(y,x)\)</span>, then we have <span class="math inline">\(\partial_{x}f(0,0) =\partial_{y} f(0,0)\)</span> and <span class="math inline">\(\partial_{xx}f(0,0) =\partial_{yy} f(0,0)\)</span>, so there are only 4 free coefficients. In particular, if we have a degree-2 polynomial <span class="math inline">\(p(x,y)\)</span> that is equal to <span class="math inline">\(f\)</span> for <span class="math inline">\((x,y) = (\pm 1, \pm 1)\)</span>, then we have <span class="math display">\[f(x,y) = p(x,y) + O(x^3, y^3)\]</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-11" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-11">Chapter 11</h2>
+<ul>
+<li>page 312-313: (11.67) and (11.70) are trivial to evaluate if we use Dirac delta function: <span class="math inline">\(\sigma'' = (a_+ - a_-)\delta\)</span>.</li>
+</ul>
+</section>
+<section id="chapter" class="level2">
+<h2 class="anchored" data-anchor-id="chapter">Chapter ∞</h2>
+<p>For ∞.2 Training at Finite Width, I find calling <span class="math inline">\(F\)</span> the “damping force” very puzzling. If we take the limit of continuous time, we will have something like</p>
+<p><span class="math display">\[
+\dot z(t) = -H z(t) + F(t)
+\]</span></p>
+<p>In this case, <span class="math inline">\(F\)</span> is not damping. Indeed, without “damping”, the system would just exponentially decay to zero. If anything, <span class="math inline">\(H\)</span> is the damping! I would rather call <span class="math inline">\(F\)</span> the “driving” force.</p>
+<p>For ∞.2 Training at Finite Width, it is useful to use matrix tensor product notation. In fact, a lot of it is really just high-school Olympiad methods in linear recurrence relation, but the heavy notation makes it hard to recognize.</p>
+<p>For example, <span class="math inline">\(X_{II}\)</span> can be written simply as <span class="math display">\[
+X_{II} = \eta \left(I^{\otimes 2} - (I - \eta \tilde H)^{\otimes 2}\right)^{-1}
+\]</span> This allows us to simply evaluate:</p>
+<p><span class="math display">\[\begin{aligned}
+    b(t) &amp;= \eta \left(\sum_{s=0}^{t-1} ((I - \eta \tilde H)^s)^{\otimes 2}\right) \epsilon^F(0)^{\otimes 2} \\
+    &amp;= \eta \left(I^{\otimes 2} - (I - \eta \tilde H)^{\otimes 2}\right)^{-1}\left(I^{\otimes 2} - ((I - \eta \tilde H)^t)^{\otimes 2}\right) \epsilon^F(0)^{\otimes 2}\\
+    &amp;= X_{II} ((z-y)^{\otimes 2} - \epsilon^F(t)^{\otimes 2})
+    \end{aligned}\]</span> and similarly for <span class="math inline">\(c(t), X_{II}\)</span>.</p>
+<p>Equation (∞.122) directly results in (∞.123), without any derivation: <span class="math display">\[z^I(t) = \eta \sum_s F(s) - \hat H \eta \sum_s z^I(s) \implies \eta \sum_s z^I(s) = \hat H^{-1}\left(\eta \sum_s F(s) - z^I(t)\right)\]</span></p>
+</section>
+<section id="errors" class="level2">
+<h2 class="anchored" data-anchor-id="errors">Errors</h2>
+<ul>
+<li>page 213. (8.49) should be <span class="math inline">\(\sigma_{j;\alpha_1}\sigma_{j;\alpha_2}\)</span>.
+<ul>
+<li><img src="figure/image_1729134428057_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 219, (8.71) has a mismatched bracket
+<ul>
+<li><img src="figure/image_1729107225787_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 252, Eq (10.12) should have <span class="math inline">\(i, i\)</span> not <span class="math inline">\(i_1, i_2\)</span>
+<ul>
+<li><img src="figure/image_1729389509725_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 280, (10.113) (10.114)
+<ul>
+<li><img src="figure/image_1729725268825_0.png" class="img-fluid"></li>
+<li>Consider the special case where <span class="math inline">\(y = z^{(L)}\)</span> at the beginning. If this is the case, then the network would learn nothing, so we should have <span class="math inline">\(z^{(L)}(T) = z^{(L)}\)</span>. This then requires the signs to be in the way I wrote it.</li>
+<li><img src="figure/image_1729725542189_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 281, (10.115), (10.116) needs to remove the factor of 4 as well.</li>
+<li>page 303, Eq (11.37) should have <span class="math inline">\(\delta_3\)</span>
+<ul>
+<li><img src="figure/image_1729906535683_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 307, Eq (11.48) should use <span class="math inline">\(G\)</span> instead of <span class="math inline">\(K\)</span>. At least, it would be less confusing since the rest of the chapter uses <span class="math inline">\(G\)</span>, even though <span class="math inline">\(K\)</span> and <span class="math inline">\(G\)</span> are defined to be equal.
+<ul>
+<li><img src="figure/image_1729911263588_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 309, Eq (11.51)
+<ul>
+<li><img src="figure/image_1729913195460_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 339
+<ul>
+<li><img src="figure/image_1729916018014_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 364.
+<ul>
+<li><img src="figure/image_1730174849710_0.png" class="img-fluid"></li>
+</ul></li>
+<li>page 365
+<ul>
+<li><img src="figure/image_1730175000349_0.png" class="img-fluid"></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- file: html/copy‑anchors-js.html -->
+
+<script type="module">
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. All little ¶ icons Quarto/AnchorJS adds
+
+  document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
+
+    anchor.addEventListener("click", async (evt) => {
+
+      // Keep normal scroll behaviour but stop full page reload
+
+      evt.preventDefault();
+
+
+
+      // Build absolute URL: origin + path + #hash
+
+      const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
+
+
+
+      // 2. Try modern Clipboard API first
+
+      try {
+
+        await navigator.clipboard.writeText(url);
+
+      } catch {
+
+        // 3. Fallback for legacy browsers
+
+        const helper = Object.assign(document.createElement("input"), { value: url });
+
+        document.body.appendChild(helper);
+
+        helper.select();
+
+        document.execCommand("copy");
+
+        helper.remove();
+
+      }
+
+      // TODO: The following two doesn't work yet
+
+      // 4. Brief visual confirmation (optional)
+
+      anchor.dataset.tooltip = "Copied!";
+
+      setTimeout(() => delete anchor.dataset.tooltip, 1500);
+
+
+
+      // 5. Still jump to the heading
+
+      history.pushState(null, "", anchor.getAttribute("href"));
+
+    }, false);
+
+  });
+
+});
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/yuxi\.ml\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">Yuxi on the Wired</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Everything <a href="https://en.wikipedia.org/wiki/Public_domainl">PD</a>; <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en/">CC0</a> fallback.</span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

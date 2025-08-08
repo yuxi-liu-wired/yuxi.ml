@@ -1,0 +1,53 @@
+\qns{Coding: Neural scaling law from data manifold dimension (Optional)}
+\qcontributor{Yuxi Liu}
+
+This is a theory of neural scaling law, proposed by Sharma, Utkarsh,
+and Jared Kaplan. ``Scaling laws from the data manifold dimension.'' The
+Journal of Machine Learning Research 23.1 (2022): 343-376.
+
+According to this theory, a neural network, when trained to convergence,
+allocates its \(N\) parameters in two parts: 
+\begin{enumerate}
+    \item A fixed number of
+parameters that map the data to an intrinsic data manifold of dim \(d\).
+    \item All other parameters that handle pieces of this manifold. Loss
+\(\propto\) the volume of each manifold piece.
+\end{enumerate}
+
+They argued that the loss function should scale as
+\(L \propto N^{-4/d}\) for cross-entropy loss and mean-square loss.
+
+\begin{enumerate}
+    \qitem Please open \href{\colabgiturl/\questionname/q_scaling_data_manifold.ipynb}{the notebook} and run it. While it runs, you can read the code within. There is no need for you to fill in any code, but it should help you understand the paper better.
+
+    \qitem We can get a feel for where the number $4/d$ came from by studying a simpler model.
+    
+    Consider a function on the n-dimensional cube: $f: [0, 1]^d \to \R$. Assume its first derivative is upper bounded by $\lambda$, which implies that $|f(x) - f(y)| \leq \lambda |x-y|$ for all $x, y$ in the domain. 
+    
+    We approximate it with a piecewise-constant function $\hat f: [0, 1]^d \to \R$, meaning that its graph looks like a staircase. We divide the cube into $N$ equal smaller cubic pieces, and define $\hat f$ to be equal to the value of $f$ at the center of each cubic piece.
+    
+    \textbf{Prove that when the loss is mean square loss, it scales like $\Theta(N^{-2/d})$.} You should read Section 2.1 of the paper, which sketches out the proof in three paragraphs. We ask you to rephrase it into your own language, and fill in some details. Don't worry as it should be just first year calculus.
+
+    \sol{
+        With $N$ parameters, we can divide the $[0, 1]^d$ cube into $N$ equal parts, therefore, each cube has side length $N^{-1/d}$. Therefore, the distance between the center of each cube and the point farthest from the center is also $\Theta(N^{-1/d})$.
+
+        Now, since the function has bounded first derivative, we know that the difference between the function value at the center of the cube and the function value at the farthest point is bounded by $\lambda \cdot \Theta(N^{-1/d}) = \Theta(N^{-1/d})$. Therefore, the mean square loss on each individual little cube is bounded by $\Theta(N^{-2/d})$.
+
+        And since the overall mean square loss is the average of the loss on each individual cube, the total loss is also bounded by $\Theta(N^{-2/d})$.
+    }
+
+    \qitem (Optional) More generally, if $f$ has bounded second-derivative, and we use a piecewise-linear $\hat f$ function approximator, then the mean square loss scales like $\Theta(N^{-4/d})$. By piece-wise linear, we mean that the domain of $\hat f$ is divided into little cubes, and it is linear on each little cube. 
+    
+    Indeed, this generalizes in the obvious way: If the loss is mean $p$-th power loss, $f$ has bounded $k+1$-th order derivatives, and $\hat f$ is composed of piece-wise $k$-degree polynomials, then the loss scales like $\Theta(N^{-p(k+1)/d})$.
+
+    \sol{
+        By Taylor expansion, if we use the first-order Taylor expansion to approximate $f$ at the center of each cube, then the error is bounded by $\Theta(N^{-2/d})$. And since the mean square loss is the average of the square of the error, the total mean squared loss is bounded by $\Theta(N^{-4/d})$ on each little cube.
+
+        And since the overall mean square loss is the average of the loss on each individual cube, the total loss is also bounded by $\Theta(N^{-4/d})$.
+
+        The proof generalizes in the obvious way by taking the Taylor expansion to the $k$-th order at the center of each little cube.
+    }
+
+    \qitem \textbf{Please download \href{\publicgiturl/\questionname/q_data_manifold_cifar10.zip}{the zipped file} and the \href{\publicgiturl/\questionname/q_data_manifold_cifar10.ipynb}{notebook}, and answer the questions within the notebook.}
+    
+\end{enumerate}

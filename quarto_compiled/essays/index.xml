@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Yuxi on the Wired - Essays</title>
+<link>https://yuxi.ml/essays/</link>
+<atom:link href="https://yuxi.ml/essays/index.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website of Yuxi Liu</description>
+<language>en</language>
+<image>
+<url>https://yuxi.ml/img/blog icon.jpg</url>
+<title>Yuxi on the Wired - Essays</title>
+<link>https://yuxi.ml/essays/</link>
+</image>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Tue, 03 Jun 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Structure and Interpretation of the Chinese Economy</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/structure-interpretation-chinese-economy/</link>
+  <description><![CDATA[ My basic framework for understanding the modern Chinese economy and its growth. Includes brief histories of Chinese, Soviet, and Japanese economy. Framework applied to two case studies on the stock market and the housing market. ]]></description>
+  <category>China</category>
+  <category>economics</category>
+  <category>politics</category>
+  <category>history</category>
+  <guid>https://yuxi.ml/essays/posts/structure-interpretation-chinese-economy/</guid>
+  <pubDate>Tue, 03 Jun 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/structure-interpretation-chinese-economy/figure/banner/banner_3.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
+<item>
+  <title>Perfect diffusion is TC0 – Bad diffusion is Turing-complete</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/</link>
+  <description><![CDATA[ An application of computational complexity theory to diffusion language models. Unlikely to be useful for anything, but it is cute! ]]></description>
+  <category>math</category>
+  <category>fun</category>
+  <guid>https://yuxi.ml/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/</guid>
+  <pubDate>Thu, 17 Apr 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/figure/banner.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
+<item>
+  <title>Cyc</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/cyc/</link>
+  <description><![CDATA[ After 40 years, 30 million rules, 200 million dollars, 2000 person-years, and many promises, Cyc has failed to reach intellectual maturity, and may never will. Exacerbated by the secrecy and insularity of Cycorp, there remains no evidence of its general intelligence. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <category>history</category>
+  <guid>https://yuxi.ml/essays/posts/cyc/</guid>
+  <pubDate>Tue, 01 Apr 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/cyc/figure/banner/banner_3.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
+<item>
+  <title>Statistical Mechanics</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/statistical-mechanics/</link>
+  <description><![CDATA[ How to think like a classical statistical-mechanic, with many examples from gas theory, biology, probability, and information theory. Prerequisites: thermodynamics, calculus, probability, and mathematical maturity. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <category>probability</category>
+  <category>statistics</category>
+  <category>biology</category>
+  <guid>https://yuxi.ml/essays/posts/statistical-mechanics/</guid>
+  <pubDate>Thu, 04 Jul 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/statistical-mechanics/figure/banner/banner.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>Hole Argument and Inverted Qualia</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/hole-argument-inverted-qualia/</link>
+  <description><![CDATA[ The hole argument in general relativity is formally analogous to the inverted qualia problem in philosophy. Like how spacetime points have no existence beyond gauge freedom, qualias have no existence beyond their geometric-functional roles, thus dissolving the hard problem of consciousness. ]]></description>
+  <category>fun</category>
+  <category>philosophy</category>
+  <category>math</category>
+  <category>physics</category>
+  <category>biology</category>
+  <guid>https://yuxi.ml/essays/posts/hole-argument-inverted-qualia/</guid>
+  <pubDate>Tue, 18 Jun 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/hole-argument-inverted-qualia/figure/banner/banner.png" medium="image" type="image/png" height="115" width="144"/>
+</item>
+<item>
+  <title>Classical Thermodynamics and Economics</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/</link>
+  <description><![CDATA[ How to think like a classical thermodynamic-economist, delivered with many illustrations and some sci-fi metaphors. Particular emphasis on what traditional pedagogy gets wrong. Prerequisites: multivariate calculus and mathematical maturity. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <category>philosophy</category>
+  <category>economics</category>
+  <guid>https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/</guid>
+  <pubDate>Thu, 09 May 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/figure/banner/banner_1.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>Analytical Mechanics</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/analytical-mechanics/</link>
+  <description><![CDATA[ What every graduate student should know about analytical mechanics, delivered with economic style and many illustrations. Particular focus on particle-wave duality and old quantum theory. Prerequisites: multivariate calculus and mathematical maturity. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <category>philosophy</category>
+  <guid>https://yuxi.ml/essays/posts/analytical-mechanics/</guid>
+  <pubDate>Sat, 04 May 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/analytical-mechanics/figure/banner/banner_1.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>How to do Renormalization</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/renormalization-how-to/</link>
+  <description><![CDATA[ Survival guide for renormalization (RN) theory. How to do it in real space and frequency space. What it all means. Should have something for everyone, from mathematicians to physicists to outsiders, from serious series to pretty pictures. Intended audience: those with two years of undergrad mathematics. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <category>scaling</category>
+  <guid>https://yuxi.ml/essays/posts/renormalization-how-to/</guid>
+  <pubDate>Thu, 11 Apr 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/renormalization-how-to/figure/banner/banner_2.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>Mixture of Experts</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/mixture-of-experts/</link>
+  <description><![CDATA[ How MoE works, its history, and what it is good for. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <guid>https://yuxi.ml/essays/posts/mixture-of-experts/</guid>
+  <pubDate>Tue, 23 Jan 2024 08:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/mixture-of-experts/figure/sparsified_moe_various_levels.png" medium="image" type="image/png" height="95" width="144"/>
+</item>
+<item>
+  <title>Predicting AGI by the Turing Test</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/perplexity-turing-test/</link>
+  <description><![CDATA[ Minimizing log-perplexity loss is equivalent to maximizing survival length in a Turing test. Assuming compute-loss scaling law, a scaled-up GPT that produces human-like science papers would cost ~200 years of global GDP. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <category>math</category>
+  <guid>https://yuxi.ml/essays/posts/perplexity-turing-test/</guid>
+  <pubDate>Sat, 20 Jan 2024 08:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/perplexity-turing-test/figure/banner_4_edit.png" medium="image" type="image/png" height="82" width="144"/>
+</item>
+</channel>
+</rss>

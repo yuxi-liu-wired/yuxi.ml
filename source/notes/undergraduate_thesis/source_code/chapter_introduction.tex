@@ -1,0 +1,149 @@
+
+\chapter{Introduction}
+\label{chapter_introduction}
+\section{How to read the thesis}
+The abstract provides an overview of the whole thesis. 
+
+Start with Chapter 1, which should be accessible for general readers with basic college mathematics. 
+
+Proceed to the first half of Chapter \ref{chapter_finite_dimensional}, up to Section \ref{sec:crm}, which gives a compressed introduction to probability and risk measures, necessary for understanding the rest of the paper. 
+
+The reader should then move to Chapter \ref{chapter_conclusion} for a summary of the main results in the paper, then study whichever appears the most interesting. This is assisted by the fact that there is little interdependence in the rest of the paper.
+
+Most of the proofs in the paper may be skipped, as they are either trivial (such as that of Proposition \ref{prop:markov}) or highly technical (such as that of \ref{prop:hoeffding}), and thus unlikely to be of general mathematical interest. However, we believe that our new proof of the central limit theorem of CVaR (Section \ref{sec:clt_cvar}), while technical and computational, is interesting, and recommend that any reader who has expertise in large deviation theory may profitably study it in detail.
+
+\section{Start with a problem}
+In online commerce, fraudulent accounts pose a constant threat. As such, softwares are written that can automatically detect suspicious accounts and suspend them. Such a software works by taking an account's activity log, and computing a judgment based on it: "fraudulent" or "honest".
+
+This is a concrete example of the problem of classification. Similar problems include detecting suspicious activities in social media accounts, classifying images into categories, and handwriting recognition.
+
+The common way in which classification problems are formalized is by defining a feature space $\mathcal{X}$ and a label space $\mathcal{Y}$, and a probability distribution $\mu$ on the space $\mathcal{X}\times\mathcal{Y}$. For example, in the case of handwritten digit recognition, the feature space could be the space of all grayscale images with resolution $256\times 256$, and the sample space could be the set of all numerals: $\{0, 1, ..., 9\}$. For any feature-label pair $(I, n)\in \mathcal{X}\times\mathcal{Y}$, $\mu(\{(I, n)\})$ is the probability of encountering such a feature-label pair, and $\mu(\{(I, 1) | I \in \mathcal{X} \})$ is the probability of encountering any handwritten digit 1.
+
+\subsection{What is the right thing to do?}
+A classification problem is a special case of a rational decision problem, and most of the current theory on rational decision is formalized after the 1940s. The most influential model of rational decision is that of \textbf{expected utility maximization}, propounded by von Neumann, Morgenstein, Savage, and many others.
+
+Simply put, expected utility maximization states that a rational person would have a "utility function" that assigns a \textbf{utility}, that is, a real number symbolizing how much they prefer a certain outcome, to every possible outcome of their decision. They would take the decision that \textbf{maximizes} the \textbf{expectation} of utility.
+
+\begin{conv}
+	Throughout this thesis, we will only talk about \textbf{loss} instead of utility. This is just a sign convention, as loss is the negative of utility. Expected utility maximization becomes expected loss minimization.
+\end{conv}
+
+According to this theory, to solve the question of classification, a rational agent would start by deciding on a loss function, then find the classification algorithm that minimizes the expectation of loss. 
+
+Concretely, the loss function can be defined as $\ell: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}$, such that $\ell(y, y')$ measures how bad it is to classify an object as $y$ when it is actually $y'$. 
+
+A classification algorithm is some $f: \mathcal{X} \to \mathcal{Y}$. 
+
+Let $\mathcal{M}$ be the set of all classification algorithms that the agent can think of, then the best classification algorithm is 
+\begin{equation}
+f = \argmin_{f\in\mathcal{M}}\E_{(X, Y)\sim \mu}(\ell(f(X), Y))
+\end{equation}
+
+This is usually how the solution is given, but this is not necessarily the best solution. The issue lies within the use of expectations.
+
+\subsection{Is expectation the right thing to calculate?}
+
+There are two kinds of decision theories: \textbf{descriptive} and \textbf{normative}. Descriptive theories predict how people actually decide, while normative theories tell how people should decide. Expected utility maximization used to be both a descriptive and normative theory. Psychologists and economists considered it an accurate description of how humans decide when they are thinking clearly, and philosophers considered it the correct standard for rationality.
+
+This has come under attack on both fronts. 
+
+On the descriptive front, the work of Kahneman and Tversky since 1970s \cite{tverskyJudgmentUncertaintyHeuristics1974} has made it clear that humans do not minimize expectations of loss. They perceive probabilities in a distorted way. They regard losing 1 dollar as a lot worse than gaining 1 dollar. 
+
+On the normative front, directly against Kahneman, who recommends that people attempt to avoid making such irrational deviations in decision-making, Gigerenzer since 1990s \cite{gigerenzerHomoHeuristicusWhy2009} has proposed that these deviations from expected loss minimization are shortcuts in reasoning that are vital for real humans, who do not have unlimited time and thinking ability. 
+
+Regardless of one's normative stance, the requirements for an accurate description of how people make decisions means we would do well to not restrict ourselves to expected loss minimization formalism.
+
+\subsection{The deadly long tail}
+\setlength{\epigraphwidth}{0.6\textwidth}
+\epigraph{The climate system is an angry beast and we are poking it with sticks.}{Wallace Broecker}
+
+Another criticism to the normative theory of expected loss minimization is that expectation is a very impoverished standard with which to measure the desirability of possible outcomes. In particular, it does not adequately account for extremely bad outcomes, in certain situations where the expectation of loss is not as relevant as the possibility of a very large loss.
+
+Consider the problem of designing a drug, with the loss function being the total number of lives lost after administering the drug, then the expectation can be lowered by making the drug marginally better in most situations, but greatly worse in a few situations. 
+
+Such loss is said to have a "long tail", that is, it has a small but non-negligible chance of causing great harm. 
+
+Returning briefly to human psychology, the anthropologist Jared Diamond argues that \cite[Chapter 7]{diamondWorldYesterdayWhat2013} humans in traditional ("primitive") societies exercise "constructive paranoia" towards the long tail. An activity (sleeping under a dead tree) that has a tiny chance of great danger (the tree falling down) is avoided whenever possible. That even if it would happen on average once every 1000 years, they would not do it. In effect, their decisions are less about expected risk minimization, but more about extreme tail risk minimization. 
+
+In fact, the flurry of activities on studies of rational behavior and game theory after 1940s was motivated in no small part by the specter of thermonuclear war and human extinction, the greatest of all extreme tail risks.
+
+While the cold war has ended in 1990s, the tail risk of nuclear war has not been eliminated. One survey \cite{PS21SurveyExperts2015} among nuclear policy experts found that the national security experts give on average a 7\% chance of nuclear war killing more people than World War Two in the next 25 years, which roughly corroborates with the result from another survey \cite{bostromGlobalCatastrophicRisks2008}.
+
+The other extreme risk faced by modern humans is climate change. Without swift action to limit atmospheric concentration of greenhouse gas, the global average temperature is expected to rise by more than two degrees Celsius by 2100. While this expected value is tolerable, the temperature rise has a deadly long tail, up to more than six degrees. \cite{weitzmanModelingInterpretingEconomics2009} in particular proposes that, since the loss is so great at the tail end of climate change, and the tail end is so uncertain, merely minimizing expectation of loss is unwise.
+
+Or in simpler words: it matters a great deal if there is a small, uncertain chance of warming by 10 degrees Celsius, even if we don't know if it is 1\% or 0.01\%, because it would be the end of human civilization.
+
+In such cases, especially cases where the long tail is uncertain, mere expectation appear to be deficient in giving a full picture of the risk, and thus risk measures that are sensitive to more details of the shape of the risk would be useful.
+
+\subsection{Further reading}
+
+For more history on expected utility theory, see \cite{fishburnRetrospectiveUtilityTheory1989}. For a philosophical analysis of normative expected utility theory, see \cite{briggsNormativeTheoriesRational2019}. 
+
+For an overview of Kahneman and Tversky's research into descriptive decision theory, \cite{kahnemanThinkingFastSlow2011} is a very readable book, in which Kahneman repeatedly advises the reader to control their hardwired irrationality and follow the expected loss minimization principle. On the other side of the spectrum is Gigerenzer's popular book \cite{gigerenzerGutFeelingsIntelligence2007}, which praises gut feeling as more practical than rational calculations.
+
+The intuition that a risk manager should pay more attention to avoiding catastrophic outcomes has been formalized, from a legal point of view, as the (catastrophic) precautionary principle \cite{sunsteinCatastrophicHarmPrecautionary2007}.
+
+\section{Traditions of risk measurement}
+
+\subsection{Financial mathematics}
+Financial mathematicians, while unconcerned with classification problems in machine learning, have been heavy users of risk measures. Crudely, investment could be thought of as a binary classification problem: given a portfolio constructed from financial products (stocks, bonds, foreign currencies, etc), one must judge whether this portfolio is an "acceptable" or "unacceptable" investment.
+
+\subsubsection{Portfolio optimization}
+In more detail, the problem of portfolio optimization is to construct the "best" portfolio, subject to certain constraints, and financial mathematicians traditionally formalize this problem thus \cite[section 3]{ahmadi-javidPortfolioOptimizationEntropic2019}: Consider an investor who wishes to optimize their net worth in one year, and has $n$ financial products with which to construct their portfolio. A portfolio is then formalized as a real vector $X = (x_1, ..., x_n)\in\mathbb{R}^n$, with $x_i$ denoting that the portfolio contains $x_i$ units of product $i$.
+
+There are many possible constraints to consider. For example, suppose the investor cannot hold negative amount of products ("shorting" in financial jargon), then $x_i \ge 0$ for all $i$. Suppose the investor currently can invest no more than $P$, then $\sum_i x_i p_i \le P$, where $p_i$ is the price of a unit of product $i$. In general, such constraints are represented as a set $D\subseteq \mathbb{R}^n$ of possible portfolios.
+
+After the year is up ("the portfolio has reached maturity"), the movements of the market during the year would determine the outcome of the portfolio. Formally, let $Y = (y_1, ... y_m)$ be a real vector of all the relevant facts about the market, then the outcome of the portfolio is a function of $X$ and $Y$. Let it be $L(X, Y)$. In order to cast this in the language of loss minimization, $L$ represents loss, so if the portfolio earned money at the end of the year, it gives a negative $L$. 
+
+Since $Y$ is uncertain, it is modeled as a random variable. Thus, for each pick of portfolio $X$, $L(X, Y)$ is a random variable representing the outcome at maturity. 
+
+Then, the problem of portfolio optimization is to find 
+\begin{equation}
+\argmin_{X\in D}\mathcal{F}(L(X, Y))
+\end{equation}
+where $\mathcal{F}$ is a risk measure that the investor chose to represent how they feel about possible losses. A very risk-neutral investor could choose $\mathcal{F} = \mathbb{E}$, while a very risk-averse investor could choose $\mathcal{F} = \max$.
+
+\subsubsection{Modern portfolio theory}
+Modern portfolio theory, or mean-variance analysis, was initiated by \cite{markowitzPortfolioSelection1952}, and postulates that the investor is interested in only two numbers: the expectation and variance of investment returns. An investor, in this theory, always chooses the portfolio with the least variance out of all portfolios that have the same expectation.
+
+In the language of risk measures, let the investment return be denoted by the random variable $L$. To cast it in the language of loss minimization, let $L$ be the amount of money \textit{lost} in the investment. The goal is then to minimize variance of $L$, under the constraint that the expectation of $L$ is lower than some fixed constant, representing the investor's tolerable expectation of loss.
+
+Then, we can represent this as minimization of $\mathcal{F}(L)$, where $\mathcal{F}(L) = \mathbb{E}(L) + \lambda \sigma(L)$, where $\mathbb{E}$ is the expectation, $\sigma$ is the standard deviation, and $\lambda$ is a constant that represents how variance-averse the investor is. Here, $\sigma$ instead of $\sigma^2$ is used, since the unit of risk measure should be in dollars, while the unit of $\sigma^2$ is $(\text{dollar})^2$.
+
+A big $\lambda$ represents a strong desire to keep the standard deviation down, while $\lambda$ close to zero represents an investor that is indifferent to variance, and behaves similar to a classical rational agent who only aims to maximize expectation. A negative $\lambda$ represents an investor who prefers variance, the opposite of what modern portfolio theory assumes, but in no way invalid. Indeed, some investors recommend limited risk-seeking investment as a wise way to benefit from unexpected boons \cite{talebAntifragileThingsThat2012}.
+
+\subsubsection{Criticisms}
+There are many criticisms of modern portfolio theory, which is not surprising considering it is over 60 years old now. 
+
+One main criticism is that variance and expectation do not characterize a distribution sufficiently. For example, consider a Gaussian distribution and a distribution with density $\mathcal{F}(x) \approx \frac{1}{x^4}$ for large $x$. They may have the same expectation and variance, but one decays far faster than the other. Put it more explicitly, if human height were distributed like $\mathcal{F}(x) \approx \frac{1}{x^4}$, then the tallest man in the world would very likely be several meters high at least. This does not happen, as human height, conditional on sex, is almost Gaussian distributed.
+
+\subsubsection{Value-at-risk (VaR)}
+Other than the mean-and-variance risk measure used by modern portfolio theory, the quantile, or value-at-risk (VaR), is another risk measure that is popular in finance. For any real random variable $X$, any $0 \le \alpha\le 1$, the $\alpha$-VaR of $X$ is the $\alpha$-quantile\footnote{Annoyingly, there exists a subtly different convention, where the $\alpha$-VaR of $X$ is the negative of $1-\alpha$-quantile of $-X$. This convention is used by, for example, \cite{artznerCoherentMeasuresRisk1999}. The distinction has no bearing on the mathematical content.} of $X$. 
+
+Banks do not just keep their customers' money in a vault. They might loan money for interest, or trade stocks for profit. However, each investment exposes banks to risks, and to protect themselves from failing, banks are required to keep a certain amount of money in its vaults so that they are considered sufficiently prudent. The intuition of "sufficiently prudent", again, relies on a risk measure. 
+
+Given all the investments of a bank, its negative net worth in a year can be considered as a random variable $X$, and for $X$ to be seen as sufficiently prudent, some kind of judge must examine it, and give a verdict of "prudent" or "imprudent". Just as before, this can be formalized as a risk measure $\mathcal{F}$, such that $\mathcal{F}(X)> 0$ denotes imprudence, and $\mathcal{F}(X)\le 0$ denotes prudence.
+
+Many international banks follow the Basel Accords, a sequence of recommendations on bank regulations. In particular, they describe risk measures for banks to evaluate their prudence. In Basel II, published in 2004, the risk measure was VaR, which cemented its position in financial risk management up until the crisis of 2008.
+
+There are widespread criticisms of VaR \cite{danielssonAcademicResponseBasel2001}, among which, the most basic one is its insensitivity to extreme losses. For example, suppose a financial product has a 95\%-VaR of \$10000, meaning that out of all the possible outcomes, among the worst 5\%, the \textit{best} outcome is losing \$10000. It might very well be that in the worst 1\% cases, the product would lose a billion dollars, an extreme risk that is completely invisible in the 95\%-VaR.
+
+A more subtle argument against VaR is its non-convexity. That means that two low-risk products, when combined, can appear high-risk, which is a direct contradiction to the dogma that diversification reduces risk.
+
+\subsubsection{Coherent risk measures}
+In response to the criticisms, \cite{artznerCoherentMeasuresRisk1999} proposed axioms that any reasonable risk measure should satisfy, and they called such measures coherent risk measures, which is the main topic of this thesis.
+
+The most commonly used coherent risk measure is the conditional value-at-risk (CVaR)\footnote{Other names include "expected shortfall" (ES), "average value at risk" (AVaR), "conditional tail expectation" (CTE), "tail-VaR", and "mean excess".}, defined as the expectation of loss, conditional on the loss being worse than a certain level. So, for example, if a product has 95\%-CVaR of \$10000, then among the worst 5\% outcomes, the average is a loss of \$10000. In particular, this means that the probability of losing a huge sum of money must be small. The probability of losing over a million dollars, for example, must be less than 0.05\%.
+
+After the financial crisis of 2008, there was great suspicion that the use of VaR encouraged risky investments that contributed to the financial crisis, even resulting in a congressional hearing \cite{rickardsRisksFinancialModeling2009}. In reaction to this, VaR was changed to CVaR in Basel III, published in 2010.
+
+For further reading, \cite{chenMeasuringMarketRisk2014} is a detailed report on the history of VaR and CVaR in the Basel Accords.
+
+\subsection{Other traditions}
+\label{sec:other_traditions}
+Closely related to the financial tradition is the actuary tradition, where the study of tail risk is often called \textbf{ruin theory}. Ruin, in this context, denotes bankrupcy, often caused by rare but great losses. An insurance company can be ruined if a great earthquake struck all houses in a province. A bank can be ruined by a financial panic.
+
+Further afield is the tradition of \textbf{reliability engineering}. In building a reliable house, the random variable $X$ could stand for whether the house would fall down in the next earthquake. $X=0$ for no and $X=1$ for yes. Certainly, it is important to keep $X$ as close to $0$ as possible, but since reliability is not free, and there are competing priorities, such as budget limit, the architect cannot make $X$ infinitely close to $0$. 
+
+What can be done is then to define a risk measure $\mathcal{F}$, such that $\mathcal{F}(X)$ measures the risk measure from $X$, and the architect would tweak the design so as to minimize
+$$\mathcal{F}(X) + (\text{risk measure from other risk factors}).$$

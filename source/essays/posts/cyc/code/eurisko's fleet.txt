@@ -1,0 +1,64 @@
+Source: *The Journal of the Travellers' Aid Society*, #10, pp. 38--9
+
+The Journal of the Travellers' Aid Society is copyright 1981 by Game Designers' Workshop. Printed in the USA. All rights reserved. ISSN: 0193-3124. All editorial and general mail should be sent to: the Journal, PO Box 1646, Bloomington, IL 61701.
+
+# Trillion Credit Squadron Winners
+
+This summer, the first of GDW's Trillion Credit Squadron tournaments were held, 
+drawing about thirty entrants each. These tournaments were held at Origins, in 
+San Mateo California, GenCon East, in Cherry Hill New Jersey, and Gen-Con XIV, 
+near Kenosha Wisconsin. The Winner at Origins was Doug Lenat, of Los Altos, 
+California. The winner at Gen-Con East was Martin Misciagna, of Brooklyn, New 
+York. The winner at Gen-Con XIV was Mike Moline, of St. Cloud, Minnesota. Doug 
+Lenat's fleet was the most unique, and since space consideration prohibit us 
+printing them all, we decided that Doug's fleet would be of the most interest 
+to the readers of the Journal. Doug's fleet consisted of ninety-six ships and 
+cost MCr998,642.
+
+Four Garter class :
+TB-Garter         TB-K1567F3-B41106-34009-1      MCr17,584.104       12,000 tons
+Batteries Bearing                 C   1 EE  7                        Crew=170
+    Batteries                     C   1 EE  7                        TL=C
+Passengers=0. Low=85. Cargo=4.3. Fuel=840. EP=840. Agility=4. Marines=0.
+Note: L-hyd drop tanks add 6000 tons of fuel and mass (TB-K1344F3), change
+the agility to 4, and cost MCr6.01. The ship is designed to maneuver when carrying
+up to 72,000 tons of drop tanks, and one Wasp fighter.
+
+Four Cisor class:
+BD-Cisor          BD-K9525F3-E41100-340C5-0      MCr22,291.175       19,980 tons
+Batteries Bearing                 1  11  1U
+    Batteries                     1  11  1U
+Passengers=0. Low=95. Cargo-19.1. Fuel=999. EP=999. Agility=0. Marines=0.
+Note: L-hyd drop tanks add 9,990 tons of fuel and mass (BD-L9313F3), change
+the agility to 0, and cost MCr10. The ship is designed to maneuver when carrying
+up to 29,970 tons of drop tanks.
+
+Three Queller class:
+BH-Queller        BH-K1526F3-B41106-34Q02-1      MCr27,802.392       19,600 tons
+Batteries Bearing                 Z   1 NN1 N                        Crew=263
+    Batteries                     Z   1 NN1 N                        TL=C
+Passengers=0. Low=232. Cargo=10.72. Fuel=1176. EP=1176. Agility=0 Marines=200
+Note: L-hyd drop tanks add 9,800 tons of fuel and mass (BH-L1314F3) and
+cost MCr9.81. The ship is designed to maneuver when carrying up to 29,400 tons of
+drop tanks and fighters (one Wasp and one Bee).
+
+Seventy-five Eurisko class:
+BA-Eurisko        BA-K952563-J41100-34003-0      MCr 13,030.385      11,100 tons
+Batteries Bearing                 1  11  V                           Crew=131
+    Batteries                     1  11  V                           TL=C
+Passengers=0. Low=0. Cargo=8. Fuel=555. EP=555 Agility=2. Marines=35
+Note: L-hyd drop tanks add 5,550 tons of fuel and mass (BA-K931363), change
+the agility to 1, and cost MCr5.56. The ship is designed to maneuver when carrying
+up to 16,650 tons of drop tanks.
+
+Seven Wasp class;
+IL-Wasp           IL-A90ZZF2-J00000-00009-0      MCr896.75            1,000 tons
+Batteries Bearing                 1                                  Crew=19
+    Batteries                     1                                  TL=C
+Passengers=0. Low=0. Cargo=0. Fuel=60. EP=60. Agility=6. Marines=0.
+
+Three Bee class:
+FF-Bee            FF-0906661-A30000-00001-0      MCr127.945             99 tons
+Batteries Bearing                 1   2                              Crew=1
+    Batteries                     1   2                              TL=C
+Passengers=0. Low=0. Cargo=0. Fuel=5.94. EP=5.94. Agility=0. Marines=0.

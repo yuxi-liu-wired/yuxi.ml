@@ -1,0 +1,105 @@
+website:
+  title: "Yuxi on the Wired"
+  description: "Personal website of Yuxi Liu"
+  image: img/blog icon.jpg
+  site-url: https://yuxi.ml/
+
+  favicon: img/favicon.ico
+  
+  # start of the navigation bar at the top of the website
+  navbar:
+    pinned: true
+    logo: /img/favicon.ico
+    
+    # your sub-pages
+    left:
+      - text: "Essays"
+        href: essays/index.qmd
+      - text: "Sketches"
+        href: sketches/index.qmd
+      - text: "Logs"
+        href: logs/index.qmd
+      - text: "Notes"
+        href: notes/index.qmd
+      - text: "Docs"
+        href: docs/index.qmd
+      - text: "Projects"
+        href: projects/index.qmd
+      - text: "About"
+        href: about/index.qmd
+      # - text: "CV"
+      #   href: cv/index.qmd
+    
+    # your social media handles
+    right:
+      # - icon: folder-symlink
+      #   href: https://bair.berkeley.edu/
+      # - icon: linkedin
+      #   href: https://www.linkedin.com/in/yuxi-liu-78b947277/
+      - icon: envelope
+        aria-label: email
+        href: "mailto:yuxi_liu@berkeley.com"  
+      - icon: rss
+        href: feeds.xml
+
+  search: 
+    location: navbar
+    type: textbox
+  page-footer: 
+    left: |
+      <span class="faux-block">Yuxi on the Wired</span>
+    # center: |
+    #   <span class="faux-block"><a href="https://forms.gle/LBFx3sUqrD9LLLHb7/">Give anonymous feedback</a></span>
+    right: |
+      <span class="faux-block">Everything <a href="https://en.wikipedia.org/wiki/Public_domainl">PD</a>; <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en/">CC0</a> fallback.</span>
+  open-graph: true
+  twitter-card: true
+
+project:
+  type: website
+  output-dir: ../quarto_compiled
+  render:
+    - "index.qmd"
+    - "404.qmd"
+    - "feeds.qmd"
+    - "essays/**/*.qmd"
+    - "logs/**/*.qmd"
+    - "docs/**/*.qmd"
+    - "sketches/**/*.qmd"
+    - "about/**/*.qmd"
+    - "projects/**/*.qmd"
+    - "notes/**/*.qmd"
+  # resources:
+  #   - redirect/**
+  preview: 
+    port: 22222
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    fontsize: 1.1em
+    theme: 
+      light: 
+        - flatly
+        - html/custom_light.scss
+      dark:
+        - darkly
+        - html/custom_dark.scss
+      # light: html/theme-light.scss
+      # dark: html/theme-dark.scss
+    toc: true
+    toc-location: left
+    code-tools: false
+    code-link: true
+    anchor-sections: true
+    include-after-body: html/copy-anchors-js.html
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
+
+bibliography: static/references.bib

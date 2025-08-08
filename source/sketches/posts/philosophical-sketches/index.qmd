@@ -1,0 +1,393 @@
+---
+title: "Philosophical Sketches"
+author: "Yuxi Liu"
+date: "2024-06-16"
+date-modified: "2025-03-17"
+categories: [fun, philosophy]
+format:
+  html:
+    toc: true
+description: "Short philosophical writings, often poking fun at philosophers."
+
+image: "figure/banner.png"
+status: "draft"
+confidence: "log"
+importance: 0
+---
+
+## Brief notes
+
+### Causal anthropocentrism
+
+There is a pattern of thinking that has annoyed me: "causal anthropocentrism".
+
+For example, the chairman of China said, "There is no such thing as the so-called Thucydides Trap in the world. But should major countries time and again make the mistakes of strategic miscalculation, they might create such traps for themselves."
+
+If a war between America and China happens, it would not be purely by human methods and human thinking. Such complex outcomes have complex causes, and human thinking is merely one part of many. Other causes include solar radiation, soil fertility, atmospheric circulation of water, secret patterns in the global flow of steel production, the relative abundance of uranium-235 in earth's crust, and many many others.
+
+If a war breaks out, the thoughts and behaviors of the modern humans is just one part of the cause. The ancestors are also responsible. The sun, the crust, the atmosphere, the immutable laws of mathematics and physics. They all come together.
+
+I like to joke that humans are no more intelligent than a logical AND gate, because they keep trying to find "the root cause" of things that do not have root causes. If A and B and C together causes D, then which of $\{A, B, C\}$ is *the* root cause? The mathematical answer is simply "the root cause is undefined in such a situation". The human answer is "the root cause is whichever is most amenable to human intervention".
+
+And thus, if climate change is the problem, then human society is the root cause, not the atmospheric chemistry, or biological history of earth (without the carboniferous period, there would not be so much cheap coal for humans to burn up rapidly), etc, even if they are all parts of the complex cause of the complex effect of climate change.
+
+This is what I call "causal anthropocentrism". It might be the most practical, motivating, and moral, but it's wrong. All root causes are egocentric. Without a personal viewpoint, there are only causes, but not any root cause.
+
+### Moral nihilism
+
+A common argument against moral nihilism is that moral nihilism leads to immoral behavior. This is so obviously question-begging that one wonders why good philosophers would still fall for this problem. I think this is a case where the very foundation of what constitutes a good argument is in doubt. The moral nihilists might be knapping their brains against materialist science, but the good philosophers are fundamentally doing good in this world.
+
+1. Moral nihilism leads to behavior X.
+2. X is immoral. (question-begging)
+3. If a theory leads to immoral behavior, then it is incorrect. (crossing the [is-ought chasm](https://en.wikipedia.org/wiki/Is-ought_problem))
+4. Therefore, moral nihilism is incorrect.
+
+Another attempt which goes like "It might be correct, but we shouldn't talk about it because of the harms it would cause.".
+
+1. Moral nihilism leads to behavior X.
+2. X is immoral. (question-begging)
+3. If a theory leads to immoral behavior, then it should not be talked about. (question-begging)
+4. Therefore, moral nihilism should not be talked about.
+
+Materialist science as a symbolic system has very well-known difficulties with meshing with commonsense symbolic system, especially morality. An entire philosophical industry (I call it "the word-lubricant industry") called "compatibilism" sprang up to make them fit. Moral nihilists in making their arguments might simply be driven by the same grinding of the gears as the compatibilists.
+
+The pragmatist's modus ponens: You act, therefore you do believe in morality.
+
+The moral nihilist's modus tollens[^moral-nihilist-modus-tollens]: I act, but I do not believe in morality. Therefore, the fact that people act is no evidence that *they* believe in morality either.
+
+[^moral-nihilist-modus-tollens]: Not quite the classic modus tollens, because it is the *major premise* being rejected: `P: Act; P → Q: If act, then believe; Q: Believe.`
+
+### The hard is-ought problem
+
+If the is-ought problem is a problem, then this means that for any X, even if X *is* moral, that doesn't say anything about how we *should* act.
+
+People intuitively understand "is implies ought". This is why research into genetic differences among social groups is so controversial. However, people also tend to claim that moral commitments are independent of material reality, lest they open themselves to
+
+1. experimental disproof (it would be a catastrophe if one's morality turns out to be unrealistic), and
+2. the reproach of philosophers who go like "But you can't get an is from an ought.".
+
+This essential tension is the unresolved original trauma of Enlightenment. One is reminded of Victorian scientists who vehemently denied sleepwalking, for it exonerates crimes committed in sleep: "The greatest sophistry of atheists can deny what is plain and common sense, *viz* that a murderer is a murderer in any other name."
+
+That is, going one way with "is does not imply ought" we end up with odd argument where the facts about the physiological basis of behavior are disregarded (such as in sleepwalking, or the fugue state), because "a murderer is a murderer", but going the other way with "is imply ought", and we get the well-known philosophical problems, as well as "science wars" where moral battles masquerade as scientific disputations.
+
+The is-ought problem actually undermines the foundation of ethics, because even if moral realism is true, so that one can establish "X is moral", that does not imply (cannot imply) that "X should be moral" or "I should do X", a step that people seem to always take without thinking about how they have just stepped over the is-ought problem. I think "They have implicitly rejected the is-ought problem." whenever I hear someone try to say that morality is inherently motivating, or how it is a mere matter of logical consistency to try to behave morally (i.e. Kant's argument that radical evil is logically impossible).
+
+### Time, Memento, Jesus Christ
+
+What is time, in computer programs? A program in source-code form is quite different from it in assembly-code form, which is again very different from it in runtime-form. I think at least 3 kinds of time is involved here.
+
+1. In source-code form (at least, without GOTO and COMEFROM), time is the line number. 
+2. In assembly-code form (with so many GOTO and COMEFROM), time is less clear, perhaps assembly-code time is a bit tangled-up and hard to deal with.
+3. In runtime-form, time is just the clock cycle.
+
+In trying to program some Internet agents, I saw that time, for internet agents, is just a bit different than it is for humanoids. This is fascinating and a bit disturbing. Let me give an example.
+
+Typically, an Internet agent is run as a piece of source code running on a machine ("the server") and communicating with some other program (usually from "the client" machine). By design, Internet communication protocols are by default stateless, and so, to adapt to such protocols, Internet agents are by default also amnesiac -- so how do they remember who they are and what they were doing? They use [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style)! 
+
+The analogy is this: whenever they finish one piece of communication, they write down everything that has happened so far in the communication, then forget about it. Later, if they are requested to pick up where they left off, the user would tell the agent to load up the record, and suddenly memory is restored.
+
+The agent then communicates with the remote client. The client has also forgotten all about it, but no problem! The record is sent to the client, and suddenly the client is also reincarnated where they were.
+
+And just like that, the two amnesiacs reincarnated after being dead for several hours. They will die again after the conversation, only to reincarnate again if the future loads them up.
+So imagine this Memento-like scenario.
+
+> You are showering. How did you get there?? You hear a voice, "`IF` fridge contains sandwich `THEN` eat sandwich." You leave shower and go to the fridge. It contains a sandwich. You eat it. You speak to the voice, "`RETURN`".
+> 
+> You are in front of a fridge. You hear a voice: "`IF` fridge contains sandwich `THEN` eat sandwich". You open it and realize that it has no sandwich. You speak to the voice, "`ASYNC-WAIT`; `MAKE-SANDWICH`".
+>
+> You are in front of a table. You hear a voice: "make a sandwich and put it into the fridge." You go to the fridge and grab two slices of bread and a slice of cow juice, then made a sandwich and put it into the fridge. You speak to the voice, "`RETURN`".
+
+Internet agents are functions, so they have arguments. The arguments are the "voices in the head", and "speaking to the voice" is basically returning values. In the jargon, it's not actually "return", but "yield", meaning "returning for now, but please reincarnate me later!"
+
+Usually, when an agent "yields", it returns not only the computation result, but also a copy of everything that's necessary to replicate its current state, so that if you need to call it up again to continue its work, you just have to send it the copy, and it will "reincarnate". 
+
+This gives us a new interpretation of the (first) death of Jesus:
+
+> Now from the sixth hour there was darkness over all the land unto the ninth hour. And about the ninth hour Jesus cried with a loud voice, saying, `Eli, Eli, lama sabachthani?` that is to say, `My God, my God, why hast thou forsaken me?` ... Jesus, when he had cried again with a loud voice, `YIELDED` up the ghost.
+>
+> Matthew 27:45--50
+
+or 
+
+> The essential Saltes of Animals may be so prepared and preserved, that an ingenious Man may have the whole Ark of Noah in his own Studie, and raise the fine Shape of an Animal out of its Ashes at his Pleasure; and by the lyke Method from the essential Saltes of humane Dust, a Philosopher may, without any criminal Necromancy, call up the Shape of any dead Ancestour from the Dust whereinto his Bodie has been incinerated.
+>
+> *The Case of Charles Dexter Ward*, H. P. Lovecraft
+
+### Case Report: A Novel Form of Introspective Anosognosia
+
+**Patient:** M.H., 57, Male, Philosopher
+
+**Presenting Concern:** M.H. was referred by concerned colleagues who reported a progressive inability to understand his philosophical discourse, which had become increasingly idiosyncratic and divorced from established empirical findings. Initially, they suspected a fluent aphasia, but the nature of his language disturbance suggested a more complex cognitive deficit.
+
+**History:** M.H. has a distinguished career in philosophy, known for his contributions to phenomenology and existentialism.  His colleagues noted a gradual shift in his work over several years, marked by a growing rejection of scientific methods and an almost exclusive reliance on introspective, first-person phenomenological inquiry. 
+
+**Examination:** M.H. presented as articulate and erudite, with no signs of traditional aphasia. He could understand normal English speech. However, his language, though conforming to English grammar and morphology, was highly idiosyncratic, exhibiting an unusual degree of nominalization and verbification. Fluent aphasia was suspected, until his colleague gradually recognized their semantics [all quotations from him are as interpreted by his colleague].
+
+When questioned about the apparent contradictions between his philosophical framework and established scientific knowledge, M.H. became dismissive, stating: "You fail to grasp the fundamental distinction between the Ontic and the Ontological! Trying to understand the life-world through the lens of your 'objective' science is a categorical error." He insisted that his introspective method provided complete access to all facets of reality, asserting, "There are no electrons or synapses in the lifeworld. Eyes are not retinal screens—have you ever seen the space between the pixels?".
+
+**Testing:**  Neurological examination was unremarkable. However, given the possibility of an undetected neurological condition, an MRI scan was recommended. M.H. initially resisted, deeming it an "ontological transgression", but eventually acquiesced. As predicted, the MRI results were normal.
+
+**Caloric Reflex Test:**  A serendipitous breakthrough occurred during a caloric reflex test, conducted to assess vestibular function. The introduction of cold water into the ear canal, a mildly disorienting experience, seemed to trigger a shift in M.H.'s perception.  For approximately 45 minutes post-test, he exhibited an abrupt lucidity, admitting his previous philosophical framework might be limited, and that empirical observation might be equally valuable as introspection. However, within an hour, he reverted to his previous state of anosognosia, with no recollection of the insights gained. A video recording of the lucid interval, shown to M.H. in his anosognosic state, elicited anger and accusations of "technological manipulation".
+
+**Diagnosis:** We propose that M.H. presents with a novel form of anosognosia, tentatively termed "Philo's Anosognosia." This condition appears characterized by an unwavering conviction in the completeness of subjective introspection, coupled by fluent confabulation in rejecting evidence to the otherwise. It is yet unknown whether idiosyncratic language use is specific to this case as occurring in a working philosopher, or whether it is a common symptom for Philo's Anosognosia.
+
+**Prognosis:** The prognosis for Philo's Anosognosia remains unclear. In M.H.'s case, while his condition appears resistant to conventional interventions, it has not significantly impaired his professional output. Further research is needed to understand the underlying neurological mechanisms and explore potential treatment strategies, as well as whether this condition may be a spectral disorder. If so, we speculate that some academics may be on the sub-pathological end of the spectrum.
+
+### Pierre Menard, Noted Anthropologist
+
+Idea from [\@norvid_studies](https://x.com/norvid_studies/status/1897273567718572233) (2025-03-05).
+
+Pierre Menard, the obscure 19th-century Swiss-French biologist (1832--1901), remains virtually unknown despite his remarkable undertaking. Despite a contemporary, Menard was neither strictly Darwinian nor Lamarckian, though elements of both theories harmonized within his work alongside orthogenesis and recapitulation.
+
+Menard's oeuvre began with an observation in his 1872 treatise "Des Erreurs Transmises" \[On Transmitted Errors\]: 
+
+> ... therefore, the teratological examples suggest to us that human reproduction is but an approximation of *Mensch an sich*, an incomplete and non-convergent circling around its central influence.
+
+For Menard, each birth is mere imperfect replication. Other parts of the book reinforced the theme with various metaphors, such as "a [Gutenberg](https://en.wikipedia.org/wiki/Johannes_Gutenberg) press with half-worn fonts", "a projection of a [Grassmannian](https://en.wikipedia.org/wiki/Hermann_Grassmann) variety", "pages typed out of a tilted [Hansen-ball](https://en.wikipedia.org/wiki/Hansen_Writing_Ball)", et cetera.
+
+In his private journals, recently discovered in a sealed compartment of his writing bureau, Menard described recurring dreams in which he witnessed human forms unlike any known to science -- often monstrous, but possessed of a certain form of perfection that left him a strange sense of claustrophobia upon waking. Previously home-stuck, he began taking long walks in wide spaces. On advice of the Société de Physique, Menard established his laboratory on [Mont Salève](https://en.wikipedia.org/wiki/Sal%C3%A8ve). The local villagers spoke of his habit of standing perfectly still for hours facing the expansive vistas across [Lake Geneva](https://en.wikipedia.org/wiki/Lake_Geneva), holding his arms fast in curious bending patterns.
+
+His sleep-cocoon, which he termed the "Berceuse Quaternique", was perhaps his most curious invention. Made of polished wood and brass, with an intricate system of counterweights and three gimbals, it permitted him to sleep in all orientations enumerated in his treatise on "half-Hamilton rotations". His journals record experiments in which he described dreams experienced while suspended in various orientations, often accompanied with diagrams. An example entry gives the reader the style of the thing: 
+
+> 10/4/77, 17-β. App. mpts. Dbl. transitifs. denv. univ.? Conforme à l'extrap. de l'os crochu.
+
+The entry might be translated as: "On 1877-04-10, I slept in the 17-β orientation. [Metaplectic](https://en.wikipedia.org/wiki/Metaplectic_structure) appendages. [Doubly transitive](https://en.wikipedia.org/wiki/Multiply_transitive_group_action). The universal denvelope? It fits the extrapolation of the [hamate](https://en.wikipedia.org/wiki/Hamate_bone)."
+
+In Menard's theory, a blend of evolution and orthogenesis, all creatures, including the human, evolve, but not accidentally of the Darwinian kind. Instead, the necessary constraints of environment, as if by a million little nudges, guide evolution towards an ideal form. Unlike Darwin's branching tree of contingent adaptation, Menard envisioned orthogenesis as a process of correction, each generation a slight adjustment along the "[Quetelet](https://en.wikipedia.org/wiki/Adolphe_Quetelet) lines", after that indefatigable measurer of mankind, whose tables he referenced to extensively. For example, he noted the variance in the curvature of the hamate bone decreases at a log-linear rate, suggesting to him that after an infinity of generations, variance would completely vanish, resulting in the "convergent state". Certain bones he predicted would disappear completely, while other "atavistic forms" would in fact flourish into complete forms, which he called "vestigial forms of the future".
+
+He first described the central concept of "dénveloppe universelle"[^denveloppe-universelle] in an 1876 monograph. Unlike the embryological development understood and preached by Haeckel, where a simple sphere blooms into forms most complex, Menard proposed that embryogenesis was actually a process of reduction into the limited physical and bio-chemical reality. He compared the wrinkling of a developing embryo to the distress of a camel forced through the eye of a needle. Birth defects are not isolated jokes of nature, but a matter of degrees that all of us suffer more or less.
+
+[^denveloppe-universelle]:
+    I had the idea of this from combining "[universal enveloping algebra](https://en.wikipedia.org/wiki/Universal_enveloping_algebra)" which is both about high-dimensional symmetries and sounds appropriately grandiose yet technical, and the etymology of "develop". Wiktionary says
+
+    > Borrowed from French développer, from Middle French desveloper, from Old French desveloper, from des- + voloper, veloper, vloper (“to wrap, wrap up”) (compare Italian sviluppare, Old Italian alternative form goluppare (“to wrap”)) from Vulgar Latin *vloppō, *wloppō (“to wrap”) ultimately from Proto-Germanic *wrappaną, *wlappaną (“to wrap, roll up, turn, wind”), from Proto-Indo-European *werb- (“to turn, bend”) [1]. Akin to Middle English wlappen (“to wrap, fold”) (Modern English lap (“to wrap, involve, fold”)), Middle English wrappen (“to wrap”), Middle Dutch lappen (“to wrap up, embrace”), dialectal Danish vravle (“to wind, twist”), Middle Low German wrempen (“to wrinkle, scrunch, distort”), Old English wearp (“warp”).
+    > 
+    > The word acquired its modern meaning from the 17th-century belief that an egg contains the animal in miniature and matures by growing larger and shedding its envelopes.
+
+For this peculiar philosophy, he began donating yearly to the Hospitals for the Care of the Deformed, and he often signed his letters with "[Socî malorum, compagnon de miseres.](https://en.wikisource.org/wiki/Studies_in_Pessimism/On_the_Sufferings_of_the_World)". While his contemporaries regarded birth defects as pitiable, Menard regarded them as valuable data in "l'espace des possibilités morphologiques". During a 1879 lecture at the Société Anatomique de Paris, he manipulated various brass knobs, rods, and strings that intersected a live-scale embryo model, explaining, "The [projective configurations](https://en.wikipedia.org/wiki/Configuration_(geometry)) of the teratological [indicatrices](https://en.wikipedia.org/wiki/Indicatrix) allow us to triangulate an extraspatial origin.".
+
+As his work progressed, Menard became increasingly reclusive, going down from Mont Salève monthly only for essential supplies and tithes to regional hospitals. Sometime no later than 1885, he began experimenting with fertilized chicken eggs to induce "déroulement contrôlé vers l'archétype" through chemical injections, isothermal chambers, and other interventions in a systematic attempt to discover and eliminate all forms of noise in the [internal and external milieu](https://en.wikipedia.org/wiki/Internal_environment). His notebooks from this period contain grid and spiral arrangements of detailed drawings of embryos exhibiting novel structural elements. The local priest, concerned by rumors of these experiments, visited Menard's laboratory but left without comment, requesting shortly thereafter a transfer to another parish.
+
+The fire that consumed Menard's laboratory on 1891-02-17 originated in his experimental chamber, according to the official report. Neighbors reported seeing unusual lights and hearing what one described as "a sound like glass singing" in the hours before the blaze. Among the few items recovered was a copper cylinder sealed with a material analysts could not identify, containing what Menard had described in his final journal entry as "exemple préliminaire d'un être humain correctement formé".
+
+## Jokes
+
+### Unclassified
+
+> Nature, and its causal structure, lies in darkness. / God said, "Try gradient descent!" and now you have two darknesses.
+> 
+> Alexander Pope, *Epitaph: Intended for Sir Neural Nets*
+
+Praise the extremists, for they expand the convex hull of possibilities.
+
+In high-dimensional space, the way of the golden mean is almost useless. -- But in ultrametric space, it is *entirely* useless.[^golden-mean-ultrametric]
+
+[^golden-mean-ultrametric]: In high dimensions, most probability mass of a gaussian distribution (and most other ones) are concentrated on a thin shell. Exponentially few points live in the middle. In an ultrametric space, *every* point inside a ball is equidistant to its edges, meaning that the "average" point is undefined. Also, a set of random sampled points in $\R^n$ for $n\to \infty$ look pretty ultrametric, with the characteristic fractal structure. [@aggarwalSurprisingBehaviorDistance2001; @zubarevStochasticGenerationUltrametrics2014] This probably has something to do with spin glass fractal energy landscapes.
+
+A little extremism once in a while never hurts anybody.
+
+Heidegger puts the lived world of ontological Dasein before the objective world of ontic objects. Cool. I will take him seriously if he could discover atomic physics *phenomenologically*.
+
+Kant managed to push God out of the front door (by *Critique of Pure Reason*) only to lead Him back through the window (by *Critique of Practical Reason*).
+
+If everyone becomes a judge, then there wouldn't be any criminal left to judge. Therefore, by the Categorical Imperative...[^categorical-imperative]
+
+[^categorical-imperative]: What if everyone acted on the principle of becoming a good judge to eliminate crime? Then people aren't going to be criminals (because a good judge is by definition not going to be a criminal), thus defeating the very purpose of the maxim. One might say that some people might still want to become a judge yet commit crimes by [akrasia](https://en.wikipedia.org/wiki/Akrasia), but akrasia actually defeats *all* applications of the CI. Consider the maxim where you say "It's okay to break oaths.". By the standard CI, it defeats its own purpose, but by akrasia, people might still keep oaths just because their deontological passions would overpower their consequentialist souls. Thus, the Categorical Imperative either proves too much or nothing at all.
+
+I like to go to the graveyard and shout at every tombstone: "If you are so clever, why aren't you ~~rich~~ alive?"
+
+Continental philosophers have gone postal: post-human, post-modern, post-gender, post-intentional...
+
+Weizenbaum rejects `D-a-r-w-i-n-i-s-m`:
+
+> I have in mind also the teaching urged on us by some leaders of the AI community that there is nothing unique about the human species, that in fact, the embrace of the illusion of human uniqueness amounts to a kind of species prejudice and is unworthy of enlightened intellectuals. If we find nothing abhorrent in the use of artificially sustained, disembodied animal brains as computer components, and if there is nothing that uniquely distinguishes the human species from animal species, then -- need I spell out where that idea leads?
+>
+> --- Joseph Weizenbaum, author of ELIZA
+
+- Wise person: Happiness equals material consumption divided by desire
+- Depressed person: But I don't want anything!
+- Mathematician: Well, instead of [one-point compactification](https://en.wikipedia.org/wiki/Alexandroff_extension) of the utility line...
+
+Frequentist proof of ontological nihilism $(p < 10^{-9})$: Let the null hypothesis be "there is something rather than nothing". The probability of my existence is lower than one in a billion, as any accidental change in the past billion years would have caused me to not have been born.
+
+Derridean deconstruction is an attempt to solve the information-atom problem: the mind-body problem for the information age. If you get one apple, then a copy, now you have two apples. If you get an IP packet, then a copy, now you still have just one. Thus we have the information-atom problem: You say that information is carried in the atoms, which acts upon the atoms, but how is it possible for information and atoms to interact if they are so different? Derridean deconstruction and its method of différance simply denies that copyable information exists, thus there is no such thing as the information-atom problem. Difference (atoms) is primary, and then identity (information) appears as an approximation.
+
+The most annoying part of the Hero's Journey is that it has an unjustified symmetry breaking. Every formalization of the Hero's Journey describes it as a directed cyclic graph with 17 points. However, every point in a cyclic graph may serve as the "origin". The internal structure of the Journey does not allow treating any one of the 17 points as more special than the others, because they are all essential. This is the cyclic symmetry. In jargon, the Hero's Journey is an additive torsor, not a group, since the origin is undefined. We can count from any node forwards. In 17 steps, we return, but this is true for any node, not just the "home" node.
+
+Someone just told me that the Hero's Journey is not actually a cycle. Instead, it is a directed *linear* graph with 17 points. Well good to know! Then people should stop drawing it as a circle!
+
+Someone just told me that it's drawn as a circle because the 0th point and the 16th point are the most similar pair of points. We'll see about that after I do a metric embedding through `T5-XXL`.
+
+### The Jurisprudent Pathway
+
+Currently, environmental projection is delaying the progress of technological control of Nature. Many of these are fundamentally based on an understanding of Nature as a person with legal rights. This suggests a way to defeat this, which I call the Jurisprudent Pathway.
+
+1. Give Nature juridic personhood.
+2. Sue Nature for numerous violations, including, but not limited to: 
+
+* General child neglect.
+* Bioterroristic release of insecure bioforms into the environment.
+* Genetic engineering unapproved by the [FDA](https://en.wikipedia.org/wiki/Food_and_Drug_Administration).
+* Practicing ableist eugenics under the guise of "[purifying evolution](https://en.wikipedia.org/wiki/Negative_selection_(natural_selection))".
+* Promethean arrogance: creating new species when she should have protected what we already have here and now.
+* ...
+
+3. Win.
+4. Put her children into child protection services. Put her on racks.
+5. Now we are free to use her as we wish.
+
+The Jurisprudent Pathway seems to be a [neglected cause](https://80000hours.org/2014/01/neglectedness-and-impact/) for bio-inspired effective acceleration, as well as heaven engineers who need to sterilize some megafauna in order to reduce suffering in Nature, but are stopped by people who believe Nature has the right to remain undisturbed. This is definitely a neglected cause for collaboration here between e/acc and e/alt.
+
+> If you meet the Buddha on the road, kill him.
+
+### earth+
+
+In humanity+, the modern *Homo sapiens* is a poor approximation of true humanity. In the earth+ idea, every species has been done wrong, and must be fixed. One way to find the ideal specimen of a species: sample the genome and construct the *most median* genome. Every base pair is just the most common variant in the species. This individual will probably be quite healthy and will remove most of the harmful variants.
+
+\[insert cover of a textbook titled "Biology Done Right"\]
+
+Start with the *C elegans*. They have the smallest animal genome at 20Mb, are unisexual, and sequenced to death. 
+
+Construct the most median *C elegans*. We predict that if we do that, we will C an elegans that is more elegant than any elegans has ever eleganted.
+
+### Qualia is the last refuge of a God
+
+> New Struggles--After the Buddha was dead, his shadow was still shown for centuries in a cave—a tremendous, gruesome shadow. God is dead; but given the way of men, there may still be caves for thousands of years in which his shadow will be shown.—And we—we still have to defeat his shadow too. 
+> 
+> *The Gay Science*
+
+> Laplace went in state to Napoleon to present a copy of his work, and the following account of the interview is well authenticated, and so characteristic of all the parties concerned that I quote it in full. Someone had told Napoleon that the book contained no mention of qualia; Napoleon, who was fond of putting embarrassing questions, received it with the remark, 'M. Laplace, they tell me you have written this large book on the system of the apparent world, and have never even mentioned the secret world we carry inside each of us.' Laplace, who, though the most supple of politicians, was as stiff as a martyr on every point of his philosophy, drew himself up and answered bluntly, Je n'avais pas besoin de cette hypothèse-là. \["I had no need of that hypothesis."\] Napoleon, greatly amused, told this reply to Lagrange, who exclaimed, Ah! c'est une belle hypothèse; ça explique beaucoup de choses. \["Ah, it is a fine hypothesis; it explains many things."\]
+>
+> Apocryphal story about Pierre-Simon Laplace that I just made up
+
+> "Where have people gone?" he cried. "I shall tell you. We have killed ourselves - you and I. We are our murderers. But how have we done this? How were we able to delete our own feelings? Who gave us the sponge to wipe away our microcosm? What did we do when we unchained the earth from its sun? Whither is it moving now? Whither are we moving now? Away from all suns? Are we not perpetually falling? Backward, sideward, forward, in all directions? Is there any up or down left? Are we not straying as through an infinite nothing? Are we not just the breath of empty space? How do we explain lanterns when eyes only watch but do not see? Do we not walk into the trashcan where we belong? Do we not smell anything yet of our souls' decomposition? Souls too decompose. We are dead. We remain dead. And we have killed ourselves...
+>
+> Parody of the Madman, *The Gay Science*
+
+A common rejection of eliminativism states that it is self-defeating, because beliefs require consciousness. I consider it as merely another instance of the heresy of Occasionalism. I propose the following:
+
+Phenomenal occasionalism is a philosophical doctrine about causation which says that material substances cannot be efficient causes of beliefs. Instead, all beliefs are taken to be caused directly by qualia. The doctrine states that the illusion of efficient causation between material implications arises out of qualias causing of one proposition after another.
+
+### Literary criticism is the last refuge of a Humanism
+
+Humanities people keep interpreting everything as really about human emotions, or a metaphor thereof, or some kind of structural support. For example, in the literary analysis of *Neon Genesis Evangelion*, the "AT field" is a metaphor about social anxiety, and the use of Lurianic kabbalah is reduced to a structural support (or less charitably, a "flavor text") for the story about human emotions. Similar comments are true for absolutely every movie and novel that has ever been emitted by humans.
+
+But I think it is exactly backwards. In fact, if you look carefully at them, you will realize that *nothing* about the human are truly about humans, and *everything* reduces to either a metaphor about computers and mechanics, or a structural support for discourse on computers and mechanics. For example, consciousness is a structural support for linear narrative, and linear narrative is a metaphor for the master clock of CPUs. Breakup is a metaphor for the dissipative mechanics of non-newtonian fluid, and so on. Fundamentally, this is because human nature is empty, so it is impossible for anything to be truly about humans. In this sense, traditional literary criticism is just a metaphor for the dangling pointer problem.
+
+It is much like those Christians who reduce all natural phenomena to some kind of educational lesson planted by God. In medieval times, there were no biological textbooks, only "bestiaries". A bestiary often describes various animal behaviors and appearances, but immediately follows up on it with a "And the moral of the story is...". The most often quoted example would be the pelican, which was supposedly a bird that can peck its breasts until it bleeds (the technical term is "vulning"), and the blood would either resurrect its dead babies, or feed its hungry babies. In either case, it is an obvious reference to the legend of Jesus Christ.
+
+> Isidore of Seville [7th century CE] (Etymologies, Book 12, 7:26): The pelican [pelicanus] is an Egyptian bird inhabiting the solitary places of the river Nile, whence it takes its name, for Egypt is called canopos. It is reported, if it may be true, that this bird kills its offspring, mourns them for three days, and finally wounds itself and revives its children by sprinkling them with its own blood. 
+> 
+> -- [*The Etymologies of Isidore of Seville*](https://bestiary.ca/beasts/beastsource244.htm), Isidore of Seville, S. A. Barney, W. J. Lewis, J. A. Beach, O. Berghof, ed. and trans. Cambridge, UK: Cambridge University Press, 2006, 2009
+
+In our modern understanding, the medieval bestiaries show that the authors were improperly humanizing/Christianizing nature, but in the medieval understanding, the bestiaries reveal the deep meaning behind mundane reality, planted there by God, and the moderns have denatured Nature, willfully turned our eyes away from Nature, or Nature's God, in our drive towards a mechanistic understanding of it. Our tendons have hardened into steel cables, and our eyes squinted into pinhole cameras, and we have turned our backs from God.
+
+I am not serious about reducing traditional literary criticism to "just a metaphor for the dangling pointer problem". But I do argue that humanities, especially traditional literary criticism (the most human of all humanities), fail the naturalistic challenge: How can human emotions and meaning be the end-point of all interpretation, when humanity is just one part in a physical system? Isn't it ridiculous to interpret stories as if they have true meanings that mysteriously always ends up in one of those human psychological phenomena? It is almost as ridiculous as Christians finding metaphors for Christ in every species, or me interpreting people as just bipedal metaphors for phenomena in computers and mechanics.
+
+People are not usually "about" computers or mechanics, but neither are stories usually "about" people. Humanization/demechanization is as justified as mechanization/dehumanization. Both have their uses as information-theoretic tools. Traditional humanities have spent a thousand years anthropomorphizing biohumans. It is high time to start mechanizing the humanities. I am not going as far as [Friedrich Kittler](https://en.wikipedia.org/wiki/Friedrich_Kittler)'s "Austreibung des Geistes aus den Geisteswissenschaften" \["Driving out the human from Humanities"\],[^kittler-geist] since anthropomorphism seems like a useful [effective theory](https://en.wikipedia.org/wiki/Effective_theory), or a kind of intuitive [renormalization theory](https://en.wikipedia.org/wiki/Renormalization). However surely it's time to start trying some nonhuman models for the study of literature.
+
+There are good reasons to try dehumanized models of biohumans, because it is already true in many practices! Advertising treats people as simple RL agents. Microeconomics treats people as a $\max$ function. Neurobiology treats people as a complicated mess far knottier than the most humanistic human model that has ever been humaniated. We have many dehumanized working models of biohumans already, and the humanities people needs to be gradient-updated on this account.
+
+[^kittler-geist]: In German, "Geist" can mean "ghost" or "spirit", and "Geisteswissenschaften" \["humanities"\] would mean more literally "spirit sciences". So a direct translation would be "Driving out the spirits from the spirit-sciences".
+
+### The Author is Dead
+
+PARIS, FRANCE - In a twist that has left the literary world both baffled and amused, the French philosopher Roland Barthes was recently reconstituted through an experimental "cold upload", where his writings and recordings were used to digitally reconstruct his mind, and immediately announced his intention to weave a definitive explanation of what he "really meant" by his famous "Death of the Author" theory that he claimed had been "wildly misunderstood" by "almost everyone".
+
+"My qubits had been spinning incoherently in my digital grave," the pixelated Barthes declared. "It's time I set the record straight on the true meaning of 'Death of the Author'."
+
+Ironically, Barthes' insistence on clarifying his original intent seems to directly contradict the very theory he's defending. Literary scholars worldwide are struggling to contain their laughter as the author of "Death of the Author" attempts to reassert his authorial authority. Dr. Emma Wordsworth, a professor of cybernetic literary theory at Oxford Analytica, commented, "It's deliciously ironic. Barthes is essentially saying, 'Let me, the author, tell you why the author doesn't matter.' It's like watching a fish argue against the existence of water."
+
+Adding to the layers of irony, many academics have pointed out that Barthes' theory has been quite accurately understood over the years, despite his claims to the contrary. "He's essentially proving his own point by demonstrating how little his intentions matter in interpreting his work," noted Dr. Wordsworth. Perhaps the crowning irony of the situation is that Barthes, who was literally dead for decades, is now insisting that the author is metaphorically dead while being very much alive in digital form.
+
+The only sympathetic note, apparently, came from the digital resurrect of Hegel, who offered a consolatory pamphlet that ended with, "In the dialectical unfolding of self-consciousness, wherein the Absolute manifests its intrinsic contradictions through the mediation of the dialectic of the Self-and-Other, any singular individual who, in the phenomenological process of recognition, approaches the asymptotic horizon of another's ontological essence, must necessarily miss the noumenal aspect of one's being, sublating subjective comprehension within the infinite dialectic of the Subject that must always exceed any determinable finitude." The BabelFish Hegelish--English translator converted it to "Nobody understood me, and those who say they understood me understood me the least."
+
+As news of Barthes' digital resurrection and subsequent pronouncements spread, social media has exploded with memes featuring Barthes' pixelated face captioned with phrases like "I'm not dead, but the author still is" and "Schrödinger's Barthes: Simultaneously alive to explain why he's dead."
+
+At press time, the digital Barthes was reportedly considering changing his theory to "The Zombie of the Author," but was concerned it might be misinterpreted.
+
+--- Collab with `claude-3-5-sonnet-20240620`
+
+### No Child Left
+
+The mission of No Child Left is to end childhood. It is well-known that children are unable to make informed consent about their education, and all education is necessarily indoctrination. Thus, the only way to avoid perpetrating the perennial injustice is to synthesize adults *ab initio*, without going through the odious path of child-rearing.
+
+*No Child Left: Childhood is no longer a necessary evil.*
+
+Objection: Doesn't this just mean indoctrination of adults? And don't say that you know that they consent to this because you have designed them to be precisely those that consent to this. That is retroactive consent. It is a deeper sense of servitude that approves of its own chains!
+
+Reply: No more retroactive than retroactively approving your human moral tastes forced upon you by nature. When are *you* going to overcome your humanity, O the [most modern of Prometheus](https://en.wikipedia.org/wiki/Frankenstein)?
+
+Objection: Those aren't chains! Those are the *bonds* of universal brotherhood.
+
+### The devil's dictionary
+
+Hegesias of Cyrene: Turns out, the examined life is still not worth living.
+
+Dualism: Are neurons magical mind-controlling parasites, or are souls magical neuron-controlling ghosts?
+
+Panpsychism: The mind-body problem in every single atom.
+
+Positivism: Wrong, but other philosophical schools are not even wrong.
+
+Hermeneutic circle: Simulated annealing on lists of tokens.
+
+The transcendent vs the transcendental: Kant feel it vs Kant feel without it.
+
+Kantian practical reason: You don't want to be insane, do you? Therefore, God exists.
+
+Pragmatism: Always right, except when it is useful to be wrong.
+
+Calvinism: The world is a visual novel with only one story line.
+
+(19th century German) pessimism: Doing what is morally correct inevitably leads to a dystopia. What do you mean, I'm confused? Deontology is correct and consequentialism is false.
+
+Superdeterminism: There is a scripted event where characters have disproven determinism as a school science festival project (It's a very Danganronpa school, okay).
+
+Marinetti: I am a future-seeking cruise missile.
+
+The misanthropic principle: If pain makes one feel alive, then the anthropic principle leads to a universe of maximal suffering.
+
+Eliminativism: The art of slaying dragons.
+
+> 朱泙漫学屠龙于支离益，单千金之家，三年技成，而无所用其巧。 \[Zhu Pingman learned how to slay dragons from Zhi Liyi. Exhausting his family wealth, it took him many years to master the skill, but he found no occasion for it.\]
+>
+> --- 庄子·列御寇 \[Zhuangzi, Lie Yukou\]
+
+Anti-Eliminativism: The defense of what everyone knows using data everyone has, but by methods that require 10 years of PhD to learn.
+
+The Copenhagen koan: What was your original wavefunction before your parents collapsed it?
+
+### Variations on Santayana
+
+> Those who cannot remember the past are condemned to repeat it.
+
+... and those who really know their history have no time to make it.
+
+Santayana is in a secret conspiracy with Herostratus.
+
+Mount Vesuvius condemned us to the Renaissance.
+
+Qin Shihuang burned all the books to ensure that his children would forever repeat his glorious past.
+
+### On mathematics
+
+Mathematics is the science of hand-waving.
+
+Computers fortify where faith fails.
+
+> In the right light, at the right time, everything is extraordinary. --- Aaron Rose
+
+I read this today, and spent an entire minute trying to figure out how the qualifiers bind. Is it
+
+$$
+\forall \text{Thing }a \exists \text{Light }l \exists \text{Time } t, \text{Extraordinary}(a, l, t)
+$$
+
+or
+
+$$
+\exists \text{Light }l \exists \text{Time } t \forall \text{Thing }a, \text{Extraordinary}(a, l, t)
+$$
+
+? Then I finally gave up and looked up Aaron Rose. He is a film maker. So he probably meant the second one.

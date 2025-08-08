@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Yuxi on the Wired - Docs</title>
+<link>https://yuxi.ml/docs/</link>
+<atom:link href="https://yuxi.ml/docs/index.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website of Yuxi Liu</description>
+<language>en</language>
+<image>
+<url>https://yuxi.ml/img/blog icon.jpg</url>
+<title>Yuxi on the Wired - Docs</title>
+<link>https://yuxi.ml/docs/</link>
+</image>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Thu, 27 Feb 2025 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>The Muon Anthology</title>
+  <dc:creator>Jianlin Su</dc:creator>
+  <link>https://yuxi.ml/docs/posts/2025-02-27-muon/</link>
+  <description><![CDATA[ Translation of several blogposts by Su Jianlin, describing the intuition behind the development of Muon. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <category>translation</category>
+  <guid>https://yuxi.ml/docs/posts/2025-02-27-muon/</guid>
+  <pubDate>Thu, 27 Feb 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The ultimate tug-of-war between cache and capacity</title>
+  <dc:creator>Jianlin Su</dc:creator>
+  <link>https://yuxi.ml/docs/posts/2024-05-13-multi-latent-attention/</link>
+  <description><![CDATA[ Translation of a blogpost by the originator of RoPE, describing the GPU-based reasons that guided the design choices of multihead latent attention. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <category>translation</category>
+  <guid>https://yuxi.ml/docs/posts/2024-05-13-multi-latent-attention/</guid>
+  <pubDate>Mon, 13 May 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The Bitter Lesson</title>
+  <dc:creator>Richard Sutton</dc:creator>
+  <link>https://yuxi.ml/docs/posts/2019-richard-sutton/</link>
+  <description><![CDATA[ Only search and learning scales arbitrarily. ]]></description>
+  <category>AI</category>
+  <category>history</category>
+  <guid>https://yuxi.ml/docs/posts/2019-richard-sutton/</guid>
+  <pubDate>Wed, 13 Mar 2019 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Commentaries and essays by Liu Cixin</title>
+  <dc:creator>Liu Cixin</dc:creator>
+  <link>https://yuxi.ml/docs/posts/liu-cixin-anthology/</link>
+  <description><![CDATA[ The world, the universe, and sci-fi, as he sees it. Translated from the anthology The Best Earth in the Worst Universe (2015) and his blog. ]]></description>
+  <category>China</category>
+  <category>fun</category>
+  <category>scifi</category>
+  <category>translation</category>
+  <guid>https://yuxi.ml/docs/posts/liu-cixin-anthology/</guid>
+  <pubDate>Thu, 01 Jan 2015 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Is a singularity just around the corner?</title>
+  <dc:creator>Robin Hanson</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1998-robin-hanson/</link>
+  <description><![CDATA[ Robin Hanson’s 1998 essay. Modeling economic growth since 10,000 BC, he predicted that the singularity may arrive around 2150. ]]></description>
+  <category>economics</category>
+  <guid>https://yuxi.ml/docs/posts/1998-robin-hanson/</guid>
+  <pubDate>Mon, 01 Jun 1998 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>When will computer hardware match the human brain?</title>
+  <dc:creator>Hans Moravec</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1998-hans-moravec/</link>
+  <description><![CDATA[ Hans Moravec’s 1998 essay, forecasting that hardware for AGI will be available in the 2020s. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <guid>https://yuxi.ml/docs/posts/1998-hans-moravec/</guid>
+  <pubDate>Sun, 01 Mar 1998 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The Coming Technological Singularity</title>
+  <dc:creator>Vernor Vinge</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1993-vernor-vinge/</link>
+  <description><![CDATA[ Transcript of Vernor Vinge’s 1993 presentation on the singularity, predicting the singularity in the interval 2005–2030. ]]></description>
+  <category>AI</category>
+  <guid>https://yuxi.ml/docs/posts/1993-vernor-vinge/</guid>
+  <pubDate>Wed, 10 Mar 1993 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Pigs in Cyberspace</title>
+  <dc:creator>Hans Moravec</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1992-hans-moravec/</link>
+  <description><![CDATA[ Hans Moravec predicts that the coming cyberspace would be dominated by cyberminds alien and incomprehensible to human understanding. ]]></description>
+  <category>AI</category>
+  <guid>https://yuxi.ml/docs/posts/1992-hans-moravec/</guid>
+  <pubDate>Wed, 01 Jan 1992 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The 21st Century Artilect</title>
+  <dc:creator>Hugo de Garis</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1989-hugo-de-garis/</link>
+  <description><![CDATA[ Hugo de Garis’ publication of the Terran vs Cosmists Artilect War scenario. He would add the ‘Cyborgian’ camp later, and the ‘gigadeath’ prediction, but otherwise repeat the same scenario. ]]></description>
+  <category>AI</category>
+  <guid>https://yuxi.ml/docs/posts/1989-hugo-de-garis/</guid>
+  <pubDate>Mon, 01 May 1989 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The time scale of artificial intelligence</title>
+  <dc:creator>Ray Solomonoff</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1985-ray-solomonoff/</link>
+  <description><![CDATA[ Ray Solomonoff’s 1985 essay on forecasting the progress towards AGI, reaching AGI around 2022–2076. ]]></description>
+  <category>AI</category>
+  <guid>https://yuxi.ml/docs/posts/1985-ray-solomonoff/</guid>
+  <pubDate>Sat, 01 Jun 1985 07:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

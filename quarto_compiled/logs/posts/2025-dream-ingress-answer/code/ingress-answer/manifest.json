@@ -1,0 +1,16 @@
+{
+    "name": "Dream Context Menu",
+    "description": "Adds the Ingress Answer & Experimental: Doc here menu items",
+    "version": "0.1",
+    "manifest_version": 3,
+    "permissions": [
+      "contextMenus",
+      "scripting",
+      "activeTab",
+      "debugger"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  

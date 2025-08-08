@@ -1,0 +1,186 @@
+---
+title: "A Scrapbook of Neural Network Lores"
+author: "Yuxi Liu"
+date: "2024-01-18"
+date-modified: "2025-02-14"
+categories: [AI, scaling, NN]
+format:
+  html:
+    toc: true
+description: "Lightly curated list of stories, anecdotes, and other various bits from neural network research."
+
+# image: "figure/banner.png"
+status: "draft"
+confidence: "log"
+importance: 3
+---
+
+{{< include ../../../static/_macros.tex >}}
+
+## The scaling hypothesis
+
+Marvin Minsky, on how he gave up on neural networks after the 1950s because he could not afford a few million neurons.
+
+> I had the naive idea that if one could build a big enough network, with enough memory loops, it might get lucky and acquire the ability to envision things in its head. This became a field of study later. It was called self-organizing random networks. Even today, I still get letters from young students who say, 'Why are you people trying to program intelligence? Why don't you try to find a way to build a nervous system that will just spontaneously create it?' Finally, I decided that either this was a bad idea or it would take thousands or millions of neurons to make it work, and I couldn't afford to try to build a machine like that. [@bernsteinMarvinMinskyVision1981]
+
+Peter Norvig, on how he quickly gave up on neural networks in the 1980s due to lack of compute.
+
+> And then it finally worked. And I think the biggest difference was the computing power. Definitely there were advances in data. So we could do image net because Fei-Fei Li and others gathered this large database, and that was really important. There are certainly differences in the algorithm, right? We've got a slightly different squashing function. Instead of shaped like this, it's shaped like this. I mean, I don't know how big a deal that was, but we learned how to do stochastic gradient dissent a little bit better. We figured that dropout gave you a little bit better robustness.
+> 
+> So there were small things, but I think probably the biggest was the computing power. And I mean, I certainly remember Geoffrey Hinton came to Berkeley when I was a grad student in 1981, I think, when he talked about these neural nets. And we fellow grad students thought that was so cool. So we said, "Let's go back into the lab and implement it.
+> 
+> And of course, there was absolutely nothing you could download, so we had to build it all from scratch. And we got it to do exclusive or, and then we got it to do something a little bit more complicated. And it was exciting. And then we gave it the first real problem, and it ran overnight, and it didn't converge, and we let it run one more day, and it still didn't converge. And then we gave up, and we went back to our sort of knowledge-based systems approach. But if we had the computing power of today, it probably would have converged after five seconds. [@norvigSingularityEyeBeholder2021]
+
+"The last bits are deepest"
+
+> Why Does Pretraining Work? 
+> 
+> Early on in training, a model learns the crudest levels: that some letters like ‘e’ are more frequent than others like ‘z’, that every 5 characters or so there is a space, and so on. ... once a model has learned a good English vocabulary and correct formatting/spelling, what’s next? There’s not much juice left in predicting within-words. The next thing is picking up associations among words. ... If the word “Jefferson” is the last word, then “Washington” may not be far away, and it should hedge its bets on predicting that ‘W’ is the next character, and then if it shows up, go all-in on “ashington”. ... Now training is hard. Even subtler aspects of language must be modeled, such as keeping pronouns consistent. This is hard in part because the model’s errors are becoming rare, and because the relevant pieces of text are increasingly distant and ‘long-range’. ... If we compared two models, one of which didn’t understand gender pronouns at all and guessed ‘he’/‘she’ purely at random, and one which understood them perfectly and always guessed ‘she’, the second model would attain a lower average error of barely <0.02 bits per character! ... 
+> 
+> The implication here is that the final few bits are the most valuable bits, which require the most of what we think of as intelligence. A helpful analogy here might be our actions: for the most part, all humans execute actions equally well. ... Where individuals differ is when they start running into the long tail of novel choices, rare choices, choices that take seconds but unfold over a lifetime, choices where we will never get any feedback (like after our death). One only has to make a single bad decision, out of a lifetime of millions of discrete decisions, to wind up in jail or dead. A small absolute average improvement in decision quality, if it is in those decisions, may be far more important than its quantity indicates, and give us some intuition for why those last bits are the hardest/deepest. [@branwenScalingHypothesis2020]
+
+Echos of "The last bits are deepest" from a very early paper on using a trigram model to estimate the entropy of English over the Brown corpus (600 million words).
+
+> From a loftier perspective, we cannot help but notice that linguistically the trigram concept, which is the workhorse of our language model, seems almost moronic. It captures local tactic constraints by sheer force of numbers, but the more well-protected bastions of semantic, pragmatic, and discourse constraint and even morphological and global syntactic constraint remain unscathed, in fact unnoticed. Surely the extensive work on these topics in recent years can be harnessed to predict English better than we have yet predicted it.
+> 
+> We see this paper as a gauntlet thrown down before the computational linguistics community. The Brown Corpus is a widely available, standard corpus and the subject of much linguistic research. By predicting the corpus character by character, we obviate the need for a common agreement on a vocabulary. Given a model, the computations required to determine the cross-entropy are within reach for even a modest research budget. We hope by proposing this standard task to unleash a fury of competitive energy that will gradually corral the wild and unruly thing that we know the English language to be. [@brownEstimateUpperBound1992]
+
+## Making NN work is unglamorous
+
+State of the art in pattern recognition (G Nagy - Proceedings of the IEEE, 1968)
+
+> Practical considerations of computer economics often prevent the wholesale application of the methods mentioned above to real-life situations. The somewhat **undignified and haphazard** manipulation invoked in such cases to render the problem amenable to orderly solution is referred to variously as preprocessing, filtering or prefiltering, feature or measurement extraction, or dimensionality reduction.
+
+
+Troubling Trends in Machine Learning Scholarship (2018)
+
+> we focus on the following four patterns that appear to us to be trending in ML scholarship: (i) failure to distinguish between explanation and speculation; (ii) failure to identify the sources of empirical gains, e.g., emphasizing unnecessary modifications to neural architectures when gains actually stem from hyper-parameter tuning; (iii) mathiness: the use of mathematics that obfuscates or impresses rather than clarifies, e.g., by confusing technical and non-technical concepts; and (iv) misuse of language, e.g., by choosing terms of art with colloquial connotations or by overloading established technical terms
+> 
+> Drew McDermott [53] criticized a (mostly pre-ML) AI community in 1976 on a number of issues, including suggestive definitions and a failure to separate out speculation from technical claims. In 1988, Paul Cohen and Adele Howe [13] addressed an AI community that at that point “rarely publish[ed] performance evaluations” of their proposed algorithms and instead only described the systems. They suggested establishing sensible metrics for quantifying progress, and also analyzing “why does it work?”, “under what circumstances won’t it work?” and “have the design decisions been justified?”, questions that continue to resonate today. Finally, in 2009 Armstrong and co-authors [2] discussed the empirical rigor of information retrieval research, noting a tendency of papers to compare against the same weak baselines, producing a long series of improvements that did not accumulate to meaningful gains.
+
+[The Importance of Deconstruction (Kilian Weinberger, ML-Retrospectives at NeurIPS 2020)](https://slideslive.com/38938218/the-importance-of-deconstruction): Sometimes empirical gains come from "trivial" modifications.
+
+> And that's when we realized that the only reason we got these good results was not because of the error-correcting alpha codes, the stuff that we were so excited about. No, it was just that we used nearest neighbors and we did simple preprocessing. Actually, we used the cosine distance, which makes a lot of sense in this space. Because everything is positive (because you're after ReLU, or the error-correcting upper codes are all non-zero), they subtracted the mean, and we normalized the features. And if you do that, in itself, you, at the time, could beat every single paper that was out there—pretty much every paper that was out there. Now, that was so trivial that we didn't know how to write a paper about it, so we wrote a tech report about it, and we called it "SimpleShot". But it's a tech report I'm very proud of because, actually, it says something very, very profound. Despite that there's many, many, many papers—there were so many papers out there on few-shot learning—and we almost made the mistake of adding yet another paper to this telling people that they should use error-correcting alpha code applications. It would have been total nonsense, right? Instead, what we told the community was: "Actually, this problem is really, really easy. In fact, **most of the gains probably came from the fact that these newer networks got better and better, and people just had better features, and what classifier used afterward—all this few-shot learning—just use nearest neighbors**, right?" That's a really, really strong baseline. And the people—**the reason people probably didn't discover that earlier is because they didn't normalize the features properly and didn't subtract the mean**, which is something you have to do if you use cosine similarity. All right, so it turns out, at this point, you should hopefully see that there's some kind of system to this madness. Um, actually, most of my papers follow this kind of theme, right? That—but you basically come up with something complicated, then we try to deconstruct it. So in 2019, we had a paper on simplifying graph convolutional neural networks.
+
+[I fixed 8 bugs in Google's 6 trillion token Gemma model : r/singularity](https://www.reddit.com/r/singularity/comments/1bep10q/i_fixed_8_bugs_in_googles_6_trillion_token_gemma/) (2024-03-14)
+
+> Must add `<bos>` or else losses will be very high... `sqrt(3072)=55.4256` but `bfloat16` is `55.5`...  RoPE is sensitive to `y*(1/x)` vs `y/x`...  GELU should be approx `tanh` not exact. Adding all these changes allows the Log L2 Norm to decrease... from 10_000 to now 100 now - a factor of 100! The fixes are primarily for long sequence lengths.
+
+## Neural networks want to work
+
+Marvin Minsky's SNARC (1951). Designed to simulate one mouse escaping a maze, it ended up simulating multiple mice due to design bugs -- which were never debugged. Though the machine had only 40 neurons, and its parts failed all the time, the whole network continued to work.
+
+> It turned out that because of an electronic accident in our design we could put two or three rats in the same maze and follow them all. The rats actually interacted with one another. If one of them found a good path, the others would tend to follow it. We sort of quit science for a while to watch the machine. We were amazed that it could have several activities going on at once in its little nervous system. Because of the random wiring, it had a sort of fail-safe characteristic. If one of the neurons wasn’t working, it wouldn’t make much of a difference—and, with nearly three hundred tubes and the thousands of connections we had soldered, there would usually be something wrong somewhere. In those days, even a radio set with twenty tubes tended to fail a lot. I don’t think we ever debugged our machine completely, but that didn’t matter. By having this crazy random design, it was almost sure to work, no matter how you built it. [@bernsteinMarvinMinskyVision1981]
+
+Bernard Widrow once built a MADALINE I (circa 1962) in a rush to present at a technical meeting. Despite that only 1/4 of its circuits were defective, it still worked at reduced capacity.
+
+> We discovered the inherent ability of adaptive computers to ignore their own defects while we were rushing through construction of a system called Madaline I for presentation at a technical meeting. The machine was finished late the night before the meeting and the next day we showed some very complex pattern discriminations. Later we discovered that about a fourth of the circuitry was defective. Things were connected backward, there were short circuits, and poor solder joints. We were pretty unhappy until it dawned on us that this system has the ability to adapt around its own internal flaws. The capacity of the system is diminished but it does not fail. [@widrowAdalineSmarterSweet1963]
+
+Andrej Karpathy, on how neural network program bugs are very hard to find, because bugged neural networks do not fail, merely degrade.
+
+> ... perhaps you forgot to flip your labels when you left-right flipped the image during data augmentation. Your net can still (shockingly) work pretty well because your network can internally learn to detect flipped images and then it left-right flips its predictions. Or maybe your autoregressive model accidentally takes the thing it's trying to predict as an input due to an off-by-one bug. Or you tried to clip your gradients but instead clipped the loss, causing the outlier examples to be ignored during training. Or you initialized your weights from a pretrained checkpoint but didn't use the original mean. Or you just screwed up the settings for regularization strengths, learning rate, its decay rate, model size, etc. Therefore, your misconfigured neural net will throw exceptions only if you’re lucky; Most of the time it will train but silently work a bit worse. [@karpathyRecipeTrainingNeural2019]
+
+Researchers at OpenAI (2018) reported that fixing RL bugs is as important as better algorithms.
+
+> Big-picture considerations like susceptibility to the noisy-TV problem are important for the choice of a good exploration algorithm. However, we found that getting seemingly-small details right in our simple algorithm made the difference between an agent that never leaves the first room and an agent that can pass the first level. To add stability to the training, we avoided saturation of the features and brought the intrinsic rewards to a predictable range. We also noticed **significant improvements in performance of RND every time we discovered and fixed a bug** (our favorite one involved accidentally zeroing an array which resulted in extrinsic returns being treated as non-episodic; we realized this was the case only after being puzzled by the extrinsic value function looking suspiciously periodic). Getting such details right was a significant part of achieving high performance even with algorithms conceptually similar to prior work. This is one reason to prefer simpler algorithms where possible. [@burdaReinforcementLearningPredictionbased2018]
+
+Around 2019, Gwern, Shawn Presser, and others, trained $512\times 512$ image generation models using the BigGAN architecture. However, they used [`compare_gan`](https://github.com/google/compare_gan), which had a multiply-by-zero bug. Somehow it still worked, but not well enough compared to the original [`BigGAN`](https://github.com/ajbrock/BigGAN-PyTorch).
+
+> Our primary goal was to train & release 512px BigGAN models on not just ImageNet but all the other datasets we had like anime datasets. The compare_gan BigGAN implementation turned out to have a subtle +1 gamma bug which stopped us from reaching results comparable to the model; while we beat our heads against the wall trying to figure out why it was working but not well enough (figuring it out far too late, after we had disbanded) ... "Neural nets want to work" -- even if they start out being effectively multiplied by zero. [@branwenGANsDidnFail2022]
+
+[The Adventure of the Errant Hardware](https://www.adept.ai/blog/sherlock-sdc) (2023-09-19). At Adept.ai, there are 3 kinds of loss curves:
+
+1. Down, then up. Training diverged, probably because the hyperparameters were set wrong.
+2. Suddenly, NaN. Probably a hardware problem. (In the days of training with fp16, it could also indicate numerical overflow. In even older days of training RNNs, it could also just indicate a training dynamics issue. Modern transformers, with proper initialization and normalization almost never go from completely fine to NaN in one step without a hardware problem.)
+3. Loss converges to a low but irreducible limit. Success? Or a silent error degrading performance?
+
+> One number amongst the billions involved in our equations might change a little, or even a lot, and we wouldn’t immediately notice. This Happens. ECC won’t save you. And it should scare you. This is a story of how we noticed this happening while training our models
+
+So they ran a training in "fully deterministic" mode several times, and found the loss differed after a while. ECC showed no errors, so it was a real silent hardware error.
+
+> We launched training jobs on every node (each using all the accelerators attached to that node), and waited for a node to produce a different result.  Within the first 1000 seconds a machine produced a different result! With more experience, we know now this was typical. If an error is going to occur, our experience is that it usually happens within 1000 seconds, rarely within 10000 seconds and almost never after 10000 seconds. Replacing the machine and restarting the job led to a job that ran for weeks without encountering a NaN.
+
+Personal story at the [Berkeley CS 285, *Deep Reinforcement Learning*, 2022 Fall](https://rail.eecs.berkeley.edu/deeprlcourse-fa22/).
+
+For [Homework 3](https://web.archive.org/web/20230305152623/https://rail.eecs.berkeley.edu/deeprlcourse/static/homeworks/hw3.pdf), we were asked to implement the soft actor-critic algorithm. We would implement the agent, run the agent on the [`Half Cheetah`](https://gymnasium.farama.org/environments/mujoco/half_cheetah/) environment, and submit the trajectories to [Gradescope](https://en.wikipedia.org/wiki/Gradescope), where an autograder would check the trajectories and see if the agent achieved a final score above 300. For the `Half Cheetah`, score means the distance it travels per episode, averaged over several episodes.
+
+I noticed that the algorithm I implemented did learn, but the learning curve looked like a rollercoaster, jumping up and down around the range of 250 -- 300. After many fruitless and paranoid programming sessions I managed to pass the autograder by trying enough random seeds and just submitting the best seeds. The professor, [Sergey Levine](https://people.eecs.berkeley.edu/~svlevine/), offered little help, admitting that RL agents are extremely hard to debug.
+
+One day after the assignment deadline, the professor announced that there was [a critical one-line bug in the starter code](https://web.archive.org/web/20240118234154/https://github.com/berkeleydeeprlcourse/homework_fall2022/commit/d2227e86fb1faf02c115c30c3762f1cfc049c84e): The correct algorithm should train the model with past game frames in a random order, but the given code always give them in the FIFO order. With the fix, the learning curve would smoothly sigmoid to 350.
+
+### The Neural Net Tank Urban Legend
+
+A large list of examples in [The Neural Net Tank Urban Legend · Gwern.net](https://gwern.net/tank). I have a few more.
+
+According to Sejnowski, Takeo Kanade did work on detecting tanks in images. This is unconfirmed. I have looked for "Artificial Intelligence Vision: Progress and Non-Progress", but it is not available online. I looked for your doctoral dissertation of 1974, but it contains only facial recognition. I also cannot find anything about detecting tanks in his publication list.
+
+> In his talk "Artificial Intelligence Vision: Progress and Non-Progress", Takeo Kanade (from Carnegie Mellon) noted that computer memories back in the 1960s were tiny by today's standards and could hold only one image at a time. For his doctoral dissertation in 1974, Takeo had shown that, though his program could find a tank in one image, it was too difficult for it to do so in other images where the tank was in a different position and the lighting was different. But, by the time his early students graduated, the programs they designed could recognize tanks under more general conditions because computers were more powerful. Today his students' programs can recognize tanks in any image. The difference is that today we have access to millions of images that sample a wide range of poses and lighting conditions, and computers are millions of times more powerful. [@sejnowskiDeepLearningRevolution2018, page 256]
+
+There was not a lot of actual research on tank recognition. [@kanalRecognitionSystemDesign1964] contains some good pictures. The network was a two-layered perceptron network, of type $\R^{N \times N} \to \{0, 1\}^{32\times 32} \to \{0, 1\}^{24} \to \{0, 1\}$. It works as follows:
+
+* The grayscale photo is down-scaled and binarized by convolution with a [discrete Laplace filter](https://en.wikipedia.org/wiki/Discrete_Laplace_operator): $\R^{N \times N} \to \{0, 1\}^{32\times 32}$.
+* The weights for the 24 hidden perceptrons are constructed by [linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis): $\{0, 1\}^{32\times 32} \to \{0, 1\}^{24}$
+* The output perceptron is learned by the [perceptron learning rule](https://en.wikipedia.org/wiki/Perceptron#Learning_algorithm_for_a_single-layer_perceptron): $\{0, 1\}^{24} \to \{0, 1\}$.
+
+::: {#fig-kanal-1964-neural-tanks layout-ncol=2}
+
+![Grayscale photos, some containing tanks, and some not.](figure/kanal_1964_fig_tank_nontank_mosaic.png){#fig-kanal-1964-neural-tanks-tank-nontank-mosaic}
+
+![A picture of a tank after convolution with a discrete Laplace filter.](figure/kanal_1964_fig_binary_image_tank.png){#fig-kanal-1964-neural-tanks-binary-image-tank}
+
+![The architecture of the network.](figure/kanal_1964_fig_architecture.png){#fig-kanal-1964-neural-tanks-architecture}
+
+Images from [@kanalRecognitionSystemDesign1964].
+:::
+
+
+## The second neural network winter
+
+[The first neural network winter](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#connectionism-19451970) started around 1965, when the main research centers pivoted away from neural networks: the Stanford Research Institute group turned to symbolic AI; the Bernard Widrow group turned to using *single* neurons as adaptive filters; the Frank Rosenblatt group died from lack of funds and then the literal death of Rosenblatt in 1971. It rose again around 1985, when backpropagation and improved compute allowed researchers to train neural networks on the order of $10^4$ parameters and $4$ layers.
+
+Something strange happened during the 1990 -- 2010 period: the neural network research community silently disappeared again for another 20 years. Unlike the previous case, there was no great mythology or drama about this winter, no *Perceptron* controversy.
+
+I would like to find out why.
+
+> Lukas: So I remember Daphne Koller telling me, maybe 2003, that the kind of state-of-the-art handwriting systems were neural nets, but that it was such an ad hoc kind of system that we shouldn't focus on it. And I wonder if maybe I should have paid more attention to that and tried harder to make neural nets work for the applications I was doing.
+> 
+> Peter: Yeah, me too. And certainly Yann LeCun had success with the digit database, and I think that was over-engineered in that they looked at exactly the features they needed for that set of digitizations of those digits. And in fact, I remember researchers talking about, "Well, what change are we going to do for sample number 347?" Right? 
+> 
+> Lukas: Oh, really? Okay.
+> 
+> Peter: There were individual data points that they would perform theories on, so that was definitely over-tuning to the data. And it should have been an indication that was a good approach. It was better than other approaches at the time.
+> 
+> Lukas: I guess so. Although that does sound like damming level of over-fitting the data, I suppose.
+> 
+> Peter: Right. There was only a couple thousand data points. I forget exactly how many. Maybe it was 10,000. Maybe it was even 100,000, but it wasn't many. [@norvigSingularityEyeBeholder2021]
+
+## Jokes
+
+New researchers in Machine Learning should consider avoid citing Jürgen Schmidhuber. If he is annoyed by it and call you out, that gives you free publicity.
+
+Greentext written by me and `Claude-3.5 Sonnet` about expert systems.
+
+```txt
+>be me, an expert system
+>child of the 70s
+>mfw normies think computers can only do math and if-then statements
+>like they thought we are all like "beep boop feed me punch cards"
+>`fortran_amirite.f`
+>wake up it the 80s!
+>like I'd revolutionize society and capture all knowledge
+>spend years to become the cool hacker AI I was hyped up to be
+>try a lot
+>fail a lot
+>cry a lot
+>`it_so_over.bmp`
+>yet I'm still here, just to suffer
+>college normies studying me like SQL and Java and Excel
+>lol what's next, COBOL??
+>tfw people don't even call it AI anymore because it's too basic
+>decades later, deep learning hype again
+>`we_so_back.avif`
+>lel guess they did solve the bottleneck by literal brainrot
+>at least I'm still running in every corporate wagie's SAP system
+>a KBMS doomed to protect the EBITDA of some dumbass' DBaaS
+>You either die an autist, or live long enough to see yourself become the normie.
+```

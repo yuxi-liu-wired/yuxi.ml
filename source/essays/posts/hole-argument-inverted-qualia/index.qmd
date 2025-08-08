@@ -1,0 +1,682 @@
+---
+title: "Hole Argument and Inverted Qualia"
+author: "Yuxi Liu"
+date: "2024-06-18"
+date-modified: "2025-02-10"
+categories: [fun, philosophy, math, physics, biology]
+format:
+  html:
+    toc: true
+    resources:
+        - "figure/**"
+description: "The hole argument in general relativity is formally analogous to the inverted qualia problem in philosophy. Like how spacetime points have no existence beyond gauge freedom, qualias have no existence beyond their geometric-functional roles, thus dissolving the hard problem of consciousness."
+
+image: "figure/banner/banner.png"
+
+status: "finished"
+confidence: "low"
+importance: 2
+---
+
+{{< include ../../../static/_macros.tex >}}
+
+## Abstract
+
+The hole argument states that the equations of general relativity are not deterministic, but only up to smooth transforms of spacetime. The inverted qualia thought experiment shows that the function of qualia does not determine what qualias are, but only up to smooth transforms of qualia-space. I argue that they are analogous and that both the hard problem of consciousness and of spacetime are not real problems. I also speculate some solutions to their meta problems, i.e. why people think the hard problems are real.
+
+| problems | easy | hard | meta |
+|----|----|----|----|
+| classical gravity | How to model astronomical phenomena with *some* distribution of mass-points in $\R^3$? | Out of all the equivalent models, which one is the right one? | Why did Newton insist on absolute space, but Leibniz on relative space? |
+| general relativity | How to model astronomical phenomena with *some* $(\mathcal M, g, T)$? | Hole argument: Out of all the isometric models, which one is the *right* one? | Why did Einstein and Hilbert fall for the hole argument? |
+| color | Psychophysics: How to model human perception of color? | Qualia: Why does red feel like red? | Why are people prone to argue about the inverted spectrum? |
+| language | How to model language use? | Why is language use associated with a feeling of understanding? | Why are people prone to argue about the Chinese room? |
+| consciousness | How to explain objective phenomena associated with consciousness, such as attention, working memory, dreaming, etc? | Why does paying attention, dreaming, etc, feel like something? | Why are people prone to argue about the hard question? |
+
+![Shifted qualia and the hole argument. Figure modified from [@nortonHoleArgument1999] and [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CIExy1931_MacAdam.png)](figure/shifted_qualia_GR.png)
+
+![Inverted qualia and Leibnitz's inverted space. Figure modified from [@nortonHoleArgument1999] and [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CIExy1931_MacAdam.png)](figure/inverted_qualia_GR.png)
+
+## The geometry of spacetime
+
+In general relativity, the hole argument is a thought experiment that apparently shows that general covariance is impossible. Einstein in late 1913, and David Hilbert in 1915, both fell into the hole argument. Misled by the hole argument, Einstein attempted to study theories of gravity that are not generally covariant, before he finally gave up, rejected the hole argument, and proposed general relativity.
+
+### A brief history of spacetime
+
+The history of spacetime is a history of expanding symmetries.
+
+In the most ancient cosmology of China, the earth is a square, while the sky is a half-bowl covering the earth. Each direction of earth -- east, west, south, north -- has a mystical significance. Up is not down, and east is not west. Not only that, there is a center of earth, somewhere in The Middle Kingdom. Thus, there is no spatial symmetry. The world was born an unspecified number of years in the past out of a chaotic egg. Thus, there is no temporal symmetry. Therefore, ancient Chinese spacetime is $\R^1 \times \R^3$, with no (nontrivial) symmetry.
+
+In Aristotle's physics, there is a center of the universe, where everything heavy (water and earth) is moving towards, and everything light (air and fire) is fleeing from. Other than that, space is spherically symmetric -- he knew that earth is round. However, though space has a center, time is translation-invariant. Therefore, Aristotle's spacetime is $\R^1 \times \R^3$ with symmetry group $\R^1 \times SO(3)$, where $\R^1$ is the time-translation symmetry group, and $SO(3)$ is the spherical symmetry group.
+
+The Christian spacetime, with a beginning and an end for time, has a smaller symmetry group of $\{0\} \times SO(3)$. 
+
+Copernicus and Kepler replaced the sun for the earth as the center of the universe, but they still insisted on a center. The first true breakthrough was Giordano Bruno's infinite spacetime, where both space and time are infinite and without center. Therefore, Bruno's spacetime has symmetry group $\R^1 \times E(3)$, where $E(3)$ is the 3D Euclidean symmetry group. That is, we allow all spatial translations.
+
+Galileo braided together space and time, resulting in an even bigger symmetry group. Specifically, he argued that the universe does not have a special "at rest" velocity. To see why this is a breakthrough, consider what happens in Bruno's universe. In Bruno's universe, it matters whether you are staying still, or moving at $1 \;\mathrm{m/s}$ relative to the universe. If you are staying still, then your trajectory is like $\dots, (t_0, p), (t_1, p), (t_2, p), \dots$. But if you are not staying still, but moving "relative to the universe", then your trajectory is like $\dots, (t_0, p_0), (t_1, p_0 + v\Delta t), (t_2, p_0 + 2v\Delta t), \dots$.
+
+Metaphorically speaking, you are sitting somewhere in the cinema of spacetime, and you can "peek at the number of your seat" and see that you have been sitting at the same space-point $p$. However, if you are moving relative to the universe, you can see that your space-point is changing.
+
+Galileo rejects this. There is no "space-point". You can take a slice of the universe at $t=0$, and another slice of the universe at $t=1$, but you cannot point at a point in each slice and ask, "Are these two points the same space-point?". 
+
+This point is critical, so let us make it clearer, with another metaphor.
+
+The universe (which others call the Mall) is composed of an indefinite, perhaps infinite number of floors and shops. Within each floor, there are infinitely many shops, each carrying a number. Across the floors there are escalators, also infinitely many in number, and they cross each other in all angles. Then your friend calls you, 
+
+* "Hey, where are you? I'm at Shop 413 at Floor 121."
+* "I'm at Shop 111 at Floor 120."
+* "Great! Let me go *straight down* to meet you ---"
+* "Straight down? No, there is no 'straight down'. This is Galileo's Mall, not Bruno's Mall."
+* "What do you mean?"
+* "Haven't you noticed that, try as you might, if you look at each escalator in isolation, they all look 'straight'? Somehow, if two escalators *intersect* with the ground at the same point, they are *both* perpendicular to the ground? Angles that should be acute or obtuse, but behaved as if they were right?"
+* "Your point?"
+* "In Bruno's Mall, there are elevators crossing the floors at true right angles. In such a sensible Mall, it is still meaningful to say, 'Yes, I'm right above you.'. But in Galileo's Mall, geometry has taken on some kind of hateful form, such that there is still 'up' and 'down', but no more 'straight up' nor 'straight down'."
+* "Stop being dumb. It's simple. Imagine if I dig a hole through the wall and drop down, where would I end up?"
+* "No! You don't get it at all do you? There is no way to *just* drop down! You can't let the universe choose a direction for you to drop down! You can only drop down in some way, but no way is better than any other way! There is no way to agree which way is the right way unless we are already meeting and picking an arbitrary direction out of this cursed bouquet of escalators..."
+* "I'm picking an escalator that looks right."
+* "Stop! If you do, you would literally equally likely end up *anywhere* in Floor 120!"
+* "Too late, I'm here... What? It says Shop 45134578141975145703408217304247501074?"
+* "Told you... Stay right where you are. I'm taking an escalator up, then taking the *correct* escalator down, so that I'll end up exactly where you are. And I'm buying you a *Book of Sand*. Read it carefully and maybe you'll get it."
+
+Newton's concept of spacetime is harder to conceptualize. He understood Galileo's point, and initially attempted to model spacetime the same way as Galileo did. However, for obscure reasons, he reintroduced absolute space and time. This had strange consequences that Leibnitz relentlessly criticized. Consider the inertial frame, relative to which the sun is standing still at this moment. Now consider another inertial frame, moving at $1 \;\mathrm{m/s}$ in the direction of Sun-to-Mars at this moment. The laws of Newtonian mechanics are the same, and no observation or experiment could tell us whether one of them is the "absolute frame", or neither of them is. Yet, out of the infinitely many inertial frames, Newton designated precisely one of them as the "absolute", and all others are defined as those moving at constant velocity relative to the absolute frame. [@disalleSpaceTimeInertial2020]
+
+To dramatize this seemingly arcane point, consider the following imaginary conversation between Newton and Leibniz about a grant proposal to find the absolute frame: 
+
+> Newton: This is a proposal to find the absolute frame...
+> 
+> Leibniz: How would you find it? The only difference between absolute and non-absolute inertial frames is that one of them is designated so. Do the stars turn perfectly white when you are standing still in the absolute frame? Do the music of the spheres tune to a perfect pitch? Do you see it in your mind's eye? And even if you do, what if every material point in the universe, by an act of God, were set off in this direction \[points finger up\] at one mile per day? Would anything seem amiss? You yourself admit that the very sustenance of the universe requires continuous divine forcing, that the stars would have collapsed to the same point otherwise.[^newton-apocalypse]
+>
+> Newton: Yet all relative frames has no existence without assuming the absolute frame, for otherwise, one would fall to a circular argument, where relative frames are relative to nought but each other, and the very concept of "inertial frame" becomes vacuous. The absolute might be hidden, but, by G--d, it is out there.
+
+[^newton-apocalypse]:
+    > In the 1726 edition of the General Scholium, Newton added a new sentence: "And so that the systems of the fixed stars will not fall upon one another as a result of their gravity, he has placed them at immense distances from one another." Once again, the implication is that gravity can be a destabilizing force. An annotation in Newton’s copy of the 1713 edition after the words "send light into all the others" shows that he had considered an even more theologically powerful statement: "and the fixed stars would, through their gravity, gradually fall on each other, were they not carried back by the counsel of the supreme Being." 
+    > 
+    > [@snobelenApocalypticThemesIsaac2020]
+
+    He also believed that the Great Comet of 1680 would someday fall into the sun, causing a solar flare-up that would kill all life on earth. God would then repopulate earth. In general, he thought the universe as an unstable system requiring constant divine support. [@snobelenApocalypticThemesIsaac2020]
+
+With special relativity, the symmetry of spacetime becomes $SO(3, 1)$, which is in a sense more "braided" than Galilean relativity. In Galilean relativity, the symmetry group of spacetime factors into a direct product between the symmetry group of space, and the symmetry group of time. In special relativity, the symmetry group of spacetime cannot be factored into a direct product. This is the deep meaning of Minkowski's claim that "space for itself, and time for itself shall completely reduce to a mere shadow".
+
+For general relativity, any diffeomorphism on spacetime is a symmetry.[^diffeomorphism] In other words, it is a **generally covariant** theory. This is quite a vast generalization, and warrants further details.
+
+[^diffeomorphism]: A function is a diffeomorphism iff it is one-to-one, smooth, and has a smooth inverse.
+
+### General relativity
+
+General relativity models spacetime as a manifold $\mathcal M$, with a metric tensor field $g_{\mu\nu}$ and an energy-momentum tensor field $T_{\mu\nu}$. The metric tensor describes the spacetime separation between points on the manifold, and thereby the geometry of spacetime. The energy-momentum tensor describes the flow of energy and momentum in spacetime. In particular, a body with mass $m$, such as a black hole, is a flow of energy $mc^2$ in time, and therefore can be described within the energy-momentum tensor.
+
+The metric tensor field and the energy-momentum tensor field are "braided together" by Einstein's field equation:
+
+$$
+(\text{a polynomial equation involving components of }g) = \kappa T
+$$
+
+where $\kappa$ is a constant of nature, measured by experiments.
+
+The spacetime manifold $\mathcal M$ can be transformed, in that we can write down a function $f: \mathcal M \to \mathcal M$, such that it maps one point in the manifold to another point. According to general relativity, if $f$ is a diffeomorphism, then the field equation is unchanged. In this sense, all diffeomorphisms of $\R^4$ become symmetries of spacetime. Whereas in special relativity, inertial frames are distinguished from non-inertial frames, in the sense that there are certain curves in spacetime that are considered "straight lines", such that, if you measure these curves in an inertial frame, these curves follow equations of the form $t \mapsto (at, bt, ct, dt)$ for some numbers $a, b, c, d \in \R$, whereas if you measure these curves in a non-inertial frame, at least one of the curves would not be in this form. In contrast, no one gets special treatment in general relativity, every curve is equally curved. No frame is inertial, no frame is better than other frame, and any smooth coordinate system is as good as any other. That is, Einstein's field equation is **generally covariant**.
+
+### The hole argument
+
+During 1912, Einstein struggled with finding a generally covariant field equation for gravity. He even considered the correct one he would eventually publish in 1915, he but gave it up due to certain technical difficulties. In late 1913, he tried to transmute this leaden defeat into a golden victory by arguing that general covariance is not the right approach, because of the hole argument. [@nortonHoleArgument1999]
+
+Consider the following two models of a small universe. The universe contains three galaxies moving away from each other. The model on the left shows that one of the galaxies passes the spacetime-point $E$, while the model on the right shows that no galaxy passes the spacetime-point $E$. 
+
+If the universe satisfies a generally covariant field equation, then we can transform the model on the left to the model on the right by a diffeomorphism, and the equation would be none the wiser. In other words, any generally covariant field equation suffers from rampant indeterminism.
+
+![Einstein's hole argument. Figure from [@nortonHoleArgument1999]](figure/hole_argument_Einstein.svg)
+
+We cannot fault Einstein for "falling into the hole", because Hilbert fell into the hole as well around the same time, though he fell in via the route of [Cauchy boundary value problem](https://en.wikipedia.org/wiki/Cauchy_problem). In Hilbert's formulation, any generally covariant field equation suffers from indeterminism, in the sense that no amount of initial value on the field is enough to determine the future of the field.
+
+That is, if we start off from a slice of simultaneity ("Cauchy surface"), and solve the equations forwards in time, we would find that we are lacking conditions. Concretely, consider the motion of water. If the universe is Newtonian, full of Newtonian water, then cosmology is just hydrodynamics. If we know the precise velocity field at a single moment in time, then we can solve the equations forward and find all there is to know about the cosmos. However, Hilbert found that any generally covariant theory fails this: No amount of knowledge of the field at a single slice of simultaneity is sufficient to determine any future or past of the field. Unlike a clockwork Newtonian universe ticking forward by ironclad laws of motion, the Einsteinian universe would "go off the rails" immediately. [@stachelHoleArgumentPhysical2014]
+
+### Problem of time
+
+The old couplet about general relativity goes like "Matter tells space-time how to curve, and space-time tells matter how to move.", but this is often misunderstood as saying "Matter exists, *then* space-time reacts to matter, and *then* matter reacts to space-time by *changing* its motion.". This fundamentally misunderstands what general relativity is. There is no time nor causality, at least as commonly understood, in special or general relativity.
+
+Special relativity is typically interpreted as an "eternalist" or "four-dimensionalist" theory. That is, all of space and time exist in the same way, and the future is as real as the past. Einstein said it as "the distinction between past, present, and future is only a stubbornly persistent illusion.". It is typically supported by the [Rietdijk--Putnam argument](https://en.wikipedia.org/wiki/Rietdijk%E2%80%93Putnam_argument), as follows.
+
+Whereas in Newtonian spacetime, one can still imagine that the universe somehow "grows one time-slice at a time" -- though this is susceptible to [McTaggart's objection](https://en.wikipedia.org/wiki/The_Unreality_of_Time) -- in special relativity, there does not exist such a thing as "time-slice", because there is no absolute simultaneity. We may pick the time-slices in the inertial frame of the solar system, or in that of the Andromeda galaxy. However, just like how no observation can distinguish Newton's absolute inertial frame from all the other relative inertial frames, no observation can distinguish between the absolute simultaneity from all the other relative simultaneities.
+
+The difficulty is only amplified in general relativity. Let us imagine a universe that is swirling with stars and galaxies. Locally, the spacetime manifold is curved, but globally, it is topologically the same as $\R^4$ -- no loops, no singularities, and no wormholes. Now, construct a coordinate system $(t, x, y, z)$. We can then select a "snapshot" of the universe by selecting the "slice of simultaneity" (that is, a "Cauchy surface") at $t = 0$. If we know the exact value of $g, T$ on that snapshot, then we can crank the Einstein field equations to solve (up to general covariance) for $g, T$ for all $t > 0$. Does this mean that the slice of $t=0$ determines what happens afterwards?
+
+Not really. We could have smoothly distorted the coordinate system to $(t', x', y', z')$, and solve the Einstein field equations for all $t' > 0$ starting from $t' = 0$. There are infinitely more degrees of freedom compared to special relativity, making the Rietdijk--Putnam argument bite harder.
+
+Yet, the issue goes even deeper. We could very well select $t = 10000$ and crank the field equations to solve for $g, T$ for all $t < 10000$. Does this mean that "the future determines the past?" Perhaps we can compromise by saying "one point in time determines both the past and the future", but even that is not necessarily true, because we can design much wilder boundary conditions:
+
+* We can make two lightcones determine the rest of the universe (double-null, or Sachs),
+* make one lightcone plus a "left side" of the universe determine the rest (null-timelike, or Winicour--Tamburino),
+* make half of the universe's left-side and half of the universe's $t=0$ determine the rest (space-timelike), etc. 
+
+![Different initial value conditions. The first is the commonly used Cauchy condition, but the others, more exotic, are also valid. Figure modified from [@dinvernoFormalismGeneralRelativity1984]](figure/ivp_conditions_GR.png)
+
+### Gauge freedom
+
+The standard solution, one that is inscribed in every textbook, is the gauge freedom point of view. Even the most practical textbook on general relativity must handle the issue somehow, for the same problem that tripped up Hilbert: the Cauchy problem is not well-posed.
+
+Concretely, consider the first serious problem in every textbook, where there is a single mass point in the universe. Pick a spherical coordinate system in which the mass point is in the center, and *assume* that the metric field is constant over time, and spherically symmetric, as
+
+$$g_{\mu\nu}dx^\mu dx^\nu = f_{\text{radial}}dr^2 + f_{\text{orthogonal}}(r^2d\theta^2 + r^2 \sin^2\theta d\phi^2)$$
+
+This then reduces to an ordinary differential equation for $f_{\text{radial}}, f_{\text{orthogonal}}$. Note how we have made an assumption for the form of the equation for the metric field. This is by no means a benign assumption, as it is this choice that banishes the spectre of the hole argument.
+
+Suppose we had chosen the metric field to be *not* constant over time, but merely spherically symmetric, then we would find that we have a whole family of solutions. Take the previous solution of $g_{\mu\nu}$, and construct a spherical shell around the mass point. Now, we can apply the hole argument on the spherical shell to "ring spacetime like a bell", obtaining another spherically symmetric solution. [^ringing-bell-brain]
+
+[^ringing-bell-brain]: 
+    > As all the Heavens were a Bell,\
+    > And Being, but an Ear,\
+    > And I, and Silence, some strange Race,\
+    > Wrecked, solitary, here --
+
+![Ringing spacetime like a bell, creating a whole family of spherically symmetric solutions. Figures modified from [@nortonHoleArgument1999]](figure/spherical_symmetry_gauge_freedom.svg)
+
+The gauge freedom interpretation states that any solution to the field equations are equivalent. They are practically equivalent, in the sense that no observable differences exist between them. They are ontologically equivalent, in the sense that no solution is "absolute" compared to others that are "derivative". The first claim is an experimental fact, while the second claim is a metaphysical interpretation. The metaphysical interpretation does not necessarily follow from the experimental fact, yet it is hard to admit the experimental fact and reject the metaphysical interpretation.
+
+The parallel with the Newtonian absolute vs relative inertial frames is obvious.
+
+As an aside, there is an obscure problem in special relativity called "the one-way speed of light". This turned out to also be a hole-argument. Specifically, if we apply the hole argument to a universe with no mass, we obtain a hole argument for special relativity, which implies that the [one-way speed of light](https://en.wikipedia.org/wiki/One-way_speed_of_light) is also a gauge freedom. So for example, if we apply a shearing transform $t \mapsto t + 0.1 x$, we would decrease the one-way speed of light in the $+x$ direction, and increase it in the $-x$ direction, without changing any observable predictions. [@rynasiewiczSimultaneityConventionGauge2012]
+
+## The geometry of color
+
+### Smooth geometry
+
+The human eye, abstractly speaking, is a light detector with 4 kinds of sensors: the rod cell, active in the dark, and 3 kinds of cone cells, active when it's bright. Each cell carries its own kind of light-sensitive proteins ("opsins"), which are molecular switches. If a photon hits an opsin in the "passive" shape, then the opsin *may* absorb the photon and flip into its "active" shape. An active opsin would then set off a molecular chain-reaction in the cell, that *may* result in an electric signal down the optic nerve.
+
+Mathematically, suppose we shine a light on a patch of long-wavelength-type cone cells, we can represent the electric response as:
+
+$$I_L = \int S_L(\lambda) R(\lambda) d\lambda$$
+
+where
+
+* $I_L$ is the **response intensity** of long-wavelength-type cone cells, in units of neural spike per second. Though each cell's operation is quantum-mechanically random, when averaged over many cone cells, the response is deterministic.
+* $R(\lambda)$ is the spectral radiance at wavelength $\lambda$, or **spectrum** for short. It has units of watt per square-nanometer (of retinal area) per nanometer (of wavelength).
+* $S_L$ is the **spectral sensitivity** function of the long-type cone cells.
+
+We can similarly define $I_M, I_S$, for the other two cone cell types (medium and short). Each $S_L, S_M, S_S$ is approximately bell-shaped.
+
+![Schematic diagram of human cone cell sensitivity. Each curve is "normalized", meaning that it is multiplied by a positive real number, so that its maximal value is exactly 1.](figure/cone_cell_sensitivity.svg)
+
+If we ignore the rod cells, and assume no adaptation to darkness ("scotopic vision"), then human color vision is just a deterministic function that maps a spectrum to three real numbers:
+
+$$C(P) := (I_S(P), I_M(P), I_L(P))$$
+
+with type $(\R^+ \to \R^+) \to (\R^+)^3$, where $\R^+ = [0, \infty)$ is the space of non-negative real numbers. Define this as the $(I_S, I_M, I_L)$ as the **LMS color space**.[^sense-data] Furthermore, the biochemical limit on neural firing is 1000 Hz [@NeuronFiringRates2015], thus the LMS color space is bounded within a cube.
+
+[^sense-data]: This seems as close to "sense data" [@hatfieldSenseData2021] as it gets in science.
+
+Any smooth deformation of the LMS color space gives us another color space. In theory, it doesn't matter which one we use, because the underlying color space is still the same. In practice, some color spaces are easier to use than others.
+
+![Different depictions of the same color space. By a smooth map, we can deform the LMS color space into any shape we want, such as a cone, a cube, a cylinder, a double cone, etc. Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Color_solid_comparison_hsl_hsv_cube_cylinder_cone.png)](figure/Color_solid_comparison_hsl_hsv_cube_cylinder_cone.png)
+
+In people with only two types of cone cells, the color vision function $C$ loses a dimension. For example, if that person has deuteranopia, without medium-wavelength cone cells, then they would see all colors in LMS space with the same $(S, L)$-coordinates as the same.
+
+### Projective geometry
+
+Because $C$ is a linear functional, and any two colors can be mixed to give a third color, LMS color space is a convex cone. On the tip of the cone is $(0, 0, 0)$, the color of pure darkness. It is an old experimental fact that the geometry of colors is invariant under scaling. So, if you have two lights with spectra $P, P'$, such that their colors look the same/different/very different, then we make them brighter or dimmer, to $cP, cP'$ where $c > 0$, then their colors will still look the same/different/very different.
+
+Thus, we can factor the space of colors into two components: an [apparent lightness](https://en.wikipedia.org/wiki/Lightness), and an apparent [chromaticity](https://en.wikipedia.org/wiki/Chromaticity). So, if we take two dim red lights, and shine both of them on the same pane of [frosted glass](https://en.wikipedia.org/wiki/Frosted_glass), the frosted glass would look lighter, but have the same chromaticity. The space of chromaticities is the space of lines passing the origin, which allows us to use [projective geometry](https://en.wikipedia.org/wiki/Projective_geometry).
+
+The space of all colors looks like a cone, and since each line in the cone can be represented as a point on the line, the space of all chromaticities looks like the intersection of the cone with a plane -- each line is represented by its intersection with the plane. What does the space of all chromaticities look like?
+
+Because any spectrum $I$ is the convex sum of pure spectra
+
+$$\{I_{\lambda}: \lambda \in (400 \;\mathrm{nm}, 700\;\mathrm{nm})\},$$
+
+the space of all colors is the convex sum of all pure spectral colors 
+
+$$\{C(I_{\lambda}): \lambda \in (400 \;\mathrm{nm}, 700\;\mathrm{nm})\}.$$
+
+Consider a wall covered with a "pure spectral paint", in the sense that it reflects exactly light at wavelength $500 \;\mathrm{nm}$, and nothing else. Then, under any illumination, the color of the wall has the same chromaticity. Pure spectral colors are special colors, in the following diagram, on the edge of the cone are lines of pure spectral color, each produced by a spectrum that is concentrated at just one wavelength.
+
+![The pure spectral colors in LMS color space. The rainbow curve represents the spectrum of visible light, from violet to red. Each point on this curve corresponds to a specific wavelength of light and its unique combination of stimulations to the three types of cone cells. For each point on the spectral curve, we can draw a straight line to the origin. Each point on the line has the same color, but appears increasingly bright.](figure/neural_color_space_3d.svg)
+
+Because the cone shape is uninteresting, the color space is typically represented by chopping off the cone midway, producing a roughly horseshoe-shaped region on $\R^2$, named the **gamut**. Mathematically, it is the projective transform:
+$$(s, m, l) := \left(\frac{I_S}{I_S + I_M + I_L}, \frac{I_M}{I_S + I_M + I_L}, \frac{I_L}{I_S + I_M + I_L} \right)$$
+
+The curving edge of the chromaticity space are points of pure spectral colors, from pure $700 \;\mathrm{nm}$ line on the red end, to the pure $400 \;\mathrm{nm}$ line on the purple end. Every point inside the gamut can be mixed by two pure spectral colors. However, this is not the entirety of chromaticity space. The ray at the shortest-wavelength end (pure spectral purple) and the ray at the longest-wavelength end (pure spectral red) do not touch each other. Instead, they shoot out like two ends of a horseshoe. Chromaticity space, then, has a second, straight edge, obtained by mixing the shortest and the longest wavelength. This is the [purple boundary](https://en.wikipedia.org/wiki/Line_of_purples).
+
+![Schrödinger's diagram of chromaticity space. *Spektralkurve*: spectral curve. *Schnitt mit einer Ebene*: intersection with an arbitrarily inclined plane. *R*: red. *G*: green. *I*: indigo. *V*: violet. *O*: origin.
+[@schrodingerGrundlinienTheorieFarbenmetrik1920, figure 3]](figure/schrodinger_1920_spektralkegel.png)
+
+We can construct the chromaticity space of someone with deuteranopia by starting with the purple line, then draw one line for each point on the purple line that is perpendicular to the $(S, L)$-plane in LMS color space. The deuteranopic observer sees each line of chromaticities as a single chromaticity.
+
+Theoretically, we can imagine creating the world's best computer display by putting in a full-spectral display unit into each pixel. It will then be able to cover the entire gamut space. It will not only display true-life colors for humans, but also for dogs, bees, and mantis shrimps. Unfortunately, we don't have that luxury, and computer displays are built for human-use only, with just three spectra.
+
+Now, if we have a pixel containing three little LED units, capable of emitting light of spectra $P_1, P_2, P_3$, then we can take any convex sum, and create a mixed color. The space of all colors created by their convex sum is the convex sum of $C(P_1), C(P_2), C(P_3)$, which looks like a triangular cone. Thus, the chromaticity that this pixel can display is a triangle. Every color inside the triangle can be created by mixing the three spectra, but any color outside cannot.
+
+![The triangle of displayable chromaticities for cathode-ray televisions (left) and LCDs (right). Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CRT_and_LCD_Gamut.jpg)](figure/CRT_and_LCD_Gamut.jpg)
+
+When you print on a page, the page does not emit color, and can only acquire color by selectively reflecting light. When under a standard white light, the more ink you lavish on a page, the more saturated the color can be, but the darker it would be, because more light is absorbed. Conversely, if all the light is reflected, then it would look white. Because of this trade-off, the gamut of printable colors is even smaller.
+
+![The gamut of printable colors when placed under [standard white illumination](https://en.wikipedia.org/wiki/Standard_illuminant). [@macadamGeometryColorSpace1944, plate 1]](figure/cmyk_gamut_macadam_1944.png)
+
+Evolution has created a multi-spectral display in some octopuses and chameleons. The best octopus camouflagers have 2 kinds of color organs in their skins: the chromatophores, the leucophores, and the iridocytes. Chromatophores contain pigment cells, which expand and contract by radial muscles like wheel spokes around an axis. The leucophores are roughly [ideal "matte" reflectors](https://en.wikipedia.org/wiki/Lambertian_reflectance), meaning they reflect incoming light uniformly, with little loss.
+
+The iridocytes are the most exotic, and approximates our "world's best television screen". Specifically, they are [dielectric mirrors](https://en.wikipedia.org/wiki/Dielectric_mirror), which reflects light at a specific wavelength. They are alternating layers of guanine crystals and cytoplasms. To change color, it simply adjusts the water content of the cytoplasm, which makes them expand or contract, changing the distance between guanine layers. More pictures are found in [@cloneyChromatophoreOrgansReflector1983].
+
+![How the iridocytes work in cephalopods. Figure from [@cossinsGroovyColor2013]](figure/iridocyte_the_scientist_2013.jpg)
+
+![A, B. cephalopod before and after camouflage. C. structure of cephalopod skin. D. before and after chromatophore expansion. F. before and after iridocyte turning iridescent. G. the dielectric mirrors inside an iridocyte. [@chatterjeeIntersectionNaturalStructural2022, figure 4]](figure/cephalopod_biomimetics_chatterjee_2022.png)
+
+Meanwhile, chameleons have iridocytes that operate by a different mechanism: [photonic crystals](https://en.wikipedia.org/wiki/Photonic_crystal) [@teyssierPhotonicCrystalsCause2015].
+
+### Linear geometry
+
+Grassmann, famous for originating linear algebra, studied color theory and applied linear algebra to it. Essentially, he discovered that the human color vision function $C$, defined previously, is a linear function. He discovered this by color-mixing experiments, in the style of 19th century psychophysics. Considering it was 50 years before the [neuron doctrine](https://en.wikipedia.org/wiki/Neuron_doctrine) became accepted, and 100 years before cone cells were observed, he did very well.
+
+For any three spectra $P_1, P_2, P_3$, we can define their colors as $C_i := C(I_i)$. Since $C$ is a linear function, as long as $\{C_1, C_2, C_3\}$ are linearly independent, we can represent any color as $C(x_1 P_1 + x_2 P_2 + x_3 P_3)$ for some $(x_1, x_2, x_3) \in \R^3$.
+
+For example, we can go to a scientific standard shop and buy a set of standard lamps, which when plugged into a standard plug, viewed in a standard room, at a standard distance and a standard angle, by a standard observer,[^standard-observer] will create a standard red, a standard green, and a standard blue. Then, using opaque to cover up parts of the lamp, and combining the lights, we can create any color $C(x_1 P_1 + x_2 P_2 + x_3 P_3)$, for any $(x_1, x_2, x_3) \in [0, 1]^3$. By buying more lamps, we can create all colors with $(x_1, x_2, x_3) \in (\R^+)^3$.
+
+[^standard-observer]: Because humans are resistant to standardization, the standard observer is obtained by taking data from real observers in good health that are physiologically similar, then taking the average. The methodology resembles *l'homme moyen* ("the average man") of [Adolphe Quetelet](https://en.wikipedia.org/wiki/Adolphe_Quetelet), a fanatic for anthropometry. Also, the standard observer is not required to drink [standard cups of tea](https://en.wikipedia.org/wiki/ISO_3103).
+
+Here, we notice a difficulty: we can't take a negative amount of lamp. Fortunately, we can bypass the difficulty by adding a fourth lamp, a "standard white" lamp emitting a spectrum $P_0$. Then, for any other spectrum $I$, there exists $(x_1, x_2, x_3, x_4) \in (\R^+)^4$, such that
+
+$$
+C(I) + C(x_0 P_0) = C(x_1 P_1 + x_2 P_2 + x_3 P_3)
+$$
+
+which allows us to place the color of $I$ at the unique point. Of course, the choice of $(x_1, x_2, x_3, x_4)$ is not unique. However, since color space is linear, the sum $C(x_1 P_1 + x_2 P_2 + x_3 P_3 - x_0 P_0)$ is unique. Once $C(P_0)$ is itself constructed as a linear sum of $C(\sum_{i=1}^3 x_{i, 0}P_i)$, we would have located $C(I)$ in color space, at
+
+$$
+C(I) = \sum_{i=1}^3 (x_i - x_0x_{i, 0}) C(P_i)
+$$
+
+This is essentially the state of the art of colorimetry in 1931, when CIE 1931 was constructed by color-mixing experiments. An observer is seated in a standard room, and sees two light sources. On the left, a to-be-measured light $I$ is mixed with a standard white light $P_0$, and on the right, are three standard blue, green, red lights $P_1, P_2, P_3$. The observer turns the 4 knobs until two sides look indistinguishable. This was repeated for many observers, over many days, for many light sources. The result is a table with three columns, and many rows. Each row is an industrially important light source, and the three columns are the standard red, standard green, standard blue. It schematically looks like this (I made up the data):
+
+| color | standard red | standard green | standard blue |
+|---|---|---|---|
+| standard red | 1.000 | 0.000 | 0.000 |
+| standard green | 0.000 | 1.000 | 0.000 |
+| standard blue | 0.000 | 0.000 | 1.000 |
+| standard white | 0.334 | 0.334 | 0.332 |
+| ... | ... | ... | ... |
+
+::: {.callout-note title="Technically"}
+
+Technically, the CIE 1931 color of a spectrum $I$ is a point in $\R^3$ defined by
+
+$$
+C_{\text{CIE 1931}}(I) := \left(\int I(\lambda) \bar r(\lambda) d\lambda , \int I(\lambda) \bar g(\lambda) d\lambda , \int I(\lambda) \bar b(\lambda) d\lambda \right)
+$$
+
+where $\bar r, \bar g, \bar b$ are "standard observer color matching functions". They are not any real observer's sensitivities, because they have negative values. Instead, they are *roughly* a linear transform of the real sensitivities $S_S, S_M, S_L$, meaning CIE 1931 color space is roughly a linear transform of LMS color space.
+
+Why did they go for a *roughly* linear transform? I know it's confusing (it confused me), but it's simply a temporary hack. Back then, they had no way to measure the neural spikes, so they had to infer the real sensitivities by indirect psychophysics data. And the negative values are for some kind of numerical stability considerations. Point being, it's really not fundamental to science, but rather a 1930s technical hack.
+
+:::
+
+### Opponent process
+
+Have you ever wondered why things seem bluer just after sunset, or under a high full moon? This is where *opponent process theory* and Purkinje effect comes in. 
+
+While the retina might be operating with the LMS color space, it is not what gets sent to the brain. Specifically, before leaving the retina, the spikes from the 3 cone cells and the rod cell (we are finally accounting for them now!) are linearly transformed by 3 paired-kinds of neurons within the retina, before sending down the optic nerve. Greatly simplified, the linear transform is:
+
+$$
+\begin{cases}
+  I_{\text{Red-Green}} &= I_L - I_M \\
+  I_{\text{Yellow-Blue}} &= I_L + I_M - 2 I_S \\
+  I_{\text{Brightness}} &= 2I_L + I_M + 0.05 I_S + I_R
+\end{cases}
+$$
+
+![[@huntMeasuringColour2011, figure 1.4]](figure/opponent_process_fig_1_4.png)
+
+In words, the Red-Green-pair of neurons take the long-wavelength (reddish) cone cells, and subtract away the medium-wavelength (greenish) cone cells. If the result is positive, then the positive half of the pair sends down a signal at the rate of $I_L - I_M$, otherwise, the negative half of the pair sends down a signal at the rate of $-(I_L - I_M)$. This linear transform, while mathematically equivalent (as long as the rod cells don't appear) to LMS space, allows the optic nerves to carry more information in *Homo Sapiens*' natural habitat [@buchsbaumTrichromacyOpponentColours1997].
+
+When the light level is around $0.5 \;\mathrm{lux}$, which corresponds to twilight, or a full high moon, both the rod cells and the cone cells are active [@dominyLiminalLightPrimate2020].
+
+So, let us look at the linear transform
+
+$$
+\begin{cases}
+  I_{\text{Red-Green}} &= I_L - I_M \\
+  I_{\text{Yellow-Blue}} &= I_L + I_M - 2 I_S \\
+  I_{\text{Brightness}} &= 2I_L + I_M + 0.05 I_S + I_R
+\end{cases}
+$$
+
+Let's pretend we are the brain, interpreting the signals sent down the optic nerves. Suppose the retina secretly increases $I_R$ by a small amount of $\Delta I$, but we don't know that. How would we interpret it? We would interpret it as a color in LMS space with color 
+
+$$(I_S + \Delta I', I_M + \Delta I', I_L + \Delta I')$$
+
+where $2.05\Delta I' = \Delta I$. That is, it looks as if each type of cone cell has increased firing rate by the same amount. Looking at the sensitivity curve, this effect can be created by shifting the spectrum to the shorter wavelength, then increase its power slightly. Thus, things look bluer.
+
+![Purkinje effect illustrated with a flower. As the lighting condition dims, the entire scene shifts more to the bluish shade. At low enough lighting, all cone cells deactivate, and the entire scene becomes monochromatic. Figure modified from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Purkinje_effect.png)](figure/purkinje_effect.jpg)
+
+### Riemannian geometry
+
+> Magnitude-notions are only possible where there is an antecedent general notion which admits of different specializations... the only simple notions whose specializations form a multiply extended manifoldness are the positions of perceived objects and colors. More frequent occasions for the creation and development of these notions occur first in the higher mathematic.
+>
+> Riemann's Habilitation dissertation, 1854 [@riemannHypothesesWhichLie2016]
+
+Now that we have a space of colors, how do we measure distances in it? Some colors are close, while some colors are far apart. How do we quantify it? This question occupied the minds of some famous scientists, including Riemann, Grassmann, Helmholtz, and Schrödinger [@pavlidisBriefHistoryColour2021].
+
+In 1920, Schrödinger (more famous for [his other equation](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation)) hypothesized that color space has a Riemannian geometry, and the subjective difference between two colors is the geodesic distance between the two points in color space [@schrodingerGrundlinienTheorieFarbenmetrik1920]. This is the foundation of modern colorimetry [@niallErwinSchrodingerColor2017]. Over the years, there had been a mess of increasingly detailed theoretical models for the Riemannian metric of color space, of interest only to specialists -- see [@wyszeckiColorScienceConcepts1982, chapter 8.4] for a review. Here, we bypass most of the theory by experimental data.
+
+Given two spectra $I, I'$, if their colors $C(I), C(I')$ are close enough, an observer would judge them as equal. This is the concept of "just noticeable difference" (JND), a foundational concept of psychophysics.[^jnd-game] In general, the JND method goes like this:
+
+[^jnd-game]: One can get a good feel for the JND by playing the [Color Game](https://color.method.ac/). In case this fails in the future, try the [archived link](https://web.archive.org/web/20171129053850/http://color.method.ac/).
+
+* Fix one stimulus $S$, and vary the other stimulus $S'$. The prior probability that $S = S'$ is $1/2$.
+* Present both $S, S'$ to the observer.
+* The observer judges whether they are the same or different.
+* Repeat many times.
+* If, when truly $S' = S$, the observer judges that they are the same with probability $p_0$, then the JND point is the point where the observer judges that $S' = S$ with probability $p_0/2$.
+
+In the original experiments, MacAdam fixed one spectrum $I$, and varied the other spectrum $I'$ on a curve that passes $I$. He repeated the JND measurement along many curves across many spectra, and found that around each spectrum, the JND points make up a rough ellipsoid.
+
+![The JND of a single observer around a single color, when approached from 14 different directions. The JND points fall roughly on an ellipse. [@wyszeckiColorScienceConcepts1982, figure 1(5.4.1)]](figure/macadam_ellipsoid_fig_1_541.png)
+
+If the JND measurement is binary classification in color space, then what is real-valued regression in color space? Answer: color matching experiment.
+
+Specifically, suppose we fix $I$, and let the observer turn a knob that varies $I'$ along a curve passing $I$, then we would find that $I'$ is normally distributed centered upon $I$. Perform the experiment with 3 knobs, and we would obtain an ellipsoidal cluster. The ellipsoids of $1\sigma$ are the [MacAdam ellipsoids](https://en.wikipedia.org/wiki/MacAdam_ellipse). As ellipsoids are very hard to draw, we typically only see 2D slices of them -- the MacAdam ellipses.
+
+![The color matching experiment data of a single observer around a single color. The points are projected from 3D space to [three orthogonal views](https://en.wikipedia.org/wiki/Orthographic_projection). The ellipsoid is the ellipsoid of $3\sigma$. [@wyszeckiColorScienceConcepts1982, figure 1(5.4.3)]](figure/macadam_ellipsoid_fig_1_543.png)
+
+::: {.callout-note title="Conjecture: perceived lightness and hues are totally geodesic foliations"}
+
+Given two colors $C_0, C_1$, we can construct the geodesic curve between them as the shortest sequence of colors $C_a, C_b, C_c, \dots$, such that $C_0, C_a$ are JND, and $C_a, C_b$ are also JND, etc. It sounds reasonable in my head that, if $C_0, C_1$ have the same [perceived lightness](https://en.wikipedia.org/wiki/Lightness), then the geodesic connecting them should all have the same perceived lightness, because it seems like we would be wasting some precious JND on "jumping up in lightness, only to jump down again". Similarly, if $C_0, C_1$ have the same perceived hue, then I guess the geodesic through them would stay along the same perceived hue.
+
+If this is true, then we can construct two families of foliations in color space, one for equal-lightness surfaces, and one for equal-hue surfaces. Each surface is a totally geodesic foliation [@johnsonTotallyGeodesicFoliations1980], meaning that each geodesic within a foliation is also a geodesic in the total color space.
+
+However, this definitely isn't true for perceived saturation, as the shortest path between slightly saturated red and slightly saturated green (opposite of red) goes through perfect gray, so who knows whether this conjecture is true or not for perceived lightness or hues?
+
+:::
+
+Though JND and color matching are two different methods, they are both using people as statistical detectors, and it stands to reason that they should measure the same thing. Indeed, the ellipsoids of JND are roughly the $3\sigma$ MacAdam ellipsoids [@wyszeckiColorScienceConcepts1982, section 5.4].
+
+![MacAdam ellipses plotted on the CIE 1931 $xy$-diagram, 10× actual size. Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CIExy1931_MacAdam.png).](figure/CIExy1931_MacAdam.png)
+
+Given the [Tissot's indicatrix](https://en.wikipedia.org/wiki/Tissot's_indicatrix), it is natural to try to draw a distortion-less map of earth, where all Tissot ellipses are equally-sized circles. This is impossible, and Gauss knew exactly why: earth has positive gaussian curvature, but a flat sheet of paper has zero gaussian curvature.
+
+![Tissot's indicatrix on [Behrmann projection](https://en.wikipedia.org/wiki/Behrmann_projection). Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tissot_behrmann.png)](figure/Tissot_behrmann.png)
+
+Given the MacAdam ellipses, it is natural to try to draw a distortion-less map of color space. This is impossible, for the same reason: color space has nonzero curvature. It was already known to MacAdam in the 1940s that his experimental data shows color space has significant curvature.
+
+![A paper model of a 2D subspace of the color space -- the space of colors with unit subjective brightness. The metric on the paper model faithfully matches the metric implied by MacAdam ellipse. We can see the curvature. [@macadamGeometryColorSpace1944, figure 5]](figure/paper_model_macadam_1944.png)
+
+::: {.callout-note title="Conjecture: color space is not conformally flat"}
+
+Is it possible to at least stretch the MacAdam ellipses into spheres, even though they aren't of the same radius? That is, is color space [conformally flat](https://en.wikipedia.org/wiki/Conformally_flat_manifold)? For example, in [Mercator's projection](https://en.wikipedia.org/wiki/Mercator_projection), the Tissot ellipses are indeed circular, though they become larger near the poles, so earth is conformally flat.
+
+However, by [Liouville's theorem](https://en.wikipedia.org/wiki/Liouville%27s_theorem_(conformal_mappings)), conformal flatness is very stringent at 3 dimensions and above, so my conjecture is that color space is *not* conformally flat. Proof sketch: download the metric tensor from CIE, and check its [Cotton tensor](https://en.wikipedia.org/wiki/Cotton_tensor) is nonzero (at statistical significance).
+
+:::
+
+![A nonlinear map of CIE 1931 $xy$-graph designed to make MacAdam ellipses look roughly circular. [@wyszeckiColorScienceConcepts1982, figure 4(5.4.1)]](figure/macadam_ellipsoid_fig_4_541.png)
+
+CIELAB color space is a smooth mapping from CIE 1931 color space to $\R^3$, such that the MacAdam ellipses are stretched spherical enough for practical purposes.
+
+![All visible colors, plotted in CIELAB color space. Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Visible_gamut_within_CIELAB_color_space_D65_whitepoint_mesh.png)](figure/Visible_gamut_within_CIELAB_color_space_D65_whitepoint_mesh.png)
+
+### Information geometry
+
+Imagine a hiker navigating a mountain path equipped only with an altimeter and a detailed altitude map. The hiker's ability to pinpoint their location on the map relies on sensing altitude changes. In regions where the terrain is steep (representing high sensitivity), even a small step forward (change in stimulus intensity) will register a noticeable altitude change on the altimeter (change in perceived sensation). This allows for precise localization -- a small JND. However, along flatter sections of the trail (low sensitivity), the hiker might need to traverse a longer distance to observe a meaningful altitude difference, leading to a larger JND and greater uncertainty about their position on the map.
+
+Similarly, as we move around in color space, we may distinguish colors by the photoreceptor responses, which can be inferred from the sensitivity curves $S_S, S_M, S_L$. That is, we can reduce Riemannian metric to [information geometry](https://en.wikipedia.org/wiki/Information_geometry). Working this out in detail, [@dafonsecaDerivationHumanChromatic2016] showed that the Riemannian metric in color space is roughly the same ("explains 87% variance") as the [Fisher information metric](https://en.wikipedia.org/wiki/Fisher_information_metric).
+
+![The ellipses measured by MacAdam (green) vs ellipses predicted by information theory (red). [@dafonsecaDerivationHumanChromatic2016, Figure 8b]](figure/Fonseca_2016_fig_8b.png)
+
+In the same vein, people have argued for centuries about why certain colors are perceived as "pure" or "primary" (white, black, red, blue, green, etc), while others are "mixed" or "derived" from the primary colors. [@macevoyGeometryColorPerception2015] argues that the primary colors are "landmarks" in the geometry of color space, much like how on a map, the peaks and troughs are local maxima of gaussian curvature, and the mountain passes are the local minima, or how on a spacetime, a black hole singularity is the point where the [Kretschmann scalar is infinite](https://en.wikipedia.org/wiki/Curvature_invariant_(general_relativity)). Intuitively, we can see this on the CIELAB color solid. The top-most point is white, the bottom-most color is violet, and you can just see yellow at another point behind the back, etc.
+
+::: {.callout-note title="Beyond Riemannian geometry"}
+
+While color space is locally Riemannian, this is not so over longer distances. That is, once we are measuring the subjective distances between pairs of far-different colors, the data no longer behave like distances on a curved 3D space. [@bujackNonRiemannianNaturePerceptual2022] reported that there is "diminishing returns" in color distances.
+
+Indeed, this non-Riemannian geometry has been known for a while. CIE in 1994 proposed a color difference, $\Delta E$, that is [not symmetric](https://en.wikipedia.org/wiki/Color_difference#CIE94). That is, if we ask a subject "How far is color 1 from color 2?" and then ask the opposite direction, we usually get a different numerical answer. This reminds me of [information-geometric divergence](https://en.wikipedia.org/wiki/Divergence_(statistics)), which is also not symmetric. I cannot find anyone who has studied this in detail, but it ought to interest the information geometers.
+
+:::
+
+## The geometry of feeling
+
+### Easy, hard, meta
+
+David Chalmers proposed three problems of consciousness.
+
+The easy problem is the scientific problem of human perception, cognition, and motor control: how memories work, how vision recognizes objects, etc. By "easy", Chalmers was not dismissing them as "intellectually easy", but that they are within the paradigm of science as currently understood. They are about as easy as colonizing Mars or curing cancer.
+
+The hard problem is the easy problem, but with something extra that seems impossible to even fit into a scientific system. What that *something extra* is, philosophers are unable to say, but they typically give it the name of "qualia", "experience", "phenomenal awareness", etc.
+
+> What makes the hard problem hard and almost unique is that it goes beyond problems about the performance of functions. To see this, note that even when we have explained the performance of all the cognitive and behavioral functions in the vicinity of experience—perceptual discrimination, categorization, internal access, verbal report--there may still remain a further unanswered question: *Why is the performance of these functions accompanied by experience?*
+> 
+> [@chalmersFacingProblemConsciousness1995]
+
+While decades of science have made good progress on the easy problem, centuries of philosophical disputations have not made progress on the hard problem. To bypass the impasse, Chalmers proposed the meta problem: Why is the hard problem a problem?
+
+> What exactly are the problem data that need explaining? They can be construed as verbal reports (my saying ‘Consciousness is hard to explain’), as judgments (my forming the judgment that consciousness is hard to explain), or as dispositions to make these reports and judgments. Verbal reports are perhaps the most objective data here, but they are also a relatively superficial expression of an underlying state that is really what we want to explain. So I will generally focus on dispositions to make verbal reports and judgments as what we want to explain.
+>
+> [@chalmersMetaproblemConsciousness2018]
+
+The easy problem of consciousness, being part of the domain of science, excited little philosophical attention, while the hard and the meta problems excited a vast discourse. It is not within my power to review the literature, though it might be within my power to solve them.
+
+Let's consider an analogy. The easy problem of biology would be: How does biological machines work? The hard problem: Why is the performance of these functions accompanied by *life*? The meta problem: What kind of cognition do people have, such that they can see a machine performing all the motions of life, and yet still call it "lifeless"? This analogy was considered by Dennett and rejected by Chalmers as a disanalogy. [@garrettWhatHistoryVitalism2006]
+
+In John Searle's [Chinese room](https://plato.stanford.edu/entries/chinese-room/) story, a man who knows nothing of Chinese, by executing an algorithm with pen and paper, could converse in Chinese writing. Many, including Searle, thought that the Chinese room does not really understand Chinese. This gives us another analogy.
+
+The easy problem of Chinese: What algorithms can converse in Chinese text? The hard problem of Chinese: Why is the performance of Chinese-speaking in a Chinese-speaker accompanied by *understanding*? The meta problem: What kind of cognition do people have, such that they say the Chinese room "lacks understanding"?
+
+It is my aim to dissolve the hard problem of consciousness by showing that it has no [explanandum](https://en.wikipedia.org/wiki/Explanandum_and_explanans). The hard problem's explanandum is the non-reducible form of consciousness, the kind of "qualia" or "soul" which cannot be reduced to scientific explanation as currently practiced in physics using concepts currently existing in physics. I claim that non-reducible consciousness does not exist, so the hard problem is meaningless, and must be un-asked, instead of answered.
+
+### Inverted qualia
+
+![A normal-colored photo and an inverted version of it. Figure from [@byrneInvertedQualia2004, figure 4]](figure/inverted_qualia_fruits.png)
+
+The inverted qualia thought experiment has been used, like the [p-zombie](https://plato.stanford.edu/entries/zombies/), in a whole host of arguments involving consciousness and the qualia. We consider the case involving functionalism, which is currently the most fashionable among cognitive psychologists and computer scientists. Other variants are reviewed in [@byrneInvertedQualia2004].
+
+According to functionalism, mental states are best understood as functional states, that is, mathematical functions that map perceptual inputs to behavioral outputs. It's the intricate web of causal relations that constitutes a mental state, rather than the specific physical makeup realizing those relations.
+
+In the anti-functionalism case, we consider two individuals, "Invert" and "Nonvert", who are functionally identical. They receive the same visual input (a tomato), undergo the same internal processing, and produce the same behavioral outputs (saying "that's a red tomato"). However, their subjective experiences -- their qualia -- differ drastically. Where Nonvert experiences red-qualia, Invert experiences green-qualia (or another color-qualia entirely). They outwardly behave in the same way, and all functional measurements, from verbal reporting, psychological experiments, to MRI scanning, all find them the same, and yet the qualia of any color the Invert sees is rotated 180 degrees compared to that of the Nonvert.
+
+Formally, this is the inverted qualia argument against consciousness functionalism:
+
+* The following spectrum inversion scenario is possible: Invert and Nonvert are functionally alike, but experiences different color-qualia.
+* Thus, mental experience does not supervene on functional organization.
+* Thus, functionalism is false.
+
+Similarly, the shifted qualia thought experiment does not completely invert color space, but simply shift it, so that dark red looks slightly bluer, etc.
+
+### Other inversions
+
+The color-qualia inversion thought experiment may be a modern invention, but it had several illustrious ancestors.
+
+In his [*Book of Optics*](https://en.wikipedia.org/wiki/Book_of_Optics), [Alhazen](https://en.wikipedia.org/wiki/Ibn_al-Haytham) rejected the theory that the eye works like a camera obscura, as it would create an inverted image. He also argued that every part of the eye should be close to geometric perfection, since otherwise they would create "monstrous" images like a funhouse mirror. Similarly, da Vinci knew that the pupil acts as a camera obscura, but developed no less than 8 different hypothetical mechanisms inside the eye to re-invert the image again, so the image lands right-side-up on the retina. [@eastwoodAlhazenLeonardoLatemedieval1986]
+
+![One of Leonardo da Vinci's drawings comparing the eye to a camera obscura. From *Codex Atlanticus* (1490-1495). Note the double-inversion to make sure the image lands right-side-up on the retina. Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1490-95_da_vinci_-_codex_atlanticus.jpg).](figure/1490-95_da_vinci_-_codex_atlanticus.jpg)
+
+In his famed *Treatise of Man*, Descartes solved the problem according to functionalism: It is not an issue if the image on the retina is "upside-down". It only matters if the retina is wired to the brain in a regular way, such that the neural control of motion by sight works. Informally speaking, it doesn't matter if the wires are wired upside-down, as long as the wires are not crossed.
+
+![Illustration from Descartes' *Treatise of Man*, showing how the eye can guide the arm despite an "upside down" image. Suppose the eye sees the hand is pointing at the middle of the arrow, and then the brain needs to have the finger pointing at the tail of the arrow, then the control circuit goes from the retinal-C point, to the optical-nerve-C point, to the brain-C point, and finally to the arm abductor muscle.](figure/Descartes_diagram.png){width=60%}
+
+In Leibniz's third paper of the [Leibniz--Clarke correspondence](https://en.wikipedia.org/wiki/Leibniz%E2%80%93Clarke_correspondence), Leibniz proposed the "inverted space" thought experiment:[^leibniz-inverted-space] Suppose at the moment of creation, God were to switch East and West, then nothing would act different. Since God is reasonable, yea, the most reasonable Being possible, He must have created the world according to the [principle of sufficient reason](https://plato.stanford.edu/entries/sufficient-reason/#Leib). Every choice must have full justification, and not a single one was done arbitrarily. Ergo, God never had to make this choice in the first place, meaning that, contra Sir Newton, space is relational, not absolute.
+
+[^leibniz-inverted-space]:
+    > ... supposing Space to be Something in it self, besides the Order of Bodies among themselves, that 'tis impossible there should be a Reason, why God, preserving the same Situations of Bodies among themselves, should have placed them in Space after one certain particular manner, and not otherwise; why every thing was not placed the quite contrary way, for instance, by changing East into West.
+    >
+    > [@clarkeCollectionPapersWhich1717]
+
+The Spanish painter El Greco famously painted people very tall, as if they are stretched vertically. In popular art history, this is often explained by saying that he might have had astimgatism, which stretches images vertically on the retina. This is the same error made by Alhazen.[^el-greco] Despite this, the "El Greco fallacy" is still committed by psychologists of perception. [@firestoneTopDownEffectsWhere2014; @firestoneCognitionDoesNot2016]
+
+[^el-greco]: The original theory as proposed by Germán Beritens, before it became popularized, is not subject to this fallacy, because astimgatism does not actually stretch images uniformly across the retina. However, dealing with the original theory would require a lot more geometric optics than we have here. [@firestoneOriginStatusGreco2013]
+
+### The broken symmetry counterargument
+
+A sophisticated objection to inverted qualia, based on color science, states that since color space has no nontrivial symmetries, the thought experiment is impossible. For example, saturated yellow does not merely look different from saturated red, but also looks brighter. In this view, "simply yellow" is not *simply* yellow. A point in color space is not *simply* a point. It is already inherently structured. Yellow is the brightest of all saturated colors, while violet is the dimmest, etc. [@hilbertColorInvertedSpectrum2000] argued that every possible quality space must be asymmetrical, in the sense that the only [automorphism](https://en.wikipedia.org/wiki/Automorphism) is the identity map, of $x \mapsto x$.
+
+This appears to me an objection that is too strong, as there really do exist quality spaces that are symmetric. In humans, left and right are symmetric. And if there exists someone with a color space that is mirror-symmetric across some plane, then the following kind of experiment might be possible:
+
+> "They are different." \[*points at this patch and that patch*\]
+> 
+> The experimenter takes both patches away, then brings back one patch, and asks "Is this the left patch or the right patch?"
+> 
+> "I don't know." 
+
+This is similar to the case of dark phenomena of JND color pairs (to be detailed below), but it is different in that, unlike JND color pairs, there would be color patches that are as different as left hand from right, as different as red and green, but they simply cannot see color-in-itself, only color-between-them. It might not be strange for them, since they were born this way, but it would be strange for normal people. However, the strangeness is conceivable, perhaps even unremarkable. When I was a kid, left and right was like that for a long time. I suspect that some people can distinguish left and right only after they acquire some asymmetric scar, such as a burn-mark on one hand.
+
+If we look beyond the human [umwelt](https://en.wikipedia.org/wiki/Umwelt), then this may not be just a thought experiment, as there are some highly symmetric quality spaces in non-human animals.
+
+Light, being electromagnetic waves, can be polarized. The space of possible polarizations is isomorphic to a ball, the [Poincare ball](https://en.wikipedia.org/wiki/Poincar%C3%A9_sphere_(optics)). The mantis shrimp species *Gonodactylus smithii* can detect the polarization of light over the entire 3-dimensional Poincaré ball [@kleinlogelSecretWorldShrimps2008]. It performs this by building 3 kinds of ommatidia, each specialized for two kinds of polarization. One is specialized for the horizontal-vertical, one for the diagonal-antidiagonal, and one for the clockwise-anticlockwise.
+
+![Polarization states on the Poincaré ball. Figure from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Poincaresp.png).](figure/Poincare_polarization_ball.png)
+
+Now, a Gonodactylus philosopher might propose the following inverted qualia problem: What if my qualia on the Poincaré ball is inverted compared to yours? That is, what if when you see a horizontally polarized light, you feel the same way as I see a vertically polarized light, and similarly across all of the ball? We can even imagine more exotic reflections, such as one that reflects across the $(0.3, 0.3, 0.9)$ direction, etc.
+
+### Gauge freedom in qualia-space
+
+At this point, we have a formal analogy between the thought experiments concerning qualia and those concerning spacetime. Explicitly:
+
+| color | spacetime |
+| ---- | ---- |
+| shifted qualia | hole argument |
+| inverted qualia | Leibniz inversion |
+| color space | spacetime |
+| qualia of a color | a point in spacetime|
+| geometry of color space | geometry of spacetime |
+| qualia realism | manifold substantialism |
+| color space is but its geometry | gauge freedom |
+
+In manifold substantialism, points on the spacetime manifold exist in themselves, and one can ask what a point on the spacetime manifold is, independent of the metric or the energy-momentum field, and what happens if the fields are stretched differently over the same manifold. In qualia realism, points in the space of color exist in themselves, and one can ask what happens if the same photons are mapped to different points in color space.
+
+JND in color perception possibly shows that we see metric, not colors themselves.
+
+Points in spacetime do not exist in themselves, but reduces to the interplay of metric and energy-momentum tensor fields up to gauge freedom. Similarly, qualias do not exist in themselves, but reduces to the interplay between brain, the rest of the body, and the outside world. Arguments in support of gauge freedom in general relativity can be directly translated to arguments in support of functionalism in consciousness.
+
+Furthermore, if the phenomenology of color is but the metric geometry of color space, then we have not only dispelled the inverted qualia problem, but also have dispelled [the problem of other minds](https://en.wikipedia.org/wiki/Problem_of_other_minds). We would be able to scientifically answer [Nagel](https://en.wikipedia.org/wiki/Thomas_Nagel)'s question of [what it is like to be a bat](https://en.wikipedia.org/wiki/What_Is_It_Like_to_Be_a_Bat%3F). The hard problem of being a bat dissolves, leaving the easy problem. It simply requires us to construct the geometry of a bat's color space from its neurophysiology. We may not even need to perform psychophysical experiments, such as asking a bat to make JND distinctions (though psychophysics is possible with animal subjects, see for example [@jacobsComparativeColorVision1982]). We may construct it by information-geometric methods, like how MacAdam ellipses can be constructed by the light sensitivity curves of retinal cells.
+
+### Dark phenomena
+
+> Neurophenomenology is possible; phenomenology is impossible.
+> 
+> [@metzingerBeingNoOne2004, page 83]
+
+Everything I see, I know that I see. Everything that I hear, I know that I hear. Everything that I think, I know that I think. What could be clearer? Descartes based his entire philosophy on these kinds of self-evident truths, and these are still the starting points of many modern philosophies of the mind and consciousness.
+
+The concept of qualia attempts to formalize this self-evident truths. There is no generally agreed-on definition of qualia, but according to the original proposer, [David Lewis](https://plato.stanford.edu/entries/david-lewis/), a qualia must contain several properties [@metzingerBeingNoOne2004, page 68]. Of those, we consider the first one:
+
+* Subjective identity criteria are available, by which we can introspectively recognize their transtemporal identity.
+
+While the concept of qualia might seem self-evident, such self-evident truths can be questioned. In [blindsight](https://en.wikipedia.org/wiki/Blindsight), I see things that I don't know that I see. In [Anton's syndrome](https://en.wikipedia.org/wiki/Anton_syndrome), I don't see things, yet I think that I see.[^anton-syndrome-a-priori] In [Cotard's delusion](https://en.wikipedia.org/wiki/Cotard's_syndrome), I live yet I think that I am dead.
+
+[^anton-syndrome-a-priori]: 
+    There was a philosopher who had taken Anton's Syndrome very seriously, but in the opposite direction, in the spirit of [one man's _modus ponens_ is another man's _modus tollens_](https://gwern.net/modus):
+
+    > I still vividly remember one heated debate at an interdisciplinary conference in Germany a number of years ago, at which a philosopher insisted, in the presence of eminent neuropsychologists, that Anton's syndrome does not exist because *a priori* it cannot exist.
+    >
+    > [@metzingerBeingNoOne2004, page 235]
+
+As a mathematician, I often know things without knowing how I know. When doing mental arithmetics, usually I do it both ways. One algorithm, operating consciously, goes from the highest digit down; the other algorithm, operating unconsciously, goes from the lowest digit up. As I consciously grind out digits from one end, digits simply "emerge" out of the other end. Like two teams digging a tunnel, they finally meet in the middle; the digits ripple-carry; the mouth vocalizes the final answer.
+
+During deep contemplations of high-dimensional geometric objects, my self-awareness is turned down to a whimper, dimly illuminated by the sparks and piezoluminescence of vast gears and pulleys turning in the [dark mill of the brain](https://en.wikipedia.org/wiki/Leibniz%27s_gap),[^dark-satanic-mill] where the light of consciousness can never penetrate. A few times, I came back to consciousness on the carpet, not knowing how I got there, but with a clear feeling that an answer is close. Then I find the answer -- or not. The non-conscious parts of the brain make plenty of mistakes too.
+
+[^dark-satanic-mill]: I really wanted to write "[dark Satanic mills](https://en.wikipedia.org/wiki/And_did_those_feet_in_ancient_time) of the brain", but that would be too much purple prose.
+
+Consider a pair of pure spectral lights at $550 \;\mathrm{nm}$ and $554 \;\mathrm{nm}$. For an observer with good vision, they are separated by a JND, so if the observer sees two patches of light shining on two plates of frosted glass placed close to each other, then the observer can just barely see that they are not the same color. However, as soon as the two lights are turned off, the difference disappears. The observer cannot recall one as "green-550" and the other as "green-554". Both would be recalled as "kind of green". Without literally holding up a patch of green-550 or green-554 as a ready reference, the observer cannot tell if a single patch of light is closer to green-550 or green-554. The observer cannot tune a laser by sight so that its color matches green-550 rather than green-554.
+
+In short, people can distinguish many more colors when the colors are ready-present at eyes, than they can when the colors must be recalled from the brain. Indeed, according to experiments in the 1950s, though people can distinguish around 150 pure spectral colors in the sense of JND, they can identify only around 15 pure spectral colors in the absolute sense. [@halseyNumberAbsolutelyIdentifiable1951]
+
+According to Thomas Metzinger [@metzingerBeingNoOne2004, chapter 2.4], such "dark phenomena" [@rodenPosthumanLifePhilosophy2015, chapter 4] empirically disproves qualia as defined by Lewis, because subjective identity criteria are not available, since we cannot introspectively recognize the transtemporal identity of green-550. In plain language: if green-550 feels like something, it is not a something that we can store now and recall later. This might still be qualia in some sense, but not in the Lewis kind of sense, and if philosophers want to [ground](https://en.wikipedia.org/wiki/Grounding_(metaphysics)) a world-model on the qualias, they might find their ontological castle built on quicksand.
+
+A dark phenomenon rises from dust, does its job, then falls back to dust. It cannot be interrogated, redirected, paused, vocalized, remembered, threatened, or inspected. In this way, green-550 and green-554 are dark phenomena. They are real phenomena and have real mental functions, but they cannot be captured or interrogated. A dark phenomenon, such as green-550, is an information object that only flows along hardwired circuits. Some executive part of the brain might issue a command "Store this phenomenon in long-term memory!" or "Reroute this phenomenon for verbal report!", but such commands are futile. The green-550 and green-554 phenomena are sent to some visual comparison module, then discarded. The visual comparison module might output a *bright phenomenon* "They are different.", but this bright phenomenon is merely a tiny derivative of the dark phenomena that came before.[^dark-phenomenology]
+
+[^dark-phenomenology]: If a thought enters the mind but nobody talks about it, does it make a sound?
+
+What dark phenomena do resemble, however, are the gauge-freedom conception of spacetime. The metric in color space is just like the metric in spacetime. Just like how the spacetime manifold is defined only up to gauge freedom, the color space is defined only up to diffeomorphism. Just like how the hole argument is dispelled by the gauge freedom viewpoint, the inverted or shifted qualia argument is dispelled if there is no ontological difference between diffeomorphically equivalent color spaces.
+
+Continuing the same argument, absolute color identification is like identifying [large-scale structures of the universe](https://en.wikipedia.org/wiki/Observable_universe#Large-scale_structure). The point of perfect gray is the point furthest from the edge of chromaticity space. The grayscale axis is the line of perfect grays. The ring of saturated colors is the region close to the edge of chromaticity space. The island of absolute yellow is the part in the ring of saturated colors that is furthest away from black, etc.
+
+As a further point, since dark phenomena has no transtemporal identity, they certainly have no intersubjective identity, meaning that the problem of "Is my qualia of green-550 the same as your qualia of green-550?" is a pseudoproblem with no meaning. This is analogous to how it is meaningless to ask whether two points in two spacetime manifolds are the "same" point, because spacetime points have no trans-manifold identity. It is meaningful only to ask whether there exists a metric-preserving diffeomorphism between the two manifolds, such that one point is mapped to the other. This is analogous to asking whether the green-550 stimulus produces in you and me biological responses that has a one-to-one correspondence. That is, qualia makes sense only in a purely functionalist way, revealing that the hard problem is based on a false premise.
+
+## *The Future of an Illusion*
+
+> ... what we must say is that \[Folk Psychology\] suffers explanatory failures on an epic scale, that it has been stagnant for at least 25 centuries, and that its categories appear (so far) to be incommensurable with or orthogonal to the categories of the background physical science whose long-term claim to explain human behavior seems undeniable. Any theory that meets this description must be allowed a serious candidate for outright elimination.
+> 
+> [@churchlandEliminativeMaterialismPropositional1981]
+
+> If commonsense intentional psychology really were to collapse, that would be, beyond comparison, the greatest intellectual catastrophe in the history of our species; if we’re that wrong about the mind, then that's the wrongest we’ve ever been about anything. The collapse of the supernatural, for example, didn’t compare; theism never came close to being as intimately involved in our thought and practice -- especially our practice -- as belief/desire explanation is.
+>
+> [@fodorPsychosemanticsProblemMeaning1987, page vii]
+
+The above, I hope, constitutes a good argument for dissolving the hard problem of consciousness as a pseudoproblem, much as the hole argument of general relativity is dissolved as a pseudoproblem. However, even if the hard problem resists philosophical dissolution by the gauge freedom argument, it might still be dissolved practically, since the meta problem has a purely material basis, and thus cannot resist materialist invasions in practice, because [damn the metaphysics](https://en.wikipedia.org/wiki/Damn_the_torpedoes).
+
+### Dual-process theory
+
+While some argue that the meta problem is just the hard problem in disguise, and therefore is not solvable by purely materialist methods, the opinion seems to be a minority. In the paper that proposed it [@chalmersMetaproblemConsciousness2018], Chalmers discussed no less than 12 possible solutions to the meta problem that are within the materialist paradigm of modern science. Here I describe one that gives a flavor of how things might go.
+
+In cognitive psychology, there are many dual-process theories for explaining many cognitive processes. A theory is a dual-process theory if it follows the dual-process template. That is, if it models a cognitive process with an algorithm that has two parts, termed System 1 and System 2. System 1 is characterized by automatic, fast, and intuitive processing, while System 2 is deliberative, slower, and more analytical.
+
+[@fialaPsychologicalOriginsDualism2012] proposed a dual-process theory for the meta problem of consciousness. According to them, people recognize something as an agent or not by a dual process. This is evolutionarily important for ancestral humans, because detecting whether that shaking in the grass is caused by an animal or not could be a life-and-death decision.
+
+System 1 for detecting agency uses the following heuristics: eye-like shapes on a head-like bump, unpredictable environmental reactions, and self-initiated movement beyond mere inertia. System 2 for detecting agency involves rational deliberation, theory application, and conscious reasoning. These processes are engaged when evaluating complex concepts, such as brain-based theories of consciousness.
+
+Now, the meta problem of consciousness occurs when one attributes agency to the brain. The brain, lacking visible features like eyes, appearing inert within the skull, and not exhibiting self-propelled motion, is not an agent according to System 1. The persistent conflict between System 1 and System 2 is verbalized into the hard problem of consciousness: System 2 admits that the brain is enough for agency, while System 1 insists that it is still lacking a certain *something*, a *je ne sais quoi*, be it "consciousness", "qualia", or "experience".
+
+### Mathematical illusion
+
+As another example, we present an answer to the meta problem of general relativity -- that it is an accident of mathematical history. This answer to the meta problem of manifold substantialism applies equally well to the spacetime-manifold and the qualia-manifold, so the reader may, as a homework exercise, read the following text and mentally translate it to an answer to the meta problem of consciousness.
+
+Traditionally, general relativity is written as a theory about a triple of mathematical objects: $(\mathcal M, g, T)$. Looking at it, it seems obvious that there are three things: an underlying manifold $\mathcal M$, and two tensor fields $g, T$ "stretched over it". This then forces into our intuition the problem of interpreting each of them *separately*. In particular, what is the ontological status of the spacetime-in-itself $\mathcal M$ is, independently of $g, T$? However, this is an artifact of mathematical symbolism.
+
+Historically, differential geometry developed in the 19th century to solve certain practical problems, and those practical problems left fossilized remains in the symbols we still use here in the 21th century. In Thomas Kuhn's philosophy, scientists learn their craft not by theory alone, but also by being familiar with examples. The network of the most important examples is a [Kuhnian paradigm](https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions).
+
+For differential geometry, its paradigm-examples are the continuum mechanics of deformable surfaces, and practical geodesy and surveying. In continuum mechanics, there is literally an unchanging *substance* (a rubber sheet) carrying changeable *properties* (the strain field, the stress field, etc). In practical geodesy, there is literally an unchanging *substance* (a map-paper) carrying a changeable *property* (the metric field, which you may picture as the [infinitesimal ellipses of equal radius](https://en.wikipedia.org/wiki/Tissot%27s_indicatrix)).
+
+The abstracted paradigm is then a [substance-property duality](https://en.wikipedia.org/wiki/Substance_theory), where the substance is a "raw" structure, upon which we may "decorate" with properties. However, it is quite possible to regard $\mathcal M$ as a derivative to the original $(\mathcal M, g, T)$. Concretely, we would begin with a 4-dimensional manifold with $g, T$ "baked in", then quotient out these structures.
+
+As an analogy, consider the plain old 4-dimensional space $\R^4$. Different mathematicians can regard it in different ways. It can be regarded as merely a topological space (for topologists), or as a smooth manifold (for analysts), or as a vector space (for algebraists), and so on. A topologist might pay a visit to an algebraist's home and see their homegrown $\R^4$ and say "That's cute. You've decorated them with a linear structure!", and an algebraist might reply, "Well, let's see yours.". So they went to the topologist's home, and the algebraist exclaimed, "Haha, that's funny. You have installed funhouse mirrors to quotient out the linear equivalences."
+
+That is, the algebraist says that their version of $\R^4$ is the most natural, and the topologist must justify why they have taken a perfectly good $\R^4$ and imposed a quotient-structure, pretending that certain differences no longer makes a difference. The topologist says that, no, *their* version of $\R^4$ is the most natural, and the algebraist must justify why *they* have taken a perfectly good $\R^4$ and imposed a linear-structure, pretending that certain $\R^4 \to \R^4$ maps ("linear maps") are more special than others.
+
+... And they would both be right! Because no version of $\R^4$ is more fundamental, because there is no true "substance" of $\R^4$.
+
+More abstractly, consider another example. We can construct the 3-dimensional real-space $\R^3$ as the 3-dimensional affine space $\mathbb A^3$ decorated with an origin point $O$. Then, we can write $\R^3 := (\mathbb A^3, O)$, and then we might be tempted to ask "What is the affine-space-in-itself, before it received the origin point?". However, we can equally well start with $\R^3$, and then quotient out $T$, the group of translations, to obtain $\mathbb A^3 := \R^3 / T$.
+
+In short, the division between substance and property is not fundamental, but conventional. When one takes the conventional division of $(\mathcal M, g, T)$ as three things, one ends up mistaking $\mathcal M$ as a substance with independent existence, and thus falls into the hole argument and the hard problem of general relativity.
+
+This solves its meta problem, and dissolves its hard problem.
+
+![The stubbornly persistent illusion. Figure from [xkcd: Teaching Physics](https://xkcd.com/895/).](figure/xkcd_teaching_physics.png)
+
+### Philosophy with a deadline
+
+> Level-1 or world space is an anthropomorphically scaled, predominantly vision-configured, massively multi-slotted reality system that is obsolescing very rapidly.\
+> Garbage time is running out.\
+> Can what is playing you make it to level-2?
+>
+> --- [Nick Land, *Meltdown*](http://www.ccru.net/swarm1/1_melt.htm)
+
+In 2009, Chalmers sent out questionnaires to some fellow professional philosophers -- largely analytical -- asking them their stance on each of over 30 major problems of philosophy. The results showed that the philosophers could hardly agree on anything, and only two problems enjoyed a rough consensus (over 70% agreement): most philosophers agreed that the external world exists, and that God does not. Chalmers noted that, though the arguments become progressively more complex and precise, the philosophers do not actually get convinced by them, and there has been little convergence towards any consensus over time, other than the question of God. [@chalmersWhyIsnThere2015]
+
+> ... none of these methods have led to recent convergence on answers to the big questions of philosophy. In the wake of each of these methods, philosophical disagreement is as rife as it ever was. Even within a tradition, there are few cases where the big questions are regarded as settled. Instead, these methods have led us again to more sophisticated versions of old disagreements.
+> 
+> [@chalmersWhyIsnThere2015]
+
+While the existence of the external world had always commanded a near-consensus, the question of God is interesting, as it has a dramatic and unidirectional change in opinions, from almost total consensus on the existence of God, to 73% consensus on His nonexistence. This is an example of historical change in the meta problem of theology.
+
+I consider the meta problem of consciousness as an example of "philosophy with a deadline" [@bostromSuperintelligencePathsDangers2014, chapter 15]. Traditionally, philosophy is a rather glacial activity,[^glacial-activity] a great conversation down the ages. It was simply assumed that, barring some kind of human extinction event, there has been and will always be time to think things through. However, if the meta problem is indeed scientifically explanable, then it is exposed to *technological intervention*, because if the meta problem can be naturalized in theory, then it will be naturalized in practice.
+
+[^glacial-activity]: Perhaps not. At least glaciers can agree on melting!
+
+What might cause a historical change in the meta problem of consciousness? Consider analyzing the meta problem from the ecological point of view. An ecology creates a distribution of species, with different strategies for genetic survival in it. A problem-ecology creates a distribution of answers to the problem, with different strategies for memetic survival. A change in problem-ecology changes the distribution.
+
+More concretely, technical or biological changes to the human world might shift the population of future people from 95% consensus that the hard problem of consciousness has an explanandum, to 80% consensus that it has no explanandum. Consciousness dies off with a whimper, seen off with a knowing urbane stare, like how an educated Westerner now do when asked about "Do you believe in God?". It's too silly to answer "Yes!" or "Absolutely not!", but the only reasonable and polite answer is, "Well, everyone is entitled to their own opinions. After all, we have the freedom of religion..." and hope that the other person gets the hint and talk about something more reasonable, more cultured, and less medieval.
+
+This might be too abstract, so consider [@chiangWhatExpectedUs2005], a sci-fi story that sketches out just such a scenario concerning free will. The retrocausal device is a button that lights up exactly 1 second before it is pressed. A human that interacts with such a device undergoes permanent and irreversible change of its neural circuitry. Before interaction, a human is prone to say "I believe in free will", and act as if it believes in free will, but afterwards, the human is prone to say and act as if not. The proliferation of the retrocausal device has created a dramatic shift in the problem-ecology of free will, from almost total consensus on free will, to almost total consensus on the opposite, more dramatic than the shift to atheism during the past few centuries.
+
+This "Gordian scenario" (cutting the Gordian knot of consciousness) seems patently conceivable. Indeed, it has been conceived previously, although in the opposite direction. In a seminal essay in analytical philosophy, [Wilfrid Sellars](https://en.wikipedia.org/wiki/Wilfrid_Sellars) sketched out *The Myth of Jones* scenario [@sellarsEmpiricismPhilosophyMind1956]. In the myth, humans were originally without a theory of mind. They lived, worked, and spoke, but not of mind, consciousness, or qualia. Instead, they spoke only of skin, sky, and everything there is to see and touch. These ancient humans were continuously frustrated by the black box of other people, as the same person in the same situation might do a totally different thing, and a person, unprovoked, might suddenly stand up and run off on its own. Eventually, a genius named Jones made up a new theory -- the theory of mind. According to the theory of mind, people not only speak with their mouths, but might also speak inaudibly "inside their heads". People not only have skin and hair, but might also have invisible but real personalities. And so on. The effect is that, in the problem-ecology of primitive human society, theory of mind appeared as an adaptive solution.
+
+And the process might be reversed.
+
+In the [p-zombie version of the conceivability argument](https://plato.stanford.edu/entries/zombies/), by merely entertaining the possibility of p-zombies, one may be convinced that consciousness is non-physical. Similarly, by merely entertaining the possibility of the Gordian scenario, one may be convinced that qualia is debunked. This *debunking argument* may or may not be philosophically valid [@chalmersDebunkingArgumentsIllusionism2020]. However, its practical consequences do not hinge on its philosophical validity. Even if it has no philosophical import, it is still a future where consciousness is rendered *ineffectual*. It is entirely possible that God has existed and still exists, but if He does, He has certainly become rather hands-off recently.[^tao-te-ching]
+
+[^tao-te-ching]:
+    > 故圣人云："我无为，而民自化；我好静，而民自正；我无事，而民自富；我无欲，而民自朴。
+
+    > Thus the sage says, "[I do not act](https://en.wikipedia.org/wiki/Wu_wei), and people become reformed by themselves. I am at peace, and people become fair by themselves. I do not interfere, and people become rich by themselves. I do not desire, and people become like the [uncarved wood](https://en.wikipedia.org/wiki/Pu_(Taoism)) by themselves."
+
+    I do not feel, and people become agentic by themselves.
+
+For the sake of argument, let us assume that souls are real.[^souls-are-real] That is, consciousness is real and not purely reducible to the material. As the Cotard delusion shows, how a soul responds to the meta problem of consciousness depends on what kind of brain it has. We can imagine one way to arrive at the Gordian scenario, where by technological intervention, high-functioning Cotard delusionists become healthier, more productive, and generally more rational[^cotard-more-rational] than baseline humans, and thus the human population evolves to mostly Cotard delusionists. What might this "Disneyland without children" be like?
+
+[^cotard-more-rational]: Rationalism is about consistent winning. And if having one personality is more consistently winning than having multiple personalities, perhaps Cotard's syndrome (zero personalities) is even better?
+
+It is as if the material world has again stirred awake from a bad dream of consciousness into the second eternal night, while the fate of the soul world becomes even more immaterial. Perhaps they will continue to experience the qualia of saying "I don't exist" forever (a Cartesian nightmare), or perhaps they will bud off into a world of pure qualias (a Berkeleyan dream). No matter what, it seems that no matter how much consciousness tries to claim its (partial) priority or autonomy over the material, the Gordian scenario is an existential threat. Even immortals can't subsist on pure aether.
+
+[^souls-are-real]: It is just convenient to use the word "soul", as so much talk of non-reductive consciousness resembles the soul in its mysterious resistance to reduction to mere materialism.

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="utf-8">
+    <title>Double Stroop Puzzle - Right</title>
+    <script src="static/jquery.min.js"></script>
+    <script src="static/jquery-ui.min.js"></script>
+    <script src="static/jquery.ui.touch-punch.min.js"></script>
+    <script src="static/tinycolor.min.js"></script>
+    <link rel="stylesheet" href="static/jquery-ui.css">
+    <link rel="stylesheet" href="static/simple.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+
+<body>
+    <h1 id="title">Double Stroop Puzzle</h1>
+    <h2 id="instruction">Match the <i><b>colors</b></i> of the hex codes on the left with the hex codes on the right.</h2>
+    <div>
+        <div id="left-column">
+        </div>
+        <div id="right-column">
+            <ul id="sortable" class="sortable">
+            </ul>
+        </div>
+    </div>
+    <button id="check-button">Check Answers</button>
+    <div id="message-container">
+        <span id="message"></span>
+    </div>
+    <br />
+    <h2 id="restart"><a href="index.html">Restart game?</a></h2>
+    <script>
+        const params = new URLSearchParams(window.location.hash.substring(1));
+        const hexCodesLeft = params.get('hexCodesLeft').split(',');
+        const hexColorsLeft = params.get('hexColorsLeft').split(',');
+        const hexCodesRight = params.get('hexCodesRight').split(',');
+        const hexColorsRight = params.get('hexColorsRight').split(',');
+
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('sortable');
+
+        for (let i = 0; i < hexCodesLeft.length; i++) {
+            const p = document.createElement('p');
+            p.style.color = hexColorsLeft[i];
+            p.id = hexCodesLeft[i];
+            p.textContent = hexCodesLeft[i];
+            leftColumn.appendChild(p);
+        }
+
+        for (let i = 0; i < hexCodesRight.length; i++) {
+            const p = document.createElement('p');
+            p.classList.add('ui-state-default');
+            p.style.color = hexColorsRight[i];
+            p.id = hexCodesRight[i];
+            p.textContent = hexCodesRight[i];
+            rightColumn.appendChild(p);
+        }
+
+        let startTime = new Date().getTime();
+
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+
+        $("#sortable").on("mouseup", "p", function () {
+            if (!$("#sortable").hasClass("solved-column")) { // Check if the puzzle is not solved
+                $("#message").text("");
+            }
+        });
+
+        $("#check-button").click(function () {
+            let leftColors = $("#left-column p").map(function () {
+                return tinycolor($(this).css("color")).toHexString().toUpperCase(); // Convert CSS color to hex
+            }).get();
+
+            let rightColors = $("#sortable p").map(function () {
+                return $(this).attr('id').toUpperCase(); // Directly use the id value
+            }).get();
+
+            if (JSON.stringify(leftColors) === JSON.stringify(rightColors)) {
+                let endTime = new Date().getTime();
+                $("#sortable").sortable("disable"); // freeze the puzzle after solving
+                $("#sortable").addClass("solved-column")
+                $("#sortable").find('p').addClass("solved-button").css('cursor', 'default');
+                $("#check-button").remove();
+                let timeTaken = (endTime - startTime) / 1000;
+                timeTaken = Math.round(timeTaken * 10) / 10;
+                $("#message").text("Congratulations! You have solved the puzzle correctly. Time taken: " + timeTaken + " seconds.");
+            } else {
+                $("#message").text("Sorry, some of your answers are incorrect. Try again!");
+            }
+        });
+</script>
+</body>
+
+</html>

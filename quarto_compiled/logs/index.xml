@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Yuxi on the Wired - Logs</title>
+<link>https://yuxi.ml/logs/</link>
+<atom:link href="https://yuxi.ml/logs/index.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website of Yuxi Liu</description>
+<language>en</language>
+<image>
+<url>https://yuxi.ml/img/blog icon.jpg</url>
+<title>Yuxi on the Wired - Logs</title>
+<link>https://yuxi.ml/logs/</link>
+</image>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Sun, 29 Jun 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Dream: Ingress Answer</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-dream-ingress-answer/</link>
+  <description><![CDATA[ Dream about a new feature in Chrome which helped me understand LLMs a bit better. ]]></description>
+  <category>fun</category>
+  <category>art</category>
+  <category>slice-of-other-life</category>
+  <guid>https://yuxi.ml/logs/posts/2025-dream-ingress-answer/</guid>
+  <pubDate>Sun, 29 Jun 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/logs/posts/2025-dream-ingress-answer/figure/6.png" medium="image" type="image/png" height="42" width="144"/>
+</item>
+<item>
+  <title>ReproFro 2025 party</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-reprofro-party/</link>
+  <description><![CDATA[ Random recollections from the hectic conversations at the afterparty of the Reproductive Frontiers Summit of 2025. ]]></description>
+  <category>slice-of-life</category>
+  <category>AI</category>
+  <category>biology</category>
+  <category>politics</category>
+  <guid>https://yuxi.ml/logs/posts/2025-reprofro-party/</guid>
+  <pubDate>Sat, 14 Jun 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Dwarkesh Patel dinner party</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-patel-dinner/</link>
+  <description><![CDATA[ Random recollections from the hectic conversations at a dinner party organized by Dwarkesh Patel. ]]></description>
+  <category>slice-of-life</category>
+  <category>AI</category>
+  <category>economics</category>
+  <guid>https://yuxi.ml/logs/posts/2025-patel-dinner/</guid>
+  <pubDate>Fri, 30 May 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>That Survivorship Bias Plane</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-survivorship-bias/</link>
+  <description><![CDATA[ The exact backstory to that picture of an airplane with red dots on top of it. ]]></description>
+  <category>history</category>
+  <category>war</category>
+  <guid>https://yuxi.ml/logs/posts/2025-survivorship-bias/</guid>
+  <pubDate>Fri, 02 May 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/logs/posts/2025-survivorship-bias/figure/B-24_poster.png" medium="image" type="image/png" height="95" width="144"/>
+</item>
+<item>
+  <title>Characteristic time in finance</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-char-time/</link>
+  <description><![CDATA[ Application of a simple concept from physics to personal finance. ]]></description>
+  <category>finance</category>
+  <category>physics</category>
+  <guid>https://yuxi.ml/logs/posts/2025-char-time/</guid>
+  <pubDate>Thu, 01 May 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The cost of O’Neil habitation</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-oneil-cylinder/</link>
+  <description><![CDATA[ To win (?) a twitter argument, we calculated the energetic cost of O’Neil habitat per person. Oddly, it is just affordable by modern standards, ~0.72 million USD per person. Let it be known that the SF housing crisis is cheaper to solve by building O’Neil cylinders. ]]></description>
+  <category>fun</category>
+  <category>scifi</category>
+  <category>economics</category>
+  <guid>https://yuxi.ml/logs/posts/2025-oneil-cylinder/</guid>
+  <pubDate>Fri, 18 Apr 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/logs/posts/2025-oneil-cylinder/figure/O&#39;Neil%20cylinder.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Whalefall</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-whalefall/</link>
+  <description><![CDATA[ Thoughts on the recent ‘DeepSeek shock’ of the stock market. The market is being even less efficient than usual, and much of the ‘professional’ commentators are idiots or bullshitters. I wrote this post to prevent my Gell-Mann amnesia. ]]></description>
+  <category>AI</category>
+  <category>economics</category>
+  <guid>https://yuxi.ml/logs/posts/2025-whalefall/</guid>
+  <pubDate>Wed, 29 Jan 2025 08:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

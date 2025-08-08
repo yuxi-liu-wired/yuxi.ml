@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Yuxi on the Wired - Sketches</title>
+<link>https://yuxi.ml/sketches/</link>
+<atom:link href="https://yuxi.ml/sketches/index.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website of Yuxi Liu</description>
+<language>en</language>
+<image>
+<url>https://yuxi.ml/img/blog icon.jpg</url>
+<title>Yuxi on the Wired - Sketches</title>
+<link>https://yuxi.ml/sketches/</link>
+</image>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Sun, 01 Sep 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Phase-space quantum mechanics</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/phase-space-quantum-mechanics/</link>
+  <description><![CDATA[ Notes on phase-space quantum mechanics. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <guid>https://yuxi.ml/sketches/posts/phase-space-quantum-mechanics/</guid>
+  <pubDate>Sun, 01 Sep 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Notes for a talk on the history of neural networks</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/history-neural-networks-talk-notes/</link>
+  <description><![CDATA[ Notes for a talk on the history of neural networks. ]]></description>
+  <category>history</category>
+  <category>AI</category>
+  <category>cybernetics</category>
+  <guid>https://yuxi.ml/sketches/posts/history-neural-networks-talk-notes/</guid>
+  <pubDate>Thu, 01 Aug 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Philosophical Sketches</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/philosophical-sketches/</link>
+  <description><![CDATA[ Short philosophical writings, often poking fun at philosophers. ]]></description>
+  <category>fun</category>
+  <category>philosophy</category>
+  <guid>https://yuxi.ml/sketches/posts/philosophical-sketches/</guid>
+  <pubDate>Sun, 16 Jun 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/sketches/posts/philosophical-sketches/figure/banner.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Fictional ideas</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/fictional-ideas/</link>
+  <description><![CDATA[ Ideas for stories, fictions, etc. ]]></description>
+  <category>fun</category>
+  <category>fiction</category>
+  <guid>https://yuxi.ml/sketches/posts/fictional-ideas/</guid>
+  <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Research ideas</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/research-ideas/</link>
+  <description><![CDATA[ Ideas for research. Free for a good home. ]]></description>
+  <category>fun</category>
+  <guid>https://yuxi.ml/sketches/posts/research-ideas/</guid>
+  <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>How to do field-theoretic calculations</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/field-theory-how-to/</link>
+  <description><![CDATA[ I teach you how to do probability calculations and gigantic integrals in the ‘field-theoretic style’, done in exhaustive details. I aim for clarity, pointing out every pitfall that I have fallen into so that you don’t have to. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <category>scaling</category>
+  <guid>https://yuxi.ml/sketches/posts/field-theory-how-to/</guid>
+  <pubDate>Thu, 11 Apr 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>A Scrapbook of Neural Network Lores</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/neural-network-scrapbook/</link>
+  <description><![CDATA[ Lightly curated list of stories, anecdotes, and other various bits from neural network research. ]]></description>
+  <category>AI</category>
+  <category>scaling</category>
+  <category>NN</category>
+  <guid>https://yuxi.ml/sketches/posts/neural-network-scrapbook/</guid>
+  <pubDate>Thu, 18 Jan 2024 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Information Warfare</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/info-warfare/</link>
+  <description><![CDATA[ A mosaic view of the info-battleground: information for anti-informative goals. Intentionally useless errors, diplomatic speech, Chinese censorship, spam campaign, stock market arbitrage, continental philosophy, etc. ]]></description>
+  <category>fun</category>
+  <category>evolution</category>
+  <category>sociology</category>
+  <guid>https://yuxi.ml/sketches/posts/info-warfare/</guid>
+  <pubDate>Sat, 16 Dec 2023 08:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/sketches/posts/info-warfare/figure/banner_2.png" medium="image" type="image/png" height="82" width="144"/>
+</item>
+<item>
+  <title>Notes on Web Design</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/web-design-notes/</link>
+  <description><![CDATA[ My quick reference for designing content for the Internet. ]]></description>
+  <category>programming</category>
+  <guid>https://yuxi.ml/sketches/posts/web-design-notes/</guid>
+  <pubDate>Sun, 10 Dec 2023 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Notes on Using Linux</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/linux-notes/</link>
+  <description><![CDATA[ My quick reference for using Linux for doing things. ]]></description>
+  <category>programming</category>
+  <guid>https://yuxi.ml/sketches/posts/linux-notes/</guid>
+  <pubDate>Sat, 10 Dec 2022 08:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

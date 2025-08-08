@@ -1,0 +1,19 @@
+---
+title: "Site-wide feed"
+listing:
+  contents:
+    - essays/posts
+    - logs/posts
+    - sketches/posts
+    - notes/posts
+  feed:
+    title: "Yuxi on the Wired"
+    language: en
+    items: 20
+    type: partial
+sidebar: false
+search: false
+format:
+  html:
+    output-file: feeds.html
+---

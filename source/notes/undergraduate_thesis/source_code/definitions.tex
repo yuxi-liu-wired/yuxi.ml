@@ -1,0 +1,109 @@
+% Bibliography
+\usepackage[
+	hyperref=true,
+	url=false,
+	isbn=false,
+	style=alphabetic,
+	citereset=chapter,
+	maxcitenames=3,
+	maxbibnames=10,
+	block=none]{biblatex}
+\addbibresource{bibliography.bib}
+\AtEveryBibitem{\clearfield{note}}
+
+% Remove extraneous fields from bibliography.
+\AtEveryBibitem{
+	\clearfield{howpublished}
+	\clearfield{pagetotal}
+}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{mathtools}
+
+% Detecting if table is in math mode.
+% Typesetting everything in table in math mode if so.
+\usepackage{tabu}
+
+% Colored links.
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{wrapfig}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{epigraph}
+
+% to make todo 
+\usepackage{todonotes}
+
+\graphicspath{{img/}}
+
+
+
+% some theorem environments
+% remove "[theorem]" if you do not want them to use the same number sequence
+  \newtheorem{theorem}{Theorem}[chapter]
+  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem{prop}[theorem]{Proposition}
+  \newtheorem{cor}[theorem]{Corollary}
+
+  \newtheorem{conj}[theorem]{Conjecture}
+
+  \theoremstyle{definition}
+  \newtheorem{defn}[theorem]{Definition}
+  \newtheorem{conv}[theorem]{Convention}
+  \newtheorem{ex}[theorem]{Example}
+  \newtheorem{exs}[theorem]{Examples}
+  \newtheorem{question}[theorem]{Question}
+  \newtheorem{remark}[theorem]{Remark}
+  \newtheorem{notn}[theorem]{Notation}
+
+% esssup
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\cl}{cl}
+\DeclareMathOperator*{\co}{co}
+\DeclareMathOperator*{\dom}{dom}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\DeclareMathOperator*{\simd}{\stackrel{\text {d}}{\sim}}
+\DeclareMathOperator*{\disteq}{\stackrel{\text {d}}{=}}
+\DeclareMathOperator*{\distconv}{\stackrel{\text {d}}{\to}}
+\DeclareMathOperator*{\probconv}{\stackrel{\text {Pr}}{\to}}
+\DeclareMathOperator*{\asconv}{\stackrel{\text {a.s.}}{\rightarrow}}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\erfc}{erfc}
+
+\newcommand{\E}{\ensuremath{\mathbb{E}}}
+\newcommand{\sumn}{\ensuremath{\sum_{i = 1}^n}}
+\newcommand{\Ca}{\ensuremath{\operatorname{CVaR}_\alpha}}
+\newcommand{\LL}{\ensuremath{\mathscr{L}}}
+\newcommand{\cvar}{\ensuremath{\operatorname{CVaR}}}
+\newcommand{\evar}{\ensuremath{\operatorname{EVaR}}}
+\newcommand{\var}{\ensuremath{\operatorname{VaR}}}
+\newcommand{\loss}{\ensuremath{\operatorname{Loss}}}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}

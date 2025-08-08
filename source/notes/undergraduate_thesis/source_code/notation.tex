@@ -1,0 +1,134 @@
+
+
+\chapter{Notation, convention, and terminology}\label{notation}
+%\addcontentsline{toc}{chapter}{Notation and terminology}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\
+
+\noindent\textbf{Notation and convention}
+
+% adjust the lengths to suit your needs (difference of .22cm works best)
+
+Conventions are choices that are purely for convenience and disambiguation, with no deep significance.
+
+\newcommand{\nttn}[2]{\item[{\ \makebox[3.18cm][l]{#1}}]{#2}}
+\begin{list}{}{ \setlength{\leftmargin}{3.4cm}
+                \setlength{\labelwidth}{4.8cm}}
+
+\nttn{$\mathbb{N}$}{The set of natural numbers is $\{1, 2, ...\}$.}
+
+\nttn{$n$}{A positive integer, unless otherwise noted.}
+
+\nttn{$[n]$}{$\{1, 2, ..., n\}$, with caveat that $n \ge 1$}
+
+\nttn{$c$}{A real constant, unless otherwise noted.}
+
+\nttn{$x^+$}{Positive part of $x$, that is, $\max(x, 0)$.}
+
+\nttn{$\partial A$}{Topological boundary of $A$.}
+
+\nttn{$\cl(A)$}{The topological closure of $A$.}
+
+\nttn{$\co(A)$}{The convex hull of $A$, where $A$ is a subset of some real vector space.}
+
+\nttn{$(S, \mathcal{B}, \nu)$}{Probability space as formalized in Kolmogorov probability theory. See Definition \ref{notn:probspace}. When $S$ is countable, $\mathcal{B}$ is its power set. When $S$ has a topology, $\mathcal{B}$ is its Borel $\sigma$-algebra.}
+
+\nttn{$\mu, \nu, ...$}{Probability measures are written in Greek minuscule.}
+
+\nttn{$Pr(F)$}{Probability of event $F$.}
+
+\nttn{$X, Y, ...$}{Random variables are written in Latin majuscule. All random variables are real-valued unless otherwise stated.}
+
+\nttn{$\E_\nu(X)$}{Expectation of random variable $X$. The subscript $\nu$ means that $X$ is based on a probability space $(S, \mathcal{B}, \nu)$, and is often omitted.}
+
+\nttn{$\mathcal{N}(\mu, \sigma^2)$}{Normal distribution with mean $\mu$ and variance $\sigma^2$. See definition \ref{defn:normal_dist}.}
+
+\nttn{$\delta_x$}{The Dirac delta distribution at $x\in\mathbb{R}$. For any Borel subset $A$ of $\mathbb{R}$, $\delta_x(A) = 1_{x\in A}$.}
+
+\nttn{$\sumn p_i \delta_{x_i}$}{A discrete probability distribution, with $p_i \ge 0$, $\sumn p_i = 1$.}
+
+\nttn{$\mu_X$}{Given random variable $X$, $\mu_X$ is the probability measure on $\mathbb{R}$, such that for any Borel subset $A$ of $\mathbb{R}$, $\mu_X(A) = Pr(X \in A)$.}
+
+\nttn{$X\sim\mu$}{$X$ has the probability measure $\mu$. That is, $\mu_X = \mu$.}
+
+\nttn{$X \disteq Y$}{$X, Y$ have the same distribution. That is, $\mu_X = \mu_Y$.}
+
+\nttn{$X \equiv Y$}{$X = Y$ almost surely.}
+
+\nttn{$X_n \distconv Y$}{$X_n$ converges to $Y$ in distribution.}
+
+\nttn{$X_n \probconv Y$}{$X_n$ converges to $Y$ in probability.}
+
+\nttn{$X_n \asconv Y$}{$X_n$ converges to $Y$ almost surely.}
+
+\nttn{$\mathds{1}$}{A random variable that has constant value $1$. When no confusion could arise, $c\mathds{1}$ may be written as $c$.}
+
+\nttn{$\alpha$}{A real number in $[0, 1]$, unless otherwise noted.}
+
+\nttn{$\overbar{\alpha} = 1-\alpha$}{This simplifies some equations.}
+
+
+\nttn{$\rho$}{A probability density function.}
+
+\nttn{$\mathscr{L}(S)$}{The set of all random variables on $S$. If no confusion would arise, $S$ is omitted.}
+
+\nttn{$\mathscr{L}^p$}{The set of all random variables with finite $p$-moment.}
+
+\nttn{$\mathscr{L}_+$}{The set of all random variables that are almost surely nonnegative.}
+
+\nttn{\(\mathcal{F}, \mathcal{R}, \mathcal{V}...\)}{Letters in calligraphic font are risk measures on \(\mathscr{L}^2\).}
+
+\nttn{\(\mathscr{F}, \mathscr{R}, \mathscr{V}...\)}{Letters in the script font are subsets of \(\mathscr{L}^2\). See Notation \ref{notn:subsets_of_l2} and Equation \ref{eq:env_cvar}.}
+
+\nttn{$\left<X, Y \right>$}{The inner product on \(\mathscr{L}^2\), defined as \(\mathbb{E}(XY)\).}
+
+\nttn{$(F_n)$}{Empirical cumulative distribution function. See Definition \ref{defn:empirical_process}.}
+
+\nttn{$(L_n)$}{Empirical process. See Definition \ref{defn:empirical_process}.}
+
+\end{list}
+
+\
+
+\noindent\textbf{Terminology}
+
+% adjust the lengths to suit your needs (difference of .22cm works best)
+
+\newcommand{\term}[2]{\item[{\ \makebox[4.58cm][l]{#1}}]{#2}}
+\begin{list}{}{ \setlength{\leftmargin}{4.8cm}
+		\setlength{\labelwidth}{4.8cm}}
+	
+\term{risk measure}{A function of type $A \to B$, where $A \subseteq \mathscr{L}, B\subseteq [-\infty, +\infty]$. }
+
+\term{coherent}{A possible property of a risk measure. Other possible properties include sublinear, subadditive, risk averse, etc. See Definition \ref{defn:risk_functional_properties}.}
+\term{CRM}{Coherent risk measure.}
+
+\term{IID}{Indepedent and identically distributed.}
+
+\term{PDF}{Probability density function.}
+
+\term{CDF}{Cumulative distribution function.}
+
+\term{CLT}{Central limit theorem.}
+
+\term{SLLN}{Strong law of large numbers.}
+
+\term{WLLN}{Weak law of large numbers.}
+
+
+\term{$\var_\alpha$}{Value at risk at level $\alpha$. See Example \ref{ex:var}}
+
+\term{$\Ca$}{Conditional value at risk at level $\alpha$. See Definition \ref{defn:cvar}.}
+
+\term{$\evar_\alpha$}{Entropic value at risk at level $\alpha$. See Definition \ref{defn:evar}}
+
+\term{SLT}{Statistical learning theory.}
+
+\term{ERM}{Empirical risk minimization. See Definition \ref{defn:erm}.}
+
+\term{PAC-learning}{Probably approximately correct learning. See Definition \ref{defn:pac}.}
+
+\term{VCdim}{Vapnik--Chervonenkis dimension. See Definition \ref{defn:VCdim}.}
+\end{list}

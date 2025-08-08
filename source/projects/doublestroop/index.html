@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta property="og:title" content="Double Stroop Puzzle" />
+    <meta property="og:description" content="A cursed game that makes the Stroop puzzle looks easy." />
+    <meta property="og:site-name" content="Yuxi on the Wired" />
+    <meta property="og:image" content="https://yuxi-liu-wired.github.io/projects/doublestroop/thumbnail.png" />
+    <meta property="og:image:width" content="1556" />
+    <meta property="og:image:height" content="672" />
+    
+    <meta property="twitter:title" content="Double Stroop Puzzle" />
+    <meta property="twitter:description" content="A cursed game that makes the Stroop puzzle looks easy." />
+    <meta property="twitter:site-name" content="Yuxi on the Wired" />
+    <meta property="twitter:image" content="https://yuxi-liu-wired.github.io/projects/doublestroop/thumbnail.png" />
+    <meta property="twitter:image-width" content="1556" />
+    <meta property="twitter:image-height" content="672" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Double Stroop Puzzle</title>
+    <link rel="stylesheet" href="static/simple.css" />
+    <link rel="stylesheet" href="static/style.css" />
+    </head>
+
+<body>
+    <h1 id="title">Double Stroop Puzzle</h1>
+    <label for="difficulty">Choose Difficulty (2-10):</label>
+    <input type="number" id="difficulty" name="difficulty" min="2" max="10" value="4" />
+    <br />
+    <a href="javascript:void(0)" id="rightLink">Match the <i>colors</i> of the hex codes on the left with the hex codes
+        on the right</a>
+        <br />
+    <a href="javascript:void(0)" id="leftLink">Match the hex codes on the left with the <i>colors</i> of the hex codes
+        on the right</a>
+
+    <script>
+        let difficulty = 4;
+            const colors = [
+                "#FF0000",
+                "#00FF00",
+                "#0000FF",
+                "#FFFF00",
+                "#FF00FF",
+                "#00FFFF",
+                "#C0C0C0",
+                "#808080",
+                "#800000",
+                "#808000",
+                "#008000",
+                "#800080",
+                "#008080",
+                "#000080",
+                "#000000",
+                "#FFFFFF",
+            ];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function generatePuzzle() {
+            shuffleArray(colors);
+            let selectedColors = colors.slice(0, difficulty);
+            let hexColorsLeft = [...selectedColors]; // spread operator to copy array
+            let hexCodesLeft = [...selectedColors];
+            let hexColorsRight = [...selectedColors];
+            let hexCodesRight = [...selectedColors];
+
+            shuffleArray(hexColorsLeft);
+            shuffleArray(hexCodesLeft);
+            shuffleArray(hexColorsRight);
+            shuffleArray(hexCodesRight);
+
+            console.log("Difficulty: ", difficulty);
+            console.log("Left Hex Colors: ", hexColorsLeft);
+            console.log("Left Hex Codes: ", hexCodesLeft);
+            console.log("Right Hex Colors: ", hexColorsRight);
+            console.log("Right Hex Codes: ", hexCodesRight);
+            return { hexColorsLeft, hexCodesLeft, hexColorsRight, hexCodesRight };
+        }
+
+        function handleClick(page) {
+            const inputDifficulty = document.getElementById("difficulty").value;
+            difficulty = parseInt(inputDifficulty, 10);
+            const { hexColorsLeft, hexCodesLeft, hexColorsRight, hexCodesRight } =
+                generatePuzzle();
+
+            const urlParams = new URLSearchParams();
+                        urlParams.set("hexColorsLeft", hexColorsLeft.join(","));
+                        urlParams.set("hexCodesLeft", hexCodesLeft.join(","));
+                        urlParams.set("hexColorsRight", hexColorsRight.join(","));
+                        urlParams.set("hexCodesRight", hexCodesRight.join(","));
+                        window.location.href = page + ".html#" + urlParams.toString();
+                    }
+                    document
+                        .getElementById("leftLink")
+                        .addEventListener("click", function () {
+                            handleClick("left");
+                        });
+                    document
+                        .getElementById("rightLink")
+                        .addEventListener("click", function () {
+                            handleClick("right");
+                        });
+    </script>
+</body>
+</html>

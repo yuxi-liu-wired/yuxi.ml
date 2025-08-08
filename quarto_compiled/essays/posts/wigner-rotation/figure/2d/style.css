@@ -1,0 +1,21 @@
+.clearfix {
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Two columns of equal width */
+        justify-items: center;
+        /* Center items horizontally */
+        align-items: center;
+        /* Center items vertically */
+}
+
+
+.board {
+    width: 300px;
+    height: 300px;
+    margin: 0px;
+}
+
+/* Remove the overflow-x rule if it's no longer necessary */
+body {
+    overflow-x: hidden;
+}

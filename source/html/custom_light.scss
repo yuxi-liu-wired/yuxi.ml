@@ -1,0 +1,12 @@
+/*-- scss:rules --*/
+
+#quarto-document-content.page-full {
+    a:not(.anchorjs-link) {
+      &:visited {
+        color: #6a0dad;
+      }
+      // &:active {
+      //   font-style: italic;
+      // }
+    }
+  }

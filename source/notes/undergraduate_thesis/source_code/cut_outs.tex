@@ -1,0 +1,42 @@
+Things that are probably never going to go anywhere.
+
+\begin{prop}[Cantelli inequality]
+	For any coherent risk measure $\mathcal{F}$ on $\mathscr{L}^2$, and $\lambda \ge $, if $a$, we have 
+	\begin{equation}
+	\operatorname{Pr}(X-\mathbb{E}[X] \geq \lambda) \quad\left\{\begin{array}{ll}{ \leq \frac{\sigma^{2}}{\sigma^{2}+\lambda^{2}}} & {\text { if } \lambda>0} \\ { \geq 1-\frac{\sigma^{2}}{\sigma^{2}+\lambda^{2}}} & {\text { if } \lambda<0}\end{array}\right.
+	\end{equation}
+\end{prop}
+\begin{proof}
+	\todo{prove}
+\end{proof}
+
+\begin{prop}[Paley--Zygmund inequality]
+	For any coherent risk measure $\mathcal{F}$ on $\mathscr{L}$, any $\theta \in [0, 1]$, and any $X\in \mathscr{L}$, if $\mathcal{F}(X1_{X > \theta\mathcal{F}(X)})\le 0$, then
+	\begin{equation}
+	\label{eq:pzineq_crm}
+	\mathcal{F}(1_{X>\theta\mathcal{F}(X)}) \ge (1-\theta)^2 \frac{\mathcal{F}(X)^2}{\mathcal{F}(X^2)}
+	\end{equation}
+\end{prop}
+\begin{proof}
+	\begin{align*}
+	\mathcal{F}(X) &= \mathcal{F}(X1_{X\le \theta\mathcal{F}(X)} + X1_{X > \theta\mathcal{F}(X)}) \\
+	&\le \mathcal{F}(\theta\mathcal{F}(X)) + \mathcal{F}(X1_{X > \theta\mathcal{F}(X)}) \quad\text{ (subadditivity and monotonicity)}\\
+	&= \theta\mathcal{F}(X) + \mathcal{F}(X1_{X > \theta\mathcal{F}(X)}) \quad\text{ (translation invariance and positive homogeneity)} \\
+	&=  \theta\mathcal{F}(X) + \sqrt{\mathcal{F}(X^2)\mathcal{F}(1_{X > \theta\mathcal{F}(X)})} \quad\text{ (Cauchy--Schwartz)}
+	\end{align*}
+	Then reform the inequality to obtain the result.
+\end{proof}
+
+
+
+%\subsubsection{Two views of problem solving}
+%\todo[inline]{delete?}
+%The great theoretician, Alexander Grothendieck, once noted that there are two styles in mathematics \cite{mclartyRisingSeaGrothendieck2007}. An unsolved problem is like a nut, its hard shell protecting its delicious kernel. 
+%
+%The "yang" way, exemplified by Jean-Pierre Serre, is the way of hammer and chisel: "put the cutting edge of the chisel against the shell and strike hard. If needed, begin again at many different points until the shell cracks." 
+%
+%The "yin" way, exemplified by Grothendieck, is the way of rising sea: "The unknown thing to be known appeared to me as some stretch of earth or hard marl, resisting penetration... the sea advances insensibly in silence, nothing seems to happen... yet it finally surrounds the resistant substance."
+%
+%From the bird's eye view, this thesis follows the way of rising sea. The previously stated problem is not solved. One cannot expect to solve it in full generality, as that would amount to solving the problem of life. Instead, we layout the groundwork for future attacks on particular instances of the problem, surrounding it with the rising sea of theory.
+%
+%However, along the way, particular problems are solved by every concrete method available, exemplifying the way of hammer and chisel.

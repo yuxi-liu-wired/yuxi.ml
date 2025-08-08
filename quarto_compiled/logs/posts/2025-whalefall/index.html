@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yuxi Liu">
+<meta name="dcterms.date" content="2025-01-29">
+<meta name="description" content="Thoughts on the recent ‘DeepSeek shock’ of the stock market. The market is being even less efficient than usual, and much of the ‘professional’ commentators are idiots or bullshitters. I wrote this post to prevent my Gell-Mann amnesia.">
+
+<title>Whalefall – Yuxi on the Wired</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Whalefall – Yuxi on the Wired">
+<meta property="og:description" content="Thoughts on the recent ‘DeepSeek shock’ of the stock market. The market is being even less efficient than usual, and much of the ‘professional’ commentators are idiots or bullshitters. I wrote this post to prevent my Gell-Mann amnesia.">
+<meta property="og:image" content="https://yuxi.ml/logs/posts/2025-whalefall/figure/stock_lines.png">
+<meta property="og:site_name" content="Yuxi on the Wired">
+<meta property="og:image:height" content="590">
+<meta property="og:image:width" content="857">
+<meta name="twitter:title" content="Whalefall – Yuxi on the Wired">
+<meta name="twitter:description" content="Thoughts on the recent ‘DeepSeek shock’ of the stock market. The market is being even less efficient than usual, and much of the ‘professional’ commentators are idiots or bullshitters. I wrote this post to prevent my Gell-Mann amnesia.">
+<meta name="twitter:image" content="https://yuxi.ml/logs/posts/2025-whalefall/figure/stock_lines.png">
+<meta name="twitter:image-height" content="590">
+<meta name="twitter:image-width" content="857">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Yuxi on the Wired</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../essays/index.html"> 
+<span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sketches/index.html"> 
+<span class="menu-text">Sketches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../logs/index.html"> 
+<span class="menu-text">Logs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../notes/index.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/index.html"> 
+<span class="menu-text">Docs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about/index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:yuxi_liu@berkeley.com"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../feeds.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Whalefall</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                  <div>
+        <div class="description">
+          Thoughts on the recent ‘DeepSeek shock’ of the stock market. The market is being even <em>less</em> efficient than usual, and much of the ‘professional’ commentators are idiots or bullshitters. I wrote this post to prevent my Gell-Mann amnesia.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">AI</div>
+                <div class="quarto-category">economics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Yuxi Liu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 29, 2025</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">January 29, 2025</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-crash" id="toc-what-crash" class="nav-link active" data-scroll-target="#what-crash">What crash?</a></li>
+  <li><a href="#the-bear-case" id="toc-the-bear-case" class="nav-link" data-scroll-target="#the-bear-case">The bear case</a></li>
+  <li><a href="#is-the-market-efficient" id="toc-is-the-market-efficient" class="nav-link" data-scroll-target="#is-the-market-efficient">Is the market efficient?</a></li>
+  
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+
+
+<section id="what-crash" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-crash">What crash?</h2>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="figure/stock_lines.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">This crash.</figcaption>
+</figure>
+</div>
+<p>On 2025-01-27 on the New York Stock Exchange, multiple semiconductor corporations gapped down. The cause is clear: <em>something</em> about DeepSeek-R1. What that <em>something</em> is, I don’t know.</p>
+<p>Personally, I was quite obsessed with R1 since its release on 2025-01-20, feeling the AGI in mathematics. I also bought more Nvidia and TSMC, seeing this as an obvious buy signal.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="figure/DeepSeek_tweet.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">(っ◔◡◔)っ 🎀 imagination 🎀. Source: <a href="https://x.com/layer07_yuxi/status/1881126331855024394">@layer_07_yuxi (2025-01-19)</a>.</figcaption>
+</figure>
+</div>
+<p>Then this crash happened. An utter shock. The market… is stupid… and inefficient?</p>
+<p><a href="https://x.com/nearcyan/status/1884467386964951379">Nearcyan claimed</a> that the market was probably manipulated by a stand-alone complex of insiders, who felt that a crash was struggling to emerge, and bandwagoned on it, making the crash a reality (“feed the sharks”). He didn’t elaborate but I presume it involved some of the following:</p>
+<ul>
+<li>buy it on the cheap and sell them for profit a bit later;</li>
+<li>bought some put options;</li>
+<li>sold some call options;</li>
+<li>did HFT to profit on volatility itself;</li>
+<li>some linear combination of these to minimize tax.</li>
+</ul>
+<p>I don’t know the detailed mechanics of how the crash appeared, because I am an outsider to the financial establishment, and I don’t know how to psychoanalyze the market.</p>
+<p>The separate analysis, on why DeepSeek hit No.&nbsp;1 on the Apple App store so quickly after release,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> seems true enough to me. Such rapid rise must be a memetic virus, something like TikTok and YouTube Shorts. The app is good, the model is great, but that’s not enough to push the app to No.&nbsp;1 out of nowhere. The general public knew nothing of DeepSeek; DeepSeek made no advertisement; etc.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Surprisingly hard to figure out when exactly this happened. Apparently, 2025-01-10 <a href="https://www.msn.com/en-us/technology/artificial-intelligence/what-is-deepseek-ai-and-why-is-it-suddenly-so-important/ar-AA1xX9Xv">release</a>, 2025-01-26 <a href="https://techcrunch.com/2025/01/27/deepseek-displaces-chatgpt-as-the-app-stores-top-app/">hitting No.&nbsp;1</a>.</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="figure/nearcyan_deepseek.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Nearcyan’s analysis. Source: <a href="https://x.com/nearcyan/status/1884467386964951379">@Nearcyan (2025-01-28)</a>.</figcaption>
+</figure>
+</div>
+<p>But I learned something new: that the mainstream media has no economic literacy. There is a story to be told for why R1 was bad for Nvidia, but none of the mainstream media stories hit anywhere close! If I were grading their economics homework, they are all getting “E for Efforts”. No, “F for Effort missing a plank”!</p>
+<p>Consider a typical take:</p>
+<blockquote class="blockquote">
+<p>The DeepSeek product “is deeply problematic for the thesis that the significant capital expenditure and operating expenses that Silicon Valley has incurred is the most appropriate way to approach the AI trend”, said Nirgunan Tiruchelvam, head of consumer and internet at Singapore-based Aletheia Capital. “It calls into question the massive resources that have been dedicated to AI.”</p>
+<p>— <a href="https://fortune.com/2025/01/27/deepseek-buzz-puts-tech-stocks-on-track-for-1-trillion-wipeout/">DeepSeek buzz puts tech stocks on track for $1 trillion wipeout | Fortune</a> (2025-01-27)</p>
+</blockquote>
+<p>They all make… Oh wait, Morgan Stanley wins this:</p>
+<blockquote class="blockquote">
+<p>These efficiency improvements are not surprising to the software ecosystem. Most software companies believe that lower deployment costs lead to higher utilization (the Jevons paradox) and have already actively worked to lower these costs.</p>
+<p>— <a href="https://x.com/Jukanlosreve/status/1884139534000234793">Morgan Stanley’s View on the DeepSeek Shock</a> (2025-01-27)</p>
+</blockquote>
+<p>Okay, other than Morgan Stanley… Continuing my rant.</p>
+<p>They all make the <a href="https://en.wikipedia.org/wiki/Lump_of_labour_fallacy">lump of labor fallacy</a>! They are professionals! They work at investment banks! Private equity firms! I can tell a better story for why R1 could be bad for Nvidia. But I don’t think that drove the crash. I don’t know, but I know that they don’t know, and that they don’t even know they don’t know.</p>
+<p>Or perhaps they don’t care? Maybe most analysts don’t care a damned thing about being right. They are selling wisdom, not knowledge; sensemaking, not truth; toy stories, not falsifiable predictions.</p>
+<p>Someone was doing a startup on using AI to predict earnings report, and asked me for advice over dinner. I was very surprised that their minimalistic baseline model (used to compare with the actual model) could already beat the analysts at Bloomberg in backtesting. Thinking a bit, I suggested that their model was beating the analysts because the analysts weren’t really selling information, but respectability; to people who aren’t seeking alpha, but respectability: “We are doing the industry best practices…”.</p>
+</section>
+<section id="the-bear-case" class="level2">
+<h2 class="anchored" data-anchor-id="the-bear-case">The bear case</h2>
+<p>After thinking more about Nvidia and the AI market, my conclusion: The AI revolution isn’t going to disappear, but Nvidia’s fat margins might.</p>
+<p>Nvidia’s margins are mainly caused by it having a monopoly on highly efficient compute with a complete stack. AMD has chips with higher <code>(FLOP/sec)/USD</code>, but AMD’s driver is garbage so the utilization rate is low, while Nvidia’s <em>just works</em>.</p>
+<p>However, this might change any time. Google’s TPU is a serious threat. Google’s software infrastructure is powerful, scalable. It has been pushing for JAX adoption and it might get picked up, which would mean a complete switch of the stack. There are credible sources saying that TPU is already better than GPU, and if Google ever start selling them on the market, Nvidia could have a serious competitor.</p>
+<p><a href="https://www.yitay.net/blog/training-great-llms-entirely-from-ground-zero-in-the-wilderness">Training great LLMs entirely from ground up in the wilderness as a startup — Yi Tay</a></p>
+<blockquote class="blockquote">
+<p>I was completely taken aback by the failure rate of GPUs as opposed to my experiences on TPUs at Google. In fact, I don’t actually recall TPUs failing much even for large runs, though I was not sure if I was protected from knowing this just by the sheer robustness of the outrageously good infra and having a dedicated hardware team. In fact, the UL2 20B model (at Google) was trained by leaving the job running accidentally for a month. It never failed. If this were in GPU land, it would have failed within the first few days for sure.</p>
+</blockquote>
+<p>Similarly, Microsoft is designing Maia, Amazon designing Trainium, etc. There are also many fabless chip startups, and one of them might just work out. TSMC stands to gain the most from so many new fabless chips (<a href="https://gwern.net/complement">commoditizing your complement</a>). More fabless chip designs competing means less margins at the design stage, means more margins at the fabbing stage, so TSMC gets more margins.</p>
+<p>Another possibility is that R1 instigates more stringent global control of the chip supply chain. For example, America could ban the sell of all Hopper-class chips to China, or the EUV lithography machines, or photoresists, etc. America could impose more annoying paperwork requirements for selling those to countries adjacent to China (like Thailand and Singapore). All of these would raise the cost, slow down the process, and fewen the buyers of chips. This would be bad news for not just Nvidia, but the global chip supply chain as a whole (including TSMC).</p>
+<p>A more neglected possibility was pointed out by Gwern, who argued that there’s a <a href="https://old.reddit.com/r/mlscaling/comments/1eyophn/hardware_hedging_against_scaling_regime_shifts/"><em>Hardware Hedging Against Scaling Regime Shifts</em></a>. If the best kind of training becomes much more serial than parallel, then Nvidia’s chips are no longer relevant for DL.</p>
+<blockquote class="blockquote">
+<p>Instead of getting much more parallel, training could get much less parallel. It’s worth noting that this is the reason so much scientific computing neglected GPUs for a long time and focused more on interconnect throughput &amp; latency: actually, most important scientific problems are highly serial, and deep learning is rather exceptional here … There could be new architectures moving back towards RNN which don’t have a “parallel training mode” like Transformers, and you inherently need to move activations/gradients around nodes a ton to implement <a href="https://en.wikipedia.org/wiki/Backpropagation_through_time">BPTT</a>. There could be some twist on patient-teacher/grokking-like training regimes of millions or billions of inherently serial training steps on small (even n = 1) minibatches, instead of the hundreds of thousands of large minibatches which dominates LLM training now … What sort of hardware do you want in the ‘serial regime’? It would look a lot more like supercomputing than the mega-GPU datacenter.</p>
+</blockquote>
+<p>How would R1-Zero change this? The big labs like Meta are right now furiously replicating R1-Zero with 100x more compute than DeepSeek, and if a few months down the line, we see a new scaling law emerge from them that shows that R1-Zero training works, but it works better with both longer chains <em>and</em> smaller batches, then the RL phase of training would suddenly become highly serial.</p>
+<p>In this case, pretraining would still need giant GPU clusters, but the RL step would suddenly look more like Cray supercomputers – a few giant CPUs, immersed in Fluorinert, running at 100 GHz.</p>
+<p>In that situation, even if Nvidia’s monopoly is never displaced, it would no longer be the <em>sole</em> monopolist on the value chain. It would have to share the big margins with someone else – maybe Groq, or a resurrected Seymour Cray. Sure, I still expect the sum-total of profit to keep growing, but a less portion of it would go to Nvidia. Since Nvidia’s high market valuation is mostly in its expected future growth, any drop in the expectation is bad news.</p>
+</section>
+<section id="is-the-market-efficient" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="is-the-market-efficient">Is the market efficient?</h2>
+<p>After seeing the absolute nonsense of the very respectable commentators, I no longer have faith in the Efficient Market Hypothesis. Or at least the Rational Trader Hypothesis. A large portion of the market traders might actually be <del>insane</del> noise traders. <span class="citation" data-cites="blackNoise1986">(<a href="#ref-blackNoise1986" role="doc-biblioref">Black 1986</a>)</span> Great news for the market sharps.</p>
+<p>Alternatively, perhaps the market is efficient <em>enough</em>, but it is becoming less <em>legible</em> as a source of information. The market speaks, but it is harder to get what it is saying. It is using the same price signals for different things. The great semantic shift. Terrible news for we who have placed faith in thy Invisible Hand, and trusted the market for integrating information.</p>
+<p>We thought high price of Nvidia predicts high futures earnings, but does it? Fundamental value analysis has long been in decline, and now stock prices function more as a fiat currency of vibes than as an earnings-backed asset. <a href="https://www.youtube.com/watch?v=bt7zNBShLic">Since the death of dividends, there has been a vacancy open. Memes filled this void.</a></p>
+<p>The prices mean something. The market integrates information, but the information has less to do with the future of Nvidia for AI, and mostly to do with some kind of memetic contagion (as Nearcyan says), or the economic and machine-learning illiteracy of the noise traders (my hypothesis).</p>
+<blockquote class="blockquote">
+<p>Noise makes financial markets possible, but also makes them imperfect. If there is no noise trading, there will be very little trading in individual assets. People will hold individual assets, directly or indirectly, but they will rarely trade them. People trading to change their exposure to broad market risks will trade in mutual funds, or portfolios, or index futures, or index options… Noise trading is trading on noise as if it were information. People who trade on noise are willing to trade even though from an objective point of view they would be better off not trading. Perhaps they think the noise they are trading on is information. Or perhaps they just like to trade. With a lot of noise traders in the market, it now pays for those with information to trade.</p>
+<p><span class="citation" data-cites="blackNoise1986">(<a href="#ref-blackNoise1986" role="doc-biblioref">Black 1986</a>)</span></p>
+</blockquote>
+<p>Despite the increasing amount of noise, I will continue to use index funds. Don’t day-trade because reaction time too long. You can’t lose to a high frequency trader if you trade once a month. Don’t pick individual stocks unless you have deep insider information on it, or want to wear stocks like a personal brand, or have some AGI helping you, or it hedges against some personally relevant risks.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Like, buying TSLA because you despise Elon Musk, so that if Elon Musk’s company keeps growing well, you at least have the consolation of having made money. Similarly, crypto haters should buy more crypto.</p></div></div></section>
+
+
+
+<div id="quarto-appendix" class="default"><section id="appendix" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Appendix</h2><div class="quarto-appendix-contents">
+
+<p>Some plaintext copies of things I worry would get disappeared by the Internet.</p>
+<section id="a-luminous-paradox" class="level3">
+<h3 class="anchored" data-anchor-id="a-luminous-paradox">A Luminous Paradox</h3>
+<p>Source: I wrote it in collaboration with <code>DeepSeek-R1</code>. Inspired by the lump of intelligence fallacy of the commentators, we present: <em>A Luminous Paradox</em> by <a href="https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat">Frédéric Bastiat</a>.</p>
+<p>TLDR: It’s an alternative history satire.</p>
+<ul>
+<li>Edison invented the light bulb, much more efficient than the electric arc-lamp. Investors sell off his General Electric stocks in a panic, ruining Edison.</li>
+<li>Slave-traders smash the cotton gin in fear of high productivity crashing the market for slaves.</li>
+<li>Colliers smash the Watt engine, for it would crash the demand for coal.</li>
+<li>Socrates lament writing, for it would crash the demand for thinking.</li>
+</ul>
+<center>
+· · · ☙ ❈ ❧ · · ·
+</center>
+<p>To the Honorable Gentlemen of the Illumination Regulatory Commission,</p>
+<p>It has come to my attention that certain reckless innovators—chief among them one Mr.&nbsp;Thomas Edison—have unleashed upon the world a device so calamitous, so efficient, that it threatens to unravel the very fabric of our enlightened society. I speak, of course, of the incandescent lightbulb, a contraption that dares to produce more light with less coal, less gas, and fewer towering electric arcs blasting their fury into the night sky.</p>
+<p>The panic is understandable! Already, this modern Prometheus has been hoisted with his own petard, as panicked investors brought Edison General Electric to the verge of bankruptcy. “What need have we for electric generators,” cry the shareholders, “when a single glass bauble can bathe a parlor in radiance?” To these lamentations, I say: Bravo! Let us march backward with vigor, and smother thoughtless efficiency in its crib.</p>
+<p>Consider, if you will, the plight of the cotton gin. Had the slave-traders of yore possessed the foresight of our modern lamp-extinguishers, they would have outlawed Eli Whitney’s machine at once. “This devilish engine,” they might have thundered, “allows one man to clean fifty times as much cotton as before! It will collapse demand for labor and render our ships empty!” Yet lo—cotton production soared, plantations multiplied, and the demonic <a href="https://en.wikipedia.org/wiki/Triangular_trade">Triangle</a> rotated faster than ever. The gin, that thrifty villain, did not destroy the market for bondage; it inflamed it.</p>
+<p>Or ponder James Watt, that sly Scotsman, whose steam engine threatened to ruin the honest coal miners of England. “Why, this machine does more work with less coal!” wept the colliers. “Our pits will close! Our children shall starve!” And yet—what transpired? Factories bloomed, railways sinewed the earth, and coal, that humble black rock, became the lifeblood of empires.</p>
+<p>Even the ancient Socrates railed against the written word. “If men accepted the <a href="https://en.wikipedia.org/wiki/Phaedrus_(dialogue)">gift of Theuth</a>,” he warned, “they will cease to exercise their minds”. And yet—did letters not amplify thought, spawning philosophies, sciences, and epic poems? The scribe’s quill, far from extinguishing wisdom, kindled a thousand new schools.</p>
+<p>So it is with light. The arc-lamp, that splendid dragon of the streets, consumes rivers of current to scorch the night. The bulb, by contrast, hums softly, thrifty as a monk. But does thriftiness not invite profligacy? When light becomes cheap, do we not use more of it? We shall line our homes with bulbs, string them over gardens, and illuminate shop windows until the cities themselves rival the constellations. Demand for electricity—and the coal, the wires, the engineers—will swell like a tide. Efficiency, that sly midwife, births new desires where none existed before.</p>
+<p>Thus, I propose a challenge for the trembling hearts of investors: Indeed, let us outlaw all inventions that dare to do more with less. Ban the bulb! Smash the dynamo! Let us petition Congress to mandate that every household burn three barrels of whale oil nightly, lest the whaling industry collapse. For as every enlightened citizen knows, prosperity lies not in wanton abundance, but in privation thoughtfully enjoyed.</p>
+<p>Yours in luminous obscurity, Frédéric Bastiat</p>
+<center>
+· · · ☙ ❈ ❧ · · ·
+</center>
+</section>
+<section id="morgan-stanleys-view-on-the-deepseek-shock" class="level3">
+<h3 class="anchored" data-anchor-id="morgan-stanleys-view-on-the-deepseek-shock">Morgan Stanley’s View on the DeepSeek Shock</h3>
+<p>Source: <a href="https://x.com/Jukanlosreve/status/1884139534000234793">someone posted it on Twitter</a> (2025-01-27). Sounds right, but I have no way to check.</p>
+<ol type="1">
+<li>Semiconductors</li>
+</ol>
+<p>While DeepSeek’s success is unlikely to alter semiconductor investment plans significantly, there are several factors to consider. Feedback from various industry sources consistently indicates that GPU deployment plans remain unaffected. DeepSeek’s technology is impressive, but major CSPs have not neglected to invest in such technologies.</p>
+<p>In fact, much of what we consider groundbreaking—such as training with FP8, multi-token prediction, MLA, custom PTX code, and GRPO reinforcement learning frameworks—either originated with DeepSeek v-2 and DeepSeek’s mathematical model six months ago or can be found in extensive AI research literature. This underscores the importance of how these technologies are implemented, and DeepSeek provides efficient designs in every respect.</p>
+<p>However, given the timing of announcements such as Stargate, Meta’s increased GPU demand forecast for 2025, Microsoft’s reiteration of its $80 billion annual CapEx guidance, and Reliance’s 3GW project in India, those connected to the model ecosystem were likely already aware of most of what DeepSeek was doing.</p>
+<p>The long history of algorithmic improvements suggests we should not underestimate the incremental demand driven by cost reductions, advanced functionality, and continued scalability. NVIDIA has stated that algorithmic efficiency has improved more than 1,000-fold over the past decade, surpassing the performance gains of single-chip inference. In this context, while DeepSeek’s proposal of a 10x reduction in training compute requirements may not significantly impact LTGR (long-term growth rates), the resulting cost savings could accelerate inference adoption and potentially increase demand for inference.</p>
+<p>Export controls, however, remain a risk factor. It is clear that restricting Chinese technology to H20-level performance has not halted China’s development of LLMs. The implications for government policy are unclear at this stage. Lowering the performance threshold would greatly aid domestic silicon development in China. President Biden’s currently stalled AI restrictions, which aim to limit cluster sizes, would likely have a similar impact. These proposals may also compel other nations capable of supporting China’s AI development to obtain licenses.</p>
+<p>Similarly, the performance gap between closed models and open-source ones continues to narrow. We have highlighted three risks to the AI industry in our bearish outlook (AI remains a key driver, but smaller surprises are expected in 2025). One of these risks is that the number of companies in foundational model development could decline as it becomes increasingly difficult to compete with cheaper open-source options.</p>
+<p>DeepSeek’s R1 exacerbates this risk by pressuring the largest spenders in AI to justify larger training runs while allowing others to leverage their work at much lower costs.</p>
+<ol start="2" type="1">
+<li>Internet: Lowering Barriers to Costs Drives Product Innovation and Adoption</li>
+</ol>
+<p>DeepSeek’s architecture and pre-training improvements, which enhance cost efficiency, positively impact consumer internet companies seeking to develop new models and LLM-supported products. The ROIC for GenAI CapEx is expected to increase, and incremental CapEx growth could slow as a result.</p>
+<p>Larger companies’ ability to develop more innovative products will increase consumer utility, scalability, and adoption rates. Given their large capital investments, user bases, and ability to extract and implement DeepSeek’s improvements into their own models, GOOGL, META, and AMZN are poised to benefit the most from these cost savings.</p>
+<p>However, with more efficient architectures, smaller companies will also be able to provide GPU-supported products more broadly and at lower costs. For example, AMZN’s AWS strategy focuses on commoditization at the model layer. AWS integrates third-party models and provides access through tools like Bedrock, enabling customers to build applications.</p>
+<p>If DeepSeek’s contributions to democratizing model building (reducing required costs and compute) further commoditize models, AWS could benefit as an aggregator.</p>
+<ol start="3" type="1">
+<li>Software: Reducing AI Deployment Costs for Software Providers</li>
+</ol>
+<p>Algorithmic efficiency gains at the model layer positively impact enterprise software. More cost-efficient models are reducing the “GenAI deployment costs” for the broader software ecosystem, and the companies we cover are primarily building solutions around these models.</p>
+<p>These efficiency improvements are not surprising to the software ecosystem. Most software companies believe that lower deployment costs lead to higher utilization (the Jevons paradox) and have already actively worked to lower these costs.</p>
+<p>Microsoft recently focused on its “Phi” small language model (SML) strategy, with the Phi-4 14B model delivering benchmark results comparable to Llama-3.3 70B.</p>
+<p>ServiceNow partnered with Nvidia to use custom domain-specific language models to execute inference more cost-effectively.</p>
+<p>Snowflake trained Arctic 17B LLM with a $2 million training compute budget, achieving comparable performance to other enterprise benchmarks and best-in-class SQL performance.</p>
+<p>Elastic developed the Elastic Learned Sparse EncodeR (ELSER) to lower the cost of semantic search for AI applications.</p>
+<ol start="4" type="1">
+<li>Energy</li>
+</ol>
+<p>Regarding stocks exposed to the growth of AI power infrastructure in the U.S., significant capital expenditures are expected to continue. Key considerations include:</p>
+<ol type="1">
+<li><p>An analysis of the U.S. data center pipeline indicates that most of the known pipeline is for AI inference and non-AI use cases rather than AI training.</p></li>
+<li><p>The “Powering GenAI Models” analysis suggests that computing costs could drop by ~90% over the next six years. As AI adoption increases, the Jevons paradox could lead to rapidly growing demand for AI computing.</p></li>
+<li><p>Discussions with companies suggest that substantial AI infrastructure spending is currently happening in the U.S. (Stargate being one of the most prominent projects we anticipate).</p></li>
+<li><p>After the recent sell-off, many stocks exposed to U.S. AI infrastructure growth are still undervalued and not fully pricing in AI growth.</p></li>
+<li><p>IT Hardware: The Focus of AI in IT Hardware and Apple’s Position</p></li>
+</ol>
+<p>Last weekend’s DeepSeek news raised many unanswered questions (particularly regarding total compute costs and final training runs). Still, concerns about AI-related stocks’ long-term ripple effects are evident, especially for DELL (AI infrastructure) and STX (HDD), which may be the most impacted.</p>
+<p>We believe $AAPL could emerge as a relative winner in this debate:</p>
+<ol type="1">
+<li>Apple’s AI ambitions are primarily focused on feature-specific, on-device small LLMs rather than large frontier models, meaning its AI investments are far less visible than those of its peers.</li>
+</ol>
+<p>Consequently, Apple’s annual CapEx ($9.4 billion for FY24) is about 1/20th of the combined CapEx of U.S. Tier 1 hyperscalers. If the market overemphasizes CapEx ROI, Apple faces a much lower bar to generate attractive returns (i.e., less risk).</p>
+<ol start="2" type="1">
+<li><p>As DeepSeek has demonstrated, reduced memory requirements for inference make “Edge AI” much more feasible, aligning with Apple’s core GenAI ambitions.</p></li>
+<li><p>In a world where consumer LLMs are commoditized, distribution platforms become key assets, and Apple owns arguably the most valuable consumer tech distribution platform in existence.</p></li>
+<li><p>Embodied AI/Tesla: Advancements in GenAI Training Drive Embodied AI</p></li>
+</ol>
+<p>In addition to the potential applications and acceleration of robotics training, we anticipate increasing attention on physical AI as growth in the digital AI narrative becomes less obvious and investors seek executable stories elsewhere.</p>
+<p>In other words, as companies in the digital AI space become less reliant on double-digit returns, the early-stage opportunities in embodied AI—ranging from humanoids to eVTOL, AMRs, and AVs—are expected to appear increasingly attractive.</p>
+<p>From a geopolitical perspective, autonomous vehicles currently operate in several cities at 25% of traditional taxi costs, supported by government policies encouraging innovation and supply chains for low-cost local production components. These developments once again highlight China’s achievements in embodied AI.</p>
+<p>Faced with China’s advancements, the U.S.’s biggest geopolitical rival in all areas of AI, policymakers are expected to pay greater attention to fostering competitive progress among U.S. companies in this space.</p>
+</section>
+<section id="hardware-hedging-against-scaling-regime-shifts" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-hedging-against-scaling-regime-shifts">Hardware Hedging Against Scaling Regime Shifts</h3>
+<p>Source: <a href="https://old.reddit.com/r/mlscaling/comments/1eyophn/hardware_hedging_against_scaling_regime_shifts">Gwern posting on Reddit</a> (2024-08-22).</p>
+<p>Hyperscalers are investing heavily in AMD/Nvidia-style GPUs optimized for moderate-scale parallelism: less than almost-shared-nothing scientific computing tasks like SETI@home, but not strictly sequential like highly-branching tasks, and with the best interconnects money can buy in a custom datacenter, probably topping out at somewhere ~1m GPUs before the communication overhead/latency &amp; Amdahl’s law pushes the diminishing returns to 0.</p>
+<p>If you are going to spend $50b+ on GPU hardware (and then another $50b+ on everything wrapped around them), you are going to want to invest a lot into making conservative design choices &amp; derisking as much as possible. So a good question here is: even if that 1m mega-GPU datacenter pencils out now as optimal to train the next SOTA, will it stay optimal?</p>
+<p>Everyone is discussing a transition to a ‘search regime’, where training begins to consist mostly of some sort of LLM-based search. This could happen tomorrow, or it could not happen anywhere in the foreseeable future—we just don’t know. Search usually parallelizes extremely well, and often can be made near-shared-nothing if you can split off multiple sub-trees which don’t need to interact and which are of equal expected value of computation. In this scenario, where you are training LLMs on eg. outputs from transcripts generated by an AlphaZero-ish tree-search approach, the mega-GPU datacenter approach is fine. You can train across many datacenters in this scenario or in fact the entire consumer Internet (like Leela Zero or Stockfish do), but while maybe you wouldn’t’ve built the mega-GPU datacenter in that case, it’s as equivalent or a little bit better than what you would have, and so maybe you wound up paying 10 or 20% more to put it all into one mega-GPU datacenter, but no big deal. So there are negative consequences of a search regime breakthrough for the hyperscalers, in terms of enabling competition from highly distributed small-timer competitors pooling compute, and AI risk consequences (models immediately scaling up to much greater intelligence if allocated more compute), it wouldn’t render your hardware investment moot.</p>
+<p>But it is not the case that that is the only possible abrupt scaling regime shift. Instead of getting much more parallel, training could get much less parallel. It’s worth noting that this is the reason so much scientific computing neglected GPUs for a long time and focused more on interconnect throughput &amp; latency: actually, most important scientific problems are highly serial, and deep learning is rather exceptional here—which means it may regress to the mean at some point. There could be a new second-order SGD optimizer which cannot parallelize easily across many nodes but is so sample-efficient that it wins, or it eventually finds better optima that can’t be found by regular first-order. There could be new architectures moving back towards RNN which don’t have a “parallel training mode” like Transformers, and you inherently need to move activations/gradients around nodes a ton to implement BPTT. There could be some twist on patient-teacher/grokking-like training regimes of millions or billions of inherently serial training steps on small (even n = 1) minibatches, instead of the hundreds of thousands of large minibatches which dominates LLM training now. There could be some breakthrough in active learning or dataset distillation for a curriculum learning approach: where finding/creating the optimal datapoint is much more important than training on a lot of useless random datapoints, and so larger batches quickly hit the critical batch size. Or something else entirely, which will seem ‘obvious’ in retrospect but no one is seriously thinking about now.</p>
+<p>What sort of hardware do you want in the ‘serial regime’? It would look a lot more like supercomputing than the mega-GPU datacenter.</p>
+<p>It might force a return to high-end CPUs, overclocked to as high gigahertz as possible; however, it’s hard to see what sort of serial change to DL could really cause that, aside from extreme levels of finegrained sparsity and radical changes to the underlying neural net dynamics (if still ‘neural’ in any sense).</p>
+<p>More plausible is that it would continue to look mostly like current DL but highly serial: like synthesizing a datapoint to train on immediately &amp; discard, or training in a grokking-like fashion. In this case, one might need very few nodes—possibly as few as 1 model instances training. This might saturate a few dozen GPUs, say, but then the rest of the mega-GPU datacenter sits idle: it can run low-value old models, but otherwise has nothing useful to do. Any attempt to help the core GPUs simply slows them down by adding in latency.</p>
+<p>In that case, you don’t want GPUs or CPUs. What you want is a single chip which computes forwards and backwards passes of a single model as fast as possible. Groq chips don’t do training, so they are right out. What comes to mind is Cerebras: a single ungodly fast chip is exactly their premise, and was originally justified by the same rationale given above as it applies to scientific computing. Cerebras doesn’t work all that well for the current scaling regime, but in a serial scaling regime, that could change drastically—a Cerebras chip could potentially be many times faster for each serial step (regardless of its throughput) which then translates directly to an equivalent wall-clock speedup. (Cerebras’s marketing material gives an example of a linear system solver which takes ~2,000 microseconds per iteration on a CPU cluster, but only 28 microseconds on a CS-1 chip, so &gt;200× faster per iteration.)</p>
+<p>The implication then is that whoever has the fast serial chips can train a model and reach market years ahead of any possible competition.</p>
+<p>If, for example, you want to train a serial model for half a year because that is just how long it takes to shatter SOTA and optimally trades-off for various factors like opportunity cost &amp; post-training, and your chip is only 50× faster per iteration than the best available GPU (eg. 1ms to do a forwards+backwards pass vs 50ms for a Nvidia B200), then the followers would have to train for 25 years! Obviously, that’s not going to happen.</p>
+<p>Competitors would either have to obtain their own fast serial chips, accept possibly staggering levels of inefficiency in trying to parallelize, or just opt out of the competition entirely and go to the leader, hat in hand, begging to be the low-cost commodity provider just to get some use out of their shiny magnificently-obsolete mega-GPU datacenter.</p>
+<p>Is this particularly likely? No.&nbsp;I’d give it &lt;25% probability. We’ll probably just get AGI the mundane way with some very large mega-GPU datacenters and/or a search transition. But if you <em>are</em> spending $100b+, that seems likely enough to me to be worth hedging against to the tune of, say, &gt;$0.1b?</p>
+<p>How would you invest/hedge? Grok/Tenstorrent/AMD/Nvidia/Etched are all out for various reasons; only Cerebras immediately comes to mind as having the perfect chip for this.</p>
+<p>Cerebras’s last valuation was apparently $4b and they are preparing for IPO, so investing in or acquiring Cerebras may be too expensive at this point. (This might still be a good idea for extremely wealthy investors who have passed on Cerebras due to them having no clear advantage in the current regime, and haven’t considered serial regimes as a live possibility.) Investing in a startup intended at beating Cerebras is probably also too late now, even if one knew of one.</p>
+<p>What might work better is negotiating with Cerebras for options on future Cerebras hardware: Cerebras is almost certainly undervaluing the possibility of a serial regime and not investing in it (given their published research like Kosson et al 2020 focused on how to make regular large-batch training work and no publications in any of the serial regimes), and so will sell options at much less than their true option value; so you can buy options on their chips, and if the serial regime happens, just call them in and you are covered.</p>
+<p>The most aggressive investment would be for a hyperscaler to buy Cerebras hardware now (with options negotiated to buy a lot of followup hardware) to try to make it happen. If one’s researchers crack the serial regime, then one can immediately invoke the options to more intensively R&amp;D/choke off competition, and begin negotiating an acquisition to monopolize the supply indefinitely. If someone else cracks the serial regime, then one at least has some serial hardware, which may only be a small factor slower, and one has sharply limited the downside: train the serial model yourself, biting the bullet of whatever inefficiency comes from having older / too little serial hardware, but then you get a competitive model you can deploy on your mega-GPU datacenter and you have bought yourself years of breathing room while you adapt to the new serial regime. And if neither happens, well, most insurance never pays off and your researchers may enjoy their shiny new toys and perhaps there will be some other spinoff research which actually covers the cost of the chips, so you’re hardly any worse off.</p>
+
+
+<!-- -->
+
+
+</section>
+</div></section><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-blackNoise1986" class="csl-entry" role="listitem">
+Black, Fischer. 1986. <span>“Noise.”</span> <em>The Journal of Finance</em> 41 (3): 528–43. <a href="https://doi.org/10.1111/j.1540-6261.1986.tb04513.x">https://doi.org/10.1111/j.1540-6261.1986.tb04513.x</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<!-- file: html/copy‑anchors-js.html -->
+
+<script type="module">
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. All little ¶ icons Quarto/AnchorJS adds
+
+  document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
+
+    anchor.addEventListener("click", async (evt) => {
+
+      // Keep normal scroll behaviour but stop full page reload
+
+      evt.preventDefault();
+
+
+
+      // Build absolute URL: origin + path + #hash
+
+      const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
+
+
+
+      // 2. Try modern Clipboard API first
+
+      try {
+
+        await navigator.clipboard.writeText(url);
+
+      } catch {
+
+        // 3. Fallback for legacy browsers
+
+        const helper = Object.assign(document.createElement("input"), { value: url });
+
+        document.body.appendChild(helper);
+
+        helper.select();
+
+        document.execCommand("copy");
+
+        helper.remove();
+
+      }
+
+      // TODO: The following two doesn't work yet
+
+      // 4. Brief visual confirmation (optional)
+
+      anchor.dataset.tooltip = "Copied!";
+
+      setTimeout(() => delete anchor.dataset.tooltip, 1500);
+
+
+
+      // 5. Still jump to the heading
+
+      history.pushState(null, "", anchor.getAttribute("href"));
+
+    }, false);
+
+  });
+
+});
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/yuxi\.ml\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Whalefall"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-01-29"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> "2025-01-29"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [AI, economics]</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    resources:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">        "figure/**"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Thoughts on the recent 'DeepSeek shock' of the stock market. The market is being even *less* efficient than usual, and much of the 'professional' commentators are idiots or bullshitters. I wrote this post to prevent my Gell-Mann amnesia."</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">status:</span><span class="co"> "finished"</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="an">confidence:</span><span class="co"> "log"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="an">importance:</span><span class="co"> 6</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="an">shorturls:</span><span class="co"> [whalefall]</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../../../static/_macros.tex &gt;}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## What crash?</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="al">![This crash.](figure/stock_lines.png)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>On 2025-01-27 on the New York Stock Exchange, multiple semiconductor corporations gapped down. The cause is clear: *something* about DeepSeek-R1. What that *something* is, I don't know.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Personally, I was quite obsessed with R1 since its release on 2025-01-20, feeling the AGI in mathematics. I also bought more Nvidia and TSMC, seeing this as an obvious buy signal.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">(っ◔◡◔)っ 🎀 imagination 🎀. Source: [\@layer_07_yuxi (2025-01-19)](https://x.com/layer07_yuxi/status/1881126331855024394).</span><span class="co">](figure/DeepSeek_tweet.png)</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Then this crash happened. An utter shock. The market... is stupid... and inefficient?</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Nearcyan claimed</span><span class="co">](https://x.com/nearcyan/status/1884467386964951379)</span> that the market was probably manipulated by a stand-alone complex of insiders, who felt that a crash was struggling to emerge, and bandwagoned on it, making the crash a reality ("feed the sharks"). He didn't elaborate but I presume it involved some of the following:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>buy it on the cheap and sell them for profit a bit later;</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>bought some put options;</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>sold some call options;</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>did HFT to profit on volatility itself;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>some linear combination of these to minimize tax.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>I don't know the detailed mechanics of how the crash appeared, because I am an outsider to the financial establishment, and I don't know how to psychoanalyze the market.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>The separate analysis, on why DeepSeek hit No. 1 on the Apple App store so quickly after release,<span class="ot">[^deepseek-app-date]</span> seems true enough to me. Such rapid rise must be a memetic virus, something like TikTok and YouTube Shorts. The app is good, the model is great, but that's not enough to push the app to No. 1 out of nowhere. The general public knew nothing of DeepSeek; DeepSeek made no advertisement; etc.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ot">[^deepseek-app-date]: </span>Surprisingly hard to figure out when exactly this happened. Apparently, 2025-01-10 <span class="co">[</span><span class="ot">release</span><span class="co">](https://www.msn.com/en-us/technology/artificial-intelligence/what-is-deepseek-ai-and-why-is-it-suddenly-so-important/ar-AA1xX9Xv)</span>, 2025-01-26 <span class="co">[</span><span class="ot">hitting No. 1</span><span class="co">](https://techcrunch.com/2025/01/27/deepseek-displaces-chatgpt-as-the-app-stores-top-app/)</span>.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Nearcyan's analysis. Source: [\@Nearcyan (2025-01-28)](https://x.com/nearcyan/status/1884467386964951379).</span><span class="co">](figure/nearcyan_deepseek.png)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>But I learned something new: that the mainstream media has no economic literacy. There is a story to be told for why R1 was bad for Nvidia, but none of the mainstream media stories hit anywhere close! If I were grading their economics homework, they are all getting "E for Efforts". No, "F for Effort missing a plank"!</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Consider a typical take:</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The DeepSeek product "is deeply problematic for the thesis that the significant capital expenditure and operating expenses that Silicon Valley has incurred is the most appropriate way to approach the AI trend", said Nirgunan Tiruchelvam, head of consumer and internet at Singapore-based Aletheia Capital. "It calls into question the massive resources that have been dedicated to AI."</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; --- </span><span class="co">[</span><span class="ot">DeepSeek buzz puts tech stocks on track for $1 trillion wipeout | Fortune</span><span class="co">](https://fortune.com/2025/01/27/deepseek-buzz-puts-tech-stocks-on-track-for-1-trillion-wipeout/)</span><span class="at"> (2025-01-27)</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>They all make... Oh wait, Morgan Stanley wins this:</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; These efficiency improvements are not surprising to the software ecosystem. Most software companies believe that lower deployment costs lead to higher utilization (the Jevons paradox) and have already actively worked to lower these costs.</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; --- </span><span class="co">[</span><span class="ot">Morgan Stanley's View on the DeepSeek Shock</span><span class="co">](https://x.com/Jukanlosreve/status/1884139534000234793)</span><span class="at"> (2025-01-27)</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Okay, other than Morgan Stanley... Continuing my rant.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>They all make the <span class="co">[</span><span class="ot">lump of labor fallacy</span><span class="co">](https://en.wikipedia.org/wiki/Lump_of_labour_fallacy)</span>! They are professionals! They work at investment banks! Private equity firms! I can tell a better story for why R1 could be bad for Nvidia. But I don't think that drove the crash. I don't know, but I know that they don't know, and that they don't even know they don't know.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Or perhaps they don't care? Maybe most analysts don't care a damned thing about being right. They are selling wisdom, not knowledge; sensemaking, not truth; toy stories, not falsifiable predictions.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Someone was doing a startup on using AI to predict earnings report, and asked me for advice over dinner. I was very surprised that their minimalistic baseline model (used to compare with the actual model) could already beat the analysts at Bloomberg in backtesting. Thinking a bit, I suggested that their model was beating the analysts because the analysts weren't really selling information, but respectability; to people who aren't seeking alpha, but respectability: "We are doing the industry best practices...".</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## The bear case</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>After thinking more about Nvidia and the AI market, my conclusion: The AI revolution isn't going to disappear, but Nvidia's fat margins might.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Nvidia's margins are mainly caused by it having a monopoly on highly efficient compute with a complete stack. AMD has chips with higher <span class="in">`(FLOP/sec)/USD`</span>, but AMD's driver is garbage so the utilization rate is low, while Nvidia's *just works*.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>However, this might change any time. Google's TPU is a serious threat. Google's software infrastructure is powerful, scalable. It has been pushing for JAX adoption and it might get picked up, which would mean a complete switch of the stack. There are credible sources saying that TPU is already better than GPU, and if Google ever start selling them on the market, Nvidia could have a serious competitor.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Training great LLMs entirely from ground up in the wilderness as a startup — Yi Tay</span><span class="co">](https://www.yitay.net/blog/training-great-llms-entirely-from-ground-zero-in-the-wilderness)</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; I was completely taken aback by the failure rate of GPUs as opposed to my experiences on TPUs at Google. In fact, I don’t actually recall TPUs failing much even for large runs, though I was not sure if I was protected from knowing this just by the sheer robustness of the outrageously good infra and having a dedicated hardware team. In fact, the UL2 20B model (at Google) was trained by leaving the job running accidentally for a month. It never failed. If this were in GPU land, it would have failed within the first few days for sure.</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Similarly, Microsoft is designing Maia, Amazon designing Trainium, etc. There are also many fabless chip startups, and one of them might just work out. TSMC stands to gain the most from so many new fabless chips (<span class="co">[</span><span class="ot">commoditizing your complement</span><span class="co">](https://gwern.net/complement)</span>). More fabless chip designs competing means less margins at the design stage, means more margins at the fabbing stage, so TSMC gets more margins.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>Another possibility is that R1 instigates more stringent global control of the chip supply chain. For example, America could ban the sell of all Hopper-class chips to China, or the EUV lithography machines, or photoresists, etc. America could impose more annoying paperwork requirements for selling those to countries adjacent to China (like Thailand and Singapore). All of these would raise the cost, slow down the process, and fewen the buyers of chips. This would be bad news for not just Nvidia, but the global chip supply chain as a whole (including TSMC).</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>A more neglected possibility was pointed out by Gwern, who argued that there's a <span class="co">[</span><span class="ot">*Hardware Hedging Against Scaling Regime Shifts*</span><span class="co">](https://old.reddit.com/r/mlscaling/comments/1eyophn/hardware_hedging_against_scaling_regime_shifts/)</span>. If the best kind of training becomes much more serial than parallel, then Nvidia's chips are no longer relevant for DL.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Instead of getting much more parallel, training could get much less parallel. It's worth noting that this is the reason so much scientific computing neglected GPUs for a long time and focused more on interconnect throughput </span><span class="sc">\&amp;</span><span class="at"> latency: actually, most important scientific problems are highly serial, and deep learning is rather exceptional here ... There could be new architectures moving back towards RNN which don't have a "parallel training mode" like Transformers, and you inherently need to move activations/gradients around nodes a ton to implement </span><span class="co">[</span><span class="ot">BPTT</span><span class="co">](https://en.wikipedia.org/wiki/Backpropagation_through_time)</span><span class="at">. There could be some twist on patient-teacher/grokking-like training regimes of millions or billions of inherently serial training steps on small (even n = 1) minibatches, instead of the hundreds of thousands of large minibatches which dominates LLM training now ... What sort of hardware do you want in the 'serial regime'? It would look a lot more like supercomputing than the mega-GPU datacenter.</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>How would R1-Zero change this? The big labs like Meta are right now furiously replicating R1-Zero with 100x more compute than DeepSeek, and if a few months down the line, we see a new scaling law emerge from them that shows that R1-Zero training works, but it works better with both longer chains *and* smaller batches, then the RL phase of training would suddenly become highly serial.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>In this case, pretraining would still need giant GPU clusters, but the RL step would suddenly look more like Cray supercomputers -- a few giant CPUs, immersed in Fluorinert, running at 100 GHz.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>In that situation, even if Nvidia's monopoly is never displaced, it would no longer be the *sole* monopolist on the value chain. It would have to share the big margins with someone else -- maybe Groq, or a resurrected Seymour Cray. Sure, I still expect the sum-total of profit to keep growing, but a less portion of it would go to Nvidia. Since Nvidia's high market valuation is mostly in its expected future growth, any drop in the expectation is bad news.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Is the market efficient?</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>After seeing the absolute nonsense of the very respectable commentators, I no longer have faith in the Efficient Market Hypothesis. Or at least the Rational Trader Hypothesis. A large portion of the market traders might actually be ~~insane~~ noise traders. <span class="co">[</span><span class="ot">@blackNoise1986</span><span class="co">]</span> Great news for the market sharps.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Alternatively, perhaps the market is efficient *enough*, but it is becoming less *legible* as a source of information. The market speaks, but it is harder to get what it is saying. It is using the same price signals for different things. The great semantic shift. Terrible news for we who have placed faith in thy Invisible Hand, and trusted the market for integrating information.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>We thought high price of Nvidia predicts high futures earnings, but does it? Fundamental value analysis has long been in decline, and now stock prices function more as a fiat currency of vibes than as an earnings-backed asset. <span class="co">[</span><span class="ot">Since the death of dividends, there has been a vacancy open. Memes filled this void.</span><span class="co">](https://www.youtube.com/watch?v=bt7zNBShLic)</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>The prices mean something. The market integrates information, but the information has less to do with the future of Nvidia for AI, and mostly to do with some kind of memetic contagion (as Nearcyan says), or the economic and machine-learning illiteracy of the noise traders (my hypothesis).</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Noise makes financial markets possible, but also makes them imperfect. If there is no noise trading, there will be very little trading in individual assets. People will hold individual assets, directly or indirectly, but they will rarely trade them. People trading to change their exposure to broad market risks will trade in mutual funds, or portfolios, or index futures, or index options... Noise trading is trading on noise as if it were information. People who trade on noise are willing to trade even though from an objective point of view they would be better off not trading. Perhaps they think the noise they are trading on is information. Or perhaps they just like to trade. With a lot of noise traders in the market, it now pays for those with information to trade. </span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="co">[</span><span class="ot">@blackNoise1986</span><span class="co">]</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Despite the increasing amount of noise, I will continue to use index funds. Don't day-trade because reaction time too long. You can't lose to a high frequency trader if you trade once a month. Don't pick individual stocks unless you have deep insider information on it, or want to wear stocks like a personal brand, or have some AGI helping you, or it hedges against some personally relevant risks.<span class="ot">[^stock-hedge]</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ot">[^stock-hedge]: </span>Like, buying TSLA because you despise Elon Musk, so that if Elon Musk's company keeps growing well, you at least have the consolation of having made money. Similarly, crypto haters should buy more crypto.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="fu">## Appendix {.appendix}</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Some plaintext copies of things I worry would get disappeared by the Internet.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### A Luminous Paradox</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Source: I wrote it in collaboration with <span class="in">`DeepSeek-R1`</span>. Inspired by the lump of intelligence fallacy of the commentators, we present: *A Luminous Paradox* by <span class="co">[</span><span class="ot">Frédéric Bastiat</span><span class="co">](https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat)</span>.</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>TLDR: It's an alternative history satire.</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Edison invented the light bulb, much more efficient than the electric arc-lamp. Investors sell off his General Electric stocks in a panic, ruining Edison.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Slave-traders smash the cotton gin in fear of high productivity crashing the market for slaves.</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Colliers smash the Watt engine, for it would crash the demand for coal.</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Socrates lament writing, for it would crash the demand for thinking.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">center</span><span class="dt">&gt;</span>· · · ☙ ❈ ❧ · · ·<span class="dt">&lt;/</span><span class="kw">center</span><span class="dt">&gt;</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>To the Honorable Gentlemen of the Illumination Regulatory Commission,</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>It has come to my attention that certain reckless innovators—chief among them one Mr. Thomas Edison—have unleashed upon the world a device so calamitous, so efficient, that it threatens to unravel the very fabric of our enlightened society. I speak, of course, of the incandescent lightbulb, a contraption that dares to produce more light with less coal, less gas, and fewer towering electric arcs blasting their fury into the night sky.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>The panic is understandable! Already, this modern Prometheus has been hoisted with his own petard, as panicked investors brought Edison General Electric to the verge of bankruptcy. “What need have we for electric generators,” cry the shareholders, “when a single glass bauble can bathe a parlor in radiance?” To these lamentations, I say: Bravo! Let us march backward with vigor, and smother thoughtless efficiency in its crib.</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>Consider, if you will, the plight of the cotton gin. Had the slave-traders of yore possessed the foresight of our modern lamp-extinguishers, they would have outlawed Eli Whitney’s machine at once. “This devilish engine,” they might have thundered, “allows one man to clean fifty times as much cotton as before! It will collapse demand for labor and render our ships empty!” Yet lo—cotton production soared, plantations multiplied, and the demonic <span class="co">[</span><span class="ot">Triangle</span><span class="co">](https://en.wikipedia.org/wiki/Triangular_trade)</span> rotated faster than ever. The gin, that thrifty villain, did not destroy the market for bondage; it inflamed it.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Or ponder James Watt, that sly Scotsman, whose steam engine threatened to ruin the honest coal miners of England. “Why, this machine does more work with less coal!” wept the colliers. “Our pits will close! Our children shall starve!” And yet—what transpired? Factories bloomed, railways sinewed the earth, and coal, that humble black rock, became the lifeblood of empires.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>Even the ancient Socrates railed against the written word. “If men accepted the <span class="co">[</span><span class="ot">gift of Theuth</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Phaedrus_(dialogue)),” he warned, “they will cease to exercise their minds”. And yet—did letters not amplify thought, spawning philosophies, sciences, and epic poems? The scribe’s quill, far from extinguishing wisdom, kindled a thousand new schools.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>So it is with light. The arc-lamp, that splendid dragon of the streets, consumes rivers of current to scorch the night. The bulb, by contrast, hums softly, thrifty as a monk. But does thriftiness not invite profligacy? When light becomes cheap, do we not use more of it? We shall line our homes with bulbs, string them over gardens, and illuminate shop windows until the cities themselves rival the constellations. Demand for electricity—and the coal, the wires, the engineers—will swell like a tide. Efficiency, that sly midwife, births new desires where none existed before.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>Thus, I propose a challenge for the trembling hearts of investors: Indeed, let us outlaw all inventions that dare to do more with less. Ban the bulb! Smash the dynamo! Let us petition Congress to mandate that every household burn three barrels of whale oil nightly, lest the whaling industry collapse. For as every enlightened citizen knows, prosperity lies not in wanton abundance, but in privation thoughtfully enjoyed.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>Yours in luminous obscurity,</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>Frédéric Bastiat</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">center</span><span class="dt">&gt;</span>· · · ☙ ❈ ❧ · · ·<span class="dt">&lt;/</span><span class="kw">center</span><span class="dt">&gt;</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="fu">### Morgan Stanley's View on the DeepSeek Shock </span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>Source: <span class="co">[</span><span class="ot">someone posted it on Twitter</span><span class="co">](https://x.com/Jukanlosreve/status/1884139534000234793)</span> (2025-01-27). Sounds right, but I have no way to check.</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Semiconductors</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>While DeepSeek’s success is unlikely to alter semiconductor investment plans significantly, there are several factors to consider.</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Feedback from various industry sources consistently indicates that GPU deployment plans remain unaffected.</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>DeepSeek’s technology is impressive, but major CSPs have not neglected to invest in such technologies.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>In fact, much of what we consider groundbreaking—such as training with FP8, multi-token prediction, MLA, custom PTX code, and GRPO reinforcement learning frameworks—either originated with DeepSeek v-2 and DeepSeek’s mathematical model six months ago or can be found in extensive AI research literature.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>This underscores the importance of how these technologies are implemented, and DeepSeek provides efficient designs in every respect.</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>However, given the timing of announcements such as Stargate, Meta’s increased GPU demand forecast for 2025, Microsoft’s reiteration of its $80 billion annual CapEx guidance, and Reliance’s 3GW project in India, those connected to the model ecosystem were likely already aware of most of what DeepSeek was doing.</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>The long history of algorithmic improvements suggests we should not underestimate the incremental demand driven by cost reductions, advanced functionality, and continued scalability.</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>NVIDIA has stated that algorithmic efficiency has improved more than 1,000-fold over the past decade, surpassing the performance gains of single-chip inference. In this context, while DeepSeek’s proposal of a 10x reduction in training compute requirements may not significantly impact LTGR (long-term growth rates), the resulting cost savings could accelerate inference adoption and potentially increase demand for inference.</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>Export controls, however, remain a risk factor.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>It is clear that restricting Chinese technology to H20-level performance has not halted China’s development of LLMs. The implications for government policy are unclear at this stage.</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>Lowering the performance threshold would greatly aid domestic silicon development in China. President Biden’s currently stalled AI restrictions, which aim to limit cluster sizes, would likely have a similar impact. These proposals may also compel other nations capable of supporting China’s AI development to obtain licenses.</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>Similarly, the performance gap between closed models and open-source ones continues to narrow.</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>We have highlighted three risks to the AI industry in our bearish outlook (AI remains a key driver, but smaller surprises are expected in 2025). One of these risks is that the number of companies in foundational model development could decline as it becomes increasingly difficult to compete with cheaper open-source options.</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>DeepSeek’s R1 exacerbates this risk by pressuring the largest spenders in AI to justify larger training runs while allowing others to leverage their work at much lower costs.</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Internet: Lowering Barriers to Costs Drives Product Innovation and Adoption</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>DeepSeek’s architecture and pre-training improvements, which enhance cost efficiency, positively impact consumer internet companies seeking to develop new models and LLM-supported products.</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>The ROIC for GenAI CapEx is expected to increase, and incremental CapEx growth could slow as a result.</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>Larger companies’ ability to develop more innovative products will increase consumer utility, scalability, and adoption rates.</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>Given their large capital investments, user bases, and ability to extract and implement DeepSeek’s improvements into their own models, GOOGL, META, and AMZN are poised to benefit the most from these cost savings.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>However, with more efficient architectures, smaller companies will also be able to provide GPU-supported products more broadly and at lower costs.</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>For example, AMZN’s AWS strategy focuses on commoditization at the model layer. AWS integrates third-party models and provides access through tools like Bedrock, enabling customers to build applications.</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>If DeepSeek’s contributions to democratizing model building (reducing required costs and compute) further commoditize models, AWS could benefit as an aggregator.</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Software: Reducing AI Deployment Costs for Software Providers</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>Algorithmic efficiency gains at the model layer positively impact enterprise software.</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>More cost-efficient models are reducing the “GenAI deployment costs” for the broader software ecosystem, and the companies we cover are primarily building solutions around these models.</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>These efficiency improvements are not surprising to the software ecosystem. Most software companies believe that lower deployment costs lead to higher utilization (the Jevons paradox) and have already actively worked to lower these costs.</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>Microsoft recently focused on its “Phi” small language model (SML) strategy, with the Phi-4 14B model delivering benchmark results comparable to Llama-3.3 70B.</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>ServiceNow partnered with Nvidia to use custom domain-specific language models to execute inference more cost-effectively.</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>Snowflake trained Arctic 17B LLM with a $2 million training compute budget, achieving comparable performance to other enterprise benchmarks and best-in-class SQL performance.</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>Elastic developed the Elastic Learned Sparse EncodeR (ELSER) to lower the cost of semantic search for AI applications.</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Energy</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>Regarding stocks exposed to the growth of AI power infrastructure in the U.S., significant capital expenditures are expected to continue.</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>Key considerations include:</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>An analysis of the U.S. data center pipeline indicates that most of the known pipeline is for AI inference and non-AI use cases rather than AI training.</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>The “Powering GenAI Models” analysis suggests that computing costs could drop by ~90% over the next six years. As AI adoption increases, the Jevons paradox could lead to rapidly growing demand for AI computing.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Discussions with companies suggest that substantial AI infrastructure spending is currently happening in the U.S. (Stargate being one of the most prominent projects we anticipate).</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>After the recent sell-off, many stocks exposed to U.S. AI infrastructure growth are still undervalued and not fully pricing in AI growth.</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>IT Hardware: The Focus of AI in IT Hardware and Apple’s Position</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>Last weekend’s DeepSeek news raised many unanswered questions (particularly regarding total compute costs and final training runs). Still, concerns about AI-related stocks’ long-term ripple effects are evident, especially for DELL (AI infrastructure) and STX (HDD), which may be the most impacted.</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>We believe $AAPL could emerge as a relative winner in this debate:</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Apple’s AI ambitions are primarily focused on feature-specific, on-device small LLMs rather than large frontier models, meaning its AI investments are far less visible than those of its peers.</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>Consequently, Apple’s annual CapEx ($9.4 billion for FY24) is about 1/20th of the combined CapEx of U.S. Tier 1 hyperscalers. If the market overemphasizes CapEx ROI, Apple faces a much lower bar to generate attractive returns (i.e., less risk).</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>As DeepSeek has demonstrated, reduced memory requirements for inference make “Edge AI” much more feasible, aligning with Apple’s core GenAI ambitions.</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>In a world where consumer LLMs are commoditized, distribution platforms become key assets, and Apple owns arguably the most valuable consumer tech distribution platform in existence.</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Embodied AI/Tesla: Advancements in GenAI Training Drive Embodied AI</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>In addition to the potential applications and acceleration of robotics training, we anticipate increasing attention on physical AI as growth in the digital AI narrative becomes less obvious and investors seek executable stories elsewhere.</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>In other words, as companies in the digital AI space become less reliant on double-digit returns, the early-stage opportunities in embodied AI—ranging from humanoids to eVTOL, AMRs, and AVs—are expected to appear increasingly attractive.</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>From a geopolitical perspective, autonomous vehicles currently operate in several cities at 25% of traditional taxi costs, supported by government policies encouraging innovation and supply chains for low-cost local production components. These developments once again highlight China’s achievements in embodied AI.</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>Faced with China’s advancements, the U.S.’s biggest geopolitical rival in all areas of AI, policymakers are expected to pay greater attention to fostering competitive progress among U.S. companies in this space.</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Hardware Hedging Against Scaling Regime Shifts</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>Source: <span class="co">[</span><span class="ot">Gwern posting on Reddit</span><span class="co">](https://old.reddit.com/r/mlscaling/comments/1eyophn/hardware_hedging_against_scaling_regime_shifts)</span> (2024-08-22). </span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>Hyperscalers are investing heavily in AMD/Nvidia-style GPUs optimized for moderate-scale parallelism: less than almost-shared-nothing scientific computing tasks like SETI@home, but not strictly sequential like highly-branching tasks, and with the best interconnects money can buy in a custom datacenter, probably topping out at somewhere ~1m GPUs before the communication overhead/latency &amp; Amdahl's law pushes the diminishing returns to 0.</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>If you are going to spend $50b+ on GPU hardware (and then another $50b+ on everything wrapped around them), you are going to want to invest a lot into making conservative design choices &amp; derisking as much as possible. So a good question here is: even if that 1m mega-GPU datacenter pencils out now as optimal to train the next SOTA, will it stay optimal?</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>Everyone is discussing a transition to a 'search regime', where training begins to consist mostly of some sort of LLM-based search. This could happen tomorrow, or it could not happen anywhere in the foreseeable future---we just don't know. Search usually parallelizes extremely well, and often can be made near-shared-nothing if you can split off multiple sub-trees which don't need to interact and which are of equal expected value of computation. In this scenario, where you are training LLMs on eg. outputs from transcripts generated by an AlphaZero-ish tree-search approach, the mega-GPU datacenter approach is fine. You can train across many datacenters in this scenario or in fact the entire consumer Internet (like Leela Zero or Stockfish do), but while maybe you wouldn't've built the mega-GPU datacenter in that case, it's as equivalent or a little bit better than what you would have, and so maybe you wound up paying 10 or 20% more to put it all into one mega-GPU datacenter, but no big deal. So there are negative consequences of a search regime breakthrough for the hyperscalers, in terms of enabling competition from highly distributed small-timer competitors pooling compute, and AI risk consequences (models immediately scaling up to much greater intelligence if allocated more compute), it wouldn't render your hardware investment moot.</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>But it is not the case that that is the only possible abrupt scaling regime shift. Instead of getting much more parallel, training could get much less parallel. It's worth noting that this is the reason so much scientific computing neglected GPUs for a long time and focused more on interconnect throughput &amp; latency: actually, most important scientific problems are highly serial, and deep learning is rather exceptional here---which means it may regress to the mean at some point. There could be a new second-order SGD optimizer which cannot parallelize easily across many nodes but is so sample-efficient that it wins, or it eventually finds better optima that can't be found by regular first-order. There could be new architectures moving back towards RNN which don't have a "parallel training mode" like Transformers, and you inherently need to move activations/gradients around nodes a ton to implement BPTT. There could be some twist on patient-teacher/grokking-like training regimes of millions or billions of inherently serial training steps on small (even n = 1) minibatches, instead of the hundreds of thousands of large minibatches which dominates LLM training now. There could be some breakthrough in active learning or dataset distillation for a curriculum learning approach: where finding/creating the optimal datapoint is much more important than training on a lot of useless random datapoints, and so larger batches quickly hit the critical batch size. Or something else entirely, which will seem 'obvious' in retrospect but no one is seriously thinking about now.</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>What sort of hardware do you want in the 'serial regime'? It would look a lot more like supercomputing than the mega-GPU datacenter.</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>It might force a return to high-end CPUs, overclocked to as high gigahertz as possible; however, it's hard to see what sort of serial change to DL could really cause that, aside from extreme levels of finegrained sparsity and radical changes to the underlying neural net dynamics (if still 'neural' in any sense).</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>More plausible is that it would continue to look mostly like current DL but highly serial: like synthesizing a datapoint to train on immediately &amp; discard, or training in a grokking-like fashion. In this case, one might need very few nodes---possibly as few as 1 model instances training. This might saturate a few dozen GPUs, say, but then the rest of the mega-GPU datacenter sits idle: it can run low-value old models, but otherwise has nothing useful to do. Any attempt to help the core GPUs simply slows them down by adding in latency.</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>In that case, you don't want GPUs or CPUs. What you want is a single chip which computes forwards and backwards passes of a single model as fast as possible. Groq chips don't do training, so they are right out. What comes to mind is Cerebras: a single ungodly fast chip is exactly their premise, and was originally justified by the same rationale given above as it applies to scientific computing. Cerebras doesn't work all that well for the current scaling regime, but in a serial scaling regime, that could change drastically---a Cerebras chip could potentially be many times faster for each serial step (regardless of its throughput) which then translates directly to an equivalent wall-clock speedup. (Cerebras's marketing material gives an example of a linear system solver which takes ~2,000 microseconds per iteration on a CPU cluster, but only 28 microseconds on a CS-1 chip, so &gt;200× faster per iteration.)</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>The implication then is that whoever has the fast serial chips can train a model and reach market years ahead of any possible competition.</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>If, for example, you want to train a serial model for half a year because that is just how long it takes to shatter SOTA and optimally trades-off for various factors like opportunity cost &amp; post-training, and your chip is only 50× faster per iteration than the best available GPU (eg. 1ms to do a forwards+backwards pass vs 50ms for a Nvidia B200), then the followers would have to train for 25 years! Obviously, that's not going to happen.</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>Competitors would either have to obtain their own fast serial chips, accept possibly staggering levels of inefficiency in trying to parallelize, or just opt out of the competition entirely and go to the leader, hat in hand, begging to be the low-cost commodity provider just to get some use out of their shiny magnificently-obsolete mega-GPU datacenter.</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>Is this particularly likely? No. I'd give it &lt;25% probability. We'll probably just get AGI the mundane way with some very large mega-GPU datacenters and/or a search transition. But if you *are* spending $100b+, that seems likely enough to me to be worth hedging against to the tune of, say, &gt;$0.1b?</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>How would you invest/hedge? Grok/Tenstorrent/AMD/Nvidia/Etched are all out for various reasons; only Cerebras immediately comes to mind as having the perfect chip for this.</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>Cerebras's last valuation was apparently $4b and they are preparing for IPO, so investing in or acquiring Cerebras may be too expensive at this point. (This might still be a good idea for extremely wealthy investors who have passed on Cerebras due to them having no clear advantage in the current regime, and haven't considered serial regimes as a live possibility.) Investing in a startup intended at beating Cerebras is probably also too late now, even if one knew of one.</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>What might work better is negotiating with Cerebras for options on future Cerebras hardware: Cerebras is almost certainly undervaluing the possibility of a serial regime and not investing in it (given their published research like Kosson et al 2020 focused on how to make regular large-batch training work and no publications in any of the serial regimes), and so will sell options at much less than their true option value; so you can buy options on their chips, and if the serial regime happens, just call them in and you are covered.</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>The most aggressive investment would be for a hyperscaler to buy Cerebras hardware now (with options negotiated to buy a lot of followup hardware) to try to make it happen. If one's researchers crack the serial regime, then one can immediately invoke the options to more intensively R&amp;D/choke off competition, and begin negotiating an acquisition to monopolize the supply indefinitely. If someone else cracks the serial regime, then one at least has some serial hardware, which may only be a small factor slower, and one has sharply limited the downside: train the serial model yourself, biting the bullet of whatever inefficiency comes from having older / too little serial hardware, but then you get a competitive model you can deploy on your mega-GPU datacenter and you have bought yourself years of breathing room while you adapt to the new serial regime. And if neither happens, well, most insurance never pays off and your researchers may enjoy their shiny new toys and perhaps there will be some other spinoff research which actually covers the cost of the chips, so you're hardly any worse off.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">Yuxi on the Wired</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Everything <a href="https://en.wikipedia.org/wiki/Public_domainl">PD</a>; <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en/">CC0</a> fallback.</span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

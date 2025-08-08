@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Vernor Vinge">
+<meta name="dcterms.date" content="1993-03-10">
+<meta name="description" content="Transcript of Vernor Vinge’s 1993 presentation on the singularity, predicting the singularity in the interval 2005–2030.">
+
+<title>The Coming Technological Singularity – Yuxi on the Wired</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="The Coming Technological Singularity – Yuxi on the Wired">
+<meta property="og:description" content="Transcript of Vernor Vinge’s 1993 presentation on the singularity, predicting the singularity in the interval 2005–2030.">
+<meta property="og:image" content="https://yuxi.ml/docs/posts/1993-vernor-vinge/img/blog icon.jpg">
+<meta property="og:site_name" content="Yuxi on the Wired">
+<meta name="twitter:title" content="The Coming Technological Singularity – Yuxi on the Wired">
+<meta name="twitter:description" content="Transcript of Vernor Vinge’s 1993 presentation on the singularity, predicting the singularity in the interval 2005–2030.">
+<meta name="twitter:image" content="https://yuxi.ml/docs/posts/1993-vernor-vinge/img/blog icon.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Yuxi on the Wired</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../essays/index.html"> 
+<span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sketches/index.html"> 
+<span class="menu-text">Sketches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../logs/index.html"> 
+<span class="menu-text">Logs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../notes/index.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/index.html"> 
+<span class="menu-text">Docs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about/index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:yuxi_liu@berkeley.com"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../feeds.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">The Coming Technological Singularity</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+            <p class="subtitle lead">How to Survive in the Post-Human Era</p>
+                  <div>
+        <div class="description">
+          Transcript of Vernor Vinge’s 1993 presentation on the singularity, predicting the singularity in the interval 2005–2030.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">AI</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Vernor Vinge </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 10, 1993</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#what-is-the-singularity" id="toc-what-is-the-singularity" class="nav-link" data-scroll-target="#what-is-the-singularity">What is The Singularity?</a></li>
+  <li><a href="#can-the-singularity-be-avoided" id="toc-can-the-singularity-be-avoided" class="nav-link" data-scroll-target="#can-the-singularity-be-avoided">Can the Singularity be Avoided?</a></li>
+  <li><a href="#other-paths-to-the-singularity-intelligence-amplification" id="toc-other-paths-to-the-singularity-intelligence-amplification" class="nav-link" data-scroll-target="#other-paths-to-the-singularity-intelligence-amplification">Other Paths to the Singularity: Intelligence Amplification</a></li>
+  <li><a href="#strong-superhumanity-and-the-best-we-can-ask-for" id="toc-strong-superhumanity-and-the-best-we-can-ask-for" class="nav-link" data-scroll-target="#strong-superhumanity-and-the-best-we-can-ask-for">Strong Superhumanity and the Best We Can Ask for</a></li>
+  <li><a href="#appendix-metadata" id="toc-appendix-metadata" class="nav-link" data-scroll-target="#appendix-metadata">Appendix: Metadata</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Within thirty years, we will have the technological means to create superhuman intelligence. Shortly after, the human era will be ended.</p>
+<p>Is such progress avoidable? If not to be avoided, can events be guided so that we may survive?These questions are investigated. Some possible answers (and some further dangers) are presented.</p>
+</section>
+<section id="what-is-the-singularity" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-is-the-singularity">What is The Singularity?</h2>
+<p>The acceleration of technological progress has been the central feature of this century. I argue in this paper that we are on the edge of change comparable to the rise of human life on Earth. The precise cause of this change is the imminent creation by technology of entities with greater than human intelligence. There are several means by which science may achieve this breakthrough (and this is another reason for having confidence that the event will occur):</p>
+<ul>
+<li>The development of computers that are “awake” and superhumanly intelligent. (To date, most controversy in the area of AI relates to whether we can create human equivalence in a machine. But if the answer is “yes, we can”, then there is little doubt that beings more intelligent can be constructed shortly thereafter.</li>
+<li>Large computer networks (and their associated users) may “wake up” as a superhumanly intelligent entity.</li>
+<li>Computer/human interfaces may become so intimate that users may reasonably be considered superhumanly intelligent.</li>
+<li>Biological science may find ways to improve upon the natural human intellect.</li>
+</ul>
+<p>The first three possibilities depend in large part on improvements in computer hardware. Progress in computer hardware has followed an amazingly steady curve in the last few decades <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Based largely on this trend, I believe that the creation of greater than human intelligence will occur during the next thirty years. (<a href="https://en.wikipedia.org/wiki/Charles_Platt_(author)">Charles Platt</a> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> has pointed out the AI enthusiasts have been making claims like this for the last thirty years. Just so I’m not guilty of a relative-time ambiguity, let me more specific: I’ll be surprised if this event occurs before 2005 or after 2030.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Moravec, Hans, <em>Mind Children</em>, Harvard University Press, 1988.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Platt, Charles, Private Communication.</p></div></div><p>What are the consequences of this event? When greater-than-human intelligence drives progress, that progress will be much more rapid. In fact, there seems no reason why progress itself would not involve the creation of still more intelligent entities – on a still-shorter time scale. The best analogy that I see is with the evolutionary past: Animals can adapt to problems and make inventions, but often no faster than natural selection can do its work – the world acts as its own simulator in the case of natural selection. We humans have the ability to internalize the world and conduct “what if’s” in our heads; we can solve many problems thousands of times faster than natural selection. Now, by creating the means to execute those simulations at much higher speeds, we are entering a regime as radically different from our human past as we humans are from the lower animals.</p>
+<p>From the human point of view this change will be a throwing away of all the previous rules, perhaps in the blink of an eye, an exponential runaway beyond any hope of control. Developments that before were thought might only happen in “a million years” (if ever) will likely happen in the next century. (In <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, <a href="https://en.wikipedia.org/wiki/Greg_Bear">Greg Bear</a> paints a picture of the major changes happening in a matter of hours.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Bear, Greg, “Blood Music”, <em>Analog Science Fiction-Science Fact</em>, June, 1983. Expanded into the novel <em>Blood Music</em>, Morrow, 1985</p></div><div id="fn4"><p><sup>4</sup>&nbsp;Ulam, S., Tribute to John von Neumann, <em>Bulletin of the American Mathematical Society</em>, vol 64, nr 3, part 2, May, 1958, p1-49.</p></div></div><p>I think it’s fair to call this event a singularity (“the Singularity” for the purposes of this paper). It is a point where our models must be discarded and a new reality rules. As we move closer and closer to this point, it will loom vaster and vaster over human affairs till the notion becomes a commonplace. Yet when it finally happens it may still be a great surprise and a greater unknown. In the 1950s there were very few who saw it: <a href="https://en.wikipedia.org/wiki/Stanis%C5%82aw_Ulam">Stanisław Ulam</a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> paraphrased <a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a> as saying:</p>
+<blockquote class="blockquote">
+<p>One conversation centered on the ever accelerating progress of technology and changes in the mode of human life, which gives the appearance of approaching some essential singularity in the history of the race beyond which human affairs, as we know them, could not continue.</p>
+</blockquote>
+<p>Von Neumann even uses the term “singularity”, though it appears he is still thinking of normal progress, not the creation of superhuman intellect. (For me, the superhumanity is the essence of the Singularity. Without that we would get a glut of technical riches, never properly absorbed <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Stent, Gunther S., <em>The Coming of the Golden Age: A View of the End of Progress</em>, The Natural History Press, 1969.</p></div><div id="fn6"><p><sup>6</sup>&nbsp;Good, I. J., “Speculations Concerning the First Ultraintelligent Machine”, in <em>Advances in Computers</em>, vol 6, Franz L. Alt and Morris Rubinoff, eds, pp31-88, 1965, Academic Press.</p></div></div><p>In the 1960s there was recognition of some of the implications of superhuman intelligence. I. J. Good wrote <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>:</p>
+<blockquote class="blockquote">
+<p>Let an ultraintelligent machine be defined as a machine that can far surpass all the intellectual activities of any any man however clever. Since the design of machines is one of these intellectual activities, an ultraintelligent machine could design even better machines; there would then unquestionably be an “intelligence explosion,” and the intelligence of man would be left far behind. Thus the first ultraintelligent machine is the <em>last</em> invention that man need ever make, provided that the machine is docile enough to tell us how to keep it under control. … It is more probable than not that, within the twentieth century, an ultraintelligent machine will be built and that it will be the last invention that man need make.</p>
+</blockquote>
+<p>Good has captured the essence of the runaway, but does not pursue its most disturbing consequences. Any intelligent machine of the sort he describes would not be humankind’s “tool” – any more than humans are the tools of rabbits or robins or chimpanzees. Through the ’60s and ’70s and ’80s, recognition of the cataclysm spread <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. Perhaps it was the science-fiction writers who felt the first concrete impact. After all, the “hard” science-fiction writers are the ones who try to write specific stories about all that technology may do for us. More and more, these writers felt an opaque wall across the future. Once, they could put such fantasies millions of years in the future <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. Now they saw that their most diligent extrapolations resulted in the unknowable … soon. Once, galactic empires might have seemed a Post-Human domain. Now, sadly, even interplanetary ones are.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Vinge, Vernor, “Bookworm, Run!”, <em>Analog</em>, March 1966, pp8-40. Reprinted in <em>True Names and Other Dangers</em>, Vernor Vinge, Baen Books, 1987.</p></div><div id="fn8"><p><sup>8</sup>&nbsp;Alfvén, Hannes, writing as Olof Johanneson, <em>The End of Man?</em>, Award Books, 1969 earlier published as “The Tale of the Big Computer”, Coward-McCann, translated from a book copyright 1966 Albert Bonniers Forlag AB with English translation copyright 1966 by Victor Gollanz, Ltd.</p></div><div id="fn9"><p><sup>9</sup>&nbsp;Vinge, Vernor, First Word, <em>Omni</em>, January 1983, p10.</p></div><div id="fn10"><p><sup>10</sup>&nbsp;Bear, Greg, “Blood Music”, <em>Analog Science Fiction-Science Fact</em>, June, 1983. Expanded into the novel <em>Blood Music</em>, Morrow, 1985</p></div><div id="fn11"><p><sup>11</sup>&nbsp;Stapledon, Olaf, <em>The Starmaker</em>, Berkley Books, 1961 (but from the forward probably written before 1937).</p></div><div id="fn12"><p><sup>12</sup>&nbsp;Vinge, Vernor, “True Names”, <em>Binary Star Number 5</em>, Dell, 1981. Reprinted in <em>True Names and Other Dangers</em>, Vernor Vinge, Baen Books, 1987.</p></div></div><p>What about the ‘90s and the ’00s and the ’10s, as we slide toward the edge? How will the approach of the Singularity spread across the human world view? For a while yet, the general critics of machine sapience will have good press. After all, till we have hardware as powerful as a human brain it is probably foolish to think we’ll be able to create human equivalent (or greater) intelligence. (There is the far-fetched possibility that we could make a human equivalent out of less powerful hardware, if were willing to give up speed, if we were willing to settle for an artificial being who was literally slow <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>. But it’s much more likely that devising the software will be a tricky process, involving lots of false starts and experimentation. If so, then the arrival of self-aware machines will not happen till after the development of hardware that is substantially more powerful than humans’ natural equipment.)</p>
+<p>But as time passes, we should see more symptoms. The dilemma felt by science fiction writers will be perceived in other creative endeavors.(I have heard thoughtful comic book writers worry about how to have spectacular effects when everything visible can be produced by the technically commonplace.) We will see automation replacing higher and higher level jobs. We have tools right now (symbolic math programs, <a href="https://en.wikipedia.org/wiki/CAD%2FCAM"><abbr title="computer-aided design and computer-aided manufacturing">CAD/CAM</abbr></a>) that release us from most low-level drudgery. Or put another way: The work that is truly productive is the domain of a steadily smaller and more elite fraction of humanity. In the coming of the Singularity, we are seeing the predictions of <em>true</em> technological unemployment finally come true.</p>
+<p>Another symptom of progress toward the Singularity: ideas themselves should spread ever faster, and even the most radical will quickly become commonplace. When I began writing, it seemed very easy to come up with ideas that took decades to percolate into the cultural consciousness; now the lead time seems more like eighteen months. (Of course, this could just be me losing my imagination as I get old, but I see the effect in others too.) Like the shock in a compressible flow, the Singularity moves closer as we accelerate through the critical speed.</p>
+<p>And what of the arrival of the Singularity itself? What can be said of its actual appearance? Since it involves an intellectual runaway, it will probably occur faster than any technical revolution seen so far. The precipitating event will likely be unexpected – perhaps even to the researchers involved. (“But all our previous models were catatonic! We were just tweaking some parameters…”) If networking is widespread enough (into ubiquitous embedded systems), it may seem as if our artifacts as a whole had suddenly wakened.</p>
+<p>And what happens a month or two (or a day or two) after that? I have only analogies to point to: The rise of humankind. We will be in the Post-Human era. And for all my rampant technological optimism, sometimes I think I’d be more comfortable if I were regarding these transcendental events from one thousand years remove … instead of twenty.</p>
+</section>
+<section id="can-the-singularity-be-avoided" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="can-the-singularity-be-avoided">Can the Singularity be Avoided?</h2>
+<p>Well, maybe it won’t happen at all: Sometimes I try to imagine the symptoms that we should expect to see if the Singularity is not to develop. There are the widely respected arguments of <a href="https://en.wikipedia.org/wiki/Roger_Penrose">Penrose</a> <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> and <a href="https://en.wikipedia.org/wiki/John_Searle">Searle</a> <a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> against the practicality of machine sapience. In August of 1992, <a href="https://en.wikipedia.org/wiki/Thinking_Machines_Corporation">Thinking Machines Corporation</a> held a workshop to investigate the question “How We Will Build a Machine that Thinks” <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. As you might guess from the workshop’s title, the participants were not especially supportive of the arguments against machine intelligence. In fact, there was general agreement that minds can exist on nonbiological substrates and that algorithms are of central importance to the existence of minds. However, there was much debate about the raw hardware power that is present in organic brains. A minority felt that the largest 1992 computers were within three orders of magnitude of the power of the human brain. The majority of the participants agreed with Moravec’s estimate <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> that we are ten to forty years away from hardware parity. And yet there was another minority who pointed to <a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> <a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>, and conjectured that the computational competence of single neurons may be far higher than generally believed. If so, our present computer hardware might be as much as <em>ten</em> orders of magnitude short of the equipment we carry around in our heads. If this is true (or for that matter, if the Penrose or Searle critique is valid), we might never see a Singularity. Instead, in the early ’00s we would find our hardware performance curves begin to level off – this caused by our inability to automate the complexity of the design work necessary to support the hardware trend curves. We’d end up with some <em>very</em> powerful hardware, but without the ability to push it further. Commercial digital signal processing might be awesome, giving an analog appearance even to digital operations, but nothing would ever “wake up” and there would never be the intellectual runaway which is the essence of the Singularity. It would likely be seen as a golden age … and it would also be an end of progress. This is very like the future predicted by <a href="https://en.wikipedia.org/wiki/Gunther_Stent">Gunther Stent</a>. In fact, on page 137 of <a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>, Stent explicitly cites the development of transhuman intelligence as a sufficient condition to break his projections.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;Penrose, R., <em>The Emperor’s New Mind</em>, Oxford University Press, 1989.</p></div><div id="fn14"><p><sup>14</sup>&nbsp;Searle, John R., “Minds, Brains, and Programs”, in <em>The Behavioral and Brain Sciences</em>, v.3, Cambridge University Press, 1980. The essay is reprinted in <em>The Mind’s I</em>, edited by Douglas R. Hofstadter and Daniel C. Dennett, Basic Books, 1981. This reprinting contains an excellent critique of the Searle essay.</p></div><div id="fn15"><p><sup>15</sup>&nbsp;Thearling, Kurt, “How We Will Build a Machine that Thinks”, a workshop at Thinking Machines Corporation. Personal Communication.</p></div><div id="fn16"><p><sup>16</sup>&nbsp;Moravec, Hans, <em>Mind Children</em>, Harvard University Press, 1988.</p></div><div id="fn17"><p><sup>17</sup>&nbsp;Conrad, Michael <em>et al.</em>, “Towards an Artificial Brain”, <em>BioSystems</em>, vol23, pp175-218, 1989.</p></div><div id="fn18"><p><sup>18</sup>&nbsp;Rasmussen, S. <em>et al.</em>, “Computational Connectionism within Neurons: a Model of Cytoskeletal Automata Subserving Neural Networks”, in <em>Emergent Computation</em>, Stephanie Forrest, ed., p428-449, MIT Press, 1991.</p></div><div id="fn19"><p><sup>19</sup>&nbsp;Stent, Gunther S., <em>The Coming of the Golden Age: A View of the End of Progress</em>, The Natural History Press, 1969.</p></div><div id="fn20"><p><sup>20</sup>&nbsp;Herbert, Frank, <em>Dune</em>, Berkley Books, 1985. However, this novel was serialized in <em>Analog Science Fiction-Science Fact</em> in the 1960s.</p></div></div><p>But if the technological Singularity can happen, it will. Even if all the governments of the world were to understand the “threat” and be in deadly fear of it, progress toward the goal would continue. In fiction, there have been stories of laws passed forbidding the construction of “a machine in the form of the mind of man” <a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a>.In fact, the competitive advantage – economic, military, even artistic – of every advance in automation is so compelling that passing laws, or having customs, that forbid such things merely assures that someone else will get them first.</p>
+<p><a href="https://en.wikipedia.org/wiki/K._Eric_Drexler">Eric Drexler</a> <a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> has provided spectacular insight about how far technical improvement may go. He agrees that superhuman intelligences will be available in the near future – and that such entities pose a threat to the human status quo. But Drexler argues that we can embed such transhuman devices in rules or physical confinement such that their results can be examined and used safely. This is <a href="https://en.wikipedia.org/wiki/I._J._Good">I. J. Good</a>’s ultraintelligent machine, with a dose of caution. I argue that confinement is intrinsically impractical. For the case of physical confinement: Imagine yourself confined to your house with only limited data access to the outside, to your masters. If those masters thought at a rate – say – one million times slower than you, there is little doubt that over a period of years (your time) you could come up with “helpful advice” that would incidentally set you free. (I call this “fast thinking” form of superintelligence “weak superhumanity”. Such a “weakly superhuman” entity would probably burn out in a few weeks of outside time. “Strong superhumanity” would be more than cranking up the clock speed on a human-equivalent mind. It’s hard to say precisely what “strong superhumanity” would be like, but the difference appears to be profound. Imagine running a dog mind at very high speed. Would a thousand years of doggy living add up to any human insight? (Now if the dog mind were cleverly rewired and <em>then</em> run at high speed, we might see something different….) Most speculations about superintelligence seem to be based on the weakly superhuman model. I believe that our best guesses about the post-Singularity world can be obtained by thinking on the nature of strong superhumanity. I will return to this point later in the paper.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn21"><p><sup>21</sup>&nbsp;Drexler, K. Eric, <em>Engines of Creation</em>, Anchor Press/Doubleday, 1986.</p></div></div><p>The other approach to Drexlerian confinement is to build <em>rules</em> into the mind of the created superhuman entity (Asimov’s Laws). I think that performance rules strict enough to be safe would also produce a device whose ability was clearly inferior to the unfettered versions (and so human competition would favor the development of the those more dangerous models).Still, the Asimov dream is a wonderful one: Imagine a willing slave, who has 1000 times your capabilities in every way. Imagine a creature who could satisfy your every safe wish (whatever that means) and still have 99.9% of its time free for other activities. There would be a new universe we never really understood, but filled with benevolent gods (though one of <em>my</em> wishes might be to become one of them).</p>
+<p>If the Singularity can not be prevented or confined, just how bad could the Post-Human era be? Well … pretty bad. The physical extinction of the human race is one possibility. (Or as Eric Drexler put it of nanotechnology: Given all that such technology can do, perhaps governments would simply decide that they no longer need citizens!). Yet physical extinction may not be the scariest possibility. Again, analogies: Think of the different ways we relate to animals. Some of the crude physical abuses are implausible, yet…. In a Post-Human world there would still be plenty of niches where human equivalent automation would be desirable: embedded systems in autonomous devices, self-aware daemons in the lower functioning of larger sentients. (A strongly superhuman intelligence would likely be a Society of Mind <a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a> with some very competent components.) Some of these human equivalents might be used for nothing more than digital signal processing. They would be more like whales than humans. Others might be very human-like, yet with a one-sidedness, a <em>dedication</em> that would put them in a mental hospital in our era. Though none of these creatures might be flesh-and-blood humans, they might be the closest things in the new environment to what we call human now. (I. J. Good had something to say about this, though at this late date the advice may be moot: Good <a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a> proposed a “Meta-Golden Rule”, which might be paraphrased as “Treat your inferiors as you would be treated by your superiors.”It’s a wonderful, paradoxical idea (and most of my friends don’t believe it) since the game-theoretic payoff is so hard to articulate. Yet if we were able to follow it, in some sense that might say something about the plausibility of such kindness in this universe.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn22"><p><sup>22</sup>&nbsp;Minsky, Marvin, <em>Society of Mind</em>, Simon and Schuster, 1985.</p></div><div id="fn23"><p><sup>23</sup>&nbsp;Good, I. J., [Help! I can’t find the source of Good’s Meta-Golden Rule, though I have the clear recollection of hearing about it sometime in the 1960s. Through the help of the net, I have found pointers to a number of related items. G. Harry Stine and Andrew Haley have written about metalaw as it might relate to extraterrestrials: G. Harry Stine, “How to Get along with Extraterrestrials … or Your Neighbor”, <em>Analog Science Fact- Science Fiction</em>, February, 1980, p39-47.]</p></div></div><p>I have argued above that we cannot prevent the Singularity, that its coming is an inevitable consequence of the humans’ natural competitiveness and the possibilities inherent in technology. And yet … we are the initiators. Even the largest avalanche is triggered by small things. We have the freedom to establish initial conditions, make things happen in ways that are less inimical than others. Of course (as with starting avalanches), it may not be clear what the right guiding nudge really is:</p>
+</section>
+<section id="other-paths-to-the-singularity-intelligence-amplification" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="other-paths-to-the-singularity-intelligence-amplification">Other Paths to the Singularity: Intelligence Amplification</h2>
+<p>When people speak of creating superhumanly intelligent beings, they are usually imagining an AI project. But as I noted at the beginning of this paper, there are other paths to superhumanity. Computer networks and human-computer interfaces seem more mundane than AI, and yet they could lead to the Singularity. I call this contrasting approach <a href="https://en.wikipedia.org/wiki/Intelligence_amplification">Intelligence Amplification (IA)</a>. IA is something that is proceeding very naturally, in most cases not even recognized by its developers for what it is. But every time our ability to access information and to communicate it to others is improved, in some sense we have achieved an increase over natural intelligence. Even now, the team of a PhD human and good computer workstation (even an off-net workstation!) could probably max any written intelligence test in existence.</p>
+<p>And it’s very likely that IA is a much easier road to the achievement of superhumanity than pure AI. In humans, the hardest development problems have already been solved. Building up from within ourselves ought to be easier than figuring out first what we really are and then building machines that are all of that. And there is at least conjectural precedent for this approach. <a href="https://en.wikipedia.org/wiki/Graham_Cairns-Smith">Cairns-Smith</a> <a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a> has speculated that biological life may have begun as an adjunct to still more primitive life based on crystalline growth. <a href="https://en.wikipedia.org/wiki/Lynn_Margulis">Lynn Margulis</a> <a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a> has made strong arguments for the view that mutualism is the great driving force in evolution.</p>
+<div class="no-row-height column-margin column-container"><div id="fn24"><p><sup>24</sup>&nbsp;Cairns-Smith, A. G., <em>Seven Clues to the Origin of Life</em>, Cambridge University Press, 1985.</p></div><div id="fn25"><p><sup>25</sup>&nbsp;Margulis, Lynn and Dorion Sagan, <em>Microcosmos, Four Billion Years of Evolution from Our Microbial Ancestors</em>, Summit Books, 1986.</p></div></div><p>Note that I am not proposing that AI research be ignored or less funded. What goes on with AI will often have applications in IA, and vice versa. I am suggesting that we recognize that in network and interface research there is something as profound (and potential wild) as Artificial Intelligence. With that insight, we may see projects that are not as directly applicable as conventional interface and network design work, but which serve to advance us toward the Singularity along the IA path.</p>
+<p>Here are some possible projects that take on special significance, given the IA point of view:</p>
+<ul>
+<li>Human/computer team automation: Take problems that are normally considered for purely machine solution (like hill-climbing problems), and design programs and interfaces that take a advantage of humans’ intuition and available computer hardware. Considering all the bizarreness of higher dimensional hill-climbing problems (and the neat algorithms that have been devised for their solution), there could be some very interesting displays and control tools provided to the human team member.</li>
+<li>Develop human/computer symbiosis in art: Combine the graphic generation capability of modern machines and the esthetic sensibility of humans. Of course, there has been an enormous amount of research in designing computer aids for artists, as labor saving tools. I’m suggesting that we explicitly aim for a greater merging of competence, that we explicitly recognize the cooperative approach that is possible. Karl Sims <a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> has done wonderful work in this direction.</li>
+<li>Allow <a href="https://en.wikipedia.org/wiki/Advanced_chess">human/computer teams at chess tournaments</a>. We already have programs that can play better than almost all humans. But how much work has been done on how this power could be used by a human, to get something even better? If such teams were allowed in at least some chess tournaments, it could have the positive effect on IA research that allowing computers in tournaments had for the corresponding niche in AI.</li>
+<li>Develop interfaces that allow computer and network access without requiring the human to be tied to one spot, sitting in front of a computer. (This is an aspect of IA that fits so well with known economic advantages that lots of effort is already being spent on it.)</li>
+<li>Develop more symmetrical decision support systems. A popular research/product area in recent years has been decision support systems. This is a form of IA, but may be too focussed on systems that are oracular. As much as the program giving the user information, there must be the idea of the user giving the program guidance.</li>
+<li>Use local area nets to make human teams that really work (ie, are more effective than their component members). This is generally the area of “groupware”, already a very popular commercial pursuit. The change in viewpoint here would be to regard the group activity as a combination organism. In one sense, this suggestion might be regarded as the goal of inventing a “Rules of Order” for such combination operations. For instance, group focus might be more easily maintained than in classical meetings. Expertise of individual human members could be isolated from ego issues such that the contribution of different members is focussed on the team project. And of course shared data bases could be used much more conveniently than in conventional committee operations. (Note that this suggestion is aimed at team operations rather than political meetings. In a political setting, the automation described above would simply enforce the power of the persons making the rules!)</li>
+<li>Exploit the worldwide Internet as a combination human/machine tool. Of all the items on the list, progress in this is proceeding the fastest and may run us into the Singularity before anything else. The power and influence of even the present-day Internet is vastly underestimated. For instance, I think our contemporary computer systems would break under the weight of their own complexity if it weren’t for the edge that the USENET “group mind” gives the system administration and support people!) The very anarchy of the worldwide net development is evidence of its potential. As connectivity and bandwidth and archive size and computer speed all increase, we are seeing something like Lynn Margulis’ <a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a> vision of the biosphere as data processor recapitulated, but at a million times greater speed and with millions of humanly intelligent agents (ourselves).</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn26"><p><sup>26</sup>&nbsp;Sims, Karl, “Interactive Evolution of Dynamical Systems”, Thinking Machines Corporation, Technical Report Series, published in <em>Toward a Practice of Autonomous Systems: Proceedings of the First European Conference on Artificial Life</em>, Paris, MIT Press, December 1991.</p></div><div id="fn27"><p><sup>27</sup>&nbsp;Margulis, Lynn and Dorion Sagan, <em>Microcosmos, Four Billion Years of Evolution from Our Microbial Ancestors</em>, Summit Books, 1986.</p></div><div id="fn28"><p><sup>28</sup>&nbsp;Anderson, Poul, “Kings Who Die”, <em>If</em>, March 1962, p8-36. Reprinted in <em>Seven Conquests</em>, Poul Anderson, MacMillan Co., 1969.</p></div><div id="fn29"><p><sup>29</sup>&nbsp;Vinge, Vernor, “Bookworm, Run!”, <em>Analog</em>, March 1966, pp8-40. Reprinted in <em>True Names and Other Dangers</em>, Vernor Vinge, Baen Books, 1987.</p></div></div><p>The above examples illustrate research that can be done within the context of contemporary computer science departments. There are other paradigms. For example, much of the work in Artificial Intelligence and neural nets would benefit from a closer connection with biological life. Instead of simply trying to model and understand biological life with computers, research could be directed toward the creation of composite systems that rely on biological life for guidance or for the providing features we don’t understand well enough yet to implement in hardware. A long-time dream of science-fiction has been direct brain to computer interfaces <a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a> <a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a>. In fact, there is concrete work that can be done (and has been done) in this area:</p>
+<ul>
+<li>Limb prosthetics is a topic of direct commercial applicability. Nerve to silicon transducers can be made <a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>.This is an exciting, near-term step toward direct communication.</li>
+<li>Similar direct links into brains may be feasible, if the bit rate is low: given human learning flexibility, the actual brain neuron targets might not have to be precisely selected. Even 100 bits per second would be of great use to stroke victims who would otherwise be confined to menu-driven interfaces.</li>
+<li>Plugging in to the <a href="https://en.wikipedia.org/wiki/Optic_nerve">optic trunk</a> has the potential for bandwidths of 1 Megabit/second or so. But for this, we need to know the fine-scale architecture of vision, and we need to place an enormous web of electrodes with exquisite precision. If we want our high bandwidth connection to be <em>in addition</em> to what paths are already present in the brain, the problem becomes vastly more intractable. Just sticking a grid of high-bandwidth receivers into a brain certainly won’t do it. But suppose that the high-bandwidth grid were present while the brain structure was actually setting up, as the embryo develops. That suggests:</li>
+<li>Animal embryo experiments. I wouldn’t expect any IA success in the first years of such research, but giving developing brains access to complex simulated neural structures might be very interesting to the people who study how the embryonic brain develops. In the long run, such experiments might produce animals with additional sense paths and interesting intellectual abilities.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn30"><p><sup>30</sup>&nbsp;Kovacs, G. T. A. <em>et al.</em>, “Regeneration Microelectrode Array for Peripheral Nerve Recording and Stimulation”, <em>IEEE Transactions on Biomedical Engineering</em>, v 39, n 9, pp 893-902.</p></div><div id="fn31"><p><sup>31</sup>&nbsp;Swanwick Michael, <em>Vacuum Flowers</em>, serialized in <em>Isaac Asimov’s Science Fiction Magazine</em>, December(?) 1986 - February 1987. Republished by Ace Books, 1988.</p></div></div><p>Originally, I had hoped that this discussion of IA would yield some clearly safer approaches to the Singularity. (After all, IA allows our participation in a kind of transcendence.) Alas, looking back over these IA proposals, about all I am sure of is that they should be considered, that they may give us more options. But as for safety … well, some of the suggestions are a little scarey on their face. One of my informal reviewers pointed out that IA for individual humans creates a rather sinister elite. We humans have millions of years of evolutionary baggage that makes us regard competition in a deadly light. Much of that deadliness may not be necessary in today’s world, one where losers take on the winners’ tricks and are coopted into the winners’ enterprises. A creature that was built <em>de novo</em> might possibly be a much more benign entity than one with a kernel based on fang and talon. And even the egalitarian view of an Internet that wakes up along with all mankind can be viewed as a nightmare <a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>.</p>
+<p>The problem is not that the Singularity represents simply the passing of humankind from center stange, but that it contradicts some of our most deeply held notions of being. I think a closer look at the notion of strong superhumanity can show why that is.</p>
+</section>
+<section id="strong-superhumanity-and-the-best-we-can-ask-for" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="strong-superhumanity-and-the-best-we-can-ask-for">Strong Superhumanity and the Best We Can Ask for</h2>
+<p>Suppose we could tailor the Singularity. Suppose we could attain our most extravagant hopes. What then would we ask for: That humans themselves would become their own successors, that whatever injustice occurs would be tempered by our knowledge of our roots. For those who remained unaltered, the goal would be benign treatment (perhaps even giving the stay-behinds the appearance of being masters of godlike slaves).It could be a golden age that also involved progress (overleaping Stent’s barrier). Immortality (or at least a lifetime as long as we can make the universe survive <a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a> <a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a>) would be achievable.</p>
+<div class="no-row-height column-margin column-container"><div id="fn32"><p><sup>32</sup>&nbsp;Dyson, Freeman, “Physics and Biology in an Open Universe”, <em>Review of Modern Physics</em>, vol 51, pp447-460, 1979.</p></div><div id="fn33"><p><sup>33</sup>&nbsp;Barrow, John D. and Frank J. Tipler, <em>The Anthropic Cosmological Principle</em>, Oxford University Press, 1986.</p></div><div id="fn34"><p><sup>34</sup>&nbsp;Niven, Larry, “The Ethics of Madness”, <em>If</em>, April 1967, pp82-108. Reprinted in <em>Neutron Star</em>, Larry Niven, Ballantine Books, 1968.</p></div></div><p>But in this brightest and kindest world, the philosophical problems themselves become intimidating. A mind that stays at the same capacity cannot live forever; after a few thousand years it would look more like a repeating tape loop than a person. (The most chilling picture I have seen of this is in <a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>.) To live indefinitely long, the mind itself must grow … and when it becomes great enough, and looks back … what fellow-feeling can it have with the soul that it was originally? Certainly the later being would be everything the original was, but so much vastly more. And so even for the individual, the Cairns-Smith (or Lynn Margulis) notion of new life growing incrementally out of the old must still be valid.</p>
+<p>This “problem” about immortality comes up in much more direct ways. The notion of ego and self-awareness has been the bedrock of the hardheaded rationalism of the last few centuries. Yet now the notion of self-awareness is under attack from the Artificial Intelligence people (“self-awareness and other delusions”). Intelligence Amplification undercuts the importance of ego from another direction. The post-Singularity world will involve extremely high-bandwidth networking. A central feature of strongly superhuman entities will likely be their ability to communicate at variable bandwidths, including ones far higher than speech or written messages. What happens when pieces of ego can be copied and merged, when the size of a self-awareness can grow or shrink to fit the nature of the problems under consideration?These are essential features of strong superhumanity and the Singularity. Thinking about them, one begins to feel how essentially strange and different the Post-Human era will be – <em>no matter how cleverly and benignly it is brought to be</em>.</p>
+<p>From one angle, the vision fits many of our happiest dreams: a place unending, where we can truly know one another and understand the deepest mysteries. From another angle, it’s a lot like the worst case scenario I imagined earlier in this paper.</p>
+<p>Which is the valid viewpoint? In fact, I think the new era is simply too different to fit into the classical frame of good and evil. That frame is based on the idea of isolated, immutable minds connected by tenuous, low-bandwidth links. But the post-Singularity world <em>does</em> fit with the larger tradition of change and cooperation that started long ago (perhaps even before the rise of biological life). I think there <em>are</em> notions of ethics that would apply in such an era. Research into IA and high-bandwidth communications should improve this understanding. I see just the glimmerings of this now, in Good’s Meta-Golden Rule, perhaps in rules for distinguishing self from others on the basis of bandwidth of connection. And while mind and self will be vastly more labile than in the past, much of what we value (knowledge, memory, thought) need never be lost. I think Freeman Dyson has it right when he says <a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a>: “God is what mind becomes when it has passed beyond the scale of our comprehension.”</p>
+<div class="no-row-height column-margin column-container"><div id="fn35"><p><sup>35</sup>&nbsp;Dyson, Freeman, <em>Infinite in All Directions</em>, Harper &amp;&amp; Row, 1988.</p></div></div></section>
+<section id="appendix-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-metadata">Appendix: Metadata</h2>
+<p>Modernized from <a href="https://edoras.sdsu.edu/~vinge/misc/singularity.html">The Coming Technological Singularity</a> on the original author’s website. The original header for the is as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Vernor Vinge</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Department of Mathematical Sciences San Diego State University</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>(c) 1993 by Vernor Vinge (Verbatim copying/translation and distribution of this entire article is permitted in any medium, provided this notice is preserved.)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>[I wish to thank John Carroll of San Diego State University and Howard Davidson of Sun Microsystems for discussing the draft version of this paper with me.]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>This article was for the VISION-21 Symposium sponsored by NASA Lewis Research Center and the Ohio Aerospace Institute, March 30-31, 1993. It is also retrievable from the NASA technical reports server as part of NASA CP-10129. A slightly changed version appeared in the Winter 1993 issue of _Whole Earth Review_.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>VISION-21 Symposium was a conference held in March 1993, described as:</p>
+<blockquote class="blockquote">
+<p>The symposium Vision-21: Interdisciplinary Science and Engineering in the Era of Cyberspace was held at the NASA Lewis Research Center on March 30-31, 1993. The purpose of the symposium was to simulate interdisciplinary thinking in the sciences and technologies which will be required for exploration and development of space over the next thousand years. The keynote speakers were Hans Moravec, Vernor Vinge, Carol Stoker, and Myron Krueger. The proceedings consist of transcripts of the invited talks and the panel discussion by the invited speakers, summaries of workshop sessions, and contributed papers by the attendees. <span class="citation" data-cites="Vision21Interdisciplinary1993">(<a href="#ref-Vision21Interdisciplinary1993" role="doc-biblioref"><em>Vision 21: <span>Interdisciplinary Science</span> and <span>Engineering</span> in the <span>Era</span> of <span>Cyberspace</span></em> 1993</a>)</span></p>
+</blockquote>
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Vision21Interdisciplinary1993" class="csl-entry" role="listitem">
+<em>Vision 21: <span>Interdisciplinary Science</span> and <span>Engineering</span> in the <span>Era</span> of <span>Cyberspace</span></em>. 1993. <a href="https://ntrs.nasa.gov/citations/19940022855">https://ntrs.nasa.gov/citations/19940022855</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<!-- file: html/copy‑anchors-js.html -->
+
+<script type="module">
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. All little ¶ icons Quarto/AnchorJS adds
+
+  document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
+
+    anchor.addEventListener("click", async (evt) => {
+
+      // Keep normal scroll behaviour but stop full page reload
+
+      evt.preventDefault();
+
+
+
+      // Build absolute URL: origin + path + #hash
+
+      const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
+
+
+
+      // 2. Try modern Clipboard API first
+
+      try {
+
+        await navigator.clipboard.writeText(url);
+
+      } catch {
+
+        // 3. Fallback for legacy browsers
+
+        const helper = Object.assign(document.createElement("input"), { value: url });
+
+        document.body.appendChild(helper);
+
+        helper.select();
+
+        document.execCommand("copy");
+
+        helper.remove();
+
+      }
+
+      // TODO: The following two doesn't work yet
+
+      // 4. Brief visual confirmation (optional)
+
+      anchor.dataset.tooltip = "Copied!";
+
+      setTimeout(() => delete anchor.dataset.tooltip, 1500);
+
+
+
+      // 5. Still jump to the heading
+
+      history.pushState(null, "", anchor.getAttribute("href"));
+
+    }, false);
+
+  });
+
+});
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/yuxi\.ml\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Coming Technological Singularity"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "How to Survive in the Post-Human Era"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Vernor Vinge"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "1993-03-10"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [AI]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"> html:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">  toc: true</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Transcript of Vernor Vinge's 1993 presentation on the singularity, predicting the singularity in the interval 2005--2030."</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="an">status:</span><span class="co"> "finished"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="an">confidence:</span><span class="co"> "log"</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="an">importance:</span><span class="co"> 10</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>Within thirty years, we will have the technological means to create superhuman intelligence. Shortly after, the human era will be ended.</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>Is such progress avoidable? If not to be avoided, can events be guided so that we may survive?These questions are investigated. Some possible answers (and some further dangers) are presented.</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is The Singularity?</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>The acceleration of technological progress has been the central feature of this century. I argue in this paper that we are on the edge of change comparable to the rise of human life on Earth. The precise cause of this change is the imminent creation by technology of entities with greater than human intelligence. There are several means by which science may achieve this breakthrough (and this is another reason for having confidence that the event will occur):</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>The development of computers that are "awake" and superhumanly intelligent. (To date, most controversy in the area of AI relates to whether we can create human equivalence in a machine. But if the answer is "yes, we can", then there is little doubt that beings more intelligent can be constructed shortly thereafter.</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Large computer networks (and their associated users) may "wake up" as a superhumanly intelligent entity.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Computer/human interfaces may become so intimate that users may reasonably be considered superhumanly intelligent.</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Biological science may find ways to improve upon the natural human intellect.</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>The first three possibilities depend in large part on improvements in computer hardware. Progress in computer hardware has followed an amazingly steady curve in the last few decades <span class="ot">[^16]</span>. Based largely on this trend, I believe that the creation of greater than human intelligence will occur during the next thirty years. (<span class="co">[</span><span class="ot">Charles Platt</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Charles_Platt_(author)) <span class="ot">[^19]</span> has pointed out the AI enthusiasts have been making claims like this for the last thirty years. Just so I'm not guilty of a relative-time ambiguity, let me more specific: I'll be surprised if this event occurs before 2005 or after 2030.)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>What are the consequences of this event? When greater-than-human intelligence drives progress, that progress will be much more rapid. In fact, there seems no reason why progress itself would not involve the creation of still more intelligent entities -- on a still-shorter time scale. The best analogy that I see is with the evolutionary past: Animals can adapt to problems and make inventions, but often no faster than natural selection can do its work -- the world acts as its own simulator in the case of natural selection. We humans have the ability to internalize the world and conduct "what if's" in our heads; we can solve many problems thousands of times faster than natural selection. Now, by creating the means to execute those simulations at much higher speeds, we are entering a regime as radically different from our human past as we humans are from the lower animals.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>From the human point of view this change will be a throwing away of all the previous rules, perhaps in the blink of an eye, an exponential runaway beyond any hope of control. Developments that before were thought might only happen in "a million years" (if ever) will likely happen in the next century. (In <span class="ot">[^4]</span>, <span class="co">[</span><span class="ot">Greg Bear</span><span class="co">](https://en.wikipedia.org/wiki/Greg_Bear)</span> paints a picture of the major changes happening in a matter of hours.)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>I think it's fair to call this event a singularity ("the Singularity" for the purposes of this paper). It is a point where our models must be discarded and a new reality rules. As we move closer and closer to this point, it will loom vaster and vaster over human affairs till the notion becomes a commonplace. Yet when it finally happens it may still be a great surprise and a greater unknown. In the 1950s there were very few who saw it: <span class="co">[</span><span class="ot">Stanisław Ulam</span><span class="co">](https://en.wikipedia.org/wiki/Stanis%C5%82aw_Ulam)</span> <span class="ot">[^27]</span> paraphrased <span class="co">[</span><span class="ot">John von Neumann</span><span class="co">](https://en.wikipedia.org/wiki/John_von_Neumann)</span> as saying:</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; One conversation centered on the ever accelerating progress of technology and changes in the mode of human life, which gives the appearance of approaching some essential singularity in the history of the race beyond which human affairs, as we know them, could not continue.</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>Von Neumann even uses the term "singularity", though it appears he is still thinking of normal progress, not the creation of superhuman intellect. (For me, the superhumanity is the essence of the Singularity. Without that we would get a glut of technical riches, never properly absorbed <span class="ot">[^24]</span>.)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>In the 1960s there was recognition of some of the implications of superhuman intelligence. I. J. Good wrote <span class="ot">[^10]</span>:</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Let an ultraintelligent machine be defined as a machine that can far surpass all the intellectual activities of any any man however clever. Since the design of machines is one of these intellectual activities, an ultraintelligent machine could design even better machines; there would then unquestionably be an "intelligence explosion," and the intelligence of man would be left far behind. Thus the first ultraintelligent machine is the _last_ invention that man need ever make, provided that the machine is docile enough to tell us how to keep it under control. ... It is more probable than not that, within the twentieth century, an ultraintelligent machine will be built and that it will be the last invention that man need make.</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>Good has captured the essence of the runaway, but does not pursue its most disturbing consequences. Any intelligent machine of the sort he describes would not be humankind's "tool" -- any more than humans are the tools of rabbits or robins or chimpanzees. </span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>Through the '60s and '70s and '80s, recognition of the cataclysm spread <span class="ot">[^28]</span> <span class="ot">[^1]</span> <span class="ot">[^30]</span> <span class="ot">[^4]</span>. Perhaps it was the science-fiction writers who felt the first concrete impact. After all, the "hard" science-fiction writers are the ones who try to write specific stories about all that technology may do for us. More and more, these writers felt an opaque wall across the future. Once, they could put such fantasies millions of years in the future <span class="ot">[^23]</span>. Now they saw that their most diligent extrapolations resulted in the unknowable ... soon. Once, galactic empires might have seemed a Post-Human domain. Now, sadly, even interplanetary ones are.</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>What about the '90s and the '00s and the '10s, as we slide toward the edge? How will the approach of the Singularity spread across the human world view? For a while yet, the general critics of machine sapience will have good press. After all, till we have hardware as powerful as a human brain it is probably foolish to think we'll be able to create human equivalent (or greater) intelligence. (There is the far-fetched possibility that we could make a human equivalent out of less powerful hardware, if were willing to give up speed, if we were willing to settle for an artificial being who was literally slow <span class="ot">[^29]</span>. But it's much more likely that devising the software will be a tricky process, involving lots of false starts and experimentation. If so, then the arrival of self-aware machines will not happen till after the development of hardware that is substantially more powerful than humans' natural equipment.)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>But as time passes, we should see more symptoms. The dilemma felt by science fiction writers will be perceived in other creative endeavors.(I have heard thoughtful comic book writers worry about how to have spectacular effects when everything visible can be produced by the technically commonplace.) We will see automation replacing higher and higher level jobs. We have tools right now (symbolic math programs, <span class="co">[</span><span class="ot">&lt;abbr title="computer-aided design and computer-aided manufacturing"&gt;CAD/CAM&lt;/abb&gt;</span><span class="co">](https://en.wikipedia.org/wiki/CAD%2FCAM)</span>) that release us from most low-level drudgery. Or put another way: The work that is truly productive is the domain of a steadily smaller and more elite fraction of humanity. In the coming of the Singularity, we are seeing the predictions of _true_ technological unemployment finally come true.</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>Another symptom of progress toward the Singularity: ideas themselves should spread ever faster, and even the most radical will quickly become commonplace. When I began writing, it seemed very easy to come up with ideas that took decades to percolate into the cultural consciousness; now the lead time seems more like eighteen months. (Of course, this could just be me losing my imagination as I get old, but I see the effect in others too.) Like the shock in a compressible flow, the Singularity moves closer as we accelerate through the critical speed.</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>And what of the arrival of the Singularity itself? What can be said of its actual appearance? Since it involves an intellectual runaway, it will probably occur faster than any technical revolution seen so far. The precipitating event will likely be unexpected -- perhaps even to the researchers involved. ("But all our previous models were catatonic! We were just tweaking some parameters...") If networking is widespread enough (into ubiquitous embedded systems), it may seem as if our artifacts as a whole had suddenly wakened.</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>And what happens a month or two (or a day or two) after that? I have only analogies to point to: The rise of humankind. We will be in the Post-Human era. And for all my rampant technological optimism, sometimes I think I'd be more comfortable if I were regarding these transcendental events from one thousand years remove ... instead of twenty.</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Can the Singularity be Avoided?</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>Well, maybe it won't happen at all: Sometimes I try to imagine the symptoms that we should expect to see if the Singularity is not to develop. There are the widely respected arguments of <span class="co">[</span><span class="ot">Penrose</span><span class="co">](https://en.wikipedia.org/wiki/Roger_Penrose)</span> <span class="ot">[^18]</span> and <span class="co">[</span><span class="ot">Searle</span><span class="co">](https://en.wikipedia.org/wiki/John_Searle)</span> <span class="ot">[^21]</span> against the practicality of machine sapience. In August of 1992, <span class="co">[</span><span class="ot">Thinking Machines Corporation</span><span class="co">](https://en.wikipedia.org/wiki/Thinking_Machines_Corporation)</span> held a workshop to investigate the question "How We Will Build a Machine that Thinks" <span class="ot">[^26]</span>. As you might guess from the workshop's title, the participants were not especially supportive of the arguments against machine intelligence. In fact, there was general agreement that minds can exist on nonbiological substrates and that algorithms are of central importance to the existence of minds. However, there was much debate about the raw hardware power that is present in organic brains. A minority felt that the largest 1992 computers were within three orders of magnitude of the power of the human brain. The majority of the participants agreed with Moravec's estimate <span class="ot">[^16]</span> that we are ten to forty years away from hardware parity. And yet there was another minority who pointed to <span class="ot">[^6]</span> <span class="ot">[^20]</span>, and conjectured that the computational competence of single neurons may be far higher than generally believed. If so, our present computer hardware might be as much as _ten_ orders of magnitude short of the equipment we carry around in our heads. If this is true (or for that matter, if the Penrose or Searle critique is valid), we might never see a Singularity. Instead, in the early '00s we would find our hardware performance curves begin to level off -- this caused by our inability to automate the complexity of the design work necessary to support the hardware trend curves. We'd end up with some _very_ powerful hardware, but without the ability to push it further. Commercial digital signal processing might be awesome, giving an analog appearance even to digital operations, but nothing would ever "wake up" and there would never be the intellectual runaway which is the essence of the Singularity. It would likely be seen as a golden age ... and it would also be an end of progress. This is very like the future predicted by <span class="co">[</span><span class="ot">Gunther Stent</span><span class="co">](https://en.wikipedia.org/wiki/Gunther_Stent)</span>. In fact, on page 137 of <span class="ot">[^24]</span>, Stent explicitly cites the development of transhuman intelligence as a sufficient condition to break his projections.</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>But if the technological Singularity can happen, it will. Even if all the governments of the world were to understand the "threat" and be in deadly fear of it, progress toward the goal would continue. In fiction, there have been stories of laws passed forbidding the construction of "a machine in the form of the mind of man" <span class="ot">[^12]</span>.In fact, the competitive advantage -- economic, military, even artistic -- of every advance in automation is so compelling that passing laws, or having customs, that forbid such things merely assures that someone else will get them first.</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Eric Drexler</span><span class="co">](https://en.wikipedia.org/wiki/K._Eric_Drexler)</span> <span class="ot">[^7]</span> has provided spectacular insight about how far technical improvement may go. He agrees that superhuman intelligences will be available in the near future -- and that such entities pose a threat to the human status quo. But Drexler argues that we can embed such transhuman devices in rules or physical confinement such that their results can be examined and used safely. This is <span class="co">[</span><span class="ot">I. J. Good</span><span class="co">](https://en.wikipedia.org/wiki/I._J._Good)</span>'s ultraintelligent machine, with a dose of caution. I argue that confinement is intrinsically impractical. For the case of physical confinement: Imagine yourself confined to your house with only limited data access to the outside, to your masters. If those masters thought at a rate -- say -- one million times slower than you, there is little doubt that over a period of years (your time) you could come up with "helpful advice" that would incidentally set you free. (I call this "fast thinking" form of superintelligence "weak superhumanity". Such a "weakly superhuman" entity would probably burn out in a few weeks of outside time. "Strong superhumanity" would be more than cranking up the clock speed on a human-equivalent mind. It's hard to say precisely what "strong superhumanity" would be like, but the difference appears to be profound. Imagine running a dog mind at very high speed. Would a thousand years of doggy living add up to any human insight? (Now if the dog mind were cleverly rewired and _then_ run at high speed, we might see something different....) Most speculations about superintelligence seem to be based on the weakly superhuman model. I believe that our best guesses about the post-Singularity world can be obtained by thinking on the nature of strong superhumanity. I will return to this point later in the paper.)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>The other approach to Drexlerian confinement is to build _rules_ into the mind of the created superhuman entity (Asimov's Laws). I think that performance rules strict enough to be safe would also produce a device whose ability was clearly inferior to the unfettered versions (and so human competition would favor the development of the those more dangerous models).Still, the Asimov dream is a wonderful one: Imagine a willing slave, who has 1000 times your capabilities in every way. Imagine a creature who could satisfy your every safe wish (whatever that means) and still have 99.9% of its time free for other activities. There would be a new universe we never really understood, but filled with benevolent gods (though one of _my_ wishes might be to become one of them).</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>If the Singularity can not be prevented or confined, just how bad could the Post-Human era be? Well ... pretty bad. The physical extinction of the human race is one possibility. (Or as Eric Drexler put it of nanotechnology: Given all that such technology can do, perhaps governments would simply decide that they no longer need citizens!). Yet physical extinction may not be the scariest possibility. Again, analogies: Think of the different ways we relate to animals. Some of the crude physical abuses are implausible, yet.... In a Post-Human world there would still be plenty of niches where human equivalent automation would be desirable: embedded systems in autonomous devices, self-aware daemons in the lower functioning of larger sentients. (A strongly superhuman intelligence would likely be a Society of Mind <span class="ot">[^15]</span> with some very competent components.) Some of these human equivalents might be used for nothing more than digital signal processing. They would be more like whales than humans. Others might be very human-like, yet with a one-sidedness, a _dedication_ that would put them in a mental hospital in our era. Though none of these creatures might be flesh-and-blood humans, they might be the closest things in the new environment to what we call human now. (I. J. Good had something to say about this, though at this late date the advice may be moot: Good <span class="ot">[^11]</span> proposed a "Meta-Golden Rule", which might be paraphrased as "Treat your inferiors as you would be treated by your superiors."It's a wonderful, paradoxical idea (and most of my friends don't believe it) since the game-theoretic payoff is so hard to articulate. Yet if we were able to follow it, in some sense that might say something about the plausibility of such kindness in this universe.)</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>I have argued above that we cannot prevent the Singularity, that its coming is an inevitable consequence of the humans' natural competitiveness and the possibilities inherent in technology. And yet ... we are the initiators. Even the largest avalanche is triggered by small things. We have the freedom to establish initial conditions, make things happen in ways that are less inimical than others. Of course (as with starting avalanches), it may not be clear what the right guiding nudge really is:</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Other Paths to the Singularity: Intelligence Amplification</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>When people speak of creating superhumanly intelligent beings, they are usually imagining an AI project. But as I noted at the beginning of this paper, there are other paths to superhumanity. Computer networks and human-computer interfaces seem more mundane than AI, and yet they could lead to the Singularity. I call this contrasting approach <span class="co">[</span><span class="ot">Intelligence Amplification (IA)</span><span class="co">](https://en.wikipedia.org/wiki/Intelligence_amplification)</span>. IA is something that is proceeding very naturally, in most cases not even recognized by its developers for what it is. But every time our ability to access information and to communicate it to others is improved, in some sense we have achieved an increase over natural intelligence. Even now, the team of a PhD human and good computer workstation (even an off-net workstation!) could probably max any written intelligence test in existence.</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>And it's very likely that IA is a much easier road to the achievement of superhumanity than pure AI. In humans, the hardest development problems have already been solved. Building up from within ourselves ought to be easier than figuring out first what we really are and then building machines that are all of that. And there is at least conjectural precedent for this approach. <span class="co">[</span><span class="ot">Cairns-Smith</span><span class="co">](https://en.wikipedia.org/wiki/Graham_Cairns-Smith)</span> <span class="ot">[^5]</span> has speculated that biological life may have begun as an adjunct to still more primitive life based on crystalline growth. <span class="co">[</span><span class="ot">Lynn Margulis</span><span class="co">](https://en.wikipedia.org/wiki/Lynn_Margulis)</span> <span class="ot">[^14]</span> has made strong arguments for the view that mutualism is the great driving force in evolution.</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>Note that I am not proposing that AI research be ignored or less funded. What goes on with AI will often have applications in IA, and vice versa. I am suggesting that we recognize that in network and interface research there is something as profound (and potential wild) as Artificial Intelligence. With that insight, we may see projects that are not as directly applicable as conventional interface and network design work, but which serve to advance us toward the Singularity along the IA path.</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>Here are some possible projects that take on special significance, given the IA point of view:</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Human/computer team automation: Take problems that are normally considered for purely machine solution (like hill-climbing problems), and design programs and interfaces that take a advantage of humans' intuition and available computer hardware. Considering all the bizarreness of higher dimensional hill-climbing problems (and the neat algorithms that have been devised for their solution), there could be some very interesting displays and control tools provided to the human team member.</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Develop human/computer symbiosis in art: Combine the graphic generation capability of modern machines and the esthetic sensibility of humans. Of course, there has been an enormous amount of research in designing computer aids for artists, as labor saving tools. I'm suggesting that we explicitly aim for a greater merging of competence, that we explicitly recognize the cooperative approach that is possible. Karl Sims <span class="ot">[^22]</span> has done wonderful work in this direction.</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Allow <span class="co">[</span><span class="ot">human/computer teams at chess tournaments</span><span class="co">](https://en.wikipedia.org/wiki/Advanced_chess)</span>. We already have programs that can play better than almost all humans. But how much work has been done on how this power could be used by a human, to get something even better? If such teams were allowed in at least some chess tournaments, it could have the positive effect on IA research that allowing computers in tournaments had for the corresponding niche in AI.</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Develop interfaces that allow computer and network access without requiring the human to be tied to one spot, sitting in front of a computer. (This is an aspect of IA that fits so well with known economic advantages that lots of effort is already being spent on it.)</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Develop more symmetrical decision support systems. A popular research/product area in recent years has been decision support systems. This is a form of IA, but may be too focussed on systems that are oracular. As much as the program giving the user information, there must be the idea of the user giving the program guidance.</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use local area nets to make human teams that really work (ie, are more effective than their component members). This is generally the area of "groupware", already a very popular commercial pursuit. The change in viewpoint here would be to regard the group activity as a combination organism. In one sense, this suggestion might be regarded as the goal of inventing a "Rules of Order" for such combination operations. For instance, group focus might be more easily maintained than in classical meetings. Expertise of individual human members could be isolated from ego issues such that the contribution of different members is focussed on the team project. And of course shared data bases could be used much more conveniently than in conventional committee operations. (Note that this suggestion is aimed at team operations rather than political meetings. In a political setting, the automation described above would simply enforce the power of the persons making the rules!)</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Exploit the worldwide Internet as a combination human/machine tool. Of all the items on the list, progress in this is proceeding the fastest and may run us into the Singularity before anything else. The power and influence of even the present-day Internet is vastly underestimated. For instance, I think our contemporary computer systems would break under the weight of their own complexity if it weren't for the edge that the USENET "group mind" gives the system administration and support people!) The very anarchy of the worldwide net development is evidence of its potential. As connectivity and bandwidth and archive size and computer speed all increase, we are seeing something like Lynn Margulis' <span class="ot">[^14]</span> vision of the biosphere as data processor recapitulated, but at a million times greater speed and with millions of humanly intelligent agents (ourselves).</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>The above examples illustrate research that can be done within the context of contemporary computer science departments. There are other paradigms. For example, much of the work in Artificial Intelligence and neural nets would benefit from a closer connection with biological life. Instead of simply trying to model and understand biological life with computers, research could be directed toward the creation of composite systems that rely on biological life for guidance or for the providing features we don't understand well enough yet to implement in hardware. A long-time dream of science-fiction has been direct brain to computer interfaces <span class="ot">[^2]</span> <span class="ot">[^28]</span>. In fact, there is concrete work that can be done (and has been done) in this area:</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Limb prosthetics is a topic of direct commercial applicability. Nerve to silicon transducers can be made <span class="ot">[^13]</span>.This is an exciting, near-term step toward direct communication.</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Similar direct links into brains may be feasible, if the bit rate is low: given human learning flexibility, the actual brain neuron targets might not have to be precisely selected. Even 100 bits per second would be of great use to stroke victims who would otherwise be confined to menu-driven interfaces.</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Plugging in to the <span class="co">[</span><span class="ot">optic trunk</span><span class="co">](https://en.wikipedia.org/wiki/Optic_nerve)</span> has the potential for bandwidths of 1 Megabit/second or so. But for this, we need to know the fine-scale architecture of vision, and we need to place an enormous web of electrodes with exquisite precision. If we want our high bandwidth connection to be _in addition_ to what paths are already present in the brain, the problem becomes vastly more intractable. Just sticking a grid of high-bandwidth receivers into a brain certainly won't do it. But suppose that the high-bandwidth grid were present while the brain structure was actually setting up, as the embryo develops. That suggests:</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Animal embryo experiments. I wouldn't expect any IA success in the first years of such research, but giving developing brains access to complex simulated neural structures might be very interesting to the people who study how the embryonic brain develops. In the long run, such experiments might produce animals with additional sense paths and interesting intellectual abilities.</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>Originally, I had hoped that this discussion of IA would yield some clearly safer approaches to the Singularity. (After all, IA allows our participation in a kind of transcendence.) Alas, looking back over these IA proposals, about all I am sure of is that they should be considered, that they may give us more options. But as for safety ... well, some of the suggestions are a little scarey on their face. One of my informal reviewers pointed out that IA for individual humans creates a rather sinister elite. We humans have millions of years of evolutionary baggage that makes us regard competition in a deadly light. Much of that deadliness may not be necessary in today's world, one where losers take on the winners' tricks and are coopted into the winners' enterprises. A creature that was built _de novo_ might possibly be a much more benign entity than one with a kernel based on fang and talon. And even the egalitarian view of an Internet that wakes up along with all mankind can be viewed as a nightmare <span class="ot">[^25]</span>.</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>The problem is not that the Singularity represents simply the passing of humankind from center stange, but that it contradicts some of our most deeply held notions of being. I think a closer look at the notion of strong superhumanity can show why that is.</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Strong Superhumanity and the Best We Can Ask for</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>Suppose we could tailor the Singularity. Suppose we could attain our most extravagant hopes. What then would we ask for: That humans themselves would become their own successors, that whatever injustice occurs would be tempered by our knowledge of our roots. For those who remained unaltered, the goal would be benign treatment (perhaps even giving the stay-behinds the appearance of being masters of godlike slaves).It could be a golden age that also involved progress (overleaping Stent's barrier). Immortality (or at least a lifetime as long as we can make the universe survive <span class="ot">[^9]</span> <span class="ot">[^3]</span>) would be achievable.</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>But in this brightest and kindest world, the philosophical problems themselves become intimidating. A mind that stays at the same capacity cannot live forever; after a few thousand years it would look more like a repeating tape loop than a person. (The most chilling picture I have seen of this is in <span class="ot">[^17]</span>.) To live indefinitely long, the mind itself must grow ... and when it becomes great enough, and looks back ... what fellow-feeling can it have with the soul that it was originally? Certainly the later being would be everything the original was, but so much vastly more. And so even for the individual, the Cairns-Smith (or Lynn Margulis) notion of new life growing incrementally out of the old must still be valid.</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>This "problem" about immortality comes up in much more direct ways. The notion of ego and self-awareness has been the bedrock of the hardheaded rationalism of the last few centuries. Yet now the notion of self-awareness is under attack from the Artificial Intelligence people ("self-awareness and other delusions"). Intelligence Amplification undercuts the importance of ego from another direction. The post-Singularity world will involve extremely high-bandwidth networking. A central feature of strongly superhuman entities will likely be their ability to communicate at variable bandwidths, including ones far higher than speech or written messages. What happens when pieces of ego can be copied and merged, when the size of a self-awareness can grow or shrink to fit the nature of the problems under consideration?These are essential features of strong superhumanity and the Singularity. Thinking about them, one begins to feel how essentially strange and different the Post-Human era will be -- _no matter how cleverly and benignly it is brought to be_.</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>From one angle, the vision fits many of our happiest dreams: a place unending, where we can truly know one another and understand the deepest mysteries. From another angle, it's a lot like the worst case scenario I imagined earlier in this paper.</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>Which is the valid viewpoint? In fact, I think the new era is simply too different to fit into the classical frame of good and evil. That frame is based on the idea of isolated, immutable minds connected by tenuous, low-bandwidth links. But the post-Singularity world _does_ fit with the larger tradition of change and cooperation that started long ago (perhaps even before the rise of biological life). I think there _are_ notions of ethics that would apply in such an era. Research into IA and high-bandwidth communications should improve this understanding. I see just the glimmerings of this now, in Good's Meta-Golden Rule, perhaps in rules for distinguishing self from others on the basis of bandwidth of connection. And while mind and self will be vastly more labile than in the past, much of what we value (knowledge, memory, thought) need never be lost. I think Freeman Dyson has it right when he says <span class="ot">[^8]</span>: "God is what mind becomes when it has passed beyond the scale of our comprehension."</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>Alfvén, Hannes, writing as Olof Johanneson, _The End of Man?_, Award Books, 1969 earlier published as "The Tale of the Big Computer", Coward-McCann, translated from a book copyright 1966 Albert Bonniers Forlag AB with English translation copyright 1966 by Victor Gollanz, Ltd.</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Anderson, Poul, "Kings Who Die", _If_, March 1962, p8-36. Reprinted in _Seven Conquests_, Poul Anderson, MacMillan Co., 1969.</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>Barrow, John D. and Frank J. Tipler, _The Anthropic Cosmological Principle_, Oxford University Press, 1986.</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="ot">[^4]: </span>Bear, Greg, "Blood Music", _Analog Science Fiction-Science Fact_, June, 1983. Expanded into the novel _Blood Music_, Morrow, 1985</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="ot">[^5]: </span>Cairns-Smith, A. G., _Seven Clues to the Origin of Life_, Cambridge University Press, 1985.</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="ot">[^6]: </span>Conrad, Michael _et al._, "Towards an Artificial Brain", _BioSystems_, vol23, pp175-218, 1989.</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="ot">[^7]: </span>Drexler, K. Eric, _Engines of Creation_, Anchor Press/Doubleday, 1986.</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="ot">[^8]: </span>Dyson, Freeman, _Infinite in All Directions_, Harper &amp;&amp; Row, 1988.</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="ot">[^9]: </span>Dyson, Freeman, "Physics and Biology in an Open Universe", _Review of Modern Physics_, vol 51, pp447-460, 1979.</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="ot">[^10]: </span>Good, I. J., "Speculations Concerning the First Ultraintelligent Machine", in _Advances in Computers_, vol 6, Franz L. Alt and Morris Rubinoff, eds, pp31-88, 1965, Academic Press.</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="ot">[^11]: </span>Good, I. J., <span class="co">[</span><span class="ot">Help! I can't find the source of Good's Meta-Golden Rule, though I have the clear recollection of hearing about it sometime in the 1960s. Through the help of the net, I have found pointers to a number of related items. G. Harry Stine and Andrew Haley have written about metalaw as it might relate to extraterrestrials: G. Harry Stine, "How to Get along with Extraterrestrials ... or Your Neighbor", _Analog Science Fact- Science Fiction_, February, 1980, p39-47.</span><span class="co">]</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="ot">[^12]: </span>Herbert, Frank, _Dune_, Berkley Books, 1985. However, this novel was serialized in _Analog Science Fiction-Science Fact_ in the 1960s.</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="ot">[^13]: </span>Kovacs, G. T. A. _et al._, "Regeneration Microelectrode Array for Peripheral Nerve Recording and Stimulation", _IEEE Transactions on Biomedical Engineering_, v 39, n 9, pp 893-902.</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="ot">[^14]: </span>Margulis, Lynn and Dorion Sagan, _Microcosmos, Four Billion Years of Evolution from Our Microbial Ancestors_, Summit Books, 1986.</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="ot">[^15]: </span>Minsky, Marvin, _Society of Mind_, Simon and Schuster, 1985.</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="ot">[^16]: </span>Moravec, Hans, _Mind Children_, Harvard University Press, 1988.</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="ot">[^17]: </span>Niven, Larry, "The Ethics of Madness", _If_, April 1967, pp82-108. Reprinted in _Neutron Star_, Larry Niven, Ballantine Books, 1968.</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="ot">[^18]: </span>Penrose, R., _The Emperor's New Mind_, Oxford University Press, 1989.</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="ot">[^19]: </span>Platt, Charles, Private Communication.</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a><span class="ot">[^20]: </span>Rasmussen, S. _et al._, "Computational Connectionism within Neurons: a Model of Cytoskeletal Automata Subserving Neural Networks", in _Emergent Computation_, Stephanie Forrest, ed., p428-449, MIT Press, 1991.</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="ot">[^21]: </span>Searle, John R., "Minds, Brains, and Programs", in _The Behavioral and Brain Sciences_, v.3, Cambridge University Press, 1980. The essay is reprinted in _The Mind's I_, edited by Douglas R. Hofstadter and Daniel C. Dennett, Basic Books, 1981. This reprinting contains an excellent critique of the Searle essay.</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="ot">[^22]: </span>Sims, Karl, "Interactive Evolution of Dynamical Systems", Thinking Machines Corporation, Technical Report Series, published in _Toward a Practice of Autonomous Systems: Proceedings of the First European Conference on Artificial Life_, Paris, MIT Press, December 1991.</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="ot">[^23]: </span>Stapledon, Olaf, _The Starmaker_, Berkley Books, 1961 (but from the forward probably written before 1937). </span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="ot">[^24]: </span>Stent, Gunther S., _The Coming of the Golden Age: A View of the End of Progress_, The Natural History Press, 1969.</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="ot">[^25]: </span>Swanwick Michael, _Vacuum Flowers_, serialized in _Isaac Asimov's Science Fiction Magazine_, December(?) 1986 - February 1987. Republished by Ace Books, 1988.</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="ot">[^26]: </span>Thearling, Kurt, "How We Will Build a Machine that Thinks", a workshop at Thinking Machines Corporation. Personal Communication.</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="ot">[^27]: </span>Ulam, S., Tribute to John von Neumann, _Bulletin of the American Mathematical Society_, vol 64, nr 3, part 2, May, 1958, p1-49.</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="ot">[^28]: </span>Vinge, Vernor, "Bookworm, Run!", _Analog_, March 1966, pp8-40. Reprinted in _True Names and Other Dangers_, Vernor Vinge, Baen Books, 1987.</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a><span class="ot">[^29]: </span>Vinge, Vernor, "True Names", _Binary Star Number 5_, Dell, 1981. Reprinted in _True Names and Other Dangers_, Vernor Vinge, Baen Books, 1987.</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="ot">[^30]: </span>Vinge, Vernor, First Word, _Omni_, January 1983, p10.</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="fu">## Appendix: Metadata</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Modernized from <span class="co">[</span><span class="ot">The Coming Technological Singularity</span><span class="co">](https://edoras.sdsu.edu/~vinge/misc/singularity.html)</span> on the original author's website. The original header for the is as follows:</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="in">```txt</span></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a><span class="in">Vernor Vinge</span></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="in">Department of Mathematical Sciences San Diego State University</span></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="in">(c) 1993 by Vernor Vinge (Verbatim copying/translation and distribution of this entire article is permitted in any medium, provided this notice is preserved.)</span></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="in">[I wish to thank John Carroll of San Diego State University and Howard Davidson of Sun Microsystems for discussing the draft version of this paper with me.]</span></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="in">This article was for the VISION-21 Symposium sponsored by NASA Lewis Research Center and the Ohio Aerospace Institute, March 30-31, 1993. It is also retrievable from the NASA technical reports server as part of NASA CP-10129. A slightly changed version appeared in the Winter 1993 issue of _Whole Earth Review_.</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>VISION-21 Symposium was a conference held in March 1993, described as:</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The symposium Vision-21: Interdisciplinary Science and Engineering in the Era of Cyberspace was held at the NASA Lewis Research Center on March 30-31, 1993. The purpose of the symposium was to simulate interdisciplinary thinking in the sciences and technologies which will be required for exploration and development of space over the next thousand years. The keynote speakers were Hans Moravec, Vernor Vinge, Carol Stoker, and Myron Krueger. The proceedings consist of transcripts of the invited talks and the panel discussion by the invited speakers, summaries of workshop sessions, and contributed papers by the attendees. </span><span class="co">[</span><span class="ot">@Vision21Interdisciplinary1993</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">Yuxi on the Wired</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Everything <a href="https://en.wikipedia.org/wiki/Public_domainl">PD</a>; <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en/">CC0</a> fallback.</span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

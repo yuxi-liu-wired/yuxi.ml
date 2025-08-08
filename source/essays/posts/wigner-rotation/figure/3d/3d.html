@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Interactive Graphics with p5.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@12.2.0/lib/browser/math.min.js"></script>
+</head>
+
+<body>
+    <div id="square-x-canvas"></div>
+    <p>_</p>
+    <div id="square-y-canvas"></div>
+    <p>_</p>
+    <div id="square-main-canvas"></div>
+
+</body>
+<script charset="UTF-8" type="module">
+    import { squareSketch } from './3d_square_sketch.js';
+    squareSketch('square-x-canvas', 'square-y-canvas', 'square-main-canvas');
+</script>
+</html>

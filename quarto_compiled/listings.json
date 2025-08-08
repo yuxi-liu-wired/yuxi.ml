@@ -1,0 +1,115 @@
+[
+  {
+    "listing": "/sketches/index.html",
+    "items": [
+      "/sketches/posts/phase-space-quantum-mechanics/index.html",
+      "/sketches/posts/history-neural-networks-talk-notes/index.html",
+      "/sketches/posts/philosophical-sketches/index.html",
+      "/sketches/posts/fictional-ideas/index.html",
+      "/sketches/posts/research-ideas/index.html",
+      "/sketches/posts/field-theory-how-to/index.html",
+      "/sketches/posts/neural-network-scrapbook/index.html",
+      "/sketches/posts/info-warfare/index.html",
+      "/sketches/posts/web-design-notes/index.html",
+      "/sketches/posts/linux-notes/index.html"
+    ]
+  },
+  {
+    "listing": "/essays/index.html",
+    "items": [
+      "/essays/posts/structure-interpretation-chinese-economy/index.html",
+      "/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/index.html",
+      "/essays/posts/cyc/index.html",
+      "/essays/posts/statistical-mechanics/index.html",
+      "/essays/posts/hole-argument-inverted-qualia/index.html",
+      "/essays/posts/equilibrium-thermoeconomics/index.html",
+      "/essays/posts/analytical-mechanics/index.html",
+      "/essays/posts/renormalization-how-to/index.html",
+      "/essays/posts/mixture-of-experts/index.html",
+      "/essays/posts/perplexity-turing-test/index.html",
+      "/essays/posts/perceptron-controversy/index.html",
+      "/essays/posts/backstory-of-backpropagation/index.html",
+      "/essays/posts/cybernetic-artificial-intelligence/index.html",
+      "/essays/posts/reading-perceptron-book/index.html",
+      "/essays/posts/neural-scaling-laws/index.html",
+      "/essays/posts/scaling-law-by-data-manifold/index.html",
+      "/essays/posts/grokking-modular-arithmetics/index.html",
+      "/essays/posts/serial-experiments-lain/index.html",
+      "/essays/posts/no-nonsense-algorithmic-bias/index.html",
+      "/essays/posts/wigner-rotation/index.html"
+    ]
+  },
+  {
+    "listing": "/feeds.html",
+    "items": [
+      "/sketches/posts/neural-network-scrapbook/index.html",
+      "/essays/posts/analytical-mechanics/index.html",
+      "/logs/posts/2025-char-time/index.html",
+      "/essays/posts/equilibrium-thermoeconomics/index.html",
+      "/essays/posts/cybernetic-artificial-intelligence/index.html",
+      "/essays/posts/cyc/index.html",
+      "/logs/posts/2025-dream-ingress-answer/index.html",
+      "/logs/posts/2025-patel-dinner/index.html",
+      "/essays/posts/neural-scaling-laws/index.html",
+      "/sketches/posts/fictional-ideas/index.html",
+      "/essays/posts/grokking-modular-arithmetics/index.html",
+      "/essays/posts/hole-argument-inverted-qualia/index.html",
+      "/essays/posts/renormalization-how-to/index.html",
+      "/sketches/posts/field-theory-how-to/index.html",
+      "/sketches/posts/info-warfare/index.html",
+      "/essays/posts/mixture-of-experts/index.html",
+      "/essays/posts/scaling-law-by-data-manifold/index.html",
+      "/sketches/posts/history-neural-networks-talk-notes/index.html",
+      "/sketches/posts/linux-notes/index.html",
+      "/sketches/posts/web-design-notes/index.html",
+      "/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/index.html",
+      "/sketches/posts/phase-space-quantum-mechanics/index.html",
+      "/sketches/posts/philosophical-sketches/index.html",
+      "/essays/posts/perplexity-turing-test/index.html",
+      "/essays/posts/reading-perceptron-book/index.html",
+      "/logs/posts/2025-reprofro-party/index.html",
+      "/sketches/posts/research-ideas/index.html",
+      "/essays/posts/serial-experiments-lain/index.html",
+      "/essays/posts/statistical-mechanics/index.html",
+      "/essays/posts/structure-interpretation-chinese-economy/index.html",
+      "/logs/posts/2025-survivorship-bias/index.html",
+      "/essays/posts/backstory-of-backpropagation/index.html",
+      "/essays/posts/perceptron-controversy/index.html",
+      "/essays/posts/no-nonsense-algorithmic-bias/index.html",
+      "/essays/posts/wigner-rotation/index.html",
+      "/logs/posts/2025-oneil-cylinder/index.html",
+      "/logs/posts/2025-whalefall/index.html"
+    ]
+  },
+  {
+    "listing": "/logs/index.html",
+    "items": [
+      "/logs/posts/2025-dream-ingress-answer/index.html",
+      "/logs/posts/2025-reprofro-party/index.html",
+      "/logs/posts/2025-patel-dinner/index.html",
+      "/logs/posts/2025-survivorship-bias/index.html",
+      "/logs/posts/2025-char-time/index.html",
+      "/logs/posts/2025-oneil-cylinder/index.html",
+      "/logs/posts/2025-whalefall/index.html"
+    ]
+  },
+  {
+    "listing": "/docs/index.html",
+    "items": [
+      "/docs/posts/2025-02-27-muon/index.html",
+      "/docs/posts/2024-05-13-multi-latent-attention/index.html",
+      "/docs/posts/2019-richard-sutton/index.html",
+      "/docs/posts/liu-cixin-anthology/index.html",
+      "/docs/posts/1998-robin-hanson/index.html",
+      "/docs/posts/1998-hans-moravec/index.html",
+      "/docs/posts/1993-vernor-vinge/index.html",
+      "/docs/posts/1992-hans-moravec/index.html",
+      "/docs/posts/1989-hugo-de-garis/index.html",
+      "/docs/posts/1985-ray-solomonoff/index.html",
+      "/docs/posts/1983-lem-upside-down-revolution/index.html",
+      "/docs/posts/1975-herbert-simon-allen-newell/index.html",
+      "/docs/posts/1971-lem-die-kultur-als-fehler/index.html",
+      "/docs/posts/1959-noam-chomsky/index.html"
+    ]
+  }
+]

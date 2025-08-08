@@ -1,0 +1,46 @@
+---
+title: "Notes"
+author: "Yuxi Liu"
+description: "Assorted notes that I have written."
+---
+
+Over the years I have written some notes. Too short for publication, and not exactly fit for blog posting, but still might be useful to someone, so I collect them here.
+
+## Expository notes
+
+[*Visually Deriving the Wigner Rotation by Spacetime Diagrams*](wigner_rotation/wigner_rotation_complete.pdf). Obsoleted by [my post](https://yuxi-liu-wired.github.io/essays/posts/wigner-rotation/). This is a term paper I wrote in 2018 for *Theoretical Physics*. The date in the `pdf` is the recompilation date, not the time when I actually wrote the paper.
+
+[*Hyperbolic dynamical systems, chaos, and Smale's horseshoe: a guided tour*](ergodic_theory/ergodic_theory_project.pdf). This is the companion paper to a presentation I gave for the course *Introduction to Ergodic theory* in 2019.
+
+[*An Overview of Information Geometry*](2019_differential_geometry/2019_differential_geometry_information_geometry_report.pdf). This is the term paper for *Advanced Differential Geometry*. and since I really did not like lectures, I asked to do something to substitute for the mandatory attendance. I was asked to write a term paper, which produced this. Information geometry is a weird thing. The premise is beautiful, but the books are terribly confusing, and what little I have managed to understand seems disappointing. It feels like the whole field is overpromising and underdelivering.
+
+[*Handout for honours seminar talk on AIXI*](2019_honours_seminar_talk/presentation_handout.pdf). A presentation handout for [AIXI](https://en.wikipedia.org/wiki/AIXI). For my undergraduate thesis, I was going to be advised by Marcus Hutter, but he left ANU just before the start of semester, and I had to scramble for another advisor. Still, I found AIXI worth knowing, so for my mandatory short talk, I gave a presentation. I managed to compress the essentials to two pages, perfect for handing out on double-sided printed sheets.
+
+## Literature review
+
+[*Literature Review of In-Context Learning of Simple Function Classes*](2024_literature_review_icl/icl_review.pdf) with [source code available](2024_literature_review_icl/icl_review.zip). A literature review on 223 papers that cited [[2208.01066] *What Can Transformers Learn In-Context? A Case Study of Simple Function Classes*](https://arxiv.org/abs/2208.01066) as of `2024-04-18`, categorized into 5 classes. There is an appendix on how to do literature review with the help of large language models. I wrote this for a research group that was extending this paper. I don't know what has come of it, nor have I heard from the group again. I tried uploading it to arXiv, but it was rejected for not being sufficiently academic.
+
+## Undergraduate thesis
+
+[*Beyond expectations, but within limits -- the theory of coherent risk measures*](undergraduate_thesis/thesis.pdf).
+
+For a quick summary, see my [seminar presentation](undergraduate_thesis/seminar_talk/seminal_talk_slides.pdf).
+
+My undergraduate thesis written in 2019 at ANU, on the topic of [coherent risk measures](https://en.wikipedia.org/wiki/Coherent_risk_measure). The first chapter is a readable introduction to risk measures in general (as in, why we might need to use more than the mean and the variance). The rest of it is very dry and I imagine it is of only interest to specialists. The centerpiece of the thesis is a straightforward proof of the central limit theorem for [CVaR](https://en.wikipedia.org/wiki/Expected_shortfall), which is a slight generalization of expectation. Like the central limit theorem, this theorem states that the sample CVaR converges to the true CVaR like
+
+$$
+\frac{\text{sample CVaR}_\alpha - \text{true CVaR}_\alpha}{\sqrt N} \xrightarrow{d} \mathcal N(0, \sigma^2(\alpha))
+$$
+
+where $\sigma^2(\alpha)$ has a certain expression. As soon as I have calculated it myself, thinking that I had finally made a new discovery, I found it published before in the literature. Still my expression is simpler than the previous publications, so I believe it is still worth something after all.
+
+## Corrections
+
+When I was not yet mathematically mature, I used to study textbooks carefully, checking every letter through a brain-filter. I no longer do this, but while I was doing this, I created some erratas. Perhaps those will be of use to some people.
+
+It is a rather odd thing that errata are hard to share. I would have thought there ought to be some kind of Wikipedia for errata, where people just post errata for textbooks. The lack of such an Error-pedia seems to require an economic explanation, as it can just use `MediaWiki`, the same technology powering Wikipedia.
+
+* [Conway, John B. *A course in point set Topology*. Belin: Springer, 2014.](corrections/a%20course%20in%20point%20set%20topology_corrections.pdf)
+* [Walter, P. *An introduction to ergodic theory* (Graduate Texts in Math. 79), (1982).](corrections/an%20introduction%20to%20ergodic%20theory_errata.pdf)
+* [Hiriart-Urruty, Jean-Baptiste, and Claude Lemaréchal. *Fundamentals of convex analysis*. Springer Science & Business Media, 2004.](corrections/fundamentals%20of%20convex%20analysis_errata.pdf)
+* [Roberts, Daniel A., Sho Yaida, and Boris Hanin. *The principles of deep learning theory*, Cambridge University Press, 2022.](roberts-yaida-hanin-2021-errata)

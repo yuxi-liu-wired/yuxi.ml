@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: 
+Sitemap: https://yuxi.ml/sitemap.xml
+# All content that I can release under the Public Domain, ar released to the Public Domain
+# If the Public Domain is not available under your jurisdiction, then they are released under CC0 1.0 Universal

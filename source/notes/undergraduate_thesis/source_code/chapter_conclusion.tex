@@ -1,0 +1,64 @@
+
+\chapter{Conclusion}
+\label{chapter_conclusion}
+In this chapter, we enumerate our main results, conjectures, sketch out applications to machine learning, and further research directions.
+
+\section{Summary of results and conjectures}
+Unless otherwise noted, all generalizations that follow are from expectation to coherent risk measures.
+
+In Chapter \ref{chapter_finite_dimensional}, we showed:
+\begin{enumerate}
+	\item The geometric-analytic correspondence of risk measures with their envelope representations (Proposition \ref{prop:envelop_rep}).
+	\item The formula (without proof) for envelope representation of CVaR (Equation \ref{eq:env_cvar}).
+	\item Kusuoka representation theorem on finite uniform sample spaces (Section \ref{sec:uniform_space}).
+	\item Counterexamples to Kusuoka representation theorem on finite nonuniform sample spaces (Section \ref{sec:nonuniform_space}).
+\end{enumerate}
+
+In Chapter \ref{chapter_inequalities}, we showed:
+\begin{enumerate}
+	\item Generalizations of (Section \ref{sec:elementary_inequalities}).
+	\item Generalizations of concentration inequalities (Section \ref{sec:tail_ineq}).
+	\item Generalizations, from expectation to spectral risk measures, of basic concepts (Section \ref{sec:slt_cvar}) and the fundamental theorem (Theorem \ref{theorem:funtheo_slt_2}) in statistical learning theory.
+\end{enumerate}
+We conjectured the CVaR law of total expectations (Conjecture \ref{conj:total_cvar}).
+
+In Chapter \ref{chapter_clt}, we showed:
+\begin{enumerate}
+	\item The uniform strong law of large numbers (SLLN) for spectral risk measures (Theorem \ref{thm:uniform_slln_spec}), whic subsumes the SLLN for spectral risk measures and the SLLN for CVaR (Theorem \ref{theorem:uni_slln}).
+	\item The central limit theorem (CLT) for CVaR (Theorem \ref{theorem:clt_cvar}).
+	\item Examples of the CLT for CVaR of exemplar random variables (Section \ref{sec:clt_right_tail}).
+\end{enumerate} 
+We conjectured: 
+\begin{enumerate}
+	\item A "mixed" CLT for CVaR (Conjecture \ref{conj:mixed_gaussian}).
+	\item A CLT for spectral risk measures (Conjecture \ref{conj:clt_spec}).
+	\item A CLT for entropic value at risk (Conjecture \ref{conj:clt_evar}).
+\end{enumerate} 
+
+
+\section{Machine learning applications}
+The stated goal of the thesis is to investigate consequences of generalizing probability theory by replacing expectation with coherent risk measures, especially \cvar, but such general investigations are not the original motivation of the authors. We were drawn to this topic from considering the use of probability in machine learning.
+
+As in the very first page of the thesis, many machine learning problems can be cast into the form of risk minimization. Risk is often defined as the expectation of loss. By replacing expectation with CVaR or other coherent risk measures, we can obtain a risk-management tuning knob on machine learning algorithms.
+
+In \cite{tamarOptimizingCVaRSampling2015}, a stochastic gradient descent algorithm for $\cvar_{0.05}$ is used to train a Tetris-playing program that, instead of minimizing the expectation of loss (the negative of score), minimizes the $\cvar_{0.05}$ of loss. It was found that, compared to a loss-minimizing agent, this agent was less likely to attempt high-risk high-reward Tetris maneuvers.
+
+In \cite{chowRisksensitiveRobustDecisionmaking2015}, the authors described algorithms for solving Markov Decision Problems, optimized to minimize the CVaR risk measure, instead of the expectation. They derived theoretical error bounds to their algorithms, and tested the algorithm in a car navigating through a field with obstacles. As expected, a CVaR-optimizing agent drove more cautiously than the original expectation-optimizing agent.
+
+In \cite{chowAlgorithmsCVaROptimization2014}, the authors proposed the actor-critic algorithm for reinforcement learning, so that it minimizes the CVaR risk measure, instead of the expectation. They proved its convergence properties, and applied it to an investment problem. Its behavior was found to be more risk-averse than the original expectation-optimizing algorithm.
+
+In \cite{maurerEmpiricalBernsteinBounds2009}, the empirical risk minimization (ERM) learning algorithm is generalized by adding to the expectation of loss with a variance term, essentially generalizing ERM by replacing expectation with a non-convex risk measure. \cite{namkoongVariancebasedRegularizationConvex2017a} continues the work by proposing a similarly non-convex risk measure that is more computationally efficient, has faster rates of convergence than empirical risk minimization. The authors also demonstrated its performance on two classification problems.
+
+In \cite{majumdarRisksensitiveInverseReinforcement2017}, CRM is applied to the problem of inverse reinforcement learning, wherein a learning agent observed humans playing a driving game, and inferred what preferences humans have from their behavior. It was found that each human's behavior was well-modeled by minimization of their own CRM, which differs between humans. Some humans have CRM that are very sensitive to variations, which corresponds to their highly risk-averse driving behavior. Other humans have CRM close to expectation, which corresponds to their highly risk-neutral driving behavior.
+
+In \cite{williamsonFairnessRiskMeasures2019a}, the problem of fair machine learning is discussed. The authors proposed to define \textit{fairness risk measures}, which are special cases of CRM, and demonstrated a tradeoff between fairness and accuracy, that is, a supervised-learning algorithm minimizing fairness risk, instead of loss expectation, gradually became less accurate as the fairness risk increasingly weights fairness over loss minimization. See also Section 5.3 of the same paper for more technical applications of CRM in machine learning.
+
+\section{Further research directions}
+We propose that future research in general risk measures can include: 
+\begin{enumerate}
+	\item The resolution of conjectures proposed in the paper.
+	\item Generalization of more advanced probabilistic and statistical inequalities, such as McDiarmid's inequality, to general risk measures.
+	\item Demonstration of benefit of using general risk measures in a practical, large-scale machine-learning application.
+	\item Collaboration between experts on the many aspects of risk, such as financial mathematicians, engineers with expertise in reliability engineering, legal theorists who deal with risks in law (such as tort law), machine learning practitioners, and psychologists who study human perceptions of risk.
+\end{enumerate}
+

@@ -1,2 +1,3 @@
-# yuxi.ml
+# yuxi-liu-wired.github.io
+
 Yuxi Liu's personal website

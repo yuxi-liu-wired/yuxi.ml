@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yuxi Liu">
+<meta name="dcterms.date" content="2022-12-10">
+<meta name="description" content="My quick reference for using Linux for doing things.">
+
+<title>Notes on Using Linux – Yuxi on the Wired</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Notes on Using Linux – Yuxi on the Wired">
+<meta property="og:description" content="My quick reference for using Linux for doing things.">
+<meta property="og:image" content="https://yuxi.ml/sketches/posts/linux-notes/img/blog icon.jpg">
+<meta property="og:site_name" content="Yuxi on the Wired">
+<meta name="twitter:title" content="Notes on Using Linux – Yuxi on the Wired">
+<meta name="twitter:description" content="My quick reference for using Linux for doing things.">
+<meta name="twitter:image" content="https://yuxi.ml/sketches/posts/linux-notes/img/blog icon.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Yuxi on the Wired</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../essays/index.html"> 
+<span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sketches/index.html"> 
+<span class="menu-text">Sketches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../logs/index.html"> 
+<span class="menu-text">Logs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../notes/index.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/index.html"> 
+<span class="menu-text">Docs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about/index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:yuxi_liu@berkeley.com"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../feeds.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Notes on Using Linux</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                  <div>
+        <div class="description">
+          My quick reference for using Linux for doing things.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">programming</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Yuxi Liu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 10, 2022</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">December 11, 2023</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-koans" id="toc-sec-koans" class="nav-link active" data-scroll-target="#sec-koans">Linux koans</a></li>
+  <li><a href="#sec-path" id="toc-sec-path" class="nav-link" data-scroll-target="#sec-path">How to <code>PATH</code></a></li>
+  <li><a href="#how-to-directories" id="toc-how-to-directories" class="nav-link" data-scroll-target="#how-to-directories">How to directories</a>
+  <ul class="collapse">
+  <li><a href="#where-to-install-read-only-things" id="toc-where-to-install-read-only-things" class="nav-link" data-scroll-target="#where-to-install-read-only-things">Where to install read-only things</a></li>
+  <li><a href="#where-to-install-read-write-things" id="toc-where-to-install-read-write-things" class="nav-link" data-scroll-target="#where-to-install-read-write-things">Where to install read-write things</a></li>
+  <li><a href="#where-to-do-read-write-things" id="toc-where-to-do-read-write-things" class="nav-link" data-scroll-target="#where-to-do-read-write-things">Where to do read-write things</a></li>
+  <li><a href="#other-things-you-should-not-modify-them" id="toc-other-things-you-should-not-modify-them" class="nav-link" data-scroll-target="#other-things-you-should-not-modify-them">Other things (you should not modify them)</a></li>
+  </ul></li>
+  <li><a href="#environment-variables" id="toc-environment-variables" class="nav-link" data-scroll-target="#environment-variables">Environment variables</a>
+  <ul class="collapse">
+  <li><a href="#how-to-control-them" id="toc-how-to-control-them" class="nav-link" data-scroll-target="#how-to-control-them">How to control them</a></li>
+  <li><a href="#common-ones" id="toc-common-ones" class="nav-link" data-scroll-target="#common-ones">Common ones</a></li>
+  </ul></li>
+  <li><a href="#cron-jobs" id="toc-cron-jobs" class="nav-link" data-scroll-target="#cron-jobs">Cron jobs</a>
+  <ul class="collapse">
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick reference</a></li>
+  <li><a href="#creating-a-cron-job" id="toc-creating-a-cron-job" class="nav-link" data-scroll-target="#creating-a-cron-job">Creating a Cron Job</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a></li>
+  <li><a href="#cron-environment-variables" id="toc-cron-environment-variables" class="nav-link" data-scroll-target="#cron-environment-variables">Cron environment variables</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
+  </ul></li>
+  <li><a href="#how-to-wsl" id="toc-how-to-wsl" class="nav-link" data-scroll-target="#how-to-wsl">How to WSL</a>
+  <ul class="collapse">
+  <li><a href="#sec-init-vs-systemd" id="toc-sec-init-vs-systemd" class="nav-link" data-scroll-target="#sec-init-vs-systemd"><code>init</code> vs <code>systemd</code></a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<p>This is my quick reference for using Linux for doing things. I claim no originality. Mostly they are copy pasted from the internet and tested by me. An increasing proportion of those are produced by AI.</p>
+<section id="sec-koans" class="level2">
+<h2 class="anchored" data-anchor-id="sec-koans">Linux koans</h2>
+<p>Everything is <del>a file</del> <del>a file or a directory</del> an inode. An inode (index node) is a representation of a sequence of data that the system can access. A file is just a list of inodes, and a directory is just a list of files.</p>
+<p>Every command is an executable.</p>
+<p>Every machine is a server. Some merely serve extremely slow machines (humans, aka “users”).</p>
+<p>The <code>\usr</code> is not the user. It is the <strong>U</strong>NIX <strong>S</strong>ystem <strong>R</strong>esources.</p>
+<p>The <code>\usr</code> was the user, until Unix became so large that <code>\bin</code> overflowed and had to put the rest of them in <code>\usr\bin</code>. This was embarrassing for all involved, so they moved user files to <code>\home</code>, and pretend that <code>\usr</code> stands for UNIX System Resources. (<a href="http://lists.busybox.net/pipermail/busybox/2010-December/074114.html">here</a>). A mistake that only took 40 years to fix.</p>
+<p>In the beginning was the command line. The command line is just a face of the shell. What was the original face of the command line before the shell was born?</p>
+<p>The shell reads in a stream of letters, because the user is just another file (a streaming file, named <code>stdin</code>). Like all streaming files, the user is eternal and inexhaustible. The shell stands, rapt in attention, afore the user file.</p>
+<p>So when does the user ever leave? The user never leaves. The shell simply kills itself when the user types <code>exit</code>. The shell would rather die than to face the prospect of reading the last word from the user.</p>
+<p>So when does the shell ever break out of its rapt attention? Whenever it sees <code>\n</code>, it is shaken out of its trance and interprets what the user has just said, in the interval bracketed between two <code>\n</code>s.</p>
+<p>The shell has one ear and two mouths. The ear is <code>stdin</code>, and the mouths are <code>stdout</code> and <code>stderr</code>. The shell has a tiny brain which is only capable of interpreting <a href="https://learnxinyminutes.com/docs/bash/">the few syntactic elements of bash scripts</a>. Everything else it wants to do, it dutifully sends a binary message into the oracular altar of the Linux kernel, from which an oceanic voice replies the answer of the kernel.</p>
+</section>
+<section id="sec-path" class="level2">
+<h2 class="anchored" data-anchor-id="sec-path">How to <code>PATH</code></h2>
+<p>The <code>PATH</code> environment variable is a list of directories that the shell searches for commands. It is a colon-separated list of directories. For example, just about every Linux installation has a <code>PATH</code> variable that looks like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To add things to <code>PATH</code>, use the <code>export</code> command, like <code>export PATH="$HOME/bin:$PATH"</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">env</span> <span class="co"># same as printenv</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">VAR_NAME</span><span class="op">=</span><span class="st">"value"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">VAR_NAME</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>newpath:<span class="va">$PATH</span> <span class="co"># There is no simple way to undo this one.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># but you can try export OLD_PATH=$PATH; ...; export PATH=$OLD_PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For Windows, use <code>Get-ChildItem Env:</code>.</p>
+</section>
+<section id="how-to-directories" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-directories">How to directories</h2>
+<p>Based on <a href="https://askubuntu.com/a/135679" class="uri">https://askubuntu.com/a/135679</a>, <a href="https://serverfault.com/a/24525" class="uri">https://serverfault.com/a/24525</a>, <code>man hier</code>, <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hierarchy Standard - Wikipedia</a>.</p>
+<section id="where-to-install-read-only-things" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-install-read-only-things">Where to install read-only things</h3>
+<ul>
+<li><p><code>/bin</code> and <code>/sbin</code>: binaries and superuser-binaries.</p></li>
+<li><p><code>/usr</code>: System-wide, read-only files installed by the OS. This directory can be remotely mounted to multiple hosts safely.</p></li>
+<li><p><code>/usr/local</code>: System-wide, read-only files installed by <code>root</code>. <em>And that’s why most directory names from <code>/usr</code> are duplicated here</em>.</p></li>
+<li><p><code>/opt</code> - System-wide, read-only <em>and bundled-up</em> software. That is, software that does not split their files over <code>bin</code>, <code>lib</code>, <code>share</code>, <code>include</code> like well-behaved software should.</p></li>
+<li><p><code>/usr/bin</code> and <code>usr/sbin</code>: They no longer exist. Just use <code>/bin</code> and <code>/sbin</code>.</p></li>
+<li><p><code>~/.local</code>: the per-user counterpart of <code>/usr/local</code>, that is: software installed by (and for) each user. Like <code>/usr</code>, it has its own <code>~/.local/share</code>, <code>~/.local/bin</code>, <code>~/.local/lib</code>.</p></li>
+<li><p><code>~/.local/opt</code>: The per-user counterpart of <code>/opt</code></p></li>
+</ul>
+<p>Requiem for <code>/usr/bin</code> and <code>/usr/sbin</code>: Originally, <code>/bin</code> and <code>/lib</code> are only for binaries and libraries <em>required for booting</em>, while <code>/usr/bin</code> and <code>/usr/lib</code> are for all the other executables and libraries. This is no longer true, as some binaries required for booting has over the years leaked into those two folders (if there is a way to make a mess, people will make it), so since Ubuntu 20.04, they no longer exist, to remove this mess.</p>
+<p>How to install for local user only:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span><span class="va">$HOME</span>/.local</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How to install for everyone: <code>sudo ./configure &amp;&amp; make &amp;&amp; make install</code></p>
+</section>
+<section id="where-to-install-read-write-things" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-install-read-write-things">Where to install read-write things</h3>
+<p>Read-write things are typically configuration files, since they are read and written by both the user and binary executables.</p>
+<ul>
+<li><code>/etc</code>: System-wide configuration. Typically used by the OS to decide what to do when starting up, shutting down, etc.</li>
+<li><code>~/.config</code>: Per-user configuration files. Although because of legacy, you keep seeing nonsense like <code>.bashrc</code> in your home directory instead of <code>~/.config/.bashrc</code>. Here <code>rc</code> means “run configuration”.</li>
+</ul>
+</section>
+<section id="where-to-do-read-write-things" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-do-read-write-things">Where to do read-write things</h3>
+<ul>
+<li><code>/home/username</code>, or just <code>~</code>: Each user typically is only able to modify their own folder here, like <code>~/myfile.txt</code>.</li>
+<li><code>/tmp</code>: If you need to create something just for the moment, then make it here. It will be deleted when the system restarts.</li>
+</ul>
+</section>
+<section id="other-things-you-should-not-modify-them" class="level3">
+<h3 class="anchored" data-anchor-id="other-things-you-should-not-modify-them">Other things (you should not modify them)</h3>
+<ul>
+<li><code>/run:</code> <strong>run</strong>time temporary data, representing the system’s state since the last boot. It’s used for storing process IDs, lock files, and other files that are would normally be stored in <code>/tmp</code>. It is basically <code>/tmp</code> for the machine.</li>
+<li><code>/var</code>: Variable data. It is somewhat like <code>/run</code> in that both are meant to be read-written by programs, but unlike <code>/run</code>, data here persists over reboots. This is often used for logging information. For example, try <code>vim /var/log/user.log</code></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modifying anything below this line may brick the system. Reading is fine though.</p>
+</div>
+</div>
+<ul>
+<li><code>/lib</code>: <strong>lib</strong>raries. You should not handle it directly. Some libraries are added at OS installation, and others at program installation. If you have a broken installation, you might be asked to manually copy some files looking like <code>libxxx.so</code> here. (<code>so</code> stands for “shared object”.)</li>
+<li><code>/boot</code>: Files required for <strong>booting</strong>. For example, the bootloader, the kernel, the initramfs (initial RAM file system).</li>
+<li><code>/dev</code>: <strong>Device</strong> files. It typically looks like <code>/dev/sda1</code>, <code>/dev/sda2</code>, etc. Other than things like <code>sda1</code> (for harddrive) you might notice <code>tty1</code> and <code>pty1</code>’ which stand for “teletype” and “pseudo teletype”, respectively, but they are actually used as files to read whatever the user is typing from (the user is a file, see <a href="#sec-koans" class="quarto-xref">Section&nbsp;1</a>). There are some odd ones like:
+<ul>
+<li><code>/dev/null</code>, which is a “file” that you write to when you just want to throw something away (everything is a file, even a black hole…).</li>
+<li><code>/dev/urandom</code>, which is a random number generator. It is preferred over <code>/dev/random</code>. See <a href="https://www.2uo.de/myths-about-urandom/#orthodoxy">here</a>.</li>
+<li><code>/dev/zero</code>, which is a file that you can’t write to, but you can read, but it’s filled with zeros.</li>
+</ul></li>
+<li><code>/media</code>: Mount removable <strong>medias</strong>, like USB drives and SD cards. For example, you can mount a USB at <code>/media/usb1</code> and another one at <code>/media/usb2</code>. Mounting is typically done automatically by the system when you plug it in.</li>
+<li><code>/mnt</code>: <strong>Mounts</strong> that are not so easily removable, like a hard drive, or a network drive. And unlike <code>/media</code>, mounting and unmounting is not automatic. On WSL, this typically has just one important thing: <code>/mnt/c</code>.</li>
+<li><code>/srv</code>: Static files that are <strong>served</strong> out. <code>/srv/http</code> would be for static websites, <code>/srv/ftp</code> for an FTP server. It is usually used only on webservers, not an end-user machine like your laptop.</li>
+</ul>
+</section>
+</section>
+<section id="environment-variables" class="level2">
+<h2 class="anchored" data-anchor-id="environment-variables">Environment variables</h2>
+<section id="how-to-control-them" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-control-them">How to control them</h3>
+<p>Use <code>echo $X</code> to see what the current value of <code>X</code> is.</p>
+<p>For current session, use <code>export</code> like <code>export EDITOR=nano</code>.</p>
+<p>For all sessions, add to your <code>.bashrc</code> or <code>.profile</code>. If you just want to add it to the end (not recommended, as you can end up with an archeological <a href="https://en.wikipedia.org/wiki/Tell_(archaeology)">tell</a>), you can do one-liner like <code>echo "export EDITOR=nano" &gt;&gt; ~/.bashrc</code>.</p>
+</section>
+<section id="common-ones" class="level3">
+<h3 class="anchored" data-anchor-id="common-ones">Common ones</h3>
+<ul>
+<li><code>PATH</code>: path to binaries. See <a href="#sec-path" class="quarto-xref">Section&nbsp;2</a>.</li>
+<li><code>EDITOR</code>: default editor.</li>
+<li><code>SHELL</code>: default shell.</li>
+<li><code>HOME</code>: home directory.</li>
+<li><code>USER</code>: current user.</li>
+<li><code>PS1</code>: current prompt (just try <code>echo $PS1</code> if it doesn’t make sense).</li>
+</ul>
+<p>You can change prompts in a rather arcane language. For example, try this one:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">"\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n</span><span class="dt">\\</span><span class="st">$ "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="cron-jobs" class="level2">
+<h2 class="anchored" data-anchor-id="cron-jobs">Cron jobs</h2>
+<p>Cron jobs are scheduled tasks that run periodically. For scheduling one-off tasks, use the <code>at</code> command. The name came from “Cronos”, the name of the Greek god of time. A good reference is <a href="http://www.unixgeeks.org/security/newbie/unix/cron-1.html">Newbie: Intro to cron</a>.</p>
+<section id="quick-reference" class="level3">
+<h3 class="anchored" data-anchor-id="quick-reference">Quick reference</h3>
+<p>The cron job syntax is as follows (See <a href="https://web.archive.org/web/20231205205101/https://crontab.guru/">Crontab.guru - The cron schedule expression editor</a>):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a># ┌───────────── minute (0–59)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a># │ ┌───────────── hour (0–23)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a># │ │ ┌───────────── day of the month (1–31)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a># │ │ │ ┌───────────── month (1–12)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a># │ │ │ │ ┌───────────── day of the week (0–6) (Sunday to Saturday)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a># │ │ │ │ │                                   </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a># │ │ │ │ │</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a># │ │ │ │ │</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a># * * * * * &lt;command to execute&gt;</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>* * * * * &lt;once a minute&gt;</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>0 * * * * &lt;once an hour at 0-th minute&gt;</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>0 0 * * * &lt;once a day at midnight&gt;</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>0 0 1 * * &lt;once a month at the midnight of the 1-th day&gt;</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>0 0 1 1 * &lt;once a year at the midnight of January 1&gt;</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>* * * * 0 &lt;once a minute every Sunday&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check that <code>cron</code> service is running by <code>systemctl list-unit-files --type=service | grep "cron"</code></p>
+<p>List cron jobs by <code>crontab -l</code>.</p>
+</section>
+<section id="creating-a-cron-job" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-cron-job">Creating a Cron Job</h3>
+<p>For this example, we create a job that runs every 20 seconds.</p>
+<ol type="1">
+<li><p><strong>Open Crontab</strong>: Open your crontab file by typing <code>crontab -e</code> in your terminal. This command opens the crontab file for the current user in the default text editor.</p></li>
+<li><p><strong>Write Cron Job</strong>: Standard cron jobs can’t run in a smaller granularity than a minute. For a once-per-20-seconds job, you’ll need to use a workaround.</p>
+<p>Add the following lines to your crontab:</p></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /path/to/script.sh</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> sleep 20<span class="kw">;</span> <span class="ex">~/cronjobs/script.sh</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> sleep 40<span class="kw">;</span> <span class="ex">~/cronjobs/script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Script Content</strong>: Create <code>script.sh</code>, have the following content:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">CRON_MESSAGE</span><span class="op">=</span><span class="st">"Some message"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The cron message is: </span><span class="va">$CRON_MESSAGE</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then save and close the file, and <code>chmod +x ~/cronjobs/script.sh</code> to make it executable.</p>
+</section>
+<section id="best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="best-practices">Best Practices</h3>
+<ul>
+<li><strong>Location</strong>: Store scripts in a dedicated directory, such as <code>~/cronjobs</code>, for better organization.</li>
+<li><strong>Script Naming</strong>: Use meaningful names for your scripts for easier identification.</li>
+<li><strong>Logging</strong>: Implement logging within your scripts to capture output and errors for later review. It’s good practice to use <code>/var/log/cron</code> for logging.</li>
+</ul>
+</section>
+<section id="cron-environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="cron-environment-variables">Cron environment variables</h3>
+<p>Cron jobs run in a minimal environment, so any environment variable, like <code>CRON_MESSAGE</code>, is not accessible by the cron script. Instead, you have a few choices:</p>
+<ol type="1">
+<li>Put it directly in the crontab file:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">CRON_MESSAGE</span><span class="op">=</span><span class="st">"Some message"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /path/to/script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Put it directly in the script:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CRON_MESSAGE</span><span class="op">=</span><span class="st">"Some message"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># rest of the script follows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>If the variable is defined in an external file (like ~/.bashrc, ~/.profile, or a custom configuration file), you can source that file at the beginning of your script:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /path/to/environment_variables_file</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># rest of the script follows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
+<ul>
+<li><strong>Check Permissions</strong>: Ensure your script is executable and the cron daemon has the necessary permissions to run it.</li>
+<li><strong>Logs</strong>: Check <code>/var/log/cron</code> or relevant logs for errors.</li>
+</ul>
+<p>If you’re using WSL, ensure that the cron service is running since it doesn’t start by default. Use <code>sudo service cron start</code>. You can configure <code>~/.bashrc</code> by adding the following line: <code>sudo service cron start</code>, but it would make you enter the password at every login.</p>
+<p>Alternatively, enable <code>systemd</code> as described at <a href="#sec-init-vs-systemd" class="quarto-xref">Section&nbsp;6.1</a>.</p>
+</section>
+</section>
+<section id="how-to-wsl" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-wsl">How to WSL</h2>
+<section id="sec-init-vs-systemd" class="level3">
+<h3 class="anchored" data-anchor-id="sec-init-vs-systemd"><code>init</code> vs <code>systemd</code></h3>
+<p>Every Linux starts its first process with some root process. The <code>init</code> is the traditional and simpler one, and <code>systemd</code> is more modern and advanced one.</p>
+<p>WSL by default starts with <code>init</code> instead of <code>systemd</code>, perhaps to save time and compute. This makes things annoying for some users. You can check by <code>ps -p 1 -o comm</code> and see what it returns.</p>
+<p>To enable <code>systemd</code>, enter in your <code>/etc/wsl.conf</code> with:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode conf code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[boot]</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">systemd</span><span class="op">=</span><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or just use <code>cat "[boot]\nsystemd=true" &gt;&gt; /etc/wsl.conf</code>.</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<!-- file: html/copy‑anchors-js.html -->
+
+<script type="module">
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. All little ¶ icons Quarto/AnchorJS adds
+
+  document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
+
+    anchor.addEventListener("click", async (evt) => {
+
+      // Keep normal scroll behaviour but stop full page reload
+
+      evt.preventDefault();
+
+
+
+      // Build absolute URL: origin + path + #hash
+
+      const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
+
+
+
+      // 2. Try modern Clipboard API first
+
+      try {
+
+        await navigator.clipboard.writeText(url);
+
+      } catch {
+
+        // 3. Fallback for legacy browsers
+
+        const helper = Object.assign(document.createElement("input"), { value: url });
+
+        document.body.appendChild(helper);
+
+        helper.select();
+
+        document.execCommand("copy");
+
+        helper.remove();
+
+      }
+
+      // TODO: The following two doesn't work yet
+
+      // 4. Brief visual confirmation (optional)
+
+      anchor.dataset.tooltip = "Copied!";
+
+      setTimeout(() => delete anchor.dataset.tooltip, 1500);
+
+
+
+      // 5. Still jump to the heading
+
+      history.pushState(null, "", anchor.getAttribute("href"));
+
+    }, false);
+
+  });
+
+});
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/yuxi\.ml\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Notes on Using Linux"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2022-12-10"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> "2023-12-11"</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [programming]</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "My quick reference for using Linux for doing things."</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># image: "figure/banner_1.png"</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="an">status:</span><span class="co"> "wip"</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="an">confidence:</span><span class="co"> "log"</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="an">importance:</span><span class="co"> 2</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>This is my quick reference for using Linux for doing things. I claim no originality. Mostly they are copy pasted from the internet and tested by me. An increasing proportion of those are produced by AI.</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Linux koans {#sec-koans}</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>Everything is ~~a file~~ ~~a file or a directory~~ an inode. An inode (index node) is a representation of a sequence of data that the system can access. A file is just a list of inodes, and a directory is just a list of files.</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>Every command is an executable.</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>Every machine is a server. Some merely serve extremely slow machines (humans, aka "users").</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>The <span class="in">`\usr`</span> is not the user. It is the **U**NIX **S**ystem **R**esources.</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>The <span class="in">`\usr`</span> was the user, until Unix became so large that <span class="in">`\bin`</span> overflowed and had to put the rest of them in <span class="in">`\usr\bin`</span>. This was embarrassing for all involved, so they moved user files to <span class="in">`\home`</span>, and pretend that <span class="in">`\usr`</span> stands for UNIX System Resources. (<span class="co">[</span><span class="ot">here</span><span class="co">](http://lists.busybox.net/pipermail/busybox/2010-December/074114.html)</span>). A mistake that only took 40 years to fix.</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>In the beginning was the command line. The command line is just a face of the shell. What was the original face of the command line before the shell was born?</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>The shell reads in a stream of letters, because the user is just another file (a streaming file, named <span class="in">`stdin`</span>). Like all streaming files, the user is eternal and inexhaustible. The shell stands, rapt in attention, afore the user file. </span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>So when does the user ever leave? The user never leaves. The shell simply kills itself when the user types <span class="in">`exit`</span>. The shell would rather die than to face the prospect of reading the last word from the user.</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>So when does the shell ever break out of its rapt attention? Whenever it sees <span class="in">`\n`</span>, it is shaken out of its trance and interprets what the user has just said, in the interval bracketed between two <span class="in">`\n`</span>s.</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>The shell has one ear and two mouths. The ear is <span class="in">`stdin`</span>, and the mouths are <span class="in">`stdout`</span> and <span class="in">`stderr`</span>. The shell has a tiny brain which is only capable of interpreting <span class="co">[</span><span class="ot">the few syntactic elements of bash scripts</span><span class="co">](https://learnxinyminutes.com/docs/bash/)</span>. Everything else it wants to do, it dutifully sends a binary message into the oracular altar of the Linux kernel, from which an oceanic voice replies the answer of the kernel.</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to `PATH` {#sec-path}</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>The <span class="in">`PATH`</span> environment variable is a list of directories that the shell searches for commands. It is a colon-separated list of directories. For example, just about every Linux installation has a <span class="in">`PATH`</span> variable that looks like:</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>To add things to <span class="in">`PATH`</span>, use the <span class="in">`export`</span> command, like <span class="in">`export PATH="$HOME/bin:$PATH"`</span>.</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="fu">env</span> <span class="co"># same as printenv</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">VAR_NAME</span><span class="op">=</span><span class="st">"value"</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">VAR_NAME</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>newpath:<span class="va">$PATH</span> <span class="co"># There is no simple way to undo this one.</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="co"># but you can try export OLD_PATH=$PATH; ...; export PATH=$OLD_PATH</span></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>For Windows, use <span class="in">`Get-ChildItem Env:`</span>.</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to directories</span></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>Based on <span class="ot">&lt;https://askubuntu.com/a/135679&gt;</span>, <span class="ot">&lt;https://serverfault.com/a/24525&gt;</span>, <span class="in">`man hier`</span>, <span class="co">[</span><span class="ot">Filesystem Hierarchy Standard - Wikipedia</span><span class="co">](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)</span>.</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Where to install read-only things</span></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/bin`</span> and <span class="in">`/sbin`</span>: binaries and superuser-binaries.</span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/usr`</span>: System-wide, read-only files installed by the OS. This directory can be remotely mounted to multiple hosts safely.</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/usr/local`</span>: System-wide, read-only files installed by <span class="in">`root`</span>. _And that's why most directory names from `/usr` are duplicated here_.</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/opt`</span> - System-wide, read-only _and bundled-up_ software. That is, software that does not split their files over <span class="in">`bin`</span>, <span class="in">`lib`</span>, <span class="in">`share`</span>, <span class="in">`include`</span> like well-behaved software should.</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/usr/bin`</span> and <span class="in">`usr/sbin`</span>: They no longer exist. Just use <span class="in">`/bin`</span> and <span class="in">`/sbin`</span>.</span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`~/.local`</span>: the per-user counterpart of <span class="in">`/usr/local`</span>, that is: software installed by (and for) each user. Like <span class="in">`/usr`</span>, it has its own <span class="in">`~/.local/share`</span>, <span class="in">`~/.local/bin`</span>, <span class="in">`~/.local/lib`</span>.</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`~/.local/opt`</span>: The per-user counterpart of <span class="in">`/opt`</span></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>Requiem for <span class="in">`/usr/bin`</span> and <span class="in">`/usr/sbin`</span>: Originally, <span class="in">`/bin`</span> and <span class="in">`/lib`</span> are only for binaries and libraries _required for booting_, while <span class="in">`/usr/bin`</span> and <span class="in">`/usr/lib`</span> are for all the other executables and libraries. This is no longer true, as some binaries required for booting has over the years leaked into those two folders (if there is a way to make a mess, people will make it), so since Ubuntu 20.04, they no longer exist, to remove this mess.</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>How to install for local user only:</span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span><span class="va">$HOME</span>/.local</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>How to install for everyone: <span class="in">`sudo ./configure &amp;&amp; make &amp;&amp; make install`</span></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### Where to install read-write things</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>Read-write things are typically configuration files, since they are read and written by both the user and binary executables.</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/etc`</span>: System-wide configuration. Typically used by the OS to decide what to do when starting up, shutting down, etc.</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`~/.config`</span>: Per-user configuration files. Although because of legacy, you keep seeing nonsense like <span class="in">`.bashrc`</span> in your home directory instead of <span class="in">`~/.config/.bashrc`</span>. Here <span class="in">`rc`</span> means "run configuration".</span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### Where to do read-write things</span></span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/home/username`</span>, or just <span class="in">`~`</span>: Each user typically is only able to modify their own folder here, like <span class="in">`~/myfile.txt`</span>.</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/tmp`</span>: If you need to create something just for the moment, then make it here. It will be deleted when the system restarts.</span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Other things (you should not modify them)</span></span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/run:`</span> **run**time temporary data, representing the system's state since the last boot. It's used for storing process IDs, lock files, and other files that are would normally be stored in <span class="in">`/tmp`</span>. It is basically <span class="in">`/tmp`</span> for the machine.</span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/var`</span>: Variable data. It is somewhat like <span class="in">`/run`</span> in that both are meant to be read-written by programs, but unlike <span class="in">`/run`</span>, data here persists over reboots. This is often used for logging information. For example, try <span class="in">`vim /var/log/user.log`</span></span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a>Modifying anything below this line may brick the system. Reading is fine though.</span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/lib`</span>: **lib**raries. You should not handle it directly. Some libraries are added at OS installation, and others at program installation. If you have a broken installation, you might be asked to manually copy some files looking like <span class="in">`libxxx.so`</span> here. (<span class="in">`so`</span> stands for "shared object".)</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/boot`</span>: Files required for **booting**. For example, the bootloader, the kernel, the initramfs (initial RAM file system).</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/dev`</span>: **Device** files. It typically looks like <span class="in">`/dev/sda1`</span>, <span class="in">`/dev/sda2`</span>, etc. Other than things like <span class="in">`sda1`</span> (for harddrive) you might notice <span class="in">`tty1`</span> and <span class="in">`pty1`</span>' which stand for "teletype" and "pseudo teletype", respectively, but they are actually used as files to read whatever the user is typing from (the user is a file, see @sec-koans). There are some odd ones like:</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a><span class="ss">  *  </span><span class="in">`/dev/null`</span>, which is a "file" that you write to when you just want to throw something away (everything is a file, even a black hole...). </span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="ss">  *  </span><span class="in">`/dev/urandom`</span>, which is a random number generator. It is preferred over <span class="in">`/dev/random`</span>. See <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.2uo.de/myths-about-urandom/#orthodoxy)</span>.</span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="ss">  *  </span><span class="in">`/dev/zero`</span>, which is a file that you can't write to, but you can read, but it's filled with zeros.</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/media`</span>: Mount removable **medias**, like USB drives and SD cards. For example, you can mount a USB at <span class="in">`/media/usb1`</span> and another one at <span class="in">`/media/usb2`</span>. Mounting is typically done automatically by the system when you plug it in.</span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/mnt`</span>: **Mounts** that are not so easily removable, like a hard drive, or a network drive. And unlike <span class="in">`/media`</span>, mounting and unmounting is not automatic. On WSL, this typically has just one important thing: <span class="in">`/mnt/c`</span>.</span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`/srv`</span>: Static files that are **served** out. <span class="in">`/srv/http`</span> would be for static websites, <span class="in">`/srv/ftp`</span> for an FTP server. It is usually used only on webservers, not an end-user machine like your laptop.</span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Environment variables</span></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### How to control them</span></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`echo $X`</span> to see what the current value of <span class="in">`X`</span> is.</span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a>For current session, use <span class="in">`export`</span> like <span class="in">`export EDITOR=nano`</span>.</span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a>For all sessions, add to your <span class="in">`.bashrc`</span> or <span class="in">`.profile`</span>. If you just want to add it to the end (not recommended, as you can end up with an archeological <span class="co">[</span><span class="ot">tell</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Tell_(archaeology))), you can do one-liner like <span class="in">`echo "export EDITOR=nano" &gt;&gt; ~/.bashrc`</span>.</span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Common ones</span></span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`PATH`</span>: path to binaries. See @sec-path.</span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`EDITOR`</span>: default editor.</span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`SHELL`</span>: default shell.</span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`HOME`</span>: home directory.</span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`USER`</span>: current user.</span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`PS1`</span>: current prompt (just try <span class="in">`echo $PS1`</span> if it doesn't make sense).</span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a>You can change prompts in a rather arcane language. For example, try this one:</span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">"\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n</span><span class="dt">\\</span><span class="st">$ "</span></span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cron jobs</span></span>
+<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>Cron jobs are scheduled tasks that run periodically. For scheduling one-off tasks, use the <span class="in">`at`</span> command. The name came from "Cronos", the name of the Greek god of time. A good reference is <span class="co">[</span><span class="ot">Newbie: Intro to cron</span><span class="co">](http://www.unixgeeks.org/security/newbie/unix/cron-1.html)</span>.</span>
+<span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quick reference</span></span>
+<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a>The cron job syntax is as follows (See <span class="co">[</span><span class="ot">Crontab.guru - The cron schedule expression editor</span><span class="co">](https://web.archive.org/web/20231205205101/https://crontab.guru/)</span>):</span>
+<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a><span class="in">```txt</span></span>
+<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a><span class="in"># ┌───────────── minute (0–59)</span></span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a><span class="in"># │ ┌───────────── hour (0–23)</span></span>
+<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a><span class="in"># │ │ ┌───────────── day of the month (1–31)</span></span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a><span class="in"># │ │ │ ┌───────────── month (1–12)</span></span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a><span class="in"># │ │ │ │ ┌───────────── day of the week (0–6) (Sunday to Saturday)</span></span>
+<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a><span class="in"># │ │ │ │ │                                   </span></span>
+<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a><span class="in"># │ │ │ │ │</span></span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a><span class="in"># │ │ │ │ │</span></span>
+<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a><span class="in"># * * * * * &lt;command to execute&gt;</span></span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a><span class="in">* * * * * &lt;once a minute&gt;</span></span>
+<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="in">0 * * * * &lt;once an hour at 0-th minute&gt;</span></span>
+<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a><span class="in">0 0 * * * &lt;once a day at midnight&gt;</span></span>
+<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a><span class="in">0 0 1 * * &lt;once a month at the midnight of the 1-th day&gt;</span></span>
+<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a><span class="in">0 0 1 1 * &lt;once a year at the midnight of January 1&gt;</span></span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a><span class="in">* * * * 0 &lt;once a minute every Sunday&gt;</span></span>
+<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a>Check that <span class="in">`cron`</span> service is running by <span class="in">` systemctl list-unit-files --type=service | grep "cron"`</span></span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a>List cron jobs by <span class="in">`crontab -l`</span>.</span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating a Cron Job</span></span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a>For this example, we create a job that runs every 20 seconds.</span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Open Crontab**: </span>
+<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a>   Open your crontab file by typing <span class="in">`crontab -e`</span> in your terminal. This command opens the crontab file for the current user in the default text editor.</span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Write Cron Job**: </span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>   Standard cron jobs can't run in a smaller granularity than a minute. For a once-per-20-seconds job, you'll need to use a workaround.</span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a>   Add the following lines to your crontab:</span>
+<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>  <span class="in">```bash</span></span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a>   <span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /path/to/script.sh</span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a>   <span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> sleep 20<span class="kw">;</span> <span class="ex">~/cronjobs/script.sh</span></span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a>   <span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> sleep 40<span class="kw">;</span> <span class="ex">~/cronjobs/script.sh</span></span>
+<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a>  <span class="in">```</span></span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Script Content**: </span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>   Create <span class="in">`script.sh`</span>, have the following content:</span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a>  <span class="in">```bash</span></span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a>  <span class="co">#!/bin/bash</span></span>
+<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a>  <span class="va">CRON_MESSAGE</span><span class="op">=</span><span class="st">"Some message"</span></span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"The cron message is: </span><span class="va">$CRON_MESSAGE</span><span class="st">"</span></span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a>  <span class="in">```</span></span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a>  Then save and close the file, and <span class="in">`chmod +x ~/cronjobs/script.sh`</span> to make it executable.</span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="fu">### Best Practices</span></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Location**: Store scripts in a dedicated directory, such as <span class="in">`~/cronjobs`</span>, for better organization.</span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Script Naming**: Use meaningful names for your scripts for easier identification.</span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Logging**: Implement logging within your scripts to capture output and errors for later review. It's good practice to use <span class="in">`/var/log/cron`</span> for logging.</span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cron environment variables</span></span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a>Cron jobs run in a minimal environment, so any environment variable, like <span class="in">`CRON_MESSAGE`</span>, is not accessible by the cron script. Instead, you have a few choices:</span>
+<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Put it directly in the crontab file:</span>
+<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="va">CRON_MESSAGE</span><span class="op">=</span><span class="st">"Some message"</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> /path/to/script.sh</span>
+<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Put it directly in the script:</span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CRON_MESSAGE</span><span class="op">=</span><span class="st">"Some message"</span></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a><span class="co"># rest of the script follows</span></span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If the variable is defined in an external file (like ~/.bashrc, ~/.profile, or a custom configuration file), you can source that file at the beginning of your script:</span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /path/to/environment_variables_file</span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a><span class="co"># rest of the script follows</span></span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="fu">### Troubleshooting</span></span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Check Permissions**: Ensure your script is executable and the cron daemon has the necessary permissions to run it.</span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Logs**: Check <span class="in">`/var/log/cron`</span> or relevant logs for errors.</span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>If you're using WSL, ensure that the cron service is running since it doesn't start by default. Use <span class="in">`sudo service cron start`</span>. You can configure <span class="in">`~/.bashrc`</span> by adding the following line: <span class="in">`sudo service cron start`</span>, but it would make you enter the password at every login.</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a>Alternatively, enable <span class="in">`systemd`</span> as described at @sec-init-vs-systemd.</span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to WSL</span></span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a><span class="fu">### `init` vs `systemd` {#sec-init-vs-systemd}</span></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a>Every Linux starts its first process with some root process. The <span class="in">`init`</span> is the traditional and simpler one, and <span class="in">`systemd`</span> is more modern and advanced one.</span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a>WSL by default starts with <span class="in">`init`</span> instead of <span class="in">`systemd`</span>, perhaps to save time and compute. This makes things annoying for some users. You can check by <span class="in">`ps -p 1 -o comm`</span> and see what it returns.</span>
+<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a>To enable <span class="in">`systemd`</span>, enter in your <span class="in">`/etc/wsl.conf`</span> with:</span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a><span class="in">```conf</span></span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>boot<span class="op">]</span></span>
+<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a>systemd<span class="op">=</span><span class="kw">true</span></span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a>or just use <span class="in">`cat "[boot]\nsystemd=true" &gt;&gt; /etc/wsl.conf`</span>.</span>
+<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">Yuxi on the Wired</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Everything <a href="https://en.wikipedia.org/wiki/Public_domainl">PD</a>; <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en/">CC0</a> fallback.</span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

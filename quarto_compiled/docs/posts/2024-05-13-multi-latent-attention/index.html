@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jianlin Su">
+<meta name="dcterms.date" content="2024-05-13">
+<meta name="description" content="Translation of a blogpost by the originator of RoPE, describing the GPU-based reasons that guided the design choices of multihead latent attention.">
+
+<title>The ultimate tug-of-war between cache and capacity – Yuxi on the Wired</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="The ultimate tug-of-war between cache and capacity – Yuxi on the Wired">
+<meta property="og:description" content="Translation of a blogpost by the originator of RoPE, describing the GPU-based reasons that guided the design choices of multihead latent attention.">
+<meta property="og:image" content="https://yuxi.ml/docs/posts/2024-05-13-multi-latent-attention/img/blog icon.jpg">
+<meta property="og:site_name" content="Yuxi on the Wired">
+<meta name="twitter:title" content="The ultimate tug-of-war between cache and capacity – Yuxi on the Wired">
+<meta name="twitter:description" content="Translation of a blogpost by the originator of RoPE, describing the GPU-based reasons that guided the design choices of multihead latent attention.">
+<meta name="twitter:image" content="https://yuxi.ml/docs/posts/2024-05-13-multi-latent-attention/img/blog icon.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Yuxi on the Wired</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../essays/index.html"> 
+<span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sketches/index.html"> 
+<span class="menu-text">Sketches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../logs/index.html"> 
+<span class="menu-text">Logs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../notes/index.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/index.html"> 
+<span class="menu-text">Docs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about/index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:yuxi_liu@berkeley.com"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../feeds.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">The ultimate tug-of-war between cache and capacity</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+            <p class="subtitle lead">from MHA, MQA, GQA to MLA</p>
+                  <div>
+        <div class="description">
+          Translation of a blogpost by the originator of RoPE, describing the GPU-based reasons that guided the design choices of multihead latent attention.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">AI</div>
+                <div class="quarto-category">scaling</div>
+                <div class="quarto-category">translation</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jianlin Su </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 13, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">May 13, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#mha" id="toc-mha" class="nav-link active" data-scroll-target="#mha">MHA</a></li>
+  <li><a href="#bottleneck" id="toc-bottleneck" class="nav-link" data-scroll-target="#bottleneck">Bottleneck</a></li>
+  <li><a href="#mqa" id="toc-mqa" class="nav-link" data-scroll-target="#mqa">MQA</a></li>
+  <li><a href="#gqa" id="toc-gqa" class="nav-link" data-scroll-target="#gqa">GQA</a></li>
+  <li><a href="#mla" id="toc-mla" class="nav-link" data-scroll-target="#mla">MLA</a>
+  <ul class="collapse">
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+
+
+<p>A few days ago, the <a href="https://arxiv.org/abs/2405.04434">DeepSeek-V2</a> released by High-Flyer sparked heated discussions. First, what caused the biggest stir was its 1 million tokens/yuan price, roughly 100x cheaper than competing APIs, to the point that some people joked, “Even if it outputs gibberish at this price, I would consider that gibberish to be art”. Secondly, according to the model’s technical report, one of the key technologies behind such a low price is its newly proposed MLA (<strong><font color="red">M</font></strong>ulti-head <strong><font color="red">L</font></strong>atent <strong><font color="red">A</font></strong>ttention), which is an improvement over GQA. It is said to be more efficient and better than GQA, which has also attracted widespread attention from readers.</p>
+<p>This article walks through the evolution from MHA, MQA, GQA to MLA, gradually introducing the design principles of MLA.</p>
+<section id="mha" class="level2">
+<h2 class="anchored" data-anchor-id="mha">MHA</h2>
+<p>MHA (<strong><font color="red">M</font></strong>ulti-<strong><font color="red">H</font></strong>ead <strong><font color="red">A</font></strong>ttention) is a form of attention proposed in the seminal <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a>, the foundation of current mainstream LLMs. Mathematically, MHA is equivalent to the concatenation of multiple independent single-head attentions. Assuming the input (row) vector sequence is <span class="math inline">\(\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_l\)</span>, where <span class="math inline">\(\boldsymbol{x}_i\in\mathbb{R}^d\)</span>, then MHA can be formally written as</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}\\
+\boldsymbol{k}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d\times d_k} \\
+\boldsymbol{v}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d\times d_v}
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>For simplicity, the scaling factor of the Attention matrix is omitted here. In practice, a common setting is <span class="math inline">\(d_k = d_v = d / h\)</span>, so we have</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>model name</th>
+<th><span class="math inline">\(d\)</span></th>
+<th><span class="math inline">\(h\)</span></th>
+<th><span class="math inline">\(d_k\)</span></th>
+<th><span class="math inline">\(d_v\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Llama-2-7b</code></td>
+<td>4096</td>
+<td>32</td>
+<td>128</td>
+<td>128</td>
+</tr>
+<tr class="even">
+<td><code>Llama-2-70b</code></td>
+<td>8192</td>
+<td>64</td>
+<td>128</td>
+<td>128</td>
+</tr>
+</tbody>
+</table>
+<p>Since we only consider the causal attention used by mainstream autoregressive LLMs here, when generating recursively token by token, the newly predicted <span class="math inline">\((t+1)\)</span>-th token will not affect the already calculated <span class="math inline">\(\boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\)</span>. Therefore, we can cache this part of the result for subsequent generation calls, avoiding unnecessary repeated calculations. This is the so-called <strong>KV Cache</strong>.</p>
+<p>The subsequent MQA, GQA, and MLA are all products developed around the theme of “How do we reduce KV Cache while ensuring the best possible performance?”.</p>
+</section>
+<section id="bottleneck" class="level2">
+<h2 class="anchored" data-anchor-id="bottleneck">Bottleneck</h2>
+<p>A natural question is: <font color="red">why is reducing the size of the KV Cache so important?</font></p>
+<p>As we all know, LLM inference is generally performed on GPUs, and the VRAM of a single GPU is limited. Part of it is used to store the model parameters and activation values of the forward calculation, which depends on the size of the model and is a constant after the model is selected; the other part is used to store the KV Cache of the model, which depends not only on the size of the model, but also on the input length of the model, which means it grows dynamically during the inference process. When the context length is long enough, its size will dominate, possibly exceeding the total VRAM of a single GPU or even a single node (8 GPUs).</p>
+<p>The principle of deploying models on GPUs is: if it can be deployed on one GPU, don’t span multiple GPUs; if it can be deployed on one node, don’t span multiple nodes. This is because in terms of communication bandwidth, intra-GPU &gt; inter-GPU &gt; inter-node.</p>
+<p>The more nodes a model spans during deployment, the more it will be slowed down by the inter-node communication bandwidth, which is the weakest link. In fact, even though the bandwidth of SRAM and HBM in a single H100 GPU has reached 3 TB/s, this speed is still the bottleneck of inference for short context, not to mention the slower inter-GPU and inter-node communication.</p>
+<p>Therefore, the purpose of reducing KV Cache is to achieve inference of longer context on fewer nodes, or to allow a larger inference batch size under the same context length, thereby achieving faster inference speed or greater total throughput. Of course, the ultimate goal is to achieve lower inference costs.</p>
+<p>To learn more about this issue, I point the reader towards <a href="https://arxiv.org/abs/2205.14135">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</a>, <a href="https://www.baseten.co/blog/llm-transformer-inference-guide/">A guide to LLM inference and performance</a>, <a href="https://zeux.io/2024/03/15/llm-inference-sol/">LLM inference speed of light</a> and other articles. We will not continue to expand here (mainly because I afraid that my limited understanding would mean that the more I write, the more mistakes I will make).</p>
+</section>
+<section id="mqa" class="level2">
+<h2 class="anchored" data-anchor-id="mqa">MQA</h2>
+<p>MQA, which stands for “<strong><font color="red">M</font></strong>ulti-<strong><font color="red">Q</font></strong>uery <strong><font color="red">A</font></strong>ttention”, is a very simple attempt to reduce KV Cache. It was first proposed in <a href="https://arxiv.org/abs/1911.02150">Fast Transformer Decoding: One Write-Head is All You Need</a> (2019), which means that even before the LLM craze, reducing KV Cache was already a topic of great interest to researchers.</p>
+<p>The idea behind MQA is simple: directly let all Attention Heads share the same K and V. In terms of formulas, this means removing the superscript <span class="math inline">\({}^{(s)}\)</span> from all <span class="math inline">\(\boldsymbol{k},\boldsymbol{v}\)</span> in MHA:</p>
+<p><span class="math display">\[
+\begin{equation}\require{cancel}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{\color{#ccc}{\smash{\bcancel{(s)}}}} ,\boldsymbol{v}_{\leq t}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)\boldsymbol{v}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}\\
+\boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \boldsymbol{x}_i\boldsymbol{W}_k^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_k} \\
+\boldsymbol{v}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \boldsymbol{x}_i\boldsymbol{W}_v^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_v}
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>Models that use MQA include <a href="https://arxiv.org/pdf/2204.02311">PaLM</a>, <a href="https://arxiv.org/abs/2305.06161">StarCoder</a>, and <a href="https://arxiv.org/abs/2312.11805">Gemini</a>, among others. It’s clear that MQA directly reduces the KV Cache to <span class="math inline">\(1/h\)</span> of its original size, which is very significant and, from the perspective of saving video memory alone, is already the upper limit.</p>
+<p>In terms of performance, the loss in most tasks appears to be relatively limited, and MQA’s supporters believe that this loss can be compensated for through further training. In addition, it’s worth noting that because MQA shares K and V, there is just one matrix for projecting the hidden vector to the key vector, and another for projecting to the value vector, instead of <span class="math inline">\(h\)</span> of them. Thus, the number of parameters for Attention will be reduced by nearly half. To keep the total number of model parameters unchanged, the size of feed-forward or gated linear unit is usually increased accordingly, which can also compensate for some of the performance loss.</p>
+</section>
+<section id="gqa" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="gqa">GQA</h2>
+<p>However, some people are concerned that MQA compresses the KV Cache too much, which could affect the model’s learning efficiency and the final results. To address this, a transitional version between MHA and MQA, called GQA (<strong><font color="red">G</font></strong>rouped-<strong><font color="red">Q</font></strong>uery <strong><font color="red">A</font></strong>ttention), was developed. It originated from the paper <a href="https://arxiv.org/abs/2305.13245">GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</a>, which was published last year.</p>
+<p>In retrospect, the idea behind GQA is also quite naive: it divides all Heads into <span class="math inline">\(g\)</span> groups (where <span class="math inline">\(g\)</span> is a divisor of <span class="math inline">\(h\)</span>), and each group shares the same KV pair:</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{\color{red}{(\lceil sg/h\rceil)}} ,\boldsymbol{v}_{\leq t}^{\color{red}{(\lceil sg/h\rceil)}}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{red}{(\lceil sg/h\rceil)}}{}^{\top}\right)\boldsymbol{v}_i^{\color{red}{(\lceil sg/h\rceil)}}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{red}{(\lceil sg/h\rceil)}}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}\\
+\boldsymbol{k}_i^{\color{red}{(\lceil sg/h\rceil)}} = \boldsymbol{x}_i\boldsymbol{W}_k^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d\times d_k} \\
+\boldsymbol{v}_i^{\color{red}{(\lceil sg/h\rceil)}} = \boldsymbol{x}_i\boldsymbol{W}_v^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d\times d_v}
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>Here, <span class="math inline">\(\lceil\cdot\rceil\)</span> is the ceiling function. GQA provides a natural transition from MHA to MQA. When <span class="math inline">\(g=h\)</span>, it is MHA; when <span class="math inline">\(g=1\)</span>, it is MQA. When <span class="math inline">\(1 &lt; g &lt; h\)</span>, it only compresses the KV Cache to <span class="math inline">\(g/h\)</span>. The compression rate is not as good as MQA, but it also provides greater flexibility and better guarantees in terms of effectiveness. The most well-known users of GQA are probably Meta’s open-source <a href="https://llama.meta.com/llama2"><code>Llama-2-70B</code></a>, and the entire <a href="https://llama.meta.com/llama3/"><code>Llama-3</code> series</a>. Other models using GQA include <a href="https://arxiv.org/abs/2312.08688"><code>TigerBot</code></a>, <a href="https://arxiv.org/abs/2401.02954"><code>DeepSeek-V1</code></a>, <a href="https://arxiv.org/abs/2402.19173"><code>StarCoder2</code></a>, <a href="https://arxiv.org/abs/2403.04652">Yi</a>, <a href="https://github.com/THUDM/ChatGLM2-6B"><code>ChatGLM2-6B</code></a>, and <a href="https://github.com/THUDM/ChatGLM3"><code>ChatGLM3</code></a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> There are many more models using GQA than models using MQA.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Though the <code>ChatGLM</code> report claims to use “Multi-Query Attention” in <a href="https://arxiv.org/pdf/2406.12793#page=3">page 3 of the report</a>, it is actually using GQA with <span class="math inline">\(g=2\)</span>, as you can see in <a href="https://arxiv.org/pdf/2406.12793#page=5">page 5 of the report</a>.</p></div></div><p><code>llama-2/3-70B</code> uses <span class="math inline">\(g=8\)</span>, and it is the same for most other models of similar parameter count that uses GQA. This is not an accident, but a deliberate choice for efficient inference. We know that a model of 70B scale cannot be deployed on a single GPU (A100/H100 80G) without extreme quantization. If a single GPU is not enough, then a single node can be used. Generally, a node contains up to 8 GPUs. As we said earlier, each attention head is actually computed independently and then concatenated. When <span class="math inline">\(g=8\)</span>, it is possible to have each GPU to calculate the Attention Head corresponding to one set of KV. This maximizes KV diversity under the constraint of minimal inter-GPU communication.</p>
+</section>
+<section id="mla" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="mla">MLA</h2>
+<p>With the groundwork laid by MHA, MQA, and GQA, it becomes relatively easier to understand MLA (<strong><font color="red">M</font></strong>ulti-head <strong><font color="red">L</font></strong>atent <strong><font color="red">A</font></strong>ttention). The technical report for <code>DeepSeek-V2</code> introduces MLA from the perspective of low-rank projection, leading some readers to ask questions like “Why has LoRA been around for so long, and yet MLA, which is essentially just low-rank projection applied of KV Cache, took such a long time to appear?”.</p>
+<p>However, the author believes that the low-rank projection perspective doesn’t get to the heart of the matter. Because if we’re talking about low-rank projection, the fact is that if we stack all the K and V of GQA together, we’ll find that GQA is <em>also</em> basically low-rank projection:</p>
+<p><span class="math display">\[
+\begin{equation}\underbrace{\left[\boldsymbol{k}_i^{(1)},\cdots,\boldsymbol{k}_i^{(g)},\boldsymbol{v}_i^{(1)},\cdots,\boldsymbol{v}_i^{(g)}\right]}_{\boldsymbol{c}_i\in\mathbb{R}^{g(d_k+d_v)}} = \boldsymbol{x}_i \underbrace{\left[\boldsymbol{W}_k^{(1)},\cdots,\boldsymbol{W}_k^{(g)},\boldsymbol{W}_v^{(1)},\cdots,\boldsymbol{W}_v^{(g)}\right]}_{\boldsymbol{W}_c\in\mathbb{R}^{d\times g(d_k+d_v)}}\end{equation}
+\]</span></p>
+<p>Here, we combine all <span class="math inline">\(\boldsymbol{k}_i^{(s)},\boldsymbol{v}_i^{(s)}\)</span> and denote them as <span class="math inline">\(\boldsymbol{c}_i\)</span>. The corresponding projection matrices are also combined and denoted as <span class="math inline">\(\boldsymbol{W}_c\)</span>. Note that generally <span class="math inline">\(d_c = g(d_k+d_v) &lt; d\)</span>, such as in <code>Llama-2-70B</code> where <span class="math inline">\(g = 8, d_k = d_v = 128\)</span>, so <span class="math inline">\(d_c = 2048 &lt; d = 8192\)</span>, so the transformation from <span class="math inline">\(\boldsymbol{x}_i\)</span> to <span class="math inline">\(\boldsymbol{c}_i\)</span> is <em>also</em> a low-rank projection. Therefore, the essential improvement of MLA is not the low-rank projection itself, but what is done after the low-rank projection.</p>
+<section id="part-1" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
+<p>What does GQA do after the projection? First, it divides the vector <span class="math inline">\(\boldsymbol{c}_i\)</span> into two halves, using them as K and V respectively. Then, each half is further divided into <span class="math inline">\(g\)</span> parts as <span class="math inline">\(\boldsymbol{k}_1^{(s)}, \dots, \boldsymbol{k}_g^{(s)}, \boldsymbol{v}_1^{(s)}, \dots, \boldsymbol{v}_g^{(s)}\)</span>, and each is then copied <span class="math inline">\(h/g\)</span> times, in order to “fill up” the K and V needed by <span class="math inline">\(h\)</span> Attention Heads. We know that splitting and copying are simple linear transformations, so MLA’s first key idea is to replace these simple linear transformations with general linear transformations to enhance the model’s capacity:</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}\\
+\boldsymbol{k}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d_c\times d_k} \\
+\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_c\times d_v} \\[10pt]
+\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c}
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>However, while this approach theoretically increases the model’s capacity, let’s not forget that the main purpose of GQA is to reduce KV Cache. For the sake of saving computation and communication costs, we generally cache the projected <span class="math inline">\(\boldsymbol{k}_i, \boldsymbol{v}_i\)</span> rather than the pre-projected <span class="math inline">\(\boldsymbol{c}_i\)</span> or <span class="math inline">\(\boldsymbol{x}_i\)</span>. However, MLA’s approach, by using different projection matrices, makes all K and V Heads distinct again. This means the KV Cache size would revert to the same size as MHA, which goes against the very design purpose of GQA.</p>
+<p>To solve this problem, MLA uses a simple clever identity on the dot-attention to circumvent this problem. First, we proceed as usual during the training. Then, during the inference, we use this identity</p>
+<p><span class="math display">\[
+\begin{equation}\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top} = \left(\boldsymbol{x}_t\boldsymbol{W}_q^{(s)}\right) \left(\boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\right){}^{\top} = \boldsymbol{x}_t\left(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\right)\boldsymbol{c}_i^{\top} \end{equation}
+\]</span></p>
+<p>This means that during the inference phase, we can merge <span class="math inline">\(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> as the projection matrix for Q.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Then, <span class="math inline">\(\boldsymbol{c}_i\)</span> replaces the original <span class="math inline">\(\boldsymbol{k}_i\)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Note a detail here. Merging <span class="math inline">\(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> into a single matrix is only valid assuming infinite precision. In practice, if we use single precision, especially <code>BF16</code>, the precision loss after the matrix-merge is often noticeable. After multiple layers, this loss may become large enough that we would have to post-process.</p></div></div><p>Similarly, since there is another projection matrix after <span class="math inline">\(\boldsymbol{o}_t\)</span>, the <span class="math inline">\(\boldsymbol{W}_v^{(s)}\)</span> in <span class="math inline">\(\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\)</span> can also be absorbed into the subsequent projection matrix. Thus, equivalently, <span class="math inline">\(\boldsymbol{v}_i\)</span> can also be replaced by <span class="math inline">\(\boldsymbol{c}_i\)</span>. Specifically, after the attention weights <span class="math inline">\(\alpha_{tj}^{(s)}\)</span> are computed using the dot-attention mechanism, we upcast the latent vector <span class="math inline">\(\boldsymbol{c}_i\)</span> to the value vector <span class="math inline">\(\boldsymbol{v}_i^{(s)}\)</span> using <span class="math inline">\(\boldsymbol{W}_v^{(s)}\)</span>, do a weighted sum with the attention weights, then use a final output projection by <span class="math inline">\(\boldsymbol{W}_o^{(s)}\)</span>. We can do the same merge at inference time:</p>
+<p><span class="math display">\[
+\boldsymbol{v}_t = \sum_{j\leq t} \boldsymbol{c}_j \left(\sum_{s=1}^h \alpha_{tj}^{(s)} \boldsymbol{W}_v^{(s)} \boldsymbol{W}_o^{(s)\top}\right)
+\]</span></p>
+<p>This means that at this point, the KV Cache only needs to store all <span class="math inline">\(\boldsymbol{c}_i\)</span>, instead of all <span class="math inline">\(\boldsymbol{k}_i^{(s)}\)</span> and <span class="math inline">\(\boldsymbol{v}_i^{(s)}\)</span>. Note that <span class="math inline">\(\boldsymbol{c}_i\)</span> is independent of <span class="math inline">\({}^{(s)}\)</span>, which means it is shared by all heads. In other words, during the inference phase, MLA can be converted into an MQA via a clever identity.</p>
+<p>To reiterate, the key theme of this article has always been reducing the KV Cache. So what has MLA achieved so far? The answer is that it has enhanced the capacity of GQA through different projection matrices, while maintaining the same size of KV Cache during inference. Conversely, if we only need capacities similar to GQA, can we further reduce the KV Cache? In other words, <span class="math inline">\(d_c\)</span> doesn’t need to be <span class="math inline">\(g(d_k+d_v)\)</span>, but can be a smaller value (<code>DeepSeek-V2</code> uses <span class="math inline">\(d_c = 512\)</span>), thereby further compressing the KV Cache. This is the key idea of MLA.</p>
+</section>
+<section id="part-2" class="level3">
+<h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
+<p>Everything seems perfect, and it looks like we’re about to finish cooking an ideal design that is both good and economical. But hold on, if we think a little deeper, we’ll find that MLA, as it stands, has an unavoidable flaw – it’s incompatible with <a href="https://arxiv.org/abs/2104.09864">RoPE (Rotary Position Embedding)</a>.</p>
+<p>We just mentioned that the key step for MLA to maintain the same KV Cache size as GQA is “merging <span class="math inline">\(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> into a single (position-independent) matrix as the projection matrix for Q”. However, if RoPE is added, this step becomes impossible. This is because RoPE is a position-dependent, <span class="math inline">\(d_k\times d_k\)</span> block diagonal matrix <span class="math inline">\(\boldsymbol{\mathcal{R}}_m\)</span>, satisfying <span class="math inline">\(\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}\)</span>. When RoPE is added to MLA, it inserts an additional term <span class="math inline">\(\boldsymbol{\mathcal{R}}_{t-i}\)</span> between <span class="math inline">\(\boldsymbol{W}_q^{(s)}\)</span> and <span class="math inline">\(\boldsymbol{W}_k^{(s)}{}^{\top}\)</span>:</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+\boldsymbol{q}_i^{(s)} &amp;= \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\\
+\boldsymbol{k}_i^{(s)} &amp;= \boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i} \\
+\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top} &amp;= \left(\boldsymbol{x}_t\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_t}\right) \left(\boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right){}^{\top} = \boldsymbol{x}_t\left(\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}\right)\boldsymbol{c}_i^{\top}
+\end{aligned}
+\end{equation}
+\]</span></p>
+<p>The term <span class="math inline">\(\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> cannot be combined into a static projection matrix (since it’s related to the position difference <span class="math inline">\(t-i\)</span>, which is not static), thus the key idea of MLA could not be combined with RoPE.</p>
+<p>Some time ago, I had the honor of discussing this issue with the DeepSeek team. This problem turned out to be fundamental, so I couldn’t actually offer any effective advice at the time. The simplest approach is to just give up RoPE and switch to another position encoding scheme that uses positional encoding based on attention bias, such as <a href="https://arxiv.org/abs/2108.12409">ALiBi</a>. However, DeepSeek’s experiments show that it is significantly inferior to RoPE (note that MLA <em>can</em> use RoPE, but after adding RoPE, the identity transformation trick cannot be used to reduce KV Cache). I also suggested trying <a href="https://arxiv.org/abs/2212.10356">Sandwich</a>, which doesn’t monotonically decay to negative infinity like ALiBi, so it might have better results, but it feels like a band-aid hack, not a real solution. Another compromise is to change the input of <span class="math inline">\(\boldsymbol{q}_i\)</span> to <span class="math inline">\(\boldsymbol{c}_i\)</span> as well, and then add RoPE after <span class="math inline">\(\boldsymbol{c}_i\)</span>, i.e.,</p>
+<p><span class="math display">\[
+\begin{equation}\boldsymbol{q}_i^{(s)} = \boldsymbol{c}_i\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\boldsymbol{W}_q^{(s)},\quad\boldsymbol{k}_i^{(s)} = \boldsymbol{c}_i\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\boldsymbol{W}_k^{(s)}\end{equation}
+\]</span></p>
+<p>In this way, <span class="math inline">\(\boldsymbol{\mathcal{R}}_i\)</span> can be absorbed into <span class="math inline">\(\boldsymbol{c}_i\)</span>, but then we lose the <span class="math inline">\(\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}\)</span> operation. In this case, RoPE no longer implements relative position through absolute position, but simply adds absolute positions to Q and K, forcing the model to learn end-to-end how to extract the relative position information that it needs to do its job.</p>
+<p>The final released MLA adopts a hybrid approach – each Attention Head’s Q and K adds <span class="math inline">\(d_r\)</span> dimensions for adding RoPE, where the added dimensions for K are shared across all Heads:</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \left[\boldsymbol{x}_i\boldsymbol{W}_{qc}^{(s)}, \boldsymbol{x}_i\boldsymbol{W}_{qr}^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k + d_r},\quad \boldsymbol{W}_{qc}^{(s)}\in\mathbb{R}^{d\times d_k},\boldsymbol{W}_{qr}^{(s)}\in\mathbb{R}^{d\times d_r}\\
+\boldsymbol{k}_i^{(s)} = \left[\boldsymbol{c}_i\boldsymbol{W}_{kc}^{(s)}, \boldsymbol{x}_i\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k+d_r},\quad \boldsymbol{W}_{kc}^{(s)}\in\mathbb{R}^{d_c\times d_k}, \boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_r} \\
+\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_c\times d_v} \\[10pt]
+\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c}
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>In this way, the dimensions without RoPE can repeat the operation described in <a href="#part-1">Part 1</a>. During inference, the KV Cache only needs to store <span class="math inline">\(\boldsymbol{c}_i\)</span>. The newly added dimensions with RoPE can be used to supplement positional information. And since all Heads share them, only <span class="math inline">\(d_r\)</span> dimensions are added to the K Cache. The original paper took <span class="math inline">\(d_r = d_k / 2 = 64\)</span>, which is a small increase compared to the original <span class="math inline">\(d_c = 512\)</span>.</p>
+</section>
+<section id="part-3" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
+<p>One final detail: the final iteration of MLA also changes the input of Q to a low-rank projection form. This is not related to reducing KV Cache, but mainly to reduce the amount of parameters and the corresponding gradients<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> during training that occupy GPU memory:</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;The original paper said “Moreover, in order to reduce the activation memory during training, we also perform low-rank compression for the queries, even if it cannot reduce the KV cache”, which I personally don’t quite understand.</p></div></div><p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \left[\boldsymbol{c}_i'\boldsymbol{W}_{qc}^{(s)}, \boldsymbol{c}_i'\boldsymbol{W}_{qr}^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k + d_r},\quad \boldsymbol{W}_{qc}^{(s)}\in\mathbb{R}^{d_c'\times d_k},\boldsymbol{W}_{qr}^{(s)}\in\mathbb{R}^{d_c'\times d_r}\\
+\boldsymbol{k}_i^{(s)} = \left[\boldsymbol{c}_i\boldsymbol{W}_{kc}^{(s)}, \boldsymbol{x}_i\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k+d_r},\quad \boldsymbol{W}_{kc}^{(s)}\in\mathbb{R}^{d_c\times d_k}, \boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_r} \\
+\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_c\times d_v} \\[10pt]
+\boldsymbol{c}_i' = \boldsymbol{x}_i \boldsymbol{W}_c'\in\mathbb{R}^{d_c'},\quad \boldsymbol{W}_c'\in\mathbb{R}^{d\times d_c'} \\
+\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c} \\
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>Note the second term in <span class="math inline">\(\boldsymbol{k}_i^{(s)}\)</span>, the part with RoPE, its input is still <span class="math inline">\(\boldsymbol{x}_i\)</span> and not <span class="math inline">\(\boldsymbol{c}_i\)</span>. This maintains the original paper’s setting, and it’s not a typo. Also, <span class="math inline">\(d_c' = 1536\)</span> in the original paper, which is different from <span class="math inline">\(d_c=512\)</span>. Also, we put the MHA with RoPE below for easy comparison:</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}\\
+\boldsymbol{k}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d\times d_k} \\
+\boldsymbol{v}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d\times d_v}
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>It can be observed that, during the training phase, apart from an additional low-rank projection step and RoPE being added only in some dimensions, MLA is essentially the same as MHA where the Q and K Head Size is changed from <span class="math inline">\(d_k\)</span> to <span class="math inline">\(d_k + d_r\)</span>.</p>
+<p>The MLA in the inference phase is changed to:</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{gathered}
+\boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}\boldsymbol{W}_v^{(1)}, \boldsymbol{o}_t^{(2)}\boldsymbol{W}_v^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\boldsymbol{W}_v^{(h)}\right] \\[10pt]
+\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{\color{#ccc}{\smash{\bcancel{(s)}}}} ,\boldsymbol{c}_{\leq t}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)\boldsymbol{c}_i}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)} \\[15pt]
+\boldsymbol{q}_i^{(s)} = \left[\boldsymbol{c}_i'\boldsymbol{W}_{qc}^{(s)}\boldsymbol{W}_{kc}^{(s)}{}^{\top}, \boldsymbol{c}_i'\boldsymbol{W}_{qr}^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_c + d_r}\\
+\boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \left[\boldsymbol{c}_i, \boldsymbol{x}_i\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_c+d_r}\\
+\boldsymbol{W}_{qc}^{(s)}\in\mathbb{R}^{d_c'\times d_k},\boldsymbol{W}_{kc}^{(s)}\in\mathbb{R}^{d_c\times d_k},\boldsymbol{W}_{qr}^{(s)}\in\mathbb{R}^{d_c'\times d_r},\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_r} \\[10pt]
+\boldsymbol{c}_i' = \boldsymbol{x}_i \boldsymbol{W}_c'\in\mathbb{R}^{d_c'},\quad \boldsymbol{W}_c'\in\mathbb{R}^{d\times d_c'} \\
+\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c} \\
+\end{gathered}
+\end{equation}
+\]</span></p>
+<p>At this point, the Head Size of Q and K becomes <span class="math inline">\(d_c + d_r\)</span>, while the Head Size of V becomes <span class="math inline">\(d_c\)</span>. According to the original paper’s settings, this is equal to <span class="math inline">\(4d_k = 4d_v\)</span>. So this inference-time change, although in effect reduces the KV Cache, increases the computational cost of inference.</p>
+<p>So why does it still improve inference efficiency? This brings us back to the issue discussed in the <a href="#bottleneck">Bottleneck</a> section. We can divide LLM inference into two parts: inference on the prompt for generating the first Token (Prefill) and generating each subsequent token (Generation). The Prefill stage involves parallel computation over all tokens in the prompt and storing the corresponding KV Cache. This stage can be bottlenecked by all of computation, bandwidth, and memory. Although MLA increases the computational cost, the reduction in KV Cache also reduces the pressure on memory and bandwidth, so it’s roughly equal trade-off without benefit or cost. However, in the Generation stage, since only one token is computed at each step, it is only bottlenecked by bandwidth and memory. Therefore, the introduction of MLA can theoretically significantly improve the speed of Generation.</p>
+<p>There is another detail that fully reflects this characteristic. In a typical LLM architecture, the parameters satisfy <span class="math inline">\(h \times d_k = d\)</span>, meaning <code>num_heads * head_size = hidden_size</code>. However, <code>DeepSeek-V2</code> is different. It has <span class="math inline">\(d_k=128, d=5120\)</span>, but <span class="math inline">\(h=128\)</span>, which is 3 times the usual setting! This is because the KV Cache size of MLA is independent of <span class="math inline">\(h\)</span>, thus, increasing <span class="math inline">\(h\)</span> only increases the computational cost and improves the model’s ability, but it does not increase the KV Cache, so it does not cause a speed bottleneck.</p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This article briefly outlines the evolution of multi-head attention, particularly the changes in concept from MHA to MQA, GQA, and finally to MLA, and then elaborates on the details of MLA. In this article, MLA is regarded as a generalization of GQA. It replaces GQA’s splitting and replication with projection matrices, and introduces an identity transform to further compress the KV Cache, while adopting a hybrid method to be compatible with RoPE. Overall, MLA is a very practical variant of the attention mechanism.</p>
+</section>
+
+
+
+<div id="quarto-appendix" class="default"><section id="metadata" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Metadata</h2><div class="quarto-appendix-contents">
+
+<p>Original is <a href="https://kexue.fm/archives/10091">缓存与效果的极限拉扯：从MHA、MQA、GQA到MLA</a> posted on the homepage of Jianlin Su (苏剑林).</p>
+<p>I added some extra explanatory notes here and there.</p>
+
+
+<!-- -->
+
+</div></section></div></main> <!-- /main -->
+<!-- file: html/copy‑anchors-js.html -->
+
+<script type="module">
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. All little ¶ icons Quarto/AnchorJS adds
+
+  document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
+
+    anchor.addEventListener("click", async (evt) => {
+
+      // Keep normal scroll behaviour but stop full page reload
+
+      evt.preventDefault();
+
+
+
+      // Build absolute URL: origin + path + #hash
+
+      const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
+
+
+
+      // 2. Try modern Clipboard API first
+
+      try {
+
+        await navigator.clipboard.writeText(url);
+
+      } catch {
+
+        // 3. Fallback for legacy browsers
+
+        const helper = Object.assign(document.createElement("input"), { value: url });
+
+        document.body.appendChild(helper);
+
+        helper.select();
+
+        document.execCommand("copy");
+
+        helper.remove();
+
+      }
+
+      // TODO: The following two doesn't work yet
+
+      // 4. Brief visual confirmation (optional)
+
+      anchor.dataset.tooltip = "Copied!";
+
+      setTimeout(() => delete anchor.dataset.tooltip, 1500);
+
+
+
+      // 5. Still jump to the heading
+
+      history.pushState(null, "", anchor.getAttribute("href"));
+
+    }, false);
+
+  });
+
+});
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/yuxi\.ml\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The ultimate tug-of-war between cache and capacity"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "from MHA, MQA, GQA to MLA"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jianlin Su"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-05-13"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> "2024-05-13"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [AI, scaling, translation]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Translation of a blogpost by the originator of RoPE, describing the GPU-based reasons that guided the design choices of multihead latent attention."</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">status:</span><span class="co"> "finished"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="an">confidence:</span><span class="co"> "certain"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">importance:</span><span class="co"> 3</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../../../static/_macros.tex &gt;}}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>A few days ago, the <span class="co">[</span><span class="ot">DeepSeek-V2</span><span class="co">](https://arxiv.org/abs/2405.04434)</span> released by High-Flyer sparked heated discussions. First, what caused the biggest stir was its 1 million tokens/yuan price, roughly 100x cheaper than competing APIs, to the point that some people joked, "Even if it outputs gibberish at this price, I would consider that gibberish to be art". Secondly, according to the model's technical report, one of the key technologies behind such a low price is its newly proposed MLA (<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>M<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ulti-head <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>L<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>atent <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>A<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ttention), which is an improvement over GQA. It is said to be more efficient and better than GQA, which has also attracted widespread attention from readers.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>This article walks through the evolution from MHA, MQA, GQA to MLA, gradually introducing the design principles of MLA.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## MHA</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>MHA (<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>M<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ulti-<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>H<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ead <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>A<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ttention) is a form of attention proposed in the seminal <span class="co">[</span><span class="ot">Attention is all you need</span><span class="co">](https://arxiv.org/abs/1706.03762)</span>, the foundation of current mainstream LLMs. Mathematically, MHA is equivalent to the concatenation of multiple independent single-head attentions. Assuming the input (row) vector sequence is $\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_l$, where $\boldsymbol{x}_i\in\mathbb{R}^d$, then MHA can be formally written as</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}<span class="sc">\\</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d\times d_k} <span class="sc">\\</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d\times d_v}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>For simplicity, the scaling factor of the Attention matrix is omitted here. In practice, a common setting is $d_k = d_v = d / h$, so we have</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> model name <span class="pp">|</span> $d$ <span class="pp">|</span> $h$ <span class="pp">|</span> $d_k$ <span class="pp">|</span> $d_v$ <span class="pp">|</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|---|</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`Llama-2-7b`</span> <span class="pp">|</span> 4096 <span class="pp">|</span> 32 <span class="pp">|</span> 128 <span class="pp">|</span> 128 <span class="pp">|</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`Llama-2-70b`</span> <span class="pp">|</span> 8192 <span class="pp">|</span> 64 <span class="pp">|</span> 128 <span class="pp">|</span> 128 <span class="pp">|</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Since we only consider the causal attention used by mainstream autoregressive LLMs here, when generating recursively token by token, the newly predicted $(t+1)$-th token will not affect the already calculated $\boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}$. Therefore, we can cache this part of the result for subsequent generation calls, avoiding unnecessary repeated calculations. This is the so-called **KV Cache**.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>The subsequent MQA, GQA, and MLA are all products developed around the theme of "How do we reduce KV Cache while ensuring the best possible performance?".</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bottleneck</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>A natural question is: <span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>why is reducing the size of the KV Cache so important?<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>As we all know, LLM inference is generally performed on GPUs, and the VRAM of a single GPU is limited. Part of it is used to store the model parameters and activation values of the forward calculation, which depends on the size of the model and is a constant after the model is selected; the other part is used to store the KV Cache of the model, which depends not only on the size of the model, but also on the input length of the model, which means it grows dynamically during the inference process. When the context length is long enough, its size will dominate, possibly exceeding the total VRAM of a single GPU or even a single node (8 GPUs).</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>The principle of deploying models on GPUs is: if it can be deployed on one GPU, don't span multiple GPUs; if it can be deployed on one node, don't span multiple nodes. This is because in terms of communication bandwidth, intra-GPU &gt; inter-GPU &gt; inter-node.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>The more nodes a model spans during deployment, the more it will be slowed down by the inter-node communication bandwidth, which is the weakest link. In fact, even though the bandwidth of SRAM and HBM in a single H100 GPU has reached 3 TB/s, this speed is still the bottleneck of inference for short context, not to mention the slower inter-GPU and inter-node communication.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Therefore, the purpose of reducing KV Cache is to achieve inference of longer context on fewer nodes, or to allow a larger inference batch size under the same context length, thereby achieving faster inference speed or greater total throughput. Of course, the ultimate goal is to achieve lower inference costs.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>To learn more about this issue, I point the reader towards <span class="co">[</span><span class="ot">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</span><span class="co">](https://arxiv.org/abs/2205.14135)</span>, <span class="co">[</span><span class="ot">A guide to LLM inference and performance</span><span class="co">](https://www.baseten.co/blog/llm-transformer-inference-guide/)</span>, <span class="co">[</span><span class="ot">LLM inference speed of light</span><span class="co">](https://zeux.io/2024/03/15/llm-inference-sol/)</span> and other articles. We will not continue to expand here (mainly because I afraid that my limited understanding would mean that the more I write, the more mistakes I will make).</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## MQA</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>MQA, which stands for "<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>M<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ulti-<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>Q<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>uery <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>A<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ttention", is a very simple attempt to reduce KV Cache. It was first proposed in <span class="co">[</span><span class="ot">Fast Transformer Decoding: One Write-Head is All You Need</span><span class="co">](https://arxiv.org/abs/1911.02150)</span> (2019), which means that even before the LLM craze, reducing KV Cache was already a topic of great interest to researchers.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>The idea behind MQA is simple: directly let all Attention Heads share the same K and V. In terms of formulas, this means removing the superscript ${}^{(s)}$ from all $\boldsymbol{k},\boldsymbol{v}$ in MHA:</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>\begin{equation}\require{cancel}</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{\color{#ccc}{\smash{\bcancel{(s)}}}} ,\boldsymbol{v}_{\leq t}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)\boldsymbol{v}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}<span class="sc">\\</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \boldsymbol{x}_i\boldsymbol{W}_k^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_k} <span class="sc">\\</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \boldsymbol{x}_i\boldsymbol{W}_v^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_v}</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Models that use MQA include <span class="co">[</span><span class="ot">PaLM</span><span class="co">](https://arxiv.org/pdf/2204.02311)</span>, <span class="co">[</span><span class="ot">StarCoder</span><span class="co">](https://arxiv.org/abs/2305.06161)</span>, and <span class="co">[</span><span class="ot">Gemini</span><span class="co">](https://arxiv.org/abs/2312.11805)</span>, among others. It's clear that MQA directly reduces the KV Cache to $1/h$ of its original size, which is very significant and, from the perspective of saving video memory alone, is already the upper limit.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>In terms of performance, the loss in most tasks appears to be relatively limited, and MQA's supporters believe that this loss can be compensated for through further training. In addition, it's worth noting that because MQA shares K and V, there is just one matrix for projecting the hidden vector to the key vector, and another for projecting to the value vector, instead of $h$ of them. Thus, the number of parameters for Attention will be reduced by nearly half. To keep the total number of model parameters unchanged, the size of feed-forward or gated linear unit is usually increased accordingly, which can also compensate for some of the performance loss.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## GQA </span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>However, some people are concerned that MQA compresses the KV Cache too much, which could affect the model's learning efficiency and the final results. To address this, a transitional version between MHA and MQA, called GQA (<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>G<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>rouped-<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>Q<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>uery <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>A<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ttention), was developed. It originated from the paper <span class="co">[</span><span class="ot">GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</span><span class="co">](https://arxiv.org/abs/2305.13245)</span>, which was published last year.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>In retrospect, the idea behind GQA is also quite naive: it divides all Heads into $g$ groups (where $g$ is a divisor of $h$), and each group shares the same KV pair:</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{\color{red}{(\lceil sg/h\rceil)}} ,\boldsymbol{v}_{\leq t}^{\color{red}{(\lceil sg/h\rceil)}}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{red}{(\lceil sg/h\rceil)}}{}^{\top}\right)\boldsymbol{v}_i^{\color{red}{(\lceil sg/h\rceil)}}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{red}{(\lceil sg/h\rceil)}}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}<span class="sc">\\</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{\color{red}{(\lceil sg/h\rceil)}} = \boldsymbol{x}_i\boldsymbol{W}_k^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d\times d_k} <span class="sc">\\</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{\color{red}{(\lceil sg/h\rceil)}} = \boldsymbol{x}_i\boldsymbol{W}_v^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d\times d_v}</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Here, $\lceil\cdot\rceil$ is the ceiling function. GQA provides a natural transition from MHA to MQA. When $g=h$, it is MHA; when $g=1$, it is MQA. When $1 &lt; g &lt; h$, it only compresses the KV Cache to $g/h$. The compression rate is not as good as MQA, but it also provides greater flexibility and better guarantees in terms of effectiveness. The most well-known users of GQA are probably Meta's open-source <span class="co">[</span><span class="ot">`Llama-2-70B`</span><span class="co">](https://llama.meta.com/llama2)</span>, and the entire <span class="co">[</span><span class="ot">`Llama-3` series</span><span class="co">](https://llama.meta.com/llama3/)</span>. Other models using GQA include <span class="co">[</span><span class="ot">`TigerBot`</span><span class="co">](https://arxiv.org/abs/2312.08688)</span>, <span class="co">[</span><span class="ot">`DeepSeek-V1`</span><span class="co">](https://arxiv.org/abs/2401.02954)</span>, <span class="co">[</span><span class="ot">`StarCoder2`</span><span class="co">](https://arxiv.org/abs/2402.19173)</span>, <span class="co">[</span><span class="ot">Yi</span><span class="co">](https://arxiv.org/abs/2403.04652)</span>, <span class="co">[</span><span class="ot">`ChatGLM2-6B`</span><span class="co">](https://github.com/THUDM/ChatGLM2-6B)</span>, and <span class="co">[</span><span class="ot">`ChatGLM3`</span><span class="co">](https://github.com/THUDM/ChatGLM3)</span>.<span class="ot">[^chatglm]</span> There are many more models using GQA than models using MQA.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ot">[^chatglm]: </span>Though the <span class="in">`ChatGLM`</span> report claims to use "Multi-Query Attention" in <span class="co">[</span><span class="ot">page 3 of the report</span><span class="co">](https://arxiv.org/pdf/2406.12793#page=3)</span>, it is actually using GQA with $g=2$, as you can see in <span class="co">[</span><span class="ot">page 5 of the report</span><span class="co">](https://arxiv.org/pdf/2406.12793#page=5)</span>.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="in">`llama-2/3-70B`</span> uses $g=8$, and it is the same for most other models of similar parameter count that uses GQA. This is not an accident, but a deliberate choice for efficient inference. We know that a model of 70B scale cannot be deployed on a single GPU (A100/H100 80G) without extreme quantization. If a single GPU is not enough, then a single node can be used. Generally, a node contains up to 8 GPUs. As we said earlier, each attention head is actually computed independently and then concatenated. When $g=8$, it is possible to have each GPU to calculate the Attention Head corresponding to one set of KV. This maximizes KV diversity under the constraint of minimal inter-GPU communication.</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="fu">## MLA</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>With the groundwork laid by MHA, MQA, and GQA, it becomes relatively easier to understand MLA (<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>M<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ulti-head <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>L<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>atent <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span>A<span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>ttention). The technical report for <span class="in">`DeepSeek-V2`</span> introduces MLA from the perspective of low-rank projection, leading some readers to ask questions like "Why has LoRA been around for so long, and yet MLA, which is essentially just low-rank projection applied of KV Cache, took such a long time to appear?".</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>However, the author believes that the low-rank projection perspective doesn't get to the heart of the matter. Because if we're talking about low-rank projection, the fact is that if we stack all the K and V of GQA together, we'll find that GQA is *also* basically low-rank projection:</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>\begin{equation}\underbrace{\left<span class="co">[</span><span class="ot">\boldsymbol{k}_i^{(1)},\cdots,\boldsymbol{k}_i^{(g)},\boldsymbol{v}_i^{(1)},\cdots,\boldsymbol{v}_i^{(g)}\right</span><span class="co">]</span>}_{\boldsymbol{c}_i\in\mathbb{R}^{g(d_k+d_v)}} = \boldsymbol{x}_i \underbrace{\left[\boldsymbol{W}_k^{(1)},\cdots,\boldsymbol{W}_k^{(g)},\boldsymbol{W}_v^{(1)},\cdots,\boldsymbol{W}_v^{(g)}\right]}_{\boldsymbol{W}_c\in\mathbb{R}^{d\times g(d_k+d_v)}}\end{equation}</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Here, we combine all $\boldsymbol{k}_i^{(s)},\boldsymbol{v}_i^{(s)}$ and denote them as $\boldsymbol{c}_i$. The corresponding projection matrices are also combined and denoted as $\boldsymbol{W}_c$. Note that generally $d_c = g(d_k+d_v) &lt; d$, such as in <span class="in">`Llama-2-70B`</span> where $g = 8, d_k = d_v = 128$, so $d_c = 2048 &lt; d = 8192$, so the transformation from $\boldsymbol{x}_i$ to $\boldsymbol{c}_i$ is *also* a low-rank projection. Therefore, the essential improvement of MLA is not the low-rank projection itself, but what is done after the low-rank projection.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 1</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>What does GQA do after the projection? First, it divides the vector $\boldsymbol{c}_i$ into two halves, using them as K and V respectively. Then, each half is further divided into $g$ parts as $\boldsymbol{k}_1^{(s)}, \dots, \boldsymbol{k}_g^{(s)}, \boldsymbol{v}_1^{(s)}, \dots, \boldsymbol{v}_g^{(s)}$, and each is then copied $h/g$ times, in order to "fill up" the K and V needed by $h$ Attention Heads. We know that splitting and copying are simple linear transformations, so MLA's first key idea is to replace these simple linear transformations with general linear transformations to enhance the model's capacity:</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}<span class="sc">\\</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d_c\times d_k} <span class="sc">\\</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_c\times d_v} <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c}</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>However, while this approach theoretically increases the model's capacity, let's not forget that the main purpose of GQA is to reduce KV Cache. For the sake of saving computation and communication costs, we generally cache the projected $\boldsymbol{k}_i, \boldsymbol{v}_i$ rather than the pre-projected $\boldsymbol{c}_i$ or $\boldsymbol{x}_i$. However, MLA's approach, by using different projection matrices, makes all K and V Heads distinct again. This means the KV Cache size would revert to the same size as MHA, which goes against the very design purpose of GQA.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>To solve this problem, MLA uses a simple clever identity on the dot-attention to circumvent this problem. First, we proceed as usual during the training. Then, during the inference, we use this identity</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>\begin{equation}\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top} = \left(\boldsymbol{x}_t\boldsymbol{W}_q^{(s)}\right) \left(\boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\right){}^{\top} = \boldsymbol{x}_t\left(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\right)\boldsymbol{c}_i^{\top} \end{equation}</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>This means that during the inference phase, we can merge $\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}$ as the projection matrix for Q.<span class="ot">[^merge_wqk]</span> Then, $\boldsymbol{c}_i$ replaces the original $\boldsymbol{k}_i$.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>Similarly, since there is another projection matrix after $\boldsymbol{o}_t$, the $\boldsymbol{W}_v^{(s)}$ in $\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}$ can also be absorbed into the subsequent projection matrix. Thus, equivalently, $\boldsymbol{v}_i$ can also be replaced by $\boldsymbol{c}_i$. Specifically, after the attention weights $\alpha_{tj}^{(s)}$ are computed using the dot-attention mechanism, we upcast the latent vector $\boldsymbol{c}_i$ to the value vector $\boldsymbol{v}_i^{(s)}$ using $\boldsymbol{W}_v^{(s)}$, do a weighted sum with the attention weights, then use a final output projection by $\boldsymbol{W}_o^{(s)}$. We can do the same merge at inference time:</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_t = \sum_{j\leq t} \boldsymbol{c}_j \left(\sum_{s=1}^h \alpha_{tj}^{(s)} \boldsymbol{W}_v^{(s)} \boldsymbol{W}_o^{(s)\top}\right)</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>This means that at this point, the KV Cache only needs to store all $\boldsymbol{c}_i$, instead of all $\boldsymbol{k}_i^{(s)}$ and $\boldsymbol{v}_i^{(s)}$. Note that $\boldsymbol{c}_i$ is independent of ${}^{(s)}$, which means it is shared by all heads. In other words, during the inference phase, MLA can be converted into an MQA via a clever identity.</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="ot">[^merge_wqk]: </span>Note a detail here. Merging $\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}$ into a single matrix is only valid assuming infinite precision. In practice, if we use single precision, especially <span class="in">`BF16`</span>, the precision loss after the matrix-merge is often noticeable. After multiple layers, this loss may become large enough that we would have to post-process.</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>To reiterate, the key theme of this article has always been reducing the KV Cache. So what has MLA achieved so far? The answer is that it has enhanced the capacity of GQA through different projection matrices, while maintaining the same size of KV Cache during inference. Conversely, if we only need capacities similar to GQA, can we further reduce the KV Cache? In other words, $d_c$ doesn't need to be $g(d_k+d_v)$, but can be a smaller value (<span class="in">`DeepSeek-V2`</span> uses $d_c = 512$), thereby further compressing the KV Cache. This is the key idea of MLA.</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Everything seems perfect, and it looks like we're about to finish cooking an ideal design that is both good and economical. But hold on, if we think a little deeper, we'll find that MLA, as it stands, has an unavoidable flaw -- it's incompatible with <span class="co">[</span><span class="ot">RoPE (Rotary Position Embedding)</span><span class="co">](https://arxiv.org/abs/2104.09864)</span>.</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>We just mentioned that the key step for MLA to maintain the same KV Cache size as GQA is "merging $\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}$ into a single (position-independent) matrix as the projection matrix for Q". However, if RoPE is added, this step becomes impossible. This is because RoPE is a position-dependent, $d_k\times d_k$ block diagonal matrix $\boldsymbol{\mathcal{R}}_m$, satisfying $\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}$. When RoPE is added to MLA, it inserts an additional term $\boldsymbol{\mathcal{R}}_{t-i}$ between $\boldsymbol{W}_q^{(s)}$ and $\boldsymbol{W}_k^{(s)}{}^{\top}$:</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} &amp;= \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}<span class="sc">\\</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{(s)} &amp;= \boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i} <span class="sc">\\</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top} &amp;= \left(\boldsymbol{x}_t\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_t}\right) \left(\boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right){}^{\top} = \boldsymbol{x}_t\left(\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}\right)\boldsymbol{c}_i^{\top}</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>The term $\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}$ cannot be combined into a static projection matrix (since it's related to the position difference $t-i$, which is not static), thus the key idea of MLA could not be combined with RoPE.</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>Some time ago, I had the honor of discussing this issue with the DeepSeek team. This problem turned out to be fundamental, so I couldn't actually offer any effective advice at the time. The simplest approach is to just give up RoPE and switch to another position encoding scheme that uses positional encoding based on attention bias, such as <span class="co">[</span><span class="ot">ALiBi</span><span class="co">](https://arxiv.org/abs/2108.12409)</span>. However, DeepSeek's experiments show that it is significantly inferior to RoPE (note that MLA *can* use RoPE, but after adding RoPE, the identity transformation trick cannot be used to reduce KV Cache). I also suggested trying <span class="co">[</span><span class="ot">Sandwich</span><span class="co">](https://arxiv.org/abs/2212.10356)</span>, which doesn't monotonically decay to negative infinity like ALiBi, so it might have better results, but it feels like a band-aid hack, not a real solution. Another compromise is to change the input of $\boldsymbol{q}_i$ to $\boldsymbol{c}_i$ as well, and then add RoPE after $\boldsymbol{c}_i$, i.e.,</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>\begin{equation}\boldsymbol{q}_i^{(s)} = \boldsymbol{c}_i\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\boldsymbol{W}_q^{(s)},\quad\boldsymbol{k}_i^{(s)} = \boldsymbol{c}_i\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\boldsymbol{W}_k^{(s)}\end{equation}</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>In this way, $\boldsymbol{\mathcal{R}}_i$ can be absorbed into $\boldsymbol{c}_i$, but then we lose the $\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}$ operation. In this case, RoPE no longer implements relative position through absolute position, but simply adds absolute positions to Q and K, forcing the model to learn end-to-end how to extract the relative position information that it needs to do its job.</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>The final released MLA adopts a hybrid approach -- each Attention Head's Q and K adds $d_r$ dimensions for adding RoPE, where the added dimensions for K are shared across all Heads:</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \left[\boldsymbol{x}_i\boldsymbol{W}_{qc}^{(s)}, \boldsymbol{x}_i\boldsymbol{W}_{qr}^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k + d_r},\quad \boldsymbol{W}_{qc}^{(s)}\in\mathbb{R}^{d\times d_k},\boldsymbol{W}_{qr}^{(s)}\in\mathbb{R}^{d\times d_r}<span class="sc">\\</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{(s)} = \left[\boldsymbol{c}_i\boldsymbol{W}_{kc}^{(s)}, \boldsymbol{x}_i\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k+d_r},\quad \boldsymbol{W}_{kc}^{(s)}\in\mathbb{R}^{d_c\times d_k}, \boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_r} <span class="sc">\\</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_c\times d_v} <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c}</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>In this way, the dimensions without RoPE can repeat the operation described in <span class="co">[</span><span class="ot">Part 1</span><span class="co">](#part-1)</span>. During inference, the KV Cache only needs to store $\boldsymbol{c}_i$. The newly added dimensions with RoPE can be used to supplement positional information. And since all Heads share them, only $d_r$ dimensions are added to the K Cache. The original paper took $d_r = d_k / 2 = 64$, which is a small increase compared to the original $d_c = 512$.</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>One final detail: the final iteration of MLA also changes the input of Q to a low-rank projection form. This is not related to reducing KV Cache, but mainly to reduce the amount of parameters and the corresponding gradients<span class="ot">[^lora-query]</span> during training that occupy GPU memory:</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="ot">[^lora-query]: </span>The original paper said "Moreover, in order to reduce the activation memory during training, we also perform low-rank compression for the queries, even if it cannot reduce the KV cache", which I personally don't quite understand.</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \left[\boldsymbol{c}_i'\boldsymbol{W}_{qc}^{(s)}, \boldsymbol{c}_i'\boldsymbol{W}_{qr}^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k + d_r},\quad \boldsymbol{W}_{qc}^{(s)}\in\mathbb{R}^{d_c'\times d_k},\boldsymbol{W}_{qr}^{(s)}\in\mathbb{R}^{d_c'\times d_r}<span class="sc">\\</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{(s)} = \left[\boldsymbol{c}_i\boldsymbol{W}_{kc}^{(s)}, \boldsymbol{x}_i\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_k+d_r},\quad \boldsymbol{W}_{kc}^{(s)}\in\mathbb{R}^{d_c\times d_k}, \boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_r} <span class="sc">\\</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_c\times d_v} <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>\boldsymbol{c}_i' = \boldsymbol{x}_i \boldsymbol{W}_c'\in\mathbb{R}^{d_c'},\quad \boldsymbol{W}_c'\in\mathbb{R}^{d\times d_c'} <span class="sc">\\</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c} <span class="sc">\\</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>Note the second term in $\boldsymbol{k}_i^{(s)}$, the part with RoPE, its input is still $\boldsymbol{x}_i$ and not $\boldsymbol{c}_i$. This maintains the original paper's setting, and it's not a typo. Also, $d_c' = 1536$ in the original paper, which is different from $d_c=512$. Also, we put the MHA with RoPE below for easy comparison:</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)\boldsymbol{v}_i^{(s)}}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_q^{(s)}\in\mathbb{R}^{d\times d_k}<span class="sc">\\</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\in\mathbb{R}^{d_k},\quad \boldsymbol{W}_k^{(s)}\in\mathbb{R}^{d\times d_k} <span class="sc">\\</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>\boldsymbol{v}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d\times d_v}</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>It can be observed that, during the training phase, apart from an additional low-rank projection step and RoPE being added only in some dimensions, MLA is essentially the same as MHA where the Q and K Head Size is changed from $d_k$ to $d_k + d_r$.</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>The MLA in the inference phase is changed to:</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>\begin{gathered}</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t = \left<span class="co">[</span><span class="ot">\boldsymbol{o}_t^{(1)}\boldsymbol{W}_v^{(1)}, \boldsymbol{o}_t^{(2)}\boldsymbol{W}_v^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\boldsymbol{W}_v^{(h)}\right</span><span class="co">]</span> <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>\boldsymbol{o}_t^{(s)} = \mathrm{Attention}\left(\boldsymbol{q}_t^{(s)}, \boldsymbol{k}_{\leq t}^{\color{#ccc}{\smash{\bcancel{(s)}}}} ,\boldsymbol{c}_{\leq t}\right)\triangleq\frac{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)\boldsymbol{c}_i}{\sum_{i\leq t}\exp\left(\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}}{}^{\top}\right)} <span class="sc">\\</span><span class="co">[</span><span class="ot">15pt</span><span class="co">]</span></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>\boldsymbol{q}_i^{(s)} = \left[\boldsymbol{c}_i'\boldsymbol{W}_{qc}^{(s)}\boldsymbol{W}_{kc}^{(s)}{}^{\top}, \boldsymbol{c}_i'\boldsymbol{W}_{qr}^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_c + d_r}<span class="sc">\\</span></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>\boldsymbol{k}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \left[\boldsymbol{c}_i, \boldsymbol{x}_i\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right]\in\mathbb{R}^{d_c+d_r}<span class="sc">\\</span></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>\boldsymbol{W}_{qc}^{(s)}\in\mathbb{R}^{d_c'\times d_k},\boldsymbol{W}_{kc}^{(s)}\in\mathbb{R}^{d_c\times d_k},\boldsymbol{W}_{qr}^{(s)}\in\mathbb{R}^{d_c'\times d_r},\boldsymbol{W}_{kr}^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_r} <span class="sc">\\</span><span class="co">[</span><span class="ot">10pt</span><span class="co">]</span></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>\boldsymbol{c}_i' = \boldsymbol{x}_i \boldsymbol{W}_c'\in\mathbb{R}^{d_c'},\quad \boldsymbol{W}_c'\in\mathbb{R}^{d\times d_c'} <span class="sc">\\</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>\boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c} <span class="sc">\\</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>\end{gathered}</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>At this point, the Head Size of Q and K becomes $d_c + d_r$, while the Head Size of V becomes $d_c$. According to the original paper's settings, this is equal to $4d_k = 4d_v$. So this inference-time change, although in effect reduces the KV Cache, increases the computational cost of inference.</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>So why does it still improve inference efficiency? This brings us back to the issue discussed in the <span class="co">[</span><span class="ot">Bottleneck</span><span class="co">](#bottleneck)</span> section. We can divide LLM inference into two parts: inference on the prompt for generating the first Token (Prefill) and generating each subsequent token (Generation). The Prefill stage involves parallel computation over all tokens in the prompt and storing the corresponding KV Cache. This stage can be bottlenecked by all of computation, bandwidth, and memory. Although MLA increases the computational cost, the reduction in KV Cache also reduces the pressure on memory and bandwidth, so it's roughly equal trade-off without benefit or cost. However, in the Generation stage, since only one token is computed at each step, it is only bottlenecked by bandwidth and memory. Therefore, the introduction of MLA can theoretically significantly improve the speed of Generation.</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>There is another detail that fully reflects this characteristic. In a typical LLM architecture, the parameters satisfy $h \times d_k = d$, meaning <span class="in">`num_heads * head_size = hidden_size`</span>. However, <span class="in">`DeepSeek-V2`</span> is different. It has $d_k=128, d=5120$, but $h=128$, which is 3 times the usual setting! This is because the KV Cache size of MLA is independent of $h$, thus, increasing $h$ only increases the computational cost and improves the model's ability, but it does not increase the KV Cache, so it does not cause a speed bottleneck.</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>This article briefly outlines the evolution of multi-head attention, particularly the changes in concept from MHA to MQA, GQA, and finally to MLA, and then elaborates on the details of MLA. In this article, MLA is regarded as a generalization of GQA. It replaces GQA's splitting and replication with projection matrices, and introduces an identity transform to further compress the KV Cache, while adopting a hybrid method to be compatible with RoPE. Overall, MLA is a very practical variant of the attention mechanism.</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadata {.appendix}</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>Original is <span class="co">[</span><span class="ot">缓存与效果的极限拉扯：从MHA、MQA、GQA到MLA</span><span class="co">](https://kexue.fm/archives/10091)</span> posted on the homepage of Jianlin Su (苏剑林).</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>I added some extra explanatory notes here and there.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">Yuxi on the Wired</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Everything <a href="https://en.wikipedia.org/wiki/Public_domainl">PD</a>; <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en/">CC0</a> fallback.</span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

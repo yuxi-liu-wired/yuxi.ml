@@ -1,0 +1,648 @@
+---
+title: "How to do field-theoretic calculations"
+author: "Yuxi Liu"
+date: "2024-04-11"
+date-modified: "2025-02-16"
+categories: [math, physics, scaling]
+format:
+  html:
+    code-fold: true
+    toc: true
+    resources:
+        - "figure/**"
+description: "I teach you how to do probability calculations and gigantic integrals in the 'field-theoretic style', done in exhaustive details. I aim for clarity, pointing out every pitfall that I have fallen into so that you don't have to."
+
+# image: "figure/banner.png"
+status: "draft"
+confidence: "certain"
+importance: 3
+---
+
+{{< include ../../../static/_macros.tex >}}
+
+General references: [@mezardInformationPhysicsComputation2009; @meiSTAT260MeanField2021]
+
+When I was studying machine learning theory, I often encounter problems in high-dimensional probability and statistics, and here and there, I would meet with a confusing statement like "let's do a field-theoretic calculation". Field theory? I don't see any gravitational wave or electromagnetic wave!
+
+It turns out that "field-theoretic calculation" does mean something like a field, but in a highly abstracted form. It is not well-described in the literature, and it took me great effort to understand what is going on. The calculations are long, arduous, and filled with opportunities for mistakes.
+
+Still, if you are going to do machine learning theory (as I am), then learning it is a must. This essay is a practical introduction to field-theoretic calculations through detailed examples, including Sanov's theorem and the analysis of high-dimensional random vectors using overlap matrices. I aim for clarity, pointing out every pitfall that I have fallen into so that you don't have to.
+
+While the essay assumes familiarity with basic probability, calculus, and linear algebra, it aims to provide a self-contained and accessible introduction to the field. Readers are encouraged to actively engage with the examples, referring back to the provided recipe for field-theoretic calculations as needed.
+
+## The recipe of field-theoretic calculations.
+
+Here is the reference. You should not read this directly. Instead, you should go directly to the examples below and refer back to this as you go along.
+
+1. To calculate: a massive integral of the form
+
+$$
+\ub{\int\cdots\int}{$N \to \infty$, with constraint $C$} (\text{something}) d^N x
+$$
+
+2. The constraint $C$ is handled by introducing a Dirac delta factor:
+
+$$
+=_{\ln} \ub{\int\cdots\int}{$N \to \infty$} (\text{something}) \times \delta^{(n)}(C' - C)
+$$
+
+where $n$ is the number of conditions within $C$. For example, if the constraint says $\sum_i x_i^2 = 1$, then $n=1$. If the constraint also says $\sum_{ij} x_ix_j = 0$, then $n=2$, and so on.
+
+3. Express the Dirac delta function as a Fourier transform using $\delta^{(n)}(x) = \frac{1}{(2\pi)^n}\int_{\R^n} e^{-i x \lambda} d\lambda$, then exchange the order of integral.
+4. Put the inner integral into an exponent, and do some rewriting, resulting in something like
+
+$$
+=_{\ln} \ub{\int\cdots\int}{$n$} (\text{something unimportant}) e^{N \ln \int(\cdots)d^N x} d^n\lambda
+$$
+
+Define $S[\lambda] := -\ln \int(\cdots)d^N x$, which is sometimes called the **field free energy**.
+
+1. Argue, at large $N$, the integral is dominated by the point where $\nabla S[\lambda] = 0$. This has many names: method of steepest descent, saddle point method, stationary point method, stationary-phase method, etc.
+2. Write down $\nabla S = 0$, and give it the fancy name of **mean field equation**.
+3. Solve the mean field equation to be some $\lambda^*$.
+4. Declare the result to be 
+
+$$=_{\ln} e^{-N S[\lambda^*]}$$
+
+Here, we use the notation $=_{\ln}$ to mean that they have the same exponential rate. That is, $f(N) =_{\ln} g(N)$ means that
+
+$$
+\lim_{N \to \infty} \frac 1N \ln f = \lim_{N \to \infty}  \frac 1N \ln g
+$$
+
+## Sanov's theorem
+
+### Statement of Sanov's theorem
+
+[Sanov's theorem](https://en.wikipedia.org/wiki/Sanov%27s_theorem) concerns the large deviation principle for IID samples from a multinomial distribution.
+
+To see how Sanov's theorem works, let's consider an example. Say you are working at a dice factory, and your job is to quality-assure dices. An ideal dice should have all $p_i = 1/6$, and your job is to test that a given real dice has $p_i \approx 1/6$. Since you are not able to observe $p$ directly, you can only throw the dice for $N$ rounds, and compute the empirical distribution $\hat p$ from the outcomes $x_1, ..., x_N$.
+
+For example, if you threw it 7 times and you got every number once except $1$ twice, then $\hat p = (2/7, 1/7, ..., 1/7)$.
+
+Because $\hat p$ depends on the throws, it is itself a random variable. Intuitively, we should expect that $\hat p$ converging to $p$ as $N \to \infty$. Sanov's theorem states that it is exponentially unlikely for us to be far from the right answer, with the rate of exponential convergence depending on how far we are mistaken. The further $\hat p$ is from $p$, the faster we can eliminate that possibility.
+
+Let's state this more formally.
+
+Define:
+
+* $p_{1:n}$ is a probability vector.
+* $x_{1:N}$ are IID samples from a multinomial distribution with probability vector $p_{1:n}$.
+* $\hat{p}$ is the empirical distribution derived from these samples.
+* $\Delta_n$ is the probability simplex.
+
+As the number of samples $N$ approaches infinity, the probability of observing a specific empirical distribution $\hat{p}$ within a closed subset $A \subset \Delta_n$ is characterized by the Kullback-Leibler (KL) divergence $D_{KL}(\hat{p} \| p)$ between the empirical distribution $\hat{p}$ and the true distribution $p$.
+
+Formally stated:
+
+::: {#thm-sanov}
+
+# Sanov
+
+$$\lim_{N \to \infty} \frac{1}{N} \ln Pr(\hat{p} \in A) = -\inf_{\hat{p} \in A} D_{KL}(\hat{p} \| p)$$
+
+:::
+
+We can get an intuitive feel for Sanov's theorem by the following video.
+
+Let us fix $n = 3$ and $p = (0.2, 0.3, 0.5)$. We set $n = 3$ because $\Delta_3$ has two dimensions, which allows us to actually plot it.
+
+If we sample for $N$ times from the multinomial distribution defined by $p$, and plot the heatmap of the samples within $\Delta_2$ (shown as a black triangle), we notice that as $N \rightarrow \infty$, the distribution converges to a gaussian around the point $(0.2,0.3,0.5)$, with the contours converging in shape to ellipses, with radii converging as $1 / \sqrt{N}$.
+
+Meanwhile, the separation between the discrete points converge as $1 / N$, and so the discrete multinomial distribution converges to a continuous gaussian distribution.
+
+So, roughly speaking, we have approximately
+
+$$
+Pr(\hat p) \propto e^{- (\hat p - p)^T NV (\hat p - p)}
+$$
+
+for some covariance matrix $V$ that describes the shape of the ellipses.
+
+<video controls width=100%>
+  <source src="figure/Sanov_convergence.webm" type="video/webm" />
+</video>
+
+Now, if we boldly proceed, we would obtain
+
+$$
+\frac 1N \ln Pr(\hat p) \sim -(\hat p - p)^T A (\hat p - p)
+$$
+
+This is not quite right, because for any finite $N$, there are only finitely many possible $\hat p$. So generally $Pr(\hat p) = 0$, and to fix this, instead of writing $Pr(\hat p)$, we should write $Pr(\hat p \in A)$ for some closed subset $A \subset \Delta_n$.
+
+Next, since given any two exponentially decaying functions $f(N) \propto e^{-kN}, g(N) \propto e^{-lN}$, we have $f \gg g$ iff $k < l$, we only need to account for the least unlikely case:
+
+$$
+\lim_N \frac 1N \ln Pr(\hat p \in A) \approx \max_{q\in A} (-(q-p)^T A (q-p)) \approx - \min_{q\in A} D_{KL}(q \| p)
+$$
+
+> Any large deviation is done in the least unlikely of all the unlikely ways!
+>
+> [@denhollanderLargeDeviations2008, page 10]
+
+### Field-theoretic interpretation
+
+We can interpret this problem through the lens of statistical physics. Imagine a system of $N$ identical particles. Each particle has $n$ degrees of freedom. The state of a particle can be one of the unit vectors in $\R^n$. The problem is to find the distribution of the average state of all the particles.
+
+The particles are completely independent of each other -- no interaction whatsoever. This is a "no interaction field". The only thing saving the example from irrelevance is that the particles are still influenced by something -- an externally-imposed potential field, biasing the distribution of each particle's state independently and identically (IID).
+
+As typical in statistical mechanics, we suppose each particle is distributed according to the Boltzmann distribution with temperature $1$. This then tells us that the potential field $V$ satisfies
+
+$$p_i = e^{-V_i}/Z$$
+
+That is, we can write $V_i = -\ln p_i - \ln Z$ where $Z$ is a normalizing constant (**partition function** again).
+
+The average energy per particle (**order parameter**) is then 
+
+$$\bar E \sum_i \bar p_i V_i = -\sum_i \bar p_i \ln p_i - \ln Z$$
+
+The minimum is at $\bar p_i = p_i$, and if you have seen some statistical mechanics before, you would notice a pattern: a fluctuation in the average energy per particle should be proportional to $e^{-N(\bar E  - \bar E_{min})}$. This is not quite right, in the sense that $\bar E - \bar E_{min}$ is not the rate function, but it converges to the rate function in a neighborhood of $p$.
+
+### Field-theoretic calculation
+
+This section is based on [@mezardInformationPhysicsComputation2009, section 4.7].
+
+We use field-theoretic techniques to compute the rate function, treating both the empirical distribution $\hat{p}$ and the true distribution $p$ as fields over a finite set of points:
+
+$$p: \{1, 2, ..., n\} \to \R$$
+
+::: {.callout-note title="formulate a constraint" collapse="true" }
+
+We really want to write $Pr(\hat{p} = q)$, even though as we noted, this does not make sense. To fix this problem, we introduce an infinitesimal fudge factor of $\epsilon$.
+
+That is, we want to know the probability of observing an empirical distribution $\hat{p}$ within an infinitesimal neighborhood of a specific distribution $q$:
+
+$$Pr(\hat{p} =_{\epsilon} q)$$
+
+where $=\epsilon$ means that $\hat{p}_i \in q_i \pm \epsilon$ for each $i = 1, 2, \dots, n$, or more roughly, that they are within an $O(\epsilon)$ distance of each other.
+
+Thus, we can write the desired problem in the form of a constrained integral:
+
+$$
+Pr(\hat p =_\epsilon q) = \int_{\R^N} \rho(x) d^N x \left( 1[\hat p(x) = q]\right)
+$$
+
+:::
+
+::: {.callout-note title="introduce a Dirac delta" collapse="true" }
+
+Next, we need to move the constraint from the integral domain to the integrand, in preparation for exchanging the order of integral. We do this by introducing a Dirac delta factor.
+
+For any fixed tiny, but non-zero, $\epsilon$, we have
+
+$$
+\int_{\R^N} \rho(x) d^N x \left( 1[\hat p(x) = q]\right) =_{\ln} \int_{\R^N} \rho(x) d^N x \left( \frac{1[\hat p(x) = q]}{\mathrm{Vol}(\text{ball with radius } \epsilon)}\right)
+$$
+
+because even though $\frac{1[\hat p(x) = q]}{\mathrm{Vol}(\text{ball with radius } \epsilon)}$ is huge, it is still $O(1)$, and $\lim_{N\to\infty} \frac{(\text{huge but fixed})}{N} = 0$.
+
+$$
+= \int_{\R^N} \rho(x) d^N x \delta^{(n)}(\hat p(x) - q)
+$$
+
+:::
+
+::: {.callout-note title="do a Fourier transform" collapse="true" }
+
+Next, we do the Fourier transform of the Dirac delta factor. This step is mostly mechanical.
+
+$$
+\begin{aligned}
+\delta^{(n)} (\hat p(x) - q) &= \delta^{(n)} (N\hat p(x) - N q) \\
+&= \prod_{k=1}^n \delta \left( \sum_{j=1}^N 1[x_j = k] - Nq_k \right) \\
+&= \prod_{k=1}^n \frac{1}{2\pi} \int d\lambda_k e^{i\lambda_k \left( \sum_{j=1}^N 1[x_j = k] - Nq_k \right)} \\
+&=_{\ln} \int d^n \lambda e^{i \sum_{k=1}^n \lambda_k \left( \sum_{j=1}^N 1[x_j = k] - Nq_k \right)}
+\end{aligned}
+$$
+
+::: 
+
+::: {.callout-note title="exchange the order of integration" collapse="true" }
+
+Now we exchange the order of integration.
+
+$$
+\begin{aligned}
+Pr(\hat p =_\epsilon q) &= {\color{red}\int_{\R^N} \rho(x) d^N x} {\color{red}\int d^n \lambda} e^{i \sum_{k=1}^n \lambda_k \left( \sum_{j=1}^N 1[x_j = k] - Nq_k \right)} \\
+&= \int d^n \lambda \int_{\R^N} \rho(x) d^N xe^{i \sum_{k=1}^n \lambda_k \left( \sum_{j=1}^N 1[x_j = k] - Nq_k \right)} \\
+&= \int d^n \lambda e^{-iN \sum_{k=1}^n \lambda_k q_k}  \int_{\R^N} \rho(x) d^N x e^{i \sum_{j=1}^N \sum_{k=1}^n \lambda_k 1[x_j = k]} \\
+\end{aligned}
+$$
+
+:::
+
+::: {.callout-note title="inner integral" collapse="true" }
+
+The inner integral splits because of the independence of $x_1, ..., x_N$.
+
+$$
+\int_{\R^N} \rho(x) d^N x e^{i \sum_{j=1}^N \sum_{k=1}^n \lambda_k 1[x_j = k]} = \prod_{j=1}^N \langle e^{i \sum_{k=1}^n \lambda_k 1[x_j = k]}\rangle_{x_j}
+$$
+
+where the angled bracket denotes a probability expectation, and the subscript $x_j$ denotes what we are taking the expectation over. Because all $x_j$ have the same distribution, it is equal to
+
+$$
+\langle e^{i \sum_{k=1}^n \lambda_k 1[x_j = k]}\rangle_{x_1}^N = \left(\sum_{k=1}^n p_k e^{i\lambda_k} \right)^N = e^{N \ln \left(\sum_{k=1}^n p_k e^{i\lambda_k} \right)}
+$$
+
+:::
+
+::: {.callout-note title="outer integral" collapse="true" }
+
+$$
+\begin{aligned}
+Pr(\hat p =_\epsilon q) &= \int d^n \lambda e^{-iN \sum_{k=1}^n \lambda_k q_k + N \ln \left(\sum_{k=1}^n p_k e^{i\lambda_k} \right)} \\
+&= \int d^n \lambda e^{NS[\lambda]}
+\end{aligned}
+$$
+
+where the field free energy is
+
+$$S[\lambda] = \ln \left( \sum_{k\in 1:n}p_k e^{i \lambda_k}\right)-i\sum_{k\in 1:n} \lambda_k q_k$$
+
+:::
+
+::: {.callout-note title="the mean field equation" collapse="true" }
+
+The dominant contribution to the integral arises from the saddle point of the action, which corresponds to the solution of the mean field equation
+
+$$\nabla_{\lambda} S = 0$$
+
+The mean field equation is solved by some $\lambda^*$ satisfying:
+
+$$\begin{cases}
+i\lambda_k^* = \ln(C q_k/p_k) \\
+C = \sum_k p_k e^{i\lambda_k^*}
+\end{cases}
+$$
+
+Unfortunately, it is difficult to solve this in closed form, but we are on a lucky break: plugging them back to $S[\lambda^*]$ gives us a clean solution:
+
+Plugging those back to $S$, we find that 
+$$S[\lambda^*] = -\sum_{k=1}^n q_k \ln(q_k/p_k) = -D_{KL}(q\| p)$$
+
+:::
+
+Conclusion
+
+$$Pr(\hat p =_{\epsilon} q) =_{\ln} e^{NS[\lambda^*]} = e^{-ND_{KL}(q \| p)}$$ 
+
+> The reader who has never encountered this type of reasoning before may wonder why use such an indirect approach. It turns out that it is a very common formalism in statistical physics, where similar methods are also applied, under the name 'field theory', to continuous spaces $\mathcal X$ (some implicit discretization is then usually assumed at intermediate steps, and the correct definition of a continuum limit is often not obvious). In particular, the reader interested in the statistical-physics approach to optimization problems or information theory will often find this type of calculation in research papers. One of the advantages of this approach is that it provides a formal solution to a large variety of problems. The quantity to be computed is expressed in an integral form. In problems that have a ‘mean-field’ structure, the dimension of the space over which the integration is performed does not depend upon N. Therefore its leading exponential behaviour at large N can be obtained by saddle point methods. The reader who wants to get some practice with this approach is invited to ‘derive’ the various theorems and corollaries of this chapter in this way.
+>
+> [@mezardInformationPhysicsComputation2009, section 4.7]
+
+## Overlap matrix
+
+### Setup
+
+We investigate the properties of a set of $k$ random vectors sampled uniformly from a high-dimensional sphere as the dimension $N$ approaches infinity. Let $\sigma_1, ..., \sigma_k$ be these vectors, each belonging to $\mathbb{R}^N$ with a norm of $\sqrt{N}$, and let $\sigma$ be the matrix formed by concatenating these vectors: $\sigma = [\sigma_1, ..., \sigma_k]$.
+
+Since $E[\sigma] = 0$, we focus on analyzing the variance of $\sigma$, divided by $N$. Define the matrix $\bar{Q}$ as the normalized outer product of $\sigma$:
+
+$$\bar Q := \sigma^T \sigma/N = \frac 1N
+\begin{bmatrix}
+\sigma_1^T\sigma_1 & \sigma_1^T\sigma_2 & \cdots &\sigma_1^T\sigma_k\\
+\sigma_2^T\sigma_1 & \sigma_2^T\sigma_2 & \cdots &\sigma_2^T\sigma_k \\
+\vdots & \vdots & \ddots & \vdots \\
+\sigma_k^T\sigma_1 & \sigma_k^T\sigma_2 & \cdots & \sigma_k^T\sigma_k
+\end{bmatrix}$$
+
+We know that $\bar{Q}$ is symmetric, has all entries within the range $[-1, +1]$, and has diagonal entries equal to $+1$. Our goal is to uncover further properties of this matrix as $N$ becomes very large.
+
+Let $Q$ be an arbitrary symmetric matrix with entries in the range $[-1, +1]$ and with diagonal entries equal to $+1$. We aim to calculate the rate function $S$ that quantifies the probability of observing an empirical distribution $\bar{Q}$ that is close to $Q$ as $N\to\infty$:
+
+$$Pr(\bar Q =_\epsilon Q) =_{\ln} e^{-NS[Q]}$$
+
+More rigorously, we seek to determine:
+
+$$\lim _{\epsilon \rightarrow 0} \lim _{N \rightarrow \infty} \frac{1}{N} \log Pr \left(\bar{Q}(\sigma)_{i j} \in\left[Q_{i j}-\epsilon, Q_{i j}+\epsilon\right], \forall i, j\right)$$
+
+### Field-theoretic interpretation
+
+We can interpret this problem through the lens of statistical physics. Imagine a system of $N$ identical particles, each possessing $k$ degrees of freedom. For instance, the $i$-th particle has degrees of freedom represented by $(\sigma_{1, i}, \dots, \sigma_{k, i})$.
+
+These particles interact with each other equally, regardless of their spatial separation. This "infinite-range interaction" imposes a global constraint on the system, ensuring a form of "average kinetic energy conservation". We express this constraint as:
+
+$$\forall j\in 1:k, \quad \sum_{i \in 1:N}\sigma_{j, i}^2 = N$$
+
+To illustrate, if we consider $\sigma_{j, i}$ as the type-$j$ velocity of the $i$-th particle, then the constraint implies that the average type-$j$ kinetic energy per particle remains constant at $1/2$, even as the number of particles increases.
+
+Since $\bar{Q}_{j, j'} = \frac{1}{N} \sum_{i\in 1:N}\sigma_{j, i} \sigma_{j', i}$, the matrix $\bar{Q}$ represents the average covariance between different types of velocities in this system.
+
+### Field-theoretic calculation
+
+This section is based on [@meiSTAT260MeanField2021, lecture 8].
+
+::: {.callout-note title="formulate a constraint" collapse="true" }
+
+To prepare for the introduction of the Dirac delta factor, we need to move the constraint from the integral domain to the integrand.
+
+$$
+\begin{aligned}
+Pr(\bar Q =_\epsilon Q) &= \E_\sigma [1[\bar Q(\sigma) - Q =_\epsilon 0]]\\
+&= \E_\sigma \left[\prod_{1 \leq i < j \leq k} 1[\bar Q_{i, j}(\sigma) - Q_{i, j} =_\epsilon 0]\right]\\
+\end{aligned}
+$$
+
+Notice well the interplay of two dimensions: The integral $\E_\sigma$ is over a very large space, over *all* particles' states, of dimension, so it has dimension $\sim k^2 N$. The constraint $1[\bar Q(\sigma) - Q =_\epsilon 0]$ is on the *average* states of all particles, so it is over a small space of fixed dimensions $\sim k^2$.
+
+Again, we do that $1[x=_\epsilon 0] \approx \delta(x)/\epsilon$ trick again, and we get
+
+$$
+Pr(\bar Q =_\epsilon Q) =_{\ln} \E_\sigma \left[\prod_{1 \leq i < j \leq k} \delta(\bar Q_{i, j}(\sigma) - Q_{i, j} =_\epsilon 0)\right]
+$$
+
+Notice how we have the product $\prod$ over $1 \leq i < j \leq k$, because $\bar Q, Q$ are both symmetric, with diagonal entries equal to $+1$. If we were to write something like $\prod_{1 \leq i \red{\leq} j \leq k}$, we would cause $\delta(\bar Q_{i, i}(\sigma) - Q_{i, i} =_\epsilon 0)$ to always be infinite, which does not work.
+
+:::
+
+::: {.callout-note title="formulate a constraint, take 2" collapse="true" }
+
+It turns out we have not finished with the constraint yet. Back when we did Sanov's theorem, because the particles are not interacting, we had to only formulate one constraint, a global one where $\hat p =_\epsilon q$. In this case, the particles *are* interacting by the conservation of kinetic energy:
+
+$$\forall j\in 1:k, \quad \frac 1N \sum_{i \in 1:N}\|\sigma_{j}\|_2^2 = 1$$
+
+Let us go back to the start again:
+
+$$
+\begin{aligned}
+Pr(\bar Q =_\epsilon Q) &= \E_\sigma [1[\bar Q(\sigma) - Q =_\epsilon 0]] \\
+&= \int_{(\sqrt N S^N)^k}\frac{d\sigma}{\mathrm{Vol}(\sqrt N S^N)^k} \; 1[\bar Q(\sigma) - Q =_\epsilon 0]
+\end{aligned}
+$$
+
+The integral over $(\sqrt N S^N)^k$ is uncomfortable. What to do? ... That's right, when the domain of integral is uncomfortable, we use a Dirac delta factor to move it into the integrand:
+
+$$
+= \frac{\int_{\R^{N \times k}} \delta(\cdots) d\sigma \; 1[\bar Q(\sigma) - Q =_\epsilon 0]}{\int_{\R^{N \times k}} \delta(\cdots) d\sigma}
+$$
+
+where we must fill in the constraint of $\sigma \in (\sqrt N S^N)^k$ into the $\delta(\cdots)$. Now, $\sigma \in (\sqrt N S^N)^k$ is equivalent to $\frac 1N \|\sigma_{j}\|^2 - 1 = 0$ for all $j\in 1:k$, so naturally, we should try $\prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right)$, giving us
+
+$$
+= \frac{\int_{\R^{N \times k}} {\color{red} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right)} d\sigma \; 1[\bar Q(\sigma) - Q =_\epsilon 0]}{\int_{\R^{N \times k}} {\color{red} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right)} d\sigma}
+$$
+
+:::
+
+::: {.callout-tip title="the off-shell trick" collapse="true" }
+
+Let's take a moment to see what the trick is. The trick is this: We need to integrate something over the uniform distribution on $(\sqrt N S^N)^k$, but integrating over it is difficult, because we don't have a convenient coordinate system over the sphere $\sqrt N S^N$. So instead, we slightly thicken each sphere,[^qft-off-shell] and suddenly we can integrate over the real space $\R^{N \times k}$, for which we *do* have a good coordinate system:
+
+[^qft-off-shell]: If we return to our field-theoretic interpretation, then allowing $\sigma_j$ to have norm $\sqrt N \pm \sqrt N \epsilon$ means that we are allowing the average type-$j$ kinetic energy to fluctuate a bit, even though it is exactly $1$. Quantum field theorists call this **off the (kinetic) energy shell**, and if you ask, they might wave mysteriously in the air and speak of "virtual particles" and "Faddeev-Popov ghosts".
+
+$$
+\E_{\sigma \sim \mathrm{Uniform}((\sqrt N S^N)^k)} [\text{something}] = \lim_{\epsilon \downarrow 0} \E_{\sigma \sim \mathrm{Uniform}((\sqrt N S^N \text{thickened by }\sqrt N \epsilon )^k)} [\text{something}]
+$$
+
+Now, since
+
+$$
+\sigma_j \in \sqrt N S^N \text{thickened by }\sqrt N \epsilon \iff \|\sigma_j\|^2 - N \in \pm N\epsilon \iff \frac 1N \|\sigma_j\|^2 - 1 =_\epsilon 0
+$$
+
+we can write the constraint as $1 \left( \frac 1N \|\sigma_j\|^2 - 1 =_\epsilon 0 \right) = \delta \left( \frac 1N \|\sigma_j\|^2 - 1 \right)/\epsilon$.
+
+:::
+
+::: {.callout-note title="formulate a constraint, take 3" collapse="true" }
+
+Again we must handle the constraint of $1[\bar Q(\sigma) - Q =_\epsilon 0]$, but this time it's different. Whereas before, we had to use $\left[\prod_{1 \leq i \red{<} j \leq k} 1[\bar Q_{i, j}(\sigma) - Q_{i, j} =_\epsilon 0]\right]$, this time we have to use $\prod_{1 \leq i \red{\leq} j \leq k}$. Why? Because this time, we have set $\sigma$ free from the cage of $(\sqrt N S^N)^k$, so the diagonal entries of $\bar Q(\sigma)$ are no longer forced to stay exactly $+1$. Thus, we have to do this instead:
+
+$$
+\begin{aligned}
+&= \frac{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right) d\sigma \; 1[\bar Q(\sigma) - Q =_\epsilon 0]}{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right) d\sigma} \\
+&=_{\ln} \frac{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right) d\sigma \; \prod_{1 \leq s \red{\leq} t \leq k} \delta(\bar Q_{s, t}(\sigma) - Q_{s, t})}{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right) d\sigma} \\
+\end{aligned}
+$$
+
+:::
+
+::: {.callout-note title="introduce a Dirac delta" collapse="true" }
+
+We have already done the Dirac deltas. To remind you,
+
+$$
+Pr(\bar Q =_\epsilon Q) =_{\ln}\frac{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right) d\sigma \; \prod_{1 \leq s \leq t \leq k} \delta(\bar Q_{s, t}(\sigma) - Q_{s, t})}{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right) d\sigma}
+$$
+
+Actually, it is more convenient to scale the $\delta\left( \frac 1N \|\sigma_{j}\|^2 - 1 \right)$ both above and below the fraction to $\delta\left( \|\sigma_{j}\|^2 - N \right)$, and similarly scale the $\delta(\bar Q_{s, t}(\sigma) - Q_{s, t})$ to $\delta(N\bar Q_{s, t} - NQ_{s, t}) N$, giving us
+
+$$
+Pr(\bar Q =_\epsilon Q) =_{\ln}\frac{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \|\sigma_{j}\|^2 - N \right) d\sigma \; \prod_{1 \leq s \leq t \leq k} \delta(\bar Q_{s, t}(\sigma) - Q_{s, t})}{\int_{\R^{N \times k}} \prod_{j\in 1:k} \delta\left( \|\sigma_{j}\|^2 - N \right) d\sigma}
+$$
+
+where we have discarded the factor of $N^{\frac 12 k(k+1)}$, because it does not matter after taking $\frac 1N \ln(\cdots)$.
+
+:::
+
+::: {.callout-note title="evaluate the numerator by field equation" collapse="true" }
+
+Since this time we can't do the inner integral easily, we will rush directly to the field equation. Don't worry, as it will all come out correct in the end.
+
+Do the Fourier transform of the Dirac delta factor, and exchange the order of integration. We first do the numerator.
+
+$$
+\begin{aligned}
+&= \int_{\R^{N \times k}} d\sigma \int_{1 \leq l \leq k, \; 1 \leq i \leq j \leq k} d\lambda_l dq_{ij} e^{i \left(
+\sum_{1 \leq l \leq k} \lambda_l (\sigma_l^T \sigma_l - N) + \sum_{1 \leq i \leq j \leq k} q_{ij} (\sigma_i^T \sigma_j - NQ_{ij})
+\right)} \\
+&= \int_{1 \leq l \leq k, \; 1 \leq i \leq j \leq k} d\lambda_l dq_{ij} \int_{\R^{N \times k}} d\sigma e^{i \left(
+\sum_{1 \leq l \leq k} \lambda_l (\sigma_l^T \sigma_l - N) + \sum_{1 \leq i \leq j \leq k} q_{ij} (\sigma_i^T \sigma_j - NQ_{ij})
+\right)} \\
+\end{aligned}
+$$
+
+As before, we only need to find the "least unlikely of all unlikely ways". That is, we only need to pick the least tiny of all tiny inner integrals. In other words, we need to find a stationary point where it has finally ceased being so tiny:
+
+$$0 = \nabla_{q, \lambda}\int_{\R^{N \times k}} d\sigma e^{i \left(
+\sum_{1 \leq l \leq k} \lambda_l (\sigma_l^T \sigma_l - N) + \sum_{1 \leq i \leq j \leq k} q_{ij} (\sigma_i^T \sigma_j - NQ_{ij})
+\right)}$$
+
+Because we are seeking a stationary point, and we are already doing it physicists, it is no big problem if we seek stationary points over all of the complex plane. That is, we allow $q, \lambda$ to take not just real, but also complex values.[^steepest-descent]
+
+[^steepest-descent]: If you want justification, look up "the method of steepest descent" [@erdelyiAsymptoticExpansions1956, section 2.5]. Intuitively speaking, it is because when we are doing an integral like $\int_\R dq (\cdots)$, we are doing a path integral in the complex plane, and so we can deform the path integral in the complex plane and still get the same result. Thus, we can deform it so hard that it walks across a "mountain pass" in the complex plane, where the saddle-point of the mountain pass is where $\nabla_q (\cdots) = 0$ -- i.e., a stationary point.
+
+Then we can scale both by $-i$ and get
+
+$$
+\nabla_{q, \lambda}\int_{\R^{N \times k}} d\sigma e^{- \left(
+\sum_{1 \leq l \leq k} \lambda_l (\sigma_l^T \sigma_l - N) + \sum_{1 \leq i \leq j \leq k} q_{ij} (\sigma_i^T \sigma_j - NQ_{ij})
+\right)}
+$$
+
+For cleaner notation, we define $q_{ji} = q_{ij}$, and $\Lambda = \mathrm{diag}(\lambda_1, \dots, \lambda_k)$. Noting that $Q_{ii} = 1$ for all $i$, we get
+
+$$
+\nabla_{q, \lambda}\int_{\R^{N \times k}} d\sigma e^{- \left(\sum_{ij} (\Lambda_{ij} + \frac 12 q_{ij}) (\sigma_i^T \sigma_j - NQ_{ij})
+\right)}
+$$
+
+Since the stationary point of this with respect to $q, \lambda$ is the same as the stationary point of this with respect to $\Lambda + \frac 12 q$, we need only
+
+$$
+\nabla_{q}\int_{\R^{N \times k}} d\sigma e^{- \left(\sum_{ij} \frac 12 q_{ij} (\sigma_i^T \sigma_j - NQ_{ij})
+\right)}
+$$
+
+:::
+
+::: {.callout-note title="evaluate the denominator by field equation" collapse="true" }
+
+At this point, it's easier to evaluate the denominator first.
+
+The same argument given above applies to the denominator. If you are pressed for time, you can just take the previous derivation for the saddle point equation, and set $q = 0, Q = 0$. This gives the field equation
+
+$$
+0 = \nabla_{\lambda}\int_{\R^{N \times k}} d\sigma e^{-\sum_{1 \leq l \leq k} \lambda_l (\sigma_l^T \sigma_l - N)}
+$$
+
+Now, the integral is just a gaussian integral, and it factors, too!
+
+$$
+\int_{\R^{N \times k}} d\sigma e^{-\sum_{1 \leq l \leq k} \lambda_l (\sigma_l^T \sigma_l - N)} = \prod_l e^{N \lambda_l} \left(\int_\R d\sigma e^{-\lambda_l \sigma^2} \right)^N = e^{N\sum_l (\lambda_l - \frac 12 \ln\lambda_l + \frac 12 \ln \pi)}
+$$
+
+Its stationary point is $e^{N \frac k2 ( 1 + \ln 2\pi)}$.
+
+:::
+
+::: {.callout-note title="evaluate the numerator, continued" collapse="true" }
+
+Where we left off, we had to solve the field equation
+
+$$
+0 = \nabla_{q}e^{\frac 12 N \sum_{ij}q_{ij}Q_{ij}} \int_{\R^{N \times k}} d\sigma e^{-\sum_{ij} \frac 12 q_{ij} \sigma_i^T \sigma_j}
+$$
+
+The integral is just a gaussian integral, and it factors, too:
+
+$$
+\begin{aligned}
+&= \int_{\R^{N \times k}} d\sigma e^{-\frac 12 \sum_{ij}q_{ij}\sigma_i^T \sigma_j} \\
+&= \left(\int_{\R^{ k}} d\sigma e^{-\frac 12 \sum_{ij}q_{ij}\sigma_i \sigma_j}\right)^N \\
+&= (2\pi)^{Nk/2}\det(q)^{-N/2}
+\end{aligned}
+$$
+
+Taking the derivative, we observe that $\nabla_q \ln \det q = (q^{-1})^T$ for an arbitrary matrix $q$. However, as $q$ is constrained to be a symmetric matrix, we obtain
+
+$$\partial_{q_{ij}}(\braket{Q,q} - \ln\det (q)) = \begin{cases}
+Q_{ij}+ Q_{ji} - (q^{-1})_{ij} - (q^{-1})_{ji} & i\neq j \\
+Q_{ii}- (q^{-1})_{ii} & i=j
+\end{cases}$$
+
+Setting all derivatives to zero yields the solution $q = (Q^{-1})^T = Q^{-1}$. Notably, there exists only one stationary point within the entire multidimensional complex space.
+
+We proceed to compute the numerator, resulting in
+
+$$
+=\exp\left(\frac N2(\braket{Q^{-1}, Q} + k \ln(2\pi) - \ln \det Q^{-1})\right) = \exp\left(\frac N2(k+ k \ln(2\pi) + \ln \det Q)\right)
+$$
+
+:::
+
+In summary, we have
+
+$$
+Pr(\bar Q =_\epsilon Q) =_{\ln} \frac{\exp\left(\frac N2(k+ k \ln(2\pi) + \ln \det Q)\right)}{\exp\left({N \frac k2 ( 1 + \ln 2\pi)}\right)} = e^{N S[Q]}
+$$
+
+where the rate function is
+
+$$S[Q] = \frac 12 \ln \det Q$$
+
+## Easy results
+
+Now that you have gone through that effort learning field-theoretic calculations, enjoy some quick and simple results.
+
+### Asymptotics of spherical volumes
+
+Let $S^{N-1}(r)$ be the sphere of radius $r$ in $\R^N$, then 
+
+$$|S^{N-1}(\sqrt N)| \sim (2\pi e)^{N/2}$$
+
+::: {.callout-note title="Proof" collapse="true"}
+
+$$\begin{aligned}
+	  |S^{N-1}(\sqrt N)| &= \int_{\R^N} \delta(x^T x- N )dx \\
+	  &=_{\ln} \int_{\R^N} \int_\R e^{iq(x^T x- N )} dqdx \\
+	  &= \int_{\R} dq \; e^{-iqN} \left[\int_{\R^N} e^{iqx^T x} dx\right] \\
+	  &= \int_{\R} dq \; e^{-iqN} \left[\int_{\R} e^{iqx^2} dx\right]^N \\
+	  &= \int_{\R} dq \; e^{-iqN} (e^{i\pi/4}\sqrt{\pi/q})^N \\
+	  \end{aligned}$$	- Thus, $\frac 1N \ln |S^{N-1}(\sqrt N)|$ converges to the stationary point of
+$$-iq + \frac{i\pi}{4} + \frac 12 \ln \pi - \frac 12 \ln q$$
+
+which occurs at $q^* = i/2$. Plugging it in, we obtain  
+
+$$\frac 1N \ln |S^{N-1}(\sqrt N)| \to \ln\sqrt{2\pi e}$$ 
+
+:::
+
+::: {.callout-note title="Probabilistic interpretation" collapse="true"}
+
+As is well-known, in high-dimensions, everything looks like a gaussian. Specifically, the standard gaussian distribution $\mathcal N(0, I_N)$ in $\R^N$ space is strongly concentrated around the spherical shell of radius $\sqrt N$, by the law of large numbers. Therefore, the log-surface area of $S^{N-1}(\sqrt N)$ converges to the entropy of the $\mathcal N(0, I_N)$, which is just $N$ times the entropy of $\mathcal N(0, 1)$.
+
+In more detail, we can sample from $\mathcal N(0, I_N)$ in two ways: Either directly sample $N$ standard normal variables independently, or sample a point on $S^{N-1}(\sqrt N)$, before shifting it along the radius by an independently sampled displacement. Both ways give us exactly the same entropy. Now, because the radius of $x \sim \mathcal N(0, I_N)$ is distributed as the square-root of the [chi-squared distribution](https://en.wikipedia.org/wiki/Chi-squared_distribution) $\chi^2_N$, we have 
+
+$$r^2 = \|x\|^2 \sim \chi^2_N \approx \mathcal N(N, 2N)$$
+
+When $N$ is large, we can write $r^2 \approx N + \sqrt{2N} z$ where $z \sim \mathcal(0, 1)$, so $r \approx \sqrt N + 2^{-1/2}z$. Therefore, the amount of radial displacement is roughly constant, and we have
+
+$$
+\mathrm{Ent}[\mathcal N(0, I_N)] \approx \ln |S^{N-1}(\sqrt N)| + \mathrm{Ent}[\mathcal N(0, 1/2)]
+$$
+
+giving us the second term in the Stirling approximation:
+
+$$
+\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} + \frac{\ln\sqrt{\pi e}}{N} + O(N^{-2})
+$$
+
+:::
+
+### Cramér's theorem
+
+The most commonly used result from large deviation theory is Cramér's theorem [@demboLargeDeviationsTechniques2009, theorem 2.2.30].
+
+::: {#thm-cramer}
+
+# Cramér
+
+Given a vector function $M: X \to \R^m$ and a distribution on $X$, its rate function is the convex transform of its cumulant generating function:
+
+$$I_X(x) := \sup_{k \in \R^m}(\braket{k,x} - \ln \E_x[e^{\braket{k, M(x)}}])$$
+
+That is, for any compact subset $A \subset \R^m$, the rate function over the whole subset is just the highest possible rate:
+
+$$\lim_N\frac 1N \ln Pr\left(\frac 1N \sum_{i=1}^N M(x_i) \in A\right) = \sup_{x\in A} -I_X(x)$$
+
+where $x_1, ..., x_N$ are IID samples from the same distribution.
+
+:::
+
+::: {.callout-note title="Proof" collapse="true"}
+
+It suffices to prove it for $A$ being really small, essentially just a single point, because we can then cut up the whole of $A$ into many pieces like that, and then run the result on each piece. The rate difference is such that only the highest rate can survive, as it races pass every other piece exponentially fast: $N^{-1} \ln (e^{-Na} + e^{-Nb}) \to \max(-a, -b)$, and even if two pieces have the exact same rate, then their combined rate gains a negligible factor of $N^{-1}\ln 2 \to 0$.
+
+So, we once again repeat the same calculation:
+
+$$
+\begin{aligned}
+Pr\left(\frac 1N \sum_{i=1}^N M(x_i) =_\epsilon m\right) &=_{\ln}  \E_x \left[\delta^{(m)}\left(\sum_i M(x_i) - Nm\right)\right] & \text{ only $m$ terms in the Dirac delta}\\
+&=   \E_x \left[\int_{\R^m} dq e^{i\braket{iq, \sum_i M(x_i) - Nm}}\right]  & \text{Dirac delta Fourier transform} \\
+&= \int_{\R^m} dq e^{-N \braket{iq, m}}\E_x[e^{\braket{iq, M}}]^N& \text{IID assumption} \\
+&= \int_{\R^m}dq e^{N(-\braket{iq, m} + \ln \E_x[e^{\braket{iq, M}}])}
+\end{aligned}
+$$
+
+The last equation is again dominated by the stationary point. This would give us
+
+$$=_{\ln}\mathrm{stat}_{q\in \mathbb C^m} e^{N(-\braket{q, m} + \ln \E_x[e^{\braket{q, M}}])}$$
+
+We still don't know *which* stationary point we should pick. However, in large deviation theory, we usually pick the global minimum, and most often, the global minimum is the unique stationary point in the real space. Assuming that, we have
+
+$$\frac 1N \ln Pr\left(\frac 1N \sum_{i=1}^N M(x_i)\right) \to -\sup_{q\in \mathbb R^m} (\braket{q, m} - \ln \E_x[e^{\braket{q, M}}])$$ 
+
+:::

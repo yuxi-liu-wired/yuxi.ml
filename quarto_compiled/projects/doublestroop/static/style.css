@@ -1,0 +1,40 @@
+#left-column,
+#right-column {
+float: left;
+    width: 50%;
+}
+
+.sortable {
+list-style-type: none;
+    margin: 0;
+    padding: 0;
+background-color: transparent;
+}
+
+.ui-state-default {
+    border: 1px solid #d3d3d3;
+    background: transparent;
+}
+
+.sortable p {
+    cursor: move;
+}
+#title {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#instruction {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+#restart {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+#message-container {
+    height: 50px;
+    line-height: 50px;
+}
