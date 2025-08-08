@@ -48,6 +48,8 @@ else
   git -C "$CHECKOUT_DIR" reset --hard origin/"$BRANCH"
 fi
 
+chmod +x "$CHECKOUT_DIR/server_infra/remote_deploy.sh"
+
 if (( INIT )); then
   log "Initialization: creating symlinks"
   ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"

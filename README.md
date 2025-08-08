@@ -14,7 +14,7 @@ docker run -d --name ubuntu-web -p 8082:80 ubuntu:24.04 sleep infinity
 docker exec -it --user root ubuntu-web bash
 apt-get update
 apt-get upgrade -y
-apt-get install -y unattended-upgrades apt-listchanges nginx bash curl git
+apt-get install -y unattended-upgrades apt-listchanges nginx curl git
 yes | dpkg-reconfigure -plow unattended-upgrades
 service nginx start
 exit
@@ -30,7 +30,7 @@ To deploy the website:
 
 ```bash
 ssh 
-~/remote_deploy.sh
+chmod +x ~/remote_deploy.sh && ~/remote_deploy.sh
 exit
 ```
 
