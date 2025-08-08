@@ -5,7 +5,6 @@ REPO_URL="https://github.com/yuxi-liu-wired/yuxi.ml.git"
 BRANCH="main"
 CHECKOUT_DIR="/opt/yuxi.ml"
 STATIC_LINK="/var/www/yuxi.ml"
-NGINX_CONF_DIR="/etc/nginx/conf.d"
 INIT=0
 RELOAD=1
 
@@ -51,21 +50,19 @@ fi
 chmod +x "$CHECKOUT_DIR/server_infra/remote_deploy.sh"
 
 if (( INIT )); then
+  log "Cleansing evil sites-enabled and sites-available" # https://stackoverflow.com/a/45789055/17959494
+  $SUDO rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
+  $SUDO rm -f /etc/nginx/nginx.conf
+  
   log "Initialization: creating symlinks"
   ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"
   $SUDO mkdir -p "$(dirname "$STATIC_LINK")"
   $SUDO ln -sfn "$CHECKOUT_DIR/quarto_compiled" "$STATIC_LINK"
 
   if [[ -d "$CHECKOUT_DIR/server_infra/nginx" ]]; then
-    $SUDO mkdir -p "$NGINX_CONF_DIR"
-    for conf in "$CHECKOUT_DIR"/server_infra/nginx/*.conf; do
-      [[ -e "$conf" ]] || continue
-      $SUDO ln -sfn "$conf" "$NGINX_CONF_DIR/$(basename "$conf")"
-    done
+    $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/nginx.conf" /etc/nginx/nginx.conf
   fi
 
-  log "Cleansing evil sites-enabled and sites-available" # https://stackoverflow.com/a/45789055/17959494
-  $SUDO rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
 fi
 
 if (( RELOAD )); then
