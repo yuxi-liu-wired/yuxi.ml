@@ -9,6 +9,16 @@ NGINX_CONF_DIR="/etc/nginx/conf.d"
 INIT=0
 RELOAD=1
 
+# Pick sudo only if needed and available
+if [[ $EUID -eq 0 ]]; then
+  SUDO=""
+elif command -v sudo >/dev/null 2>&1; then
+  SUDO="sudo"
+else
+  echo "[deploy] ERROR: Need root privileges but sudo not found." >&2
+  exit 1
+fi
+
 usage() {
   echo "Usage: $0 [-i] [-n]"
   echo "  -i   initialization (create symlinks, destroy evil)"
@@ -41,24 +51,24 @@ fi
 if (( INIT )); then
   log "Initialization: creating symlinks"
   ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"
-  sudo mkdir -p "$(dirname "$STATIC_LINK")"
-  sudo ln -sfn "$CHECKOUT_DIR/quarto_compiled" "$STATIC_LINK"
+  $SUDO mkdir -p "$(dirname "$STATIC_LINK")"
+  $SUDO ln -sfn "$CHECKOUT_DIR/quarto_compiled" "$STATIC_LINK"
 
   if [[ -d "$CHECKOUT_DIR/server_infra/nginx" ]]; then
-    sudo mkdir -p "$NGINX_CONF_DIR"
+    $SUDO mkdir -p "$NGINX_CONF_DIR"
     for conf in "$CHECKOUT_DIR"/server_infra/nginx/*.conf; do
       [[ -e "$conf" ]] || continue
-      sudo ln -sfn "$conf" "$NGINX_CONF_DIR/$(basename "$conf")"
+      $SUDO ln -sfn "$conf" "$NGINX_CONF_DIR/$(basename "$conf")"
     done
   fi
 
   log "Cleansing evil sites-enabled and sites-available" # https://stackoverflow.com/a/45789055/17959494
-  sudo rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
+  $SUDO rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
 fi
 
 if (( RELOAD )); then
   log "Reloading nginx"
-  sudo nginx -t && sudo systemctl reload nginx
+  $SUDO nginx -t && $SUDO systemctl reload nginx
 fi
 
 log "Done."
