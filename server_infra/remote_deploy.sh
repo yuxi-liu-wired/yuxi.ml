@@ -1,2 +1,64 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
+REPO_URL="https://github.com/yuxi-liu-wired/yuxi.ml.git"
+BRANCH="main"
+CHECKOUT_DIR="/opt/yuxi.ml"
+STATIC_LINK="/var/www/yuxi.ml"
+NGINX_CONF_DIR="/etc/nginx/conf.d"
+INIT=0
+RELOAD=1
+
+usage() {
+  echo "Usage: $0 [-i] [-n]"
+  echo "  -i   initialization (create symlinks, destroy evil)"
+  echo "  -n   skip nginx reload"
+  exit 1
+}
+
+while getopts ":in" opt; do
+  case "$opt" in
+    i) INIT=1 ;;
+    n) RELOAD=0 ;;
+    *) usage ;;
+  esac
+done
+
+log() { echo "[deploy] $*"; }
+
+# Clone or update minimal repo
+if [[ ! -d "$CHECKOUT_DIR/.git" ]]; then
+  log "Cloning repo (minimal)"
+  git clone --depth=1 --filter=blob:none --sparse -b "$BRANCH" "$REPO_URL" "$CHECKOUT_DIR"
+  git -C "$CHECKOUT_DIR" sparse-checkout set quarto_compiled server_infra
+else
+  log "Updating repo"
+  git -C "$CHECKOUT_DIR" sparse-checkout set quarto_compiled server_infra
+  git -C "$CHECKOUT_DIR" fetch --depth=1 origin "$BRANCH"
+  git -C "$CHECKOUT_DIR" reset --hard origin/"$BRANCH"
+fi
+
+if (( INIT )); then
+  log "Initialization: creating symlinks"
+  ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"
+  sudo mkdir -p "$(dirname "$STATIC_LINK")"
+  sudo ln -sfn "$CHECKOUT_DIR/quarto_compiled" "$STATIC_LINK"
+
+  if [[ -d "$CHECKOUT_DIR/server_infra/nginx" ]]; then
+    sudo mkdir -p "$NGINX_CONF_DIR"
+    for conf in "$CHECKOUT_DIR"/server_infra/nginx/*.conf; do
+      [[ -e "$conf" ]] || continue
+      sudo ln -sfn "$conf" "$NGINX_CONF_DIR/$(basename "$conf")"
+    done
+  fi
+
+  log "Cleansing evil sites-enabled and sites-available" # https://stackoverflow.com/a/45789055/17959494
+  sudo rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
+fi
+
+if (( RELOAD )); then
+  log "Reloading nginx"
+  sudo nginx -t && sudo systemctl reload nginx
+fi
+
+log "Done."
