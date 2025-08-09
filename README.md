@@ -52,7 +52,7 @@ Theoretically the Ubuntu is complete overkill. It would work just fine on a mini
 The website uses SSL to secure the connection. The SSL certificate is generated using Let's Encrypt. The first certificate was generated using the DNS-01 challenge to avoid breaking production while testing the deployment script. The certificate is renewed automatically every 90 days using the `certbot` package.
 
 ```bash
-sudo certbot certonly --manual --preferred-challenges dns   -d *.yuxi.ml --agree-tos -m yuxi@yuxi.ml --no-eff-email
+sudo certbot certonly --manual --preferred-challenges dns -d yuxi.ml  -d *.yuxi.ml --agree-tos -m yuxi@yuxi.ml --no-eff-email
 
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Requesting a certificate for *.yuxi.ml
