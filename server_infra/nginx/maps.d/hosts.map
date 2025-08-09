@@ -1,6 +1,1 @@
 # /etc/nginx/maps.d/hosts.map
-# Normalizes www. to apex
-map $host $canonical_host {
-  default $host;
-  ~^www\.(?<bare>.+)$ $bare;
-}
