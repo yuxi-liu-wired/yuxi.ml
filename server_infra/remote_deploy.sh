@@ -52,8 +52,9 @@ chmod +x "$CHECKOUT_DIR/server_infra/remote_deploy.sh"
 if (( INIT )); then
   log "Cleansing evil sites-enabled and sites-available" # https://stackoverflow.com/a/45789055/17959494
   $SUDO rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
+  $SUDO rm -rf /etc/nginx/conf.d /etc/nginx/maps.d /etc/nginx/servers.d /etc/nginx/snippets 
   $SUDO rm -f /etc/nginx/nginx.conf
-  
+
   $SUDO mkdir -p /etc/nginx/ssl
   $SUDO chmod 700 /etc/nginx/ssl
   
@@ -64,6 +65,10 @@ if (( INIT )); then
 
   if [[ -d "$CHECKOUT_DIR/server_infra/nginx" ]]; then
     $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/nginx.conf" /etc/nginx/nginx.conf
+    $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/conf.d" /etc/nginx/conf.d
+    $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/maps.d" /etc/nginx/maps.d
+    $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/servers.d" /etc/nginx/servers.d
+    $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/snippets" /etc/nginx/snippets
   fi
 
 fi
