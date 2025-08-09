@@ -1,0 +1,5 @@
+# /etc/nginx/maps.d/yuxi-redirects.map  (optional: fast bulk exact redirects)
+# Produces $yuxi_redirect for the apex server to consume.
+map $request_uri $yuxi_redirect {
+  default "";
+}

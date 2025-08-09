@@ -54,6 +54,9 @@ if (( INIT )); then
   $SUDO rm -rf /etc/nginx/sites-enabled /etc/nginx/sites-available
   $SUDO rm -f /etc/nginx/nginx.conf
   
+  $SUDO mkdir -p /etc/nginx/ssl
+  $SUDO chmod 700 /etc/nginx/ssl
+  
   log "Initialization: creating symlinks"
   ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"
   $SUDO mkdir -p "$(dirname "$STATIC_LINK")"
