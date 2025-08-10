@@ -47,7 +47,13 @@ cd ~ && ./remote_deploy.sh
 
 Theoretically the Ubuntu is complete overkill. It would work just fine on a minimal server, such as BusyBox. It would just need `ssh`, `curl`, `tar`, `nginx`, and `openssl`. This requires some automation on the deployment to GitHub though to deploy the entire website as a single `tar` file, but that would require the annoying GitHub large files system.
 
-### SSL 
+### SSL
+
+Verify
+
+```bash
+openssl s_client -connect yuxi.ml:443 -servername yuxi.ml </dev/null -verify_return_error
+```
 
 #### DNS-01 challenge
 
@@ -152,7 +158,7 @@ install -d -m 700 /etc/nginx/ssl
   --fullchain-file /etc/nginx/ssl/yuxi.ml.crt \
   --reloadcmd      "nginx -s reload"
 
-# tighten permissions (optional)
+# tighten permissions
 chown root:root /etc/nginx/ssl/yuxi.ml.*
 chmod 600 /etc/nginx/ssl/yuxi.ml.key
 chmod 644 /etc/nginx/ssl/yuxi.ml.crt
