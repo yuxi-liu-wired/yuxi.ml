@@ -136,33 +136,7 @@ rm /tmp/yuxi.ml.key
 
 #### HTTP-01 challenge
 
-After struggling with the SSL certificate for a while, I realized that Dynadot sucks at DNS propagation, so I just installed acme.sh on the server and used that to generate the SSL certificate. This is much easier and more reliable.
-
-```bash
-curl https://get.acme.sh | sh
-~/.acme.sh/acme.sh --upgrade --auto-upgrade
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-
-# ensure webroot exists and is served by your 80 server's ACME location
-install -d -m 755 /var/www/html
-
-# first issue for both apex and www using HTTP-01
-~/.acme.sh/acme.sh --issue \
-  -d yuxi.ml -d www.yuxi.ml \
-  -w /var/www/html
-
-# install certs to the paths nginx already uses and set reload on renew
-install -d -m 700 /etc/nginx/ssl
-~/.acme.sh/acme.sh --install-cert -d yuxi.ml \
-  --key-file       /etc/nginx/ssl/yuxi.ml.key \
-  --fullchain-file /etc/nginx/ssl/yuxi.ml.crt \
-  --reloadcmd      "nginx -s reload"
-
-# tighten permissions
-chown root:root /etc/nginx/ssl/yuxi.ml.*
-chmod 600 /etc/nginx/ssl/yuxi.ml.key
-chmod 644 /etc/nginx/ssl/yuxi.ml.crt
-```
+After struggling with the SSL certificate for a while, I realized that Dynadot sucks at DNS propagation, so I just installed acme.sh on the server and used that to generate the SSL certificate. This is much easier and more reliable. Just run `server_infra/initialize_acme.sh` to generate the SSL certificate using the HTTP-01 challenge. It will automatically configure Nginx to serve the challenge file and renew the certificate every 60 days.
 
 #### Self-signed
 
