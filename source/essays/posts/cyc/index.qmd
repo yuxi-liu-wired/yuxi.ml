@@ -49,7 +49,7 @@ In the land of AI, there had been legends, of people and systems that were befor
 
 Lenat's first legend was his Automated Mathematician (AM), a system that, according to the legends, discovered mathematical concepts autonomously by distilling concepts out of patterns and remixing and stirring together previous concepts [@lenatAMArtificialIntelligence1976]. As we will see, this legend is mostly true, though with a caveat that leads to the topic of his second legend.
 
-AM was his 1976 PhD thesis project, and it was one of many "automated discovery" systems in the 1970s -- the only one still remembered nowadays. Though neural networks and other "self-organized" machine learning methods had mostly [died out in the 1960s](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/), machine learning did not die, and indeed, was going through a logical spring, under the banner of "automated discovery".
+AM was his 1976 PhD thesis project, and it was one of many "automated discovery" systems in the 1970s -- the only one still remembered nowadays. Though neural networks and other "self-organized" machine learning methods had mostly [died out in the 1960s](https://yuxi.ml/essays/posts/perceptron-controversy/), machine learning did not die, and indeed, was going through a logical spring, under the banner of "automated discovery".
 
 ### Automated discovery
 
@@ -69,7 +69,7 @@ As another example, consider the famed [Dendral and Meta-Dendral](https://en.wik
 
 Dendral was an artificial model of how professional chemists perform [molecular spectroscopy](https://en.wikipedia.org/wiki/Molecular_spectroscopy) -- that is, how they read out a molecular structure from looking at a few spiky curves. Its problem space is the space of all possible ways to cut up a molecule into fragments, and ways for the fragments to give and take their atoms. Its heuristics are the rules for generating chemically plausible and implausible cleavages and transfers. For example, it is plausible for a protein to be cleaved at the `-CO-*-NH-` peptide bond, but implausible to be cleaved at the double bond between `C` and `O`. The goal is, given molecular spectroscopic data for a single molecule, to construct a molecular structure and a sequence of cleavages and transfers, such that it would produce the data.
 
-With Meta-Dendral, the problem space goes meta, becoming the space of possible chemical *rules*. Its goal is to find plausible rules (plausible according to heuristic meta-rules) that can explain a large collection of molecular structures and their spectroscopic data. Meta-Dendral proved useful for working chemists by discovering some cleavage rules for a certain minor sub-family of [androstanes](https://en.wikipedia.org/wiki/Androstane). [@buchananDENDRALMetaDENDRALTheir1981] <!-- todo: For details, see my essay on [expert systems](https://yuxi-liu-wired.github.io/essays/posts/expert-systems/). -->
+With Meta-Dendral, the problem space goes meta, becoming the space of possible chemical *rules*. Its goal is to find plausible rules (plausible according to heuristic meta-rules) that can explain a large collection of molecular structures and their spectroscopic data. Meta-Dendral proved useful for working chemists by discovering some cleavage rules for a certain minor sub-family of [androstanes](https://en.wikipedia.org/wiki/Androstane). [@buchananDENDRALMetaDENDRALTheir1981] <!-- todo: For details, see my essay on [expert systems](https://yuxi.ml/essays/posts/expert-systems/). -->
 
 In general, such a system begins with some simple rules that allow the system to a low score according to some criteria. and as it runs, it builds, prunes, and modifies the rules, so that in the end, its rule set allows it to achieve a high score. The following tabulates a few [@walkerHowFeasibleAutomated1987]:
 
@@ -409,7 +409,7 @@ In his review article, Lenat made a brief philosophical comment that EURISKO is 
 > 
 > [@lenatWhyAmEurisko1984]
 
-If this sounds familiar, it is because this Lenat had the same idea as Marvin Minsky, a friend of his,[^minsky-anecdote] and he was writing in 1984, at the second coming of neural networks. Minsky would soon write his *Society of Mind* in 1986, which the Cyc project resembled, then [re-reject neural networks by writing a long epilogue in 1988](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#minsky-and-papert-struck-back) to his infamous *Perceptrons* (1969), often blamed for the first neural network winter. Indeed, Lenat's objection to neural networks was essentially the same as Minsky's, if you compare that with Minsky's epilogue. Lenat's approach to Cyc was the same as the Society of Mind of Minsky. Reciprocating, Minsky had often called the field of AI "brain-dead", holding Lenat's Cyc as the only one worth mentioning. [@baardAIFounderBlasts2003]
+If this sounds familiar, it is because this Lenat had the same idea as Marvin Minsky, a friend of his,[^minsky-anecdote] and he was writing in 1984, at the second coming of neural networks. Minsky would soon write his *Society of Mind* in 1986, which the Cyc project resembled, then [re-reject neural networks by writing a long epilogue in 1988](https://yuxi.ml/essays/posts/perceptron-controversy/#minsky-and-papert-struck-back) to his infamous *Perceptrons* (1969), often blamed for the first neural network winter. Indeed, Lenat's objection to neural networks was essentially the same as Minsky's, if you compare that with Minsky's epilogue. Lenat's approach to Cyc was the same as the Society of Mind of Minsky. Reciprocating, Minsky had often called the field of AI "brain-dead", holding Lenat's Cyc as the only one worth mentioning. [@baardAIFounderBlasts2003]
 
 Continuing the trend of AM, Lenat never published the source code for EURISKO,[^am-source-code] and indeed, the only known attempt at reimplementation was [@haaseInventionExplorationDiscovery1990], which had no offspring.
 
@@ -1215,7 +1215,7 @@ All evidences point to the conclusion that a sentence that can be parsed to CycL
 
 ::: {.callout-note title="An information-theoretic estimate" collapse="true" }
 
-The [minimal description length of English](https://yuxi-liu-wired.github.io/essays/posts/perplexity-turing-test/#entropy-of-natural-languages) is about 0.8 bits per character, and each English sentence contains about 100 characters, giving 80 bits of incompressible information. Since there are 27 characters (we are just counting the 26 lowercase letters and the whitespace), this means that the compressible information is about $\log_2 27 - 0.8 = 4.0$ bits per character.
+The [minimal description length of English](https://yuxi.ml/essays/posts/perplexity-turing-test/#entropy-of-natural-languages) is about 0.8 bits per character, and each English sentence contains about 100 characters, giving 80 bits of incompressible information. Since there are 27 characters (we are just counting the 26 lowercase letters and the whitespace), this means that the compressible information is about $\log_2 27 - 0.8 = 4.0$ bits per character.
 
 We can think of writing as a process of selection: Out of all the possible letters you can pick next, you picked this *particular* letter, and you do it again and again. Intelligence is good selection, the careful elimination of bad choices. In this particular case, the bad choices to be eliminated come out to about 3.2 bits per character.
 
@@ -1426,6 +1426,6 @@ Thank you very much for your time and attention.
 Regards,  
 Yuxi Liu  
 UC Berkeley CS PhD  
-<https://yuxi-liu-wired.github.io/>
+<https://yuxi.ml/>
 
 :::

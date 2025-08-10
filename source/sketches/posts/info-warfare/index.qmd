@@ -332,7 +332,7 @@ Let's start with the simplest problem: Why is it that people have an urge to "ha
 
 ### The algorithmic fairness controversy
 
-In 2019, I looked into the controversy over "algorithmic fairness" of the Northpointe COMPAS, which I explained in [*The Racial Algorithmic Bias Controversy*](https://yuxi-liu-wired.github.io/essays/posts/no-nonsense-algorithmic-bias/). What was curious about the controversy is that neither side did it the way I would have done it. I would have just written out the simple mathematical model, then argued about which measure to choose. Instead, the actual controversy went like this:
+In 2019, I looked into the controversy over "algorithmic fairness" of the Northpointe COMPAS, which I explained in [*The Racial Algorithmic Bias Controversy*](https://yuxi.ml/essays/posts/no-nonsense-algorithmic-bias/). What was curious about the controversy is that neither side did it the way I would have done it. I would have just written out the simple mathematical model, then argued about which measure to choose. Instead, the actual controversy went like this:
 
 * [ProPublica wrote a long article](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing), putting in a lot of human faces for *pathos*.
 * [Northpointe replied](https://www.equivant.com/response-to-propublica-demonstrating-accuracy-equity-and-predictive-parity/) tersely that the COMPAS system has good statistical properties.

@@ -38,7 +38,7 @@ In other words, we have a [logistic regression model](https://en.wikipedia.org/w
 
 ![An example of a logistic regression model. The curve shows the estimated probability of passing an exam versus hours studying. If we have to do a binary prediction, then we predict $\hat y = 1$ iff $x \geq 2.7$, that is, we predict the student would pass the exam iff they had studied more than 2.7 hours. Figure from [Wikipedia](https://en.wikipedia.org/wiki/File:Exam_pass_logistic_curve.svg)](figure/Exam_pass_logistic_curve.svg){width=50%}
 
-Like perceptrons, logistic regression is simple, fast, and has a very elegant theory -- and [like perceptrons, logistic regression does not work if the underlying system is not linearly separable](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#interpreting-the-xor-problem).
+Like perceptrons, logistic regression is simple, fast, and has a very elegant theory -- and [like perceptrons, logistic regression does not work if the underlying system is not linearly separable](https://yuxi.ml/essays/posts/perceptron-controversy/#interpreting-the-xor-problem).
 
 Now, consider the simplest example that is not linearly separable: a binary classification on the plane. One class falls into the first quadrant, and the other into the other 3 quadrants. There is some noise, so the points near the edges do not always fall into their respective classes. There is no way to perform this task well with just one logistic classifier, but with two, we should be able to perform this task well enough.
 
@@ -121,7 +121,7 @@ The overall effect is:
 
 * getting training data: expensive (you have to do it yourself);
 * designing the algorithm: expensive (cheaper if you have graduate students);
-* training compute: low (there was [little funding for training](https://yuxi-liu-wired.github.io/docs/posts/1998-hans-moravec/#false-start));
+* training compute: low (there was [little funding for training](https://yuxi.ml/docs/posts/1998-hans-moravec/#false-start));
 * inference compute: very cheap (since you could not train large models).
 
 This should be compared to the very different situation with deep learning since the 2010s:

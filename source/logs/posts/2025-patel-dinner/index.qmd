@@ -200,7 +200,7 @@ Is this worthwhile? A single "jitter" comparison requires 2 forward passes, cost
 
 "[Looks at Gwern] So what would your next essay be about?"
 
-"The next essay should be about AI timelines. I just want to find out, basically, why now? Why not decades ago? There was [Moravec's scaling curve](https://yuxi-liu-wired.github.io/docs/posts/1998-hans-moravec/), but it was totally unconvincing. What could have been done so that decades ago, we would have an idea that, now is the time? Why did deep learning take everyone by surprise? Except a few \[Moravec, Kurzweil\] who didn't have good arguments? What better arguments could have been made?"
+"The next essay should be about AI timelines. I just want to find out, basically, why now? Why not decades ago? There was [Moravec's scaling curve](https://yuxi.ml/docs/posts/1998-hans-moravec/), but it was totally unconvincing. What could have been done so that decades ago, we would have an idea that, now is the time? Why did deep learning take everyone by surprise? Except a few \[Moravec, Kurzweil\] who didn't have good arguments? What better arguments could have been made?"
 
 "I think the best arguments that could have been made was to have scaling curves. They could scale from like 1 million FLOPs to 1 billion FLOPs, and extrapolate from there. It could have been more convincing. There were some scaling curves all the way back to the 1990s, like if you *really* try to look, but if it is invested with the power of a national laboratory it might be done even earlier."
 
@@ -409,7 +409,7 @@ A brief confusion ensued about whether the intended use of Etched is large-batch
 
 "No, MLA still gives you one vector per KV-token. The main surprise is not the fact that it uses one vector for the entire KV context -- it's not. The main difficulty is just that the position embedding is inserted somewhere ... \[vigorous handwaving] ... in the middle of it. I still don't understand it."
 
-!["The position embedding is inserted somewhere in the middle." In [this diagram](https://en.wikipedia.org/wiki/File:DeepSeek_MoE_and_MLA_(DeepSeek-V2).svg), it is shown as the "apply RoPE". It is really weird. I read through [Jianlin Su's explanation](https://yuxi-liu-wired.github.io/docs/posts/2024-05-13-multi-latent-attention/) several times, but still did not understand.](figure/DeepSeek_MoE_and_MLA_(DeepSeek-V2).svg)
+!["The position embedding is inserted somewhere in the middle." In [this diagram](https://en.wikipedia.org/wiki/File:DeepSeek_MoE_and_MLA_(DeepSeek-V2).svg), it is shown as the "apply RoPE". It is really weird. I read through [Jianlin Su's explanation](https://yuxi.ml/docs/posts/2024-05-13-multi-latent-attention/) several times, but still did not understand.](figure/DeepSeek_MoE_and_MLA_(DeepSeek-V2).svg)
 
 "Yeah the position embedding is the weirdest part of it, for sure."
 

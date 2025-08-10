@@ -31,7 +31,7 @@ importance: 5
 
 ### What this essay contains
 
-Unlike my [*Analytical Mechanics* essay](https://yuxi-liu-wired.github.io/essays/posts/analytical-mechanics/), this essay does not cover much of the width covered in a university course on classical thermodynamics *or* neoclassical economics. Instead, it's best described as "the conceptual foundations that a typical course does not work well on", a deep but narrow essay to supplement a shallow but wide typical textbook.
+Unlike my [*Analytical Mechanics* essay](https://yuxi.ml/essays/posts/analytical-mechanics/), this essay does not cover much of the width covered in a university course on classical thermodynamics *or* neoclassical economics. Instead, it's best described as "the conceptual foundations that a typical course does not work well on", a deep but narrow essay to supplement a shallow but wide typical textbook.
 
 Unlike analytical mechanics, which is typically taught to students intent on reaching the abstract plane of modern theoretical physics, and is thus deep but narrow, a typical course on classical thermodynamics is shallow, but very wide, and taught to a wide student base -- theoretical physicists, thermal engineers, electric engineers, chemists, biologists... When something must be taught to a wide audience, and is both deep and wide, depth is sacrificed. This is perfectly practicable, but it leaves a small minority confused with a sinister feeling that the teachers have abused their trust in them. I am in that minority.
 
@@ -673,7 +673,7 @@ if $S$ is differentiable and strictly concave at that point.
 
 ::: {.callout-note title="Proof"}
 
-For the first equation, differentiate $f$. For the second equation, apply the same no-arbitrage proof as in the proof of [Hotelling's lemma](https://en.wikipedia.org/wiki/Hotelling%27s_lemma) (see the essay on [*Analytical Mechanics*](https://yuxi-liu-wired.github.io/essays/posts/analytical-mechanics/)).
+For the first equation, differentiate $f$. For the second equation, apply the same no-arbitrage proof as in the proof of [Hotelling's lemma](https://en.wikipedia.org/wiki/Hotelling%27s_lemma) (see the essay on [*Analytical Mechanics*](https://yuxi.ml/essays/posts/analytical-mechanics/)).
 
 :::
 
@@ -911,7 +911,7 @@ For example, for a piston of ideal gas, the possible motions are adiabatic expan
 
 We say that $\vec q'$ is adiathermally accessible from $\vec q$ if there exists a path from $\vec q$ to $\vec q'$, such that the path is infinitesimally adiathermal[^adiathermal-terminology] at every point.
 
-[^adiathermal-terminology]: The word "adiathermal" means "heat does not pass through", while "adiabatic" has an entire history of meaning that makes it hard to say what exactly it is (see [my essay on Analytical Mechanics](https://yuxi-liu-wired.github.io/essays/posts/analytical-mechanics/)). Personally, I think "adiabatic" means "zero entropy change", and all its other meanings derive from it.
+[^adiathermal-terminology]: The word "adiathermal" means "heat does not pass through", while "adiabatic" has an entire history of meaning that makes it hard to say what exactly it is (see [my essay on Analytical Mechanics](https://yuxi.ml/essays/posts/analytical-mechanics/)). Personally, I think "adiabatic" means "zero entropy change", and all its other meanings derive from it.
 
 ![Adiabatic accessibility in the $U, V$ diagram.](figure/adiabatic_accessibility.png)
 
@@ -2218,7 +2218,7 @@ During my undergraduate years, special relativity was simple enough, electrodyna
 
 By pure serendipity, at the same time as diffusion models rose to prominence, I had just worked through a rigorous course on general equilibrium theory, the "standard model" for neoclassical economics [@starrGeneralEquilibriumTheory2011]. This gave me the conceptual foundation for looking past the textbooks' errors. Everything fell into place, and I saw through thermodynamics.
 
-And just like when I rediscovered [Wigner rotation](https://yuxi-liu-wired.github.io/essays/posts/wigner-rotation), as soon as I have figured out everything for myself, I knew the right words to search. Putting the fateful words "Gibbs delta G free energy equilibrium" into Google Scholar, I found that, of course, someone else had written this before, repeatedly [@quilezFirstYearUniversityChemistry2012; @smithClassicalThermodynamicsEconomic2008; @candealUtilityEntropy2001]. So, why spend all this time to write another one? I think I have written this pedagogically. I don't care if it is not new, or that it has been said before with more symbols and theorems. I have a thing to say, so I will say it well.
+And just like when I rediscovered [Wigner rotation](https://yuxi.ml/essays/posts/wigner-rotation), as soon as I have figured out everything for myself, I knew the right words to search. Putting the fateful words "Gibbs delta G free energy equilibrium" into Google Scholar, I found that, of course, someone else had written this before, repeatedly [@quilezFirstYearUniversityChemistry2012; @smithClassicalThermodynamicsEconomic2008; @candealUtilityEntropy2001]. So, why spend all this time to write another one? I think I have written this pedagogically. I don't care if it is not new, or that it has been said before with more symbols and theorems. I have a thing to say, so I will say it well.
 
 As an enlightened one, I see classical thermodynamics as the worst-taught subject out of all of undergraduate physics education.[^physics-education] Imagine my surprise when I realized that it is not about the conservation of energy ("thermo-"), not about change ("-dynamics"), not about statistical mechanics, not about time... but just about constrained optimization, and nothing more than that! To really understand it, one must unlearn a lot of the nonsense. Indeed, I hope that with this essay I will have slain all those mistakes, which is why the essay is filled with warnings against this and that error.
 

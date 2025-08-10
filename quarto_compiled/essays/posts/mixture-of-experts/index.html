@@ -498,7 +498,7 @@ window.Quarto = {
 <figcaption class="margin-caption">An example of a logistic regression model. The curve shows the estimated probability of passing an exam versus hours studying. If we have to do a binary prediction, then we predict <span class="math inline">\(\hat y = 1\)</span> iff <span class="math inline">\(x \geq 2.7\)</span>, that is, we predict the student would pass the exam iff they had studied more than 2.7 hours. Figure from <a href="https://en.wikipedia.org/wiki/File:Exam_pass_logistic_curve.svg">Wikipedia</a></figcaption>
 </figure>
 </div>
-<p>Like perceptrons, logistic regression is simple, fast, and has a very elegant theory – and <a href="https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#interpreting-the-xor-problem">like perceptrons, logistic regression does not work if the underlying system is not linearly separable</a>.</p>
+<p>Like perceptrons, logistic regression is simple, fast, and has a very elegant theory – and <a href="https://yuxi.ml/essays/posts/perceptron-controversy/#interpreting-the-xor-problem">like perceptrons, logistic regression does not work if the underlying system is not linearly separable</a>.</p>
 <p>Now, consider the simplest example that is not linearly separable: a binary classification on the plane. One class falls into the first quadrant, and the other into the other 3 quadrants. There is some noise, so the points near the edges do not always fall into their respective classes. There is no way to perform this task well with just one logistic classifier, but with two, we should be able to perform this task well enough.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -603,7 +603,7 @@ f(x, y) = \sum_{i = 1}^2 p_i(x, y) f_i(x, y)
 <ul>
 <li>getting training data: expensive (you have to do it yourself);</li>
 <li>designing the algorithm: expensive (cheaper if you have graduate students);</li>
-<li>training compute: low (there was <a href="https://yuxi-liu-wired.github.io/docs/posts/1998-hans-moravec/#false-start">little funding for training</a>);</li>
+<li>training compute: low (there was <a href="https://yuxi.ml/docs/posts/1998-hans-moravec/#false-start">little funding for training</a>);</li>
 <li>inference compute: very cheap (since you could not train large models).</li>
 </ul>
 <p>This should be compared to the very different situation with deep learning since the 2010s:</p>
@@ -1291,7 +1291,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">An example of a logistic regression model. The curve shows the estimated probability of passing an exam versus hours studying. If we have to do a binary prediction, then we predict $\hat y = 1$ iff $x \geq 2.7$, that is, we predict the student would pass the exam iff they had studied more than 2.7 hours. Figure from [Wikipedia](https://en.wikipedia.org/wiki/File:Exam_pass_logistic_curve.svg)</span><span class="co">](figure/Exam_pass_logistic_curve.svg)</span>{width=50%}</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Like perceptrons, logistic regression is simple, fast, and has a very elegant theory -- and <span class="co">[</span><span class="ot">like perceptrons, logistic regression does not work if the underlying system is not linearly separable</span><span class="co">](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#interpreting-the-xor-problem)</span>.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Like perceptrons, logistic regression is simple, fast, and has a very elegant theory -- and <span class="co">[</span><span class="ot">like perceptrons, logistic regression does not work if the underlying system is not linearly separable</span><span class="co">](https://yuxi.ml/essays/posts/perceptron-controversy/#interpreting-the-xor-problem)</span>.</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Now, consider the simplest example that is not linearly separable: a binary classification on the plane. One class falls into the first quadrant, and the other into the other 3 quadrants. There is some noise, so the points near the edges do not always fall into their respective classes. There is no way to perform this task well with just one logistic classifier, but with two, we should be able to perform this task well enough.</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
@@ -1374,7 +1374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>getting training data: expensive (you have to do it yourself);</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>designing the algorithm: expensive (cheaper if you have graduate students);</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>training compute: low (there was <span class="co">[</span><span class="ot">little funding for training</span><span class="co">](https://yuxi-liu-wired.github.io/docs/posts/1998-hans-moravec/#false-start)</span>);</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>training compute: low (there was <span class="co">[</span><span class="ot">little funding for training</span><span class="co">](https://yuxi.ml/docs/posts/1998-hans-moravec/#false-start)</span>);</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>inference compute: very cheap (since you could not train large models).</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>This should be compared to the very different situation with deep learning since the 2010s:</span>

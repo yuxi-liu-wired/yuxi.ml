@@ -403,7 +403,7 @@ Despite the lack of drama in the memoranda, it seems he really did do what the a
 
 ### Sequential test
 
-Other than the aircraft story, Wald most famous for devising the [sequential probability ratio test](https://en.wikipedia.org/wiki/Sequential_probability_ratio_test). It has been mentioned before in [*Predicting AGI by the Turing Test*](https://yuxi-liu-wired.github.io/essays/posts/perplexity-turing-test/#turing-test-as-statistical-hypothesis-test).
+Other than the aircraft story, Wald most famous for devising the [sequential probability ratio test](https://en.wikipedia.org/wiki/Sequential_probability_ratio_test). It has been mentioned before in [*Predicting AGI by the Turing Test*](https://yuxi.ml/essays/posts/perplexity-turing-test/#turing-test-as-statistical-hypothesis-test).
 
 Sometime in late 1942, [W. Allen Wallis](https://en.wikipedia.org/wiki/W._Allen_Wallis) was asked by Navy Captain Garret L. Schuyler the following question about efficiently testing ordinances:
 

@@ -19,10 +19,10 @@ importance: 4
 
 This essay is written as a companion piece of a lecture on the history of neural networks. It is not exactly an essay, but more of an extended scrapbook of quotations. The lecture slides are [here](code/ML%20history%20presentation.zip).
 
-* [Yuxi on the Wired - Cybernetic Artificial Intelligence](https://yuxi-liu-wired.github.io/essays/posts/cybernetic-artificial-intelligence/)
-* [Yuxi on the Wired - Reading Perceptrons](https://yuxi-liu-wired.github.io/essays/posts/reading-perceptron-book/)
-* [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi-liu-wired.github.io/essays/posts/backstory-of-backpropagation/)
-* [Yuxi on the Wired - The Perceptron Controversy](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/)
+* [Yuxi on the Wired - Cybernetic Artificial Intelligence](https://yuxi.ml/essays/posts/cybernetic-artificial-intelligence/)
+* [Yuxi on the Wired - Reading Perceptrons](https://yuxi.ml/essays/posts/reading-perceptron-book/)
+* [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi.ml/essays/posts/backstory-of-backpropagation/)
+* [Yuxi on the Wired - The Perceptron Controversy](https://yuxi.ml/essays/posts/perceptron-controversy/)
 
 ## Prehistory
 
@@ -280,7 +280,7 @@ The paper had two sources: pathological states where the mind folds back onto it
 
 ### SNARC
 
-There were some neural networks in the early 1950s before Rosenblatt. See [@nilssonQuestArtificialIntelligence2009, chapter 4] for a review. The most notable one is Minsky's [SNARC](https://en.wikipedia.org/wiki/Stochastic_Neural_Analog_Reinforcement_Calculator). Details are in [Yuxi on the Wired - A Scrapbook of Neural Network Lores](https://yuxi-liu-wired.github.io/sketches/posts/neural-network-scrapbook/index.html#neural-networks-want-to-work) and [Yuxi on the Wired - The Perceptron Controversy](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/index.html#the-enigma-of-marvin-minsky).
+There were some neural networks in the early 1950s before Rosenblatt. See [@nilssonQuestArtificialIntelligence2009, chapter 4] for a review. The most notable one is Minsky's [SNARC](https://en.wikipedia.org/wiki/Stochastic_Neural_Analog_Reinforcement_Calculator). Details are in [Yuxi on the Wired - A Scrapbook of Neural Network Lores](https://yuxi.ml/sketches/posts/neural-network-scrapbook/index.html#neural-networks-want-to-work) and [Yuxi on the Wired - The Perceptron Controversy](https://yuxi.ml/essays/posts/perceptron-controversy/index.html#the-enigma-of-marvin-minsky).
 
 Apparently it was a neural network version of [Shannon's robot rat "Theseus"](https://en.wikipedia.org/wiki/Claude_Shannon).
 
@@ -298,7 +298,7 @@ Started research in 1957 under "Project PARA" ("Perceiving and Recognition Autom
 
 Generally, Rosenblatt investigated in two ways: computer simulation (on IBM machines usually) and special hardwares (Perceptron Mark I, Tobermory). After 1965, the computer simulations became much faster than special hardwares. The tragedy of ASIC neuromorphic computing, no doubt...
 
-Interesting results in the book: (More in [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi-liu-wired.github.io/essays/posts/backstory-of-backpropagation/index.html#frank-rosenblatt))
+Interesting results in the book: (More in [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi.ml/essays/posts/backstory-of-backpropagation/index.html#frank-rosenblatt))
 
 Continuous activation functions (section 10), what he called "transmission functions".
 
@@ -355,7 +355,7 @@ It used *manual input* by flipping 16 switches *by hand*. The first version ("kn
 
 They got up to 1000 weights in a 2-layered MADALINE, but the learning rule was really hacky, and it was a deadend. [@widrow30YearsAdaptive1990] A video of the MADALINE in action is found in [The LMS algorithm and ADALINE. Part II - ADALINE and memistor ADALINE - YouTube](https://www.youtube.com/watch?v=skfNlwEbqck)
 
-More information in [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi-liu-wired.github.io/essays/posts/backstory-of-backpropagation/index.html#bernard-widrow-and-marcian-hoff).
+More information in [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi.ml/essays/posts/backstory-of-backpropagation/index.html#bernard-widrow-and-marcian-hoff).
 
 I don't know where to put this anecdote, but I want you to read about it anyway.
 
@@ -363,7 +363,7 @@ I don't know where to put this anecdote, but I want you to read about it anyway.
 > 
 > B. Widrow, "Adaline: Smarter than Sweet", Stanford Today, Autumn 1963.
 
-See more of these amusing stories at [Yuxi on the Wired - A Scrapbook of Neural Network Lores](https://yuxi-liu-wired.github.io/sketches/posts/neural-network-scrapbook/#neural-networks-want-to-work).
+See more of these amusing stories at [Yuxi on the Wired - A Scrapbook of Neural Network Lores](https://yuxi.ml/sketches/posts/neural-network-scrapbook/#neural-networks-want-to-work).
 
 ## Neural network winter (1970s)
 
@@ -430,11 +430,11 @@ And of course, no backpropagation.
 
 ### Minsky and Papert against large neural networks
 
-See [Yuxi on the Wired - The Perceptron Controversy](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/) for details.
+See [Yuxi on the Wired - The Perceptron Controversy](https://yuxi.ml/essays/posts/perceptron-controversy/) for details.
 
 ### 30 years of people refusing to use gradient descent
 
-See [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi-liu-wired.github.io/essays/posts/backstory-of-backpropagation/).
+See [Yuxi on the Wired - The Backstory of Backpropagation](https://yuxi.ml/essays/posts/backstory-of-backpropagation/).
 
 Rosenblatt did not even consider gradient descent. (1960s)
 

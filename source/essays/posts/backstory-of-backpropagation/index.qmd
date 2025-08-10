@@ -353,7 +353,7 @@ From our vantage point, we can fairly say that he invented randomization, residu
 
 ![Figure 42. The dashed lines denote variable weights, and the solid lines denote fixed weights. This is the residual connection.](figure/rosenblatt_figure_42.png){width=60%}
 
-What is even more astonishing is that, as far as I can see, he did not make use of gradient descent learning at all, not even on a single layer like Widrow and Hoff. The perceptron learning rule converges, but only for a single-layered perceptron network on linearly separable data. Thus, when it came to two-layered perceptron networks, he randomly wired the first layer, then froze it, and only adapted the second layer. This would become the focal point of the "[perceptron controversy](https://yuxi-liu-wired.github.io/essays/posts/backstory-of-backpropagation/neural-network-winter)".
+What is even more astonishing is that, as far as I can see, he did not make use of gradient descent learning at all, not even on a single layer like Widrow and Hoff. The perceptron learning rule converges, but only for a single-layered perceptron network on linearly separable data. Thus, when it came to two-layered perceptron networks, he randomly wired the first layer, then froze it, and only adapted the second layer. This would become the focal point of the "[perceptron controversy](https://yuxi.ml/essays/posts/backstory-of-backpropagation/neural-network-winter)".
 
 In the chapter where he talked about backpropagation [@rosenblattPrinciplesNeurodynamicsPerceptrons1962, Chapter 13], he tried to train both layers in the two-layered perceptron network by extending the perceptron learning algorithm. The algorithm works on each individual perceptron unit, but only if the desired output is known. The desired outputs for the output units are supplied by the experimenter, but the desired outputs for the hidden units could not be known, so Rosenblatt tried some hacks. Essentially, he took the error signals at the output units, and used heuristic rules to "backpropagate the error" to synthesize error signals at the hidden units. The precise details are hacky, and no longer of any relevance.
 
@@ -456,7 +456,7 @@ Thus, by a long and almost accidental route, Rumelhart arrived at the gradient d
 
 Backpropagation was rediscovered in 1982. The world would soon know it, and this time, it would not forget.
 
-It was not all smooth-sailing though. Backpropagation was terribly slow, taking over 1000 steps to converge, and Hinton believed it would get stuck in local minima. Indeed, these two objections, that backpropagation is slow, and gets stuck in local minima, are perennial objections, as we would see in the [history of the second neural network winter](https://yuxi-liu-wired.github.io/TODO).
+It was not all smooth-sailing though. Backpropagation was terribly slow, taking over 1000 steps to converge, and Hinton believed it would get stuck in local minima. Indeed, these two objections, that backpropagation is slow, and gets stuck in local minima, are perennial objections, as we would see in the [history of the second neural network winter](https://yuxi.ml/TODO).
 
 Somewhat disappointed by the two objections, Rumelhart tried other methods, such as [competitive learning](https://en.wikipedia.org/wiki/Competitive_learning). Hinton left the book project to focus on his beloved Boltzmann machines, and would not return until 1985.
 
@@ -619,7 +619,7 @@ He then went to [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), wh
 >
 > He was probably right, I guess, but he was clearly very worried about his reputation and his credibility in his community.
 
-Although I believe Minsky would have disapproved of the idea of backpropagation even if he had thought that neurons are not strictly 1-0 spike generators. In the epilogue to [@minskyPerceptronsIntroductionComputational1988], he claimed that gradient descent does not scale, and [using differentiable activation functions is just a hack intended to make backpropagation work](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#differentiable-activation-is-just-a-hack), a pointless hack, as backpropagation would not scale.
+Although I believe Minsky would have disapproved of the idea of backpropagation even if he had thought that neurons are not strictly 1-0 spike generators. In the epilogue to [@minskyPerceptronsIntroductionComputational1988], he claimed that gradient descent does not scale, and [using differentiable activation functions is just a hack intended to make backpropagation work](https://yuxi.ml/essays/posts/perceptron-controversy/#differentiable-activation-is-just-a-hack), a pointless hack, as backpropagation would not scale.
 
 > However, we suspect that this smoothing trick may entail a large (and avoidable) cost when the predicate to be learned is actually a composition of linear threshold functions. There ought to be a more efficient alternative based on how much each weight must be changed, for each stimulus, to make the local input sum cross the threshold. ... We have the impression that many people in the connectionist community do not understand that this is merely a particular way to compute a gradient and have assumed instead that back-propagation is a new learning scheme that somehow gets around the basic limitations of hill-climbing.
 

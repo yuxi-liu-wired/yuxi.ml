@@ -27,7 +27,7 @@ importance: 7
 
 Classical mechanics, electrodynamics, and thermodynamics are all conceptually simple, but settled. Things are less clear with statistical mechanics. To say it kindly, it is a lively field of research. To say it unkindly, it is a field whose very conceptual foundation is in doubt. The main problem is not with quantum mechanics, as quantum statistical mechanics works very well, but with how to handle systems far-from-equilibrium. Fortunately, as long as we stick to the (near-)equilibrium parts, then it is mostly settled, and so this is how this essay is going to be written about. We will avoid quantum because that deserves its own entire essay, and avoid far-from-equilibrium because it is unsettled. What we can present is still a beautifully precise mathematical toolbox with surprisingly wide applications.
 
-Statistical mechanics is technically independent of thermodynamics, but it is strongly related. You can acquire the basic skills in thermodynamics by working through the first half of my previous essay [*Classical Thermodynamics and Economics*](https://yuxi-liu-wired.github.io/essays/posts/equilibrium-thermoeconomics/).
+Statistical mechanics is technically independent of thermodynamics, but it is strongly related. You can acquire the basic skills in thermodynamics by working through the first half of my previous essay [*Classical Thermodynamics and Economics*](https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/).
 
 About half of the essay is taken up with calculations. The theoretical core of statistical mechanics is small, and most of the skills are in applying it to actual systems. Therefore, a lot of worked-through examples are necessary. I have tried to make them flow well and skimmable.
 
@@ -262,7 +262,7 @@ where $Z(a_1, \dots, a_n) = \int e^{-\sum_i a_i A_i(x)} dx$, and $a_1, \dots, a_
 
 :::
 
-The ansatz solution is what you get by Lagrangian multipliers. For a refresher, see the [*Analytical Mechanics*#Lagrange's devil at Disneyland](https://yuxi-liu-wired.github.io/essays/posts/analytical-mechanics/index.html#lagranges-devil-at-disneyland). The theorem shows that the solution is unique -- provided that it exists. Does it exist? Yes, in physics. If it doesn't exist, then we are clearly not modelling a physically real phenomenon.
+The ansatz solution is what you get by Lagrangian multipliers. For a refresher, see the [*Analytical Mechanics*#Lagrange's devil at Disneyland](https://yuxi.ml/essays/posts/analytical-mechanics/index.html#lagranges-devil-at-disneyland). The theorem shows that the solution is unique -- provided that it exists. Does it exist? Yes, in physics. If it doesn't exist, then we are clearly not modelling a physically real phenomenon.
 
 ::: {.callout-tip}
 
@@ -406,7 +406,7 @@ $$
 A(x_1, \dots, x_n) = A_1(x_1) + \dots + A_n(x_n)
 $$
 
-Like most textbooks, we assume extensivity by default, although as we noted in [*Classical Thermodynamics and Economics*](https://yuxi-liu-wired.github.io/essays/posts/equilibrium-thermoeconomics/), both classical thermodynamics and statistical mechanics do not require extensivity. We assume extensivity because it is mathematically convenient, and good enough for most applications.
+Like most textbooks, we assume extensivity by default, although as we noted in [*Classical Thermodynamics and Economics*](https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/), both classical thermodynamics and statistical mechanics do not require extensivity. We assume extensivity because it is mathematically convenient, and good enough for most applications.
 
 :::
 
@@ -1102,7 +1102,7 @@ Why does the rubber band stiffen when temperature rise? We can interpret it as f
 
 Because the rubber band has $dE = TdS + FdL$, the corresponding free entropy is $S - \beta \braket{E} + \beta F \braket{L}$. Under the canonical distribution, that free entropy is maximized, meaning that $\rho(x) \propto e^{\beta FL(x)}$ where $x$ is a microstate of the rubber band (i.e. the precise position of each link), and $L(x)$ is the corresponding length (macrostate).  
 
-The trick of using the free entropy is that it decomposes the entire rubber band into atomic individuals. Like how opening an energy market converts consumers trying to coordinate their energy use into consumers each individually buying and selling energy, and thus simplifying the calculation problem. Like how [Laplace's devil](https://yuxi-liu-wired.github.io/essays/posts/analytical-mechanics/index.html#lagranges-devil-at-disneyland) allows you to calculate the optimal way to schedule your day. Microcanonical ensembles are true, but canonical ensembles are almost just as true, and much easier to use. The idea is that the canonical ensemble and the microcanonical ensemble are essentially the same because the fluctuation is so tiny.
+The trick of using the free entropy is that it decomposes the entire rubber band into atomic individuals. Like how opening an energy market converts consumers trying to coordinate their energy use into consumers each individually buying and selling energy, and thus simplifying the calculation problem. Like how [Laplace's devil](https://yuxi.ml/essays/posts/analytical-mechanics/index.html#lagranges-devil-at-disneyland) allows you to calculate the optimal way to schedule your day. Microcanonical ensembles are true, but canonical ensembles are almost just as true, and much easier to use. The idea is that the canonical ensemble and the microcanonical ensemble are essentially the same because the fluctuation is so tiny.
 
 Back to the rubber band. Each individual link in the rubber band now is freed from the collective responsibility of reaching exactly length $L$. It is now an atomized individual, maximizing its own free entropy $S - \beta \braket{E} + \beta F \braket{L}$. Let $p$ be its probability of going up, then its free entropy is
 
@@ -2107,7 +2107,7 @@ In this sense, martingale strategies cannot create free money out of a fair gamb
 
 ### Worked example: bouncing ball
 
-This example is from [@sethnaStatisticalMechanicsEntropy2021, exercise 4.8], which itself derives from [@luaPracticalApplicabilityJarzynski2005]. See also [@hijarJarzynskiEqualityIllustrated2010] for another solved example, of a chest expander with mass points stuck in the middle of the springs. You might need to read my tutorial on [field-theoretic calculations](https://yuxi-liu-wired.github.io/sketches/posts/field-theory-how-to/) before attempting that example.
+This example is from [@sethnaStatisticalMechanicsEntropy2021, exercise 4.8], which itself derives from [@luaPracticalApplicabilityJarzynski2005]. See also [@hijarJarzynskiEqualityIllustrated2010] for another solved example, of a chest expander with mass points stuck in the middle of the springs. You might need to read my tutorial on [field-theoretic calculations](https://yuxi.ml/sketches/posts/field-theory-how-to/) before attempting that example.
 
 We have a one-dimensional system, of a single ball bounding between two walls of a piston. The only control we have is that we can move one of the piston heads. At the start, the piston has length $L$, and the system is in thermal equilibrium at inverse temperature $\beta$. We plunge the piston head at velocity $v$ for time $\Delta L / v$, then immediately reverse it, taking another $\Delta L / v$. We explicitly calculate that $\braket{e^{-\beta W}} = 1$.
 

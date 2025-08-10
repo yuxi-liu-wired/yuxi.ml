@@ -36,7 +36,7 @@ It does not cover: canonical transforms, Poisson bracket, infinitesimal generato
 
 Philosophically, this essay has two undercurrents:
 
-One, that [thinking on the margins](https://en.wikipedia.org/wiki/Marginalism) is vital not just in economics, but also in classical mechanics. In my other essay, [*Classical thermodynamics and economics*](https://yuxi-liu-wired.github.io/essays/posts/equilibrium-thermoeconomics), I show that classical thermodynamics is also nothing more than thinking on the margins.
+One, that [thinking on the margins](https://en.wikipedia.org/wiki/Marginalism) is vital not just in economics, but also in classical mechanics. In my other essay, [*Classical thermodynamics and economics*](https://yuxi.ml/essays/posts/equilibrium-thermoeconomics), I show that classical thermodynamics is also nothing more than thinking on the margins.
 
 Two, classical mechanics is a leakless leaky abstraction. Though classical mechanics has many equivalent forms, the search for the most elegant form has led us to the Hamilton--Jacobi equation, and the adiabatic theorem, both of which were on the threshold of quantum mechanics. Even though classical mechanics is a self-consistent closed world (thus "leakless"), when viewed in the right light, all its lines and planes seem to angle towards a truer world (thus "leaky"), of which this world is merely a shadow (thus "abstraction").
 

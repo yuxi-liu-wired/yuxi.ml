@@ -36,7 +36,7 @@ Perceptron representation occupies chapters 0--10, and learning is only studied 
 
 During the 1980s rise of connectionism, Minsky and Papert came out with a new edition in 1988. This is the same as the 1972 printing, except that they added a prologue and an epilogue, where they expounded at length the intended lesson of the book, as they felt that people have failed to learn it, and history was repeating itself.
 
-For those interpretations, see [*The Perceptron Controversy*](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/).
+For those interpretations, see [*The Perceptron Controversy*](https://yuxi.ml/essays/posts/perceptron-controversy/).
 
 ## Setup
 

@@ -136,7 +136,7 @@ Images from [@kanalRecognitionSystemDesign1964].
 
 ## The second neural network winter
 
-[The first neural network winter](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy/#connectionism-19451970) started around 1965, when the main research centers pivoted away from neural networks: the Stanford Research Institute group turned to symbolic AI; the Bernard Widrow group turned to using *single* neurons as adaptive filters; the Frank Rosenblatt group died from lack of funds and then the literal death of Rosenblatt in 1971. It rose again around 1985, when backpropagation and improved compute allowed researchers to train neural networks on the order of $10^4$ parameters and $4$ layers.
+[The first neural network winter](https://yuxi.ml/essays/posts/perceptron-controversy/#connectionism-19451970) started around 1965, when the main research centers pivoted away from neural networks: the Stanford Research Institute group turned to symbolic AI; the Bernard Widrow group turned to using *single* neurons as adaptive filters; the Frank Rosenblatt group died from lack of funds and then the literal death of Rosenblatt in 1971. It rose again around 1985, when backpropagation and improved compute allowed researchers to train neural networks on the order of $10^4$ parameters and $4$ layers.
 
 Something strange happened during the 1990 -- 2010 period: the neural network research community silently disappeared again for another 20 years. Unlike the previous case, there was no great mythology or drama about this winter, no *Perceptron* controversy.
 

@@ -8,7 +8,7 @@ Over the years I have written some notes. Too short for publication, and not exa
 
 ## Expository notes
 
-[*Visually Deriving the Wigner Rotation by Spacetime Diagrams*](wigner_rotation/wigner_rotation_complete.pdf). Obsoleted by [my post](https://yuxi-liu-wired.github.io/essays/posts/wigner-rotation/). This is a term paper I wrote in 2018 for *Theoretical Physics*. The date in the `pdf` is the recompilation date, not the time when I actually wrote the paper.
+[*Visually Deriving the Wigner Rotation by Spacetime Diagrams*](wigner_rotation/wigner_rotation_complete.pdf). Obsoleted by [my post](https://yuxi.ml/essays/posts/wigner-rotation/). This is a term paper I wrote in 2018 for *Theoretical Physics*. The date in the `pdf` is the recompilation date, not the time when I actually wrote the paper.
 
 [*Hyperbolic dynamical systems, chaos, and Smale's horseshoe: a guided tour*](ergodic_theory/ergodic_theory_project.pdf). This is the companion paper to a presentation I gave for the course *Introduction to Ergodic theory* in 2019.
 
