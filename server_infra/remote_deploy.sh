@@ -65,6 +65,9 @@ if (( INIT )); then
     -subj "/C=US/ST=State/L=City/O=Org/OU=Unit/CN=example.com"
   $SUDO mv snakeoil.key /etc/nginx/ssl/
   $SUDO mv snakeoil.crt /etc/nginx/ssl/
+  log "Replace the snakeoil certificate with a real one in prod."
+  $SUDO mv snakeoil.key /etc/nginx/ssl/yuxi.ml.key
+  $SUDO mv snakeoil.crt /etc/nginx/ssl/yuxi.ml.crt
   
   log "Initialization: creating symlinks"
   ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"
