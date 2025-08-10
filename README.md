@@ -143,5 +143,5 @@ After struggling with the SSL certificate for a while, I realized that Dynadot s
 There is also self-signed SSL certificate for local development. It is generated using the `openssl` command:
 
 ```bash
-openssl req -new -newkey rsa:2048 -nodes -keyout localhost.key -out localhost.csr
+openssl req -new -newkey rsa:2048 -nodes -keyout snakeoil.key -out snakeoil.csr
 ```

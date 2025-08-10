@@ -55,8 +55,13 @@ if (( INIT )); then
   $SUDO rm -rf /etc/nginx/conf.d /etc/nginx/maps.d /etc/nginx/servers.d /etc/nginx/snippets 
   $SUDO rm -f /etc/nginx/nginx.conf
 
+  log "Initializing SSL"
   $SUDO mkdir -p /etc/nginx/ssl
   $SUDO chmod 700 /etc/nginx/ssl
+  
+  openssl req -new -newkey rsa:2048 -nodes -keyout snakeoil.key -out snakeoil.csr
+  $SUDO mv snakeoil.key /etc/nginx/ssl/
+  $SUDO mv snakeoil.crt /etc/nginx/ssl/
   
   log "Initialization: creating symlinks"
   ln -sfn "$CHECKOUT_DIR/server_infra/remote_deploy.sh" "$HOME/deploy.sh"
