@@ -1,5 +1,20 @@
-# /etc/nginx/maps.d/yuxi-redirects.map  (optional: fast bulk exact redirects)
+# /etc/nginx/maps.d/yuxi-redirects.map
 # Produces $yuxi_redirect for the apex server to consume.
 map $request_uri $yuxi_redirect {
   default "";
+
+  ~^/(?:blog|blogs|log)/?$                                   /logs/;
+  ~^/essay/?$                                                /essays/;
+  ~^/sketch/?$                                               /sketches/;
+  ~^/sketchs/?$                                              /sketches/;
+  ~^/note/?$                                                 /notes/;
+  ~^/doc/?$                                                  /docs/;
+  ~^/project/?$                                              /projects/;
+
+
+  ~^/essays/posts/renormalization-how-to/?$                  /renormalization/;
+  ~^(?:/essays)?/(?:posts/)?renormaliz[^/]*(?:/)?$           /renormalization/;
+
+  ~^(?:/essays)?/(?:posts/)?cyc(?:/)?$                       /cyc/;
+  ~^(?:/essays)?/(?:posts/)?lenat(?:/)?$                     /cyc/;
 }

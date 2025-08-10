@@ -1,0 +1,15 @@
+================================================
+FILE: server_infra/nginx/maps.d/vanity-slugs.map
+================================================
+# Extract the first path segment as a "slug"
+map $uri $vanity_slug {
+  default "";
+  ~^/([^/]+)(?:/|$) $1;
+}
+
+# Map slug -> real folder (no trailing slash in values)
+map $vanity_slug $vanity_target {
+  default "";
+  renormalization  /essays/posts/renormalization-how-to;
+  cyc              /essays/posts/cyc;
+}
