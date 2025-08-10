@@ -59,7 +59,7 @@ if (( INIT )); then
   $SUDO mkdir -p /etc/nginx/ssl
   $SUDO chmod 700 /etc/nginx/ssl
   
-  openssl req -new -newkey rsa:2048 -nodes -keyout snakeoil.key -out snakeoil.csr
+  openssl req -new -newkey rsa:2048 -nodes -keyout snakeoil.key -out snakeoil.crt
   $SUDO mv snakeoil.key /etc/nginx/ssl/
   $SUDO mv snakeoil.crt /etc/nginx/ssl/
   
