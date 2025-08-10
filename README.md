@@ -47,7 +47,9 @@ cd ~ && ./remote_deploy.sh
 
 Theoretically the Ubuntu is complete overkill. It would work just fine on a minimal server, such as BusyBox. It would just need `ssh`, `curl`, `tar`, `nginx`, and `openssl`. This requires some automation on the deployment to GitHub though to deploy the entire website as a single `tar` file, but that would require the annoying GitHub large files system.
 
-### SSL
+### SSL 
+
+#### DNS-01 challenge
 
 The website uses SSL to secure the connection. The SSL certificate is generated using Let's Encrypt. The first certificate was generated using the DNS-01 challenge to avoid breaking production while testing the deployment script. The certificate is renewed automatically every 90 days using the `certbot` package.
 
@@ -126,7 +128,37 @@ rm /tmp/yuxi.ml.crt
 rm /tmp/yuxi.ml.key
 ```
 
+#### HTTP-01 challenge
+
 After struggling with the SSL certificate for a while, I realized that Dynadot sucks at DNS propagation, so I just installed acme.sh on the server and used that to generate the SSL certificate. This is much easier and more reliable.
+
+```bash
+curl https://get.acme.sh | sh
+~/.acme.sh/acme.sh --upgrade --auto-upgrade
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+
+# ensure webroot exists and is served by your 80 server's ACME location
+install -d -m 755 /var/www/html
+
+# first issue for both apex and www using HTTP-01
+~/.acme.sh/acme.sh --issue \
+  -d yuxi.ml -d www.yuxi.ml \
+  -w /var/www/html
+
+# install certs to the paths nginx already uses and set reload on renew
+install -d -m 700 /etc/nginx/ssl
+~/.acme.sh/acme.sh --install-cert -d yuxi.ml \
+  --key-file       /etc/nginx/ssl/yuxi.ml.key \
+  --fullchain-file /etc/nginx/ssl/yuxi.ml.crt \
+  --reloadcmd      "nginx -s reload"
+
+# tighten permissions (optional)
+chown root:root /etc/nginx/ssl/yuxi.ml.*
+chmod 600 /etc/nginx/ssl/yuxi.ml.key
+chmod 644 /etc/nginx/ssl/yuxi.ml.crt
+```
+
+#### Self-signed
 
 There is also self-signed SSL certificate for local development. It is generated using the `openssl` command:
 
