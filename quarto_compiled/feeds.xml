@@ -16,7 +16,18 @@
 <link>https://yuxi.ml/feeds.html</link>
 </image>
 <generator>quarto-1.7.32</generator>
-<lastBuildDate>Sun, 29 Jun 2025 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 11 Aug 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Gwern visits BAIR</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2025-gwern-bair/</link>
+  <description><![CDATA[ Gwern’s lunchtime visit to the Berkeley AI Research (BAIR). ]]></description>
+  <category>fun</category>
+  <category>slice-of-life</category>
+  <guid>https://yuxi.ml/logs/posts/2025-gwern-bair/</guid>
+  <pubDate>Mon, 11 Aug 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/logs/posts/2025-gwern-bair/figure/banner.avif" medium="image" type="image/avif"/>
+</item>
 <item>
   <title>Dream: Ingress Answer</title>
   <dc:creator>Yuxi Liu</dc:creator>
@@ -234,18 +245,6 @@
   <guid>https://yuxi.ml/essays/posts/analytical-mechanics/</guid>
   <pubDate>Sat, 04 May 2024 07:00:00 GMT</pubDate>
   <media:content url="https://yuxi.ml/essays/posts/analytical-mechanics/figure/banner/banner_1.png" medium="image" type="image/png" height="90" width="144"/>
-</item>
-<item>
-  <title>How to do Renormalization</title>
-  <dc:creator>Yuxi Liu</dc:creator>
-  <link>https://yuxi.ml/essays/posts/renormalization-how-to/</link>
-  <description><![CDATA[ Survival guide for renormalization (RN) theory. How to do it in real space and frequency space. What it all means. Should have something for everyone, from mathematicians to physicists to outsiders, from serious series to pretty pictures. Intended audience: those with two years of undergrad mathematics. ]]></description>
-  <category>math</category>
-  <category>physics</category>
-  <category>scaling</category>
-  <guid>https://yuxi.ml/essays/posts/renormalization-how-to/</guid>
-  <pubDate>Thu, 11 Apr 2024 07:00:00 GMT</pubDate>
-  <media:content url="https://yuxi.ml/essays/posts/renormalization-how-to/figure/banner/banner_2.png" medium="image" type="image/png" height="90" width="144"/>
 </item>
 </channel>
 </rss>

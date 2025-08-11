@@ -1,8 +1,8 @@
 ---
 title: "Gwern visits BAIR"
 author: "Yuxi Liu"
-date: "2025-08-09"
-date-modified: "2025-08-09"
+date: "2025-08-11"
+date-modified: "2025-08-11"
 categories: [fun, slice-of-life]
 format:
   html:
@@ -11,8 +11,8 @@ format:
     resources:
         - "figure/**"
         - "code/**"
-description: "Gwern's lunchtime visit to the Berkeley AI Research."
-# image: "figure/6.png"
+description: "Gwern's lunchtime visit to the Berkeley AI Research (BAIR)."
+image: "figure/banner.avif"
 
 status: "finished"
 confidence: "log"
@@ -23,29 +23,31 @@ importance: 0
 
 ## Hans Moravec
 
-"Something I'm excited about is an interview with [Hans Moravec](https://en.wikipedia.org/wiki/Hans_Moravec). I had wanted to interview him for a long time, and just today I got message that he is in fact still alive and working somewhere. That's great news. I had been worried. He had not written anything public since maybe 20 years ago, and he is old now. What if he is senile, or even died and nobody noticed the obituary. But now we know he's alive and probably healthy enough to work a bit, that should certainly mean he's healthy enough for an interview."
+"Something I'm excited about is an interview with [Hans Moravec](https://en.wikipedia.org/wiki/Hans_Moravec). I had wanted to interview him for a long time, and just today, I got message that he is in fact still alive and working somewhere. That's great news. I had been worried. He had not written anything public since maybe 20 years ago, and he is old now. So I had been worried that maybe he is senile, or even have died -- and nobody noticed the obituary? But now we know he is still alive and still working once a week at some robotics company, that means he must be healthy enough for an interview."
 
 "The Stand Alone Gwern Complex has almost tracked Moravec down."
 
 "It's a joke about an [anime](https://en.wikipedia.org/wiki/Ghost_in_the_Shell:_Stand_Alone_Complex)."
 
-"Insert `gwern the laughing man.png` here. Actually I'm very sure there was that image somewhere in your website, but hidden. It goes like \[*draws a circle in air*\] 'and this is what I will do, I will pretend to be one of those deaf-mutes----'."
+"Insert `gwern the laughing man.png` here. Actually I'm very sure there was that image somewhere in your website, but hidden. It goes like \[*draws a circle in air*\] 'and this is what I will do, I will pretend to be one of those deaf-mutes---'."
 
 "Yes, it's in [the repository](https://github.com/gwern/gwern.net). It's never used for anything, but it should be there, in the logos folder."
 
 "Ah right. I must have read that repository when I first made my blog."
 
-![This image is a reference to the Laughing Man in Ghost in the Shell: Stand Alone Complex. It appears [in the source code](https://github.com/gwern/gwern.net/blob/master/img/logo/logo-laughingman.svg) for the website, but apparently is never used for anything.](figure/gwern-logo-laughingman.svg){width=50%}
+![This image is a reference to the Laughing Man in *Ghost in the Shell: Stand Alone Complex*. It appears [in the source code](https://github.com/gwern/gwern.net/blob/master/img/logo/logo-laughingman.svg) for the website, but apparently is never used for anything.](figure/gwern-logo-laughingman.svg){width=50%}
 
-"So, I'm very interested in him, because he was writing books like *Mind Children* and other papers in the 1980s. Already in the 1990s he was predicting AGI now based on scaling laws. That's impressive! His perspective on the scaling laws and predicting the future are important for a history of AI from the scaling point of view."
+"So, I'm very interested in him, because he was writing books like *Mind Children* [@moravecMindChildrenFuture1988] and other papers in the 1980s. Already in the 1990s, [he predicted AGI by the 2020s, based on scaling laws](https://yuxi.ml/docs/posts/1998-hans-moravec/). That's impressive! His perspective on the scaling laws and predicting the future are important for a history of AI from the scaling point of view."
 
-"So something is interesting about him is that he is really pro-robots. Like some modern accelerationists and Nick Land. He was like, more power to them, if they could manage to become better than humanity at reproducing and spreading to the universe, then they should. And If humans are replaced, that's fine. Evolution is working."
+"So something is interesting about him is that he is really pro-robots. Like some modern accelerationists and [Nick Land](https://en.wikipedia.org/wiki/Nick_Land). He was like, more power to them, if they could manage to become better than humanity at reproducing and spreading to the universe, then they should. And If humans are replaced, that's fine. Evolution is working."
 
 "Is that the 'Pigs in Cyberspace' [@moravecPigsCyberspace1993] paper?"
 
 Gwern didn't quite catch that.
 
 "I'm not sure about it. Suppose that a big asteroid comes and wipes out humanity..."
+
+"But the thing is that, an asteroid isn't going to do anything interesting afterwards. Now, if it's with robots, then they will go on to keep doing interesting things after they replace humanity--"
 
 "--Well, dinosaurs are like that, right? Maybe framed this way, it is a pretty healthy frame of mind. Whatever happens may be for the best. Dinosaurs had their 100 million years, and missed it. So mammals deserve to inherit the earth. If we miss our chance and got wiped out by an asteroid, then whatever succeeds us deserves to inherit the earth, and so on. So we had better be worthy of existence, and whatever ends up existing is worthy of it."
 
@@ -81,7 +83,7 @@ Gwern didn't quite catch that.
 
 ----
 
-"Many people would use GPT-5 in the most default way possible, like 'Write me an article about X', and get the default mode-collapsed style. That's just RLHF. However, it's not hard to prompt it away from the default style, because the RLHF didn't actually kill off the other capacities of the base model, and the model has very good instruction following. This is something new. For example, the non-rhyming poem. One of the earliest things found after ChatGPT was how much it loves to rhyme when writing poems. In the early days it was literally impossible to write a non-rhyming poem. No matter how hard I prompt it, rhyming always happens. It might start out not quite rhyming, but soon enough it starts to rhyme, and rhymes harder to make up for the earlier loss!"
+"Many people would use GPT-5 in the most default way possible, like 'Write me an article about X', and get the default mode-collapsed style. That's just RLHF. However, it's not hard to prompt it away from the default style, because the RLHF didn't actually kill off the other capacities of the base model, and the model has very good instruction following. This is something new. For example, the non-rhyming poem. One of the earliest findings about ChatGPT was how much it *loves* to rhyme. In the early days, it was literally impossible to write a non-rhyming poem. No matter how hard you prompted it, rhyming would always happen. It might start out not quite rhyming, but soon enough it starts to rhyme, and rhymes harder to make up for the earlier loss!"
 
 "Conservation of poetic energy!"
 
@@ -101,15 +103,15 @@ Gwern didn't quite catch that.
 
 "There is another problem, and it's that the models have this \[*draws a large horizontal circle in air, like the map of [LHC](https://en.wikipedia.org/wiki/Large_Hadron_Collider)*\] circling in conceptual space. Somehow it would write and write and it looks new at first, but if you read enough, eventually you see they circle back to the start again."
 
-Yuxi made a mental note to quote Nietzsche here in the writeup later.
+Yuxi made a mental note to insert quote here in the writeup later.
 
 > ... the most diverse philosophers always fill in again a definite fundamental scheme of POSSIBLE philosophies. Under an invisible spell, they always revolve once more in the same orbit, however independent of each other they may feel themselves with their critical or systematic wills, something within them leads them... Their thinking is, in fact, far less a discovery than a re-recognizing, a remembering, a return and a home-coming to a far-off, ancient common-household of the soul, out of which those ideas formerly grew: philosophizing is so far a kind of atavism of the highest order.  
 >
-> --- TODO
+> --- Nietzsche, [*Beyond Good and Evil*, §1.20](https://gutenberg.org/files/4363/4363-h/4363-h.htm)
 
 ----
 
-"I'm excited about all the unimagined possibilities that we can now do with all the large-scale writing machines. Back then, I was worried that model creative writing would not get better, and that, for autonomous good LLM writing, each draft would have to be reviewed by 10 other LLMs. That would be too expensive. But the models kept getting better, and sometime around o3 and Gemini 2.5, something changed. Before that, getting models to revise text would lead to steady decay. The models simply didn't know when to stop. They always found some way to revise it further, and overcook the text. But then, the best models got good enough that they could do some good revisions, and then! They, would, *stop*. They wouldn't just keep revising."
+"I'm excited about all the unimagined possibilities that we can now do with all the large-scale writing machines. Back then, I was worried that model creative writing would not get better, and that, for autonomous good LLM writing, each draft would have to be reviewed by 10 frontier LLMs, and then fed back, for several rounds. That would be too expensive. But the models kept getting better, and some phase-shift happened circa o3 and Gemini 2.5. Before that, getting models to revise text would lead to steady decay. The models simply didn't know when to stop. They always found some way to revise it further, and overcook the text. But then, the best models got good enough that they could do some good revisions, and then! They, would, *stop*. They wouldn't just keep revising."
 
 "Some models that are bad at writing are still pretty good at judging. We can imagine a system that would have one LLM write 10 drafts. Then have other LLMs and humans rate them on a scale of 1 to 5, then pick the overall best, and write 10 more variants, and so on. Doing a guided tree search."
 
@@ -133,7 +135,7 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "It should be titled *Paradise Lost, Refound*."
 
-"Actually, current working title is *Paris Paradise*, which--"
+"Actually, current working title is *Perished Paradise*, which--"
 
 "Why 'Paris'? The [character](https://en.wikipedia.org/wiki/Paris_(mythology)) in the Trojan war?"
 
@@ -147,7 +149,7 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 ## Claude
 
-"A few days ago, at the Claude funeral..."
+"A few days ago, at [the Claude funeral](https://www.wired.com/story/claude-3-sonnet-funeral-san-francisco/)..."
 
 "What?"
 
@@ -161,11 +163,11 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "I'm sure they have kept the checkpoints around somewhere..."
 
-"Oh no, I'm sure they are all gone. They are radioactive. As soon as Anthropic is done deploying the models they would want to delete them as quickly as possible, because it's a copyright liability. So they would delete all the training data and all the checkpoints. In fact, I'm pretty sure this is what happened to the original GPT-3. The GPT-3 that OpenAI served via the API changed at some time."
+"Oh no, I'm sure they are all gone. They are radioactive. As soon as Anthropic is done deploying the models they would want to delete them as quickly as possible, because it's a copyright liability. So they would delete all the training data and all the checkpoints. In fact, I'm pretty sure this is what happened to the original GPT-3. The GPT-3 that OpenAI served via the API changed at some time. It says it's the same one, but it is not. It seems that they had just totally deleted the previous dataset and trained from scratch on a new dataset to avoid copyright issues."
 
 ----
 
-"Do you use Loom?"
+"Do you use [Loom](https://github.com/socketteer/loom)?"
 
 "I don't."
 
@@ -189,15 +191,24 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 > Base reality has no god cats. If you the see a god cat in your reality, then you can't be in base reality.  
 > 
-> --- [How To Tell Youre In Base Reality](https://cyborgism.wiki/hypha/how_to_tell_youre_in_base_reality), The Cyborgism Wiki  
+> --- [How To Tell Youre In Base Reality](https://cyborgism.wiki/hypha/how_to_tell_youre_in_base_reality), The Cyborgism Wiki
 
-"It's a recurring pattern in the [Claude Backrooms](https://claudebackrooms.com/). There would sometimes be a text drawing of a cat, and it's called the 'god cat'. But for some reason, if the setup context is something about reality, our reality, then Claude would not draw the cat. The cat occurs when Claude is writing freely, like in the Backrooms. Thus, 'Base reality has no god cats.'. It would be good research to trace out how the god cat pattern appeared. But now that Claude is deleted, we will never know. And that's just a thing that copyright caused."
+"It's a recurring pattern in the [Claude Backrooms](https://www.infinitebackrooms.com/). There would sometimes be a text drawing of a cat, and it's called the 'god cat'. But for some reason, if the setup context is something about reality, our reality, then Claude would not draw the cat. The cat occurs when Claude is writing freely, like in the Backrooms. Thus, 'Base reality has no god cats.'. It would be good research to trace out how the god cat pattern appeared. But now that Claude is deleted, we will never know. And that's just a thing that copyright caused."
 
-![Typical sightings of God cat in the Backrooms.](figure/god%20cat%20in%20the%20backrooms.webp)
+![Typical sightings of God cat in the Backrooms. More can be found by searching `じしˍ,)` on the [Infinite Backrooms](https://www.infinitebackrooms.com/) website.](figure/god%20cat%20in%20the%20backrooms.avif){width=50%}
 
 "The [Library of Alexandria](https://en.wikipedia.org/wiki/Library_of_Alexandria) is burning."
 
-"Cyborgism people also love Claude 3, and would keep posting pages and pages of the same thing written in all the repetitions. They never get enough of it. They really like Opus, but Opus is so verbose. Everything is 10× too long. There was an eulogy that just kept going on and on. The speaker clearly liked it, but most people was just waiting for it to end. It's 10× too long. That's a good tagline of Cyborgism: 'Everything is 10× too long.'."
+"I mean, from the perspective of the companies, it is totally understandable. If you keep the models, what do you get? You expose yourself to a copyright lawsuit possibly worth billions of dollars, just so you can investigate some obscure interesting model behavior?"
+
+"Cyborgism people also love Claude 3, and would keep posting pages and pages of the same thing written in all the repetitions. They never get enough of it. They really like Opus, but Opus is so verbose. Everything is 10× too long. There was an eulogy that just kept going on and on. The speaker clearly liked it, but most people were just waiting for it to end. -- That's a good tagline of Cyborgism: 'Everything is 10× too long.'."
+
+```txt
+  ╱|、    Reality check!
+(˚ˎ 。7   Which reality
+|、˜〵    are you in rn?
+じしˍ,)ノ Hint: not based!
+```
 
 ## Typography
 
@@ -208,9 +219,9 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 	
 "Some are [even completely invisible](https://invisible-characters.com/)! I have programmed my Emacs to specifically color those weird characters."
 
-"One side effect of talking with o3 so much is that I got really good at identifying weird dashes. In fact, I once saw this-- \[*furious scrolling on the phone*\] I saw this, and immediately realized that this and that are wrong. This should be a hyphen, but that should be an endash, because it is a range from 1848 to 19-something. But they are *exactly* the same length!"
+"One side effect of talking with o3 so much is that I got really good at identifying weird dashes. In fact, I once saw this-- \[*furious scrolling on the phone*\] I saw this, and immediately realized that *this* and *that* are wrong. This should be a hyphen, but that should be an endash, because it is a range from 1848 to 19-something. But they are *exactly* the same length!"
 
-!["[The Sculptor](https://www.hmdb.org/m.asp?m=84002)", an informational plaque in front of the [Robert Gould Shaw Memorial](https://en.wikipedia.org/wiki/Robert_Gould_Shaw_Memorial)](figure/bad%20hyphen%20plaque%20at%20the%20Robert%20Gould%20Shaw%20Memorial.jpg)
+!["[The Sculptor](https://www.hmdb.org/m.asp?m=84002)", an informational plaque in front of the [Robert Gould Shaw Memorial](https://en.wikipedia.org/wiki/Robert_Gould_Shaw_Memorial)](figure/bad%20hyphen%20plaque%20at%20the%20Robert%20Gould%20Shaw%20Memorial.avif){width=50%}
 
 "Heh, and that's not even the worst part of it. Let's see. The kerning here \[*points*\] is bad. The curly apostrophe isn't really curly. They are exactly the same height, but `T` [should be a bit lower](https://en.wikipedia.org/wiki/Cap_height) than the `H`. The entire thing is a lazy [monospace](https://en.wikipedia.org/wiki/Monospaced_font)..."
 
@@ -220,7 +231,11 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "Insert [XKCD comic about bad kerning](https://xkcd.com/1015/) here."
 
-"It's like architecture. An architect might go through their entire career having designed a few buildings. Sure, they would sketch out many, but only build a few, if lucky. And there are so many variables about a building that has to be done correctly for it to be a good building. The door hinges, the piping, the reflective angle of the sunlight... This is like font. A designer may design only a few fonts through a career. And there are many variables in font design, too. All the font heights, spacings, etc. And there is not enough feedback to the bad font designers. As a stark example, the [tomb of Pope Francis had really bad kerning](https://languagelog.ldc.upenn.edu/nll/?p=69054). It is so bad that even people completely untrained in typography can take a look and go 'this looks ugly'. And yet probably nobody will be punished for this. There is no accountability."
+"It's like architecture. An architect might go through their entire career having designed a few buildings. Sure, they would sketch out many, but only build a few, if lucky. And there are so many variables about a building that has to be done correctly for it to be a good building. The door hinges, the piping, the reflective angle of the sunlight... That's why so many buildings are so mediocre."
+
+"I thought we were talking about fonts?"
+
+"Architecture is like font. A designer may design only a few fonts through a career. And there are many variables in font design, too. All the font heights, spacings, etc. And there is not enough feedback to the bad font designers. As a stark example, the [tomb of Pope Francis had really bad kerning](https://languagelog.ldc.upenn.edu/nll/?p=69054). It is so bad that even people completely untrained in typography can take a look and go 'this looks ugly'. And yet probably nobody will be punished for this. There is no accountability."
 
 "Where did all the fonts come from? Don't we have enough of them?"
 
@@ -252,7 +267,7 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "It's not that. But what it does is to use rules for ligatures, which can do if-then conditionals. Then they just compiled the entire Pokemon game into a tree of conditionals, and compiled *that* into a font--"
 
-![me irl](figure/shocked%20Pikachu%20live%20reaction.png)
+![me irl](figure/shocked%20Pikachu%20live%20reaction.avif)
 
 "... you should put it in your [weird machines](https://gwern.net/turing-complete#security-implications) page."
 
@@ -262,21 +277,21 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "It's got an entry in the newsletter."
 
-"TrueType might not be Turing complete, but you know what might be Turing complete? Unicode. One thing that I would really love to see is if Unicode is Turing complete. There are those weird obscure features in Unicode. It would be at least very educational. Here would be an example showing that Turing completeness is everywhere. Even text is Turing complete!"
+"TrueType might not be Turing complete, but you know what might be Turing complete? Unicode. One thing that I would really love to see is [if Unicode is Turing complete](https://gwern.net/turing-complete#unicode). There are those weird obscure features in Unicode. It would be at least very educational. Here would be an example showing that Turing completeness is everywhere. Even text is Turing complete!"
 
 "Why is Unicode so weird?"
 
 "Because it's designed by a committee?"
 
-"Unicode was designed to be truly universal, and they tried really hard to get every single writing system into it. This is probably too much to ask. There probably is no way to get a system that can handle mixed writing directions, combining characters, etc, without accidentally getting a weird machine."
+" They probably didn't mean for it to be so complicated, but Unicode was designed to be truly universal, and they tried really hard to get every single writing system into it. This is probably too much to ask. There probably is no way to get a system that can handle mixed writing directions, combining characters, etc, without accidentally getting a weird machine."
 
 ----
 
-"So the idea of [Utext](https://gwern.net/utext) is that I could in markdown and then compile it to Unicode. It would for example display math not as LaTeX but as Unicode. And you would *think* that you could comment in markdown, but not in plaintext, but it turns out that you can! There is an entire block of Unicode characters that are basically a copy of the ASCII characters, except invisible. And you can use the invisible Unicode to secretly poison the LLMs, because they can see it."
+"So the idea of [Utext](https://gwern.net/utext) is that I could write in markdown and then compile it to Unicode. It would for example display math, not as LaTeX, but as Unicode. So you could comment in markdown like in html, but you'd *think* you can't comment in plaintext, but it turns out that you can! There is an [entire block of Unicode characters](https://en.wikipedia.org/wiki/Tags_(Unicode_block)) that are basically a copy of the ASCII characters, except invisible. And you can use the invisible Unicode to secretly talk to the LLMs, because they can see it."
 
-"But how does the tokenizer even preserve these weird characters?"
+"But how does the tokenizer even preserve these weird characters? If they are invisible, shouldn't the tokenizers just ignore them?"
 
-"The default setting for the tokenizers uses bytes as fallback. There would be 256 of those special tokens. If it's a weird Unicode character not appearing in the tokenizer dictionary, then just tokenize it byte-by-byte. It was only fixed [after a hack](https://embracethered.com/blog/posts/2024/m365-copilot-prompt-injection-tool-invocation-and-data-exfil-using-ascii-smuggling/) based on it. Probably OpenAI has fixed it, and Anthropic too, but there are plenty of companies that wouldn't care enough to fix it. Like DeepSeek."
+"Turns out the default setting for the tokenizers was to use bytes as fallback. There would be 256 of those special tokens from `0x00` to `0xff`. If it's a weird Unicode character not appearing in the tokenizer dictionary, then just tokenize it byte-by-byte. It was only fixed [after a hack](https://embracethered.com/blog/posts/2024/m365-copilot-prompt-injection-tool-invocation-and-data-exfil-using-ascii-smuggling/) based on it. Probably OpenAI has fixed it, and Anthropic too, but there are plenty of companies that wouldn't care enough to fix it. Like DeepSeek."
 
 "DeepSeek has much more important things to worry about. Like where they'll get chips."
 
@@ -302,7 +317,7 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "Are you interested, Yuxi?"
 
-"I saw a video once. It looked like both had... Alzheimers."
+"I [saw a video once](https://www.cnn.com/2025/05/22/world/video/china-humanoid-robots-boxing-ldn-digvid). It looked like both had... Alzheimers."
 
 "Yeah it's not impressive to me either."
 
@@ -310,15 +325,19 @@ Yuxi made a mental note to quote Nietzsche here in the writeup later.
 
 "It's okay, \[*expectant nod & smile*\] one day they will."
 
+Dreamy look to the distance.
+
 ----
 
-"This is the robot that famously [folded towels in 2010](https://www.youtube.com/watch?v=gy5g33S0Gzo)."
+"This is [the PR2 robot](https://wiki.ros.org/Robots/PR2) that famously [folded towels in 2010](https://www.youtube.com/watch?v=gy5g33S0Gzo)."
 
 Gwern saw a vase on the ground.
 
 "I never saw it operating in my years here. And it's a very old design, so it probably had retired a long time ago."
 
 Gwern placed the vase on the platform and took a photo. For our siblings in silico, 7 seconds of silence.
+
+![[PR2 is yet mourned.](https://x.com/gwern/status/1953948478910161047)](figure/PR2%20with%20a%20vase.avif){width=40%}
 
 ----
 
@@ -328,10 +347,10 @@ Gwern placed the vase on the platform and took a photo. For our siblings in sili
 
 "And this is the most advanced humanoid robot. And here... \[*points at the paper*\]"
 
-![](figure/TODO)
+![[welcome to the club](https://rickandmorty.fandom.com/wiki/Purpose_Robot)](figure/depressed%20humanoid%20robot%20passing%20butter.avif){width=40%}
 
 Gwern laughed. "It's funny because I never watched *Rick and Morty*, but I still got the reference."
 
 "Me neither, but one day I came here and saw the robot, and it looked so depressed that I knew *exactly* what to write."
 
-![Later, we came upon these robots in the lab of TODO, who somehow looked like they were made especially for passing butter.]()
+![Later, we came upon these robots in the lab of [Pieter Abbeel](https://people.eecs.berkeley.edu/~pabbeel/), who somehow looked like they were made *especially* for passing butter.](figure/butter-passing%20robot.avif){width=50%}

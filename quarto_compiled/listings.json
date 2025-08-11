@@ -53,6 +53,7 @@
       "/essays/posts/neural-scaling-laws/index.html",
       "/sketches/posts/fictional-ideas/index.html",
       "/essays/posts/grokking-modular-arithmetics/index.html",
+      "/logs/posts/2025-gwern-bair/index.html",
       "/essays/posts/hole-argument-inverted-qualia/index.html",
       "/essays/posts/renormalization-how-to/index.html",
       "/sketches/posts/field-theory-how-to/index.html",
@@ -84,6 +85,7 @@
   {
     "listing": "/logs/index.html",
     "items": [
+      "/logs/posts/2025-gwern-bair/index.html",
       "/logs/posts/2025-dream-ingress-answer/index.html",
       "/logs/posts/2025-reprofro-party/index.html",
       "/logs/posts/2025-patel-dinner/index.html",

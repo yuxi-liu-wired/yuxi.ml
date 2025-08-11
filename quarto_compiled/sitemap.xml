@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://yuxi.ml/essays/posts/cyc/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.741Z</lastmod>
+    <lastmod>2025-08-10T05:29:24.067Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/essays/posts/backstory-of-backpropagation/index.html</loc>
@@ -182,7 +182,7 @@
   </url>
   <url>
     <loc>https://yuxi.ml/logs/posts/2025-survivorship-bias/index.html</loc>
-    <lastmod>2025-07-18T06:37:18.145Z</lastmod>
+    <lastmod>2025-08-10T05:35:02.279Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/docs/index.html</loc>
@@ -243,5 +243,9 @@
   <url>
     <loc>https://yuxi.ml/notes/index.html</loc>
     <lastmod>2025-07-18T06:37:18.148Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/logs/posts/2025-gwern-bair/index.html</loc>
+    <lastmod>2025-08-11T19:37:58.888Z</lastmod>
   </url>
 </urlset>
