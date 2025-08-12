@@ -37,7 +37,7 @@ importance: 0
 
 ![This image is a reference to the Laughing Man in *Ghost in the Shell: Stand Alone Complex*. It appears [in the source code](https://github.com/gwern/gwern.net/blob/master/img/logo/logo-laughingman.svg) for the website, but (apparently) is never used for anything.](figure/gwern-logo-laughingman.svg){width=50%}
 
-"So, I'm very interested in him, because he was writing books like *Mind Children* [@moravecMindChildrenFuture1988] and other papers in the 1980s. Already in the 1990s, [he predicted AGI by the 2020s, based on scaling laws](https://yuxi.ml/docs/posts/1998-hans-moravec/). That's impressive! His early perspectives on the scaling laws and predicting the future are important for a history of AI from the scaling point of view."
+"So, I'm very interested in him, because he was writing books like [*Mind Children*](https://www.amazon.com/Mind-Children-Future-Robot-Intelligence/dp/0674576187) [@moravecMindChildrenFuture1988] and other papers in the 1980s. Already in the 1990s, [he predicted AGI by the 2020s, based on scaling laws](https://yuxi.ml/docs/posts/1998-hans-moravec/). That's impressive! His early perspectives on the scaling laws and predicting the future are important for a history of AI from the scaling point of view."
 
 "So something is interesting about him is that he is really pro-robots. Like some modern accelerationists and [Nick Land](https://en.wikipedia.org/wiki/Nick_Land). He was like, more power to them, if they could manage to become better than humanity at reproducing and spreading to the universe, then they should. And If humans are replaced, that's fine. Evolution is working."
 
@@ -223,7 +223,7 @@ Yuxi made a mental note to insert quote here in the writeup later.
 
 !["[The Sculptor](https://www.hmdb.org/m.asp?m=84002)", an informational plaque in front of the [Robert Gould Shaw Memorial](https://en.wikipedia.org/wiki/Robert_Gould_Shaw_Memorial).](figure/bad%20hyphen%20plaque%20at%20the%20Robert%20Gould%20Shaw%20Memorial.avif){width=50%}
 
-"Heh, and that's not even the worst part of it. Let's see. The kerning here \[*points*\] is bad. The curly apostrophe isn't really curly. They are exactly the same height, but `T` [should be a bit lower](https://en.wikipedia.org/wiki/Cap_height) than the `H`. The entire thing is a lazy [monospace](https://en.wikipedia.org/wiki/Monospaced_font)..."
+"Heh, and that's not even the worst part of it. Let's see. The kerning here \[*points*\] is bad. The curly apostrophe isn't really curly. They are exactly the same height, but the number should be superscripted like `54ᵀᴴ`. The entire thing is a lazy [monospace](https://en.wikipedia.org/wiki/Monospaced_font)..."
 
 "You know a lot about weird typography."
 
