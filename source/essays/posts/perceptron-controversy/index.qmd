@@ -65,6 +65,8 @@ What are we to make of the enigma of Minsky? Was he the devil or not?
 During his undergraduate years, Minsky was deeply impressed by [Andrew Gleason](https://en.wikipedia.org/wiki/Andrew_M._Gleason),[^andrew-gleason] and decided to work on pure mathematics, resulting in his 1951 undergraduate thesis *A Generalization of Kakutani's Fixed-Point Theorem*, which extended an obscure fixed-point theorem of [Kakutani](https://en.wikipedia.org/wiki/Shizuo_Kakutani) -- not [the famous version](https://en.wikipedia.org/wiki/Kakutani_fixed-point_theorem), as Kakutani proved more than one fixed-point theorem.
 
 [^andrew-gleason]:
+    Gleason told Minsky in 1947 that he was going to solve [Hilbert's 5th problem](https://en.wikipedia.org/wiki/Hilbert's_fifth_problem) and estimated it would take 9 years. It took 5 years. [@taoHilbertsFifthProblem2014, page xi]
+
     > I asked Gleason how he was going to solve it. Gleason said he had a plan that consisted of three steps, each of which he thought would take him three years to work out. Our conversation must have taken place in 1947, when I was a sophomore. Well, the solution took him only about five more years ... Gleason made me realize for the first time that mathematics was a landscape with discernible canyons and mountain passes, and things like that. In high school, I had seen mathematics simply as a bunch of skills that were fun to master -- but I had never thought of it as a journey and a universe to explore. No one else I knew at that time had that vision, either. [@bernsteinMarvinMinskyVision1981]
 
 ::: {#thm-kakutani}
