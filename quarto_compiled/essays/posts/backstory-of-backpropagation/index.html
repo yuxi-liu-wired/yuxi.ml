@@ -799,11 +799,11 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 <p>After the ADALINE showed good behavior, they went on and on trying to train a two-layered ADALINE (“MADALINE”, or “many ADALINE”), which of course could not be trained by gradient descent, because the hidden layer ADALINE units used the Heaviside step function! It is almost inconceivable nowadays, but they simply refused to use a continuous activation function and tried every other trick <em>except</em> that. They ended up with the <a href="https://en.wikipedia.org/wiki/ADALINE#MADALINE">MADALINE I rule</a>. In short, it was a heuristic rule for synthesizing supervision signals for the hidden layer, much like <a href="#frank-rosenblatt">Rosenblatt’s heuristic rule</a>.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;The MADALINE I machine consists of multiple hidden ADALINE units, and a single output layer consisting of a single unit. The output unit merely takes the majority vote from the hidden units. If the desired output is <span class="math inline">\(+1\)</span>, but the actual output is <span class="math inline">\(-1\)</span>, then the machine picks those ADALINE units that are negative, but closest to being positive, and make them update their weights, according to the ADALINE learning rule. It was thought of as a form of “minimal disturbance principle”.</p></div><div id="fn8"><p><sup>8</sup>&nbsp;Marvin Minsky would approve.</p>
 <blockquote class="blockquote">
-<p>“[The perceptron] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can’t get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of.”<span class="citation" data-cites="bernsteinMarvinMinskyVision1981">(<a href="#ref-bernsteinMarvinMinskyVision1981" role="doc-biblioref">Bernstein 1981</a>)</span></p>
+<p>“[The perceptron] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can’t get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of.”<span class="citation" data-cites="bernsteinMarvinMinskysVision1981">(<a href="#ref-bernsteinMarvinMinskysVision1981" role="doc-biblioref">Bernstein 1981</a>)</span></p>
 </blockquote>
 </div></div><p>Frustrated by the difficulty, they left neural network research. Hoff went to Intel to co-invent the microprocessor, and Widrow set about applying the ADALINE to small problems that it could solve well<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, such as adaptive antennas, adaptive noise filtering in telephone lines, adaptive filtering in medical scanning, etc. Even with just a single ADALINE, he brought breakthroughs to those fields.</p>
 <blockquote class="blockquote">
-<p>Engineers at Apple have told me that every iPhone, since the iPhone 5, uses the LMS algorithm all over the device. They could not tell me where because, if they did, they would have to shoot me. Apple keeps secrets. <span class="citation" data-cites="widrowCyberneticsGeneralTheory2022">(<a href="#ref-widrowCyberneticsGeneralTheory2022" role="doc-biblioref">Widrow 2022</a>, preface, page xix)</span></p>
+<p>Engineers at Apple have told me that every iPhone, since the iPhone 5, uses the LMS algorithm all over the device. They could not tell me where because, if they did, they would have to shoot me. Apple keeps secrets. <span class="citation" data-cites="widrowCybernetics20General2022">(<a href="#ref-widrowCybernetics20General2022" role="doc-biblioref">Widrow 2022</a>, preface, page xix)</span></p>
 </blockquote>
 <p>Perhaps Widrow and Hoff were limited to considering only learning rules they could implement electrochemically? But it does not seem so, in the words of Widrow himself, it was a blind spot for all researchers:</p>
 <blockquote class="blockquote">
@@ -1105,22 +1105,22 @@ Figure&nbsp;1: Rosenblith images.
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-ackleyLearningAlgorithmBoltzmann1985" class="csl-entry" role="listitem">
-Ackley, David H., Geoffrey E. Hinton, and Terrence J. Sejnowski. 1985. <span>“A Learning Algorithm for <span>Boltzmann</span> Machines.”</span> <em>Cognitive Science</em> 9 (1): 147–69. <a href="https://www.sciencedirect.com/science/article/pii/S0364021385800124">https://www.sciencedirect.com/science/article/pii/S0364021385800124</a>.
+Ackley, David H., Geoffrey E. Hinton, and Terrence J. Sejnowski. 1985. <span>“A Learning Algorithm for <span>Boltzmann</span> Machines.”</span> <em>Cognitive Science</em> 9 (1): 147–69.
 </div>
-<div id="ref-bernsteinMarvinMinskyVision1981" class="csl-entry" role="listitem">
-Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December. <a href="https://www.newyorker.com/magazine/1981/12/14/a-i">https://www.newyorker.com/magazine/1981/12/14/a-i</a>.
+<div id="ref-bernsteinMarvinMinskysVision1981" class="csl-entry" role="listitem">
+Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December.
 </div>
 <div id="ref-childManuscriptsLeibnizHis1917" class="csl-entry" role="listitem">
 Child, J. M. 1917. <span>“The <span>Manuscripts</span> of <span>Leibniz</span> on <span>His Discovery</span> of the <span>Differential Calculus</span>. <span>Part II</span> (<span>Continued</span>).”</span> <em>The Monist</em> 27 (3): 411–54. <a href="https://doi.org/10.5840/monist191727324">https://doi.org/10.5840/monist191727324</a>.
 </div>
 <div id="ref-griewankWhoInventedReverse2012" class="csl-entry" role="listitem">
-Griewank, Andreas. 2012. <span>“Who Invented the Reverse Mode of Differentiation.”</span> <em>Documenta Mathematica, Extra Volume ISMP</em> 389400. <a href="https://content.ems.press/assets/public/full-texts/books/251/chapters/online-pdf/978-3-98547-540-7-chapter-4949.pdf">https://content.ems.press/assets/public/full-texts/books/251/chapters/online-pdf/978-3-98547-540-7-chapter-4949.pdf</a>.
+Griewank, Andreas. 2012. <span>“Who Invented the Reverse Mode of Differentiation.”</span> <em>Documenta Mathematica, Extra Volume ISMP</em> 389400.
 </div>
 <div id="ref-kanalPatternCategoriesAlternate1993" class="csl-entry" role="listitem">
-Kanal, Laveen N. 1993. <span>“On Pattern, Categories, and Alternate Realities.”</span> <em>Pattern Recognition Letters</em> 14 (3): 241–55. <a href="http://lnk.com/prl14.pdf">http://lnk.com/prl14.pdf</a>.
+Kanal, Laveen N. 1993. <span>“On Pattern, Categories, and Alternate Realities.”</span> <em>Pattern Recognition Letters</em> 14 (3): 241–55.
 </div>
 <div id="ref-lecunGeneralizationNetworkDesign1989" class="csl-entry" role="listitem">
-LeCun, Yann. 1989. <span>“Generalization and Network Design Strategies.”</span> <em>Connectionism in Perspective</em> 19 (143-155): 18. <a href="https://www.academia.edu/download/30766382/lecun.pdf">https://www.academia.edu/download/30766382/lecun.pdf</a>.
+LeCun, Yann. 1989. <span>“Generalization and Network Design Strategies.”</span> <em>Connectionism in Perspective</em> 19 (143-155): 18.
 </div>
 <div id="ref-linnainmaaTaylorExpansionAccumulated1976" class="csl-entry" role="listitem">
 Linnainmaa, Seppo. 1976. <span>“Taylor Expansion of the Accumulated Rounding Error.”</span> <em>BIT</em> 16 (2): 146–60. <a href="https://doi.org/10.1007/BF01931367">https://doi.org/10.1007/BF01931367</a>.
@@ -1135,16 +1135,16 @@ Minsky, Marvin. 1967. <em>Computation: Finite and Infinite Machines</em>. Englew
 Minsky, Marvin, and Seymour Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
 </div>
 <div id="ref-olazaranHistoricalSociologyNeural1991" class="csl-entry" role="listitem">
-Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> PhD thesis, The University of Edinburgh. <a href="https://era.ed.ac.uk/handle/1842/20075">https://era.ed.ac.uk/handle/1842/20075</a>.
+Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> PhD thesis, The University of Edinburgh.
 </div>
 <div id="ref-papertSummerVisionProject1966" class="csl-entry" role="listitem">
-Papert, Seymour A. 1966. <span>“The Summer Vision Project.”</span> <a href="https://dspace.mit.edu/handle/1721.1/6125">https://dspace.mit.edu/handle/1721.1/6125</a>.
+Papert, Seymour A. 1966. <span>“The Summer Vision Project.”</span>
 </div>
 <div id="ref-pinkerFutureTense2002" class="csl-entry" role="listitem">
 Pinker, Steven, and Michael T. Ullman. 2002. <span>“The Past and Future of the Past Tense.”</span> <em>Trends in Cognitive Sciences</em> 6 (11): 456–63. <a href="https://doi.org/10.1016/S1364-6613(02)01990-3">https://doi.org/10.1016/S1364-6613(02)01990-3</a>.
 </div>
 <div id="ref-rosenblattPrinciplesNeurodynamicsPerceptrons1962" class="csl-entry" role="listitem">
-Rosenblatt, Frank. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC. <a href="https://apps.dtic.mil/sti/citations/AD0256582">https://apps.dtic.mil/sti/citations/AD0256582</a>.
+Rosenblatt, Frank. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC.
 </div>
 <div id="ref-rosenblithSensoryCommunicationContributions2012" class="csl-entry" role="listitem">
 Rosenblith, Walter A., ed. 2012. <em>Sensory Communication: Contributions to the <span>Symposium</span> on <span>Principles</span> of <span>Sensory Communication</span>, <span>July</span> 19-<span>August</span> 1, 1959, <span>Endicott House</span>, <span>M</span>.<span>I</span>.<span>T</span></em>. Cambridge, Massachusetts: The M.I.T. Press, Massachusetts Institute of Technology.
@@ -1162,7 +1162,7 @@ Sejnowski, Terrence J. 2018. <em>The <span>Deep Learning Revolution</span></em>.
 Werbos, P. 1968. <span>“The Elements of Intelligence.”</span> <em>Cybernetica (Namur)</em> 3: 131–78.
 </div>
 <div id="ref-werbosNeuralNetworksPath2011" class="csl-entry" role="listitem">
-Werbos, Paul. 2011. <span>“Neural Networks as a Path to Self-Awareness.”</span> In <em>The 2011 <span>International Joint Conference</span> on <span>Neural Networks</span></em>, 3264–71. IEEE. <a href="https://ieeexplore.ieee.org/abstract/document/6033654/">https://ieeexplore.ieee.org/abstract/document/6033654/</a>.
+Werbos, Paul. 2011. <span>“Neural Networks as a Path to Self-Awareness.”</span> In <em>The 2011 <span>International Joint Conference</span> on <span>Neural Networks</span></em>, 3264–71. IEEE.
 </div>
 <div id="ref-werbosApplicationsAdvancesNonlinear1982" class="csl-entry" role="listitem">
 Werbos, Paul J. 1982. <span>“Applications of Advances in Nonlinear Sensitivity Analysis.”</span> In <em>System <span>Modeling</span> and <span>Optimization</span></em>, edited by R. F. Drenick and F. Kozin, 38:762–70. Berlin/Heidelberg: Springer-Verlag. <a href="https://doi.org/10.1007/BFb0006203">https://doi.org/10.1007/BFb0006203</a>.
@@ -1180,13 +1180,13 @@ Werbos, Paul J. 1982. <span>“Applications of Advances in Nonlinear Sensitivity
 Werbos, Paul J., and Jim Titus. 1978. <span>“An Empirical Test of New Forecasting Methods Derived from a Theory of Intelligence: <span>The</span> Prediction of Conflict in <span>Latin America</span>.”</span> <em>IEEE Transactions on Systems, Man, and Cybernetics</em> 8 (9): 657–66. <a href="https://doi.org/10.1109/TSMC.1978.4310051">https://doi.org/10.1109/TSMC.1978.4310051</a>.
 </div>
 <div id="ref-widrowGeneralizationInformationStorage1962" class="csl-entry" role="listitem">
-Widrow, Bernard. 1962. <span>“Generalization and Information Storage in Networks of Adaline Neurons.”</span> <em>Self-Organizing Systems</em>, 435–61. <a href="https://cir.nii.ac.jp/crid/1573387449478081920">https://cir.nii.ac.jp/crid/1573387449478081920</a>.
+Widrow, Bernard. 1962. <span>“Generalization and Information Storage in Networks of Adaline Neurons.”</span> <em>Self-Organizing Systems</em>, 435–61.
 </div>
 <div id="ref-widrowOralHistoryBernard1997" class="csl-entry" role="listitem">
-———. 1997. <span>“Oral <span>History</span>: <span>Bernard Widrow</span>.”</span> <a href="https://ethw.org/Oral-History:Bernard_Widrow">https://ethw.org/Oral-History:Bernard_Widrow</a>.
+———. 1997. <span>“Oral <span>History</span>: <span>Bernard Widrow</span>.”</span>
 </div>
-<div id="ref-widrowCyberneticsGeneralTheory2022" class="csl-entry" role="listitem">
-———. 2022. <em>Cybernetics 2.0: <span>A General Theory</span> of <span>Adaptivity</span> and <span>Homeostasis</span> in the <span>Brain</span> and in the <span>Body</span></em>. Vol. 14. Springer Nature. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=X_eVEAAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=Cybernetics+2.0%0A&amp;ots=MB6pN7dGcd&amp;sig=hTBUvOlnKBRkfYUNL7Ztn1Zm4Mg">https://books.google.com/books?hl=en&amp;lr=&amp;id=X_eVEAAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=Cybernetics+2.0%0A&amp;ots=MB6pN7dGcd&amp;sig=hTBUvOlnKBRkfYUNL7Ztn1Zm4Mg</a>.
+<div id="ref-widrowCybernetics20General2022" class="csl-entry" role="listitem">
+———. 2022. <em>Cybernetics 2.0: <span>A General Theory</span> of <span>Adaptivity</span> and <span>Homeostasis</span> in the <span>Brain</span> and in the <span>Body</span></em>. Vol. 14. Springer Nature.
 </div>
 <div id="ref-widrowAncientHistory2023" class="csl-entry" role="listitem">
 ———. 2023. <span>“Ancient <span>History</span>.”</span> In <em>Cybernetics 2.0: <span>A General Theory</span> of <span>Adaptivity</span> and <span>Homeostasis</span> in the <span>Brain</span> and in the <span>Body</span></em>, 277–307. Springer <span>Series</span> on <span>Bio-</span> and <span>Neurosystems</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-98140-2_26">https://doi.org/10.1007/978-3-030-98140-2_26</a>.
@@ -2127,12 +2127,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>Frustrated by the difficulty, they left neural network research. Hoff went to Intel to co-invent the microprocessor, and Widrow set about applying the ADALINE to small problems that it could solve well<span class="ot">[^marvin-minsky-approves]</span>, such as adaptive antennas, adaptive noise filtering in telephone lines, adaptive filtering in medical scanning, etc. Even with just a single ADALINE, he brought breakthroughs to those fields.</span>
 <span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Engineers at Apple have told me that every iPhone, since the iPhone 5, uses the LMS algorithm all over the device. They could not tell me where because, if they did, they would have to shoot me. Apple keeps secrets. </span><span class="co">[</span><span class="ot">@widrowCyberneticsGeneralTheory2022, preface, page xix</span><span class="co">]</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Engineers at Apple have told me that every iPhone, since the iPhone 5, uses the LMS algorithm all over the device. They could not tell me where because, if they did, they would have to shoot me. Apple keeps secrets. </span><span class="co">[</span><span class="ot">@widrowCybernetics20General2022, preface, page xix</span><span class="co">]</span></span>
 <span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="ot">[^marvin-minsky-approves]</span>:</span>
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    Marvin Minsky would approve.</span>
 <span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="in">    &gt; "\[The perceptron\] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can't get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of."[@bernsteinMarvinMinskyVision1981]</span></span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="in">    &gt; "\[The perceptron\] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can't get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of."[@bernsteinMarvinMinskysVision1981]</span></span>
 <span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>Perhaps Widrow and Hoff were limited to considering only learning rules they could implement electrochemically? But it does not seem so, in the words of Widrow himself, it was a blind spot for all researchers:</span>
 <span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>

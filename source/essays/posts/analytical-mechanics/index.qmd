@@ -1027,15 +1027,21 @@ Interpret the action of a path as the cost of traveling along that path. The sur
 
 Let us stand at a point $(t, q)$ on the surface of action $S$, and consider all the points we can reach by an additional action $\delta S$. Suppose we go from $(t, q)$ to $(t + \epsilon t, q + \epsilon q)$, then the cost of that is $L\lrb{t, q, \frac{\epsilon q}{\epsilon q}}\epsilon t$. (We write $\epsilon t$ instead of $\delta t$, because we have to use that symbol later.)
 
-Therefore, the "wave" of action $\delta S$ coming out of the point $(t, q)$ are those points $(t + \epsilon t, q + \epsilon q)$ satisfying the equation
+Therefore, the "little waves" ("wavelets") of action $\delta S$ radiating out of the point $(t, q)$ are those points $(t + \epsilon t, q + \epsilon q)$ satisfying the equation
 
 $$
-L\lrb{t, q, \frac{\epsilon q}{\epsilon q}}\epsilon t = \delta S
+L\lrb{t, q, \frac{\epsilon q}{\epsilon t}}\epsilon t = \delta S
 $$
 
-And the surface of action $S + \delta S$ is the envelope of all those little waves ("wavelets"). This is the wave perspective, but we still need to return to the particle perspective.
+And the surface of action $S + \delta S$ is the envelope of all those wavelets. This is the wave perspective, but we still need to return to the particle perspective.
 
-Suppose you are already at $(t, q)$, and you just want to reach the surface of $S + \delta S$. It doesn't matter where you end up on that surface -- you just have to get to that surface *somewhere*. You also have exactly $\delta S$ to spend, so you have to plan optimally. Now, looking at that picture, you see that the only place you can possibly reach is a certain point $(t + \delta t, q + \delta q)$ where the wavelet is tangent to the surface of $S + \delta S$. At that point, the tangent surfaces of $S$ at $(t, q)$ is parallel to the tangent surface of wavelet. That is,
+Suppose you are already at $(t, q)$, and you just want to reach the surface of $S + \delta S$. It doesn't matter where you end up on that surface -- you just have to get to that surface *somewhere*. You also have exactly $\delta S$ to spend, so you have to plan optimally. So, you draw out the surface of all points you can reach after spending another $\delta S$. This is the $\delta S$-wavelet out of $(t, q)$. Now, looking at that picture, you see that the only place you can possibly reach is a certain point $(t + \delta t, q + \delta q)$.
+
+Because the wavelet cannot reach beyond $S + \delta S$, it's clear that the wavelet is tangent to the surface of $S+\delta S$ precisely at $(t + \delta t, q + \delta q)$. But we can go further. We claim that the tangent surface of $S$ at $(t, q)$ is exactly parallel to the tangent surface of $S+\delta S$ at $(t + \delta t, q + \delta q)$.
+
+To see it, imagine nudging $(t, q)$ around the surface of $S$. As you nudge around, the wavelet also slides around. If the tangent surfaces are not exactly parallel, then you can find a good direction to nudge the point $(t, q)$, such that as you give it a good shove, the wavelet bursts through the surface of $S + \delta S$, creating a contradiction.
+
+Now that we have shown that the tangent surfaces of $S$ at $(t, q)$ is parallel to the tangent surface of wavelet, we write it out symbolically:
 
 $$
 \begin{aligned}
@@ -1286,11 +1292,11 @@ We still have a duality between points on the two surfaces, defined by stationar
 
 The first application of Hamiltonian mechanics was done by Hamilton, who in 1832 predicted theoretically that if light enters a biaxial crystal in just the right way, it will not just refract in one direction, but in an entire *cone* of directions -- which he termed [internal conical refraction](https://en.wikipedia.org/wiki/Conical_refraction). The theory of this is fascinating,[^conical-neptune] however, for lack of space, we will only give the barest description. 
 
-[^conical-neptune]: It was historically important as the first phenomenon predicted by mathematical reasoning before experimental observation [@berryChapterConicalDiffraction2007], and it was often compared to the mathematical prediction of Neptune by Le Verrier (1845) [@smithCambridgeNetworkAction1989].
+[^conical-neptune]: It was historically important as the first phenomenon predicted by mathematical reasoning before experimental observation [@berryChapter2Conical2007], and it was often compared to the mathematical prediction of Neptune by Le Verrier (1845) [@smithCambridgeNetworkAction1989].
 
 Simply put, it turns out that in a biaxial crystal, both $K_{particle}$ and $K_{wave}$ have the same shape of a large blob containing a smaller blob, touching each other at 4 cone-shaped points, as pictured.
 
-![The shape of the $K_{wave}$ surface. The $K_{particle}$ surface is topologically the same, and can be obtained from $K_{wave}$ by squashing it *just right*. Figure from [@schaeferBandTeilElektrodynamik1949, page 485, figure 128]](figure/schaefer_1949_fig_128.png)
+![The shape of the $K_{wave}$ surface. The $K_{particle}$ surface is topologically the same, and can be obtained from $K_{wave}$ by squashing it *just right*. Figure from [@schaeferElektrodynamikUndOptik1949, page 485, figure 128]](figure/schaefer_1949_fig_128.png)
 
 Now, let $k_c \in K_{wave}$ be one of the cone-shaped points, then it corresponds to a tangent plane to $K_{particle}$. Each tangent point $v \in K_{particle}$, conversely, corresponds to a tangent plane to $k_c$.
 
@@ -1450,7 +1456,7 @@ In the same way, analyze the simple harmonic oscillator -- a particle in a poten
 
 ### Deriving the time-independent Schrödinger equation
 
-<small>This section based on [@masoliverClassicalQuantumMechanics2009; @derbesFeynmanDerivationSchrodinger1996; @hamillStudentGuideLagrangians2013, section 6.4].</small>
+<small>This section based on [@masoliverClassicalQuantumMechanics2009; @derbesFeynmansDerivationSchrodinger1996; @hamillStudentsGuideLagrangians2013, section 6.4].</small>
 
 Assume that the potential is time-independent: $V(t, q) = V(q)$. Assume that the physical system can be described by a function
 
@@ -1750,7 +1756,7 @@ At the 1911 Solvay Conference, where the great physicists grappled with the new 
 >
 > [@institutssolvayTheorieRayonnementQuanta1912, page 450]
 
-![The adiabatic pendulum of Lorentz. Figure from [@fowler13AdiabaticInvariants2020]](figure/adiabatic-pendulum.png){width=30% fig-align="center"}
+![The adiabatic pendulum of Lorentz. Figure from [@fowler131AdiabaticInvariants2020]](figure/adiabatic-pendulum.png){width=30% fig-align="center"}
 
 Why is this interesting? The quantum hypothesis states that for quantum oscillators, $E/\nu = nh$, where $n$ can only take values in the natural numbers. The Lorentz pendulum seems to show that the quantity $E/\nu$ can change continuously. Thus, for example, we might start at a quantized value of $E/\nu = 100h$, and end up at $100.5h$, invalidating the quantum hypothesis for macroscopic systems. And if macroscopic systems do not follow the quantum hypothesis, then as the macroscopic system becomes microscopic, it seems the quantum hypothesis would be invalidated as well.
 
@@ -1977,7 +1983,7 @@ Selections from [@kramersAtomBohrTheory1923].
 
 ### The Einstein---Brillouin--Keller quantization
 
-This topic is quite obscure and hard to find a simple reference for, yet I found it is absolutely necessary to treat this correctly, if only to soothe my mathematical conscience. I wrote it based on [@stoneEinsteinUnknownInsight2005; @duncanConstructingQuantumMechanics2019, chapter 5].
+This topic is quite obscure and hard to find a simple reference for, yet I found it is absolutely necessary to treat this correctly, if only to soothe my mathematical conscience. I wrote it based on [@stoneEinsteinsUnknownInsight2005; @duncanConstructingQuantumMechanics2019, chapter 5].
 
 Let's take a more careful look at the Bohr--Sommerfeld model of a hydrogen atom. The electron orbits a proton, and the equation of motion is spherically symmetric. Therefore, we can write it in spherical coordinates $(r, \theta, \psi)$, where $r$ is the radius, $\theta$ is the co-latitude, and $\psi$ is the longitude. The Bohr--Sommerfeld quantization then states that
 
@@ -2033,7 +2039,7 @@ Without a torus in phase space, we cannot find trajectories around the torus, an
 
 This failure of the EBK quantization on classically chaotic systems was forgotten for many years, but eventually rediscovered.[^einstein-quantum-chaos] When it did, it became a seed of [quantum chaos](https://en.wikipedia.org/wiki/Quantum_chaos), which I hope to explain clearly some day. In the mean time, I leave you with some beautiful pictures of quantum chaos instead.
 
-[^einstein-quantum-chaos]: See [@stoneEinsteinUnknownInsight2005] for a brief history and more cool pictures. It was written in 2005, the "Einstein Year", the 100th anniversary of Einstein's *annus mirabilis*.
+[^einstein-quantum-chaos]: See [@stoneEinsteinsUnknownInsight2005] for a brief history and more cool pictures. It was written in 2005, the "Einstein Year", the 100th anniversary of Einstein's *annus mirabilis*.
 
 ![The nonchaotic quantum circular billiard and the chaotic quantum cardioid billiard. Figure from [@backerQuantumChaosBilliards2007]](figure/chaotic_integrable_quantum_billiard.png)
 

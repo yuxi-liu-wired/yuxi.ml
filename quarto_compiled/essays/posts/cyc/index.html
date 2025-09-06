@@ -1264,7 +1264,7 @@ Reconstructing EURISKO’s fleet
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/Cyc_triple_reasoning.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">A sketch of how to reason by backward-chaining together triples in a semantic web. Figure from <span class="citation" data-cites="wallichSiliconBabies1991">(<a href="#ref-wallichSiliconBabies1991" role="doc-biblioref">Wallich 1991</a>)</span>. I can’t help but wonder if Lenat meant for a subtle joke against the <em>Elephants don’t play chess</em> by <span class="citation" data-cites="brooksElephantsDonPlay1990">(<a href="#ref-brooksElephantsDonPlay1990" role="doc-biblioref">Brooks 1990</a>)</span> by adding in a “dead end” branch that ends up concluding Clyde is an elephant.</figcaption>
+<figcaption class="margin-caption">A sketch of how to reason by backward-chaining together triples in a semantic web. Figure from <span class="citation" data-cites="wallichSiliconBabies1991">(<a href="#ref-wallichSiliconBabies1991" role="doc-biblioref">Wallich 1991</a>)</span>. I can’t help but wonder if Lenat meant for a subtle joke against the <em>Elephants don’t play chess</em> by <span class="citation" data-cites="brooksElephantsDontPlay1990">(<a href="#ref-brooksElephantsDontPlay1990" role="doc-biblioref">Brooks 1990</a>)</span> by adding in a “dead end” branch that ends up concluding Clyde is an elephant.</figcaption>
 </figure>
 </div>
 <p>Most inference engines are highly specialized. They can only reason within a few microtheories, but very well. Here is a toy example for reasoning with mutually exclusive categories. We can define <code>#$Mutex</code> as</p>
@@ -1739,7 +1739,7 @@ An information-theoretic estimate
 <p>In the 1990s, as the expert system hype died down, he turned his criticism towards expert systems. He recalled that, back when he was young, before academia had rejected him, he thought automated discovery with AI, such as AM and EURISKO, would lead the way to self-improving learning machines. But then he was disabused of this. BACON discovered Kepler’s three laws “only” from data, but that’s because Pat Langley was careful in presenting nothing but the relevant data. The cost to discover Kepler’s laws on the filtered dataset? A few CPU-hours. The cost to filter the dataset? 10 Kepler-years. Similarly, AM started out with the set-theory axioms and discovered prime numbers and some famous conjectures, but quickly ended up enumerating boring complications. Lenat had to keep adding in more heuristics to get something out of it. Similarly, EURISKO would run overnight and Lenat would check its outputs in the morning, remove some bad ideas, add some good ones, and so on. The <em>Traveller</em> 1981 win was “60/40% Lenat/EURISKO” after all.</p>
 <p>Generalizing, Lenat argued that there is a common thread across all these machine learning systems. They would all start out discovering many interesting basic things, but quickly “run out of steam” enumerating boring complications. Lenat called it as systems putting up a “veneer of intelligence” while they were really just “discharging potential energy that was stored in them”. That is, the creators secretly put into the program with their own expert knowledge somehow, either through the right rules, heuristics, dataset, features, or some other thing. Once the expert knowledge is “exhausted”, no more discoveries could be made, and the veneer wears off. However, it makes for impressive demos, leading to cycles of hype and bust. The only escape is to prime the knowledge pump. If the knowledge base is large enough, then it wouldn’t run out of steam. <span class="citation" data-cites="lenatVoiceTurtleWhatever2008">(<a href="#ref-lenatVoiceTurtleWhatever2008" role="doc-biblioref">D. B. Lenat 2008</a>)</span></p>
 <p>Lenat’s approach was not welcomed by the academics, and the feeling was mutual. AI researchers thought the Cyc project was hyped, and were unhappy with the secretive nature of Cycorp. Philosophers considered the Cyc project premature – how could Lenat build an ontology for the world when philosophers hadn’t even figured out what the ontology is? Lenat shot back, calling academics lazy, abstract, and unable to persist through decades of hard engineering work. <span class="citation" data-cites="thompsonKnowItAllMachine2001">(<a href="#ref-thompsonKnowItAllMachine2001" role="doc-biblioref">Thompson 2001</a>)</span> Among the academics, the only one that still supported him was Marvin Minsky, who had no problem calling the rest of AI research “brain-dead since the 1970s”, especially robotics: “Graduate students are wasting 3 years of their lives soldering and repairing robots, instead of making them smart.”. <span class="citation" data-cites="baardAIFounderBlasts2003">(<a href="#ref-baardAIFounderBlasts2003" role="doc-biblioref">Baard 2003</a>)</span></p>
-<p>Interesting. Why the hate towards robotics? Well, during the 1990s, there were two main challengers to his idea of a symbolic-logical system. On the one side, there was the challenge of bottom-up non-symbolic reasoning promoted by Rodney Brooks’ subsumption architecture <span class="citation" data-cites="brooksElephantsDonPlay1990">(<a href="#ref-brooksElephantsDonPlay1990" role="doc-biblioref">Brooks 1990</a>)</span>, and the statistical machine learning methods like support vector machines. He did not have much to say about the statistical methods – not yet – but he did reject the subsumption architecture as a mistaken attempt to reach AGI through robotics, much as Minsky did. Motors, sensors, etc, are simply not needed – common sense, specified in logical language, is all you need. The hard work needed to get the robots to do anything is, you see, the <em>wrong</em> kind of hard work.</p>
+<p>Interesting. Why the hate towards robotics? Well, during the 1990s, there were two main challengers to his idea of a symbolic-logical system. On the one side, there was the challenge of bottom-up non-symbolic reasoning promoted by Rodney Brooks’ subsumption architecture <span class="citation" data-cites="brooksElephantsDontPlay1990">(<a href="#ref-brooksElephantsDontPlay1990" role="doc-biblioref">Brooks 1990</a>)</span>, and the statistical machine learning methods like support vector machines. He did not have much to say about the statistical methods – not yet – but he did reject the subsumption architecture as a mistaken attempt to reach AGI through robotics, much as Minsky did. Motors, sensors, etc, are simply not needed – common sense, specified in logical language, is all you need. The hard work needed to get the robots to do anything is, you see, the <em>wrong</em> kind of hard work.</p>
 <p>On the other side, though most expert system researchers had shrunken their ambition in the winter chill, from AGI down to mere commercial survival, a few still believed in the mission. They thought that by building little systems, brick by brick, we can build towards a generally intelligent system. This is basically a “Society of Mind” approach of Marvin Minsky, and even though Lenat and Minsky liked each other’s research, Lenat rejected this approach as well. One cannot settle for building common sense bit by bit, expecting a finished system to emerge, but must braid the whole thing under one roof, one upper ontology. The ontology does not have to be perfect or efficient, but there has to be one. Without it, the Society of Mind would fragment into a Tower of Babel, with little expert systems of incompatible ontologies, just like how Feigenbaum’s dream of a “Library of Congress” of knowledge bases failed to materialize.</p>
 <p>In the 2000s, big data arrived with the Internet, and statistical learning became dominant. No doubt trying to preempt customers’ “Why don’t I just Google it?”, he turned his firepower towards statistical learning systems. He never tired of pointing out that, if you make an even slightly complex query like “Is the Space Needle taller than the Eiffel Tower?”, Google will happily serve up results saying “The Space Needle is 605 feet high.” and “The Eiffel Tower is 1,063 feet high.”, unable to actually answer your question. Despite having 15,000 servers, Google only ran dumb statistical algorithms, while Cyc running on a single server could answer it. Google-style statistical machine learning, like its trillion-token statistical machine translations systems <span class="citation" data-cites="brantsLargeLanguageModels2007">(<a href="#ref-brantsLargeLanguageModels2007" role="doc-biblioref">Brants et al. 2007</a>)</span>, was just pattern matching, yet another grasping after a free lunch. Such systems could not truly understand. As an alternative, he held out Cyc as the foundation to the <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a>, which would build a system that <em>would</em> truly understand.</p>
 <p>Curiously, right from the start, Lenat considered self-organized neural networks as not a viable path towards general intelligence, but for <em>the same reasons</em> as to why the logical AI programs of Simon and Newell would fail! From our perspective, they couldn’t be more different, yet to Lenat, neural nets, General Problem Solvers, n-gram models, whatever, are all just “explicit-knowledge-free systems”, <a href="https://en.wikipedia.org/wiki/Neats_and_scruffies">too neat, not scruffy</a>, and would fail for the exact same reason.</p>
@@ -1781,7 +1781,7 @@ An information-theoretic estimate
 <p><span class="citation" data-cites="lenatGettingGenerativeAI2023">(<a href="#ref-lenatGettingGenerativeAI2023" role="doc-biblioref">D. B. Lenat and Marcus 2023</a>)</span></p>
 </blockquote>
 <p>I am struck by the irony that a veteran of logical AI would call neural networks “brittle”, or make an appeal to sunk cost. Lenat had devoted 2000 person-years to the project, therefore a “free lunch” shouldn’t work, nevermind the fact that these “free” lunches took 20 years of gritty battles to build the datasets,<!-- todo: add the link to essay on datasets once it's done. --> struggles with the cussedness of CUDA,<!-- todo: add the link to essay on CUDA once it's done. --> waking up to yet another divergent overnight training run, staring at tensors filled with <code>NaNs</code>, and eventually <a href="https://www.wired.com/story/openai-ceo-sam-altman-the-age-of-giant-ai-models-is-already-over/">cost $100 million</a> per serving, roughly the total budget of Cycorp through its life. How dare you to go “free lunch” on us… But <em>de mortuis nil nisi bonum</em>.</p>
-<p>Lenat died in 2023, unmourned on <a href="https://lucid.ai/">Lucid AI</a> and <a href="https://cyc.com/">Cycorp</a>, who, like ABBYY, still proudly advertise their product differentiation to this day.</p>
+<p>Lenat died in 2023, unmourned on <a href="https://lucid.ai/">Lucid AI</a> and <a href="https://cyc.com/">Cycorp</a>, who still proudly advertise their product differentiation to this day.</p>
 </section>
 </section>
 <section id="in-lieu-of-a-conclusion" class="level2">
@@ -1855,40 +1855,40 @@ UC Berkeley CS PhD<br>
 Abbott, Frank T, Apperson H Johnson, Stephen D Prior, and Donald D Steiner. 2007. <span>“Integrated <span>Biological Warfare Technology Platform</span> (<span>IBWTP</span>). <span>Intelligent Software Supporting Situation Awareness</span>, <span>Response</span>, and <span>Operations</span>,”</span> January.
 </div>
 <div id="ref-anthesCycUse2002" class="csl-entry" role="listitem">
-Anthes, Gary. 2002a. <span>“Cyc in Use.”</span> <em>Computerworld</em>, April. <a href="https://www.computerworld.com/article/1354418/cyc-in-use.html">https://www.computerworld.com/article/1354418/cyc-in-use.html</a>.
+Anthes, Gary. 2002a. <span>“Cyc in Use.”</span> <em>Computerworld</em>, April.
 </div>
 <div id="ref-anthesComputerizingCommonSense2002" class="csl-entry" role="listitem">
-———. 2002b. <span>“Computerizing <span>Common Sense</span>.”</span> <em>Computerworld</em>, October. <a href="https://web.archive.org/web/20021019152738/http://www.computerworld.com/news/2002/story/0,11280,69881,00.html">https://web.archive.org/web/20021019152738/http://www.computerworld.com/news/2002/story/0,11280,69881,00.html</a>.
+———. 2002b. <span>“Computerizing <span>Common Sense</span>.”</span> <em>Computerworld</em>, October.
 </div>
 <div id="ref-baardAIFounderBlasts2003" class="csl-entry" role="listitem">
-Baard, Mark. 2003. <span>“<span>AI Founder Blasts Modern Research</span>.”</span> <em>Wired</em>, May. <a href="https://www.wired.com/2003/05/ai-founder-blasts-modern-research/">https://www.wired.com/2003/05/ai-founder-blasts-modern-research/</a>.
+Baard, Mark. 2003. <span>“<span>AI Founder Blasts Modern Research</span>.”</span> <em>Wired</em>, May.
 </div>
 <div id="ref-brantsLargeLanguageModels2007" class="csl-entry" role="listitem">
-Brants, Thorsten, Ashok Popat, Peng Xu, Franz Josef Och, and Jeffrey Dean. 2007. <span>“Large Language Models in Machine Translation.”</span> In <em>Proceedings of the 2007 <span>Joint Conference</span> on <span>Empirical Methods</span> in <span>Natural Language Processing</span> and <span>Computational Natural Language Learning</span> (<span>EMNLP-CoNLL</span>)</em>, 858–67. <a href="https://aclanthology.org/D07-1090.pdf">https://aclanthology.org/D07-1090.pdf</a>.
+Brants, Thorsten, Ashok Popat, Peng Xu, Franz Josef Och, and Jeffrey Dean. 2007. <span>“Large Language Models in Machine Translation.”</span> In <em>Proceedings of the 2007 <span>Joint Conference</span> on <span>Empirical Methods</span> in <span>Natural Language Processing</span> and <span>Computational Natural Language Learning</span> (<span>EMNLP-CoNLL</span>)</em>, 858–67.
 </div>
-<div id="ref-brooksElephantsDonPlay1990" class="csl-entry" role="listitem">
+<div id="ref-brooksElephantsDontPlay1990" class="csl-entry" role="listitem">
 Brooks, Rodney A. 1990. <span>“Elephants Don’t Play Chess.”</span> <em>Robotics and Autonomous Systems</em> 6 (1-2): 3–15. <a href="https://doi.org/10/bk6">https://doi.org/10/bk6</a>.
 </div>
 <div id="ref-buchananDENDRALMetaDENDRALTheir1981" class="csl-entry" role="listitem">
-Buchanan, Bruce G., and Edward A. Feigenbaum. 1981. <span>“<span>DENDRAL</span> and <span>Meta-DENDRAL</span>: <span>Their</span> Applications Dimension.”</span> In <em>Readings in Artificial Intelligence</em>, 313–22. Elsevier. <a href="https://www.sciencedirect.com/science/article/pii/B978093461303350026X">https://www.sciencedirect.com/science/article/pii/B978093461303350026X</a>.
+Buchanan, Bruce G., and Edward A. Feigenbaum. 1981. <span>“<span>DENDRAL</span> and <span>Meta-DENDRAL</span>: <span>Their</span> Applications Dimension.”</span> In <em>Readings in Artificial Intelligence</em>, 313–22. Elsevier.
 </div>
 <div id="ref-cerutiKnowledgeManagementCommand2004" class="csl-entry" role="listitem">
-Ceruti, Marion G., Dwight R. Wilcox, and Brenda J. Powers. 2004. <span>“Knowledge Management for Command and Control.”</span> In <em>Proceedings of the 9th <span>Command</span> and <span>Control Research</span> and <span>Technology Symposium</span> (<span>CCRTS</span> 04), <span>San Diego</span></em>. <a href="http://dodccrp.org/events/9th_ICCRTS/CD/papers/176.pdf">http://dodccrp.org/events/9th_ICCRTS/CD/papers/176.pdf</a>.
+Ceruti, Marion G., Dwight R. Wilcox, and Brenda J. Powers. 2004. <span>“Knowledge Management for Command and Control.”</span> In <em>Proceedings of the 9th <span>Command</span> and <span>Control Research</span> and <span>Technology Symposium</span> (<span>CCRTS</span> 04), <span>San Diego</span></em>.
 </div>
 <div id="ref-conesaUsabilityUpperLevel2010" class="csl-entry" role="listitem">
 Conesa, Jordi, Veda C. Storey, and Vijayan Sugumaran. 2010. <span>“Usability of Upper Level Ontologies: <span>The</span> Case of <span>ResearchCyc</span>.”</span> <em>Data &amp; Knowledge Engineering</em>, Including <span>Special Section</span>: 12th <span>International Conference</span> on <span>Applications</span> of <span>Natural Language</span> to <span>Information Systems</span> (<span>NLDB</span>’07) – <span>Three</span> selected and extended papers, 69 (4): 343–56. <a href="https://doi.org/10.1016/j.datak.2009.08.002">https://doi.org/10.1016/j.datak.2009.08.002</a>.
 </div>
 <div id="ref-crensonBigBrotherCould2003" class="csl-entry" role="listitem">
-Crenson, Sharon L. 2003. <span>“Big <span>Brother</span> Could Be Watching You.”</span> <em>Portsmouth Herald</em>, February. <a href="https://www.seacoastonline.com/story/news/2003/02/13/big-brother-could-be-watching/51278510007/">https://www.seacoastonline.com/story/news/2003/02/13/big-brother-could-be-watching/51278510007/</a>.
+Crenson, Sharon L. 2003. <span>“Big <span>Brother</span> Could Be Watching You.”</span> <em>Portsmouth Herald</em>, February.
 </div>
 <div id="ref-cycorpTerrorismKnowledgeBase2008" class="csl-entry" role="listitem">
-Cycorp. 2008. <span>“Terrorism <span>Knowledge Base</span> (<span>TKB</span>): <span>Final Technical Report</span>.”</span> AFRL-RI-RS-TR-2008-125. <a href="http://archive.org/details/DTIC_ADA481467">http://archive.org/details/DTIC_ADA481467</a>.
+Cycorp. 2008. <span>“Terrorism <span>Knowledge Base</span> (<span>TKB</span>): <span>Final Technical Report</span>.”</span> AFRL-RI-RS-TR-2008-125.
 </div>
 <div id="ref-cycorpCycTechnologyOverview2021" class="csl-entry" role="listitem">
-———. 2021. <span>“Cyc <span>Technology Overview</span>.”</span> <a href="https://cyc.com/wp-content/uploads/2021/04/Cyc-Technology-Overview.pdf">https://cyc.com/wp-content/uploads/2021/04/Cyc-Technology-Overview.pdf</a>.
+———. 2021. <span>“Cyc <span>Technology Overview</span>.”</span>
 </div>
 <div id="ref-davisEvaluatingCYCPreliminary2016" class="csl-entry" role="listitem">
-Davis, Ernest. 2016. <span>“Evaluating <span>CYC</span>: <span>Preliminary Notes</span>.”</span> <a href="https://cs.nyu.edu/~davise/papers/CYCEval.pdf">https://cs.nyu.edu/~davise/papers/CYCEval.pdf</a>.
+Davis, Ernest. 2016. <span>“Evaluating <span>CYC</span>: <span>Preliminary Notes</span>.”</span>
 </div>
 <div id="ref-davisCommonsenseReasoningCommonsense2015" class="csl-entry" role="listitem">
 Davis, Ernest, and Gary Marcus. 2015. <span>“Commonsense Reasoning and Commonsense Knowledge in Artificial Intelligence.”</span> <em>Communications of the ACM</em> 58 (9): 92–103. <a href="https://doi.org/10.1145/2701413">https://doi.org/10.1145/2701413</a>.
@@ -1903,7 +1903,7 @@ Erman, Lee D., Frederick Hayes-Roth, Victor R. Lesser, and D. Raj Reddy. 1980. <
 Foxvog, Douglas. 2010. <span>“Cyc.”</span> In <em>Theory and <span>Applications</span> of <span>Ontology</span>: <span>Computer Applications</span></em>, edited by Roberto Poli, Michael Healy, and Achilles Kameas, 259–78. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-90-481-8847-5_12">https://doi.org/10.1007/978-90-481-8847-5_12</a>.
 </div>
 <div id="ref-friedlandProjectHaloDigital2004" class="csl-entry" role="listitem">
-Friedland, Noah S., Paul G. Allen, Gavin Matthews, Michael Witbrock, David Baxter, Jon Curtis, Blake Shepard, Pierluigi Miraglia, Jurgen Angele, and Steffen Staab. 2004. <span>“Project Halo: <span>Towards</span> a Digital Aristotle.”</span> <em>AI Magazine</em> 25 (4): 29–29. <a href="https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1783">https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1783</a>.
+Friedland, Noah S., Paul G. Allen, Gavin Matthews, Michael Witbrock, David Baxter, Jon Curtis, Blake Shepard, Pierluigi Miraglia, Jurgen Angele, and Steffen Staab. 2004. <span>“Project Halo: <span>Towards</span> a Digital Aristotle.”</span> <em>AI Magazine</em> 25 (4): 29–29.
 </div>
 <div id="ref-guhaReCycLingPaper1993" class="csl-entry" role="listitem">
 Guha, R. V., and Douglas B. Lenat. 1993. <span>“Re: <span>CycLing</span> Paper Reviews.”</span> <em>Artificial Intelligence</em> 61 (1): 149–74. <a href="https://doi.org/10.1016/0004-3702(93)90100-P">https://doi.org/10.1016/0004-3702(93)90100-P</a>.
@@ -1912,13 +1912,13 @@ Guha, R. V., and Douglas B. Lenat. 1993. <span>“Re: <span>CycLing</span> Paper
 ———. 1994. <span>“Enabling Agents to Work Together.”</span> <em>Communications of the ACM</em> 37 (7): 126–42. <a href="https://doi.org/10.1145/176789.176804">https://doi.org/10.1145/176789.176804</a>.
 </div>
 <div id="ref-haaseInventionExplorationDiscovery1990" class="csl-entry" role="listitem">
-Haase, Kenneth W. 1990. <span>“Invention and Exploration in Discovery.”</span> Thesis, Massachusetts Institute of Technology. <a href="https://dspace.mit.edu/handle/1721.1/14257">https://dspace.mit.edu/handle/1721.1/14257</a>.
+Haase, Kenneth W. 1990. <span>“Invention and Exploration in Discovery.”</span> Thesis, Massachusetts Institute of Technology.
 </div>
 <div id="ref-hawkinsPredictingTerroristsNext2003" class="csl-entry" role="listitem">
-Hawkins, Dana. 2003. <span>“Predicting Terrorists Next Moves with Common-Sense Computing.”</span> <em>U.S. News &amp; World Report</em>, April. <a href="https://web.archive.org/web/20070328224448/http://www.usnews.com/usnews/culture/articles/030407/7data.b.htm">https://web.archive.org/web/20070328224448/http://www.usnews.com/usnews/culture/articles/030407/7data.b.htm</a>.
+Hawkins, Dana. 2003. <span>“Predicting Terrorists Next Moves with Common-Sense Computing.”</span> <em>U.S. News &amp; World Report</em>, April.
 </div>
 <div id="ref-hiltzikBirthThinkingMachine2001" class="csl-entry" role="listitem">
-Hiltzik, Michael a. 2001. <span>“Birth of a <span>Thinking Machine</span>.”</span> <em>Los Angeles Times</em>, June. <a href="https://www.latimes.com/archives/la-xpm-2001-jun-21-mn-12881-story.html">https://www.latimes.com/archives/la-xpm-2001-jun-21-mn-12881-story.html</a>.
+Hiltzik, Michael a. 2001. <span>“Birth of a <span>Thinking Machine</span>.”</span> <em>Los Angeles Times</em>, June.
 </div>
 <div id="ref-hutchinsMachineTranslationHistory2023" class="csl-entry" role="listitem">
 Hutchins, W. John. 2023. <span>“Machine <span>Translation</span>: <span>History</span> of <span>Research</span> and <span>Applications</span>.”</span> In <em>Routledge <span>Encyclopedia</span> of <span>Translation Technology</span></em>, 2nd ed. Routledge.
@@ -1930,28 +1930,28 @@ Johnson, George. 1986. <em>Machinery of the Mind: Inside the New Science of Arti
 Kingston, J. 2001. <span>“High <span>Performance Knowledge Bases</span>: Four Approaches to Knowledge Acquisition, Representation and Reasoning for Workaround Planning.”</span> <em>Expert Systems with Applications</em> 21 (4): 181–90. <a href="https://doi.org/10.1016/S0957-4174(01)00038-0">https://doi.org/10.1016/S0957-4174(01)00038-0</a>.
 </div>
 <div id="ref-knightAI30Years2016" class="csl-entry" role="listitem">
-Knight, Will. 2016. <span>“An <span>AI</span> with 30 <span>Years</span>’ <span>Worth</span> of <span>Knowledge Finally Goes</span> to <span>Work</span>.”</span> <em>MIT Technology Review</em>, March. <a href="https://www.technologyreview.com/2016/03/14/108873/an-ai-with-30-years-worth-of-knowledge-finally-goes-to-work/">https://www.technologyreview.com/2016/03/14/108873/an-ai-with-30-years-worth-of-knowledge-finally-goes-to-work/</a>.
+Knight, Will. 2016. <span>“An <span>AI</span> with 30 <span>Years</span>’ <span>Worth</span> of <span>Knowledge Finally Goes</span> to <span>Work</span>.”</span> <em>MIT Technology Review</em>, March.
 </div>
 <div id="ref-langleyDataDrivenDiscoveryPhysical1981" class="csl-entry" role="listitem">
 Langley, Pat. 1981. <span>“Data-<span>Driven Discovery</span> of <span>Physical Laws</span>.”</span> <em>Cognitive Science</em> 5 (1): 31–54. <a href="https://doi.org/10.1111/j.1551-6708.1981.tb00869.x">https://doi.org/10.1111/j.1551-6708.1981.tb00869.x</a>.
 </div>
 <div id="ref-lenatDimensionsContextspace1998" class="csl-entry" role="listitem">
-Lenat, Doug. 1998. <span>“The Dimensions of Context-Space.”</span> Cycorp technical report. <a href="https://www.academia.edu/download/82146661/lenat2.pdf">https://www.academia.edu/download/82146661/lenat2.pdf</a>.
+Lenat, Doug. 1998. <span>“The Dimensions of Context-Space.”</span> Cycorp technical report.
 </div>
 <div id="ref-lenatAMArtificialIntelligence1976" class="csl-entry" role="listitem">
-Lenat, Douglas B. 1976. <em><span>AM</span>: An Artificial Intelligence Approach to Discovery in Mathematics as Heuristic Search.</em> Stanford University. <a href="https://search.proquest.com/openview/7bf7ad428cf88bc7205ff59d0edaed81/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">https://search.proquest.com/openview/7bf7ad428cf88bc7205ff59d0edaed81/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</a>.
+Lenat, Douglas B. 1976. <em><span>AM</span>: An Artificial Intelligence Approach to Discovery in Mathematics as Heuristic Search.</em> Stanford University.
 </div>
 <div id="ref-lenatUbiquityDiscovery1977" class="csl-entry" role="listitem">
-———. 1977. <span>“The Ubiquity of Discovery.”</span> <em>Artificial Intelligence</em> 9 (3): 257–85. <a href="https://www.sciencedirect.com/science/article/pii/0004370277900248">https://www.sciencedirect.com/science/article/pii/0004370277900248</a>.
+———. 1977. <span>“The Ubiquity of Discovery.”</span> <em>Artificial Intelligence</em> 9 (3): 257–85.
 </div>
 <div id="ref-lenatPlausibleMutationDNA1980" class="csl-entry" role="listitem">
-———. 1980. <span>“The <span>Plausible Mutation</span> of <span>DNA</span>.”</span> <a href="https://apps.dtic.mil/sti/citations/tr/ADA096802">https://apps.dtic.mil/sti/citations/tr/ADA096802</a>.
+———. 1980. <span>“The <span>Plausible Mutation</span> of <span>DNA</span>.”</span>
 </div>
 <div id="ref-lenatEURISKOProgramThat1983" class="csl-entry" role="listitem">
-———. 1983a. <span>“<span>EURISKO</span>: A Program That Learns New Heuristics and Domain Concepts: The Nature of Heuristics <span>III</span>: Program Design and Results.”</span> <em>Artificial Intelligence</em> 21 (1-2): 61–98. <a href="https://www.sciencedirect.com/science/article/pii/S0004370283800058">https://www.sciencedirect.com/science/article/pii/S0004370283800058</a>.
+———. 1983a. <span>“<span>EURISKO</span>: A Program That Learns New Heuristics and Domain Concepts: The Nature of Heuristics <span>III</span>: Program Design and Results.”</span> <em>Artificial Intelligence</em> 21 (1-2): 61–98.
 </div>
 <div id="ref-lenatTheoryFormationHeuristic1983" class="csl-entry" role="listitem">
-———. 1983b. <span>“Theory Formation by Heuristic Search: <span>The</span> Nature of Heuristics <span>II</span>: Background and Examples.”</span> <em>Artificial Intelligence</em> 21 (1-2): 31–59. <a href="https://www.sciencedirect.com/science/article/pii/S0004370283800046">https://www.sciencedirect.com/science/article/pii/S0004370283800046</a>.
+———. 1983b. <span>“Theory Formation by Heuristic Search: <span>The</span> Nature of Heuristics <span>II</span>: Background and Examples.”</span> <em>Artificial Intelligence</em> 21 (1-2): 31–59.
 </div>
 <div id="ref-lenatRoleHeuristicsLearning1983" class="csl-entry" role="listitem">
 ———. 1983c. <span>“The Role of Heuristics in Learning by Discovery: <span>Three</span> Case Studies.”</span> In <em>Machine <span>Learning</span></em>, edited by Ryszard S. Michalski, Jaime G. Carbonell, and Tom M. Mitchell, 243–306. San Francisco (CA): Morgan Kaufmann. <a href="https://doi.org/10.1016/B978-0-08-051054-5.50013-3">https://doi.org/10.1016/B978-0-08-051054-5.50013-3</a>.
@@ -1969,34 +1969,34 @@ Lenat, Douglas B. 1976. <em><span>AM</span>: An Artificial Intelligence Approach
 ———. 2005. <span>“Applied Ontology Issues.”</span> <em>Applied Ontology: An Interdisciplinary Journal of Ontological Analysis and Conceptual Modeling</em> 1 (1): 9–12. <a href="https://doi.org/10.3233/APO-2005-000002">https://doi.org/10.3233/APO-2005-000002</a>.
 </div>
 <div id="ref-lenatGoogleTechTalksComputers2006" class="csl-entry" role="listitem">
-———. 2006. <span>“Google <span>TechTalks</span>: <span>Computers</span> Versus <span>Common Sense</span>.”</span> <a href="https://www.youtube.com/watch?v=gAtn-4fhuWA">https://www.youtube.com/watch?v=gAtn-4fhuWA</a>.
+———. 2006. <span>“Google <span>TechTalks</span>: <span>Computers</span> Versus <span>Common Sense</span>.”</span>
 </div>
 <div id="ref-lenatVoiceTurtleWhatever2008" class="csl-entry" role="listitem">
-———. 2008. <span>“The Voice of the Turtle: <span>Whatever</span> Happened to Ai?”</span> <em>AI Magazine</em> 29 (2): 11–22. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1609/aimag.v29i2.2106">https://onlinelibrary.wiley.com/doi/abs/10.1609/aimag.v29i2.2106</a>.
+———. 2008. <span>“The Voice of the Turtle: <span>Whatever</span> Happened to Ai?”</span> <em>AI Magazine</em> 29 (2): 11–22.
 </div>
 <div id="ref-lenatBuildingMachineSmart2009" class="csl-entry" role="listitem">
 ———. 2009. <span>“Building a <span>Machine Smart Enough</span> to <span>Pass</span> the <span>Turing Test</span>.”</span> In <em>Parsing the <span>Turing Test</span>: <span>Philosophical</span> and <span>Methodological Issues</span> in the <span>Quest</span> for the <span>Thinking Computer</span></em>, edited by Robert Epstein, Gary Roberts, and Grace Beber, 261–82. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-1-4020-6710-5_16">https://doi.org/10.1007/978-1-4020-6710-5_16</a>.
 </div>
 <div id="ref-lenat50ShadesSymbolic2015" class="csl-entry" role="listitem">
-———. 2015. <span>“50 <span>Shades</span> of <span>Symbolic Representation</span> and <span>Reasoning</span>.”</span> <a href="https://www.youtube.com/watch?v=4mv0nCS2mik">https://www.youtube.com/watch?v=4mv0nCS2mik</a>.
+———. 2015. <span>“50 <span>Shades</span> of <span>Symbolic Representation</span> and <span>Reasoning</span>.”</span>
 </div>
 <div id="ref-lenatSometimesVeneerIntelligence2017" class="csl-entry" role="listitem">
-———. 2017. <span>“Sometimes the <span>Veneer</span> of <span>Intelligence</span> Is <span>Not Enough</span>.”</span> <em>COGNITIVE WORLD</em>. <a href="https://cognitiveworld.com/articles/sometimes-veneer-intelligence-not-enough">https://cognitiveworld.com/articles/sometimes-veneer-intelligence-not-enough</a>.
+———. 2017. <span>“Sometimes the <span>Veneer</span> of <span>Intelligence</span> Is <span>Not Enough</span>.”</span> <em>COGNITIVE WORLD</em>. https://cognitiveworld.com/articles/sometimes-veneer-intelligence-not-enough.
 </div>
 <div id="ref-lenatNotGoodGold2019" class="csl-entry" role="listitem">
-———. 2019a. <span>“Not <span>Good As Gold</span>: <span>Today</span>’s <span>AI</span>’s <span>Are Dangerously Lacking In AU</span> (<span>Artificial Understanding</span>).”</span> <em>Forbes</em>. <a href="https://www.forbes.com/sites/cognitiveworld/2019/02/18/not-good-as-gold-todays-ais-are-dangerously-lacking-in-au-artificial-understanding/">https://www.forbes.com/sites/cognitiveworld/2019/02/18/not-good-as-gold-todays-ais-are-dangerously-lacking-in-au-artificial-understanding/</a>.
+———. 2019a. <span>“Not <span>Good As Gold</span>: <span>Today</span>’s <span>AI</span>’s <span>Are Dangerously Lacking In AU</span> (<span>Artificial Understanding</span>).”</span> <em>Forbes</em>. https://www.forbes.com/sites/cognitiveworld/2019/02/18/not-good-as-gold-todays-ais-are-dangerously-lacking-in-au-artificial-understanding/.
 </div>
 <div id="ref-lenatEpisode89Conversation2019" class="csl-entry" role="listitem">
-———. 2019b. <span>“Episode 89: <span>A Conversation</span> with <span>Doug Lenat</span>.”</span> <a href="https://voicesinai.com/episode/episode-89-a-conversation-with-doug-lenat/">https://voicesinai.com/episode/episode-89-a-conversation-with-doug-lenat/</a>.
+———. 2019b. <span>“Episode 89: <span>A Conversation</span> with <span>Doug Lenat</span>.”</span>
 </div>
 <div id="ref-lenatCycQuestSolve2021" class="csl-entry" role="listitem">
-———. 2021. <span>“Cyc and the <span>Quest</span> to <span>Solve Common Sense Reasoning</span> in <span>AI</span>.”</span> <a href="https://lexfridman.com/douglas-lenat/">https://lexfridman.com/douglas-lenat/</a>.
+———. 2021. <span>“Cyc and the <span>Quest</span> to <span>Solve Common Sense Reasoning</span> in <span>AI</span>.”</span>
 </div>
 <div id="ref-lenatCreating30MillionRuleSystem2022" class="csl-entry" role="listitem">
 ———. 2022a. <span>“Creating a 30-<span>Million-Rule System</span>: <span>MCC</span> and <span>Cycorp</span>.”</span> <em>IEEE Annals of the History of Computing</em> 44 (1): 44–56. <a href="https://doi.org/10.1109/MAHC.2022.3149468">https://doi.org/10.1109/MAHC.2022.3149468</a>.
 </div>
 <div id="ref-lenatACS2022Invited2022" class="csl-entry" role="listitem">
-———. 2022b. <span>“[<span>ACS</span> 2022] <span>Invited Talk</span>: <span>Computers</span> Versus <span>Common Sense</span>.”</span> <a href="https://www.youtube.com/watch?v=VjkbmLjwXO8">https://www.youtube.com/watch?v=VjkbmLjwXO8</a>.
+———. 2022b. <span>“[<span>ACS</span> 2022] <span>Invited Talk</span>: <span>Computers</span> Versus <span>Common Sense</span>.”</span>
 </div>
 <div id="ref-lenatWhyAmEurisko1984" class="csl-entry" role="listitem">
 Lenat, Douglas B., and John Seely Brown. 1984. <span>“Why <span>AM</span> and <span>EURISKO</span> Appear to Work.”</span> <em>Artificial Intelligence</em> 23 (3): 269–94. <a href="https://doi.org/10.1016/0004-3702(84)90016-X">https://doi.org/10.1016/0004-3702(84)90016-X</a>.
@@ -2008,34 +2008,34 @@ Lenat, Douglas B., and Paula J. Durlach. 2014. <span>“Reinforcing <span>Math K
 Lenat, Douglas B., and Edward A. Feigenbaum. 1991. <span>“On the Thresholds of Knowledge.”</span> <em>Artificial Intelligence</em> 47 (1): 185–250. <a href="https://doi.org/10.1016/0004-3702(91)90055-O">https://doi.org/10.1016/0004-3702(91)90055-O</a>.
 </div>
 <div id="ref-lenatEfficientPathfindingVery2007" class="csl-entry" role="listitem">
-Lenat, Douglas B., Keith Goolsbey, Kevin Knight, and Pace Smith. 2007. <span>“Efficient <span>Pathfinding</span> in <span>Very Large Data Spaces</span> : <span>Defense Technical Information Center</span>.”</span> ADA475387. <a href="https://archive.org/details/DTIC_ADA475387/page/n1/mode/2up">https://archive.org/details/DTIC_ADA475387/page/n1/mode/2up</a>.
+Lenat, Douglas B., Keith Goolsbey, Kevin Knight, and Pace Smith. 2007. <span>“Efficient <span>Pathfinding</span> in <span>Very Large Data Spaces</span> : <span>Defense Technical Information Center</span>.”</span> ADA475387.
 </div>
 <div id="ref-lenatBuildingLargeKnowledgebased1989" class="csl-entry" role="listitem">
 Lenat, Douglas B., and R. V. Guha. 1989. <em>Building Large Knowledge-Based Systems: Representation and Inference in the <span>Cyc</span> Project</em>. Reading, Mass: Addison-Wesley Pub. Co.
 </div>
 <div id="ref-lenatCycMidtermReport1990" class="csl-entry" role="listitem">
-Lenat, Douglas B., and Ramanathan V. Guha. 1990. <span>“Cyc: <span>A</span> Midterm Report.”</span> <em>AI Magazine</em> 11 (3): 32–32. <a href="https://ojs.aaai.org/index.php/aimagazine/article/view/842">https://ojs.aaai.org/index.php/aimagazine/article/view/842</a>.
+Lenat, Douglas B., and Ramanathan V. Guha. 1990. <span>“Cyc: <span>A</span> Midterm Report.”</span> <em>AI Magazine</em> 11 (3): 32–32.
 </div>
 <div id="ref-lenatGettingGenerativeAI2023" class="csl-entry" role="listitem">
 Lenat, Douglas B., and Gary Marcus. 2023. <span>“Getting from <span>Generative AI</span> to <span>Trustworthy AI</span>: <span>What LLMs</span> Might Learn from <span>Cyc</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2308.04445">https://doi.org/10.48550/arXiv.2308.04445</a>.
 </div>
 <div id="ref-lenatCycUsingCommon1985" class="csl-entry" role="listitem">
-Lenat, Douglas B., Mayank Prakash, and Mary Shepherd. 1985. <span>“Cyc: <span>Using</span> Common Sense Knowledge to Overcome Brittleness and Knowledge Acquisition Bottlenecks.”</span> <em>AI Magazine</em> 6 (4): 65–65. <a href="https://ojs.aaai.org/index.php/aimagazine/article/view/510/0">https://ojs.aaai.org/index.php/aimagazine/article/view/510/0</a>.
+Lenat, Douglas B., Mayank Prakash, and Mary Shepherd. 1985. <span>“Cyc: <span>Using</span> Common Sense Knowledge to Overcome Brittleness and Knowledge Acquisition Bottlenecks.”</span> <em>AI Magazine</em> 6 (4): 65–65.
 </div>
 <div id="ref-lenatHarnessingCycAnswer2010" class="csl-entry" role="listitem">
-Lenat, Douglas B., Michael Witbrock, David Baxter, Eugene Blackstone, Chris Deaton, Dave Schneider, Jerry Scott, and Blake Shepard. 2010. <span>“Harnessing <span>Cyc</span> to Answer Clinical Researchers’ Ad Hoc Queries.”</span> <em>AI Magazine</em> 31 (3): 13–32. <a href="https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2299">https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2299</a>.
+Lenat, Douglas B., Michael Witbrock, David Baxter, Eugene Blackstone, Chris Deaton, Dave Schneider, Jerry Scott, and Blake Shepard. 2010. <span>“Harnessing <span>Cyc</span> to Answer Clinical Researchers’ Ad Hoc Queries.”</span> <em>AI Magazine</em> 31 (3): 13–32.
 </div>
 <div id="ref-loveMostAmbitiousArtificial2014" class="csl-entry" role="listitem">
-Love, Dylan. 2014. <span>“The <span>Most Ambitious Artificial Intelligence Project In The World Has Been Operating In Near Secrecy For</span> 30 <span>Years</span>.”</span> <em>Business Insider</em>, July. <a href="https://www.businessinsider.com/cycorp-ai-2014-7">https://www.businessinsider.com/cycorp-ai-2014-7</a>.
+Love, Dylan. 2014. <span>“The <span>Most Ambitious Artificial Intelligence Project In The World Has Been Operating In Near Secrecy For</span> 30 <span>Years</span>.”</span> <em>Business Insider</em>, July.
 </div>
 <div id="ref-lyonsArtificialIntelligenceGets1998" class="csl-entry" role="listitem">
-Lyons, Daniel. 1998. <span>“Artificial Intelligence Gets Real.”</span> <em>Forbes</em>, 176–82. <a href="https://www.forbes.com/global/1998/1130/0118096a.html">https://www.forbes.com/global/1998/1130/0118096a.html</a>.
+Lyons, Daniel. 1998. <span>“Artificial Intelligence Gets Real.”</span> <em>Forbes</em>, 176–82.
 </div>
 <div id="ref-matthewsKRAKENKnowledgeRich2004" class="csl-entry" role="listitem">
 Matthews, G., J. Curtis, K. Hines, R. C. Kahlert, and P. Miraglia. 2004. <span>“<span>KRAKEN</span> - <span>Knowledge Rich Acquisition</span> of <span>Knowledge</span> from <span>Experts Who Are Non-Logicians</span>.”</span> AFRL-IF-RS-TR-2004-314.
 </div>
 <div id="ref-metzOneGeniusLonely2016" class="csl-entry" role="listitem">
-Metz, Cade. 2016. <span>“One <span>Genius</span>’ <span>Lonely Crusade</span> to <span>Teach</span> a <span>Computer Common Sense</span>.”</span> <em>Wired</em>, March. <a href="https://www.wired.com/2016/03/doug-lenat-artificial-intelligence-common-sense-engine/">https://www.wired.com/2016/03/doug-lenat-artificial-intelligence-common-sense-engine/</a>.
+Metz, Cade. 2016. <span>“One <span>Genius</span>’ <span>Lonely Crusade</span> to <span>Teach</span> a <span>Computer Common Sense</span>.”</span> <em>Wired</em>, March.
 </div>
 <div id="ref-newellHumanProblemSolving1972" class="csl-entry" role="listitem">
 Newell, Allen, and Herbert Alexander Simon. 1972. <em>Human Problem Solving</em>.
@@ -2044,22 +2044,22 @@ Newell, Allen, and Herbert Alexander Simon. 1972. <em>Human Problem Solving</em>
 Panton, Kathy, Cynthia Matuszek, Douglas B. Lenat, Dave Schneider, Michael Witbrock, Nick Siegel, and Blake Shepard. 2006. <span>“Common <span>Sense Reasoning</span> – <span>From Cyc</span> to <span>Intelligent Assistant</span>.”</span> In <em>Ambient <span>Intelligence</span> in <span>Everyday Life</span>: <span>Foreword</span> by <span>Emile Aarts</span></em>, edited by Yang Cai and Julio Abascal, 1–31. Berlin, Heidelberg: Springer. <a href="https://doi.org/10.1007/11825890_1">https://doi.org/10.1007/11825890_1</a>.
 </div>
 <div id="ref-paulheimHowMuchTriple2018" class="csl-entry" role="listitem">
-Paulheim, Heiko. 2018. <span>“How Much Is a Triple.”</span> In <em><span>IEEE International Semantic Web Conference</span></em>. <a href="http://www.heikopaulheim.com/docs/iswc_bluesky_cost2018.pdf">http://www.heikopaulheim.com/docs/iswc_bluesky_cost2018.pdf</a>.
+Paulheim, Heiko. 2018. <span>“How Much Is a Triple.”</span> In <em><span>IEEE International Semantic Web Conference</span></em>.
 </div>
 <div id="ref-pierceSemanticDBSemanticWeb2012" class="csl-entry" role="listitem">
 Pierce, Christopher D., David Booth, Chimezie Ogbuji, Chris Deaton, Eugene Blackstone, and Doug Lenat. 2012. <span>“<span>SemanticDB</span>: <span>A Semantic Web Infrastructure</span> for <span>Clinical Research</span> and <span>Quality Reporting</span>.”</span> <em>Current Bioinformatics</em> 7 (3): 267–77. <a href="https://doi.org/10.2174/157489312802460730">https://doi.org/10.2174/157489312802460730</a>.
 </div>
 <div id="ref-portDuelingBrainscapesArtificial1997" class="csl-entry" role="listitem">
-Port, Otis. 1997. <span>“Dueling <span>Brainscapes In Artificial Intelligence</span>.”</span> <em>Bloomberg.com</em>, June. <a href="https://web.archive.org/web/20031224235959/http://businessweek.com/1997/25/b353210.htm">https://web.archive.org/web/20031224235959/http://businessweek.com/1997/25/b353210.htm</a>.
+Port, Otis. 1997. <span>“Dueling <span>Brainscapes In Artificial Intelligence</span>.”</span> <em>Bloomberg.com</em>, June.
 </div>
 <div id="ref-prattCYCReportPratt1994" class="csl-entry" role="listitem">
-Pratt, Vaughan. 1994. <span>“<span>CYC Report</span> – <span>V</span>. <span>Pratt</span>.”</span> <a href="http://boole.stanford.edu/cyc.html">http://boole.stanford.edu/cyc.html</a>.
+Pratt, Vaughan. 1994. <span>“<span>CYC Report</span> – <span>V</span>. <span>Pratt</span>.”</span> http://boole.stanford.edu/cyc.html.
 </div>
 <div id="ref-richmanAllenClaimsSuccess2003" class="csl-entry" role="listitem">
-Richman, Dan. 2003. <span>“Allen Claims Success in Work on Computers That Can Reason.”</span> <em>Seattle Post-Intelligencer</em>, June. <a href="https://www.seattlepi.com/business/article/allen-claims-success-in-work-on-computers-that-1117119.php">https://www.seattlepi.com/business/article/allen-claims-success-in-work-on-computers-that-1117119.php</a>.
+Richman, Dan. 2003. <span>“Allen Claims Success in Work on Computers That Can Reason.”</span> <em>Seattle Post-Intelligencer</em>, June.
 </div>
 <div id="ref-ritchieAMCaseStudy1984" class="csl-entry" role="listitem">
-Ritchie, Graeme D., and F. Keith Hanna. 1984. <span>“<span>AM</span>: <span>A</span> Case Study in <span>AI</span> Methodology.”</span> <em>Artificial Intelligence</em> 23 (3): 249–68. <a href="https://www.sciencedirect.com/science/article/pii/0004370284900158">https://www.sciencedirect.com/science/article/pii/0004370284900158</a>.
+Ritchie, Graeme D., and F. Keith Hanna. 1984. <span>“<span>AM</span>: <span>A</span> Case Study in <span>AI</span> Methodology.”</span> <em>Artificial Intelligence</em> 23 (3): 249–68.
 </div>
 <div id="ref-rolandStrategicComputingDARPA2002" class="csl-entry" role="listitem">
 Roland, Alex, and Philip Shiman. 2002. <em>Strategic Computing: <span>DARPA</span> and the Quest for Machine Intelligence, 1983-1993</em>. History of Computing. Cambridge, Mass: MIT Press.
@@ -2068,7 +2068,7 @@ Roland, Alex, and Philip Shiman. 2002. <em>Strategic Computing: <span>DARPA</spa
 Sakaguchi, Keisuke, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. 2021. <span>“<span>WinoGrande</span>: An Adversarial Winograd Schema Challenge at Scale.”</span> <em>Communications of the ACM</em> 64 (9): 99–106. <a href="https://doi.org/10.1145/3474381">https://doi.org/10.1145/3474381</a>.
 </div>
 <div id="ref-sarjantAllYouCan2009" class="csl-entry" role="listitem">
-Sarjant, Samuel, Catherine Legg, Michael Robinson, and Olena Medelyan. 2009. <span>“" <span>All You Can Eat</span>" <span>Ontology-Building</span>: <span>Feeding Wikipedia</span> to <span>Cyc</span>.”</span> In <em>2009 <span>IEEE</span>/<span>WIC</span>/<span>ACM International Joint Conference</span> on <span>Web Intelligence</span> and <span>Intelligent Agent Technology</span></em>, 1:341–48. IEEE. <a href="https://ieeexplore.ieee.org/abstract/document/5286048/">https://ieeexplore.ieee.org/abstract/document/5286048/</a>.
+Sarjant, Samuel, Catherine Legg, Michael Robinson, and Olena Medelyan. 2009. <span>“" <span>All You Can Eat</span>" <span>Ontology-Building</span>: <span>Feeding Wikipedia</span> to <span>Cyc</span>.”</span> In <em>2009 <span>IEEE</span>/<span>WIC</span>/<span>ACM International Joint Conference</span> on <span>Web Intelligence</span> and <span>Intelligent Agent Technology</span></em>, 1:341–48. IEEE.
 </div>
 <div id="ref-shapiroFoundationsFoundationalismCase1991" class="csl-entry" role="listitem">
 Shapiro, Stewart. 1991. <em>Foundations <span>Without Foundationalism</span>: <span>A Case</span> for <span>Second-Order Logic</span></em>. Oxford <span>Logic Guides</span> v.17. Oxford: Oxford University Press, UK.
@@ -2077,16 +2077,16 @@ Shapiro, Stewart. 1991. <em>Foundations <span>Without Foundationalism</span>: <s
 Shepard, Blake, Cynthia Matuszek, C. Bruce Fraser, William Wechtenhiser, David Crabbe, Zelal Güngördü, John Jantos, et al. 2005. <span>“A Knowledge-Based Approach to Network Security: Applying <span>Cyc</span> in the Domain of Network Risk Assessment.”</span> In <em>Proceedings of the 17th Conference on <span>Innovative</span> Applications of Artificial Intelligence - <span>Volume</span> 3</em>, 1563–68. <span>IAAI</span>’05. Pittsburgh, Pennsylvania: AAAI Press.
 </div>
 <div id="ref-shilohHeTaughtAI2023" class="csl-entry" role="listitem">
-Shiloh, Kali. 2023. <span>“He <span>Taught AI</span> the <span>Facts</span> of <span>Life</span>.”</span> <em>Stanford Magazine</em>. <a href="https://stanfordmag.org/contents/he-taught-ai-the-facts-of-life">https://stanfordmag.org/contents/he-taught-ai-the-facts-of-life</a>.
+Shiloh, Kali. 2023. <span>“He <span>Taught AI</span> the <span>Facts</span> of <span>Life</span>.”</span> <em>Stanford Magazine</em>. https://stanfordmag.org/contents/he-taught-ai-the-facts-of-life.
 </div>
 <div id="ref-skorinkinABBYYsBitterLesson2024" class="csl-entry" role="listitem">
-Skorinkin, Daniil. 2024. <span>“<span>ABBYY’s Bitter Lesson: How Linguists Lost the Last Battle for NLP</span>.”</span> <em>System Block</em>. <a href="https://sysblok.ru/blog/gorkij-urok-abbyy-kak-lingvisty-proigrali-poslednjuju-bitvu-za-nlp/">https://sysblok.ru/blog/gorkij-urok-abbyy-kak-lingvisty-proigrali-poslednjuju-bitvu-za-nlp/</a>.
+Skorinkin, Daniil. 2024. <span>“<span>ABBYY’s Bitter Lesson: How Linguists Lost the Last Battle for NLP</span>.”</span> <em>System Block</em>.
 </div>
 <div id="ref-storkHALsLegacy2001s1998" class="csl-entry" role="listitem">
 Stork, David G., ed. 1998. <em><span>HAL</span>’s <span>Legacy</span>: 2001’s <span>Computer</span> as <span>Dream</span> and <span>Reality</span></em>. The MIT Press. <a href="https://doi.org/10.7551/mitpress/3404.001.0001">https://doi.org/10.7551/mitpress/3404.001.0001</a>.
 </div>
 <div id="ref-thompsonKnowItAllMachine2001" class="csl-entry" role="listitem">
-Thompson, Clive. 2001. <span>“The <span>Know-It-All Machine</span>.”</span> <em>Lingua Franca</em> 11 (6). <a href="http://linguafranca.mirror.theinfo.org/print/0109/cover.html">http://linguafranca.mirror.theinfo.org/print/0109/cover.html</a>.
+Thompson, Clive. 2001. <span>“The <span>Know-It-All Machine</span>.”</span> <em>Lingua Franca</em> 11 (6).
 </div>
 <div id="ref-TravellerBook51980" class="csl-entry" role="listitem">
 <em>Traveller <span>Book</span> 5: <span>High Guard</span></em>. 1980. 2nd ed. Game Designers’ Workshop.
@@ -2098,13 +2098,13 @@ Walker, Michael G. 1987. <span>“How <span>Feasible Is Automated Discovery</spa
 Wallich, Paul. 1991. <span>“Silicon <span>Babies</span>.”</span> <em>Scientific American</em> 265 (6): 124–35. <a href="https://www.jstor.org/stable/24938839">https://www.jstor.org/stable/24938839</a>.
 </div>
 <div id="ref-witbrockKnowledgeBegetsKnowledge2005" class="csl-entry" role="listitem">
-Witbrock, Michael, Cynthia Matuszek, Antoine Brusseau, Robert C. Kahlert, C. Bruce Fraser, and Douglas B. Lenat. 2005. <span>“Knowledge <span>Begets Knowledge</span>: <span>Steps</span> Towards <span>Assisted Knowledge Acquisition</span> in <span>Cyc</span>.”</span> In <em><span>AAAI Spring Symposium</span>: <span>Knowledge Collection</span> from <span>Volunteer Contributors</span></em>, 99–105. <a href="https://cdn.aaai.org/Symposia/Spring/2005/SS-05-03/SS05-03-015.pdf">https://cdn.aaai.org/Symposia/Spring/2005/SS-05-03/SS05-03-015.pdf</a>.
+Witbrock, Michael, Cynthia Matuszek, Antoine Brusseau, Robert C. Kahlert, C. Bruce Fraser, and Douglas B. Lenat. 2005. <span>“Knowledge <span>Begets Knowledge</span>: <span>Steps</span> Towards <span>Assisted Knowledge Acquisition</span> in <span>Cyc</span>.”</span> In <em><span>AAAI Spring Symposium</span>: <span>Knowledge Collection</span> from <span>Volunteer Contributors</span></em>, 99–105.
 </div>
 <div id="ref-wolframRememberingDougLenat2023" class="csl-entry" role="listitem">
-Wolfram, Stephen. 2023. <span>“Remembering <span>Doug Lenat</span> (1950–2023) and <span>His Quest</span> to <span>Capture</span> the <span>World</span> with <span>Logic</span>.”</span> <a href="https://writings.stephenwolfram.com/2023/09/remembering-doug-lenat-1950-2023-and-his-quest-to-capture-the-world-with-logic/">https://writings.stephenwolfram.com/2023/09/remembering-doug-lenat-1950-2023-and-his-quest-to-capture-the-world-with-logic/</a>.
+Wolfram, Stephen. 2023. <span>“Remembering <span>Doug Lenat</span> (1950–2023) and <span>His Quest</span> to <span>Capture</span> the <span>World</span> with <span>Logic</span>.”</span>
 </div>
 <div id="ref-woodCycorpCostCommon2005" class="csl-entry" role="listitem">
-Wood, Lamont. 2005. <span>“Cycorp: <span>The Cost</span> of <span>Common Sense</span>.”</span> <em>MIT Technology Review</em>, March. <a href="https://www.technologyreview.com/2005/03/01/274581/cycorp-the-cost-of-common-sense-2/">https://www.technologyreview.com/2005/03/01/274581/cycorp-the-cost-of-common-sense-2/</a>.
+Wood, Lamont. 2005. <span>“Cycorp: <span>The Cost</span> of <span>Common Sense</span>.”</span> <em>MIT Technology Review</em>, March.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
@@ -3444,7 +3444,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb14-804"><a href="#cb14-804" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-805"><a href="#cb14-805" aria-hidden="true" tabindex="-1"></a>As the simplest example of how inference engine can work, consider the following example of backward-chaining inference, in a semantic web. The system is asked basically "Why does Clyde want to possess a crescent wrench?", and it eventually replies "Because Clyde has not eaten lately.". Lenat expected that the ontology of Cyc would eventually power generally intelligent agents, which would use forward-chaining to construct goals from current states, and use backward-chaining to explain why others have their goals.</span>
 <span id="cb14-806"><a href="#cb14-806" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-807"><a href="#cb14-807" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">A sketch of how to reason by backward-chaining together triples in a semantic web. Figure from [@wallichSiliconBabies1991]. I can't help but wonder if Lenat meant for a subtle joke against the *Elephants don't play chess* by [@brooksElephantsDonPlay1990] by adding in a "dead end" branch that ends up concluding Clyde is an elephant.</span><span class="co">](figure/Cyc_triple_reasoning.png)</span></span>
+<span id="cb14-807"><a href="#cb14-807" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">A sketch of how to reason by backward-chaining together triples in a semantic web. Figure from [@wallichSiliconBabies1991]. I can't help but wonder if Lenat meant for a subtle joke against the *Elephants don't play chess* by [@brooksElephantsDontPlay1990] by adding in a "dead end" branch that ends up concluding Clyde is an elephant.</span><span class="co">](figure/Cyc_triple_reasoning.png)</span></span>
 <span id="cb14-808"><a href="#cb14-808" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-809"><a href="#cb14-809" aria-hidden="true" tabindex="-1"></a>Most inference engines are highly specialized. They can only reason within a few microtheories, but very well. Here is a toy example for reasoning with mutually exclusive categories. We can define <span class="in">`#$Mutex`</span> as </span>
 <span id="cb14-810"><a href="#cb14-810" aria-hidden="true" tabindex="-1"></a></span>
@@ -3940,7 +3940,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb14-1300"><a href="#cb14-1300" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-1301"><a href="#cb14-1301" aria-hidden="true" tabindex="-1"></a>Lenat's approach was not welcomed by the academics, and the feeling was mutual. AI researchers thought the Cyc project was hyped, and were unhappy with the secretive nature of Cycorp. Philosophers considered the Cyc project premature -- how could Lenat build an ontology for the world when philosophers hadn't even figured out what the ontology is? Lenat shot back, calling academics lazy, abstract, and unable to persist through decades of hard engineering work. <span class="co">[</span><span class="ot">@thompsonKnowItAllMachine2001</span><span class="co">]</span> Among the academics, the only one that still supported him was Marvin Minsky, who had no problem calling the rest of AI research "brain-dead since the 1970s", especially robotics: "Graduate students are wasting 3 years of their lives soldering and repairing robots, instead of making them smart.". <span class="co">[</span><span class="ot">@baardAIFounderBlasts2003</span><span class="co">]</span></span>
 <span id="cb14-1302"><a href="#cb14-1302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-1303"><a href="#cb14-1303" aria-hidden="true" tabindex="-1"></a>Interesting. Why the hate towards robotics? Well, during the 1990s, there were two main challengers to his idea of a symbolic-logical system. On the one side, there was the challenge of bottom-up non-symbolic reasoning promoted by Rodney Brooks' subsumption architecture <span class="co">[</span><span class="ot">@brooksElephantsDonPlay1990</span><span class="co">]</span>, and the statistical machine learning methods like support vector machines. He did not have much to say about the statistical methods -- not yet -- but he did reject the subsumption architecture as a mistaken attempt to reach AGI through robotics, much as Minsky did. Motors, sensors, etc, are simply not needed -- common sense, specified in logical language, is all you need. The hard work needed to get the robots to do anything is, you see, the *wrong* kind of hard work.</span>
+<span id="cb14-1303"><a href="#cb14-1303" aria-hidden="true" tabindex="-1"></a>Interesting. Why the hate towards robotics? Well, during the 1990s, there were two main challengers to his idea of a symbolic-logical system. On the one side, there was the challenge of bottom-up non-symbolic reasoning promoted by Rodney Brooks' subsumption architecture <span class="co">[</span><span class="ot">@brooksElephantsDontPlay1990</span><span class="co">]</span>, and the statistical machine learning methods like support vector machines. He did not have much to say about the statistical methods -- not yet -- but he did reject the subsumption architecture as a mistaken attempt to reach AGI through robotics, much as Minsky did. Motors, sensors, etc, are simply not needed -- common sense, specified in logical language, is all you need. The hard work needed to get the robots to do anything is, you see, the *wrong* kind of hard work.</span>
 <span id="cb14-1304"><a href="#cb14-1304" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-1305"><a href="#cb14-1305" aria-hidden="true" tabindex="-1"></a>On the other side, though most expert system researchers had shrunken their ambition in the winter chill, from AGI down to mere commercial survival, a few still believed in the mission. They thought that by building little systems, brick by brick, we can build towards a generally intelligent system. This is basically a "Society of Mind" approach of Marvin Minsky, and even though Lenat and Minsky liked each other's research, Lenat rejected this approach as well. One cannot settle for building common sense bit by bit, expecting a finished system to emerge, but must braid the whole thing under one roof, one upper ontology. The ontology does not have to be perfect or efficient, but there has to be one. Without it, the Society of Mind would fragment into a Tower of Babel, with little expert systems of incompatible ontologies, just like how Feigenbaum's dream of a "Library of Congress" of knowledge bases failed to materialize.</span>
 <span id="cb14-1306"><a href="#cb14-1306" aria-hidden="true" tabindex="-1"></a></span>

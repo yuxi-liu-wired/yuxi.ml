@@ -72,7 +72,7 @@ Lorente de No actually discovered those during the mid-1920s, but Cajal told him
 > 
 > [@freemanPremisesNeurophysiologicalStudies1984]  
 
-Lorente de No was at the founding of cybernetics, and went to the [Macy conferences](https://en.wikipedia.org/wiki/Macy_conferences) a lot. He consistently pointed out that recurrent networks exist in the brain and is possibly responsible for transient memory. He had influenced many of the early cyberneticians, including Hebb, McCulloch, and Pitts. [@espinosa-sanchezImportanceCajalLorente2023]
+Lorente de No was at the founding of cybernetics, and went to the [Macy conferences](https://en.wikipedia.org/wiki/Macy_conferences) a lot. He consistently pointed out that recurrent networks exist in the brain and is possibly responsible for transient memory. He had influenced many of the early cyberneticians, including Hebb, McCulloch, and Pitts. [@espinosa-sanchezImportanceCajalsLorente2023]
 
 ### Donald Hebb
 
@@ -93,7 +93,7 @@ In Hebb's theory, the brain is a large neuron network, with long parallel fibers
 
 ![Animated version. The "reverberation" is clear in this case.](figure/Hebb_RNN.gif)
 
-In proposing the reverberating circuitry, Hebb was influenced by de No [@espinosa-sanchezImportanceCajalLorente2023]
+In proposing the reverberating circuitry, Hebb was influenced by de No [@espinosa-sanchezImportanceCajalsLorente2023]
 
 > \[The cell assembly theory\] certainly looked improbable to its author--me--when it was first conceived \[because it makes the ease of perception of common objects the result of a long process of learning\]. The problem of perception remained intractable for about five years (1939 to 1944) and as a result I made no progress in my attempt to understand concepts and thought. It seemed obvious that concepts, like images, must derive from perception, and I could think of no mechanism of perception that corresponded to my preconceptions. In fact, by 1944 I had given up trying to solve the problem. What happened then was that I became aware of some recent work of Lorente de No in conjunction with some observations of Hilgard and Marquis (1940) which led me to think about the problem from a different point of view... The essential basis of an alternative view was provided by Lorente de No, who showed that the cortex is throughout its extent largely composed of enormously complex closed or re-entrant paths, rather than linear connections only between more distant points... When an excitation reaches the cortex, instead of having to be transmitted at once to a motor path, or else die out, it may travel round and round in these closed paths and may continue to do so after the original sensory stimulation has ceased.
 > 
@@ -217,7 +217,7 @@ The control mechanism is a least-squares predictor. [@yeangFilteringNoiseAntiair
 
 > in order to obtain as complete a mathematical treatment as possible of the over-all control problem, it is necessary to assimilate the different parts of the system to a single basis, either human or mechanical. Since our understanding of the mechanical elements of gun pointing appeared to us to be far ahead of our psychological understanding, we chose to try to find a mechanical analogue of the gun pointer and the airplane pilot.  
 >
-> [@wienerNorbertWienerLife2017, page 407]  
+> [@wienerNorbertWieneraLife2017, page 407]  
 
 ### Commentary
 
@@ -400,7 +400,7 @@ Minsky can't afford a few million neurons:
 
 > I had the naïve idea that if one could build a big enough network, with enough memory loops, it might get lucky and acquire the ability to envision things in its head. This became a field of study later. It was called self-organizing random networks. Even today, I still get letters from young students who say, ‘Why are you people trying to program intelligence? Why don’t you try to find a way to build a nervous system that will just spontaneously create it?’ Finally, I decided that either this was a bad idea or it would take thousands or millions of neurons to make it work, and I couldn’t afford to try to build a machine like that.  
 > 
-> [@bernsteinMarvinMinskyVision1981]  
+> [@bernsteinMarvinMinskysVision1981]  
 
 ### Possible reasons for the winter
 
@@ -408,7 +408,7 @@ Minsky and Papert's book. At least, Minsky thought so.
 
 > There had been several thousand papers published on Perceptrons up to 1969, but our book put a stop to those. It had, in all modesty, some beautiful mathematics in it--it’s really nineteenth-century mathematics.  
 >
-> [@bernsteinMarvinMinskyVision1981]  
+> [@bernsteinMarvinMinskysVision1981]  
 
 > Minsky's early career was like that of Darth Vader. He started out as one of the earliest pioneers in neural networks but was then turned to the dark side of the force (AI) and became the strongest and most effective foe of his original community.  
 > 
@@ -522,7 +522,7 @@ Emotivism: The proper function of history is to fortify your weights and to hard
 
 > The function of a mathematician is to do something, to prove new theorems, to add to mathematics, and not to talk about what he or other mathematicians have done. Statesmen despise publicists, painters despise art-critics, and physiologists, physicists, or mathematicians have usually similar feelings: there is no scorn more profound, or on the whole more justifiable, than that of the men who make for the men who explain. Exposition, criticism, appreciation, is work for second-rate minds.  
 >
-> [@hardyMathematicianApology1940]  
+> [@hardyMathematiciansApology1940]  
 
 ### Second attempt
 
@@ -576,7 +576,7 @@ Another is Transformer
 
 > There was every possible combination of tricks and modules—which one helps, which doesn’t help. Let’s rip it out. Let’s replace it with this. Why is the model behaving in this counterintuitive way? Oh, it’s because we didn’t remember to do the masking properly. Does it work yet? OK, move on to the next. All of these components of what we now call the transformer were the output of this extremely high-paced, iterative trial and error.  
 >
-> [@levyGoogleEmployeesInvented2024]
+> [@levy8GoogleEmployees2024]
 
 ### The bitter lesson
 
@@ -614,7 +614,7 @@ Marvin Minsky insisted for decades that large neural networks do not work in the
 
 > I had the naïve idea that if one could build a big enough network, with enough memory loops, it might get lucky and acquire the ability to envision things in its head. This became a field of study later. It was called self-organizing random networks... I decided that either this was a bad idea or it would take thousands or millions of neurons to make it work, and I couldn’t afford to try to build a machine like that. (1981)  
 >
-> [@bernsteinMarvinMinskyVision1981]  
+> [@bernsteinMarvinMinskysVision1981]  
 
 > If one were to ask whether any particular, homogeneous network could serve as a model for a brain, the answer (we claim) would be, clearly. No. (1988)  
 >

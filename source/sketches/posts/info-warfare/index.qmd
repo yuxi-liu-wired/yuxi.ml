@@ -89,7 +89,7 @@ The Chinese government has a mature system for information warfare. It has four 
 * **expat**: This component has the main goal of maintaining support from the community of Chinese students and expats who are living abroad.
 * **foreigner**: This component is the smallest and the least important. Its main goal is to create general support for the Chinese government among people who are not Chinese citizens or descendants. Its activities are mainly restricted to creating bland "cultural enrichment" videos.
 
-This section discusses only the internal component. The foreign component is not different or more sophisticated from typical public relations campaign, and I know too little about espionage to write on that component. The expat component is very similar to the internal component, except that the Chinese government has to depend on local agents such as the Chinese Students and Scholars Association [@boweChinaOverseasUnited2018], and indirect threats, such as making visas difficult to obtain. In any case, the expat component is merely meant to support the internal component. It is my impression that the Chinese government cares little what the expats think about politics, as long as they do not turn Chinese people living inside China into heretics.
+This section discusses only the internal component. The foreign component is not different or more sophisticated from typical public relations campaign, and I know too little about espionage to write on that component. The expat component is very similar to the internal component, except that the Chinese government has to depend on local agents such as the Chinese Students and Scholars Association [@boweChinasOverseasUnited2018], and indirect threats, such as making visas difficult to obtain. In any case, the expat component is merely meant to support the internal component. It is my impression that the Chinese government cares little what the expats think about politics, as long as they do not turn Chinese people living inside China into heretics.
 
 ### Internal operations
 
@@ -113,7 +113,7 @@ It is curious that on the Chinese internet, there is *no* lockpicking hobby. It 
 
 ### The Great Firewall
 
-In simplified terms, The Great Firewall eavesdrops on packets sent above the TCP layer, and replaces them with the TCP Reset packet when it detects possibly censorable content, for instance, when the IP address matches one of Google's many CDN server addresses. This ends the TCP connection between the client and the server. It is most often used to terminate connections between a client inside the Chinese Internet and a server outside the Chinese Internet, although it can also operate in the other direction. It can also perform other packet replacement than just a TCP Reset packet, as in *the Great Cannon*. [@marczakAnalysisChinaGreat2015]
+In simplified terms, The Great Firewall eavesdrops on packets sent above the TCP layer, and replaces them with the TCP Reset packet when it detects possibly censorable content, for instance, when the IP address matches one of Google's many CDN server addresses. This ends the TCP connection between the client and the server. It is most often used to terminate connections between a client inside the Chinese Internet and a server outside the Chinese Internet, although it can also operate in the other direction. It can also perform other packet replacement than just a TCP Reset packet, as in *the Great Cannon*. [@marczakAnalysisChinasGreat2015]
 
 ### Noise injection
 
@@ -216,7 +216,7 @@ The Chinese government maintains its stability by targeting the information rece
 
 Since 2015, the Chinese government has employed [the Great Cannon](https://web.archive.org/web/20231214165158/https://cybersecurity.att.com/blogs/labs-research/the-great-cannon-has-been-deployed-again) multiple times to perform [DDoS attacks](https://en.wikipedia.org/wiki/Denial-of-service_attack) on websites it wants to censor, such as a certain GitHub page hosting softwares for bypassing the Great Firewall.
 
-The Great Cannon is a [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)[^mitm-attack] DDoS attack. When an external IP address requests for certain JavaScript files hosted on certain servers located inside the Great Firewall[^typically-baidu], as the packet crosses the Great Firewall, a program makes a statistical decision. If the decision rule triggers, it replaces the innocuous JavaScript with a malicious JavaScript, which would rapidly send requests to a list of targeted servers. [@marczakAnalysisChinaGreat2015]
+The Great Cannon is a [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)[^mitm-attack] DDoS attack. When an external IP address requests for certain JavaScript files hosted on certain servers located inside the Great Firewall[^typically-baidu], as the packet crosses the Great Firewall, a program makes a statistical decision. If the decision rule triggers, it replaces the innocuous JavaScript with a malicious JavaScript, which would rapidly send requests to a list of targeted servers. [@marczakAnalysisChinasGreat2015]
 
 [^mitm-attack]: [mandarin](https://en.wikipedia.org/wiki/Mandarin_(bureaucrat))-in-the-middle?
 
@@ -232,7 +232,7 @@ During the lead-up to the [2024 Taiwanese presidential election](https://en.wiki
 > 
 > That followed a similar attempt to fake an audio file in which Ko Wen-je, the presidential candidate of the newly founded Taiwan People's Party, mocked Lai for visiting the U.S. and "doing a job interview." Taiwanese official investigators concluded that this was most likely a faked recording, and Ko said no such thing. [@lauChinaBombardsTaiwan2024]
 
-> Analyzing more than 10,000 YouTube videos on a few channels since June, Johns Hopkins School of Advanced International Studies researcher Martin Wendiggensen found that “the DPP is almost always described negatively and mentioned in negative contexts (corruption, incompetence, stagnation) while the reverse is true for the KMT.” [@mennChinaMeddlingTaiwan2024]
+> Analyzing more than 10,000 YouTube videos on a few channels since June, Johns Hopkins School of Advanced International Studies researcher Martin Wendiggensen found that “the DPP is almost always described negatively and mentioned in negative contexts (corruption, incompetence, stagnation) while the reverse is true for the KMT.” [@mennChinasMeddlingTaiwan2024]
 
 
 ## Corporate

@@ -314,7 +314,7 @@ It turns out that there is no exact way to do this, but we can make an approxima
 
 This section based on [@simkinReinventingWillis2011, section 10] and [@stinchcombeIntroductionScalingConcepts1991].
 
-![When an Ising model is at the critical temperature $T_c$, coarse-graining would not end up with all-black or all-white, but would have the same amount of details no matter how much we coarse-grain. [@sethnaCourseCracklingNoise2007, figure 13].](figure/ising%20model.png)
+![When an Ising model is at the critical temperature $T_c$, coarse-graining would not end up with all-black or all-white, but would have the same amount of details no matter how much we coarse-grain. [@sethnaCourse6Crackling2007, figure 13].](figure/ising%20model.png)
 
 The idea of Kadanoff blocking is simple: "This fractal looks the same if I take off my glasses, just bigger. If I zoom out and blur a bit, we get pretty much the same thing again. So, if I take a 3-by-3 pixel, block and replace it by one big pixel, we should get the same thing again."
 
@@ -343,7 +343,7 @@ Since at constant $\Delta \bar p$, the lattice has a certain *characteristic* lo
 [^characteristic-look-and-feel]:
     It amuses me to no end that the word *characteristic* is something chemists use a lot. Physicists do it too, sure, with their "characteristic length", "characteristic height", "characteristic temperature", and such, but it is abstract. You rarely need to actually check a cake's characteristic length against a standard cake. However, when you are doing chemistry, and you need to check a chemical's *characteristic smell*, then you are out of luck.
 
-    > I'm saddened to report that the chemical literature contains descriptions of dimethylcadmium's smell. Whoever provided these reports was surely exposed to far more of the vapor than common sense would allow ... its odor is variously described as "foul", "unpleasant", "metallic", "disagreeable", and (wait for it) "characteristic", which is an adjective that shows up often in the literature with regard to smells, and almost always makes a person want to punch whoever thought it was useful. ... if you're working with organocadmium derivatives and smell something nasty, but nasty in a new, exciting way that you've never quite smelled before, then you can probably assume the worst. [@loweThingsWonWork2013]
+    > I'm saddened to report that the chemical literature contains descriptions of dimethylcadmium's smell. Whoever provided these reports was surely exposed to far more of the vapor than common sense would allow ... its odor is variously described as "foul", "unpleasant", "metallic", "disagreeable", and (wait for it) "characteristic", which is an adjective that shows up often in the literature with regard to smells, and almost always makes a person want to punch whoever thought it was useful. ... if you're working with organocadmium derivatives and smell something nasty, but nasty in a new, exciting way that you've never quite smelled before, then you can probably assume the worst. [@loweThingsWontWork2013]
 
 $$\nu = \frac{\ln 3}{2\ln \frac 32} \approx 1.355$$
 
@@ -353,7 +353,7 @@ The actual exponent is believed to be $\nu = 4/3$, so we are only 1.6% off. Very
 
 Ferromagnets are weird. A single iron atom is a tiny magnet, but if the iron atoms in a piece of magnet are not oriented roughly in the same way, then the whole piece would have all its direction washed away, thus not be a magnet at all. In the atomic world, things jiggle about and tend to destroy all order, so how is it possible for a grid of atoms to stay pointing mostly in the same direction for days and weeks -- an eternity on the atomic level?
 
-In 1920s, Lenz had the idea of a simple atomic model for ferromagnetism. He gave the problem to his graduate student Ising, who solved it in the one-dimensional case. He was disappointed to see that there is no spontaneous magnetization, which is the key feature of ferromagnetism, and he conjectured that this is also true in higher dimensions. The model was thus neglected for a while, until [@peierlsIsingModelFerromagnetism1936] showed that the two-dimensional Ising model does exhibit a phase transition, and later, Onsager solved it completely in 1944, showing several curious features. This was a starting point of modern statistical physics. See [@dombCriticalPhenomenaBrief1985] for some more historical details.
+In 1920s, Lenz had the idea of a simple atomic model for ferromagnetism. He gave the problem to his graduate student Ising, who solved it in the one-dimensional case. He was disappointed to see that there is no spontaneous magnetization, which is the key feature of ferromagnetism, and he conjectured that this is also true in higher dimensions. The model was thus neglected for a while, until [@peierlsIsingsModelFerromagnetism1936] showed that the two-dimensional Ising model does exhibit a phase transition, and later, Onsager solved it completely in 1944, showing several curious features. This was a starting point of modern statistical physics. See [@dombCriticalPhenomenaBrief1985] for some more historical details.
 
 The Ising model is a toy model of a magnet. For simplicity, we assume all the iron atoms are locked in a lattice, and each atom can only be spin up or spin down (like a coin that can be heads or tails). Neighboring atoms want to be the same, but temperature $T$ makes the atoms jiggle and be random.
 
@@ -1126,7 +1126,7 @@ We see this pattern over and over again in physics. To give another example, ima
 
 It is often noted that quantum mechanics is unintuitive, because the mesoscopic physics is so different from the microscopic physics, so we had evolved to intuit the mesoscopic world, and not the microscopic world. But why is it possible to ignore quantum mechanics? Elephants don't need to know, or don't care about, the Standard Model of particle physics.[^elephants-dont-play-chess] They don't know and don't need to know, because there is no natural selective pressure favoring elephants that have intuitions about quantum mechanics. When they walk, they push dirt around. When water flows, it pushes water around.
 
-[^elephants-dont-play-chess]: Nor do they play chess. [@brooksElephantsDonPlay1990]
+[^elephants-dont-play-chess]: Nor do they play chess. [@brooksElephantsDontPlay1990]
 
 For example, a cup of water is a composite of H2O molecules, so it should be studied by quantum mechanics. However, zooming out and out, we would find that the system falls into one of several possible fixed points (liquid, gas, solid) or critical points (boiling point, freezing point, triple point). In each case, the quantum-mechanical messiness has been renormalized away.
 

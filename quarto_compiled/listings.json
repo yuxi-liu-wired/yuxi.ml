@@ -15,28 +15,16 @@
     ]
   },
   {
-    "listing": "/essays/index.html",
+    "listing": "/logs/index.html",
     "items": [
-      "/essays/posts/structure-interpretation-chinese-economy/index.html",
-      "/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/index.html",
-      "/essays/posts/cyc/index.html",
-      "/essays/posts/statistical-mechanics/index.html",
-      "/essays/posts/hole-argument-inverted-qualia/index.html",
-      "/essays/posts/equilibrium-thermoeconomics/index.html",
-      "/essays/posts/analytical-mechanics/index.html",
-      "/essays/posts/renormalization-how-to/index.html",
-      "/essays/posts/mixture-of-experts/index.html",
-      "/essays/posts/perplexity-turing-test/index.html",
-      "/essays/posts/perceptron-controversy/index.html",
-      "/essays/posts/backstory-of-backpropagation/index.html",
-      "/essays/posts/cybernetic-artificial-intelligence/index.html",
-      "/essays/posts/reading-perceptron-book/index.html",
-      "/essays/posts/neural-scaling-laws/index.html",
-      "/essays/posts/scaling-law-by-data-manifold/index.html",
-      "/essays/posts/grokking-modular-arithmetics/index.html",
-      "/essays/posts/serial-experiments-lain/index.html",
-      "/essays/posts/no-nonsense-algorithmic-bias/index.html",
-      "/essays/posts/wigner-rotation/index.html"
+      "/logs/posts/2025-gwern-bair/index.html",
+      "/logs/posts/2025-dream-ingress-answer/index.html",
+      "/logs/posts/2025-reprofro-party/index.html",
+      "/logs/posts/2025-patel-dinner/index.html",
+      "/logs/posts/2025-survivorship-bias/index.html",
+      "/logs/posts/2025-char-time/index.html",
+      "/logs/posts/2025-oneil-cylinder/index.html",
+      "/logs/posts/2025-whalefall/index.html"
     ]
   },
   {
@@ -83,16 +71,28 @@
     ]
   },
   {
-    "listing": "/logs/index.html",
+    "listing": "/essays/index.html",
     "items": [
-      "/logs/posts/2025-gwern-bair/index.html",
-      "/logs/posts/2025-dream-ingress-answer/index.html",
-      "/logs/posts/2025-reprofro-party/index.html",
-      "/logs/posts/2025-patel-dinner/index.html",
-      "/logs/posts/2025-survivorship-bias/index.html",
-      "/logs/posts/2025-char-time/index.html",
-      "/logs/posts/2025-oneil-cylinder/index.html",
-      "/logs/posts/2025-whalefall/index.html"
+      "/essays/posts/structure-interpretation-chinese-economy/index.html",
+      "/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/index.html",
+      "/essays/posts/cyc/index.html",
+      "/essays/posts/statistical-mechanics/index.html",
+      "/essays/posts/hole-argument-inverted-qualia/index.html",
+      "/essays/posts/equilibrium-thermoeconomics/index.html",
+      "/essays/posts/analytical-mechanics/index.html",
+      "/essays/posts/renormalization-how-to/index.html",
+      "/essays/posts/mixture-of-experts/index.html",
+      "/essays/posts/perplexity-turing-test/index.html",
+      "/essays/posts/perceptron-controversy/index.html",
+      "/essays/posts/backstory-of-backpropagation/index.html",
+      "/essays/posts/cybernetic-artificial-intelligence/index.html",
+      "/essays/posts/reading-perceptron-book/index.html",
+      "/essays/posts/neural-scaling-laws/index.html",
+      "/essays/posts/scaling-law-by-data-manifold/index.html",
+      "/essays/posts/grokking-modular-arithmetics/index.html",
+      "/essays/posts/serial-experiments-lain/index.html",
+      "/essays/posts/no-nonsense-algorithmic-bias/index.html",
+      "/essays/posts/wigner-rotation/index.html"
     ]
   },
   {

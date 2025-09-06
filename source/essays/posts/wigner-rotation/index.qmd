@@ -779,10 +779,10 @@ The history of the Wigner rotation is winding and complicated. Here is a brief s
 
 * 1905: Einstein published special relativity. [@einsteinZurElektrodynamikBewegter1905]
 * 1908: Minkowski published the spacetime interpretation of special relativity. [@minkowskiGrundgleichungenFurElektromagnetischen1908]
-* 1910: Vladimir Varićak [@varicakApplicationLobachevskianGeometry1910] and E. T. Whittaker [@whittakerHistoryTheoriesAether1910, page 441] both introduced the hyperbolic functions and the rapidity parameter. 
+* 1910: Vladimir Varićak [@varicakApplicationLobachevskianGeometry1910] and Edmund Taylor Whittaker [@whittakerHistoryTheoriesAether1910, page 441] both introduced the hyperbolic functions and the rapidity parameter. 
 * 1911: Alfred Robb named the rapidity parameter, and found that velocities compose in hyperbolic space. [@robbOpticalGeometryMotion1911].
 * 1913: Émile Borel discovered the Wigner rotation as a part of his general study of special relativity by hyperbolic geometry. [@borelTheorieRelativiteCinematique1913]
-* 1921: Fermi discovered the Fermi--Walker transport. [@fermiSullElettrostaticaDi1921]
+* 1921: Fermi discovered the Fermi--Walker transport. [@fermiSullelettrostaticaDiCampo1921]
 * 1926: Llewellyn Thomas rediscovered the Thomas precession, a special case of the Wigner rotation. [@thomasMotionSpinningElectron1926]
 * 1932: Walker rediscovered the Fermi--Walker transport. [@walkerXXIRelativeCoordinates1932]
 * 1939: Wigner rediscovered the Wigner rotation. [@wignerUnitaryRepresentationsInhomogeneous1939]

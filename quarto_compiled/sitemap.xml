@@ -18,11 +18,11 @@
   </url>
   <url>
     <loc>https://yuxi.ml/sketches/posts/neural-network-scrapbook/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.742Z</lastmod>
+    <lastmod>2025-09-06T20:57:33.590Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/sketches/posts/info-warfare/index.html</loc>
-    <lastmod>2025-07-18T06:37:19.270Z</lastmod>
+    <lastmod>2025-09-06T21:08:10.323Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/sketches/posts/field-theory-how-to/index.html</loc>
@@ -73,116 +73,120 @@
     <lastmod>2025-07-18T06:46:35.745Z</lastmod>
   </url>
   <url>
-    <loc>https://yuxi.ml/logs/posts/2025-char-time/index.html</loc>
-    <lastmod>2025-07-18T06:37:18.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/wigner-rotation/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/statistical-mechanics/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/scaling-law-by-data-manifold/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/reading-perceptron-book/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/index.html</loc>
-    <lastmod>2025-08-01T22:09:54.078Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/no-nonsense-algorithmic-bias/index.html</loc>
-    <lastmod>2025-07-18T06:37:17.873Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/mixture-of-experts/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/grokking-modular-arithmetics/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.739Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/cyc/index.html</loc>
-    <lastmod>2025-08-10T05:29:24.067Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/backstory-of-backpropagation/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.742Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/index.html</loc>
-    <lastmod>2025-07-18T06:37:17.683Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/index.html</loc>
-    <lastmod>2025-08-08T00:56:32.478Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/feeds.html</loc>
-    <lastmod>2025-07-18T06:37:18.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/analytical-mechanics/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.742Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/cybernetic-artificial-intelligence/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.741Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.742Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/hole-argument-inverted-qualia/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.742Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/neural-scaling-laws/index.html</loc>
-    <lastmod>2025-07-18T06:37:17.872Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/perceptron-controversy/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.740Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/perplexity-turing-test/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/renormalization-how-to/index.html</loc>
-    <lastmod>2025-08-01T22:26:22.599Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/serial-experiments-lain/index.html</loc>
-    <lastmod>2025-07-18T06:37:18.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/essays/posts/structure-interpretation-chinese-economy/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
+    <loc>https://yuxi.ml/logs/posts/2025-dream-ingress-answer/index.html</loc>
+    <lastmod>2025-08-10T03:38:53.039Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/logs/index.html</loc>
     <lastmod>2025-07-18T06:37:18.140Z</lastmod>
   </url>
   <url>
-    <loc>https://yuxi.ml/logs/posts/2025-dream-ingress-answer/index.html</loc>
-    <lastmod>2025-07-18T06:46:35.742Z</lastmod>
+    <loc>https://yuxi.ml/essays/posts/structure-interpretation-chinese-economy/index.html</loc>
+    <lastmod>2025-08-23T20:11:40.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/serial-experiments-lain/index.html</loc>
+    <lastmod>2025-07-18T06:37:18.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/renormalization-how-to/index.html</loc>
+    <lastmod>2025-09-06T21:03:00.183Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/perplexity-turing-test/index.html</loc>
+    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/perceptron-controversy/index.html</loc>
+    <lastmod>2025-09-06T20:54:11.883Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/neural-scaling-laws/index.html</loc>
+    <lastmod>2025-09-06T21:01:04.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/hole-argument-inverted-qualia/index.html</loc>
+    <lastmod>2025-09-06T21:00:43.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/index.html</loc>
+    <lastmod>2025-08-10T03:46:12.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/cybernetic-artificial-intelligence/index.html</loc>
+    <lastmod>2025-07-18T06:46:35.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/analytical-mechanics/index.html</loc>
+    <lastmod>2025-09-06T20:55:46.068Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/feeds.html</loc>
+    <lastmod>2025-07-18T06:37:18.131Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/index.html</loc>
+    <lastmod>2025-08-08T00:56:32.478Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/index.html</loc>
+    <lastmod>2025-07-18T06:37:17.683Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/backstory-of-backpropagation/index.html</loc>
+    <lastmod>2025-09-06T20:58:23.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/cyc/index.html</loc>
+    <lastmod>2025-09-06T21:05:16.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/grokking-modular-arithmetics/index.html</loc>
+    <lastmod>2025-07-18T06:46:35.739Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/mixture-of-experts/index.html</loc>
+    <lastmod>2025-08-10T03:46:12.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/no-nonsense-algorithmic-bias/index.html</loc>
+    <lastmod>2025-08-10T03:46:12.411Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/perfect-diffusion-tc0-bad-diffusion-tc/index.html</loc>
+    <lastmod>2025-08-10T03:46:12.407Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/reading-perceptron-book/index.html</loc>
+    <lastmod>2025-08-10T03:46:12.406Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/scaling-law-by-data-manifold/index.html</loc>
+    <lastmod>2025-07-18T06:46:35.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/statistical-mechanics/index.html</loc>
+    <lastmod>2025-09-06T21:03:32.149Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/essays/posts/wigner-rotation/index.html</loc>
+    <lastmod>2025-09-06T21:04:22.556Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/logs/posts/2025-char-time/index.html</loc>
+    <lastmod>2025-07-18T06:37:18.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yuxi.ml/logs/posts/2025-gwern-bair/index.html</loc>
+    <lastmod>2025-08-12T04:46:04.593Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/logs/posts/2025-patel-dinner/index.html</loc>
-    <lastmod>2025-07-18T06:37:18.143Z</lastmod>
+    <lastmod>2025-08-10T03:46:12.398Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/logs/posts/2025-survivorship-bias/index.html</loc>
-    <lastmod>2025-08-10T05:35:02.279Z</lastmod>
+    <lastmod>2025-09-06T20:52:54.501Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/docs/index.html</loc>
@@ -222,7 +226,7 @@
   </url>
   <url>
     <loc>https://yuxi.ml/sketches/posts/history-neural-networks-talk-notes/index.html</loc>
-    <lastmod>2025-07-18T06:37:19.251Z</lastmod>
+    <lastmod>2025-09-06T20:57:19.237Z</lastmod>
   </url>
   <url>
     <loc>https://yuxi.ml/sketches/posts/linux-notes/index.html</loc>
@@ -242,10 +246,6 @@
   </url>
   <url>
     <loc>https://yuxi.ml/notes/index.html</loc>
-    <lastmod>2025-07-18T06:37:18.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yuxi.ml/logs/posts/2025-gwern-bair/index.html</loc>
-    <lastmod>2025-08-12T04:34:57.672Z</lastmod>
+    <lastmod>2025-08-10T03:46:12.399Z</lastmod>
   </url>
 </urlset>

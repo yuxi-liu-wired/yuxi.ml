@@ -1152,11 +1152,11 @@ We can consider a chamber containing a single ball inside. The chamber has a rem
 
 ![A car driven by burning a tape of zero information, emitting "waste information" in its wake. [@sethnaStatisticalMechanicsEntropy2021, figure 5.10]](figure/information-burning_engine.png)
 
-In the tradition of [steampunk](https://en.wikipedia.org/wiki/Steampunk), [@luEngineeringMaxwellDemon2014] constructed a purely mechanical model of information-burning. As shown below, we have a belt of paddles that can rotate freely, except when they hit one of the two red rods. The two red rods divide space into two sides: the `0` side and the `1` side. One of the red rods has an opening on it, allowing the paddle to go through. All the paddles start on the top in the `0` side, and slowly move down. As soon as a paddle has moved into the middle, it would be able to be able to freely move between `0` and `1` sides.
+In the tradition of [steampunk](https://en.wikipedia.org/wiki/Steampunk), [@luEngineeringMaxwellsDemon2014] constructed a purely mechanical model of information-burning. As shown below, we have a belt of paddles that can rotate freely, except when they hit one of the two red rods. The two red rods divide space into two sides: the `0` side and the `1` side. One of the red rods has an opening on it, allowing the paddle to go through. All the paddles start on the top in the `0` side, and slowly move down. As soon as a paddle has moved into the middle, it would be able to be able to freely move between `0` and `1` sides.
 
 So, if we blur our vision and look at the average motion of the paddles, we would see an averaged "entropic force" that drives paddles from `0` side to `1` side. We can harvest this entropic force by adding a ring with a paddle inside, which can be hit by the paddles, driving it into rotation. The ring would be able to wind up a spring, thus converting information into mechanical work.
 
-![The mechanical information-engine. [@luEngineeringMaxwellDemon2014]](figure/mechanical_maxwell_demon.jpeg)
+![The mechanical information-engine. [@luEngineeringMaxwellsDemon2014]](figure/mechanical_maxwell_demon.jpeg)
 
 <figure>
     <video controls width=100%>
@@ -2107,7 +2107,7 @@ In this sense, martingale strategies cannot create free money out of a fair gamb
 
 ### Worked example: bouncing ball
 
-This example is from [@sethnaStatisticalMechanicsEntropy2021, exercise 4.8], which itself derives from [@luaPracticalApplicabilityJarzynski2005]. See also [@hijarJarzynskiEqualityIllustrated2010] for another solved example, of a chest expander with mass points stuck in the middle of the springs. You might need to read my tutorial on [field-theoretic calculations](https://yuxi.ml/sketches/posts/field-theory-how-to/) before attempting that example.
+This example is from [@sethnaStatisticalMechanicsEntropy2021, exercise 4.8], which itself derives from [@luaPracticalApplicabilityJarzynski2005]. See also [@hijarJarzynskisEqualityIllustrated2010] for another solved example, of a chest expander with mass points stuck in the middle of the springs. You might need to read my tutorial on [field-theoretic calculations](https://yuxi.ml/sketches/posts/field-theory-how-to/) before attempting that example.
 
 We have a one-dimensional system, of a single ball bounding between two walls of a piston. The only control we have is that we can move one of the piston heads. At the start, the piston has length $L$, and the system is in thermal equilibrium at inverse temperature $\beta$. We plunge the piston head at velocity $v$ for time $\Delta L / v$, then immediately reverse it, taking another $\Delta L / v$. We explicitly calculate that $\braket{e^{-\beta W}} = 1$.
 

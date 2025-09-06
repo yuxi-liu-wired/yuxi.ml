@@ -461,6 +461,6 @@ Two, accounting for CO<sub>2</sub> is a dreadfully boring business,[^CO2-is-bori
 [^right-level]:
     The right level of climate change is not "none", but rather "when the marginal cost equals the marginal benefit". This might sound controversial, but it is just introductory economics.
 
-    > Luckily, at this point the orthodoxy of the academic economists is very much a minority position among intellectuals in general; one can seem to be a courageous maverick, boldly challenging the powers that be, by reciting the contents of a standard textbook. [@krugmanRicardoDifficultIdea2002]
+    > Luckily, at this point the orthodoxy of the academic economists is very much a minority position among intellectuals in general; one can seem to be a courageous maverick, boldly challenging the powers that be, by reciting the contents of a standard textbook. [@krugmanRicardosDifficultIdea2002]
 
 In one sentence: **There need be no new incentive other than the profit motive.**

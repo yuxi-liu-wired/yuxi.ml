@@ -431,7 +431,7 @@ In 1951, Marvin Minsky and Dean S. Edmonds built [Stochastic Neural Analog Reinf
 
 > Minsky told George Miller, at Harvard, about the prospective design. "He said, 'Why don't we just try it?' " Minsky recalled. "He had a lot of faith in me, which I appreciated. Somehow, he managed to get a couple of thousand dollars from the Office of Naval Research, and in the summer of 1951 Dean Edmonds and I went up to Harvard and built our machine. It had three hundred tubes and a lot of motors. It needed some automatic electric clutches, which we machined ourselves. The memory of the machine as stored in the positions of its control knobs—forty of them—and when the machine was learning it used the clutches to adjust its own knobs. We used a surplus gyropilot from a B-24 bomber to move the clutches."
 > 
-> [@bernsteinMarvinMinskyVision1981]
+> [@bernsteinMarvinMinskysVision1981]
 
 Milton Friedman was such an expert on [proximity fuzes](https://en.wikipedia.org/wiki/Proximity_fuze) that he was consulted on it during the [Battle of the Bulge](https://en.wikipedia.org/wiki/Battle_of_the_Bulge).
 

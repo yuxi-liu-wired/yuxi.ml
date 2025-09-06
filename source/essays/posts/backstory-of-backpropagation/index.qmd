@@ -399,12 +399,12 @@ After the ADALINE showed good behavior, they went on and on trying to train a tw
 
 Frustrated by the difficulty, they left neural network research. Hoff went to Intel to co-invent the microprocessor, and Widrow set about applying the ADALINE to small problems that it could solve well[^marvin-minsky-approves], such as adaptive antennas, adaptive noise filtering in telephone lines, adaptive filtering in medical scanning, etc. Even with just a single ADALINE, he brought breakthroughs to those fields.
 
-> Engineers at Apple have told me that every iPhone, since the iPhone 5, uses the LMS algorithm all over the device. They could not tell me where because, if they did, they would have to shoot me. Apple keeps secrets. [@widrowCyberneticsGeneralTheory2022, preface, page xix]
+> Engineers at Apple have told me that every iPhone, since the iPhone 5, uses the LMS algorithm all over the device. They could not tell me where because, if they did, they would have to shoot me. Apple keeps secrets. [@widrowCybernetics20General2022, preface, page xix]
 
 [^marvin-minsky-approves]:
     Marvin Minsky would approve.
 
-    > "\[The perceptron\] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can't get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of."[@bernsteinMarvinMinskyVision1981]
+    > "\[The perceptron\] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can't get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of."[@bernsteinMarvinMinskysVision1981]
 
 Perhaps Widrow and Hoff were limited to considering only learning rules they could implement electrochemically? But it does not seem so, in the words of Widrow himself, it was a blind spot for all researchers:
 
