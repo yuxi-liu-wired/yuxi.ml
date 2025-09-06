@@ -1041,28 +1041,42 @@ Because the wavelet cannot reach beyond $S + \delta S$, it's clear that the wave
 
 To see it, imagine nudging $(t, q)$ around the surface of $S$. As you nudge around, the wavelet also slides around. If the tangent surfaces are not exactly parallel, then you can find a good direction to nudge the point $(t, q)$, such that as you give it a good shove, the wavelet bursts through the surface of $S + \delta S$, creating a contradiction.
 
-Now that we have shown that the tangent surfaces of $S$ at $(t, q)$ is parallel to the tangent surface of wavelet, we write it out symbolically:
+That is, we have shown that there are 3 tangent planes, all parallel to each other:
+
+1. The tangent plane of $S$ at $(t, q)$.
+2. The tangent plane of $S + \delta S$ at $(t + \delta t, q + \delta q)$.
+3. The tangent plane at $(t + \delta t, q + \delta q)$, of the $\delta S$-wavelet radiating out of $(t, q)$.
+
+We write out symbolically the fact that Plane 1 is parallel to Plane 3:
 
 $$
 \begin{aligned}
-d\left(L\left(t, q,-\frac{\epsilon q}{\epsilon t}\right) \epsilon t\right) |_{\epsilon t = \delta t, \epsilon q = \delta q} &= \lra{(\left(\nabla_q L\right) \underbrace{\delta t}_{\rightarrow 0}+\nabla_v L), d q} +\left(L-\frac{\delta q}{\delta t} \nabla_v L\right) d t \\
-&\propto dS
+& \quad \ub{dS}{Plane 1} \\
+&= \partial_t S + \lra{\nabla_q S, dq} \\
+&\propto \ub{d\Bigg|_{\epsilon t = \delta t, \epsilon q = \delta q}\left(L\left(t, q,\frac{\epsilon q}{\epsilon t}\right) \epsilon t\right)} {Plane 3} \\ 
+&= \left(L-\frac{\delta q}{\delta t} \nabla_v L\right) dt + \lra{\nabla_v L, dq}\\
 \end{aligned}
 $$
 
 Thus, there exists some constant $c > 0$ such that
 
 $$
-(\partial_t S, \nabla_q S) = c \lrb{\lra{\nabla_v L, \frac{\delta q}{\delta t}} - L , \nabla_v L} = (-cH, cp)
+(\partial_t S, \nabla_q S) = c \lrb{L - \lra{\nabla_v L, \frac{\delta q}{\delta t}} , \nabla_v L} = (-cH, cp)
 $$
 
-Since we also have
+This is the HJE, once we prove that $c=1$. To prove it, note that, by construction, the straight path from $(t, q)$ to $(t + \delta t, q + \delta q)$ is an optimal way to reach $S + \delta S$ from $S$, therefore it costs exactly $\delta S$, so
 
 $$
-\partial_t S \delta t + \lra{\nabla_q S, \delta q} = \delta S = L \delta t
+\delta S = L \delta t
 $$
 
-we see $c=1$.
+which means
+
+$$
+\partial_t S \delta t + \lra{\nabla_q S, \delta q} = L\delta t = \lrb{L - \lra{\nabla_v L, \frac{\delta q}{\delta t}}}\delta t + \lra{\nabla_v L, \delta q}
+$$
+
+Thus, $c=1$.
 
 ![The wavelet proof of the HJE.](figure/hje_proof.jpg){width=70% fig-align="center"}
 
