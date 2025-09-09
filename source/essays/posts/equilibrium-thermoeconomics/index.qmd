@@ -1027,9 +1027,9 @@ Some hints:
 
 ### Contact geometry
 
-> Every mathematician knows it is impossible to understand an elementary course in thermodynamics. The reason is that thermodynamics is based—as Gibbs has explicitly proclaimed -- on a rather complicated mathematical theory, on the contact geometry. Contact geometry is one of the few 'simple geometries' of the so-called Cartan’s list, but it is still mostly unknown to the physicist -- unlike the Riemannian geometry and the symplectic or Poisson geometries, whose fundamental role in physics is today generally accepted.
+> Every mathematician knows it is impossible to understand an elementary course in thermodynamics. The reason is that thermodynamics is based -- as Gibbs has explicitly proclaimed -- on a rather complicated mathematical theory, on the contact geometry. Contact geometry is one of the few 'simple geometries' of the so-called Cartan’s list, but it is still mostly unknown to the physicist -- unlike the Riemannian geometry and the symplectic or Poisson geometries, whose fundamental role in physics is today generally accepted.
 > 
-> V.I. Arnol'd [@caldiProceedingsGibbsSymposium1990, page 163]
+> --- V.I. Arnol'd [@caldiProceedingsGibbsSymposium1990, page 163]
 
 To explain this mysterious remark, we take a plunge into abstraction. We know that a real gas has properties $P, V, T, S, \dots$, and that they satisfy the differential equation:
 
@@ -1061,10 +1061,10 @@ $$dS - pdq = 0$$
 
 and we ask: Why is it possible to collapse the space of $(q, p, S)$ from 3 to 1 dimension?
 
-In modern geometry, an expression like $dS - \sum_i p_i dq_i = 0$ defines a field of planes in $\R^3$. That is, at each point $(q, p, S)$, we construct a plane defined by
+In modern geometry, an expression like $dS - \sum_i p_i dq_i = 0$ defines a field of planes in $\R^{2n+1}$. That is, at each point $(q, p, S)$, we construct a $2n$-dimensional plane defined by
 
 $$
-\{(q + \delta q, p + \delta p, S + \delta S): \delta S - p \delta q = 0\}
+\lrc{(q + \delta q, p + \delta p, S + \delta S): \delta S - \sum_i p_i \delta q_i = 0}
 $$
 
 For example, in three dimensions, the field of planes $dS - pdq = 0$ would look like it is constantly twisting as $p$ increases. The study of geometric structures definable via the field of planes is [contact geometry](https://en.wikipedia.org/wiki/Contact_geometry).[^anticlimax]

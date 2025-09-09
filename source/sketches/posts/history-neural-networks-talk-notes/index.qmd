@@ -17,7 +17,7 @@ importance: 4
 
 ## What this essay is about
 
-This essay is written as a companion piece of a lecture on the history of neural networks. It is not exactly an essay, but more of an extended scrapbook of quotations. The lecture slides are [here](code/ML%20history%20presentation.zip).
+This essay is written as a companion piece of a lecture on the history of neural networks. It is not exactly an essay, but more of an extended scrapbook of quotations. The lecture slides are [here](code/ML%20history%20presentation.7z).
 
 * [Yuxi on the Wired - Cybernetic Artificial Intelligence](https://yuxi.ml/essays/posts/cybernetic-artificial-intelligence/)
 * [Yuxi on the Wired - Reading Perceptrons](https://yuxi.ml/essays/posts/reading-perceptron-book/)

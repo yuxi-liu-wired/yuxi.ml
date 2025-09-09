@@ -1464,8 +1464,8 @@ What’s so special about energy, or cowry shells?
 <section id="contact-geometry" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="contact-geometry">Contact geometry</h3>
 <blockquote class="blockquote">
-<p>Every mathematician knows it is impossible to understand an elementary course in thermodynamics. The reason is that thermodynamics is based—as Gibbs has explicitly proclaimed – on a rather complicated mathematical theory, on the contact geometry. Contact geometry is one of the few ‘simple geometries’ of the so-called Cartan’s list, but it is still mostly unknown to the physicist – unlike the Riemannian geometry and the symplectic or Poisson geometries, whose fundamental role in physics is today generally accepted.</p>
-<p>V.I. Arnol’d <span class="citation" data-cites="caldiProceedingsGibbsSymposium1990">(<a href="#ref-caldiProceedingsGibbsSymposium1990" role="doc-biblioref">Caldi et al. 1990, 163</a>)</span></p>
+<p>Every mathematician knows it is impossible to understand an elementary course in thermodynamics. The reason is that thermodynamics is based – as Gibbs has explicitly proclaimed – on a rather complicated mathematical theory, on the contact geometry. Contact geometry is one of the few ‘simple geometries’ of the so-called Cartan’s list, but it is still mostly unknown to the physicist – unlike the Riemannian geometry and the symplectic or Poisson geometries, whose fundamental role in physics is today generally accepted.</p>
+<p>— V.I. Arnol’d <span class="citation" data-cites="caldiProceedingsGibbsSymposium1990">(<a href="#ref-caldiProceedingsGibbsSymposium1990" role="doc-biblioref">Caldi et al. 1990, 163</a>)</span></p>
 </blockquote>
 <p>To explain this mysterious remark, we take a plunge into abstraction. We know that a real gas has properties <span class="math inline">\(P, V, T, S, \dots\)</span>, and that they satisfy the differential equation:</p>
 <p><span class="math display">\[
@@ -1483,9 +1483,9 @@ dS = p_1 dq_1 + p_2 dq_2
 <p>Things are already interesting when we have just one commodity:</p>
 <p><span class="math display">\[dS - pdq = 0\]</span></p>
 <p>and we ask: Why is it possible to collapse the space of <span class="math inline">\((q, p, S)\)</span> from 3 to 1 dimension?</p>
-<p>In modern geometry, an expression like <span class="math inline">\(dS - \sum_i p_i dq_i = 0\)</span> defines a field of planes in <span class="math inline">\(\mathbb{R}^3\)</span>. That is, at each point <span class="math inline">\((q, p, S)\)</span>, we construct a plane defined by</p>
+<p>In modern geometry, an expression like <span class="math inline">\(dS - \sum_i p_i dq_i = 0\)</span> defines a field of planes in <span class="math inline">\(\mathbb{R}^{2n+1}\)</span>. That is, at each point <span class="math inline">\((q, p, S)\)</span>, we construct a <span class="math inline">\(2n\)</span>-dimensional plane defined by</p>
 <p><span class="math display">\[
-\{(q + \delta q, p + \delta p, S + \delta S): \delta S - p \delta q = 0\}
+\left\{(q + \delta q, p + \delta p, S + \delta S): \delta S - \sum_i p_i \delta q_i = 0\right\}
 \]</span></p>
 <p>For example, in three dimensions, the field of planes <span class="math inline">\(dS - pdq = 0\)</span> would look like it is constantly twisting as <span class="math inline">\(p\)</span> increases. The study of geometric structures definable via the field of planes is <a href="https://en.wikipedia.org/wiki/Contact_geometry">contact geometry</a>.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;This explanation might sound like an anticlimax, and I imagine someone would object “Thermodynamics is reduced to contact geometry… but what is contact geometry?”. My answer is that contact geometry simply <em>is</em>. It is not supposed to be a generator of intuitions. Instead, it is a common language that bridges between intuitions. By casting thermodynamics, economics, mechanics, etc, into the language of contact geometry, we would then be able to translate intuition from one field to another field. Saying that “thermodynamics is contact geometry” is not telling you an intuitive way to see thermodynamics, but rather, an intuitive way to see contact geometry.</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
@@ -4256,9 +4256,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contact geometry</span></span>
 <span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Every mathematician knows it is impossible to understand an elementary course in thermodynamics. The reason is that thermodynamics is based—as Gibbs has explicitly proclaimed -- on a rather complicated mathematical theory, on the contact geometry. Contact geometry is one of the few 'simple geometries' of the so-called Cartan’s list, but it is still mostly unknown to the physicist -- unlike the Riemannian geometry and the symplectic or Poisson geometries, whose fundamental role in physics is today generally accepted.</span></span>
+<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Every mathematician knows it is impossible to understand an elementary course in thermodynamics. The reason is that thermodynamics is based -- as Gibbs has explicitly proclaimed -- on a rather complicated mathematical theory, on the contact geometry. Contact geometry is one of the few 'simple geometries' of the so-called Cartan’s list, but it is still mostly unknown to the physicist -- unlike the Riemannian geometry and the symplectic or Poisson geometries, whose fundamental role in physics is today generally accepted.</span></span>
 <span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span></span>
-<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; V.I. Arnol'd </span><span class="co">[</span><span class="ot">@caldiProceedingsGibbsSymposium1990, page 163</span><span class="co">]</span></span>
+<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; --- V.I. Arnol'd </span><span class="co">[</span><span class="ot">@caldiProceedingsGibbsSymposium1990, page 163</span><span class="co">]</span></span>
 <span id="cb1-1033"><a href="#cb1-1033" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1034"><a href="#cb1-1034" aria-hidden="true" tabindex="-1"></a>To explain this mysterious remark, we take a plunge into abstraction. We know that a real gas has properties $P, V, T, S, \dots$, and that they satisfy the differential equation:</span>
 <span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a></span>
@@ -4290,10 +4290,10 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a>and we ask: Why is it possible to collapse the space of $(q, p, S)$ from 3 to 1 dimension?</span>
 <span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a>In modern geometry, an expression like $dS - \sum_i p_i dq_i = 0$ defines a field of planes in $\R^3$. That is, at each point $(q, p, S)$, we construct a plane defined by</span>
+<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a>In modern geometry, an expression like $dS - \sum_i p_i dq_i = 0$ defines a field of planes in $\R^{2n+1}$. That is, at each point $(q, p, S)$, we construct a $2n$-dimensional plane defined by</span>
 <span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a><span class="sc">\{</span>(q + \delta q, p + \delta p, S + \delta S): \delta S - p \delta q = 0<span class="sc">\}</span></span>
+<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a>\lrc{(q + \delta q, p + \delta p, S + \delta S): \delta S - \sum_i p_i \delta q_i = 0}</span>
 <span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a>For example, in three dimensions, the field of planes $dS - pdq = 0$ would look like it is constantly twisting as $p$ increases. The study of geometric structures definable via the field of planes is <span class="co">[</span><span class="ot">contact geometry</span><span class="co">](https://en.wikipedia.org/wiki/Contact_geometry)</span>.<span class="ot">[^anticlimax]</span></span>
