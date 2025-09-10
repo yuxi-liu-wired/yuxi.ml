@@ -2,7 +2,7 @@
 title: "Analytical Mechanics"
 author: "Yuxi Liu"
 date: "2024-05-04"
-date-modified: "2024-05-04"
+date-modified: "2025-09-09"
 categories: [math, physics, philosophy]
 format:
   html:
@@ -287,15 +287,17 @@ x \text{ is a state variable}\\
 \dot x = v 
 \end{cases}$$
 
-Given that, how do we control the system? Again, it comes down to putting a price on everything, and maximizing at each instant. So, let's open a market on commodity $x$, such that the "fair" price is $p(t)$ at time $t$. With that, we can write down the profit flow
+Given that, how do we control the system? Again, it comes down to putting a price on everything, and greedily maximizing profit at every instant. So, let's open one more market, this time on commodity $x$, such that the "fair" price is $p(t)$ at time $t$. We can interpret this as follows: $x$ is the number of area-producing machines, and $v$ is the rate at which we are producing the area-producing machines. We are tasked with producing exactly $h$ number of area-producing machines during the time period of $[0, T]$. The supervisor does not care what we are going to do with the area-producing machines. So, our plan is to first over-produce the machines and use these machines to produce area, which we can sell to the market and pocket the profit, then destroy some of the machines that we wouldn't need anymore.
+
+With that interpretation, we can write down the moment-by-moment profit flow:
 
 $$H = x + p_h \left(\frac hT - v\right) +  p_S\left(\frac ST - \sqrt{1+v^2}\right) + p v$$
 
-and maximizing profit over all time implies maximizing profit flow at every instant:
+Then, maximizing profit over all time implies maximizing profit flow at every instant:
 
 $$\partial_v H= 0$$
 
-This gives us one equation, but we need one more equation. Namely, we need to know how $p(t)$, the "fair" price of $x$, changes with time.
+This gives us one equation, but we need one more equation. Namely, we need to know how $p(t)$, the "fair" price of the machinery $x$, changes with time. Unlike the price of area and height, which are constants that we work with, the price of machinery quite reasonably could change over time. At the beginning of time, machines are valuable, because there is still much time to produce area with. Near the end of time, machines become worthless to us, because we don't have the time to produce more area. Thus, intuitively, the value of a machine should decrease with time linearly. Can we justify this more rigorously?
 
 The fundamental problem in pricing theory is this: how do we put a price on something? The fundamental reply from pricing theory is: no-arbitrage (no free money).
 
@@ -305,7 +307,7 @@ Now, since $\dot x = v$, this buying-and-selling plan does not change how much $
 
 $$p(t)\delta x(t) = p(t + \delta t)\delta x(t + \delta t)  + \delta x(t) \delta t \implies p(t+ \delta t) = p(t) - \delta t$$
 
-and consequently, $\dot p = -1$. This is the price dynamics. Intuitively, we see that the value of a standing stock of $x$ decreases as we run out of time to use it for producing.
+and consequently, $\dot p = -1$. This is the price dynamics, matching our intuition. Intuitively, we see that the value of a machine decreases linearly as we run out of time to use it for producing area.
 
 To solve
 
@@ -442,8 +444,8 @@ Thus, we obtain the two fundamental equations of Hamiltonian mechanics:
 
 $$\begin{cases}  
 \partial_t H &= -\partial_t L \\
-\dot p = -\nabla_q H \\     
-\dot q = \nabla_p H 
+\dot p &= -\nabla_q H \\     
+\dot q &= \nabla_p H 
 \end{cases}$$
 
 :::
@@ -479,7 +481,7 @@ This is the famous
 ## Euler--Lagrange equations of motion
 
 $$
-\frac{d}{dt} (\partial_{v_i} L) = (\nabla_{q_i} L) \quad \forall i \in \{1, 2, \dots, N\}
+\frac{d}{dt} (\partial_{v_i} L) = (\partial_{q_i} L) \quad \forall i \in \{1, 2, \dots, N\}
 $$
 
 or more succinctly, 
@@ -797,7 +799,7 @@ Let the ansatz be $e^{i\omega t}$, the algebraic equation to solve is now $\epsi
 
 Similarly, the perturbative solution $\omega = \pm\sqrt{\frac{k}{m}} + \delta$ shows that the $\sqrt{\frac{k}{m}}$ mode of oscillation also splits in the exact same way: an exponentially decaying mode and an exponentially growing mode, both at the rate of $\frac{\gamma}{2m}$. 
 
-Interpreted in quantum field theory, this means that the oscillator, with even the slightest mutual interaction between its $+\sqrt{\frac{k}{m}}$ modes and its $-\sqrt{\frac{k}{m}}$ modes, will cause an exponential growth of one of the modes. A [catastrophic](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe) explosion of particles!
+Interpreted in quantum field theory, this means that the oscillator, with even the slightest mutual interaction between its $+\sqrt{\frac{k}{m}}$ and $-\sqrt{\frac{k}{m}}$ modes, will cause an exponential growth of one of the modes. A [catastrophic](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe) explosion of particles!
 
 The quantum field theorists call these "bad Ostrogradsky [ghosts](https://en.wikipedia.org/wiki/Ghost_(physics))", and spend some effort in removing them. Bad ghosts cannot be allowed, because bad ghosts will destroy the universe. Mutual interaction must be preserved between oscillation modes, because nothing is completely independent in this universe -- [even photons can interact](https://en.wikipedia.org/wiki/Two-photon_physics). Some theorists thus simply declare higher-than-2 derivatives forbidden, while others do some renormalization-sorcery to remove the ghosts, and so on.
 
