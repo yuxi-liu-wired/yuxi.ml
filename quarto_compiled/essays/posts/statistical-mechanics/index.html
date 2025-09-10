@@ -1672,10 +1672,10 @@ chi-squared test
 <source src="figure/Sanov_convergence.webm" type="video/webm">
 </video>
 <p>This is an example of how the microcanonical ensemble and the canonical ensemble become indistinguishable at the large particle limit. Indeed, Boltzmann often used this equation to derive the canonical ensemble from microcanonical ensembles.</p>
-<p>We have argued that the cloud should be ellipsoidal and centered around <span class="math inline">\((p_1, \dots, p_n)\)</span> with radius <span class="math inline">\(\sim N^{-1/2}\)</span>. What exactly is its shape? Well, since each particle’s distribution of states is categorical, and the particles are uncorrelated (thanks to the energy market), the mean and covariance of <span class="math inline">\(\vec N= (N_1, \dots, N_n)\)</span> are <span class="math inline">\(\vec p N\)</span> and <span class="math inline">\([\diag(\vec p) - \vec p \vec p^T] N\)</span>. The covariance matrix is not linearly independent, because of the constraint <span class="math inline">\(\sum_i N_i/N = 1\)</span>.</p>
-<p>A good trick is worth doing again and again. Like how the microcanonical ensemble is freed up by a free market into a canonical ensemble, here we free up <span class="math inline">\(\vec N\)</span> by <em>adding noise</em>, then conditioning on zero noise:</p>
+<p>We have argued that the cloud should be ellipsoidal and centered around <span class="math inline">\((p_1, \dots, p_n)\)</span> with radius <span class="math inline">\(\sim N^{-1/2}\)</span>. What exactly is its shape? Well, since each particle’s distribution of states is categorical, and the particles are uncorrelated (thanks to the energy market), the mean and covariance of <span class="math inline">\(\vec N= (N_1, \dots, N_n)\)</span> are <span class="math inline">\(\vec p N\)</span> and <span class="math inline">\([\mathop{\mathrm{diag}}(\vec p) - \vec p \vec p^T] N\)</span>. The covariance matrix is not linearly independent, because of the constraint <span class="math inline">\(\sum_i N_i/N = 1\)</span>.</p>
+<p>One good trick deserves another. Like how the microcanonical ensemble is freed up by a free market into a canonical ensemble, here we free up <span class="math inline">\(\vec N\)</span> by <em>adding noise</em>, then conditioning on zero noise:</p>
 <p><span class="math display">\[
-\vec N / N + z\vec p/\sqrt N \sim \mathcal N(\vec p, \diag(\vec p) / N) \quad z \sim \mathcal N(0, 1)
+\vec N / N + z\vec p/\sqrt N \sim \mathcal N(\vec p, \mathop{\mathrm{diag}}(\vec p) / N) \quad z \sim \mathcal N(0, 1)
 \]</span></p>
 <p>Therefore, the probability density of <span class="math inline">\(\vec N\)</span> satisfies</p>
 <p><span class="math display">\[\rho(\vec N / N) \propto \exp\left(-\frac 12 \sum_i \frac{(N_i - Np_i)^2}{Np_i}\right)\]</span></p>
@@ -4491,13 +4491,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-1225"><a href="#cb1-1225" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1226"><a href="#cb1-1226" aria-hidden="true" tabindex="-1"></a>We have argued that the cloud should be ellipsoidal and centered around $(p_1, \dots, p_n)$ with radius $\sim N^{-1/2}$. What exactly is its shape? Well, since each particle's distribution of states is categorical, and the particles are uncorrelated (thanks to the energy market), the mean and covariance of $\vec N= (N_1, \dots, N_n)$ are $\vec p N$ and $<span class="co">[</span><span class="ot">\diag(\vec p) - \vec p \vec p^T</span><span class="co">]</span> N$. The covariance matrix is not linearly independent, because of the constraint $\sum_i N_i/N = 1$.</span>
 <span id="cb1-1227"><a href="#cb1-1227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>A good trick is worth doing again and again. Like how the microcanonical ensemble is freed up by a free market into a canonical ensemble, here we free up $\vec N$ by *adding noise*, then conditioning on zero noise:</span>
+<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>One good trick deserves another. Like how the microcanonical ensemble is freed up by a free market into a canonical ensemble, here we free up $\vec N$ by *adding noise*, then conditioning on zero noise:</span>
 <span id="cb1-1229"><a href="#cb1-1229" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1230"><a href="#cb1-1230" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-1231"><a href="#cb1-1231" aria-hidden="true" tabindex="-1"></a>\vec N / N + z\vec p/\sqrt N \sim \mathcal N(\vec p, \diag(\vec p) / N) \quad z \sim \mathcal N(0, 1)</span>
 <span id="cb1-1232"><a href="#cb1-1232" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-1233"><a href="#cb1-1233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a>Therefore, the probability density of $\vec N$ satisfies</span>
+<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a>Therefore, the probability density of $\vec N$ satisfies </span>
 <span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1236"><a href="#cb1-1236" aria-hidden="true" tabindex="-1"></a>$$\rho(\vec N / N) \propto \exp\lrb{-\frac 12 \sum_i \frac{(N_i - Np_i)^2}{Np_i}}$$</span>
 <span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a></span>

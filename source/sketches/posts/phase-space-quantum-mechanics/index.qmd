@@ -1345,7 +1345,7 @@ $$
 W(t, q, p) = W(0, q - pt/m, p)
 $$
 
-This picture allows us to obtain some results pictorially.
+This picture allows us to obtain some results by intuitively thinking about pictures.
 
 #### Gaussian wavepacket
 
@@ -1371,7 +1371,7 @@ In [@villanuevaNegativeFlowProbability2020; @goussevCommentNegativeFlow2020], it
 
 Consider a gaussian wavepacket with $W(0, q, p) = \rho_{N ((q_0, p_0), \diag(\sigma_q^2, \sigma_p^2))}$, with $q_0 < 0, p_0 > 0$. Geometrically, $Pr(q > q_1 | t)$ is the integral of $W(t, q, p)$ on the region to the right of the vertical line $q = q_1$, which is equal to the integral of $W(0, q, p)$ on the region to the right of the sheared line $q = -\frac{t}{m} p$. The sheared line rotates clockwise over time.
 
-From the geometry of gaussian distributions, this integral can be pictorially calculated by finding the ellipse of constant $\rho_{N ((q_0, p_0), \diag(\sigma_q^2, \sigma_p^2))}$ that is tangent to the sheared line. At $t \to -\infty$, the sheared line is just the $q$-axis. As $t$ increases, the sheared line rotates counterclockwise, and the tangent ellipse grows, until it hits the maximal size at some critical time $t = t_{\text{critical}}$, at which point the tangent ellipse is equal to
+From the geometry of gaussian distributions, this integral can be pictorially calculated by finding the ellipse of constant $\rho_{N ((q_0, p_0), \diag(\sigma_q^2, \sigma_p^2))}$ that is tangent to the sheared line. At $t \to -\infty$, the sheared line is just the $q$-axis. As $t$ increases, the sheared line rotates counterclockwise, and the tangent ellipse grows, until it hits the maximal size at some critical time $t = t_{\text{critical}}$, at which point, the tangent ellipse is equal to
 
 $$
 \frac{(q-q_0)^2}{\sigma_q^2} + \frac{(p-p_0)^2}{\sigma_p^2} = \frac{(q_1-q_0)^2}{\sigma_q^2} + \frac{(0-p_0)^2}{\sigma_p^2}
