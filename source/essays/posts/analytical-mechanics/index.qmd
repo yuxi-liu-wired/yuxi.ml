@@ -674,7 +674,7 @@ $$H(t,  q^{(0)}, q^{(1)}, p^{(0)}, p^{(1)}) = \langle p^{(0)} , q^{(1)}\rangle +
 
 Assuming that, we have a serious problem. Consider an oscillator with higher-order derivatives. Since its Hamiltonian contains a term $\langle p^{(0)} , q^{(1)}\rangle$, it is linear with respect to $p^{(0)}$ and $q^{(1)}$. In other words, it can have arbitrarily *low* energy states.
 
-Now, this could be alright if we live in a classical world, but we live in a world described by quantum field theory. In QFT, the world is a giant network of oscillators. If a quantum oscillator has higher-order derivatives, then its energy levels can go both infinitely high and low. If there is any coupling at all between its energy levels, it would instantly evaporates into infinitely many positive and negative energy particles, in a blaze of vacuum decay.
+Now, this could be alright if we live in a classical world, but we live in a world described by quantum field theory. In QFT, the world is a giant network of oscillators. If a quantum oscillator has higher-order derivatives, then its energy levels can go both infinitely high and low. If there is any coupling at all between its energy levels, it would instantly evaporate into infinitely many positive and negative energy particles, in a blaze of vacuum decay.
 
 This is an anthropic explanation for "Why Newton's laws?" Newton's laws, because the Lagrangian depends on only up to velocity. Why? Because if it also depends on acceleration, the vacuum would decay [@swansonOstrogradskiInstabilityWhy2022]. We can similarly explain anthropically why space has 3 dimensions, and time has 1 dimension.
 
@@ -793,8 +793,13 @@ The equation of motion in this case is
 
 $$\epsilon x^{(4)} + m\ddot x + \gamma \dot x + kx = 0$$
 
-The algebraic equation to solve is now $\epsilon z^4 - mz^2 + i\gamma z + k = 0$.
+Let the ansatz be $e^{i\omega t}$, the algebraic equation to solve is now $\epsilon \omega^4 - m\omega^2 + i\gamma \omega + k = 0$. At the small $\gamma$ limit, the perturbative solution $\omega = \pm\sqrt{\frac{m}{\epsilon}} + \delta$ yields $\delta = \mp i \frac{\gamma}{2m}$. Thus, we see that the $\sqrt{\frac{m}{\epsilon}}$ mode of oscillation splits into two sub-modes: an exponentially decaying mode and an exponentially growing mode, both at the rate of $\frac{\gamma}{2m}$. 
 
+Similarly, the perturbative solution $\omega = \pm\sqrt{\frac{k}{m}} + \delta$ shows that the $\sqrt{\frac{k}{m}}$ mode of oscillation also splits in the exact same way: an exponentially decaying mode and an exponentially growing mode, both at the rate of $\frac{\gamma}{2m}$. 
+
+Interpreted in quantum field theory, this means that the oscillator, with even the slightest mutual interaction between its $+\sqrt{\frac{k}{m}}$ modes and its $-\sqrt{\frac{k}{m}}$ modes, will cause an exponential growth of one of the modes. A [catastrophic](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe) explosion of particles!
+
+The quantum field theorists call these "bad Ostrogradsky [ghosts](https://en.wikipedia.org/wiki/Ghost_(physics))", and spend some effort in removing them. Bad ghosts cannot be allowed, because bad ghosts will destroy the universe. Mutual interaction must be preserved between oscillation modes, because nothing is completely independent in this universe -- [even photons can interact](https://en.wikipedia.org/wiki/Two-photon_physics). Some theorists thus simply declare higher-than-2 derivatives forbidden, while others do some renormalization-sorcery to remove the ghosts, and so on.
 
 ## Hamilton--Jacobi equation
 
