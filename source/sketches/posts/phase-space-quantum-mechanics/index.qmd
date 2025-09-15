@@ -1305,7 +1305,7 @@ meaning that the quantum energy function in quantum phase space is exactly the s
 
 ## Quadratic Hamiltonian
 
-If the Hamiltonian $H$ is a sum of kinetic and potential energies, as $H = T(p) + V(q)$, then
+If the Hamiltonian $H$ is a sum of kinetic and potential energies, as $H = T(p) + V(q)$, then we have the **Bopp shift** formulas:
 
 $$
 \begin{aligned}

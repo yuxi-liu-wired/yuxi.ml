@@ -2,7 +2,7 @@
 title: "Structure and Interpretation of the Chinese Economy"
 author: "Yuxi Liu"
 date: "2025-06-03"
-date-modified: "2025-06-05"
+date-modified: "2025-09-15"
 categories: [China, economics, politics, history]
 format:
   html:
@@ -259,22 +259,25 @@ Starting around 1970, as the Soviet Union ceased to be an economy force that thr
 In this climate, a series of agreements were signed. The most famous was the [Plaza Accord](https://en.wikipedia.org/wiki/Plaza_Accord) of 1985, with which several governments agreed to change their exchange rates. For Japan in particular, this meant a sudden increase in USD/JPY, which endangers its economic growth. The Bank of Japan quickly decreased its interest rate from 5% to 2.5%.
 
 ```{=html}
-<div align="center"><div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1Jp0z&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true" loading="lazy"></iframe></div><script src="https://fred.stlouisfed.org/assets/research/fred-graph-react-508/build/embed.min.js" type="text/javascript"></script></div> <!-- interest_rates_Japan.png -->
+<div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1MkcU&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true" loading="lazy"></iframe></div><script src="https://fred.stlouisfed.org/assets/research/fred-graph-react/build/embed.min.js" type="text/javascript"></script><!-- interest_rates_Japan.png -->
 ```
 
-<!-- TODO fix this graph https://fred.stlouisfed.org/graph/?g=1Jp0z -->
-
-A complex series of events then happened during the 1985--1995 period, resulting in the bubble economy. [@kangConfidenceTrapJapans2018; @noguchiBubbleEconomicPolicies1994] To prepare the ground, several money faucets turned on:
+The 1980s was a period of rapid change in the Japanese financial system. A complex series of events occurred during the 1985--1995 period, resulting in the bubble economy. [@noguchiBubbleEconomicPolicies1994; @hoshiJapaneseBankingCrisis1999; @kangConfidenceTrapJapans2018] To prepare the ground, several money faucets turned on:
 
 * The lowered interest rate made it cheap to borrow money from banks.
 * The Japanese households continued to save over 50% of assets in bank saving accounts.
-* The Foreign Exchange Law was reformed in 1980, allowing freer cross-border capital flow.
+* The Foreign Exchange Law was reformed in 1980, allowing freer cross-border capital flow. Foreign exchange transactions, whichwere "forbidden in principle" under the old rule, were made "free unless expressly prohibited".
+* In 1987, the domestic [commercial paper](https://en.wikipedia.org/wiki/Commercial_paper) market was created, giving firms access to more uncollateralized funding.
 * Wages remained low in general, as corporations persuaded labor unions to keep wage demands low on the grounds of maintaining international competitiveness. This allowed corporations to keep more money for investment.
 * The Japanese state issued less bonds to decrease deficit, leaving more money out of government hands.
 
 The net result was a large amount of money that could flow quickly here and there. Such liquidity is not a bubble in itself, but enables bubbles to form and blow up quickly.
 
-A special feature of Japanese capitalism is [keiretsu](https://en.wikipedia.org/wiki/Keiretsu). Somewhat like a zaibatsu, except without biological families involved, a keiretsu is a group of banks and companies that closely cooperate over many years. The companies, as explained previously, were mainly funded by borrowing from banks. The bank--company relationship was very strong, often lasting over 30 years, and based on mutual trust. For each company, the largest provider of bank loans was called its "main bank", which cared for the company paternally. It would usually hold a lot of the stocks for the company, may send its employees to serve as directors of the company, be responsible for monitoring the company, and try to rescue the company if it is distressed. As a consequence of this close collaboration, bank loans were not based on a careful [credit rating](https://en.wikipedia.org/wiki/Credit_rating) based on predicted future cash flow, but backed by land.
+A special feature of Japanese capitalism is [keiretsu](https://en.wikipedia.org/wiki/Keiretsu). Somewhat like a zaibatsu, except without biological families involved, a keiretsu is a group of banks and companies that closely cooperate over many years. The companies, as explained previously, were mainly funded by borrowing from banks. The bank--company relationship was very strong, often lasting over 30 years, and based on mutual trust. For each company, the largest provider of bank loans was called its "main bank", which cared for the company paternally. It would usually hold a lot of the stocks for the company, may send its employees to serve as directors of the company, be responsible for monitoring the company, and try to rescue the company if it is distressed. [@aokiJapaneseMainBank1994]
+
+The degree of involvement of a main bank was quite uncommon. Indeed, if a distressed company went bankrupt or was restructured, the main bank would typically absorb a share of losses *more than* its share of loans! For example, when [Ataka & Co.](https://en.wikipedia.org/wiki/Ataka_%26_Co.) nearly collapsed in 1975, its main bank ([Sumitomo Bank](https://en.wikipedia.org/wiki/The_Sumitomo_Bank)) bore 59% of the company's losses, despite having a loan share of 15%. This "implicit convention", that the main bank must take on more than its legal duty when a company is dsitressed, may have been an implicit threat against the main banks, so that they would not shirk their implicit duty to credit-monitor the companies. [@sheardMainBankSystem1989]
+
+As a consequence of this close collaboration, bank loans were not based on a careful [credit rating](https://en.wikipedia.org/wiki/Credit_rating) based on predicted future cash flow, but backed by land. In fact, using land as collateral was standard practice in Japanese banking, accounting for 25--30% of all collaterals during 1976--1998. This was because land was considered excellent collateral, since its nominal value never fell in the postwar period before the 1990s. [@hoshiWhatHappenedJapanese2001]
 
 Another feature was extensive cross-shareholding, meaning that the banks held a lot of stocks from the companies, and the companies from each other, and the companies even from the banks. This promoted mutual cooperation. Such a structure was preferred by the management, since by keeping a large block of shares off the open market, it made their jobs more secure, safe from the fickle moods of the market, hostile takeovers, etc, so they could enjoy the quiet life.
 
@@ -282,7 +285,9 @@ The evolving ownership structure reveals this development. Immediately after zai
 
 ![Ownership structure of Japanese listed companies, 1949--2008. [@ideLegaciesJapan2013, figure 14.3]](figure/ownership_structure_1949--2008.png)
 
-In this special setting, positive feedback loops occurred that created the double explosion of land prices and stock prices. 
+From the perspective of banks, the 1980s of gradual liberalization required them to change their strategy. As companies got more ways to issue debt and equity, they relied less on banks for funding. The banks thus began lending more to small and medium firms, and critically, real estate firms. [@hoshiWhatHappenedJapanese2001]
+
+In this special setting, positive feedback loops occurred that created the double explosion of land prices and stock prices.
 
 As land prices increased, it increased the value of land as collateral, enabling companies to borrow more money, and banks to lend more money while satisfying the reserve requirements. Companies could use the borrowed money to buy more land, betting that it would rise more. Rising land prices also increases the book-value of companies and make their cash flows appear positive.
 
@@ -290,7 +295,7 @@ As stock prices on the open market increased, it increased the value of all stoc
 
 Of course, the pure form of speculation, of buying more X to sell later, was in play as well. But the above 2 were specific to the Japanese bubble economy, enabled by the Japan-specific keiretsus.
 
-The end of the bubble economy came in 1990 when the stock market and the land price crashed. As good assets and debts turned bad, it spilled out from land and stock market to the general economy. The GDP of Japan dutifully entered the [Lost Decades](https://en.wikipedia.org/wiki/Lost_Decades), though inflation-adjusted, it did continue to grow, but the growth rate never returned to the previous level.
+The end of the bubble economy came in 1990 when the stock market and the land price crashed. As good assets turned bad, it spilled out from land and stock market to the banks. The banks suffered multiple whammies: They had to write down the values of loans backed by land, of loans made directly to real estate companies. The combination of problems dragged down the banking system, and from there, the entire Japanese economy. The GDP of Japan dutifully entered the [Lost Decades](https://en.wikipedia.org/wiki/Lost_Decades), though inflation-adjusted, it did continue to grow, but the growth rate never returned to the previous level.
 
 ```{=html}
 <div align="center"><iframe src="./code/worldbank/GDPpc.html" width='450' height='300' frameBorder='0' scrolling="no" ></iframe></div><!-- GDPpc.png -->
@@ -341,13 +346,13 @@ And finally, the foreign market is rarely invested in. The Chinese government en
 
 ## The Chinese housing market {#sec-housing}
 
-The Chinese economic boom has benefited the citizens, who did get richer. Disposable income grew at roughly the same rate as the national GDP, of 6--9%/year. But people cannot spend down all that extra income. Rich people save more. [@dynanRichMore2004] Even before the boom, Chinese people were already saving a lot, and as they grow richer, they could save even more. But where do they save their money in a way that can keep up with inflation at all? Not under the mattress, or in a bank, or in the stock market, or the bond market, or the foreign market. Just one place left: the housing market.
+The Chinese economic boom has benefited the citizens, who did get richer. Disposable income grew at roughly the same rate as the national GDP, of 6--9%/year. But people cannot spend down all that extra income. Rich people save more. [@dynanRichMore2004] Even before the boom, Chinese people were already saving a lot, and as they grew richer, they could save even more. But where do they save their money in a way that can keep up with inflation at all? Not under a mattress, or in a bank, or the stock market, or the bond market, or the foreign market. Just one place left: the housing market.
 
 Indeed, if there's something growing faster than the Chinese economy, it is the Chinese housing market. In 1998, the Chinese government privatized the housing market, and since then, the price of housing has grown very consistently. This is despite many warnings of imminent bubble collapse, and despite agreement by all economists and paramount leaders that housing is fundamentally not a growth industry -- after all, housing is just another machine that produces something economically useful, but not more than that. A car produces travel. A house produces living space. A camera produces photos. A used machine is priced lower than a brand new one. And because of [learning curve](https://en.wikipedia.org/wiki/Learning_curve#In_economics) effects, the price of even a brand new machine ought to decrease over the years. And yet, the opposite has been true. The price of an apartment, even one that is being lived in, mostly goes up, faster than GDP.
 
 ![Growth of the Chinese housing market, GDP, and disposable income. Source: [NBER Digest](https://www.nber.org/digest/jul15/demystifying-chinese-housing-boom), which is an overview of [@fangDemystifyingChineseHousing2016].](figure/chinese%20housing%20and%20income.jpg)
 
-Indeed, it is a grim comedy that over the years, often the government would say it wants to make apartment prices lower, and yet keeps allowing it to rise, and whenever it falters, immediately implements policies to make it rise again. What explains it? The short answer is that housing plays several roles that pull it in conflicting directions.
+Indeed, it is a grim comedy that over the years, often the government would say it wants to make the price of apartments lower, and yet keeps allowing it to rise, and whenever it falters, immediately implements policies to make it rise again. What explains it? The short answer is that housing plays several roles that pull it in conflicting directions.
 
 From the simple industrial point of view, a house is just a machine for living in. As a machine, its price should go down as companies learn to build it faster and cheaper. Indeed, the Chinese construction companies have been producing so much concrete, steel, and housing, that they have utterly overproduced for the Chinese market. The supply has so far outstripped demand that Chinese construction seeks markets abroad, [mainly in Africa](https://www.economist.com/middle-east-and-africa/how-chinese-firms-have-dominated-african-infrastructure/21807721) and [South America](https://www.bu.edu/gdp/2024/07/30/china-latin-america-and-the-caribbean-deepen-ties-as-chinese-firms-shift-to-direct-investment-and-infrastructure/), where there is much greater demand for everything infrastructural -- housing, electricity, subway, etc. So, by the basic laws of economics, the price of housing ought to fall, like the price of water, rice, solar panels, batteries, cars, and every machine good and proper in this world.
 
@@ -412,5 +417,3 @@ It is a hard task with multiple contradicting constraints, but China seems confi
 This essay was initialized by sticking together some mini-lectures I have given to friends on Discord during 2023--2024. The recent [Dwarkesh Patel podcast with Victor Shih](https://www.dwarkesh.com/p/victor-shih) finally gave me the motivation to polish them up to post on the open Internet.
 
 I originally intended this to be a quick blog post, so it is distinctly under-researched, and large chunks are just pulled out of my brain that I am not bothered enough to find citations for. As I kept trying to polish it, it grew too long to be a blog post, so it is now a proper essay, but it is still uneven, kind of repetitive, and lacks citations to really satisfy my wish for completeness. Still, an essay it is.
-
-Comment thread
