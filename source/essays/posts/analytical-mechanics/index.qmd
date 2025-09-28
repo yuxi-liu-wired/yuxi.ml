@@ -82,7 +82,7 @@ It is my experience that everything in undergraduate physics is taught badly, ex
 
 ::: {.callout-warning}
 
-In this problem, the so-called "time" $t$ has units of length as well. So, please don't panic when we see something like $\sqrt{1 + \dot x^2}$. If it worries we, we can replace $t$ by $v\tau$, where $v$ is a constant speed of one, and $\tau$ is time.
+In this problem, the so-called "time" $t$ has units of length as well. So, please don't panic when we see something like $\sqrt{1 + \dot x^2}$. If it worries us, we can replace $t$ by $v\tau$, where $v$ is a constant speed of one, and $\tau$ is time.
 
 :::
 
@@ -152,7 +152,7 @@ that is,
 
 $$p_x \delta \int_0^1 \dot xd t = \delta\int_0^1 \sqrt{\dot x^2 + \dot y^2}dt$$
 
-We have our interpretation $p_x$: the marginal cost of producing one unit of $A$, That is, if we want an extra $\delta A$, we have to incur an extra cost $p_x \delta A$.
+We have our interpretation $p_x$: the marginal cost of producing one unit of steel, That is, if we want an extra $\delta A$, we have to incur an extra cost $p_x \delta A$. It can thus be called the *neutral price* of steel. If the price were lower, we would rather buy steel from the market than produce steel ourselves, and vice versa. At the neutral price, we could use the market, but we have no reason to, since we can't profit from doing so.
 
 We actually have $p_x = \cos \theta, p_y = \sin\theta$, which means that when $x, y$ are perturbed by $\delta x, \delta y$, the shortest length between them is perturbed by
 
