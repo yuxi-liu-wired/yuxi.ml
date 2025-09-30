@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-log "Initializing nginx configuration"
+echo "Initializing nginx configuration"
 curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
@@ -22,6 +22,8 @@ install -d -m 700 /etc/nginx/ssl
   --reloadcmd      "nginx -s reload"
 
 # tighten permissions
-chown root:root /etc/nginx/ssl/yuxi.ml.*
+chown root:root /etc/nginx/ssl
+chmod 755 /etc/nginx/ssl        # allow traversal
 chmod 600 /etc/nginx/ssl/yuxi.ml.key
 chmod 644 /etc/nginx/ssl/yuxi.ml.crt
+echo "ACME initialization complete"
