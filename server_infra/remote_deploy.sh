@@ -82,7 +82,7 @@ if (( INIT )); then
     $SUDO ln -sfn "$CHECKOUT_DIR/server_infra/nginx/snippets" /etc/nginx/snippets
   fi
   # initialize acme
-  $SUDO chmod 700 $CHECKOUT_DIR/server_infra/initialize_acme.sh"
+  $SUDO chmod 700 "$CHECKOUT_DIR/server_infra/initialize_acme.sh"
   $SUDO bash "$CHECKOUT_DIR/server_infra/initialize_acme.sh"
 fi
 
