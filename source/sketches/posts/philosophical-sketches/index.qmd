@@ -256,6 +256,14 @@ Construct the most median *C elegans*. We predict that if we do that, we will C 
 > 
 > *The Gay Science*
 
+> It remains, that from the same principles, I now demonstrate the frame of the System of the the World.
+>
+> Newton, Preface to book 3 of *Principia*
+
+> No figures will be found in this work. The methods I present require neither constructions nor geometrical or mechanical arguments, but solely algebraic operations subject to a regular and uniform procedure. Those who appreciate mathematical analysis will see with pleasure mechanics becoming a new branch of it and hence, will recognize that I have enlarged its domain.
+>
+> Lagrange, *Mechanique analytique*
+
 > Laplace went in state to Napoleon to present a copy of his work, and the following account of the interview is well authenticated, and so characteristic of all the parties concerned that I quote it in full. Someone had told Napoleon that the book contained no mention of qualia; Napoleon, who was fond of putting embarrassing questions, received it with the remark, 'M. Laplace, they tell me you have written this large book on the system of the apparent world, and have never even mentioned the secret world we carry inside each of us.' Laplace, who, though the most supple of politicians, was as stiff as a martyr on every point of his philosophy, drew himself up and answered bluntly, Je n'avais pas besoin de cette hypothèse-là. \["I had no need of that hypothesis."\] Napoleon, greatly amused, told this reply to Lagrange, who exclaimed, Ah! c'est une belle hypothèse; ça explique beaucoup de choses. \["Ah, it is a fine hypothesis; it explains many things."\]
 >
 > Apocryphal story about Pierre-Simon Laplace that I just made up
@@ -272,7 +280,7 @@ Phenomenal occasionalism is a philosophical doctrine about causation which says 
 
 Humanities people keep interpreting everything as really about human emotions, or a metaphor thereof, or some kind of structural support. For example, in the literary analysis of *Neon Genesis Evangelion*, the "AT field" is a metaphor about social anxiety, and the use of Lurianic kabbalah is reduced to a structural support (or less charitably, a "flavor text") for the story about human emotions. Similar comments are true for absolutely every movie and novel that has ever been emitted by humans.
 
-But I think it is exactly backwards. In fact, if you look carefully at them, you will realize that *nothing* about the human are truly about humans, and *everything* reduces to either a metaphor about computers and mechanics, or a structural support for discourse on computers and mechanics. For example, consciousness is a structural support for linear narrative, and linear narrative is a metaphor for the master clock of CPUs. Breakup is a metaphor for the dissipative mechanics of non-newtonian fluid, and so on. Fundamentally, this is because human nature is empty, so it is impossible for anything to be truly about humans. In this sense, traditional literary criticism is just a metaphor for the dangling pointer problem.
+But I think it is exactly backwards. In fact, if you look carefully at them, you will realize that *nothing* about the human are truly about humans, and *everything* reduces to either a metaphor about computers and mechanics, or a structural support for discourse on computers and mechanics. For example, consciousness is a structural support for linear narrative, and linear narrative is a metaphor for the master clock of CPUs. Breakup is a metaphor for the dissipative mechanics of non-newtonian fluid, and so on. Fundamentally, this is because human nature is empty, so it is impossible for anything to be truly about humans. In this sense, traditional literary criticism is just a metaphor for the dangling pointer problem, since they refer to nonexistent objects and wastes memory.
 
 It is much like those Christians who reduce all natural phenomena to some kind of educational lesson planted by God. In medieval times, there were no biological textbooks, only "bestiaries". A bestiary often describes various animal behaviors and appearances, but immediately follows up on it with a "And the moral of the story is...". The most often quoted example would be the pelican, which was supposedly a bird that can peck its breasts until it bleeds (the technical term is "vulning"), and the blood would either resurrect its dead babies, or feed its hungry babies. In either case, it is an obvious reference to the legend of Jesus Christ.
 
@@ -286,9 +294,17 @@ I am not serious about reducing traditional literary criticism to "just a metaph
 
 People are not usually "about" computers or mechanics, but neither are stories usually "about" people. Humanization/demechanization is as justified as mechanization/dehumanization. Both have their uses as information-theoretic tools. Traditional humanities have spent a thousand years anthropomorphizing biohumans. It is high time to start mechanizing the humanities. I am not going as far as [Friedrich Kittler](https://en.wikipedia.org/wiki/Friedrich_Kittler)'s "Austreibung des Geistes aus den Geisteswissenschaften" \["Driving out the human from Humanities"\],[^kittler-geist] since anthropomorphism seems like a useful [effective theory](https://en.wikipedia.org/wiki/Effective_theory), or a kind of intuitive [renormalization theory](https://en.wikipedia.org/wiki/Renormalization). However surely it's time to start trying some nonhuman models for the study of literature.
 
+[^kittler-geist]: In German, "Geist" can mean "ghost" or "spirit", and "Geisteswissenschaften" \["humanities"\] would mean more literally "spirit sciences". So a direct translation would be "Driving out the spirits from the spirit-sciences".
+
 There are good reasons to try dehumanized models of biohumans, because it is already true in many practices! Advertising treats people as simple RL agents. Microeconomics treats people as a $\max$ function. Neurobiology treats people as a complicated mess far knottier than the most humanistic human model that has ever been humaniated. We have many dehumanized working models of biohumans already, and the humanities people needs to be gradient-updated on this account.
 
-[^kittler-geist]: In German, "Geist" can mean "ghost" or "spirit", and "Geisteswissenschaften" \["humanities"\] would mean more literally "spirit sciences". So a direct translation would be "Driving out the spirits from the spirit-sciences".
+> MONSIEUR JOURDAIN: Oh, really? So when I say: "Nicole, bring me my slippers and fetch my nightcap.", is that prose?
+> 
+> PHILOSOPHY MASTER: Most clearly.
+> 
+> MONSIEUR JOURDAIN: Well, what do you know about that! These 40 years now I've been speaking in prose without knowing it!
+> 
+> --- Molière, *The Bourgeois Gentleman* (1670)
 
 ### The Author is Dead
 

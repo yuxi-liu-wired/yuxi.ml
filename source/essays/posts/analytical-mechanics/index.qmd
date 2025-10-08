@@ -30,9 +30,9 @@ importance: 4
 
 This essay works through what is typically contained in a university course on analytical mechanics. The prerequisites are multivariate calculus and mathematical maturity.
 
-It covers: calculus of variations, Lagrangian, Legendre transform, Hamiltonian, Hamilton's principal function, Hamilton--Jacobi equation, the particle-wave duality, Schrödinger's equation, Hamilton's geometric optics, action-angle variables, Noether's theorem, adiabaticity, old quantum theory, Bohr--Sommerfeld quantization, Einstein--Brillouin--Keller quantization.
+It covers: calculus of variations, Lagrangian, Legendre transform, Hamiltonian, Hamilton's principal function, Hamilton--Jacobi equation, the particle-wave duality, canonical transforms, infinitesimal generator, contact geometry, symplectic geometry, Schrödinger's equation, Hamilton's geometric optics, action-angle variables, Noether's theorem, adiabaticity, old quantum theory, Bohr--Sommerfeld quantization, Einstein--Brillouin--Keller quantization.
 
-It does not cover: canonical transforms, Poisson bracket, infinitesimal generator, symplectic geometry, symplectic form.
+It does not cover: Poisson bracket, canonical perturbation theory.
 
 Philosophically, this essay has two undercurrents:
 
@@ -520,6 +520,81 @@ to certify that the *purportedly* stationary trajectory $q$ is truly stationary.
 
 :::
 
+### Variational Hamiltonian mechanics
+
+To recap, we have derived two sets of equations: the Euler--Lagrange equations in configuration spacetime, parameterized by $(t, q, v)$, and the Hamiltonian equations in phase spacetime, parameterized by $(t, q, p)$. Both of them came from the same constraint moneymaking scheme:
+
+$$
+\begin{cases}
+\delta \int_{t_0}^{t_1} L(t, q(t), \dot q(t)) dt &= 0 \\
+q(t_0) &= q_0, \; q(t_1) = q_1
+\end{cases}
+$$
+
+This is usually called **Hamilton's principle**. However, Hamiltonian's principle is a statement about trajectories in configuration spacetime, where the variables are just $t$ and $q$. That is, we are considering only how we, as a factory manager, produce the commodities over time. The market and its prices $p$ do not feature originally in our problem set-up, and the market and its prices are purely a matter of mental accounting.
+
+But what if we do a market reform? Suppose the market really exists, and the prices are as real as steel and concrete? In that case, we enter the realm of phase space-time, where the factory and the market both exist with equal reality, optimizing against each other over time. In this perspective, the variational principle of $\delta \int_{t_0}^{t_1} L(t, q(t), \dot q(t)) dt = 0$ is unsatisfactory, because only the factory appears explicitly in it, not the market. There is such a statement, called **modified Hamilton's principle**:
+
+$$
+\begin{cases}
+\delta \int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt &= 0 \\
+q(t_0) &= q_0, \; q(t_1) = q_1
+\end{cases}
+$$ {#eq-modified-hamilton}
+
+Ostensibly, this is "derived" from the Hamilton's principle by writing $\braket{p, dq} = H + L$, but this is wrong in two senses. One, the Hamiltonian $H$ is a function of $(t, q, p)$, but the Lagrangian $L$ is a function of $(t, q, v)$. Two, the market is free to vary its price schedule, *independently* of however the factory might vary its production schedule. In particular, the market can be rampantly mispriced. This is in contrast to the case of $\delta \int Ldt$, where the market pricing, being a mental accounting technique, is imagined by the factory manager to be ruthlessly efficient.
+
+So let us interpret it anew. It is a new economy, not a planned economy anymore. Let us assume that this is the new economic system:
+
+* There are 3 agents: The government, the market, and the factory.
+* The factory sells everything it produces to the market. Thus, the total revenue earned by the factory is $\int_{t_0}^{t_1} \braket{p, dq}$.
+* Meanwhile, the factory is required by the government to pay a form of "rent" to the market. The rent rate is $H(t, q, p)$. In words, the rate of rent depends on time, the total amount of commodity ever produced, and the current market price.
+
+The economy is a kind of zero-sum economy. The factory wants to maximize $\int_{t_0}^{t_1} \braket{p, dq} - H dt$, while the market wants to minimize it. When neither side can profit from the other side's mistake by making an infinitesimal variation of its own strategy, we have achieved a (local) Nash equilibrium. This is how we interpret the variational equation $\delta\int (\braket{p, dq} - H dt) = 0$.
+
+As for the constraints, $q(t_0) = q_0$ is an initial condition: "The total amount of commodity that has been produced at time $t_0$ is $q_0$". $q(t_0) = $q(t_1) = q_1$ is a government mandate: The factory must produce exactly $q_1 - q_0$ during the interval $[t_0, t_1]$. The market is truly free to vary its commodity pricing, although the government can indirectly control for it by changing the production target for the factory.
+
+Given this, it remains to show that a (local) Nash equilibrium occurs iff the factory and the market follows the Hamiltonian equations.
+
+::: {.callout-tip title="Proof" collapse="false"}
+
+Wolog, set $N = 1$. That is, there is only one commodity and one price. Suppose at some moment $t \in (t_0, t_1)$, Hamilton's equations are violated, then there are 4 possibilities.
+
+If $\dot p(t) + \partial_q H > 0$, then it means the market is raising the prices too fast right now. The factory can profit by producing less now and pay less rent, and produce more later to exploit the higher price. Specifically, the factory can create a supply shock of $-\epsilon q$ now, wait $\delta t$, then produce a compensating supply shock of $+\epsilon q$. The factory's profit from this double shock is 
+
+$$p(t)(-\epsilon q) + p(t + \delta t)(\epsilon q) - \partial_q H (-\epsilon q)\delta t = (\dot p(t) + \partial_q H)\epsilon q\delta t > 0$$
+
+If $\dot q - \partial_p H > 0$, then the factory is producing too fast right now. The market can profit by lowering prices now by $\epsilon p$ and raise it later. The market's profit from this double shock is
+
+$$
+(\partial_p H)(-\epsilon p) \delta t - (-\epsilon p) (\dot q \delta t) = (\dot q - \partial_p H)\epsilon p \delta t > 0
+$$
+
+Similarly if $\dot p(t) + \partial_q H < 0$ or $\dot q - \partial_p H < 0$.
+
+Thus, if Hamilton's equations are violated, then we are not at a Nash equilibrium. Conversely, if Hamilton's equations are satisfied, then no local variation at any point in $t \in (t_0, t_1)$ can be profitable for either side. It remains to handle the case of $t = t_0$ or $t = t_1$. In the expression $H(t, q, p)dt - pdq$, $dt = 0$ because we are at the end times, and $dq = 0$ because the factory has quotas to fill, so there is no way to make a profit for either the market or the factory in this case.
+
+:::
+
+The standard proof appearing in [@goldsteinClassicalMechanics2008, Chapter 8] goes like:
+
+* Start with the original system with configuration space $(t, q_{1:N}, \dot q_{1:N})$.
+* Move to the Hamiltonian equations on phase space $(t, q_{1:N}, p_{1:N})$.
+* Regard *that* as part of a larger system with configuration space $(t, q_{1:N}, p_{1:N}, \dot q_{1:N}, \dot q_{1:N})$
+* Write down the Euler--Lagrange equations for that larger system.
+
+However, this argument only shows that the Hamiltonian equations are *necessary* for a Nash equilibrium. This is because, to use the Euler--Lagrange equations, we need to fix the end points of $q_{1:N}, p_{1:N}$. However, this is tantamont to the government simultaneously imposing a production quota on the factory, *and* fixing the market price at the start and end:
+
+$$
+\begin{cases}
+\delta \int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt &= 0 \\
+q(t_0) &= q_0, \; q(t_1) = q_1\\
+p(t_0) &= p_0, \; p(t_1) = p_1
+\end{cases}
+$$
+
+In this economic model, if the government-mandated prices $p_0, p_1$ are different from what a free market would have picked, then a Nash equilibrium does not exist. For any joint production--pricing schedule, either the factory can exploit the market by infinitesimally modifying the production schedule, or the market can exploit the factory by infinitesimally modifying the pricing schedule. If the government mandates the market to be mispriced at either $t_0$ or $t_1$, then at some $t \in [t_0, t_1]$, we must have either $\dot p_i + \partial_{q_i} H \neq 0$ or $\dot q_i - \partial_{p_i} H \neq 0$ for some $i$, creating free money for either the factory or the market.
+
 ### What does it all mean?
 
 In the Lagrangian formalism, we are given a system with $q$ coordinates, and allowed to manipulate $\dot q$ however we want, in order to minimize a "cost" function $\int_0^T L(t, q, \dot q)dt$.
@@ -528,9 +603,11 @@ In the Hamiltonian formalism, we are also given a market to trade with. We attem
 
 Assuming this kind of double optimization (we against the market, and the market against us), the trajectory is uniquely determined by several possible specifications. We may fix it by $(t_0, q_0, p_0)$, or by $(t_0, q_0), (t, q)$, or by $(t_0, q_0, v_0)$, or perhaps more exotic constraints that mix up $t, q, p, v$.
 
-Ironically, the Hamiltonian equations of motion flow out naturally in this economic interpretation, with no fuss whatsoever. The Euler--Lagrange equations are derived only as an afterthought. This is exactly backwards compared to the usual way of teaching, where the EL equations are derived first, and the Hamiltonian equations are derived by an unmotivated "Let us define $H = \sum_i p_i q_i - L$ ...", followed by some clumsy and unjustified derivations.
+Ironically, the Hamiltonian equations of motion flow out naturally in this economic interpretation, with no fuss whatsoever. The Euler--Lagrange equations are derived only as an afterthought. This is exactly backwards compared to the usual way of teaching, where the EL equations are derived first, and the Hamiltonian equations are derived by an unmotivated "Let us define $H = \sum_i p_i \dot q_i - L$ ...", followed by some clumsy and unjustified derivations.
 
 In classical control theory, the price vector $p$ is called "costate" since it is multiplied with the state $q$, and $\dot p= -\nabla_q H$ is called the "costate equation". The above methods can be generalized to account for constraints, yielding Pontryagin's maximum principle, among other results.
+
+The market reform did not change the dynamics of the economy. The market is no longer in the head, but the same Hamiltonian equations of motion reappear. So what is the point of the market reform? The answer is that even though classically, nothing has changed, quantum-mechanically, much has changed. In classical mechanics, momentum is a less real concept than position and velocity, but in quantum mechanics, position and momentum are equally real, while velocity has been demoted to an almost useless concept. So in this sense, the market reform has succeeded, even though we cannot see it from within the classical world.
 
 ### Cyclic coordinates
 
@@ -541,7 +618,7 @@ $$
 
 we see that if $L$ does not depend on $q_i$, then $H$ also does not depend on $q_i$. Consequently, any optimal trajectory satisfies $\dot p_i = -\partial_{q_i} H = 0$. That is, $p_i$ is conserved -- **conservation of generalized momentum**.
 
-### Bonus: Routhian mechanics
+#### Routhian mechanics
 
 Suppose that the market does not contain all commodities, but only the last $n$ commodities. That is, let $q_{1:N} = (q_{1:s}, q_{s+1:s+n})$, and only open markets on $q_{s+1:s+n}$. The optimal cash flow equation then gives us the "Routhian":
 
@@ -633,6 +710,330 @@ $$\frac{d}{dt} \partial_{v_i} R = \partial_{q_i}R \quad i \in 1:s$$
 
 This is how the Routhian saves us some effort in practical calculations. It is useful in this way, and in this way only.
 
+## Transformation theory
+
+Modern physics is founded upon the idea of symmetry. You shall know a system by the symmetries it has. Classical mechanics, when viewed in this perspective, is concerned not with $x, y, z, \theta, \phi, \mu$, or anything so medieval as up-versus-down. Such asymmetric descriptions of reality have been tossed into the wastebasket of history along with Aristotelian physics. Indeed, with general relativity, we have eliminated the distinction between coordinate systems, between reference frames, and even between the straight and the crooked.
+
+So what does this mean for us? It means that we must investigate what happens to our equations under transformations. If the form of the equations is preserved in one coordinate transformation versus another, then it gives us a new symmetry of the physical system, and reveals a facet of reality. In order to investigate them, we must cast our theory into a more geometric form -- i.e. less coordinate-heavy. If we could avoid writing down $t, q, v$ all the time, and instead speak of manifolds and vector fields on them, it would bring us a [coordinate-free](https://en.wikipedia.org/wiki/Coordinate-free) description of the system, geometric insight, and reveal symmetries otherwise hidden by inelegant coordinates.
+
+### Lagrangian mechanics as contact geometry
+
+Geometrically, it feels dissatisfying to say that a Lagrangian is a function of time, position, and velocity: $L(t, q, v)$. It is dissatisfying, because though we can draw time and space together as spacetime $\R \times \mathcal C$, how do we draw *velocity*? When in doubt, add an extra dimension!
+
+Imagine that, at each point $(t, q)$ on the configuration spacetime $\R \times \mathcal C$, we append the vector space of all possible velocities $v$ passing $q$. That is, we add the tangent space of $\mathcal C$ at $q$. Combining all these tangent spaces, we have expanded the configuration spacetime manifold to $\R \times T\mathcal C$. This is called the **1-jet manifold**, and written as $J^1$.
+
+The first useful property of the 1-jet manifold is that it allows us to **lift** any curve $(t, \gamma(t))$ in the configuration spacetime to a curve $(t, \gamma(t), \dot \gamma(t))$ in the 1-jet manifold.
+
+A Lagrangian $L(t, q, v)$ becomes just a field on the 1-jet manifold $L: J^1 \to \R$. Solving for a physically real trajectory $\gamma$ going from $(t_0, q_0)$ to $(t_1, q_1)$ becomes a constrained variational calculus problem on the 1-jet manifold as well:
+
+$$
+\delta \int_\Gamma L dt = 0
+$$
+
+where $\Gamma$ is a curve in the 1-jet manifold, under the following constraints:
+
+* $\Gamma$ is obtainable by lifting some curve $\gamma$ in configuration spacetime that passes $(t_0, q_0)$ and $(t_1, q_1)$.
+* The variation used in $\delta \int_\Gamma$ is also constrained, so that any variation-trajectory $\Gamma + \delta \Gamma$ must also be obtainable by lifting some curve of the same kind.
+
+We are a bit tired of always saying "obtainable by lifting some curve in configuration spacetime". Is there an easier way to say it? Yes! Around each point $(t, q, v)$ in the 1-jet manifold, we draw a little flat plane centered on that point, so that any lifted curve passing $(t, q, v)$ must be tangent to that little flat plane. The lifted curve can havy any acceleration -- that is, $dv/dt$ can be any value it wants, but we must always have $vdt = dq$. Therefore, the little flat plane should be defined by $vdt - dq = 0$. We can picture the simplest case: a particle moving on a straight line. In this case, the configuration space-time is $\R^2$, and the 1-jet is $\R^3$. Drawing out the little flat planes, we see that it looks like a field of little flat planes, twisting as we move along the $v$ axis.
+
+![The field of planes $vdt - dq= 0$ in $\R^{3}$. Figure from [Wikipedia](https://en.wikipedia.org/wiki/File:Standard_contact_structure.svg).](figure/standard_contact_structure.svg)
+
+For general $N$, we still have little flat (hyper)planes, obtained by solving $N$ equations simultaneously: 
+
+$$v_1 dt - dq_1 = 0, \; \dots,\; v_N dt - dq_N = 0$$
+
+These flat planes have dimension $N+1$, within the $2N+1$ dimensions of $J^1$. Each plane is spanned by the $N+1$ vectors $\partial_t + \braket{v, \partial_q}, \partial_{v_1}, \dots, \partial_{v_N}$.
+
+If you have seen it before, you will recognize this: It is a contact structure on the 1-jet manifold. In this sense, Lagrangian mechanics *is* [contact geometry](https://en.wikipedia.org/wiki/Contact_geometry). Although, as we commented in the [contact-geometric interpretation of thermodynamics](https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/#contact-geometry), this does not mean that we can just import intuition about contact geometry into Lagrangian mechanics, because we have even less intuition about contact geometry than about Lagrangian mechanics!
+
+So one may object "Lagrangian mechanics is reduced to contact geometry... but what is contact geometry?" My answer is that contact geometry simply *is*. It is not supposed to be a generator of intuitions. Instead, it is a common language that bridges between intuitions. By casting thermodynamics, economics, Lagrangian mechanics, etc, into the language of contact geometry, we would then be able to translate intuition from one field to another field. Saying that "Lagrangian mechanics is contact geometry" is not telling you an intuitive way to see Lagrangian mechanics, but rather, an intuitive way to see contact geometry.
+
+Lifting a curve in configuration space-time is simply finding the unique curve in the 1-jet manifold that is tangent to the field of planes, and projects down to that same curve, so you can imagine looking down from the top of the curve in $J^1$ and see just the original curve in configuration spacetime. In equations, a trajectory $(t, \gamma(t))$ is lifted to $(t, \gamma(t), \dot \gamma(t))$, and the lifted trajectory has tangent vector $(1, \dot \gamma(t), \ddot \gamma(t))$.
+
+![A curve in the configuration space-time $\R^2$ is lifted to a curve in the 1-jet manifold $\R^3$. The lifted curve is tangent to the field of planes at every point, and projects down to the original curve. There is only one possible way to lift it. If you look down from the top, you see the original curve in $\R^2$](todo)
+
+If multiple curves crossing the same point $(t, q)$ have different velocities, then their lifts would be separated in $J^1$ at different heights. If they have the same velocity, but different accelerations, then they would be lifted to the same height, but different slopes at that height.
+
+![Lifting multiple curves through the same point.](todo)
+
+Given the setup, Lagrangian mechanics is simply about solving $\delta \int_\Gamma L dt = 0$ under the constraints:
+
+* $\Gamma$ is tangent to all fields of planes $v_1 dt - dq_1 = 0, \dots, v_N dt - dq_N = 0$.
+* The two end points of $\Gamma$ are of the form $(t_0, q_0, v_0), (t_1, q_1, v_1)$, where $v_0, v_1$ are not determined. That is, the end points can "slide vertically".
+* The variation path used in $\delta \int_\Gamma$ must follow the same constraints.
+
+What does the solution look like? It looks like a vector field in $J^1$.
+
+Given a Lagrangiang $L: J^1 \to \R$, a system at point $(t, q)$ can go on evolving in any direction. We need to know its velocity $v$ before we can apply the EL equations to solve for its acceleration, and thus calculate its entire past and future. In the 1-jet manifold, given the Lagrangian $L : J^1 \to \R$, we can calculate an acceleration function $a: J^1 \to \R^N$ using the EL equation, then we install that acceleration function into $J^1$ as part of a vector field: at each $(t, q, v) \in J^1$, we install the time-evolution vector field $\Gamma = (1, v, a)$, which satisfies
+
+$$\Gamma=\partial_t+ \braket{v, \partial_{q}}+ \braket{a, \partial_{v}}, \quad 
+\frac{\partial L}{\partial q_i}-\Gamma\left(\frac{\partial L}{\partial v_i}\right)=0 \; \forall i = 1, \dots, N
+$$
+
+Once that is installed, predicting where a system would go given $(t, q, v)$ is as mindless as drifting along the vector field in $J^1$.
+
+Here we see the benefit of the lift. Multiple trajectories crossing the same point $(t, q)$ at different velocities would physically intersect in configuration spacetime, but when lifted, they are separated at different heights, so they no longer intersect, and we can picture $J^1$ as filled with infinitely thin noodles exuded out of a noodle-machine,[^angel-hair] filling all of space but never intersecting or looping.
+
+[^angel-hair]: How many [angel hairs](https://en.wikipedia.org/wiki/Capellini) can fit a noodle bowl? Angel hairs are pure curves, not material, but limited, so that they have location in 1-jet manifold, but not extension.
+
+Of course, once we are here, we might as well go all the way, and rewrite the EL equations into an equation that takes place directly within 1-jet space, without having to go through configuration spacetime first. It uses the language of [differential forms](https://en.wikipedia.org/wiki/Differential_form), and we do not need this result subsequently, so you can skip it.
+
+::: {.callout-tip title="EL equations in 1-jet space" collapse="true"}
+
+Define the contact 1-forms
+
+$$
+\theta^i:=d q^i-v^i d t, \quad i = 1, \dots, N
+$$
+
+Define the Poincaré--Cartan 1-form and 2-form
+
+$$
+\begin{aligned}
+\theta_L:=p_i \theta^i-H d t, \quad p_i&:=\frac{\partial L}{\partial v^i}, \quad H:=p_i v^i-L \\
+\Omega_L&:=-d \theta_L
+\end{aligned}
+$$
+
+Given those, the EL equation of $\Gamma$ is equivalent to
+$$
+i_{\Gamma} \Omega_L=0, \quad i_{\Gamma} d t=1,
+$$
+
+:::
+
+::: {.callout-tip title="Proof" collapse="true"}
+
+$$
+\begin{gathered}
+\theta_L=p_i d q^i-H d t, \quad p_i:=\frac{\partial L}{\partial v^i}, \quad H:=p_i v^i-L, \\
+\Omega_L:=-d \theta_L=d q^i \wedge d p_i+d H \wedge d t
+\end{gathered}
+$$
+
+by $-d\left(p_i d q^i-H d t\right)=d q^i \wedge d p_i+d H \wedge d t$
+
+Compute $d H$ on $J^1$ using $p_i=L_{v^i}$:
+
+$$
+d H=d\left(p_i v^i-L\right)=v^i d p_i+p_i d v^i-L_t d t-L_{q^i} d q^i-L_{v^i} d v^i=v^i d p_i-L_t d t-L_{q^i} d q^i .
+$$
+Contract with $\Gamma=\partial_t+v^i \partial_{q^i}+a^i \partial_{v^i}$ (so $i_{\Gamma} d t=1, i_{\Gamma} d q^i=v^i$ ):
+
+$$
+i_{\Gamma} \Omega_L=i_{\Gamma}\left(d q^i \wedge d p_i\right)+i_{\Gamma}(d H \wedge d t)=v^i d p_i-d q^i \Gamma\left(p_i\right)+\Gamma(H) d t-d H .
+$$
+
+Insert $d H$:
+
+$$
+i_{\Gamma} \Omega_L=\eta^i d p_i-d q^i \Gamma\left(p_i\right)+\Gamma(H) d t-\left(\eta^i d p_i-L_t d t-L_{q^i} d q^i\right)=\left(L_{q^i}-\Gamma\left(p_i\right)\right) d q^i+\left(\Gamma(H)+L_t\right) d t .
+$$
+
+Therefore $i_{\Gamma} \Omega_L=0$ is equivalent to the two identities
+
+$$
+\Gamma\left(\frac{\partial L}{\partial v^i}\right)=\frac{\partial L}{\partial q^i} \quad \text { and } \quad \Gamma(H)+\partial_t L=0
+$$
+
+The first is the Euler-Lagrange equation since $\Gamma$ acts as the total time derivative:
+$$
+\Gamma\left(\frac{\partial L}{\partial v^i}\right)=\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}^i}\right) .
+$$
+
+The second is more often written as $\frac{dH}{dt} = -\partial_t L$. In particular, if the Lagrangian density does not depend on time, then the Hamiltonian is a constant of motion.
+
+:::
+
+### Gauge transformation
+
+Introductory calculus students are stressed about "Don't miss the $C$ in $\int xdx = \tfrac 12 x^2 + C$.". Introductory physics students are not, but they really should, because the energy $E$ of a system is also only defined up to an additive constant. We can add a constant of 23 joules to the energy of a system, and nothing would go any differently.
+
+Analytical mechanics offers no escape. There is also such "up to additive constants" quantities. In fact, it is more than that: the action $S$ is only defined up to an additive *function*.
+
+Let's say that we have a Lagrangian $L: \R \times T\mathcal C \to \R$. It defines a vector field in the 1-jet manifold, and thus the time-evolution of the physical system. What if we add a "time counter" to the action? That is, suppose we have some Lagrangian $L'$, such that the new action $S'[\Gamma] := \delta \int_\Gamma L' dt = 0$ satisfies $S'[\Gamma] = S[\Gamma] + (t_1 - t_0)$, where $t_0, t_1$ are the starting and ending times of the trajectory $\Gamma$. Then, it is clear that any constrained-stationary trajectory for $S$ is also a constrained-stationary trajectory for $S'$, and therefore they produce exactly the same dynamics.
+
+That's pretty clever, but why does it work? To see it, we stare at what exactly we are doing when we calculate $\int_\Gamma Ldt$. We are integrating a differential 1-form through a curve $\Gamma$. A differential 1-form can be pictured as a field of surface-stacks. If the 1-form is big, then the surface-stacks are closely spaced, and vice versa. Integrating the 1-form through a curve is to follow the curve, and count how many surface-stacks it pierces. 
+
+![A single trajectory $\Gamma$ in 1-jet manifold, going from $(t_0, q_0, v_0)$ to $(t_1, q_1, v_1)$. The integral $\int_\Gamma Ldt$ is obtained by counting how many sheets it pierces.](todo)
+
+In general, the problem is non-trivial. Moving the curve $\Gamma$ up and down may change the number of surfaces pierced dramatically. However, in one particular case, the problem is trivial. Suppose we can quilt together the differential 1-forms into contour surfaces, then every curve pierces the exact same number of surfaces, and so every trajectory is as stationary as any other. Such 1-forms are called [exact forms](https://en.wikipedia.org/wiki/Closed_and_exact_differential_forms).
+
+![When the 1-form $Ldt$ is not trivial, varying $\Gamma$ can change $\int Ldt$ a lot. When the 1-form is exact, varying $\Gamma$ does not change $\int Ldt$.](todo)
+
+Now, we are rarely going to get such trivial physics, but it does suggest to us how to construct a different but equivalent action $S'$. We write down an arbitrary function $F(t, q)$, which creates an exact 1-form on the configuration spacetime. Now we raise it up to the 1-jet manifold "vertically". Because the constraint on variation of $\Gamma$ states that the two end-points $(t_0, q_0, v_0), (t_1, q_1, v_1)$ can only vary in $v_0, v_1$, the trajectory looks like a string pulled between two rings sliding upon two vertical rods. Each vertical rod is contained in one sheet of $F$, and so we have
+
+$$
+\int_\Gamma (Ldt + dF) = \int_\Gamma Ldt + F(t_1, q_1) - F(t_0, q_0)
+$$
+
+![$dF$ is exact, and made of vertical curvy sheets, so $\int_\Gamma dF= F(t_1, q_1) - F(t_0, q_0)$ does not depend on the trajectory of $\Gamma$, only its starting and ending vertical lines.](todo){width=50%}
+
+If only we can write $L'dt = Ldt + dF$, then we would obtain our new Lagrangian! Alas, this is in general impossible: the infinitesimal sheets of $(L'-L)dt$ are parallel to $dt$, which is strictly perpendicular to the t-axis, but the infinitesimal sheets of $dF = \partial_t F dt + \sum_i \partial_{q_i} F dq_i$ may not be.
+
+At this moment, our second constraint rescues us. Because we require $\Gamma$ to be tangent to all fields of planes $v_1 dt - dq_1 = 0, \dots, v_N dt - dq_N = 0$, we can replace $dq_i$ with $v_i dt$ for $\Gamma$:
+
+$$
+\int_\Gamma Ldt + dF = \int_\Gamma (L + \partial_t F + \braket{v, \partial_q F})dt
+$$
+
+And so we obtain the **gauge transformation of Lagrangian**:
+
+$$
+L'(t, q, v) = L(t, q, v) + \partial_t F(t, q) + \braket{v, \partial_q F(t, q)}
+$$ {#eq-gauge-lagrangian}
+
+### Point transformation
+
+A (continuous) point transformation is a deformation of the configuration spacetime. It is defined by sending each point $(t, q)$ to a nearby point $(t + \epsilon T(t, q), q + \epsilon Q(t, q))$, where $\epsilon$ is an infinitesimal, and $(T, Q)$ is a vector field on the configuration spacetime. The geometric intuition is to slightly manipulate the configuration spacetime like a playdough.
+
+Now, imagine that a strand of hair is stuck inside the playdough. As we manipulate the playdough, the hair also gets manipulated. That is, a trajectory $(t, \gamma(t))$ would be deformed to $(t \epsilon T(t, \gamma(t)), \gamma(t) + \epsilon Q(t, \gamma(t)))$, and the lift of the trajectory to $J^1$ would be deformed as well. We already know how $(t, q)$ parts would be deformed. It remains to deform the $v$ part:
+
+$$
+\begin{aligned}
+(t, q) &\mapsto(t+\epsilon T(t, q), q+\epsilon Q(t, q)) \\
+(t+\delta t, q+\dot{\gamma}(t) \delta t) &\mapsto(t+\delta t+\epsilon T(t+\delta t, q+\dot{\gamma}(t) \delta t), q+\dot{\gamma}(t) \delta t+\epsilon Q(t+\delta t, q+\dot{\gamma}(t) \delta t)) \\
+\dot \gamma(t) &\mapsto \frac{\dot{\gamma}(t) \delta t+\epsilon(Q(t+\delta t, q+\dot{\gamma}(t) \delta t)-Q(t, q))}{\delta t+\epsilon(T(t+\delta t, q+\dot{\gamma}(t) \delta t)-T(t, q))}
+\end{aligned}
+$$
+
+Thus, we have:
+
+$$
+\dot{\gamma}(t)+\epsilon\left(\partial_t Q+\braket{\partial_q Q, \dot{\gamma}(t)}-\dot{\gamma}(t)\left(\partial_t T+ \braket{\partial_q T, \dot{\gamma}(t)}\right)\right)
+$$
+
+This formula is a bit ugly, so we define the time-derivative operator along the trajectory $D_t := \partial_t + \braket{\dot \gamma, \partial_q}$, which gives us the prolongation formula:
+
+$$
+\dot\gamma \mapsto \dot \gamma + \epsilon(D_t Q - (D_t T) \dot\gamma)
+$$ {#eq-pr-1}
+
+Geometrically speaking, we have lifted a vector field $(T(t, q), Q(t, q))$ on the configuration spacetime to a vector field on the 1-jet manifold
+
+$$
+(T(t, q), Q(t, q), D_t Q - (D_t T) v), \quad D_t := \partial_t + \braket{v, \partial_q}
+$$ {#eq-pr-1-manifold}
+
+We know how to lift trajectories. What does it mean to lift a vector field? Just like how a vector field can deform a trajectory, so can a vector field deform a field of planes in $J^1$. Consider a point $(t, q, v) \in J^1$, and consider what happens to the plane $v_i dt - q_i = 0$, represented as an infinitesimal square. Draw the vectors 
+
+$$(T(t, q), Q(t, q)), \; (T(t + \delta t, q + v\delta t), Q(t + \delta t, q + v\delta t))$$
+
+at two corners of the square, and drag the corners along the vectors. Because the two vectors differ by $O(\delta t)$, not only would the square be translated by $O(\epsilon \delta t)$, it would also be rotated by $O(\epsilon \delta t)$. Since the square has side length $O(\delta t)$, this means the square would be rotated by $O(\epsilon)$, and so it would measurably rotate, and misfit its local plane. The only solution is to translate the square "vertically" by some $(0, 0, \epsilon R(t, q, v))$, so that it lands in a new position where it would fit the local plane. 
+
+![An infinitesimal square in $J^1$ is dragged by $(\epsilon T, \epsilon Q)$, resulting in a translation and a rotation. The rotation causes it to misfit its new home, and must be translated again along the vertical direction by $\epsilon R$.](todo)
+
+::: {#exr-higher-order-hamiltonian}
+
+Prove that $R(t, q, v) = D_t Q - (D_t T) v$ is necessary and sufficient for fitting the infinitesimal square to its local plane.
+
+:::
+
+
+
+### Bonus: Velocity-dependent transformation
+
+Or rather, why we don't have velocity-dependent transformations.
+
+A transformation of the configuration spacetime lifts to a transformation of the 1-jet manifold. This then suggests to us that we could deform directly the 1-jet manifold by some vector field $(T, Q, R)$ that depends on $(t, q, v)$, then project it back down. By the same argument as before, we calculate how it transforms a trajectory $(t, \gamma(t))$, and find that
+
+$$
+R(t, q, v) = D_t Q - vD_t T, \quad D_t = \partial_t + \braket{v, \partial_q} + \braket{a, \partial_v}
+$$
+
+But this is in general impossible: the left side does not depend on $a$, but the right side does. The only way to rescue this is if the $a$ terms cancel out exactly. That is, $\partial_{v_j} Q_i = v_i \partial_{v_j} T$ for all $i, j = 1, \dots N$. When $N \ge 2$, this implies they are independent of $v$, so we actually don't have a velocity-dependent transformation after all.
+
+::: {.callout-tip title="Derivation" collapse="true"}
+
+$$
+\partial_{v_j} (Q_i-v_i T)=-\delta_{ij} T
+$$
+
+By the symmetry of mixed partials,
+
+$$
+\partial_{v_k}\partial_{v_j} (Q_i-v_i T) = \partial_{v_j}\partial_{v_k} (Q_i-v_i T) \implies \delta_{ij} \partial_{v_k}T = \delta_{ik} \partial_{v_j}T
+$$
+
+Since $N \ge 2$, we can set $i = j \neq k$, and obtain $\partial_{v_k}T = 0$. This is true for all $k$, thus $T$ is independent of $v$. Now plug it into $\partial_{v_j} Q_i = v_i \partial_{v_j}$ to obtain $\partial_{v_j} Q_i = 0$ for all $i, j$.
+
+:::
+
+When $N = 1$, velocity-dependent transformations do exist:
+
+$$
+Q(t, q, v) = vT(t, q, v) - \int_0^v T(t, q, v') dv' + Q_0(t, q)
+$$
+
+where $Q_0(t, q), T(t, q, v)$ are arbitrary smooth functions. However, it is uninteresting, since dynamics is just too simple in one dimension.
+
+But why *would* there be a problem? What would happen if we simply insist on applying $T(t, q, v), Q(t, q, v), R(t, q, v)$? Well, consider what happens to an infinitesimal square at $(t, q, v)$. Its corners are dragged by the vector field $(T, Q, R)$. Previously, because $(T, Q)$ depends on $(t, q)$ but not $v$, the square is translated and rotated in the $(t, q)$ plane, but it remains upright. Now that $(T, Q)$ depends on $v$ also, the square would be rotated in the full $(t, q, v)$ space. And no matter what $R$ we pick, it is impossible for it to rotate the square back upright again, because it can only stretch and squeeze in the vertical direction, and that cannot re-upright what is not already upright.
+
+Well, when in doubt, go one dimension higher! We have already went from configuration spacetime to 1-jet to handle $v$. We need only go to 2-jet to handle $a$. Like how we constructed the 1-jet manifold, the 2-jet manifold $J^2$ is defined by appending at each point $(t, q, v) \in J^1$ the tangent space of velocity at $v$ -- the space of accelerations.
+
+Lifting a curve $(t, \gamma(t))$ to $J^2$ takes two steps. The 1th step lifts it to $J^1$, as before. We previously noted that two curves passing the same $(t, q)$ would be separated in $J^1$ if they differ in velocity, and if they have the same velocity but differ in acceleration, then they would pass the same point in $J^1$, but have different slope. Therefore, the 2th lift to $J^2$ would separate them.
+
+Previously, we constructed the contact geometry of $J^1$ by infinitesimal squares spanned by $\partial_t + \braket{v, \partial_q}$ and $\partial_v$. Analogously, the contact geometry of $J^2$ is constructed by infinitesimal squares spanned by $\partial_t + \braket{v, \partial_q} + \braket{a, \partial_v}$ and $\partial_a$. Lifting a curve $(t, \gamma(t))$ to $J^2$ is simply finding the unique curve in $J^2$ that projects down to $(t, \gamma(t))$ while being tangent to the field of infinitesimal squares.
+
+Would this suffice? It would not. We will see that $J^2, J^3, \dots$, none of them suffices. As soon as we incorporate velocity-dependence, we need to handle the entire Taylor expansion.
+
+Looking at the picture, an infinitesimal square at $(0, q_0, v_0) \in J^1$ can be tangent to several different lifted curves. Some move up -- those have positive acceleration. Some move down -- those have negative acceleration. Thus, the infinitesimal square is swept out by the curve family $\{\gamma(t) = q_0 + v_0t + \tfrac 12 at^2: a \in \R\}$. Similarly, an infinitesimal square at $(0, q_0, v_0, a_0) \in J^2$ is swept out by the curve family $\{\gamma(t) = q_0 + v_0t + \tfrac 12 a_0t^2 + \tfrac 16 jt^3: j \in \R\}$. Now, the trouble begins: What happens to the curve family at $(0,0,0,0)$ after applying $T=0, Q = v$ transformation? It becomes 
+
+$$
+\{\gamma(t) = \tfrac 12 \epsilon jt^2 + \tfrac 16 jt^3: j \in \R\}
+$$
+
+So we see the problem: The original curves are all lifted to pass through the same point $(0, 0, 0, 0) \in J^2$, if at different "vertical slopes" due to the [jerk](https://en.wikipedia.org/wiki/Jerk_%28physics%29) term $\tfrac 16 jt^3$. After applying the $T=0, Q=v$ transformation, the shifted curves are pulled apart according to the jerk term. It is easy to see (draw a picture) that any two members of the family $\{\gamma(t) = \tfrac 12 \epsilon jt^2 + \tfrac 16 jt^3: j \in \R\}$ do not have an order-2 contact. Thus, $T=0, Q=v$ destroyed the contact structure on $J^2$. The infinitesimal squares are not even mapped to infinitesimal squares at all, let alone oriented correctly.
+
+Going one level higher to $J^3$ would not save it, because we can simply make the same argument with $\{\gamma(t) = \tfrac{1}{4!} kt^4: k \in \R\}$, and so on. The essential problem is that point transformations preserve degrees -- to know where a point $\gamma(t)$ is mapped to, we need only know the point itself $\gamma(t)$; to know where a velocity $\dot \gamma(t)$ is mapped to, we need only know the point and the velocity $(\gamma(t), \dot\gamma(t))$. However, when the transformation depends on velocity, then we need to account for one degree higher -- to know where a point $\gamma(t)$ is mapped to, we need to know the point itself *and* the velocity; to know where a velocity $\dot \gamma(t)$ is mapped to, we need to know the acceleration too, etc. There is no way to stop short of going all the way to infinity.
+
+And if we were to consider acceleration-dependent transformations, the problem is even worse: we need to go two degrees higher.
+
+This is fundamentally why, though point transformations are everywhere in Lagrangian mechanics, velocity-dependent (or higher-order-dependent) transformations are unknown. Some have tried, but I think it's not worth the effort.
+
+### Hamiltonian mechanics as symplectic geometry
+
+
+
+### Canonical transformation
+
+Similar to the case of Lagrangian mechanics, we can also gauge-transform the Hamiltonian. However, the choice of gauge is more subtle, due to the more subtle form of [modified Hamilton's principle](#eq-modified-hamilton). Recall that it says 
+
+$$
+\begin{cases}
+\delta \ub{\int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt}{$S$} &= 0 \\
+q(t_0) &= q_0, \; q(t_1) = q_1
+\end{cases}
+$$
+
+where the constraint is that $q$ is fixed at both ends, but $p$ is allowed to vary arbitrarily. Under such variation, we have
+
+$$
+\delta S = \int_{t_0}^{t_1} (\braket{\dot q - \partial_p H, \delta p} - \braket{\dot p + \partial_q H, \delta q})dt + \braket{p, \delta q}\Big|^{t_1}_{t_0}
+$$
+
+Now, suppose we have found some functions $P, Q, K, F$ on phase space-time, satisfying
+
+$$
+\braket{p, dq} - Hdt = \braket{P, dQ} - Kdt + dF
+$$
+
+<!-- 
+::: {.callout-warning}
+
+There are *two* ways to interpret this equation wrongly. One way to mess up is to differentiate $dq, dQ$ *across time*. No, they must be differentiated *within each slice of time*. Another way to mess up is to *fail* to differentiate $dF$ across time. No, it must be differentiated across time. So if we are to be maximally precise, we should do something like this. First, we impose an arbitrary, but time-independent reference coordinate system $x_1, \dots, x_N, y_1, \dots, y_N$, such that $\partial_t x = 0, \partial_t y = 0$. Then, we write maximally explicitly:
+
+$$
+\begin{aligned}
+&\sum_i \sum_j p_i (\partial_{x_j}q_i dx_j + \partial_{y_j}q_i dy_j) - Hdt \\
+= &\sum_i \sum_j P_i (\partial_{x_j}Q_i dx_j + \partial_{y_j}Q_i dy_j) - Kdt 
++ \sum_j (\partial_{x_j}F dx_j + \partial_{y_j}F dy_j) + \partial_t F dt
+\end{aligned}
+$$
+
+::: -->
+
 ## Bonus: Higher-order Lagrangians and Hamiltonians
 
 What happens if we use a Lagrangian with higher-order derivatives? It turns out that even in this case, we can still use economic reasoning to derive its Hamiltonian and Euler--Lagrangian equations
@@ -667,22 +1068,6 @@ $$H(t,  q^{(0)}, q^{(1)}, p^{(0)}, p^{(1)}) = \max_{ q^{(2)}} (\langle p^{(0)} ,
 and the optimal production plan is
 
 $$q^{(2)\ast} = \mathop{\mathrm{arg\,max}}_{ q^{(2)}}(\langle p^{(0)} , q^{(1)}\rangle + \langle p^{(1)} , q^{(2)}\rangle - L)$$
-
-### Ostrogradsky instability and the anthropic principle
-
-We will show that the quantity does deserve the name of "Hamiltonian":
-
-$$H(t,  q^{(0)}, q^{(1)}, p^{(0)}, p^{(1)}) = \langle p^{(0)} , q^{(1)}\rangle + \max_{ q^{(2)}} (\langle p^{(1)} , q^{(2)}\rangle - L(t, q^{(0)}, q^{(1)}, q^{(2)}))$$
-
-Assuming that, we have a serious problem. Consider an oscillator with higher-order derivatives. Since its Hamiltonian contains a term $\langle p^{(0)} , q^{(1)}\rangle$, it is linear with respect to $p^{(0)}$ and $q^{(1)}$. In other words, it can have arbitrarily *low* energy states.
-
-Now, this could be alright if we live in a classical world, but we live in a world described by quantum field theory. In QFT, the world is a giant network of oscillators. If a quantum oscillator has higher-order derivatives, then its energy levels can go both infinitely high and low. If there is any coupling at all between its energy levels, it would instantly evaporate into infinitely many positive and negative energy particles, in a blaze of vacuum decay.
-
-This is an anthropic explanation for "Why Newton's laws?" Newton's laws, because the Lagrangian depends on only up to velocity. Why? Because if it also depends on acceleration, the vacuum would decay [@swansonOstrogradskiInstabilityWhy2022]. We can similarly explain anthropically why space has 3 dimensions, and time has 1 dimension.
-
-> With more or less than one time dimension, the partial differential equations of nature would lack the hyperbolicity property that enables observers to make predictions. In a space with more than three dimensions, there can be no traditional atoms and perhaps no stable structures. A space with less than three dimensions allows no gravitational force and may be too simple and barren to contain observers.
-> 
-> [@tegmarkDimensionalitySpacetime1997].
 
 ### Hamiltonian equations
 
@@ -769,9 +1154,25 @@ $$\sum_{i=0}^2\left(-\frac{d}{d t}\right)^i (\nabla_{q^{(i)}} L ) =0$$
 
 The generalization to $L(t, q^{(0)}, ..., q^{(N-1)})$ is immediate. It can be derived by a similar argument through the market economy.
 
+### Ostrogradsky instability and the anthropic principle
+
+Thus, we see that the entire machinery of Lagrangian and Hamiltonian mechanics still apply. In particular, we have a Hamiltonian:
+
+$$H(t,  q^{(0)}, q^{(1)}, p^{(0)}, p^{(1)}) = \langle p^{(0)} , q^{(1)}\rangle + \max_{ q^{(2)}} (\langle p^{(1)} , q^{(2)}\rangle - L(t, q^{(0)}, q^{(1)}, q^{(2)}))$$
+
+But now we have a catastrophe. Consider an oscillator with higher-order derivatives. Since its Hamiltonian contains a term $\langle p^{(0)} , q^{(1)}\rangle$, it is linear with respect to $p^{(0)}$ and $q^{(1)}$. In other words, it can have arbitrarily *low* energy states.
+
+Now, this could be alright if we live in a classical world, but we live in a world described by [quantum field theory](https://en.wikipedia.org/wiki/Quantum_field_theory). In QFT, the world is a giant network of oscillators. If a quantum oscillator has higher-order derivatives, then its energy levels can go both infinitely high and low. If there is any coupling at all between its energy levels, it would instantly evaporate into infinitely many positive and negative energy particles, in a blaze of vacuum decay.
+
+This is an anthropic explanation for "Why Newton's laws?" Newton's laws, because the Lagrangian depends on only up to velocity. Why? Because if it also depends on acceleration, the vacuum would decay [@swansonOstrogradskiInstabilityWhy2022]. We can similarly explain anthropically why space has 3 dimensions, and time has 1 dimension.
+
+> With more or less than one time dimension, the partial differential equations of nature would lack the hyperbolicity property that enables observers to make predictions. In a space with more than three dimensions, there can be no traditional atoms and perhaps no stable structures. A space with less than three dimensions allows no gravitational force and may be too simple and barren to contain observers.
+> 
+> [@tegmarkDimensionalitySpacetime1997].
+
 ### An unstable higher-order oscillator
 
-It is beyond our scope to discuss Ostrogradsky instability in quantum field theory, however, we can have a taste of it here. Consider the oscillator perturbed by $\epsilon$:
+It is beyond our scope to quantitatively discuss Ostrogradsky instability in quantum field theory, however, we can have a taste of it here. Consider the oscillator perturbed by $\epsilon$:
 
 $$L = \frac 12 m\dot x^2 - \frac 12 kx^2 - \frac 12 \epsilon \ddot x^2$$
 
@@ -805,11 +1206,35 @@ The quantum field theorists call these "bad Ostrogradsky [ghosts](https://en.wik
 
 ## Hamilton--Jacobi equation
 
-Consider again the integral of Lagrangian: $\int L dt$. If we fix the starting point $(t_0, q_0)$ and the ending point $(t, q)$, then in general there can be a countable number of paths that connect both points. This is a serious problem, but we are saved by the fact that these paths are separated, in the sense that around each path $\gamma$, there is a small neighborhood, in which there exists no other path $\gamma$ that connects the two points $(t_0, q_0), (t, q)$.
+### Hamilton's principal function
 
-As a prototype, consider a billiard ball in a circular table. 
+Consider a problem in traveling: Given a starting spacetime $(t_0, q_0)$ and an ending spacetime $(t, q)$, what is the lowest cost of traveling between them? We want to define it as:
+
+$$
+S(t, q; t_0, q_0) = \int_{t_0}^t L(\tau, \gamma(\tau), \dot\gamma(\tau))d\tau
+$$ 
+
+where $\gamma$ is the path from $(t_0, q_0)$ to $(t, q)$. However, we have a problem. Do you see it?
+
+Each trajectory $\gamma$, physically real or physicall unreal, has a cost $\int_\gamma Ldt$. The cost is well-defined. Now I ask you: if we fix the starting point $(t_0, q_0)$ and the ending point $(t, q)$, what is *the* cost of going from $(t_0, q_0)$ to $(t, q)$? Hold on. Don't get excited. There is a serious issue here! Can you see it?
+
+Let's assume the earth is a perfect sphere. You need to go from London to Paris in 1 day, and you must travel at constant velocity. Alright, you will travel at a constant speed of 14 km/h in that direction -- but hold on! You could also travel at 1681 km/h in the same direction, pass Paris, around the earth, pass London, and stop at Paris. That may sound silly, but remember that classical mechanics specifically does *not* care about finding the *globally best* path, only the *locally stationary* path. You can go around the earth an arbitrary number of times. All these paths are stationary!
+
+In general, given any two points $(t_0, q_0), (t, q)$, there can be infinitely many paths that connect both points. Therefore, we cannot say "*the* path" $(t_0, q_0)$ to $(t, q)$. We can only say "*a* path". So how do we define $S(t, q; t_0, q_0)$ now?
+
+Looking at the earth-traveling problem again, we notice something: Even though there are infinitely many ways to stationarily go from London to Paris, they are well separated from each other. You cannot slightly change your travel plan, and suddenly find yourself going around the earth one more round. This saves our definition of $S$. As follows:
+
+First, we select a prototypical path $\tilde\gamma$ Next, we smoothly vary $\tilde\gamma$ until it becomes some path $\gamma$ that goes from $(t_0, q_0)$ to $(t, q)$. Finally, define the Hamilton's principal function using this particular $\gamma$. The construction is a bit awkward, but it would allow us to avoid the non-uniqueness problem.
+
+Thus, we define the **Hamilton's principal function**:
+
+$$
+S(t, q; t_0, q_0) = \int_{t_0}^t L(\tau, \gamma(\tau), \dot\gamma(\tau))d\tau
+$$ {#eq-hpf}
 
 ### Billiards in a circular board
+
+To be more concrete, consider a billiard ball in a circular table.
 
 When both $q_0, q$ are the center of the billiard table, then there are $S^1 \times \N$ ways to go from $q_0$ to $q$ over the interval $[t_0,t]$. Here, $S^1$ denotes the circle of possible directions, and $\N$ denotes the discrete number of starting speeds: $\frac{2R}{t-t_0}, \frac{4R}{t-t_0}, \dots$.
 
@@ -836,31 +1261,18 @@ Similarly, for a table with smooth boundary, for almost all point-pairs in the t
 
 [^dynamical-billiards]: Exactly counting the singular cases, and studying polygonal, or even non-convex tables, is an ongoing research program, with the name of "dynamical billiard flow".
 
-What is the general lesson for defining $S$? In general, we also need to fix a particular optimal path $\tilde\gamma$, and only consider optimal paths that are in a small neighborhood of $\tilde \gamma$. This is the same idea as selecting a branch cut when dealing with multi-valued functions like the complex logarithm.
-
-Why are we so concerned with reflections? Read on!
-
 ![The two ways to find trajectories from $q_0$ to $q$. The particle way involves sending out rays from $q_0$, reflecting off the walls of the table, until a ray hits $q$. The wave way involves sending out an expanding wavefront from $q_0$, rippling through the table, passing over $q$ again and again. The rays are perpendicular to the wavefront in this case.](figure/waves_rays_circle_table.jpg){width=50% fig-align="center"}
 
 ![Similarly, in a rectangular billiard table, there are infinitely many possible ways to go from one point to another, but one cannot go from one way to another continuously.](figure/square_billiard.jpg){width=80% fig-align="center"}
 
-### Hamilton's principal function
+What is the general lesson for defining $S$? In general, we need to do two things:
 
-Consider a problem in traveling: Given a starting spacetime $(t_0, q_0)$ and an ending spacetime $(t, q)$, what is the lowest cost of traveling between them? We want to define it as:
+* Fix a particular optimal path $\tilde\gamma$, and only consider optimal paths that can be reached by continuously deforming that path. This is the same idea as selecting a branch cut when dealing with multi-valued functions like the complex logarithm.
+* Avioid hitting the special points. To study the cost of traveling on a sphere, we must avoid our antipodal point. In general, we must avoid the points that can be reached by trajectories that are "too stationary", because as soon as we hit those points, we break single-valuedness.[^too-stationary]
 
-$$
-S(t, q; t_0, q_0) = \int_{t_0}^t L(\tau, \gamma(\tau), \dot\gamma(\tau))d\tau
-$$ 
+[^too-stationary]: How stationary is "too stationary"? We want trajectories that are as stationary as $x=0$ in $y = x^2$, but not too stationary like $x=0$ in $y=x^3$, or even $y=x^4$. This has deep connections to [catastrophe theory](https://en.wikipedia.org/wiki/Catastrophe_theory) and the theory of [caustics](https://en.wikipedia.org/wiki/Caustic_(mathematics)), but it will take us too far afield to write it out.
 
-where $\gamma(\tau)$ is the *unique* path from $(t_0, q_0)$ to $(t, q)$. However, as we saw in the case of circular billiards, we don't have a unique path in general. Therefore, we should be a bit more careful.
-
-First, we select a prototypical path $\gamma_{prototype}$. Next, we smoothly vary $\gamma_{prototype}$ until it becomes some path $\gamma$ that goes from $(t_0, q_0)$ to $(t, q)$. Finally, define the Hamilton's principal function using this particular $\gamma$. The construction is a bit awkward, but it would allow us to avoid the non-uniqueness problem.
-
-Thus, we define the **Hamilton's principal function**:
-
-$$
-S(t, q; t_0, q_0) = \int_{t_0}^t L(\tau, \gamma(\tau), \dot\gamma(\tau))d\tau
-$$ {#eq-hpf}
+Why are we so concerned with reflections? Why does this feel like [geometric optics](https://en.wikipedia.org/wiki/Geometrical_optics)? Read on!
 
 ### Hamilton--Jacobi equation
 
@@ -883,7 +1295,7 @@ which strongly suggests
 ::: {#thm-hj}
 
 $$
-(-\partial_t, \nabla_q)S(t, q; t_0, q_0) = (H, p), \quad (-\partial_{t_0}, \nabla_{q_0})S(t, q; t_0, q_0) = (H_0, p_0)
+(-\partial_t, \nabla_q)S(t, q; t_0, q_0) = (H, p), \quad (-\partial_{t_0}, \nabla_{q_0})S(t, q; t_0, q_0) = (-H_0, -p_0)
 $$ {#eq-HJ}
 
 :::
@@ -912,7 +1324,7 @@ Here, $\gamma$ is the path from $(t_0, q_0)$ to $(t, q)$, and $\gamma + \delta \
 
 Now consider two such jumped-paths, $\gamma_{\tau}$ and $\gamma_{\tau + \delta \tau}$, where $\delta \tau$ is an infinitesimal, shown in Figure (c). The cost difference between them is that between two sides of the parallelogram. By the no-arbitrage construction, the difference is zero.[^higher-order-infinitesimal]
 
-Thus, we can smoothly "glide"[^path-homotopy] the path $\gamma$ to $\gamma + \delta\gamma$ by the family of jumped-paths $\gamma_\tau$, with $\tau$ going from $t$ to $t_0$, with no change in cost.[^higher-order-infinitesimal-cost] Thus, the only cost difference between $\gamma$ and $\gamma + \delta$ is the cost it takes to buy the bundle of commodities $\delta q$ at the very last instance:
+Thus, we can smoothly "glide"[^path-homotopy] the path $\gamma$ to $\gamma + \delta\gamma$ by the family of jumped-paths $\gamma_\tau$, with $\tau$ going from $t$ to $t_0$, with no change in cost.[^higher-order-infinitesimal-cost] Thus, the only cost difference between $\gamma$ and $\gamma + \delta \gamma$ is the cost it takes to buy the bundle of commodities $\delta q$ at the very last instance:
 
 $$S(t, q+\delta q; t_0, q_0) - S(t, q; t_0, q_0) = \sum_i p_i \delta q_i$$
 
@@ -924,24 +1336,11 @@ finishing the proof.
 
 [^higher-order-infinitesimal-cost]: More precisely, their difference in cost is a higher-order infinitesimal than the area of the curvy triangle between them. Since the curvy triangle is an infinitesimal of order $\delta q$, the difference in cost is a higher-order infinitesimal than $\delta q$.
 
-::: {.callout-tip title="The usual proof" collapse="true"}
-
-The HJE has a standard proof, such as the one appearing in [@goldsteinClassicalMechanics2008, Chapter 8]. It does not require reasoning with different orders of infinitesimals, but it is less geometrical.
-
-Sketch of the proof:
-
-* Start with the original system with configuration space $(t, q_{1:N}, \dot q_{1:N})$.
-* Move to the Hamiltonian equations on phase space $(t, q_{1:N}, p_{1:N})$.
-* Regard *that* as part of a larger system with configuration space $(t, q_{1:N}, p_{1:N}, \dot q_{1:N}, \dot q_{1:N}))$
-* Write down the Euler--Lagrange equations for that larger system.
-
-:::
-
 ::: {#thm-poincare-cartan}
 
 ## Poincaré--Cartan integral invariant [@arnoldMathematicalMethodsClassical2001, pages 237--238]
 
-Draw an arbitrary closed cycle $\alpha$ in phase space-time. Let every point $A \in \alpha$ evolve for some time (not necessarily the same amount of time) to reach some other point $A'$. Let $\alpha'$ be the cycle consisting of those points $A'$. Then we have the **Poincaré--Cartan integral invariant**
+Draw an arbitrary closed cycle $\alpha$ in phase space-time. Let every point $A \in \alpha$ evolve for some time (not necessarily the *same* amount of time) to reach some other point $A'$. Let $\alpha'$ be the cycle consisting of those points $A'$. Then we have the **Poincaré--Cartan integral invariant**
 
 $$
 \oint_\alpha \lra{p, dq} - Hdt = \oint_{\alpha'} \lra{p, dq} - Hdt
@@ -957,7 +1356,9 @@ $$
 
 ::: {.callout-note title="Proof" collapse="true"}
 
-Divide the tube into ribbons, like a barrel, then note that the integral around each barrel-plank is zero, as argued before. This is a case of the Stokes' theorem.
+By the HJE, this is equivalent to $\oint_{\alpha - \alpha'} dS = 0$, which is just Stokes's theorem.
+
+But this is too slick, so we prove it again by drawing pictures. Divide the tube into ribbons, like a barrel, then note that the integral around each barrel-plank is zero, as argued before.
 
 ![](figure/poincare_cartan_invariant_proof_cropped.jpg)
 
@@ -997,19 +1398,17 @@ $$
 H(q, \nabla_q W(q)) = E
 $$ {#eq-THJE}
 
-for some $E\in \R$, then $S(t, q) = W(q) - Et$ is a solution to the HJE. 
+for some $E\in \R$, then $S(t, q) = W(q) - Et$ is a solution to the HJE. This is easy to interpret using 
 
-We might naively think, by analogy with Fourier transform, that any solution to the HJE is a linear combination, of the form $S(t, q) = \int (W_E(q) - Et)dE$, but this is not true, since the HJE is nonlinear. Nevertheless, solutions of the form $S(t, q) = W(q) - Et$ are often sufficient for applications.
+We might naively think, by analogy with Fourier transform, that any solution to the HJE is a linear combination of functions of the form $S(t, q) = \int (W_E(q) - Et)dE$, but this is not true, since the HJE is nonlinear. Nevertheless, solutions of the form $S(t, q) = W(q) - Et$ are often sufficient for applications.
 
 ### Two more proofs of HJE
 
 ::: {.callout-note title="Proof by positional arbitrage" collapse="false"}
 
-We only need to prove $p = \nabla S$, which is sufficient to prove @eq-HJ, and thus the HJE.
+We only need to prove $p = \nabla S$, which is sufficient to prove @eq-HJ, and thus the HJE. This we show by positional arbitrage.
 
-Given a starting position $(t_0, q_0)$ and a reference trajectory, there exists some $S(t, q; t_0, q_0)$, the cost function of arriving at any point in configuration space-time in a neighborhood of the reference trajectory. For each trajectory $\gamma$ in the neighborhood that arrives at $(t, q)$, there exists a final market price $q(t)$. We need to show that $q = \nabla S$.
-
-Suppose not, then we can perform positional arbitrage. First, we arrive at $q + \delta q$ by the efficient route, then sell off some $\delta q$. This would cost us 
+Suppose that a physically real trajectory goes from $(t_0, q_0)$ to $(t, q)$. Now we consider a nearby trajectory: First, we go from $(t_0, q_0)$ to $(t, q + \delta q)$ by a physically real trajectory, then we sell off $\delta q$ on the market. This would cost us 
 
 $$S(t, q+\delta q; t_0, q_0) - \lra{p, \delta q} = S(t, q; t_0, q_0) + \lra{\nabla S - p, \delta q}$$
 
@@ -1099,51 +1498,61 @@ If you have studied, or intend to study, control theory, then prove the Hamilton
 
 :::
 
-### Bonus: Noether's theorem
+### Noether's theorem
 
-In Noether's theorem, symmetries of the Lagrangian give us conserved quantities of motion.
+The famed Noether's theorem states that symmetries of the Lagrangian give us conserved quantities of motion. To state this rigorously, we set up some notation:
 
-* $\epsilon$ is an infinitesimal number.
-* An **infinitesimal transform** is an infinitesimal deformation $(\delta t, \delta q)$ of configuration space-time. 
+* $\epsilon$ is an infinitesimal.
+* An **infinitesimal transformation** is an infinitesimal deformation $(\delta t, \delta q)$ of configuration space-time. 
   * $\delta t = \epsilon T$, where $T$ a function of type $\ub{\R}{time} \times \ub{\mathcal C}{configuration space} \to \R$
   * $\delta q = \epsilon Q$, where $Q$ is a function of type $\R \times \mathcal C \to \R^d$, where $d$ is the dimension of configuration space $\mathcal C$.
-* An infinitesimal transform is a **symmetry of the Lagrangian**, iff taking any path $\gamma$ (not necessarily physically real), and deforming it to $\gamma'$, the action is conserved: $\int_\gamma L dt = \int_{\gamma'} L dt$.
+* An infinitesimal transformation is a **symmetry of the Lagrangian**, iff taking any path $\gamma$ (which can be physically fake), and deforming it to $\gamma'$, the action is conserved to first order: $\int_\gamma L dt = \int_{\gamma'} L dt + O(\epsilon^{c})$, where $c > 1$. Because we don't need the $c$, we will write it just as $o(\epsilon)$, meaning "a higher-order infinitesimal than $\epsilon$".
 * A **conserved quantity of motion** is a number depending on $t, q, \dot q$, such that it is constant along any physically real path $\gamma$.
-
-::: {#exr-0}
-
-We defined "symmetry of the Lagrangian" by a condition on an integral: $\int_\gamma L dt = \int_{\gamma'} L dt$. Reformulate this to a condition at a point, involving $L, Q, T$ and their derivatives.
-
-:::
 
 ::: {.callout-warning}
 
-A symmetry of the Lagrangian conserves *all* actions, even those of unphysical paths, but a conserved quantity of motion is only conserved along physical paths. We may call them "conserved quantity of *physical* motion" to emphasize the distinction.
+A symmetry of the Lagrangian conserves *all* actions to first order, even those of unphysical paths, but a conserved quantity of motion is only conserved along physical paths. We may call it "conserved quantity of *physical* motion" to emphasize the distinction. In physicist jargon, Noether's theorem is an "[on-shell](https://en.wikipedia.org/wiki/On_shell_and_off_shell)" theorem.
 
 :::
 
-Take a trajectory $\gamma_{AA'}$ from point $A$ to $A'$. Now, shift it by $\delta t, \delta q$, resulting in a trajectory $\gamma_{BB'}$ from point $B$ to $B'$. Since $L$ is invariant under symmetry, any such shifting gives us $S_{AA'} = S_{BB'}$. Now, if $\delta S \neq 0$ in a neighborhood of the given trajectory $\gamma_{AA'}$, then we can take this variation $\delta \gamma$, and shift it by the symmetry, showing that $\delta S \neq 0$ in a neighborhood of $\gamma_{BB'}$ too.
+We defined "symmetry of the Lagrangian" by a condition on an integral: $\int_\gamma L dt = \int_{\gamma'} L dt$. Now we reformulate this to a condition at a point, involving $L, Q, T$ and their derivatives.
 
-Therefore, by Hamilton's principle, the infinitesimal transform sends any physically real trajectory into another physically real trajectory.
+::: {.callout-note title="Derivation" collapse="false"}
+
+
+
+:::
+
+
 
 ::: {#thm-noether}
 
 ## Noether's theorem
 
-If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal symmetry of the Lagrangian, then 
+If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal symmetry of the Lagrangian, then
 
 $$
-H T - \lra{p, \delta Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+H T - \lra{p, Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
 $$
 
 is a conserved quantity of motion.
 
 :::
 
+::: {.callout-note title="Proof" collapse="false"}
+
+Given any physically real trajectory $\gamma_{AB}$ from point $A$ to $B$, we construct a variation of it by applying the infinitesimal transform, obtaining $A \to A + \delta A \to B + \delta B \to B$. Since $\gamma_{AB}$ is physically real, this perturbs the action by only $o(\delta)$.
+
+Because the infinitesimal transformation preserves the action up to $o(\delta)$, the action of $A + \delta A \to B + \delta B$ is the same as the action of $A \to B$ up to $o(\delta)$. So the action of $A \to A + \delta A$ cancels out the action of $B + \delta B \to B$ up to $o(\delta)$. Now take $\delta \to 0$.
+
+:::
+
+The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
+
 Technically speaking, we should not confuse the left side and the right side of 
 
 $$
-H T - \lra{p, \delta Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+H T - \lra{p,  Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
 $$
 
 The left side is defined on the phase space-time, while the right side is defined on the configuration space-time. They are equal only because we have soldered together the phase space and the configuration space.
@@ -1153,26 +1562,6 @@ Indeed, again and again we see that Lagrangian and Hamiltonian mechanics are dif
 If this were the case, then why do we bother creating two mechanics, since there is no physical experiment to distinguish them? It is because in quantum mechanics, virtual trajectories are just as real as the "real" trajectories. A particle can just go around the earth once before it arrives at its destination, taking the long way around. In this case, what is virtually possible matters just as much as what is classically real, and if Lagrangian mechanics and Hamiltonian mechanics can entertain different kinds of dreams, we might be able to tell them apart.
 
 ![$S$ is a source of photons, and $P$ is a receiver. A photon can go from $S$ to $P$ by bouncing off the mirror below, along many paths. Each path has a certain amplitude, and the sum of all their amplitudes is the total amplitude. While the amplitude is dominated by the amplitudes near the classical path $SGP$, it is not the only path, and all paths, even the "virtual" paths like $SAP$, contribute to what we observe. [@feynmanQEDStrangeTheory2006, figure 24]](figure/qed_2006_fig_24.png){width=60% fig-align="center"}
-
-::: {.callout-note title="Proof" collapse="false"}
-
-Given any physically real trajectory $\gamma_{AA'}$ from point $A$ to $A'$, the infinitesimal transform sends it to another physically real $\gamma_{BB'}$. By symmetry, both paths have the same action. Thus, we have
-
-$$
-S(A, A') = S(B, B')
-$$
-
-Now, consider an intermediate path $\gamma_{A, B'}$. By @eq-HJ,
-
-$$
-S(A, B') = S(A, A') - H \delta t + \lra{p, \delta q}, \quad S(B, B') = S(A, B') + H_0 \delta t_0 - \lra{p_0, \delta q_0}
-$$
-
-Therefore, $H T - \lra{p, \delta Q}$ is a conserved quantity of motion.
-
-:::
-
-The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
 
 ![](figure/banner/2.png)
 
@@ -1475,9 +1864,42 @@ In the same way, analyze the simple harmonic oscillator -- a particle in a poten
 
 :::
 
-### Deriving the time-independent Schrödinger equation
+### Guessing the Schrödinger equation
 
-<small>This section based on [@masoliverClassicalQuantumMechanics2009; @derbesFeynmansDerivationSchrodinger1996; @hamillStudentsGuideLagrangians2013, section 6.4].</small>
+
+> If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generations of creatures, what statement would contain the most information in the fewest words? ... that all things are made of atoms—little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied.
+>
+> [The Feynman Lectures on Physics, I.1.2: Matter is made of atoms](https://www.feynmanlectures.caltech.edu/I_01.html)
+
+If, in some space-time cataclysm, the entire knowledge of quantum mechanics were to be destroyed, and only one sentence passed on to the next generation of physicists, what statement would contain the most information in the fewest words? I believe it is the [unitarity principle](https://en.wikipedia.org/wiki/Unitarity_(physics)): All laws of physics must be cast into the form of length-preserving rotations in complex vector space.
+
+So let us derive the time-dependent Schrödinger equation from the HJE using unitarity.
+
+Begin by inspecting the HJE $\partial_t S + \frac{\|\nabla_q S\|^2}{2m} + V = 0$. It is not a linear differential equation, but all length-preserving rotations are linear, so this tells us that something is wrong -- $S$ cannot be something fundamental. Well, either by a good guess, or by watching animated plots of $S(t, q)$ over time, you could be reminded of a water wave, and so guess that we might be able to find a linear differential equation for $\psi(t, q) = e^{iS(t, q)}$ instead. 
+
+Now, because $S$ has units of energy-time, but $e$ must take a unitless quantity, we invent a new physical constant $\hbar$ with units of energy-time, and insert: $\psi(t, q) = e^{iS(t, q)/\hbar}$.
+
+Now we take its derivatives:
+
+$$
+\partial_t \psi = \frac{i}{\hbar}\phi\partial_t S, \quad \partial_{q_i}^2 \psi = -\frac{1}{\hbar^2} \phi (\partial_{q_i} S)^2 + \frac{i}{\hbar}\phi \partial_{q_i}^2 S
+$$
+
+and insert them back to the HJE, obtaining
+
+$$
+i\hbar \partial_t \psi = \hat H\psi + \frac{i \hbar}{2 m}(\nabla^2 S) \psi
+$$
+
+where $\hat H = -\frac{\hbar^2}{2m} \nabla_q^2 + V$. This is promising. We have almost obtained a linear differential equation for a wavefunction, except for the $\frac{i \hbar}{2 m}(\nabla^2 S) $ term. Furthermore, the equation $i\hbar \partial_t \psi = \hat H\psi$ has solution $\psi(t, q) = e^{-i(\hat H/\hbar)t} \psi(0, q)$, and because the differential operator $\hat H$ is self-adjoint, $e^{-i(\hat H/\hbar)t}$ is a [unitary operator](https://en.wikipedia.org/wiki/Unitary_operator).
+
+Thus, we remove the inconvenient term, and write down $i\hbar \partial_t \psi = \hat H\psi$, which is the time-dependent Schrödinger equation. Now plug in $\psi = e^{iS/\hbar}$ and show that at $\hbar \to 0$ limit, we recover the HJE.
+
+If you want more of this unitarity, you may be interested in the [Koopman--von Neumann interpretation of classical mechanics](https://en.wikipedia.org/wiki/Koopman%E2%80%93von_Neumann_classical_mechanics).
+
+::: {.callout-note title="More historically accurate derivation" collapse="false"}
+
+One might object to unitarity. The crucial Unitarity Principle emerged only in the 1930s, about 10 years after the founding of quantum mechanics. If Schrödinger didn't need unitarity to guess his equation, why should we? Well, there is a more historically accurate way to guess your way to the equation. [@masoliverClassicalQuantumMechanics2009; @derbesFeynmansDerivationSchrodinger1996; @hamillStudentsGuideLagrangians2013, section 6.4].
 
 Assume that the potential is time-independent: $V(t, q) = V(q)$. Assume that the physical system can be described by a function
 
@@ -1515,15 +1937,13 @@ $$
 
 which is the time-independent Schrödinger equation.
 
-::: {#exr-0}
-
-The time-dependent Schrödinger equation states that 
+The time-dependent case
 
 $$
 i\hbar\frac{\partial}{\partial t} \Psi(t, q) = \left [ - \frac{\hbar^2}{2m}\nabla^2 + V(t, q)\right ] \Psi(t, q).
 $$
 
-Plug $\Psi(t, q) = \psi_0(t, q) e^{i S(t, q)/\hbar}$ back to the time-dependent Schrödinger equation, and check that at the $\hbar \to 0$ limit, we recover the HJE for $S(t, q)$. This is a simple example of the [WKB approximation](https://en.wikipedia.org/wiki/WKB_approximation).
+can be derived similarly. Plug $\Psi(t, q) = \psi_0(t, q) e^{i S(t, q)/\hbar}$ back to the time-dependent Schrödinger equation, and check that at the $\hbar \to 0$ limit, we recover the HJE for $S(t, q)$. This is a simple example of the [WKB approximation](https://en.wikipedia.org/wiki/WKB_approximation).
 
 :::
 
@@ -1545,7 +1965,7 @@ Deriving quantum mechanics from classical mechanics is necessarily fraught with 
 >
 > Louis de Broglie's Nobel Prize Lecture [@debroglieWaveNatureElectron1929]
 
-### Relativistic particle in free space
+### Relativistic quantum mechanics
 
 Since the HJE is fully general for any function $L(t, q, v)$ that is smooth and strictly convex in $v$, we can simply write down the Lagrangian for relativistic particle in a field, and it would *just work*.
 
@@ -1557,7 +1977,7 @@ $$S(t, q) = \frac{\|q\|}{v\gamma} = \sqrt{t^2- \frac{\|q\|^2}{c^2}}$$
 
 where $\gamma = \frac{1}{\sqrt{1-v^2/c^2}}$ is the well-known factor used everywhere in special relativity.
 
-Taking $\nabla_q$, and simplifying, we find the relativistic momentum to be\...
+Taking $\nabla_q$, and simplifying, we find the relativistic momentum to be...
 
 $$p = \nabla_q S = -\frac{\gamma v}{c^2}$$
 
@@ -1594,15 +2014,64 @@ which is similar to what we obtained for the free particle in classical mechanic
 
 ::: {#exr-0}
 
-Just as how the HJE of a classical particle can be derived as the $\hbar \to 0$ limit of the Schrödinger equation, one can derive the HJE of the non-quantum relativistic particle as the $\hbar \to 0$ limit of the Klein--Gordon equation. The Klein--Gordon equation is essentially the simplest possible way to combine special relativity with Schrödinger equation:
+Just as how the HJE of a classical particle can be derived as the $\hbar \to 0$ limit of the Schrödinger equation, one can derive the HJE of the non-quantum relativistic particle as the $\hbar \to 0$ limit of the Klein--Gordon equation. The Klein--Gordon equation is essentially the simplest possible way to combine special relativity with the Schrödinger equation:
 
 $$\left( \frac{1}{c^2} \frac{\partial^2}{\partial t^2} - \nabla^2 + \frac{m^2 c^2}{\hbar^2} \right) \psi(t, \mathbf{x}) = 0$$
 
-Plug in $\psi(t, q) = \psi_0(q, t) e^{i S(t, q) / \hbar}$, and check that at $\hbar \to 0$ limit, we recover the HJE.
+Plug in $\psi(t, q) = \psi_0(q, t) e^{i S(t, q) / \hbar}$, and verify that at $\hbar \to 0, c \to \infty$ limit, we recover the HJE.
+
+One can also attempt the opposite route: linearize the relativistic HJE. That is, wishfully assume it is the phase of a wavefunction $\psi(t, q) = \sqrt{\rho(t, q)} e^{iS(t, q)/\hbar}$. Reconstruct each term in the relativistic HJE using a linear differentian equation on $\psi$, with a remainder that goes to $0$ as $\hbar \to 0$.
 
 :::
 
 ![](figure/banner/3.png)
+
+### Relativistic Hamiltonian?
+
+Classical mechanics does not favor the Newtonian, the Lagrangian, and the Hamiltonian. They are theoretically equal, if aesthetically unequal. But why aesthetically unequal? Perhaps because the leakless abstraction leaks. The Hamiltonian is more aesthetic than the Newtonian, because classical Hamiltonian mechanics is a limit of quantum mechanics. The HJE
+
+The Lagrangian is favored over the Newtonian, because special relativity and quantum field theory.
+
+The Hamiltonian is so prevalent in quantum mechanics that when I took an introduction to quantum mechanics, I dreamed about $\hat H$ and $\hat K$. 
+
+ Quantum mechanics leaks into classical mechanics by favoring the Hamiltonian formulation over the Lagrangian formulation, and picking the [Hamilton--Jacobi equation](##hamiltonjacobi-equation) as the "closest approach" to the Schrödinger equation. But what about relativity? How does relativity leak into classical mechanics?
+
+As it turns out, Lagrangian has its revenge. Lagrangian mechanics is really easy to reformulate into a form compatible with relativity! We do the basic example of a particle in a potential field $V(t, q)$. Begin with the classical Lagrangian formulation:
+
+$$
+\delta \int (\frac 12 mv^2 - V(t, q)) dt, \quad q(t_0) = q_0, \; q(t_1) = q_1
+$$
+
+Add a constant $-mc^2$ to the Lagrangian. It does not change the dynamics. Next, notice that $-mc^2 + \frac 12 mv^2 \approx -mc^2\sqrt{1-(\frac vc)^2}$, and therefore
+
+$$\delta \int (\frac 12 mv^2 - V(t, q)) dt \approx \int (-mc^2 - V(t, q)) \sqrt{1-(\frac vc)^2}dt$$
+
+Now the term $\sqrt{1-(\frac vc)^2}dt = d\tau$ is the proper time, which *is* relativistically invariant, so we obtain the relativistic Lagrangian mechanics of a particle:
+
+$$
+\delta \int_\gamma (-mc^2 - V) d\tau, \quad \gamma(\tau_0) = (t_0, q_0), \; \gamma(\tau_1) = (t_1, q_1), \
+$$
+
+The crucial trick is that in classical Lagrangian mechanics, the variational constraint $q(t_0) = q_0, \; q(t_1) = q_1$ already treats space and time equally: We require the particle to start at a specific space-and-time, and end at another specific space-and-time. 
+
+Now what happens when we try this for classical Hamiltonian mechanics? Consider the simplest case, of a particle in $\R^3$. The phase space-time has 7 dimensions: $t, q_1, \dots, p_3$. However, Lorentz transformation works on 4 dimensions. Which 4 of the 7 should one pick? Do we pick $t, q_1, q_2, q_3$? But then, what happens if we take a canonical transformation that exchanges $q$ and $p$? Furthermore, the variational principle is hard to make Lorentz-invariant:
+
+$$
+\delta \int pdq - Hdt = 0, \quad q(t_0) = q_0, \; q(t_1) = q_1
+$$
+
+In the end-point constraint, $q$ is fixed, but $p$ is allowed to vary arbitrarily. This means that the trajectory in phase space-time has two end points sliding along two lines. These two lines are *not* Lorentz invariant, because each one is stuck in a slice of time $t_0, t_1$, and if we do a Lorentz transformation, the two lines no longer live in two slices of times. Finally, canonical transformation theory is not relativistic, because symplectic geometry requires even dimensions, but phase space-time has odd dimensions, so even if phase space-time could be constructed, the transformation theory of Hamiltonian mechanics breaks down.
+
+These difficulties could be bypassed by going one dimension higher. Instead of describing trajectories as a function $\R \to \mathcal C$, describe trajectories as a function $\R \to \R \times \mathcal C$, then insert the speed of light somewhere to convert $\R \times \mathcal C$ to the Minkowski spacetime.
+
+$$
+\begin{cases}
+\delta \int L()
+$$
+
+[@greinerExtendedHamiltonLagrange2010] is an introduction to this approach.
+
+Should you care? Sure, if you like more theory. I find it useless and unaesthetic, because much of the utility and beauty of Lagrangian mechanics is precisely in *not* being imprisoned within the Black Iron Prison of spacetime. Indeed, if you read this introduction [@greinerExtendedHamiltonLagrange2010], you will find that it includes 16 worked examples, but every example either is a generic theory-work, or a single particle in a field. What is the point of generalizing the full machinery of Hamiltonian mechanics in $(2n+1)$-dimensional phase space-time, if you are going to only solve problems in $3+1$ anyway? 
 
 ## Periodic motion
 
