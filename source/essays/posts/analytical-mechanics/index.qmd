@@ -30,9 +30,9 @@ importance: 4
 
 This essay works through what is typically contained in a university course on analytical mechanics. The prerequisites are multivariate calculus and mathematical maturity.
 
-It covers: calculus of variations, Lagrangian, Legendre transform, Hamiltonian, Hamilton's principal function, Hamilton--Jacobi equation, the particle-wave duality, canonical transforms, infinitesimal generator, contact geometry, symplectic geometry, Schrödinger's equation, Hamilton's geometric optics, action-angle variables, Noether's theorem, adiabaticity, old quantum theory, Bohr--Sommerfeld quantization, Einstein--Brillouin--Keller quantization.
+It covers: calculus of variations, Lagrangian, Legendre transform, Hamiltonian, Hamilton's principal function, Hamilton--Jacobi equation, the particle-wave duality, canonical transformations, infinitesimal generator, contact geometry, symplectic geometry, Schrödinger's equation, Hamilton's geometric optics, action-angle variables, general relativity, Noether's theorem, adiabaticity, old quantum theory, Bohr--Sommerfeld quantization, Einstein--Brillouin--Keller quantization.
 
-It does not cover: Poisson bracket, canonical perturbation theory.
+It does not cover: virtual work, d'Alembert's principle, Poisson bracket, canonical perturbation theory, continuum mechanics, rigid bodies, field theory.
 
 Philosophically, this essay has two undercurrents:
 
@@ -537,8 +537,8 @@ But what if we do a market reform? Suppose the market really exists, and the pri
 
 $$
 \begin{cases}
-\delta \int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt &= 0 \\
-q(t_0) &= q_0, \; q(t_1) = q_1
+\delta \int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt = 0 \\
+q(t_0) = q_0, \; q(t_1) = q_1
 \end{cases}
 $$ {#eq-modified-hamilton}
 
@@ -587,13 +587,30 @@ However, this argument only shows that the Hamiltonian equations are *necessary*
 
 $$
 \begin{cases}
-\delta \int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt &= 0 \\
-q(t_0) &= q_0, \; q(t_1) = q_1\\
-p(t_0) &= p_0, \; p(t_1) = p_1
+\delta \int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt = 0 \\
+q(t_0) = q_0, \; q(t_1) = q_1\\
+p(t_0) = p_0, \; p(t_1) = p_1
 \end{cases}
 $$
 
 In this economic model, if the government-mandated prices $p_0, p_1$ are different from what a free market would have picked, then a Nash equilibrium does not exist. For any joint production--pricing schedule, either the factory can exploit the market by infinitesimally modifying the production schedule, or the market can exploit the factory by infinitesimally modifying the pricing schedule. If the government mandates the market to be mispriced at either $t_0$ or $t_1$, then at some $t \in [t_0, t_1]$, we must have either $\dot p_i + \partial_{q_i} H \neq 0$ or $\dot q_i - \partial_{p_i} H \neq 0$ for some $i$, creating free money for either the factory or the market.
+
+::: {#exr-0}
+
+Consider the **Hamilton--Pontryagin principle**, a variational principle in the combined $(3n+1)$-dimensional configuration-velocity-momentum space-time:
+
+$$
+\begin{cases}
+\delta \int_{t_0}^{t_1} (L(t, q, v) + \braket{p, \dot q - v}) dt = 0 \\
+q(t_0) = q_0, \; q(t_1) = q_1
+\end{cases}
+$$
+
+where $\delta v, \delta p$ are freely variable, and $\delta q$ is freely variable except at the specified end points. Prove that the solution satisfies
+
+$$\dot{q}=v, \quad p=\frac{\partial L}{\partial v}, \quad \dot{p}=\frac{\partial L}{\partial q}$$
+
+:::
 
 ### What does it all mean?
 
@@ -1384,24 +1401,6 @@ A one-dimensional family of trajectories in phase space sweep out a curved surfa
 
 :::
 
-### Hamilton characteristic function
-
-In most situations, the system is time-independent. In this case we can simplify the HJE to
-
-$$\partial_t S = -H(q, \nabla_q S)$$
-
-Since the left side depends on $t$, but the right side does not explicitly, we can solve this by separation of variables.
-
-Suppose there exists some function $W$, called the **Hamilton characteristic function**, that satisfies
-
-$$
-H(q, \nabla_q W(q)) = E
-$$ {#eq-THJE}
-
-for some $E\in \R$, then $S(t, q) = W(q) - Et$ is a solution to the HJE. This is easy to interpret using 
-
-We might naively think, by analogy with Fourier transform, that any solution to the HJE is a linear combination of functions of the form $S(t, q) = \int (W_E(q) - Et)dE$, but this is not true, since the HJE is nonlinear. Nevertheless, solutions of the form $S(t, q) = W(q) - Et$ are often sufficient for applications.
-
 ### Two more proofs of HJE
 
 ::: {.callout-note title="Proof by positional arbitrage" collapse="false"}
@@ -1423,7 +1422,7 @@ Here is a proof in the spirit of wave mechanics and dynamical programming. Thoug
     
     > Problems of this type had been worked on before by many mathematicians, Euler, Hamilton, and Steiner, but the systematic study of problems of this type was done at RAND starting in 1948 under the inspiration of von Neumann. [@bellmanEyeHurricaneRichard1984, page 208]
     > 
-    > ... one can use dynamic programming for the minimum principles of mathematical physics. For example, with dynamic programming one has a very simple derivation of the eikonal equation. In addition, the Hamilton-Jacobi equation of mechanics can easily be derived. [@bellmanEyeHurricaneRichard1984, page 289]
+    > ... one can use dynamic programming for the minimum principles of mathematical physics. For example, with dynamic programming one has a very simple derivation of the eikonal equation. In addition, the Hamilton--Jacobi equation of mechanics can easily be derived. [@bellmanEyeHurricaneRichard1984, page 289]
 
 Suppose that we have found all points at which the action is equal to $S$. Now we would like to expand that surface a little further, to the surface of action $S + \delta S$. We do that in the spirit of economics (of course!) and traveling.
 
@@ -1498,72 +1497,84 @@ If you have studied, or intend to study, control theory, then prove the Hamilton
 
 :::
 
-### Noether's theorem
+### Hamilton characteristic function
 
-The famed Noether's theorem states that symmetries of the Lagrangian give us conserved quantities of motion. To state this rigorously, we set up some notation:
+In many situations, the dynamics of the system is time-independent. That is, $H$ does not depend on time. This simplifies the HJE to
 
-* $\epsilon$ is an infinitesimal.
-* An **infinitesimal transformation** is an infinitesimal deformation $(\delta t, \delta q)$ of configuration space-time. 
-  * $\delta t = \epsilon T$, where $T$ a function of type $\ub{\R}{time} \times \ub{\mathcal C}{configuration space} \to \R$
-  * $\delta q = \epsilon Q$, where $Q$ is a function of type $\R \times \mathcal C \to \R^d$, where $d$ is the dimension of configuration space $\mathcal C$.
-* An infinitesimal transformation is a **symmetry of the Lagrangian**, iff taking any path $\gamma$ (which can be physically fake), and deforming it to $\gamma'$, the action is conserved to first order: $\int_\gamma L dt = \int_{\gamma'} L dt + O(\epsilon^{c})$, where $c > 1$. Because we don't need the $c$, we will write it just as $o(\epsilon)$, meaning "a higher-order infinitesimal than $\epsilon$".
-* A **conserved quantity of motion** is a number depending on $t, q, \dot q$, such that it is constant along any physically real path $\gamma$.
+$$\partial_t S = -H(q, \nabla_q S)$$
 
-::: {.callout-warning}
+Since the left side depends on $t$, but the right side does not explicitly, we can solve this by separating configuration and time:
 
-A symmetry of the Lagrangian conserves *all* actions to first order, even those of unphysical paths, but a conserved quantity of motion is only conserved along physical paths. We may call it "conserved quantity of *physical* motion" to emphasize the distinction. In physicist jargon, Noether's theorem is an "[on-shell](https://en.wikipedia.org/wiki/On_shell_and_off_shell)" theorem.
+$$
+S(t, q) = W(q) - Et, \quad H(q, \nabla_q W(q)) = E
+$$ {#eq-THJE}
+
+for some $E\in \R$, and a function $W(q)$ depending only on configuration. $W$ is the **Hamilton characteristic function**.
+
+Now we interpret it. Let $\gamma$ be a physically real trajectory from $(t_0, q_0)$ to $(t_1, q_1)$. By @eq-HJ, we see that along $\gamma$, 
+
+$$H = E,\quad \partial_{q_i} S = \partial_{q_i} W = p_i$$
+
+and the action satisfies
+
+$$
+S[\gamma] = \int_\gamma (\braket{p, dq} - H dt) = \int_\gamma \braket{p, dq} - E(t_1 - t_0)
+$$
+
+This provides us with another variational principle, **Maupertuis's principle**, or **principle of stationary abbreviated action**:[^maupertuis]
+
+$$
+\begin{cases}
+\delta \int_\gamma \braket{p, dq} = 0 \\
+q(t_0) = q_0, q(t_1) = q_1 \\
+H(q, p) = E
+\end{cases}
+$$
+
+Here, the trajectory is taken within phase space-time, with constraints on position, and an "on-shell energy" constraint. The name "abbreviated action" denotes $\int \braket{p, dq}$ to distinguish it with the "full" action $\int \braket{p, dq} - Hdt$. Notice that in this formulation, time has been eliminated. This may save effort when we only wish to know the shape of the trajectory.
+
+::: {#exr-0}
+
+Prove that for time-independent Hamiltonian $H(q, p)$, the principle of stationary abbreviated action and modified Hamilton's principle are equivalent. That is, a trajectory $\gamma$ is a solution for one iff it is a solution for the other.
 
 :::
 
-We defined "symmetry of the Lagrangian" by a condition on an integral: $\int_\gamma L dt = \int_{\gamma'} L dt$. Now we reformulate this to a condition at a point, involving $L, Q, T$ and their derivatives.
+[^maupertuis]:
+    [Maupertuis](https://en.wikipedia.org/wiki/Pierre_Louis_Maupertuis) was a curious character. His achievement in physics was mainly from proposing a principle of *least* action. In our language, it states that the trajectory of the entire universe, $\gamma$, is the unique **minimizer** of $\int_\gamma \sum_i m_i (v_{x,i}dx_i + v_{y,i}dy_i + v_{z,i}dz_i)$, where $i$ sums over all matter in the universe. There was a strong dose of Christianity in this, as he justified this by God's infinite elegance. He cannot but perform everything in the most efficient way. Fine. The context of discovery is not the context of justification. But in his [1744 paper](https://en.wikisource.org/wiki/Translation:Derivation_of_the_laws_of_motion_and_equilibrium_from_a_metaphysical_principle#II._Need_to_Identify_Proofs_of_God's_Existence_in_the_General_Laws_of_Nature;_In_particular,_the_Laws_Governing_Motion's_Conservation,_Distribution_and_Destruction_are_Based_on_the_Attributes_of_a_Supreme_Intelligence), he illustrated it with ... 3 examples: perfectly elastic collision between two points, perfectly inelastic, and the lever law. The paper also made a probabilistic argument for the existence of God: The 5 inner planets all move on circles nearly in the same plane "within a solid angle that is the 17th part of a sphere". This happens only by chance at probability $1/17^5$, proving that it was designed.
 
-::: {.callout-note title="Derivation" collapse="false"}
+    Although to his credit, what he lacked in theory, he made up in experiments. He led an expedition to the far north to measure the length of one degree of latitude, finding that the latitudes are longer there. This ended a long debate on whether the diameter of earth from pole to pole is longer or shorter than the diameter on the equator.
 
+    Years later, in a priority dispute, Maupertuis was helped by Euler who took his side. Then Voltaire got involved somehow, and wrote a satire of Maupertuis. He might have overdone it, since Maupertuis was President of the Royal Academy of Sciences at Berlin. The king of Prussia at the time (Frederick the Great) was so angered by it that he commanded all copies to be burnt.
 
-
-:::
-
-
-
-::: {#thm-noether}
-
-## Noether's theorem
-
-If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal symmetry of the Lagrangian, then
+If the system is a generalized particle in a potential field, there is a more geometric principle. Suppose
 
 $$
-H T - \lra{p, Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+H(q, p) = \frac 12 \sum_{ij} g^{ij}(q) p_i p_j + V(q), \quad L (t, q, v) = \frac 12 \sum_{ij} g_{ij}(q) v_iv_j - V(q)
 $$
 
-is a conserved quantity of motion.
-
-:::
-
-::: {.callout-note title="Proof" collapse="false"}
-
-Given any physically real trajectory $\gamma_{AB}$ from point $A$ to $B$, we construct a variation of it by applying the infinitesimal transform, obtaining $A \to A + \delta A \to B + \delta B \to B$. Since $\gamma_{AB}$ is physically real, this perturbs the action by only $o(\delta)$.
-
-Because the infinitesimal transformation preserves the action up to $o(\delta)$, the action of $A + \delta A \to B + \delta B$ is the same as the action of $A \to B$ up to $o(\delta)$. So the action of $A \to A + \delta A$ cancels out the action of $B + \delta B \to B$ up to $o(\delta)$. Now take $\delta \to 0$.
-
-:::
-
-The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
-
-Technically speaking, we should not confuse the left side and the right side of 
+where $g_{ij}, g^{ij}$ are positive-definite matrices, and are inverse matrices of each other. Then, on any physically real trajectory $\gamma$, the abbreviated action becomes
 
 $$
-H T - \lra{p,  Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+\int_\gamma \braket{p, dq} = \int_\gamma \ub{\braket{p, \dot q}}{$2$(kinetic energy)} dt = \int_\gamma \sqrt{2(E-V)} \sqrt{\sum_{ij} g_{ij} d q_i d q_j}
 $$
 
-The left side is defined on the phase space-time, while the right side is defined on the configuration space-time. They are equal only because we have soldered together the phase space and the configuration space.
+The integrand looks a bit ugly, but after a clever redefinition,
 
-Indeed, again and again we see that Lagrangian and Hamiltonian mechanics are different worlds, with their own dreams and phantasies, but always agreeing on the same reality.
+$$
+\int_\gamma \braket{p, dq} = \int_\gamma ds_E, \quad ds_E^2 := \sum_{ij} g_{E, ij} d q_i d q_j, \quad g_{E, ij} := 2(E-V(q)) g_{ij}(q)
+$$ {#eq-jacobi-metric}
 
-If this were the case, then why do we bother creating two mechanics, since there is no physical experiment to distinguish them? It is because in quantum mechanics, virtual trajectories are just as real as the "real" trajectories. A particle can just go around the earth once before it arrives at its destination, taking the long way around. In this case, what is virtually possible matters just as much as what is classically real, and if Lagrangian mechanics and Hamiltonian mechanics can entertain different kinds of dreams, we might be able to tell them apart.
+it shows itself as a [Riemannian metric](https://en.wikipedia.org/wiki/Riemannian_manifold). That is, each energy $E \in \R$ corresponds to a Riemannian-geometric structure on the configuration space $\mathcal C$, defined by $2(E-V(q)) \sum_{ij} g_{ij}(q)$. Then, we have the elegant formula
 
-![$S$ is a source of photons, and $P$ is a receiver. A photon can go from $S$ to $P$ by bouncing off the mirror below, along many paths. Each path has a certain amplitude, and the sum of all their amplitudes is the total amplitude. While the amplitude is dominated by the amplitudes near the classical path $SGP$, it is not the only path, and all paths, even the "virtual" paths like $SAP$, contribute to what we observe. [@feynmanQEDStrangeTheory2006, figure 24]](figure/qed_2006_fig_24.png){width=60% fig-align="center"}
+$$\delta \int_\gamma ds_E = 0$$
 
-![](figure/banner/2.png)
+That is, if we impose the metric structure $g_E$ on the configuration space (not space-time), then physically real trajectories of energy $E$ are the geodesics of $g_E$. Once a geodesic is found, time can be restored via
+
+$$
+ds_E^2 = 2(E-V)\sum_{ij} g_{ij} dq_i dq_j = 4(E-V)^2 dt^2 \implies dt = \frac{ds_E}{2(E-V(q))}
+$$
+
+This is **Jacobi's principle of stationary action**. Note that each energy corresponds to a *different* metric, even though the underlying configuration manifold-in-itself stays the same. Indeed, energy has to enter the equation somewhere, because changing the energy changes what trajectories are physically real.
 
 ## Hamiltonian optics {#sec-geometric-optics}
 
@@ -1706,13 +1717,13 @@ The first application of Hamiltonian mechanics was done by Hamilton, who in 1832
 
 Simply put, it turns out that in a biaxial crystal, both $K_{particle}$ and $K_{wave}$ have the same shape of a large blob containing a smaller blob, touching each other at 4 cone-shaped points, as pictured.
 
-![The shape of the $K_{wave}$ surface. The $K_{particle}$ surface is topologically the same, and can be obtained from $K_{wave}$ by squashing it *just right*. Figure from [@schaeferElektrodynamikUndOptik1949, page 485, figure 128]](figure/schaefer_1949_fig_128.png)
+![The shape of the $K_{wave}$ surface. The $K_{particle}$ surface is topologically the same, and can be obtained from $K_{wave}$ by squashing it *just right*. Figure from [@schaeferElektrodynamikUndOptik1949, page 485, figure 128]](figure/schaefer_1949_fig_128.png){width=80%}
 
 Now, let $k_c \in K_{wave}$ be one of the cone-shaped points, then it corresponds to a tangent plane to $K_{particle}$. Each tangent point $v \in K_{particle}$, conversely, corresponds to a tangent plane to $k_c$.
 
 Since $k_c$ is a conical point, however, there are a whole *circle* of tangent planes to $K_{wave}$ at $k_c$. Consequently, the tangent plane to $K_{particle}$ is tangent to it on one entire circle. It is as if we throw a tire on the floor -- it will touch the floor not just at three points, but an entire circle of points. Now, suppose that we have a planar wave moving in the direction of $k_c$ inside the crystal, then each light-particle would have to move in a direction $\argmax_{v \in K_{particle}}\lra{v, k_c}$. But since there is an entire circle of such directions, we would have an entire circle of possible $v$, and thus, we obtain a hollow cone of light.
 
-![When a planar wave travels in a crystal, such that $K_{particle}$ is tangent to the plane of the wave at an entire circle, then instead of choosing one among the entire circle of velocities, the particles simply take every single possible direction on the circle, resulting in conical refraction.](figure/conical_refraction_tangent_velocity.jpg){width="50%" fig-align="center"}
+![When a planar wave travels in a crystal, such that $K_{particle}$ is tangent to the plane of the wave at an entire circle, then instead of choosing one among the entire circle of velocities, the particles simply take every single possible direction on the circle, resulting in conical refraction.](figure/conical_refraction_tangent_velocity.jpg){width="30%" fig-align="center"}
 
 ## The particle-wave duality
 
@@ -1805,7 +1816,7 @@ We consider the classical problem of a body in free fall, thrown from the origin
 
 $$q(t) = v_0 t - \frac{1}{2}gt^2, \quad v = v_0 - gt = \frac{q}{t} - \frac{1}{2}gt$$
 
-Plugging these expressions into the Hamilton-Jacobi equation, we obtain a system of partial differential equations for the action function $S$:
+Plugging these expressions into the HJE, we obtain a system of partial differential equations for the action function $S$:
 
 $$
 \begin{cases}
@@ -1875,7 +1886,7 @@ If, in some space-time cataclysm, the entire knowledge of quantum mechanics were
 
 So let us derive the time-dependent Schrödinger equation from the HJE using unitarity.
 
-Begin by inspecting the HJE $\partial_t S + \frac{\|\nabla_q S\|^2}{2m} + V = 0$. It is not a linear differential equation, but all length-preserving rotations are linear, so this tells us that something is wrong -- $S$ cannot be something fundamental. Well, either by a good guess, or by watching animated plots of $S(t, q)$ over time, you could be reminded of a water wave, and so guess that we might be able to find a linear differential equation for $\psi(t, q) = e^{iS(t, q)}$ instead. 
+Begin by inspecting the HJE: $\partial_t S + \frac{\|\nabla_q S\|^2}{2m} + V = 0$. It is not fundamental, because it is not a linear differential equation, and all length-preserving rotations must be linear. Either by a good guess, or by watching animated plots of $S(t, q)$ over time, we could be reminded of a water wave, and guess that the wave-like function $\psi(t, q) = e^{iS(t, q)}$ may satisfy a linear differential equation. 
 
 Now, because $S$ has units of energy-time, but $e$ must take a unitless quantity, we invent a new physical constant $\hbar$ with units of energy-time, and insert: $\psi(t, q) = e^{iS(t, q)/\hbar}$.
 
@@ -1891,7 +1902,7 @@ $$
 i\hbar \partial_t \psi = \hat H\psi + \frac{i \hbar}{2 m}(\nabla^2 S) \psi
 $$
 
-where $\hat H = -\frac{\hbar^2}{2m} \nabla_q^2 + V$. This is promising. We have almost obtained a linear differential equation for a wavefunction, except for the $\frac{i \hbar}{2 m}(\nabla^2 S) $ term. Furthermore, the equation $i\hbar \partial_t \psi = \hat H\psi$ has solution $\psi(t, q) = e^{-i(\hat H/\hbar)t} \psi(0, q)$, and because the differential operator $\hat H$ is self-adjoint, $e^{-i(\hat H/\hbar)t}$ is a [unitary operator](https://en.wikipedia.org/wiki/Unitary_operator).
+where $\hat H = -\frac{\hbar^2}{2m} \nabla_q^2 + V$. This is promising. We have almost obtained a linear differential equation for a wavefunction, except for the $\frac{i \hbar}{2 m}(\nabla^2 S)$ term. Furthermore, the equation $i\hbar \partial_t \psi = \hat H\psi$ has solution $\psi(t, q) = e^{-i(\hat H/\hbar)t} \psi(0, q)$, and because the differential operator $\hat H$ is self-adjoint, $e^{-i(\hat H/\hbar)t}$ is a [unitary operator](https://en.wikipedia.org/wiki/Unitary_operator).
 
 Thus, we remove the inconvenient term, and write down $i\hbar \partial_t \psi = \hat H\psi$, which is the time-dependent Schrödinger equation. Now plug in $\psi = e^{iS/\hbar}$ and show that at $\hbar \to 0$ limit, we recover the HJE.
 
@@ -1907,9 +1918,7 @@ $$
 \Psi(t, q) = \Psi_0(r) e^{iS(t, q)/\hbar}
 $$
 
-where the function $\Psi$ is typically called the "wave function".[^wave-function-meaning] We assume that the wave is a "standing wave", so that all of space is oscillating in sync. Let $S(t, q) = W(q) - Et$, so that the oscillation frequency is $E/\hbar$.[^standing-wave]
-
-[^wave-function-meaning]: What is a wave function? It is just some abstract mathematical object, that somehow allows us to calculate everything we want to know about this system. We have no idea what it is, but it works. The same applies to the function $S(t, q)$. We call it the "minimal cost" for arriving at $(t, q)$, but what really is a cost in physics? Particles do not really pay their paths with natural money. All this time, we have pretended that they pay some kind of cost and want to minimize the cost, but it is really just one big analogy. The same applies for the function $\Psi$. We might call it a "wave function", but it really is just one big analogy with the waves on an ocean. There is really no wave in quantum mechanics, only a function that we pretend is a wave, because it helps us calculate results that happen to be correct.
+where the function $\Psi$ is typically called the "wave function". We assume that the wave is a "standing wave", so that all of space is oscillating in sync. Let $S(t, q) = W(q) - Et$, so that the oscillation frequency is $E/\hbar$.[^standing-wave]
 
 [^standing-wave]: The most important experimental result from quantum mechanics is that energy levels are quantized. Now, a quantized energy level is something like $E = h, 2h, 3h, \dots$. There is really just one kind of thing in classical mechanics that is quantized: standing waves! If you have a string, then its standing waves must have $0, 1, 2, 3, \dots$ nodes, i.e. quantized. Thus, it is natural to try out this "standing wave" assumption.
 
@@ -1947,6 +1956,8 @@ can be derived similarly. Plug $\Psi(t, q) = \psi_0(t, q) e^{i S(t, q)/\hbar}$ b
 
 :::
 
+#### What does it all mean?
+
 If the above derivation looks mildly suspect, and leaves you with a feeling of seeing a magic trick, it is not an accident. The analogy between classical mechanics and quantum mechanics is not exact, so we cannot logically derive quantum mechanics from classical mechanics. The simple problem is that classical mechanics, even when formulated in the form of Hamilton--Jacobi wave equations, cannot reproduce interference or diffractions. Consider the simple case of a straight-edge diffraction. If you aim a light beam at a sharp edge, then on the other side, there would be alternating bright and dark bands fading into the shadow. However, if light is going by the shortest path, then there should be no such banding, and the brightness should just drop off to zero monotonically.
 
 ![In classical mechanics, the shadow of a hard edge has no diffractive stripes.](figure/no_classical_diffraction.jpg){width="60%" fig-align="center"}
@@ -1964,6 +1975,16 @@ Deriving quantum mechanics from classical mechanics is necessarily fraught with 
 > ... geometrical optics is only an approximation... when interference and diffraction phenomena are involved, it is quite inadequate. This prompted the thought that classical mechanics is also only an approximation relative to a vaster wave mechanics. ... A new mechanics must be developed which is to classical mechanics what wave optics is to geometrical optics. This new mechanics has since been developed, thanks mainly to the fine work done by Schrödinger.
 >
 > Louis de Broglie's Nobel Prize Lecture [@debroglieWaveNatureElectron1929]
+
+#### Jeremiah on particle-wave duality
+
+Just after presenting the double slit experiment, pop-science and even textbooks of quantum mechanics often apologize: "So we see that an electron is both a particle and a wave. This may seem like nonsense, but it is true.". It feels like they knelt down, crossed themselves, and prayed for forgiveness, for they were about to tread on the sacred image of Physical Intuition. But the sacred image has nothing behind it.
+
+The entire idea that quantum mechanics is something weirder than classical mechanics is a mistake. Particle-wave duality is not weird. Particle-wave dichotomy is weird. After all, quantum mechanics is *just* finite dimensional complex linear algebra, but classical mechanics involves point-mass particles mysteriously *exactly* hitting each other in space, never missing each other by an infinitesimal amount. And if one were to invoke rigid body mechanics, well, how do rigid bodies stay rigid? If they are made of a cloud of point masses, then how could they stay together and not dispel like mist? If the points are held together by little atomic hooks, then how do the atomic hooks stay rigid?
+
+Everything in physics, when you dig down to it, becomes an abstract mathematical object. A wave is merely a function of type $\R^3 \to \R$. A particle is merely a function of type $\R \to \R^3$. A quantum particle-wave is merely a length-one element in a complex linear vector space. Is any of these weirder than the others? They are equally mathematical. If one does not need to apologize for violating quantum intuitions when going classical, neither should one apologize in the other direction.
+
+The point is simply that when one thinks about it, quantum mechanics may need interpretation, but classical mechanics needs interpretation just as much. Newtonian, Lagrangian, Hamiltonian, Hamilton--Jacobian, making money -- they are all interpretations of classical mechanics. There is no book titled "Interpretations of classical mechanics", but there should be. After all, what is Hamilton's principal function? We call it the "minimal cost" for arriving at $(t, q)$, but what really is a cost in physics? Particles do not really pay their paths with natural money. Is it any less mysterious than quantum mechanics? Only by dint of complacency and the mindless clinging to Newtonian interpretation does the classical system of the world appear homely and natural.
 
 ### Relativistic quantum mechanics
 
@@ -2026,33 +2047,9 @@ One can also attempt the opposite route: linearize the relativistic HJE. That is
 
 ![](figure/banner/3.png)
 
-### Relativistic Hamiltonian?
+#### Relativistic Hamiltonian?
 
-Classical mechanics does not favor the Newtonian, the Lagrangian, and the Hamiltonian. They are theoretically equal, if aesthetically unequal. But why aesthetically unequal? Perhaps because the leakless abstraction leaks. The Hamiltonian is more aesthetic than the Newtonian, because classical Hamiltonian mechanics is a limit of quantum mechanics. The HJE
-
-The Lagrangian is favored over the Newtonian, because special relativity and quantum field theory.
-
-The Hamiltonian is so prevalent in quantum mechanics that when I took an introduction to quantum mechanics, I dreamed about $\hat H$ and $\hat K$. 
-
- Quantum mechanics leaks into classical mechanics by favoring the Hamiltonian formulation over the Lagrangian formulation, and picking the [Hamilton--Jacobi equation](##hamiltonjacobi-equation) as the "closest approach" to the Schrödinger equation. But what about relativity? How does relativity leak into classical mechanics?
-
-As it turns out, Lagrangian has its revenge. Lagrangian mechanics is really easy to reformulate into a form compatible with relativity! We do the basic example of a particle in a potential field $V(t, q)$. Begin with the classical Lagrangian formulation:
-
-$$
-\delta \int (\frac 12 mv^2 - V(t, q)) dt, \quad q(t_0) = q_0, \; q(t_1) = q_1
-$$
-
-Add a constant $-mc^2$ to the Lagrangian. It does not change the dynamics. Next, notice that $-mc^2 + \frac 12 mv^2 \approx -mc^2\sqrt{1-(\frac vc)^2}$, and therefore
-
-$$\delta \int (\frac 12 mv^2 - V(t, q)) dt \approx \int (-mc^2 - V(t, q)) \sqrt{1-(\frac vc)^2}dt$$
-
-Now the term $\sqrt{1-(\frac vc)^2}dt = d\tau$ is the proper time, which *is* relativistically invariant, so we obtain the relativistic Lagrangian mechanics of a particle:
-
-$$
-\delta \int_\gamma (-mc^2 - V) d\tau, \quad \gamma(\tau_0) = (t_0, q_0), \; \gamma(\tau_1) = (t_1, q_1), \
-$$
-
-The crucial trick is that in classical Lagrangian mechanics, the variational constraint $q(t_0) = q_0, \; q(t_1) = q_1$ already treats space and time equally: We require the particle to start at a specific space-and-time, and end at another specific space-and-time. 
+As it turns out, special relativity plays favorites. It prefers the Lagrangian over the Hamiltonian. Fundamentally, this is because classical Lagrangian mechanics uses the variational constraint $q(t_0) = q_0, \; q(t_1) = q_1$, which already treats space and time equally: We require the particle to start at a specific space-and-time, and end at another specific space-and-time.
 
 Now what happens when we try this for classical Hamiltonian mechanics? Consider the simplest case, of a particle in $\R^3$. The phase space-time has 7 dimensions: $t, q_1, \dots, p_3$. However, Lorentz transformation works on 4 dimensions. Which 4 of the 7 should one pick? Do we pick $t, q_1, q_2, q_3$? But then, what happens if we take a canonical transformation that exchanges $q$ and $p$? Furthermore, the variational principle is hard to make Lorentz-invariant:
 
@@ -2062,16 +2059,204 @@ $$
 
 In the end-point constraint, $q$ is fixed, but $p$ is allowed to vary arbitrarily. This means that the trajectory in phase space-time has two end points sliding along two lines. These two lines are *not* Lorentz invariant, because each one is stuck in a slice of time $t_0, t_1$, and if we do a Lorentz transformation, the two lines no longer live in two slices of times. Finally, canonical transformation theory is not relativistic, because symplectic geometry requires even dimensions, but phase space-time has odd dimensions, so even if phase space-time could be constructed, the transformation theory of Hamiltonian mechanics breaks down.
 
-These difficulties could be bypassed by going one dimension higher. Instead of describing trajectories as a function $\R \to \mathcal C$, describe trajectories as a function $\R \to \R \times \mathcal C$, then insert the speed of light somewhere to convert $\R \times \mathcal C$ to the Minkowski spacetime.
+These difficulties could be bypassed by going one dimension higher. Instead of describing trajectories as a function $\R \to \mathcal C$, describe trajectories as a function $\R \to \R \times \mathcal C$, then insert the speed of light somewhere to convert $\R \times \mathcal C$ to the Minkowski spacetime, solving problems of the form $\delta \int L(t, q, dt/ds, dq/ds) ds = 0$. [@greinerExtendedHamiltonLagrange2010] is an introduction to this approach.
+
+I find this extension rather useless and ugly. Much of the utility and beauty of Lagrangian mechanics is precisely in *not* being imprisoned within the Black Iron Prison of spacetime. Indeed, [@greinerExtendedHamiltonLagrange2010] includes 16 worked examples, but every example either is a generic theory-work, or a single particle in a field. What is the point of constructing a full machinery of Hamiltonian mechanics in $(2n+1)$-dimensional phase space-time, if you are going to only solve problems in $3+1$ anyway?
+
+In fact, Hamiltonian mechanics and relativistic classical mechanics do not mix well. There are several "no-interaction theorems" proving that any Lorentz-invariant generalization of Hamiltonian mechanics necessarily cannot allow particle-particle interaction [@currieRelativisticInvarianceHamiltonian1963; @rohrlichRelativisticHamiltonianDynamics1979]. In other words, you can have classical (not quantum) relativistic Hamiltonian mechanics, but all you will get are particles dancing around in a background field, unaware of each other. You cannot even connect two particles by a spring. There are ways to bypass the obstruction, but so far it remains work for a few theoreticians and a dispensable erudition for the others.
+
+
+## General relativity
+
+### The non-Euclidean crisis of classical mechanics
+
+Newton published his *Principia* in 1687. It contained hundreds of diagrams, but not a single calculus equation or Cartesian coordinates. Though he used infinitesimals and analytical geometry in private, he preferred to reformulate all his arguments in Euclidean geometry, as Euclidean geometry was considered the most rigorous kind of knowledge. Infinitesimals and analytical geometry were lesser. This Euclidean style of mechanics may be called the "Newtonian interpretation" of classical mechanics.
+
+With the development of analysis in the 18th century came the Euler--Lagrangian interpretation. Lagrange boasted that no diagrams can be found in his *Mécanique analytique* of 1789. Thus was classical mechanics reinterpreted as the variational calculus of particle trajectories. The work of Hamilton--Jacobi again reinterpreted it as a field in spacetime satisfying a wave-like partial differential equation.
+
+Around 1850s, it seemed the classical image of the world was settling down, but a crisis was brewing. Riemann's 1854 lecture opened up the vast vista of non-Euclidean geometries. If Newton interpreted classical mechanics by Euclidean geometry in 3 dimensions, how should classical mechanics be re-interpreted by Riemannian geometry in $n$ dimensions? Newton geometrized physics. Lagrange analyzed it. Might it be re-geometrized? Might mechanics and geometry be unified like Archimedes once did? And so, decades before Einstein's general relativity, physicists were proposing a profusion of geometric physics. [@lutzenInteractionsMechanicsDifferential1995]
+
+New tools brought new opportunities. The Newtonian interpretation depends on the concept of "force", which had always appeared ghostly to natural philosophers. The world is clearly made of matter in motion, but where does force come from? Has any one ever observed a force-in-itself, independently of its effect on the acceleration of particles? [Hertz](https://en.wikipedia.org/wiki/Heinrich_Hertz) rejecting the Newtonian interpretation, he refounded classical mechanics over Riemannian geometry and Jacobi's principle.
+
+The influence was mutual. For example, Jacobi first came upon his principle while solving for the geodesics of an ellipsoid. He reduced this to a problem in mechanics, then solved it. [Helmholtz](https://en.wikipedia.org/wiki/Hermann_von_Helmholtz) argued that geometry could be securely founded upon physics. Euclidean geometry was founded on "self-evident" axioms that turned out not so self-evident. However, it is an empirical fact that objects at one point in space could be freely translated and rotated to another location in space. This principle of free mobility implied that the geometry of space must be [homogeneous](https://en.wikipedia.org/wiki/Homogeneous_space).
+
+Poincaré in early 1900s argued that geometry and mechanics are co-dependent, in the sense that we might be living in an inhomogeneous universe, but if the laws of physics deforms every object to exactly cancel out the inhomogeneity, then nothing would appear amiss to us. Concretely, one can imagine that earth is actually enlarged in the equator, but the equator is also "geometrically hotter", such that anything that moves closer to the equator expands thermally, completely canceling out the effect of enlargement. Therefore we are free to pick any shape of earth we want, as long as we adjust the geometric temperature to match our geological measurements. This is the principle of gauge freedom, a foundation of general relativity. The principle of gauge freedom simultaneously led to a project to free physics from coordinates. If there is no way to distinguish one coordinate system from another, then we might as well rewrite all equations coordinate-free. Then we could use these equations in any gauge we want. In particular, this justifies Hertz's elimination of force. Since we can simply choose a geometric structure on spacetime that eliminates acceleration, force is a gauge freedom that we are free to eliminate.
+
+### The geometry of gravity
+
+Let $\Phi(q)$ be the gravitational potential field, so that the gravitational energy of a particle of mass $m$ is $m\Phi(q)$. Plugging it into Jacobi's principle, we find that if the particle has energy $E$, then its trajectory satisfies
+
+$$\delta \int g_{E, ij} dq^i dq^j = 0, \quad g_{E, ij} = 2m (E - m\Phi(q)) \delta_{ij}$$
+
+Furthermore, $dt = \frac{ds_E}{2(E-V(q))}$ can be rewritten as
+
+$$
+dt^2 - \frac{ds_E^2}{4(E-m\Phi(q))^2} = 0
+$$
+
+Inspecting the equation, it reminds us of the metric in special relativity:
+
+$$
+(cdt)^2 - \delta_{ij} dq^i dq^j = (cd\tau)^2
+$$
+
+and suggests to us that perhaps we can lift Jacobi's principle. That is, if the spatial trajectory of a particle is a geodesic in space, perhaps its spatiotemporal trajectory could be a geodesic in space-time. Suppose this is possible, then special relativity should be the $\Phi = 0$ limit, since when there is no gravity, particles move at constant velocity, which are precisely the geodesics in special relativity.
+
+Consider the following time-independent metric:
+
+$$
+(cd\tau)^2 = N(q)^2 c^2 dt^2 - h_{ij}(q) dq^i dq^j
+$$
+
+It reduces to the special relativity at the limit of $h_{ij} = \delta_{ij}, N = 1$. The problem of geodesic is 
 
 $$
 \begin{cases}
-\delta \int L()
+\delta \int cd\tau = 0 \\
+q(t_0) = q_0, \; q(t_1) = q_1
+\end{cases}
 $$
 
-[@greinerExtendedHamiltonLagrange2010] is an introduction to this approach.
+This is exactly a problem in Lagrangian mechanics -- in fact, we are back to the start, when we solved the geodesic problem in the plane using a Lagrangian. This leads us to the Lagrangian
 
-Should you care? Sure, if you like more theory. I find it useless and unaesthetic, because much of the utility and beauty of Lagrangian mechanics is precisely in *not* being imprisoned within the Black Iron Prison of spacetime. Indeed, if you read this introduction [@greinerExtendedHamiltonLagrange2010], you will find that it includes 16 worked examples, but every example either is a generic theory-work, or a single particle in a field. What is the point of generalizing the full machinery of Hamiltonian mechanics in $(2n+1)$-dimensional phase space-time, if you are going to only solve problems in $3+1$ anyway? 
+$$
+L(t, q, v) := c\frac{d\tau}{dt} = N(q) c \gamma^{-1}, \quad \gamma := \lrb{1 - \frac{h_{ij} v^i v^j}{c^2 N(q)^2}}^{-1/2}
+$$
+
+However, this has units of length, but the Lagrangian should have units of energy. Further, we have already shown that at the special relativity limit, $L = -mc^2/\gamma$, so we multiply by a constant factor of $mc$:
+
+$$
+L(t, q, v) := -mc^2 N(q) \gamma^{-1}
+$$
+
+Now we crank the handle:
+
+$$
+p_i = m \gamma N^{-1} h_{ij} \dot q^j, \quad h^{ij} p_i p_j = \frac{m^2 \gamma^2}{N^2} h_{kl}\dot q^k \dot q^l, \quad \gamma^2 = 1 + \frac{h^{ij}p_ip_j}{m^2c^2}
+$$
+
+$$
+H = mc^2 N \gamma = mc^2 N \sqrt{1 + \frac{h^{ij}p_ip_j}{m^2c^2}}
+$$
+
+The Hamiltonian is unfortunately not quadratic, but we can still apply Maupertuis's principle:
+
+$$
+\begin{cases}
+\delta \int p_i dq^i = 0 \\
+q(t_0) = q_0, \; q(t_1) = q_1 \\
+\frac{N^2}{m}h^{ij}p_i p_j + mc^2 N^2 = \frac{E^2}{mc^2}
+\end{cases}
+$$
+
+Quite luckily, even though the Hamiltonian is not quadratic, on the constant energy surface, it is *equivalent* to a quadratic Hamiltonian, so we can continue on with Jacobi's principle:
+
+$$
+\delta \int g_{J, ij} dq^i dq^j = 0, \quad g_{J, ij} = m^2 c^2 \lrb{\lrb{\frac{E}{m c^2 N}}^2 - 1} h_{ij}
+$$
+
+We need to match $g_{J, ij}$ with $g_{E, ij}$ at the limit of $c \to \infty, N \to 1$. We use the ansatz
+
+$$
+h_{ij} \approx (1 - 2K\Phi/c^2)\delta_{ij}, \quad N \approx 1 + \Phi/c^2, \quad E \approx mc^2 + E'
+$$
+
+where $E'$ could be read as the non-relativistic portion of energy, and $K$ is an unknown constant. This directly yields
+
+$$
+g_{J, ij} \to 2m(E' - m\Phi(q)) \delta_{ij} = g_{E', ij}
+$$
+
+#### The bending of light
+
+Having found
+
+$$
+(cd\tau)^2 \approx \lrb{1 + 2\Phi/c^2} c^2 dt^2 -  (1 - 2K\Phi/c^2)\delta_{ij} dq^i dq^j
+$$
+
+we can calculate Einstein's famous prediction: the bending of light around the sun. The trajectory of a light ray follows $d\tau = 0$, so in polar coordinates, its trajectory satisfies
+
+$$
+\dot r^2 + r^2 \dot \theta^2 = c^2 - \frac{(2+2K)GM_\odot}{rc^2}
+$$
+
+This is the same form as a Kepler problem, so its trajectory is a hyperbola. Solving it directly and expanding to first order, we find the deflection of light equals
+
+$$
+\Delta \theta = \frac{(2+2K)GM_\odot}{Rc^2}
+$$
+
+where $R$ is the closest approach of light to the center of the sun. With hindsight, we know that the correct answer is $K = 1$, giving $\Delta \theta = \frac{4GM_\odot}{Rc^2}$. This was indeed observed by the 1919 Eddington experiment.
+
+But Einstein didn't have the hindsight. How did he find $K = 1$ and not, say, $K = 0$? Well, in 1911, he made the exact same mistake and calculated $\Delta \theta = \frac{2GM_\odot}{Rc^2}$. This was his "half-deflection" mistake. Fortunately he fixed it later.
+
+### Noether's theorem
+
+The famed Noether's theorem states that symmetries of the Lagrangian give us conserved quantities of motion. To state this rigorously, we set up some notation:
+
+* $\epsilon$ is an infinitesimal.
+* An **infinitesimal transformation** is an infinitesimal deformation $(\delta t, \delta q)$ of configuration space-time. 
+  * $\delta t = \epsilon T$, where $T$ a function of type $\ub{\R}{time} \times \ub{\mathcal C}{configuration space} \to \R$
+  * $\delta q = \epsilon Q$, where $Q$ is a function of type $\R \times \mathcal C \to \R^d$, where $d$ is the dimension of configuration space $\mathcal C$.
+* An infinitesimal transformation is a **symmetry of the Lagrangian**, iff taking any path $\gamma$ (which can be physically fake), and deforming it to $\gamma'$, the action is conserved to first order: $\int_\gamma L dt = \int_{\gamma'} L dt + O(\epsilon^{c})$, where $c > 1$. Because we don't need the $c$, we will write it just as $o(\epsilon)$, meaning "a higher-order infinitesimal than $\epsilon$".
+* A **conserved quantity of motion** is a number depending on $t, q, \dot q$, such that it is constant along any physically real path $\gamma$.
+
+::: {.callout-warning}
+
+A symmetry of the Lagrangian conserves *all* actions to first order, even those of unphysical paths, but a conserved quantity of motion is only conserved along physical paths. We may call it "conserved quantity of *physical* motion" to emphasize the distinction. In physicist jargon, Noether's theorem is an "[on-shell](https://en.wikipedia.org/wiki/On_shell_and_off_shell)" theorem.
+
+:::
+
+We defined "symmetry of the Lagrangian" by a condition on an integral: $\int_\gamma L dt = \int_{\gamma'} L dt$. Now we reformulate this to a condition at a point, involving $L, Q, T$ and their derivatives.
+
+::: {.callout-note title="Derivation" collapse="false"}
+
+
+
+:::
+
+
+
+::: {#thm-noether}
+
+## Noether's theorem
+
+If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal symmetry of the Lagrangian, then
+
+$$
+H T - \lra{p, Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+$$
+
+is a conserved quantity of motion.
+
+:::
+
+::: {.callout-note title="Proof" collapse="false"}
+
+Given any physically real trajectory $\gamma_{AB}$ from point $A$ to $B$, we construct a variation of it by applying the infinitesimal transform, obtaining $A \to A + \delta A \to B + \delta B \to B$. Since $\gamma_{AB}$ is physically real, this perturbs the action by only $o(\delta)$.
+
+Because the infinitesimal transformation preserves the action up to $o(\delta)$, the action of $A + \delta A \to B + \delta B$ is the same as the action of $A \to B$ up to $o(\delta)$. So the action of $A \to A + \delta A$ cancels out the action of $B + \delta B \to B$ up to $o(\delta)$. Now take $\delta \to 0$.
+
+:::
+
+The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
+
+Technically speaking, we should not confuse the left side and the right side of 
+
+$$
+H T - \lra{p,  Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+$$
+
+The left side is defined on the phase space-time, while the right side is defined on the configuration space-time. They are equal only because we have soldered together the phase space and the configuration space.
+
+Indeed, again and again we see that Lagrangian and Hamiltonian mechanics are different worlds, with their own dreams and phantasies, but always agreeing on the same reality.
+
+If this were the case, then why do we bother creating two mechanics, since there is no physical experiment to distinguish them? It is because in quantum mechanics, virtual trajectories are just as real as the "real" trajectories. A particle can just go around the earth once before it arrives at its destination, taking the long way around. In this case, what is virtually possible matters just as much as what is classically real, and if Lagrangian mechanics and Hamiltonian mechanics can entertain different kinds of dreams, we might be able to tell them apart.
+
+![$S$ is a source of photons, and $P$ is a receiver. A photon can go from $S$ to $P$ by bouncing off the mirror below, along many paths. Each path has a certain amplitude, and the sum of all their amplitudes is the total amplitude. While the amplitude is dominated by the amplitudes near the classical path $SGP$, it is not the only path, and all paths, even the "virtual" paths like $SAP$, contribute to what we observe. [@feynmanQEDStrangeTheory2006, figure 24]](figure/qed_2006_fig_24.png){width=60% fig-align="center"}
+
+![](figure/banner/2.png)
 
 ## Periodic motion
 
@@ -2433,9 +2618,7 @@ As an example, consider the pinnacle of old quantum theory, the [Bohr--Sommerfel
 
 $$\int_0^T p_r \,dq_r = n' h$$
 
-where $q_r$ is the radial position of the electron, $p_r$ is the momentum conjugate to it, $n'$ is the "auxiliary quantum number", and $T$ is the period of the electron's orbit. This, when combined with the hypothesis of quantized angular momentum $mvr = nh$ (here, $n$ is the "principal quantum number"), would predict the emission spectrum of the hydrogen atom.[^sommerfeld-adiabatic]
-
-[^sommerfeld-adiabatic]: Because the equation of motion for the electron separates into a radial component $q_r, p_r$ and an angular component $q_\theta, p_\theta$, we can apply the [multidimensional adiabatic theorem](#multidimensional-adiabatic-theorem) and find that both $\int_0^T p_r \,dq_r$ and $\int_0^T p_\theta \,dq_\theta$ are adiabatic invariants.
+where $q_r$ is the radial position of the electron, $p_r$ is the momentum conjugate to it, $n'$ is the "auxiliary quantum number", and $T$ is the period of the electron's orbit. This, when combined with the hypothesis of quantized angular momentum $mvr = nh$ (here, $n$ is the "principal quantum number"), would predict the emission spectrum of the hydrogen atom. Because the equation of motion for the electron separates into a radial component $q_r, p_r$ and an angular component $q_\theta, p_\theta$, we can apply the [multidimensional adiabatic theorem](#multidimensional-adiabatic-theorem) and find that both $\int_0^T p_r \,dq_r$ and $\int_0^T p_\theta \,dq_\theta$ are adiabatic invariants.
 
 Sommerfeld went further, piling epicycles upon epicycles, to explain the fine structure of atomic spectra. All those has been swept away by the new quantum theory like how the new astronomy of Kepler swept away the epicycles of Ptolemy. But the adiabatic hypothesis remains to this day a fruitful meeting point between the classical, the quantum, and the thermodynamic world.
 
@@ -2491,7 +2674,7 @@ Sommerfeld evaded the difficulty by arguing that as long as there is even a hair
 
 We see the difficulty inherent in the old quantum theory. Suppose we have a hydrogen atom suspended in free space, then the tiniest change in the external magnetic field would create a large (for the atom, at least) change in its north-pole direction. The [Stern--Gerlach experiment](https://en.wikipedia.org/wiki/Stern%E2%80%93Gerlach_experiment), performed in 1922, experimentally showed that the external field can determine the direction of $\hat z$, and thus the quantization of angular momentum. To see something in classical mechanics so jumpy is disconcerting, and certainly disturbed me greatly when I first understood the Stern--Gerlach experiment. In 4 years, Schrödinger would have proposed his equation, Heisenberg his matrix mechanics, and old quantum theory washed away by the new quantum mechanics.
 
-Einstein, in his only paper on the old quantum mechanics,[^einstein-1916] elegantly resolved the problem by using the [Poincaré--Cartan integral invariant](@thm-poincare-cartan) to construct quantization equations that do not depend on our arbitrary choices of coordinate systems.
+Einstein, in his only paper on the old quantum mechanics,[^einstein-1916] elegantly resolved the problem by using the [Poincaré--Cartan integral invariant](#thm-poincare-cartan) to construct quantization equations that do not depend on our arbitrary choices of coordinate systems.
 
 [^einstein-1916]: [@einsteinQuantensatzSommerfeldUnd1917], reprinted and translated in [@einsteinCollectedPapersAlbert1997, volume 6, pages 434--444].
 
