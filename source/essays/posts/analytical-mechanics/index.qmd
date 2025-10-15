@@ -1011,7 +1011,7 @@ This is fundamentally why, though point transformations are everywhere in Lagran
 
 ### Hamiltonian mechanics as symplectic geometry
 
-
+Just as Lagrangian mechanics can be reformulated as contact geometry in 1-jet manifold, so can Hamiltonian mechanics be formulated as a geometric theory of different kind fo manifold. Indeed, there are two of these. 
 
 ### Canonical transformation
 
@@ -2161,7 +2161,9 @@ $$
 h_{ij} \approx (1 - 2K\Phi/c^2)\delta_{ij}, \quad N \approx 1 + \Phi/c^2, \quad E \approx mc^2 + E'
 $$
 
-where $E'$ could be read as the non-relativistic portion of energy, and $K$ is an unknown constant. This directly yields
+where $E'$ could be read as the non-relativistic portion of energy, and $K$ is an unknown constant.[^einstein-metric-tensor-space] This directly yields
+
+[^einstein-metric-tensor-space]: We essentially have no choice in picking $N \approx 1 + \Phi/c^2$, because otherwise $g_{J}$ will not converge to $g_{E}$. However, why not pick $h_{ij} \approx \delta_{ij}$? Two reasons. One, if the metric of time is modified by $\sim\Phi/c^2$, then by the symmetry of space and time, the metric of space ought to be modified by $\sim\Phi/c^2$ as well. Two, because it is the correct result. A funny story is that when I wrote the section, I breezily wrote $h_{ij} \approx 1$, and then proceeded to calculate that the sun bends light by 0.875″. But I remembered Eddington's experiment found a much larger value. So I asked, and ChatGPT said I made the same mistake as Einstein did in 1911, which he fixed after 4 years of "bumpy road".
 
 $$
 g_{J, ij} \to 2m(E' - m\Phi(q)) \delta_{ij} = g_{E', ij}
