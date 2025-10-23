@@ -2,7 +2,7 @@
 title: "Analytical Mechanics"
 author: "Yuxi Liu"
 date: "2024-05-04"
-date-modified: "2025-09-09"
+date-modified: "2025-10-16"
 categories: [math, physics, philosophy]
 format:
   html:
@@ -520,6 +520,59 @@ to certify that the *purportedly* stationary trajectory $q$ is truly stationary.
 
 :::
 
+
+::: {.callout-tip title="Bonus: Herglotz mechanics" collapse="true"}
+
+In 1930, Herglotz proposed a generalization of Lagrangian mechanics, by making the Lagrangian $L$ depend on the path-action-so-far $S$:
+
+$$
+\begin{cases}
+\delta S(t_1) = 0\\
+\dot S (t) = L(t, \gamma (t), \dot \gamma (t), S(t)), & t \in [t_0, t_1] \\
+S(t_0) = S_0 \\
+\gamma \text{ has end points } t_0, q_0, t_1,  q_1
+\end{cases}
+$$
+
+This can be interpreted economically as saying that money itself has effect on our profit. For example, suppose that $L = \frac 12 v^2 - S$, then it says that the more cost we have incurred during the production, the less further production would cost. Perhaps this can be interpreted as saying that there is now a transaction subsidy/cost that depends on how much money we currently have. This interpretation suggests that we can model friction this way, and indeed Herglotz mechanics is often used to model systems with friction.
+
+Most derivations in this essay still work as long as you account for the transaction subsidy/cost. So, as you read, you are welcome to rederive all the equations for Herglotz mechanics:
+
+$$
+\begin{aligned}
+    &\begin{cases}
+        H(t, q, p, S) &= \max_v (\braket{p, v} - L(t, q, v, S)) \\
+        v^*(t, q, p, S) &= \argmax_v (\braket{p, v} - L(t, q, v, S)) \\
+        L(t, q, v, S) &= \min_p (\braket{p, v} - H(t, q, p, S)) \\
+        p^*(t, q, v, S) &= \argmin_p (\braket{p, v} - H(t, q, p, S))
+    \end{cases} \quad \text{(convex duality)}
+    \\
+    &\begin{cases}
+        (\partial_t, \nabla_q, \partial_S) H &= -(\partial_t, \nabla_q, \partial_S) L \\
+        \nabla_p H &= v^*\\
+        \nabla_v L &= p^*
+    \end{cases} \quad \text{(Hotelling's lemma)}
+    \\
+    &\begin{cases}
+        \dot S &= \braket{p, \nabla_p H} - H \\
+        \dot p &= \nabla_p H \\
+        \dot q &= -(\nabla_p H + p \partial_S H)
+    \end{cases} \quad \text{(Hamiltonian equations of motion)}
+    \\
+    &\begin{cases}
+        \dot S &= L \\
+        \frac{d}{dt} (\nabla_v L) &= \nabla_q L + (\partial_S L) (\nabla_v L)
+    \end{cases} \quad \text{(Euler–Lagrange equations of motion)}
+    \\
+    &\begin{cases}
+        dS = \braket{p, dq} - H dt
+    \end{cases} \quad \text{(Hamilton–Jacobi equations)}
+    \\
+\end{aligned}
+$$
+
+:::
+
 ### Variational Hamiltonian mechanics
 
 To recap, we have derived two sets of equations: the Euler--Lagrange equations in configuration spacetime, parameterized by $(t, q, v)$, and the Hamiltonian equations in phase spacetime, parameterized by $(t, q, p)$. Both of them came from the same constraint moneymaking scheme:
@@ -727,330 +780,6 @@ $$\frac{d}{dt} \partial_{v_i} R = \partial_{q_i}R \quad i \in 1:s$$
 
 This is how the Routhian saves us some effort in practical calculations. It is useful in this way, and in this way only.
 
-## Transformation theory
-
-Modern physics is founded upon the idea of symmetry. You shall know a system by the symmetries it has. Classical mechanics, when viewed in this perspective, is concerned not with $x, y, z, \theta, \phi, \mu$, or anything so medieval as up-versus-down. Such asymmetric descriptions of reality have been tossed into the wastebasket of history along with Aristotelian physics. Indeed, with general relativity, we have eliminated the distinction between coordinate systems, between reference frames, and even between the straight and the crooked.
-
-So what does this mean for us? It means that we must investigate what happens to our equations under transformations. If the form of the equations is preserved in one coordinate transformation versus another, then it gives us a new symmetry of the physical system, and reveals a facet of reality. In order to investigate them, we must cast our theory into a more geometric form -- i.e. less coordinate-heavy. If we could avoid writing down $t, q, v$ all the time, and instead speak of manifolds and vector fields on them, it would bring us a [coordinate-free](https://en.wikipedia.org/wiki/Coordinate-free) description of the system, geometric insight, and reveal symmetries otherwise hidden by inelegant coordinates.
-
-### Lagrangian mechanics as contact geometry
-
-Geometrically, it feels dissatisfying to say that a Lagrangian is a function of time, position, and velocity: $L(t, q, v)$. It is dissatisfying, because though we can draw time and space together as spacetime $\R \times \mathcal C$, how do we draw *velocity*? When in doubt, add an extra dimension!
-
-Imagine that, at each point $(t, q)$ on the configuration spacetime $\R \times \mathcal C$, we append the vector space of all possible velocities $v$ passing $q$. That is, we add the tangent space of $\mathcal C$ at $q$. Combining all these tangent spaces, we have expanded the configuration spacetime manifold to $\R \times T\mathcal C$. This is called the **1-jet manifold**, and written as $J^1$.
-
-The first useful property of the 1-jet manifold is that it allows us to **lift** any curve $(t, \gamma(t))$ in the configuration spacetime to a curve $(t, \gamma(t), \dot \gamma(t))$ in the 1-jet manifold.
-
-A Lagrangian $L(t, q, v)$ becomes just a field on the 1-jet manifold $L: J^1 \to \R$. Solving for a physically real trajectory $\gamma$ going from $(t_0, q_0)$ to $(t_1, q_1)$ becomes a constrained variational calculus problem on the 1-jet manifold as well:
-
-$$
-\delta \int_\Gamma L dt = 0
-$$
-
-where $\Gamma$ is a curve in the 1-jet manifold, under the following constraints:
-
-* $\Gamma$ is obtainable by lifting some curve $\gamma$ in configuration spacetime that passes $(t_0, q_0)$ and $(t_1, q_1)$.
-* The variation used in $\delta \int_\Gamma$ is also constrained, so that any variation-trajectory $\Gamma + \delta \Gamma$ must also be obtainable by lifting some curve of the same kind.
-
-We are a bit tired of always saying "obtainable by lifting some curve in configuration spacetime". Is there an easier way to say it? Yes! Around each point $(t, q, v)$ in the 1-jet manifold, we draw a little flat plane centered on that point, so that any lifted curve passing $(t, q, v)$ must be tangent to that little flat plane. The lifted curve can havy any acceleration -- that is, $dv/dt$ can be any value it wants, but we must always have $vdt = dq$. Therefore, the little flat plane should be defined by $vdt - dq = 0$. We can picture the simplest case: a particle moving on a straight line. In this case, the configuration space-time is $\R^2$, and the 1-jet is $\R^3$. Drawing out the little flat planes, we see that it looks like a field of little flat planes, twisting as we move along the $v$ axis.
-
-![The field of planes $vdt - dq= 0$ in $\R^{3}$. Figure from [Wikipedia](https://en.wikipedia.org/wiki/File:Standard_contact_structure.svg).](figure/standard_contact_structure.svg)
-
-For general $N$, we still have little flat (hyper)planes, obtained by solving $N$ equations simultaneously: 
-
-$$v_1 dt - dq_1 = 0, \; \dots,\; v_N dt - dq_N = 0$$
-
-These flat planes have dimension $N+1$, within the $2N+1$ dimensions of $J^1$. Each plane is spanned by the $N+1$ vectors $\partial_t + \braket{v, \partial_q}, \partial_{v_1}, \dots, \partial_{v_N}$.
-
-If you have seen it before, you will recognize this: It is a contact structure on the 1-jet manifold. In this sense, Lagrangian mechanics *is* [contact geometry](https://en.wikipedia.org/wiki/Contact_geometry). Although, as we commented in the [contact-geometric interpretation of thermodynamics](https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/#contact-geometry), this does not mean that we can just import intuition about contact geometry into Lagrangian mechanics, because we have even less intuition about contact geometry than about Lagrangian mechanics!
-
-So one may object "Lagrangian mechanics is reduced to contact geometry... but what is contact geometry?" My answer is that contact geometry simply *is*. It is not supposed to be a generator of intuitions. Instead, it is a common language that bridges between intuitions. By casting thermodynamics, economics, Lagrangian mechanics, etc, into the language of contact geometry, we would then be able to translate intuition from one field to another field. Saying that "Lagrangian mechanics is contact geometry" is not telling you an intuitive way to see Lagrangian mechanics, but rather, an intuitive way to see contact geometry.
-
-Lifting a curve in configuration space-time is simply finding the unique curve in the 1-jet manifold that is tangent to the field of planes, and projects down to that same curve, so you can imagine looking down from the top of the curve in $J^1$ and see just the original curve in configuration spacetime. In equations, a trajectory $(t, \gamma(t))$ is lifted to $(t, \gamma(t), \dot \gamma(t))$, and the lifted trajectory has tangent vector $(1, \dot \gamma(t), \ddot \gamma(t))$.
-
-![A curve in the configuration space-time $\R^2$ is lifted to a curve in the 1-jet manifold $\R^3$. The lifted curve is tangent to the field of planes at every point, and projects down to the original curve. There is only one possible way to lift it. If you look down from the top, you see the original curve in $\R^2$](todo)
-
-If multiple curves crossing the same point $(t, q)$ have different velocities, then their lifts would be separated in $J^1$ at different heights. If they have the same velocity, but different accelerations, then they would be lifted to the same height, but different slopes at that height.
-
-![Lifting multiple curves through the same point.](todo)
-
-Given the setup, Lagrangian mechanics is simply about solving $\delta \int_\Gamma L dt = 0$ under the constraints:
-
-* $\Gamma$ is tangent to all fields of planes $v_1 dt - dq_1 = 0, \dots, v_N dt - dq_N = 0$.
-* The two end points of $\Gamma$ are of the form $(t_0, q_0, v_0), (t_1, q_1, v_1)$, where $v_0, v_1$ are not determined. That is, the end points can "slide vertically".
-* The variation path used in $\delta \int_\Gamma$ must follow the same constraints.
-
-What does the solution look like? It looks like a vector field in $J^1$.
-
-Given a Lagrangiang $L: J^1 \to \R$, a system at point $(t, q)$ can go on evolving in any direction. We need to know its velocity $v$ before we can apply the EL equations to solve for its acceleration, and thus calculate its entire past and future. In the 1-jet manifold, given the Lagrangian $L : J^1 \to \R$, we can calculate an acceleration function $a: J^1 \to \R^N$ using the EL equation, then we install that acceleration function into $J^1$ as part of a vector field: at each $(t, q, v) \in J^1$, we install the time-evolution vector field $\Gamma = (1, v, a)$, which satisfies
-
-$$\Gamma=\partial_t+ \braket{v, \partial_{q}}+ \braket{a, \partial_{v}}, \quad 
-\frac{\partial L}{\partial q_i}-\Gamma\left(\frac{\partial L}{\partial v_i}\right)=0 \; \forall i = 1, \dots, N
-$$
-
-Once that is installed, predicting where a system would go given $(t, q, v)$ is as mindless as drifting along the vector field in $J^1$.
-
-Here we see the benefit of the lift. Multiple trajectories crossing the same point $(t, q)$ at different velocities would physically intersect in configuration spacetime, but when lifted, they are separated at different heights, so they no longer intersect, and we can picture $J^1$ as filled with infinitely thin noodles exuded out of a noodle-machine,[^angel-hair] filling all of space but never intersecting or looping.
-
-[^angel-hair]: How many [angel hairs](https://en.wikipedia.org/wiki/Capellini) can fit a noodle bowl? Angel hairs are pure curves, not material, but limited, so that they have location in 1-jet manifold, but not extension.
-
-Of course, once we are here, we might as well go all the way, and rewrite the EL equations into an equation that takes place directly within 1-jet space, without having to go through configuration spacetime first. It uses the language of [differential forms](https://en.wikipedia.org/wiki/Differential_form), and we do not need this result subsequently, so you can skip it.
-
-::: {.callout-tip title="EL equations in 1-jet space" collapse="true"}
-
-Define the contact 1-forms
-
-$$
-\theta^i:=d q^i-v^i d t, \quad i = 1, \dots, N
-$$
-
-Define the Poincaré--Cartan 1-form and 2-form
-
-$$
-\begin{aligned}
-\theta_L:=p_i \theta^i-H d t, \quad p_i&:=\frac{\partial L}{\partial v^i}, \quad H:=p_i v^i-L \\
-\Omega_L&:=-d \theta_L
-\end{aligned}
-$$
-
-Given those, the EL equation of $\Gamma$ is equivalent to
-$$
-i_{\Gamma} \Omega_L=0, \quad i_{\Gamma} d t=1,
-$$
-
-:::
-
-::: {.callout-tip title="Proof" collapse="true"}
-
-$$
-\begin{gathered}
-\theta_L=p_i d q^i-H d t, \quad p_i:=\frac{\partial L}{\partial v^i}, \quad H:=p_i v^i-L, \\
-\Omega_L:=-d \theta_L=d q^i \wedge d p_i+d H \wedge d t
-\end{gathered}
-$$
-
-by $-d\left(p_i d q^i-H d t\right)=d q^i \wedge d p_i+d H \wedge d t$
-
-Compute $d H$ on $J^1$ using $p_i=L_{v^i}$:
-
-$$
-d H=d\left(p_i v^i-L\right)=v^i d p_i+p_i d v^i-L_t d t-L_{q^i} d q^i-L_{v^i} d v^i=v^i d p_i-L_t d t-L_{q^i} d q^i .
-$$
-Contract with $\Gamma=\partial_t+v^i \partial_{q^i}+a^i \partial_{v^i}$ (so $i_{\Gamma} d t=1, i_{\Gamma} d q^i=v^i$ ):
-
-$$
-i_{\Gamma} \Omega_L=i_{\Gamma}\left(d q^i \wedge d p_i\right)+i_{\Gamma}(d H \wedge d t)=v^i d p_i-d q^i \Gamma\left(p_i\right)+\Gamma(H) d t-d H .
-$$
-
-Insert $d H$:
-
-$$
-i_{\Gamma} \Omega_L=\eta^i d p_i-d q^i \Gamma\left(p_i\right)+\Gamma(H) d t-\left(\eta^i d p_i-L_t d t-L_{q^i} d q^i\right)=\left(L_{q^i}-\Gamma\left(p_i\right)\right) d q^i+\left(\Gamma(H)+L_t\right) d t .
-$$
-
-Therefore $i_{\Gamma} \Omega_L=0$ is equivalent to the two identities
-
-$$
-\Gamma\left(\frac{\partial L}{\partial v^i}\right)=\frac{\partial L}{\partial q^i} \quad \text { and } \quad \Gamma(H)+\partial_t L=0
-$$
-
-The first is the Euler-Lagrange equation since $\Gamma$ acts as the total time derivative:
-$$
-\Gamma\left(\frac{\partial L}{\partial v^i}\right)=\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}^i}\right) .
-$$
-
-The second is more often written as $\frac{dH}{dt} = -\partial_t L$. In particular, if the Lagrangian density does not depend on time, then the Hamiltonian is a constant of motion.
-
-:::
-
-### Gauge transformation
-
-Introductory calculus students are stressed about "Don't miss the $C$ in $\int xdx = \tfrac 12 x^2 + C$.". Introductory physics students are not, but they really should, because the energy $E$ of a system is also only defined up to an additive constant. We can add a constant of 23 joules to the energy of a system, and nothing would go any differently.
-
-Analytical mechanics offers no escape. There is also such "up to additive constants" quantities. In fact, it is more than that: the action $S$ is only defined up to an additive *function*.
-
-Let's say that we have a Lagrangian $L: \R \times T\mathcal C \to \R$. It defines a vector field in the 1-jet manifold, and thus the time-evolution of the physical system. What if we add a "time counter" to the action? That is, suppose we have some Lagrangian $L'$, such that the new action $S'[\Gamma] := \delta \int_\Gamma L' dt = 0$ satisfies $S'[\Gamma] = S[\Gamma] + (t_1 - t_0)$, where $t_0, t_1$ are the starting and ending times of the trajectory $\Gamma$. Then, it is clear that any constrained-stationary trajectory for $S$ is also a constrained-stationary trajectory for $S'$, and therefore they produce exactly the same dynamics.
-
-That's pretty clever, but why does it work? To see it, we stare at what exactly we are doing when we calculate $\int_\Gamma Ldt$. We are integrating a differential 1-form through a curve $\Gamma$. A differential 1-form can be pictured as a field of surface-stacks. If the 1-form is big, then the surface-stacks are closely spaced, and vice versa. Integrating the 1-form through a curve is to follow the curve, and count how many surface-stacks it pierces. 
-
-![A single trajectory $\Gamma$ in 1-jet manifold, going from $(t_0, q_0, v_0)$ to $(t_1, q_1, v_1)$. The integral $\int_\Gamma Ldt$ is obtained by counting how many sheets it pierces.](todo)
-
-In general, the problem is non-trivial. Moving the curve $\Gamma$ up and down may change the number of surfaces pierced dramatically. However, in one particular case, the problem is trivial. Suppose we can quilt together the differential 1-forms into contour surfaces, then every curve pierces the exact same number of surfaces, and so every trajectory is as stationary as any other. Such 1-forms are called [exact forms](https://en.wikipedia.org/wiki/Closed_and_exact_differential_forms).
-
-![When the 1-form $Ldt$ is not trivial, varying $\Gamma$ can change $\int Ldt$ a lot. When the 1-form is exact, varying $\Gamma$ does not change $\int Ldt$.](todo)
-
-Now, we are rarely going to get such trivial physics, but it does suggest to us how to construct a different but equivalent action $S'$. We write down an arbitrary function $F(t, q)$, which creates an exact 1-form on the configuration spacetime. Now we raise it up to the 1-jet manifold "vertically". Because the constraint on variation of $\Gamma$ states that the two end-points $(t_0, q_0, v_0), (t_1, q_1, v_1)$ can only vary in $v_0, v_1$, the trajectory looks like a string pulled between two rings sliding upon two vertical rods. Each vertical rod is contained in one sheet of $F$, and so we have
-
-$$
-\int_\Gamma (Ldt + dF) = \int_\Gamma Ldt + F(t_1, q_1) - F(t_0, q_0)
-$$
-
-![$dF$ is exact, and made of vertical curvy sheets, so $\int_\Gamma dF= F(t_1, q_1) - F(t_0, q_0)$ does not depend on the trajectory of $\Gamma$, only its starting and ending vertical lines.](todo){width=50%}
-
-If only we can write $L'dt = Ldt + dF$, then we would obtain our new Lagrangian! Alas, this is in general impossible: the infinitesimal sheets of $(L'-L)dt$ are parallel to $dt$, which is strictly perpendicular to the t-axis, but the infinitesimal sheets of $dF = \partial_t F dt + \sum_i \partial_{q_i} F dq_i$ may not be.
-
-At this moment, our second constraint rescues us. Because we require $\Gamma$ to be tangent to all fields of planes $v_1 dt - dq_1 = 0, \dots, v_N dt - dq_N = 0$, we can replace $dq_i$ with $v_i dt$ for $\Gamma$:
-
-$$
-\int_\Gamma Ldt + dF = \int_\Gamma (L + \partial_t F + \braket{v, \partial_q F})dt
-$$
-
-And so we obtain the **gauge transformation of Lagrangian**:
-
-$$
-L'(t, q, v) = L(t, q, v) + \partial_t F(t, q) + \braket{v, \partial_q F(t, q)}
-$$ {#eq-gauge-lagrangian}
-
-### Point transformation
-
-A (continuous) point transformation is a deformation of the configuration spacetime. It is defined by sending each point $(t, q)$ to a nearby point $(t + \epsilon T(t, q), q + \epsilon Q(t, q))$, where $\epsilon$ is an infinitesimal, and $(T, Q)$ is a vector field on the configuration spacetime. The geometric intuition is to slightly manipulate the configuration spacetime like a playdough.
-
-Now, imagine that a strand of hair is stuck inside the playdough. As we manipulate the playdough, the hair also gets manipulated. That is, a trajectory $(t, \gamma(t))$ would be deformed to $(t \epsilon T(t, \gamma(t)), \gamma(t) + \epsilon Q(t, \gamma(t)))$, and the lift of the trajectory to $J^1$ would be deformed as well. We already know how $(t, q)$ parts would be deformed. It remains to deform the $v$ part:
-
-$$
-\begin{aligned}
-(t, q) &\mapsto(t+\epsilon T(t, q), q+\epsilon Q(t, q)) \\
-(t+\delta t, q+\dot{\gamma}(t) \delta t) &\mapsto(t+\delta t+\epsilon T(t+\delta t, q+\dot{\gamma}(t) \delta t), q+\dot{\gamma}(t) \delta t+\epsilon Q(t+\delta t, q+\dot{\gamma}(t) \delta t)) \\
-\dot \gamma(t) &\mapsto \frac{\dot{\gamma}(t) \delta t+\epsilon(Q(t+\delta t, q+\dot{\gamma}(t) \delta t)-Q(t, q))}{\delta t+\epsilon(T(t+\delta t, q+\dot{\gamma}(t) \delta t)-T(t, q))}
-\end{aligned}
-$$
-
-Thus, we have:
-
-$$
-\dot{\gamma}(t)+\epsilon\left(\partial_t Q+\braket{\partial_q Q, \dot{\gamma}(t)}-\dot{\gamma}(t)\left(\partial_t T+ \braket{\partial_q T, \dot{\gamma}(t)}\right)\right)
-$$
-
-This formula is a bit ugly, so we define the time-derivative operator along the trajectory $D_t := \partial_t + \braket{\dot \gamma, \partial_q}$, which gives us the prolongation formula:
-
-$$
-\dot\gamma \mapsto \dot \gamma + \epsilon(D_t Q - (D_t T) \dot\gamma)
-$$ {#eq-pr-1}
-
-Geometrically speaking, we have lifted a vector field $(T(t, q), Q(t, q))$ on the configuration spacetime to a vector field on the 1-jet manifold
-
-$$
-(T(t, q), Q(t, q), D_t Q - (D_t T) v), \quad D_t := \partial_t + \braket{v, \partial_q}
-$$ {#eq-pr-1-manifold}
-
-We know how to lift trajectories. What does it mean to lift a vector field? Just like how a vector field can deform a trajectory, so can a vector field deform a field of planes in $J^1$. Consider a point $(t, q, v) \in J^1$, and consider what happens to the plane $v_i dt - q_i = 0$, represented as an infinitesimal square. Draw the vectors 
-
-$$(T(t, q), Q(t, q)), \; (T(t + \delta t, q + v\delta t), Q(t + \delta t, q + v\delta t))$$
-
-at two corners of the square, and drag the corners along the vectors. Because the two vectors differ by $O(\delta t)$, not only would the square be translated by $O(\epsilon \delta t)$, it would also be rotated by $O(\epsilon \delta t)$. Since the square has side length $O(\delta t)$, this means the square would be rotated by $O(\epsilon)$, and so it would measurably rotate, and misfit its local plane. The only solution is to translate the square "vertically" by some $(0, 0, \epsilon R(t, q, v))$, so that it lands in a new position where it would fit the local plane. 
-
-![An infinitesimal square in $J^1$ is dragged by $(\epsilon T, \epsilon Q)$, resulting in a translation and a rotation. The rotation causes it to misfit its new home, and must be translated again along the vertical direction by $\epsilon R$.](todo)
-
-::: {#exr-higher-order-hamiltonian}
-
-Prove that $R(t, q, v) = D_t Q - (D_t T) v$ is necessary and sufficient for fitting the infinitesimal square to its local plane.
-
-:::
-
-
-
-### Bonus: Velocity-dependent transformation
-
-Or rather, why we don't have velocity-dependent transformations.
-
-A transformation of the configuration spacetime lifts to a transformation of the 1-jet manifold. This then suggests to us that we could deform directly the 1-jet manifold by some vector field $(T, Q, R)$ that depends on $(t, q, v)$, then project it back down. By the same argument as before, we calculate how it transforms a trajectory $(t, \gamma(t))$, and find that
-
-$$
-R(t, q, v) = D_t Q - vD_t T, \quad D_t = \partial_t + \braket{v, \partial_q} + \braket{a, \partial_v}
-$$
-
-But this is in general impossible: the left side does not depend on $a$, but the right side does. The only way to rescue this is if the $a$ terms cancel out exactly. That is, $\partial_{v_j} Q_i = v_i \partial_{v_j} T$ for all $i, j = 1, \dots N$. When $N \ge 2$, this implies they are independent of $v$, so we actually don't have a velocity-dependent transformation after all.
-
-::: {.callout-tip title="Derivation" collapse="true"}
-
-$$
-\partial_{v_j} (Q_i-v_i T)=-\delta_{ij} T
-$$
-
-By the symmetry of mixed partials,
-
-$$
-\partial_{v_k}\partial_{v_j} (Q_i-v_i T) = \partial_{v_j}\partial_{v_k} (Q_i-v_i T) \implies \delta_{ij} \partial_{v_k}T = \delta_{ik} \partial_{v_j}T
-$$
-
-Since $N \ge 2$, we can set $i = j \neq k$, and obtain $\partial_{v_k}T = 0$. This is true for all $k$, thus $T$ is independent of $v$. Now plug it into $\partial_{v_j} Q_i = v_i \partial_{v_j}$ to obtain $\partial_{v_j} Q_i = 0$ for all $i, j$.
-
-:::
-
-When $N = 1$, velocity-dependent transformations do exist:
-
-$$
-Q(t, q, v) = vT(t, q, v) - \int_0^v T(t, q, v') dv' + Q_0(t, q)
-$$
-
-where $Q_0(t, q), T(t, q, v)$ are arbitrary smooth functions. However, it is uninteresting, since dynamics is just too simple in one dimension.
-
-But why *would* there be a problem? What would happen if we simply insist on applying $T(t, q, v), Q(t, q, v), R(t, q, v)$? Well, consider what happens to an infinitesimal square at $(t, q, v)$. Its corners are dragged by the vector field $(T, Q, R)$. Previously, because $(T, Q)$ depends on $(t, q)$ but not $v$, the square is translated and rotated in the $(t, q)$ plane, but it remains upright. Now that $(T, Q)$ depends on $v$ also, the square would be rotated in the full $(t, q, v)$ space. And no matter what $R$ we pick, it is impossible for it to rotate the square back upright again, because it can only stretch and squeeze in the vertical direction, and that cannot re-upright what is not already upright.
-
-Well, when in doubt, go one dimension higher! We have already went from configuration spacetime to 1-jet to handle $v$. We need only go to 2-jet to handle $a$. Like how we constructed the 1-jet manifold, the 2-jet manifold $J^2$ is defined by appending at each point $(t, q, v) \in J^1$ the tangent space of velocity at $v$ -- the space of accelerations.
-
-Lifting a curve $(t, \gamma(t))$ to $J^2$ takes two steps. The 1th step lifts it to $J^1$, as before. We previously noted that two curves passing the same $(t, q)$ would be separated in $J^1$ if they differ in velocity, and if they have the same velocity but differ in acceleration, then they would pass the same point in $J^1$, but have different slope. Therefore, the 2th lift to $J^2$ would separate them.
-
-Previously, we constructed the contact geometry of $J^1$ by infinitesimal squares spanned by $\partial_t + \braket{v, \partial_q}$ and $\partial_v$. Analogously, the contact geometry of $J^2$ is constructed by infinitesimal squares spanned by $\partial_t + \braket{v, \partial_q} + \braket{a, \partial_v}$ and $\partial_a$. Lifting a curve $(t, \gamma(t))$ to $J^2$ is simply finding the unique curve in $J^2$ that projects down to $(t, \gamma(t))$ while being tangent to the field of infinitesimal squares.
-
-Would this suffice? It would not. We will see that $J^2, J^3, \dots$, none of them suffices. As soon as we incorporate velocity-dependence, we need to handle the entire Taylor expansion.
-
-Looking at the picture, an infinitesimal square at $(0, q_0, v_0) \in J^1$ can be tangent to several different lifted curves. Some move up -- those have positive acceleration. Some move down -- those have negative acceleration. Thus, the infinitesimal square is swept out by the curve family $\{\gamma(t) = q_0 + v_0t + \tfrac 12 at^2: a \in \R\}$. Similarly, an infinitesimal square at $(0, q_0, v_0, a_0) \in J^2$ is swept out by the curve family $\{\gamma(t) = q_0 + v_0t + \tfrac 12 a_0t^2 + \tfrac 16 jt^3: j \in \R\}$. Now, the trouble begins: What happens to the curve family at $(0,0,0,0)$ after applying $T=0, Q = v$ transformation? It becomes 
-
-$$
-\{\gamma(t) = \tfrac 12 \epsilon jt^2 + \tfrac 16 jt^3: j \in \R\}
-$$
-
-So we see the problem: The original curves are all lifted to pass through the same point $(0, 0, 0, 0) \in J^2$, if at different "vertical slopes" due to the [jerk](https://en.wikipedia.org/wiki/Jerk_%28physics%29) term $\tfrac 16 jt^3$. After applying the $T=0, Q=v$ transformation, the shifted curves are pulled apart according to the jerk term. It is easy to see (draw a picture) that any two members of the family $\{\gamma(t) = \tfrac 12 \epsilon jt^2 + \tfrac 16 jt^3: j \in \R\}$ do not have an order-2 contact. Thus, $T=0, Q=v$ destroyed the contact structure on $J^2$. The infinitesimal squares are not even mapped to infinitesimal squares at all, let alone oriented correctly.
-
-Going one level higher to $J^3$ would not save it, because we can simply make the same argument with $\{\gamma(t) = \tfrac{1}{4!} kt^4: k \in \R\}$, and so on. The essential problem is that point transformations preserve degrees -- to know where a point $\gamma(t)$ is mapped to, we need only know the point itself $\gamma(t)$; to know where a velocity $\dot \gamma(t)$ is mapped to, we need only know the point and the velocity $(\gamma(t), \dot\gamma(t))$. However, when the transformation depends on velocity, then we need to account for one degree higher -- to know where a point $\gamma(t)$ is mapped to, we need to know the point itself *and* the velocity; to know where a velocity $\dot \gamma(t)$ is mapped to, we need to know the acceleration too, etc. There is no way to stop short of going all the way to infinity.
-
-And if we were to consider acceleration-dependent transformations, the problem is even worse: we need to go two degrees higher.
-
-This is fundamentally why, though point transformations are everywhere in Lagrangian mechanics, velocity-dependent (or higher-order-dependent) transformations are unknown. Some have tried, but I think it's not worth the effort.
-
-### Hamiltonian mechanics as symplectic geometry
-
-Just as Lagrangian mechanics can be reformulated as contact geometry in 1-jet manifold, so can Hamiltonian mechanics be formulated as a geometric theory of different kind fo manifold. Indeed, there are two of these. 
-
-### Canonical transformation
-
-Similar to the case of Lagrangian mechanics, we can also gauge-transform the Hamiltonian. However, the choice of gauge is more subtle, due to the more subtle form of [modified Hamilton's principle](#eq-modified-hamilton). Recall that it says 
-
-$$
-\begin{cases}
-\delta \ub{\int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt}{$S$} &= 0 \\
-q(t_0) &= q_0, \; q(t_1) = q_1
-\end{cases}
-$$
-
-where the constraint is that $q$ is fixed at both ends, but $p$ is allowed to vary arbitrarily. Under such variation, we have
-
-$$
-\delta S = \int_{t_0}^{t_1} (\braket{\dot q - \partial_p H, \delta p} - \braket{\dot p + \partial_q H, \delta q})dt + \braket{p, \delta q}\Big|^{t_1}_{t_0}
-$$
-
-Now, suppose we have found some functions $P, Q, K, F$ on phase space-time, satisfying
-
-$$
-\braket{p, dq} - Hdt = \braket{P, dQ} - Kdt + dF
-$$
-
-<!-- 
-::: {.callout-warning}
-
-There are *two* ways to interpret this equation wrongly. One way to mess up is to differentiate $dq, dQ$ *across time*. No, they must be differentiated *within each slice of time*. Another way to mess up is to *fail* to differentiate $dF$ across time. No, it must be differentiated across time. So if we are to be maximally precise, we should do something like this. First, we impose an arbitrary, but time-independent reference coordinate system $x_1, \dots, x_N, y_1, \dots, y_N$, such that $\partial_t x = 0, \partial_t y = 0$. Then, we write maximally explicitly:
-
-$$
-\begin{aligned}
-&\sum_i \sum_j p_i (\partial_{x_j}q_i dx_j + \partial_{y_j}q_i dy_j) - Hdt \\
-= &\sum_i \sum_j P_i (\partial_{x_j}Q_i dx_j + \partial_{y_j}Q_i dy_j) - Kdt 
-+ \sum_j (\partial_{x_j}F dx_j + \partial_{y_j}F dy_j) + \partial_t F dt
-\end{aligned}
-$$
-
-::: -->
-
 ## Bonus: Higher-order Lagrangians and Hamiltonians
 
 What happens if we use a Lagrangian with higher-order derivatives? It turns out that even in this case, we can still use economic reasoning to derive its Hamiltonian and Euler--Lagrangian equations
@@ -1219,7 +948,7 @@ Similarly, the perturbative solution $\omega = \pm\sqrt{\frac{k}{m}} + \delta$ s
 
 Interpreted in quantum field theory, this means that the oscillator, with even the slightest mutual interaction between its $+\sqrt{\frac{k}{m}}$ and $-\sqrt{\frac{k}{m}}$ modes, will cause an exponential growth of one of the modes. A [catastrophic](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe) explosion of particles!
 
-The quantum field theorists call these "bad Ostrogradsky [ghosts](https://en.wikipedia.org/wiki/Ghost_(physics))", and spend some effort in removing them. Bad ghosts cannot be allowed, because bad ghosts will destroy the universe. Mutual interaction must be preserved between oscillation modes, because nothing is completely independent in this universe -- [even photons can interact](https://en.wikipedia.org/wiki/Two-photon_physics). Some theorists thus simply declare higher-than-2 derivatives forbidden, while others do some renormalization-sorcery to remove the ghosts, and so on.
+The quantum field theorists call these "bad Ostrogradsky [ghosts](https://en.wikipedia.org/wiki/Ghost_(physics))", and spend some effort in removing them. Bad ghosts cannot be allowed, because bad ghosts will destroy the universe. Mutual interaction must be preserved between oscillation modes, because nothing is completely independent in this universe -- [even photons can interact](https://en.wikipedia.org/wiki/Two-photon_physics). Some theorists thus simply declare higher-than-2 derivatives forbidden, while others do some renormalization-exorcism, and so on.
 
 ## Hamilton--Jacobi equation
 
@@ -1314,6 +1043,12 @@ which strongly suggests
 $$
 (-\partial_t, \nabla_q)S(t, q; t_0, q_0) = (H, p), \quad (-\partial_{t_0}, \nabla_{q_0})S(t, q; t_0, q_0) = (-H_0, -p_0)
 $$ {#eq-HJ}
+
+If we consider only the $t, q$ part of $S$, we have a more elegant differential form:
+
+$$
+dS = \braket{p, dq} - Hdt
+$$ {#eq-HJ-df}
 
 :::
 
@@ -1791,6 +1526,13 @@ In fact, we could start with an arbitrary wavefront in configuration-spacetime, 
 
 ![Given a wavefront in the shape of $t = q^3$, we can construct the next wavefront as the envelope of the parabolic wavelets at every point on the wavefront.](figure/free_particle_cubic_curve.svg)
 
+
+::: {#exr-0}
+
+Solve the time-dependent HJE for a single particle starting at $(0, 0)$. The graph of $S(t, q)$ should look like a cone. This is a particular example of the [Monge cone phenomenon](https://en.wikipedia.org/wiki/Monge_equation).
+
+:::
+
 ### Particle in a potential field
 
 A particle in a time-dependent potential field $V$ has Lagrangian $L(t, q, v) = \frac 12 m\|v\|^2 - V(t, q)$. By convex duality
@@ -1893,7 +1635,7 @@ Now, because $S$ has units of energy-time, but $e$ must take a unitless quantity
 Now we take its derivatives:
 
 $$
-\partial_t \psi = \frac{i}{\hbar}\phi\partial_t S, \quad \partial_{q_i}^2 \psi = -\frac{1}{\hbar^2} \phi (\partial_{q_i} S)^2 + \frac{i}{\hbar}\phi \partial_{q_i}^2 S
+\partial_t \psi = \frac{i}{\hbar}\psi\partial_t S, \quad \partial_{q_i}^2 \psi = -\frac{1}{\hbar^2} \psi (\partial_{q_i} S)^2 + \frac{i}{\hbar}\psi \partial_{q_i}^2 S
 $$
 
 and insert them back to the HJE, obtaining
@@ -1904,7 +1646,7 @@ $$
 
 where $\hat H = -\frac{\hbar^2}{2m} \nabla_q^2 + V$. This is promising. We have almost obtained a linear differential equation for a wavefunction, except for the $\frac{i \hbar}{2 m}(\nabla^2 S)$ term. Furthermore, the equation $i\hbar \partial_t \psi = \hat H\psi$ has solution $\psi(t, q) = e^{-i(\hat H/\hbar)t} \psi(0, q)$, and because the differential operator $\hat H$ is self-adjoint, $e^{-i(\hat H/\hbar)t}$ is a [unitary operator](https://en.wikipedia.org/wiki/Unitary_operator).
 
-Thus, we remove the inconvenient term, and write down $i\hbar \partial_t \psi = \hat H\psi$, which is the time-dependent Schrödinger equation. Now plug in $\psi = e^{iS/\hbar}$ and show that at $\hbar \to 0$ limit, we recover the HJE.
+Apply wishful thinking, ignore the inconvenient term, and just write $i\hbar \partial_t \psi = \hat H\psi$. This is the time-dependent Schrödinger equation.
 
 If you want more of this unitarity, you may be interested in the [Koopman--von Neumann interpretation of classical mechanics](https://en.wikipedia.org/wiki/Koopman%E2%80%93von_Neumann_classical_mechanics).
 
@@ -1976,15 +1718,17 @@ Deriving quantum mechanics from classical mechanics is necessarily fraught with 
 >
 > Louis de Broglie's Nobel Prize Lecture [@debroglieWaveNatureElectron1929]
 
-#### Jeremiah on particle-wave duality
+::: {.callout-note title="Jeremiah on particle-wave duality" collapse="true"}
 
 Just after presenting the double slit experiment, pop-science and even textbooks of quantum mechanics often apologize: "So we see that an electron is both a particle and a wave. This may seem like nonsense, but it is true.". It feels like they knelt down, crossed themselves, and prayed for forgiveness, for they were about to tread on the sacred image of Physical Intuition. But the sacred image has nothing behind it.
 
 The entire idea that quantum mechanics is something weirder than classical mechanics is a mistake. Particle-wave duality is not weird. Particle-wave dichotomy is weird. After all, quantum mechanics is *just* finite dimensional complex linear algebra, but classical mechanics involves point-mass particles mysteriously *exactly* hitting each other in space, never missing each other by an infinitesimal amount. And if one were to invoke rigid body mechanics, well, how do rigid bodies stay rigid? If they are made of a cloud of point masses, then how could they stay together and not dispel like mist? If the points are held together by little atomic hooks, then how do the atomic hooks stay rigid?
 
-Everything in physics, when you dig down to it, becomes an abstract mathematical object. A wave is merely a function of type $\R^3 \to \R$. A particle is merely a function of type $\R \to \R^3$. A quantum particle-wave is merely a length-one element in a complex linear vector space. Is any of these weirder than the others? They are equally mathematical. If one does not need to apologize for violating quantum intuitions when going classical, neither should one apologize in the other direction.
+Everything in physics, when you dig down to it, becomes an abstract mathematical object. A wave in spacetime is merely a function of type $\R^4 \to \R$. A particle is merely its worldline, a function of type $\R \to \R^4$. A quantum particle-wave is merely a length-one element in a complex linear vector space. Is any of these weirder than the others? They are equally mathematical. If one does not apologize for violating quantum intuitions when going classical, neither should one apologize in the other direction.
 
 The point is simply that when one thinks about it, quantum mechanics may need interpretation, but classical mechanics needs interpretation just as much. Newtonian, Lagrangian, Hamiltonian, Hamilton--Jacobian, making money -- they are all interpretations of classical mechanics. There is no book titled "Interpretations of classical mechanics", but there should be. After all, what is Hamilton's principal function? We call it the "minimal cost" for arriving at $(t, q)$, but what really is a cost in physics? Particles do not really pay their paths with natural money. Is it any less mysterious than quantum mechanics? Only by dint of complacency and the mindless clinging to Newtonian interpretation does the classical system of the world appear homely and natural.
+
+:::
 
 ### Relativistic quantum mechanics
 
@@ -2065,6 +1809,512 @@ I find this extension rather useless and ugly. Much of the utility and beauty of
 
 In fact, Hamiltonian mechanics and relativistic classical mechanics do not mix well. There are several "no-interaction theorems" proving that any Lorentz-invariant generalization of Hamiltonian mechanics necessarily cannot allow particle-particle interaction [@currieRelativisticInvarianceHamiltonian1963; @rohrlichRelativisticHamiltonianDynamics1979]. In other words, you can have classical (not quantum) relativistic Hamiltonian mechanics, but all you will get are particles dancing around in a background field, unaware of each other. You cannot even connect two particles by a spring. There are ways to bypass the obstruction, but so far it remains work for a few theoreticians and a dispensable erudition for the others.
 
+Again and again we see that Lagrangian and Hamiltonian mechanics are different worlds, with their own dreams and phantasies, but always agreeing on the same reality.
+
+If this were the case, then why do we bother creating two mechanics, since there is no physical experiment to distinguish them? It is because in quantum mechanics, virtual trajectories are just as real as the "real" trajectories. A particle can just go around the earth once before it arrives at its destination, taking the long way around. In this case, what is virtually possible matters just as much as what is classically real, and if Lagrangian mechanics and Hamiltonian mechanics can entertain different kinds of dreams, we might be able to tell them apart.
+
+![$S$ is a source of photons, and $P$ is a receiver. A photon can go from $S$ to $P$ by bouncing off the mirror below, along many paths. Each path has a certain amplitude, and the sum of all their amplitudes is the total amplitude. While the amplitude is dominated by the amplitudes near the classical path $SGP$, it is not the only path, and all paths, even the "virtual" paths like $SAP$, contribute to what we observe. [@feynmanQEDStrangeTheory2006, figure 24]](figure/qed_2006_fig_24.png){width=40% fig-align="center"}
+
+![](figure/banner/2.png)
+
+
+## Transformation theory
+
+Modern physics is founded upon the idea of symmetry. You shall know a system by the symmetries it has. Classical mechanics, when viewed in this perspective, is concerned not with $x, y, z, \theta, \phi, \mu$, or anything so medieval as up-versus-down. Such asymmetric descriptions of reality have been tossed into the wastebasket of history along with Aristotelian physics. Indeed, with general relativity, we have eliminated the distinction between coordinate systems, between reference frames, and even between the straight and the crooked.
+
+So what does this mean for us? It means that we must investigate what happens to our equations under transformations. If the form of the equations is preserved in one coordinate transformation versus another, then it gives us a new symmetry of the physical system, and reveals a facet of reality. In order to investigate them, we must cast our theory into a more geometric form -- i.e. less coordinate-heavy. If we could avoid writing down $t, q, v$ all the time, and instead speak of manifolds and vector fields on them, it would bring us a [coordinate-free](https://en.wikipedia.org/wiki/Coordinate-free) description of the system, geometric insight, and reveal symmetries otherwise hidden by inelegant coordinates.
+
+### Lagrangian mechanics as contact geometry
+
+Geometrically, it feels dissatisfying to say that a Lagrangian is a function of time, position, and velocity: $L(t, q, v)$. It is dissatisfying, because though we can draw time and space together as spacetime $\R \times \mathcal C$, how do we draw *velocity*? When in doubt, add an extra dimension!
+
+Imagine that, at each point $(t, q)$ on the configuration spacetime $\R \times \mathcal C$, we append the vector space of all possible velocities $v$ passing $q$. That is, we add the tangent space of $\mathcal C$ at $q$. Combining all these tangent spaces, we have expanded the configuration spacetime manifold to $\R \times T\mathcal C$. This is called the **1-jet manifold**, and written as $J^1$.
+
+The first useful property of the 1-jet manifold is that it allows us to **lift** any curve $(t, \gamma(t))$ in the configuration spacetime to a curve $(t, \gamma(t), \dot \gamma(t))$ in the 1-jet manifold.
+
+A Lagrangian $L(t, q, v)$ becomes just a field on the 1-jet manifold $L: J^1 \to \R$. Solving for a physically real trajectory $\gamma$ going from $(t_0, q_0)$ to $(t_1, q_1)$ becomes a constrained variational calculus problem on the 1-jet manifold as well:
+
+$$
+\delta \int_\Gamma L dt = 0
+$$
+
+where $\Gamma$ is a curve in the 1-jet manifold, under the following constraints:
+
+* $\Gamma$ is obtainable by lifting some curve $\gamma$ in configuration spacetime that passes $(t_0, q_0)$ and $(t_1, q_1)$.
+* The variation used in $\delta \int_\Gamma$ is also constrained, so that any variation-trajectory $\Gamma + \delta \Gamma$ must also be obtainable by lifting some curve of the same kind.
+
+We are a bit tired of always saying "obtainable by lifting some curve in configuration spacetime". Is there an easier way to say it? Yes! Around each point $(t, q, v)$ in the 1-jet manifold, we draw a little flat plane centered on that point, so that any lifted curve passing $(t, q, v)$ must be tangent to that little flat plane. The lifted curve can havy any acceleration -- that is, $dv/dt$ can be any value it wants, but we must always have $vdt = dq$. Therefore, the little flat plane should be defined by $vdt - dq = 0$. We can picture the simplest case: a particle moving on a straight line. In this case, the configuration space-time is $\R^2$, and the 1-jet is $\R^3$. Drawing out the little flat planes, we see that it looks like a field of little flat planes, twisting as we move along the $v$ axis.
+
+![The field of planes $vdt - dq= 0$ in $\R^{3}$. Figure from [Wikipedia](https://en.wikipedia.org/wiki/File:Standard_contact_structure.svg).](figure/standard_contact_structure.svg)
+
+For general $N$, we still have little flat (hyper)planes, obtained by solving $N$ equations simultaneously: 
+
+$$v_1 dt - dq_1 = 0, \; \dots,\; v_N dt - dq_N = 0$$
+
+These flat planes have dimension $N+1$, within the $2N+1$ dimensions of $J^1$. Each plane is spanned by the $N+1$ vectors $\partial_t + \braket{v, \partial_q}, \partial_{v_1}, \dots, \partial_{v_N}$.
+
+If you have seen it before, you will recognize this: It is a contact structure on the 1-jet manifold. In this sense, Lagrangian mechanics *is* [contact geometry](https://en.wikipedia.org/wiki/Contact_geometry) (or more precisely a [Cartan contact structure](https://en.wikipedia.org/wiki/Jet_bundle#Contact_structure)). Lifting a curve in configuration space-time is simply finding the unique curve in the 1-jet manifold that is tangent to the field of planes, and projects down to that same curve, so you can imagine looking down from the top of the curve in $J^1$ and see just the original curve in configuration spacetime. In equations, a trajectory $(t, \gamma(t))$ is lifted to $(t, \gamma(t), \dot \gamma(t))$, and the lifted trajectory has tangent vector $(1, \dot \gamma(t), \ddot \gamma(t))$.
+
+![A curve in the configuration space-time $\R^2$ is lifted to a curve in the 1-jet manifold $\R^3$. The lifted curve is tangent to the field of planes at every point, and projects down to the original curve. There is only one possible way to lift it. If you look down from the top, you see the original curve in $\R^2$](figure/contact_lifting_path.png){width=70%}
+
+If multiple curves crossing the same point $(t, q)$ have different velocities, then their lifts would be separated in $J^1$ at different heights. If they have the same velocity, but different accelerations, then they would be lifted to the same height, but different slopes at that height.
+
+![Lifting multiple curves through the same point.](figure/contact_lifting_different_paths.png){width=60%}
+
+Given the setup, Lagrangian mechanics is simply about solving $\delta \int_\Gamma L dt = 0$ under the constraints:
+
+* $\Gamma$ is tangent to all fields of planes $v_1 dt - dq_1 = 0, \dots, v_N dt - dq_N = 0$.
+* The two end points of $\Gamma$ are of the form $(t_0, q_0, v_0), (t_1, q_1, v_1)$, where $v_0, v_1$ are not determined. That is, the end points can "slide vertically".
+* The variation path used in $\delta \int_\Gamma$ must follow the same constraints.
+
+What does the solution look like? It looks like a vector field in $J^1$.
+
+Given a Lagrangiang $L: J^1 \to \R$, a system at point $(t, q)$ can go on evolving in any direction. We need to know its velocity $v$ before we can apply the EL equations to solve for its acceleration, and thus calculate its entire past and future. In the 1-jet manifold, given the Lagrangian $L : J^1 \to \R$, we can calculate an acceleration function $a: J^1 \to \R^N$ using the EL equation, then we install that acceleration function into $J^1$ as part of a vector field: at each $(t, q, v) \in J^1$, we install the time-evolution vector field $\Gamma$, which satisfies
+
+$$\Gamma=\partial_t+ \braket{v, \partial_{q}}+ \braket{a, \partial_{v}}, \quad 
+\frac{\partial L}{\partial q_i}-\Gamma\left(\frac{\partial L}{\partial v_i}\right)=0 \; \forall i = 1, \dots, N
+$$
+
+Once that is installed, predicting where a system would go given $(t, q, v)$ is as mindless as drifting along the vector field in $J^1$.
+
+Here we see the benefit of the lift. Multiple trajectories crossing the same point $(t, q)$ at different velocities would physically intersect in configuration spacetime, but when lifted, they are separated at different heights, so they no longer intersect, and we can picture $J^1$ as filled with infinitely thin noodles exuded out of a noodle-machine,[^angel-hair] filling all of space but never intersecting or looping.
+
+[^angel-hair]: How many [angel hairs](https://en.wikipedia.org/wiki/Capellini) can fit a noodle bowl? Angel hairs are pure curves, not material, but limited, so that they have location in 1-jet manifold, but not extension.
+
+Of course, once we are here, we might as well go all the way, and rewrite the EL equations into an equation that takes place directly within 1-jet space, without having to go through configuration spacetime first. It uses the language of [differential forms](https://en.wikipedia.org/wiki/Differential_form), and we do not need this result subsequently, so you can skip it.
+
+::: {.callout-tip title="EL equations in 1-jet space" collapse="true"}
+
+Define the contact 1-forms
+
+$$
+\theta^i:=d q^i-v^i d t, \quad i = 1, \dots, N
+$$
+
+Define the Poincaré--Cartan 1-form and 2-form
+
+$$
+\begin{aligned}
+\theta_L:=p_i \theta^i-H d t, \quad p_i&:=\frac{\partial L}{\partial v^i}, \quad H:=p_i v^i-L \\
+\Omega_L&:=-d \theta_L
+\end{aligned}
+$$
+
+Given those, the EL equation of $\Gamma$ is equivalent to
+$$
+i_{\Gamma} \Omega_L=0, \quad i_{\Gamma} d t=1,
+$$
+
+:::
+
+::: {.callout-tip title="Proof" collapse="true"}
+
+$$
+\begin{gathered}
+\theta_L=p_i d q^i-H d t, \quad p_i:=\frac{\partial L}{\partial v^i}, \quad H:=p_i v^i-L, \\
+\Omega_L:=-d \theta_L=d q^i \wedge d p_i+d H \wedge d t
+\end{gathered}
+$$
+
+by $-d\left(p_i d q^i-H d t\right)=d q^i \wedge d p_i+d H \wedge d t$
+
+Compute $d H$ on $J^1$ using $p_i=L_{v^i}$:
+
+$$
+d H=d\left(p_i v^i-L\right)=v^i d p_i+p_i d v^i-L_t d t-L_{q^i} d q^i-L_{v^i} d v^i=v^i d p_i-L_t d t-L_{q^i} d q^i .
+$$
+Contract with $\Gamma=\partial_t+v^i \partial_{q^i}+a^i \partial_{v^i}$ (so $i_{\Gamma} d t=1, i_{\Gamma} d q^i=v^i$ ):
+
+$$
+i_{\Gamma} \Omega_L=i_{\Gamma}\left(d q^i \wedge d p_i\right)+i_{\Gamma}(d H \wedge d t)=v^i d p_i-d q^i \Gamma\left(p_i\right)+\Gamma(H) d t-d H .
+$$
+
+Insert $d H$:
+
+$$
+i_{\Gamma} \Omega_L=\eta^i d p_i-d q^i \Gamma\left(p_i\right)+\Gamma(H) d t-\left(\eta^i d p_i-L_t d t-L_{q^i} d q^i\right)=\left(L_{q^i}-\Gamma\left(p_i\right)\right) d q^i+\left(\Gamma(H)+L_t\right) d t .
+$$
+
+Therefore $i_{\Gamma} \Omega_L=0$ is equivalent to the two identities
+
+$$
+\Gamma\left(\frac{\partial L}{\partial v^i}\right)=\frac{\partial L}{\partial q^i} \quad \text { and } \quad \Gamma(H)+\partial_t L=0
+$$
+
+The first is the Euler-Lagrange equation since $\Gamma$ acts as the total time derivative:
+$$
+\Gamma\left(\frac{\partial L}{\partial v^i}\right)=\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}^i}\right) .
+$$
+
+The second is more often written as $\frac{dH}{dt} = -\partial_t L$. In particular, if the Lagrangian density does not depend on time, then the Hamiltonian is a constant of motion.
+
+:::
+
+### Gauge transformation
+
+Introductory calculus students are stressed about "Don't miss the $C$ in $\int xdx = \tfrac 12 x^2 + C$.". Introductory physics students are not, but they really should, because the energy $E$ of a system is also only defined up to an additive constant. We can add a constant of 23 joules to the energy of a system, and nothing would go any differently.
+
+Analytical mechanics offers no escape. There is also such "up to additive constants" quantities. In fact, it is more than that: the action $S$ is only defined up to an additive *function*.
+
+Let's say that we have a Lagrangian $L: \R \times T\mathcal C \to \R$. It defines a vector field in the 1-jet manifold, and thus the time-evolution of the physical system. What if we add a "time counter" to the action? That is, suppose we have some Lagrangian $L'$, such that the new action $S'[\Gamma] := \delta \int_\Gamma L' dt = 0$ satisfies $S'[\Gamma] = S[\Gamma] + (t_1 - t_0)$, where $t_0, t_1$ are the starting and ending times of the trajectory $\Gamma$. Then, it is clear that any constrained-stationary trajectory for $S$ is also a constrained-stationary trajectory for $S'$, and therefore they produce exactly the same dynamics.
+
+That's pretty clever, but why does it work? To see it, we stare at what exactly we are doing when we calculate $\int_\Gamma Ldt$. We are integrating a differential 1-form through a curve $\Gamma$. A differential 1-form can be pictured as a field of surface-stacks. If the 1-form is big, then the surface-stacks are closely spaced, and vice versa. Integrating the 1-form through a curve is to follow the curve, and count how many surface-stacks it pierces.
+
+![A single trajectory $\Gamma$ in 1-jet manifold, going from $(t_0, q_0, v_0)$ to $(t_1, q_1, v_1)$. The integral $\int_\Gamma Ldt$ is obtained by counting how many sheets it pierces.](figure/integrating_Ldt_1jet_space.png){width=70%}
+
+The variational problem: Find a path $\Gamma$ such that it pierces a stationary number of sheets of $Ldt$, under the constraints that its end points are on the rods of $t_0, q_0$ and $t_1, q_0$, is always moving forwards in time, and everywhere tangent to the contact structure. 
+
+In general, the problem is non-trivial. Moving the curve $\Gamma$ up and down may change the number of surfaces pierced dramatically. However, in one particular case, the problem is trivial. Suppose we can quilt together the differential 1-forms into contour surfaces, then every curve pierces the exact same number of surfaces, and so every trajectory is as stationary as any other. Such 1-forms are called [exact forms](https://en.wikipedia.org/wiki/Closed_and_exact_differential_forms).
+
+![When the 1-form $Ldt$ is not trivial, varying $\Gamma$ can change $\int Ldt$ a lot. When the 1-form is exact, varying $\Gamma$ does not change $\int Ldt$.](figure/exact_differential_same_integral.png){width=30%}
+
+Now, we are rarely going to get such trivial physics, but it does suggest to us how to construct a different but equivalent action $S'$. We write down an arbitrary function $F(t, q)$, which creates an exact 1-form on the configuration spacetime. Now we raise it up to the 1-jet manifold "vertically". Because the constraint on variation of $\Gamma$ states that the two end-points $(t_0, q_0, v_0), (t_1, q_1, v_1)$ can only vary in $v_0, v_1$, the trajectory looks like a string pulled between two rings sliding upon two vertical rods. Each vertical rod is contained in one sheet of $F$, and so we have
+
+$$
+\int_\Gamma (Ldt + dF) = \int_\Gamma Ldt + F(t_1, q_1) - F(t_0, q_0)
+$$
+
+![$dF$ is exact, and made of vertical curvy sheets, so $\int_\Gamma dF= F(t_1, q_1) - F(t_0, q_0)$ does not depend on the trajectory of $\Gamma$, only its starting and ending vertical lines.](figure/lifting_dF_1jet_space.png){width=30%}
+
+If only we can write $L'dt = Ldt + dF$, then we would obtain our new Lagrangian! Alas, this is in general impossible: the infinitesimal sheets of $(L'-L)dt$ are parallel to $dt$, which is strictly "perpendicular" to the t-axis, but the infinitesimal sheets of $dF = \partial_t F dt + \sum_i \partial_{q_i} F dq_i$ may intersect the t-axis at an "oblique angle".
+
+At this moment, our second constraint rescues us. Because we require $\Gamma$ to be tangent to all fields of planes $v_1 dt - dq_1 = 0, \dots, v_N dt - dq_N = 0$, we can replace $dq_i$ with $v_i dt$ for $\Gamma$:
+
+$$
+\int_\Gamma Ldt + dF = \int_\Gamma (L + \partial_t F + \braket{v, \partial_q F})dt
+$$
+
+And so we obtain the **gauge transformation of Lagrangian**:
+
+$$
+L'(t, q, v) = L(t, q, v) + \partial_t F(t, q) + \braket{v, \partial_q F(t, q)}
+$$ {#eq-gauge-lagrangian}
+
+In other words, even though $Ldt + dF = L'dt$ is not literally true, there is no way for a contact-structure-hugging trajectory to tell, so we can just replace $L$ with $L'$, and neither Hamilton nor Nature would notice a thing. Indeed, this is precisely why it is a "gauge transformation", since in the language of modern physics, the "gauge" is the part in our equations that nature doesn't care about, and so we are free to try out every gauge transformation until we get an equation most convenient for us.
+
+### Point transformation
+
+Instead of changing the Lagrangian on the configuration spacetime, we can keep the Lagrangian, but deform the configuration spacetime itself, and all the trajectories in it.
+
+A (continuous) point transformation is a deformation of the configuration spacetime. It is defined by sending each point $(t, q)$ to a nearby point $(t + \epsilon T(t, q), q + \epsilon Q(t, q))$, where $\epsilon$ is an infinitesimal, and $(T, Q)$ is a vector field on the configuration spacetime. The geometric intuition is to slightly manipulate the configuration spacetime like a playdough.
+
+Now, imagine that a strand of hair is stuck inside the playdough. As we manipulate the playdough, the hair also gets manipulated. That is, a trajectory $(t, \gamma(t))$ would be deformed to $(t \epsilon T(t, \gamma(t)), \gamma(t) + \epsilon Q(t, \gamma(t)))$, and the lift of the trajectory to $J^1$ would be deformed as well. We already know how $(t, q)$ parts would be deformed. It remains to deform the $v$ part:
+
+$$
+\begin{aligned}
+(t, q) &\mapsto(t+\epsilon T(t, q), q+\epsilon Q(t, q)) \\
+(t+\delta t, q+\dot{\gamma}(t) \delta t) &\mapsto(t+\delta t+\epsilon T(t+\delta t, q+\dot{\gamma}(t) \delta t), q+\dot{\gamma}(t) \delta t+\epsilon Q(t+\delta t, q+\dot{\gamma}(t) \delta t)) \\
+\dot \gamma(t) &\mapsto \frac{\dot{\gamma}(t) \delta t+\epsilon(Q(t+\delta t, q+\dot{\gamma}(t) \delta t)-Q(t, q))}{\delta t+\epsilon(T(t+\delta t, q+\dot{\gamma}(t) \delta t)-T(t, q))}
+\end{aligned}
+$$
+
+Thus, we have:
+
+$$
+\dot{\gamma}(t)+\epsilon\left(\partial_t Q+\braket{\partial_q Q, \dot{\gamma}(t)}-\dot{\gamma}(t)\left(\partial_t T+ \braket{\partial_q T, \dot{\gamma}(t)}\right)\right)
+$$
+
+This formula is a bit ugly, so we define the time-derivative operator along the trajectory $D_t := \partial_t + \braket{\dot \gamma, \partial_q}$, which gives us the **prolongation formula**:
+
+$$
+\dot\gamma \mapsto \dot \gamma + \epsilon(D_t Q - (D_t T) \dot\gamma)
+$$ {#eq-pr-1}
+
+Geometrically speaking, we have lifted a vector field $(T(t, q), Q(t, q))$ on the configuration spacetime to a vector field on the 1-jet manifold
+
+$$
+(T(t, q), Q(t, q), V(t, q, v)), \quad D_t Q - (D_t T) v, \quad D_t := \partial_t + \braket{v, \partial_q}
+$$ {#eq-pr-1-manifold}
+
+We know how to lift trajectories. What does it mean to lift a vector field? Just like how a vector field can deform a trajectory, so can a vector field deform a field of planes in $J^1$. Consider a point $(t, q, v) \in J^1$, and consider what happens to the plane $v_i dt - q_i = 0$, represented as an infinitesimal square. Draw the vectors 
+
+$$(T(t, q), Q(t, q)), \; (T(t + \delta t, q + v\delta t), Q(t + \delta t, q + v\delta t))$$
+
+at two corners of the square, and drag the corners along the vectors. Because the two vectors differ by $O(\delta t)$, not only would the square be translated by $O(\epsilon \delta t)$, it would also be rotated by $O(\epsilon \delta t)$. Since the square has side length $O(\delta t)$, this means the square would be rotated by $O(\epsilon)$, and so it would measurably rotate, and misfit its local plane. The only solution is to translate the square "vertically" by some $(0, 0, \epsilon R(t, q, v))$, so that it lands in a new position where it would fit the local plane. 
+
+![An infinitesimal square in $J^1$ is dragged by $(\epsilon T, \epsilon Q)$, resulting in a translation and a rotation. The rotation causes it to misfit its new home, and must be translated again along the vertical direction by $\epsilon R$.](figure/prolongation_contact_transformation.png){width=50%}
+
+::: {#exr-higher-order-hamiltonian}
+
+Prove that $R(t, q, v) = D_t Q - (D_t T) v$ is necessary and sufficient for fitting the infinitesimal square to its local plane.
+
+:::
+
+### Noether's theorem
+
+The famed Noether's theorem states that if the Lagrangian is unchanged under a point transformation, then motion under the Lagrangian has a conserved quantity. As before,
+
+* $\epsilon$ is an infinitesimal.
+* An **infinitesimal transformation** is an infinitesimal deformation $(\delta t, \delta q)$ of configuration space-time. 
+  * $\delta t = \epsilon T$, where $T$ a function of type $\ub{\R}{time} \times \ub{\mathcal C}{configuration space} \to \R$
+  * $\delta q = \epsilon Q$, where $Q$ is a function of type $\R \times \mathcal C \to \R^d$, where $d$ is the dimension of configuration space $\mathcal C$.
+* An infinitesimal transformation is a **symmetry of the Lagrangian**, iff taking any path $\gamma$ (which can be physically fake), and deforming it to $\gamma'$, the action is conserved to first order: $\int_\gamma L dt = \int_{\gamma'} L dt + O(\epsilon^{c})$, where $c > 1$. Because we don't need the $c$, we will write it just as $o(\epsilon)$, meaning "a higher-order infinitesimal than $\epsilon$".
+* A **conserved quantity of motion** is a number depending on $t, q, \dot q$, such that it is constant along any physically real path $\gamma$.
+
+::: {.callout-warning}
+
+A symmetry of the Lagrangian conserves *all* actions to first order, even those of unphysical paths, but a conserved quantity of motion is only conserved along physical paths. We may call it "conserved quantity of *physical* motion" to emphasize the distinction. In physicist jargon, Noether's theorem is an "[on-shell](https://en.wikipedia.org/wiki/On_shell_and_off_shell)" theorem.
+
+:::
+
+We defined the condition for symmetry as an integral. We can convert it to a differential by simply seeing what it means on an infinitesimal path. Let $\gamma$ go from $(t, q)$ to $(t + \delta t, q + v \delta t)$, where $\delta t$ is small, and then deform it by $\epsilon$, where $\epsilon$ is a lower-order infinitesimal than $\delta t$. This then gives us
+
+$$
+(T \partial_t + \braket{Q, \nabla_q} + \braket{V, \nabla_v}) L + L D_t T = 0, \quad D_t = \partial_t + \braket{v, \nabla_q}
+$$
+
+In fact, Noether's theorem can be further generalized to *quasi-symmetry* by incorporating a gauge transformation, which is the form of Noether's theorem we will use:
+
+::: {#thm-noether}
+
+## Noether's theorem
+
+If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal gauge symmetry of the Lagrangian, satisfying
+
+$$
+(T \partial_t + \braket{Q, \nabla_q} + \braket{V, \nabla_v}) L + L D_t T = D_t F, \quad \int_\gamma L dt = \int_{\gamma'} L dt + F|^{1}_{0} + O(\epsilon^{c})
+$$
+
+where $F(t, q)$ is a gauge generator, then the infinitesimal transformation maps physically real trajectories of $L$ to physically real trajectories of $L$, and
+
+$$
+F + H T - \lra{p, Q} = F + (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
+$$
+
+is a conserved quantity of motion.
+
+:::
+
+::: {.callout-note title="Proof" collapse="false"}
+
+Given any physically real trajectory $\gamma$ from point $A$ to $B$, infinitesimally transform it for an $\epsilon$ amount, obtaining $\gamma_\epsilon$ from $A \to A + \epsilon A$ to $B + \epsilon B \to B$. By assumption of quasi-symmetry, 
+
+$$\int_\gamma Ldt = \int_{\gamma_\epsilon} Ldt + F|^1_0 + o(\epsilon)$$
+
+Now, a variation of $\gamma$ maps to a variation of $\gamma_\epsilon$, and vice versa, and therefore,
+
+$$\ub{\delta\int_\gamma Ldt}{$= 0$ since $\gamma$ is physical} = \delta\int_{\gamma_\epsilon} Ldt + \ub{\delta F}{$=0$ by boundary constraint}|^1_0 + o(\epsilon)$$
+
+Thus $\gamma_\epsilon$ is physically real, which allows us to apply @eq-HJ.
+
+:::
+
+The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
+
+::: {.callout-warning  title="A failed proof" collapse="true"}
+
+I tried the following proof: Let $\gamma$ be a physically real trajectory under the original Lagrangian $L$, and let $\gamma_\epsilon$ be the infinitesimally deformed trajectory. By the quasi-symmetry equation, we have $\int_{\gamma_\epsilon} Ldt = \int_\gamma Ldt + \epsilon F|^{t_1}_{t_0}$.
+
+Now, since $\gamma$ is physically real, it should have stationary action. So I constructed the following path:
+
+$$
+(t_0, q_0) \to (t_0 + \epsilon T(t_0, q_0), q_0 + \epsilon Q(t_0, q_0)) \xrightarrow{\gamma_\epsilon} (t_1 + \epsilon T(t_1, q_1), q_1 + \epsilon Q(t_1, q_1)) \to (t_1, q_1)
+$$
+
+Then blithely wrote down the total action of the new path:
+
+$$
+L\lrb{t_0, q_0, \frac{Q(t_0, q_0)}{T(t_0, q_0)}} \epsilon T(t_0, q_0) + \int_\gamma L dt + \epsilon F|^{t_1}_{t_0} - L\lrb{t_1, q_1, \frac{Q(t_1, q_1)}{T(t_1, q_1)}} \epsilon T(t_1, q_1)
+$$
+
+and conclude that, since the action variation must be $o(\epsilon)$, we must have a conserved quantity
+
+$$L(t, q, Q/T) T - F(t, q, v)$$
+
+and I realized something has gone terribly wrong. It took a bit of yelling at GPT-5 and them politely yelling back at me to find the mistake. The new path has two corners. At this corner $(t_0 + \epsilon T(t_0, q_0), q_0 + \epsilon Q(t_0, q_0))$, the velocity must abruptly change from $Q/T$ to $\dot\gamma(t_0) + \epsilon V(t_0, q_0, \dot\gamma(t_0))$. If we try to smooth out the corner, then the system must accomplish this acceleration within time $\epsilon T(t_0, q_0)$. This means the system must have an acceleration on the order of $O(1/\epsilon)$, which breaks a *technical condition* for Lagrangian mechanics! The technical condition, which we have blithely ignored so far, is that the variation itself must have continuous velocity, i.e. it cannot have corners anywhere. Corners would create an extra [Weierstrass–Erdmann term](https://en.wikipedia.org/wiki/Weierstrass%E2%80%93Erdmann_condition), much like how varying the boundary point would create a variation in action by $dS = \braket{p,dq} -Hdt$.
+
+Actually, here is a good place to talk about a personality quirk of GPT-5. They are often right, but unable to point out where I went wrong. If I ask them "Where in this went wrong?" they would usually go for one of the following routes:
+
+1. Simply continue until about the point I went wrong, then say, "Instead of this..." and continue on with their own derivation. In other words, they would tell me roughly where the mistake is, without explaining what it is.
+2. Invoke jargon that, in the backward pass, does explain what the mistake is, but it sure isn't helpful to me in the forward pass!
+3. If I request for simple intuitive language, they would mumble something non-jargony that, if I do know what the mistake is, actually explains it intuitively, but it sure isn't helpful to me in the forward pass!
+
+> Being a Thurston student was inspiring and frustrating -- often both at once. At our second meeting I told Bill that I had decided to work on understanding fundamental groups of negatively curved manifolds with cusps. In response I was introduced to the famous "Thurston squint", whereby he looked at you, squint his eyes, give you a puzzled look, then gaze into the distance (still with the squint). After two minutes of this he turned to me and said: "Oh, I see, it's like a froth of bubbles, and the bubbles have a bounded amount of interaction." Being a diligent graduate student, I dutifully wrote down in my notes: "Froth of bubbles. Bounded interaction." After our meeting I ran to the library to begin work on the problem. I looked at the notes. Froth? Bubbles? Is that what he said? What does that mean? I was stuck. Three agonizing years of work later I solved the problem. It's a lot to explain in detail, but if I were forced to summarize my thesis in five words or less, I'd go with: "Froth of bubbles. Bounded interaction."
+>
+> --- Benson Farb, [*On being Thurstonized*](https://www.math.uchicago.edu/~farb/papers/thurston.pdf)
+
+:::
+
+### Bonus: Why is there no velocity-dependent transformation?
+
+A transformation of the configuration spacetime lifts to a transformation of the 1-jet manifold. This then suggests to us that we could deform directly the 1-jet manifold by some vector field $(T, Q, R)$ that depends on $(t, q, v)$, then project it back down. By the same argument as before, we calculate how it transforms a trajectory $(t, \gamma(t))$, and find that
+
+$$
+R(t, q, v) = D_t Q - vD_t T, \quad D_t = \partial_t + \braket{v, \partial_q} + \braket{a, \partial_v}
+$$
+
+But this is in general impossible: the left side does not depend on $a$, but the right side does. The only way to rescue this is if the $a$ terms cancel out exactly. That is, $\partial_{v_j} Q_i = v_i \partial_{v_j} T$ for all $i, j = 1, \dots N$. When $N \ge 2$, this implies they are independent of $v$, so we actually don't have a velocity-dependent transformation after all.
+
+::: {.callout-tip title="Derivation" collapse="true"}
+
+$$
+\partial_{v_j} (Q_i-v_i T)=-\delta_{ij} T
+$$
+
+By the symmetry of mixed partials,
+
+$$
+\partial_{v_k}\partial_{v_j} (Q_i-v_i T) = \partial_{v_j}\partial_{v_k} (Q_i-v_i T) \implies \delta_{ij} \partial_{v_k}T = \delta_{ik} \partial_{v_j}T
+$$
+
+Since $N \ge 2$, we can set $i = j \neq k$, and obtain $\partial_{v_k}T = 0$. This is true for all $k$, thus $T$ is independent of $v$. Now plug it into $\partial_{v_j} Q_i = v_i \partial_{v_j}$ to obtain $\partial_{v_j} Q_i = 0$ for all $i, j$.
+
+:::
+
+When $N = 1$, velocity-dependent transformations do exist:
+
+$$
+Q(t, q, v) = vT(t, q, v) - \int_0^v T(t, q, v') dv' + Q_0(t, q)
+$$
+
+where $Q_0(t, q), T(t, q, v)$ are arbitrary smooth functions. However, it is uninteresting, since dynamics is just too simple in one dimension.
+
+But why *would* there be a problem? What would happen if we simply insist on applying $T(t, q, v), Q(t, q, v), R(t, q, v)$? Well, consider what happens to an infinitesimal square at $(t, q, v)$. Its corners are dragged by the vector field $(T, Q, R)$. Previously, because $(T, Q)$ depends on $(t, q)$ but not $v$, the square is translated and rotated in the $(t, q)$ plane, but it remains upright. Now that $(T, Q)$ depends on $v$ also, the square would be rotated in the full $(t, q, v)$ space. And no matter what $R$ we pick, it is impossible for it to rotate the square back upright again, because it can only stretch and squeeze in the vertical direction, and that cannot re-upright what is not already upright.
+
+Well, when in doubt, go one dimension higher! We have already went from configuration spacetime to 1-jet to handle $v$. We need only go to 2-jet to handle $a$. Like how we constructed the 1-jet manifold, the 2-jet manifold $J^2$ is defined by appending at each point $(t, q, v) \in J^1$ the tangent space of velocity at $v$ -- the space of accelerations.
+
+Lifting a curve $(t, \gamma(t))$ to $J^2$ takes two steps. The 1th step lifts it to $J^1$, as before. We previously noted that two curves passing the same $(t, q)$ would be separated in $J^1$ if they differ in velocity, and if they have the same velocity but differ in acceleration, then they would pass the same point in $J^1$, but have different slope. Therefore, the 2th lift to $J^2$ would separate them.
+
+Previously, we constructed the contact geometry of $J^1$ by infinitesimal squares spanned by $\partial_t + \braket{v, \partial_q}$ and $\partial_v$. Analogously, the contact geometry of $J^2$ is constructed by infinitesimal squares spanned by $\partial_t + \braket{v, \partial_q} + \braket{a, \partial_v}$ and $\partial_a$. Lifting a curve $(t, \gamma(t))$ to $J^2$ is simply finding the unique curve in $J^2$ that projects down to $(t, \gamma(t))$ while being tangent to the field of infinitesimal squares.
+
+Would this suffice? It would not. We will see that $J^2, J^3, \dots$, none of them suffices. As soon as we incorporate velocity-dependence, we need to handle the entire Taylor expansion.
+
+Looking at the picture, an infinitesimal square at $(0, q_0, v_0) \in J^1$ can be tangent to several different lifted curves. Some move up -- those have positive acceleration. Some move down -- those have negative acceleration. Thus, the infinitesimal square is swept out by the curve family $\{\gamma(t) = q_0 + v_0t + \tfrac 12 at^2: a \in \R\}$. Similarly, an infinitesimal square at $(0, q_0, v_0, a_0) \in J^2$ is swept out by the curve family $\{\gamma(t) = q_0 + v_0t + \tfrac 12 a_0t^2 + \tfrac 16 jt^3: j \in \R\}$. Now, the trouble begins: What happens to the curve family at $(0,0,0,0)$ after applying $T=0, Q = v$ transformation? It becomes 
+
+$$
+\{\gamma(t) = \tfrac 12 \epsilon jt^2 + \tfrac 16 jt^3: j \in \R\}
+$$
+
+So we see the problem: The original curves are all lifted to pass through the same point $(0, 0, 0, 0) \in J^2$, if at different "vertical slopes" due to the [jerk](https://en.wikipedia.org/wiki/Jerk_%28physics%29) term $\tfrac 16 jt^3$. After applying the $T=0, Q=v$ transformation, the shifted curves are pulled apart according to the jerk term. It is easy to see (draw a picture) that any two members of the family $\{\gamma(t) = \tfrac 12 \epsilon jt^2 + \tfrac 16 jt^3: j \in \R\}$ do not have an order-2 contact. Thus, $T=0, Q=v$ destroyed the contact structure on $J^2$. The infinitesimal squares are not even mapped to infinitesimal squares at all, let alone oriented correctly.
+
+Going one level higher to $J^3$ would not save it, because we can simply make the same argument with $\{\gamma(t) = \tfrac{1}{4!} kt^4: k \in \R\}$, and so on. The essential problem is that point transformations preserve degrees -- to know where a point $\gamma(t)$ is mapped to, we need only know the point itself $\gamma(t)$; to know where a velocity $\dot \gamma(t)$ is mapped to, we need only know the point and the velocity $(\gamma(t), \dot\gamma(t))$. However, when the transformation depends on velocity, then we need to account for one degree higher -- to know where a point $\gamma(t)$ is mapped to, we need to know the point itself *and* the velocity; to know where a velocity $\dot \gamma(t)$ is mapped to, we need to know the acceleration too, etc. There is no way to stop short of going all the way to infinity.
+
+And if we were to consider acceleration-dependent transformations, the problem is even worse: we need to go two degrees higher.
+
+This is fundamentally why, though point transformations are everywhere in Lagrangian mechanics, velocity-dependent (or higher-order-dependent) transformations are impossible unless we directly go to the full Taylor expansion. This is in fact the route taken by advanced methods with "generalizde symmetries" [@olverApplicationsLieGroups1993, Chapter 5].
+
+### Hamiltonian mechanics as symplectic geometry
+
+Just as Lagrangian mechanics can be reformulated as contact geometry in 1-jet manifold, so can Hamiltonian mechanics be formulated as a geometric theory of a different kind of manifold, called **symplectic**.
+
+
+### Canonical transformation
+
+Similar to the case of Lagrangian mechanics, we can also gauge-transform the Hamiltonian. However, the choice of gauge is more subtle, due to the more subtle form of [modified Hamilton's principle](#eq-modified-hamilton). Recall that it says 
+
+$$
+\begin{cases}
+\delta \ub{\int_{t_0}^{t_1} \braket{p, dq} - H(t, q, p) dt}{$S$} = 0 \\
+q(t_0) = q_0, \; q(t_1) = q_1
+\end{cases}
+$$
+
+where the constraint is that $q$ is fixed at both ends, but $p$ is allowed to vary arbitrarily. Under such variation, we have
+
+$$
+\delta S = \int_{t_0}^{t_1} (\braket{\dot q - \partial_p H, \delta p} - \braket{\dot p + \partial_q H, \delta q})dt + \braket{p, \delta q}\Big|^{t_1}_{t_0}
+$$
+
+
+::: {#thm-geometric-canonical-trans}
+
+If $p, q, H, P, Q, K, F$ are differentiable functions on phase space-time $\R \times M$ that satisfy
+
+$$
+\braket{p, dq} - Hdt = \braket{P, dQ} - Kdt + dF
+$$ {#eq-geometric-canonical-trans}
+
+then if a trajectory $\gamma: \R \to M$ satisfies Hamilton's equations according to $(p, q, H)$, then it also satisfies Hamilton's equations according to $(P, Q, K)$.
+
+:::
+
+::: {.callout-note title="Proof" collapse="true"}
+
+We use modified Hamilton's principle $\delta \int \braket{p, dq} - Hdt = 0$. Note that the constraint of fixed $(t, q)$ and of fixed $(t, Q)$ are *different* constraints, $dQ$ and $dq$ might make an angle, due to the presence of $dF$. Nevertheless, we will get over the issue.
+
+Suppose $\gamma$ is a trajectory such that $\delta \int_\gamma (\braket{p, dq} - Hdt) = 0$ under the constraint of fixed $(t, q)$ at the ends, then by integration by parts,
+
+$$
+\delta \int_\gamma (\braket{P, dQ} - K dt) = \delta \int_\gamma (\braket{p, dq} - H dt - dF)
+$$
+
+This decomposes to 3 terms: an internal action integral, a boundary variation, and the gauge transformation term:
+
+$$
+= \int (\braket{\delta p, \dot q - \nabla_p H} - \braket{\delta q, \dot p + \nabla_q H}) dt + [\braket{p, \delta q} - \delta F]|_0^1
+$$
+
+By assumption, $\gamma$ satisfies Hamilton's equations if we use $p, q, H$, so the 1th term is exactly 0. How about the 2th term? Neither $\delta q$ nor $\delta F$ are zero! But we do know that 
+
+$$
+\braket{p, dq} - Hdt = \braket{P, dQ} - Kdt + dF
+$$
+
+exactly, so if we fix $\delta t = 0$ and $\delta Q = 0$, then $\braket{p, \delta q} - \delta F = 0$, finishing the proof.
+
+You might be tempted temporarily meddle in the economy by setting $\delta q = 0$ *and* $\delta p = 0$. This doesn't work, as we already noted. A government that tries to fix both production quota and market prices will destroy the economy.
+
+:::
+
+The transformation of $p, q, H$ to $P, Q, K$ is a **canonical transformation**, and $F$ is said to be the **generating function** of the transformation (well-defined up to an additive constant). Classically, however, only 4 types of generating functions are considered easy enough for use. We describe the 1th one carefully and leave the others as exercise.
+
+Type 1: $F(t, x) = F_1(t, q(t, x), Q(t, x))$ for any $t \in \R, x \in M$. Note again that $F_1$ is a function of type $\R^{1 + n + n} \to \R$, but $F$ is a function of type $\R \times M \to \R$. Plugging in the equations, we have
+
+$$
+\begin{cases}
+K &= H + \partial_t F_1 \\
+p &= \nabla_q F_1 \\
+P &= -\nabla_Q F_1
+\end{cases}
+$$
+
+I'm honestly not sure what these are for, and I have never used them for anything, but apparently people keep writing these down as if they are important, so here they are.
+
+::: {.callout-note title="The other cases" collapse="true"}
+
+Type 2: 
+
+$$
+F(t, x) = F_2(t, q(t, x), P(t, x)) - \braket{P(t, x), Q(t, x)}
+$$
+
+$$
+\begin{cases}
+K &= H + \partial_t F_2 \\
+p &= \nabla_q F_2 \\
+Q &= \nabla_P F_2
+\end{cases}
+$$
+
+Type 3:
+
+$$
+F(t, x) = F_3(t, p(t, x), Q(t, x)) + \braket{p(t, x), q(t, x)}
+$$
+
+$$
+\begin{cases}
+K &= H + \partial_t F_3 \\
+q &= -\nabla_p F_3 \\
+P &= -\nabla_Q F_3
+\end{cases}
+$$
+
+Type 4:
+
+$$
+F(t, x) = F_4(t, p(t, x), P(t, x)) + \braket{p(t, x), q(t, x)} - \braket{P(t, x), Q(t, x)}
+$$
+
+$$
+\begin{cases}
+K &= H + \partial_t F_4 \\
+q &= -\nabla_p F_4 \\
+Q &= \nabla_P F_4
+\end{cases}
+$$
+
+:::
 
 ## General relativity
 
@@ -2192,73 +2442,6 @@ $$
 where $R$ is the closest approach of light to the center of the sun. With hindsight, we know that the correct answer is $K = 1$, giving $\Delta \theta = \frac{4GM_\odot}{Rc^2}$. This was indeed observed by the 1919 Eddington experiment.
 
 But Einstein didn't have the hindsight. How did he find $K = 1$ and not, say, $K = 0$? Well, in 1911, he made the exact same mistake and calculated $\Delta \theta = \frac{2GM_\odot}{Rc^2}$. This was his "half-deflection" mistake. Fortunately he fixed it later.
-
-### Noether's theorem
-
-The famed Noether's theorem states that symmetries of the Lagrangian give us conserved quantities of motion. To state this rigorously, we set up some notation:
-
-* $\epsilon$ is an infinitesimal.
-* An **infinitesimal transformation** is an infinitesimal deformation $(\delta t, \delta q)$ of configuration space-time. 
-  * $\delta t = \epsilon T$, where $T$ a function of type $\ub{\R}{time} \times \ub{\mathcal C}{configuration space} \to \R$
-  * $\delta q = \epsilon Q$, where $Q$ is a function of type $\R \times \mathcal C \to \R^d$, where $d$ is the dimension of configuration space $\mathcal C$.
-* An infinitesimal transformation is a **symmetry of the Lagrangian**, iff taking any path $\gamma$ (which can be physically fake), and deforming it to $\gamma'$, the action is conserved to first order: $\int_\gamma L dt = \int_{\gamma'} L dt + O(\epsilon^{c})$, where $c > 1$. Because we don't need the $c$, we will write it just as $o(\epsilon)$, meaning "a higher-order infinitesimal than $\epsilon$".
-* A **conserved quantity of motion** is a number depending on $t, q, \dot q$, such that it is constant along any physically real path $\gamma$.
-
-::: {.callout-warning}
-
-A symmetry of the Lagrangian conserves *all* actions to first order, even those of unphysical paths, but a conserved quantity of motion is only conserved along physical paths. We may call it "conserved quantity of *physical* motion" to emphasize the distinction. In physicist jargon, Noether's theorem is an "[on-shell](https://en.wikipedia.org/wiki/On_shell_and_off_shell)" theorem.
-
-:::
-
-We defined "symmetry of the Lagrangian" by a condition on an integral: $\int_\gamma L dt = \int_{\gamma'} L dt$. Now we reformulate this to a condition at a point, involving $L, Q, T$ and their derivatives.
-
-::: {.callout-note title="Derivation" collapse="false"}
-
-
-
-:::
-
-
-
-::: {#thm-noether}
-
-## Noether's theorem
-
-If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal symmetry of the Lagrangian, then
-
-$$
-H T - \lra{p, Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
-$$
-
-is a conserved quantity of motion.
-
-:::
-
-::: {.callout-note title="Proof" collapse="false"}
-
-Given any physically real trajectory $\gamma_{AB}$ from point $A$ to $B$, we construct a variation of it by applying the infinitesimal transform, obtaining $A \to A + \delta A \to B + \delta B \to B$. Since $\gamma_{AB}$ is physically real, this perturbs the action by only $o(\delta)$.
-
-Because the infinitesimal transformation preserves the action up to $o(\delta)$, the action of $A + \delta A \to B + \delta B$ is the same as the action of $A \to B$ up to $o(\delta)$. So the action of $A \to A + \delta A$ cancels out the action of $B + \delta B \to B$ up to $o(\delta)$. Now take $\delta \to 0$.
-
-:::
-
-The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
-
-Technically speaking, we should not confuse the left side and the right side of 
-
-$$
-H T - \lra{p,  Q} = (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
-$$
-
-The left side is defined on the phase space-time, while the right side is defined on the configuration space-time. They are equal only because we have soldered together the phase space and the configuration space.
-
-Indeed, again and again we see that Lagrangian and Hamiltonian mechanics are different worlds, with their own dreams and phantasies, but always agreeing on the same reality.
-
-If this were the case, then why do we bother creating two mechanics, since there is no physical experiment to distinguish them? It is because in quantum mechanics, virtual trajectories are just as real as the "real" trajectories. A particle can just go around the earth once before it arrives at its destination, taking the long way around. In this case, what is virtually possible matters just as much as what is classically real, and if Lagrangian mechanics and Hamiltonian mechanics can entertain different kinds of dreams, we might be able to tell them apart.
-
-![$S$ is a source of photons, and $P$ is a receiver. A photon can go from $S$ to $P$ by bouncing off the mirror below, along many paths. Each path has a certain amplitude, and the sum of all their amplitudes is the total amplitude. While the amplitude is dominated by the amplitudes near the classical path $SGP$, it is not the only path, and all paths, even the "virtual" paths like $SAP$, contribute to what we observe. [@feynmanQEDStrangeTheory2006, figure 24]](figure/qed_2006_fig_24.png){width=60% fig-align="center"}
-
-![](figure/banner/2.png)
 
 ## Periodic motion
 
@@ -2652,7 +2835,7 @@ Selections from [@kramersAtomBohrTheory1923].
 
 :::
 
-> What we are nowadays hearing of the language of spectra is a true “ music of the spheres ” within the atom, chords of integral relationships, an order and harmony that becomes ever more perfect in spite of the manifold variety. The theory of spectral lines will bear the name of Bohr for all time. But yet another name will be permanently associated with it, that of Planck. All integral laws of spectral lines and of atomic theory spring originally from the quantum theory. It is the mysterious organon on which Nature plays her music of the spectra, and according to the rhythm of which she regulates the structure of the atoms and nuclei.
+> What we are nowadays hearing of the language of spectra is a true " music of the spheres " within the atom, chords of integral relationships, an order and harmony that becomes ever more perfect in spite of the manifold variety. The theory of spectral lines will bear the name of Bohr for all time. But yet another name will be permanently associated with it, that of Planck. All integral laws of spectral lines and of atomic theory spring originally from the quantum theory. It is the mysterious organon on which Nature plays her music of the spectra, and according to the rhythm of which she regulates the structure of the atoms and nuclei.
 >
 > Preface to the first edition of *Atomic structure and spectral lines*, Arnold Sommerfeld, 1919. [@sommerfeldAtomicStructureSpectral1923]
 
