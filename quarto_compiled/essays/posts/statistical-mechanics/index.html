@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-d11b06c2fdf6ee116f8b897abf45fcd3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-87427cbb7843c003718e76dbdb0e612c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-d11b06c2fdf6ee116f8b897abf45fcd3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -692,7 +694,7 @@ Pr(\theta \in [\theta_0, \theta_0 + \delta\theta]) = \lim_{T \to \infty} \frac{1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Is entropy unique?
+<span class="screen-reader-only">Note</span>Is entropy unique?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -715,7 +717,7 @@ Is entropy unique?
 <p><span class="theorem-title"><strong>Theorem 1 (Liouville’s theorem)</strong></span> For any phase space and any Hamiltonian over it (which can change with time), phase-space volume is conserved under motion.</p>
 <p>For any probability distribution <span class="math inline">\(\rho_0\)</span>, if after time <span class="math inline">\(t\)</span>, it evolves to <span class="math inline">\(\rho_t\)</span>, and a point <span class="math inline">\(x(0)\)</span> evolves to <span class="math inline">\(x(t)\)</span>, then <span class="math inline">\(\rho_0(x(0)) = \rho_t(x(t))\)</span>.</p>
 </div>
-<p>The proof is found in any textbook, and also <a href="https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)">Wikipedia</a>. Since it is already simple enough, and I can’t really improve upon it, I won’t.</p>
+<p>The proof is found in any textbook, and also <a href="https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)">Wikipedia</a>. The most elegant proof goes through <a href="https://yuxi.ml/essays/posts/analytical-mechanics/#thm-liouville-hamiltonian">symplectic geometry</a>.</p>
 <div id="cor-conservation-entropy" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 1 (conservation of entropy)</strong></span> For a Hamiltonian system, with any Hamiltonian (which can change with time), for any probability distribution <span class="math inline">\(\rho\)</span> over its phase space, its entropy is conserved over time.</p>
 </div>
@@ -756,12 +758,12 @@ Tip
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -794,7 +796,7 @@ D_{KL}(\rho' \| \rho) = -S[\rho'] + \sum_i a_i \braket{A_i}_{\rho'} + \ln Z(a_1,
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Notations
+<span class="screen-reader-only">Note</span>Notations
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -813,12 +815,12 @@ Notations
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -932,7 +934,7 @@ I(X, Y) = I(Y) + I(X|Y)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Extensivity
+<span class="screen-reader-only">Tip</span>Extensivity
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -964,12 +966,12 @@ A(x_1, \dots, x_n) = A_1(x_1) + \dots + A_n(x_n)
 <p>where <span class="math inline">\(p_i = (\partial_{q_i} S[\rho_{bath, q}])_{q}\)</span> is the marginal entropy of <span class="math inline">\(q_i\)</span> of the large system.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -995,7 +997,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Extensivity, again
+<span class="screen-reader-only">Note</span>Extensivity, again
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1024,7 +1026,7 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Enthalpic ensemble
+<span class="screen-reader-only">Note</span>Enthalpic ensemble
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1057,12 +1059,12 @@ f[\rho] := S[\rho] - \beta \braket{E} = \int dx \; \rho(x) (-\ln \rho(x) - \beta
 <p><span class="theorem-title"><strong>Theorem 5 (chain rule for free entropies)</strong></span> <span class="math inline">\(f_X = S_Y + \braket{f_{X|y}}_y\)</span>, and similarly <span class="math inline">\(g_X = S_Y + \braket{g_{X|y}}_y\)</span>, and similarly for all other free entropies.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1089,12 +1091,12 @@ Proof
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1139,12 +1141,12 @@ Proof
 <p>where <span class="math inline">\(S_{X|y}^*\)</span> is the maximal entropy for <span class="math inline">\(X\)</span> conditional on the same constraints, plus the extra constraint that <span class="math inline">\(Y = y\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1188,7 +1190,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-deriving the canonical ensemble yet again
+<span class="screen-reader-only">Note</span>deriving the canonical ensemble yet again
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1203,12 +1205,12 @@ deriving the canonical ensemble yet again
 <p>Similarly for Gibbs free entropy, and all other free entropies.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1289,7 +1291,7 @@ S(U, V, N) = \ln\left[\frac{V}{N} \left(\frac{4\pi m U}{3N h^2}\right)^{\frac 32
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How Tetrode measured <span class="math inline">\(h\)</span>
+<span class="screen-reader-only">Tip</span>How Tetrode measured <span class="math inline">\(h\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1345,7 +1347,7 @@ d\ln Z = -\braket{E}d\beta + \beta\braket{P} dV \implies
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-virial expansion
+<span class="screen-reader-only">Tip</span>virial expansion
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1512,7 +1514,7 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Relativistic gas?
+<span class="screen-reader-only">Note</span>Relativistic gas?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1542,7 +1544,7 @@ Relativistic gas?
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-elastic constant
+<span class="screen-reader-only">Note</span>elastic constant
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1638,7 +1640,7 @@ Video source: <a href="https://www.youtube.com/watch?v=00TyIShzR6o">Mechanical M
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-non-rigorous part
+<span class="screen-reader-only">Tip</span>non-rigorous part
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1663,7 +1665,7 @@ non-rigorous part
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-chi-squared test
+<span class="screen-reader-only">Note</span>chi-squared test
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1691,12 +1693,12 @@ chi-squared test
 Pr(\vec N / N \approx \vec q) \sim e^{-ND_{KL}(\vec q \| \vec p)}
 \]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-derivation
+<span class="screen-reader-only">Note</span>derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1721,12 +1723,12 @@ derivation
 <p>Let <span class="math inline">\(\Omega_N\)</span> be the surface area of a sphere of radius <span class="math inline">\(\sqrt N\)</span> in <span class="math inline">\(\mathbb{R}^N\)</span>, then</p>
 <p><span class="math display">\[\ln\Omega_N = \frac N2 \ln (2\pi e)-\frac 12 \ln (\pi e) + O(N^{-1})\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-derivation
+<span class="screen-reader-only">Note</span>derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1866,12 +1868,12 @@ p_{\text{unfolded}} = \frac{e^{\beta( FL - \Delta G )}}{1 + e^{\beta( FL - \Delt
 <p>Consider trajectories of type <span class="math inline">\(\{0, 1, 2, \dots, N\} \to \{1, 2, \dots, m\}\)</span>, and let <span class="math inline">\(s_t\)</span> is the state of timestep <span class="math inline">\(t\)</span>.</p>
 <p>If we fix the singleton probability <span class="math inline">\(p_i\)</span> of each state, then the maximum entropy distribution is the Markov chain with uniform initial probability and <span class="math inline">\(p_{i\to j} = p_i p_j\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-derivation
+<span class="screen-reader-only">Note</span>derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1897,12 +1899,12 @@ derivation
 <p>Similarly, if we fix the transition probability <span class="math inline">\(p_{i \to j}\)</span> of each state-pair, then the maximum entropy distribution is the Markov chain with uniform initial probability. If we fix the initial probability, then it’s still the Markov chain with the same transition probabilities.</p>
 <p>And more generally, if we fix <span class="math inline">\(n\)</span>-th order transition probability <span class="math inline">\(p_{i_1, \dots, i_n \to j}\)</span>, then we obtain an <span class="math inline">\(n\)</span>-th order Markov chain model.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-derivation
+<span class="screen-reader-only">Note</span>derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2022,7 +2024,7 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-rubber band
+<span class="screen-reader-only">Tip</span>rubber band
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2096,7 +2098,7 @@ f^*_{X|\rho} = f^*_{X|\rho_0} - \frac{1}{2\rho_0} \int (\delta \rho)^2dx
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-relaxation time
+<span class="screen-reader-only">Tip</span>relaxation time
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2104,12 +2106,12 @@ relaxation time
 <p>That is beyond the scope. Suffice to say that we should wait a while, not too short, after which the system is close enough to equilibrium. But we cannot wait for too long either, because in the long run, the particle would have escaped the potential well. So there is a time-scale, neither too long nor too short, which we call the relaxation time <span class="math inline">\(\tau\)</span>.</p>
 <p>Formalizing all these things requires stochastic calculus, which I might write about later.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Goldilocks and the three chefs">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Goldilocks and the three chefs
+<span class="screen-reader-only">Tip</span>Goldilocks and the three chefs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2134,12 +2136,12 @@ Goldilocks and the three chefs
 <p><span class="theorem-title"><strong>Theorem 10 (Arrhenius equation)</strong></span> The escape time for a simple harmonic oscillator in contact with an energy bath scales as <span class="math inline">\(e^{\beta \Delta E}\)</span>, where <span class="math inline">\(\Delta E\)</span> is the energy barrier, and <span class="math inline">\(\beta\)</span> is the temperature of the bath.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-derivation
+<span class="screen-reader-only">Note</span>derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2283,12 +2285,12 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-proof
+<span class="screen-reader-only">Note</span>proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2316,7 +2318,7 @@ proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-equilibrium Helmholtz
+<span class="screen-reader-only">Warning</span>equilibrium Helmholtz
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2329,12 +2331,12 @@ equilibrium Helmholtz
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2366,12 +2368,12 @@ Proof
 <p>where <span class="math inline">\(\rho(W|x)\)</span> is the probability density of expending work <span class="math inline">\(W\)</span> in the forward process.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2395,12 +2397,12 @@ Proof
 <p>where the expectation is taken over many repeats of the same experiment (ensemble average).</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2417,12 +2419,12 @@ Proof
 <p><span class="theorem-title"><strong>Corollary 4 (violation of second law is exponentially unlikely)</strong></span> <span class="math display">\[Pr((W - \Delta F^*) \leq - \delta W) \leq e^{-\beta \delta W}\]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2448,12 +2450,12 @@ Proof
 <p><span class="math display">\[\frac{\rho(\dot s)}{\rho(-\dot s)} = e^{\beta T \dot s}\]</span></p>
 <p>where <span class="math inline">\(T\)</span> is the driving period, and <span class="math inline">\(\dot s\)</span> is the entropy production rate.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2501,7 +2503,7 @@ e^{-\beta W}(1-\delta) + e^{-\beta W}\delta = 1, \quad W = \beta^{-1} \ln \frac{
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Martingales or bust!
+<span class="screen-reader-only">Tip</span>Martingales or bust!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2865,13 +2867,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -3264,7 +3267,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Statistical Mechanics"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-07-04"</span></span>
@@ -3481,7 +3484,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>The proof is found in any textbook, and also <span class="co">[</span><span class="ot">Wikipedia</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)). Since it is already simple enough, and I can't really improve upon it, I won't.</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>The proof is found in any textbook, and also <span class="co">[</span><span class="ot">Wikipedia</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)). The most elegant proof goes through <span class="co">[</span><span class="ot">symplectic geometry</span><span class="co">](https://yuxi.ml/essays/posts/analytical-mechanics/#thm-liouville-hamiltonian)</span>.</span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>::: {#cor-conservation-entropy}</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
@@ -5450,7 +5453,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-2184"><a href="#cb1-2184" aria-hidden="true" tabindex="-1"></a>\text{entropy production} = \beta(W - \Delta F^*) + I</span>
 <span id="cb1-2185"><a href="#cb1-2185" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-2186"><a href="#cb1-2186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2187"><a href="#cb1-2187" aria-hidden="true" tabindex="-1"></a>and the Jarzynski inequality becomes $\braket{e^{-\beta(W - \Delta F^*) + I}}$.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-2187"><a href="#cb1-2187" aria-hidden="true" tabindex="-1"></a>and the Jarzynski inequality becomes $\braket{e^{-\beta(W - \Delta F^*) + I}}$.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

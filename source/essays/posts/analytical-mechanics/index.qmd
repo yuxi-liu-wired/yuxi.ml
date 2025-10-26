@@ -30,9 +30,9 @@ importance: 4
 
 This essay works through what is typically contained in a university course on analytical mechanics. The prerequisites are multivariate calculus and mathematical maturity.
 
-It covers: calculus of variations, Lagrangian, Legendre transform, Hamiltonian, Hamilton's principal function, Hamilton--Jacobi equation, the particle-wave duality, canonical transformations, infinitesimal generator, contact geometry, symplectic geometry, Schrödinger's equation, Hamilton's geometric optics, action-angle variables, general relativity, Noether's theorem, adiabaticity, old quantum theory, Bohr--Sommerfeld quantization, Einstein--Brillouin--Keller quantization.
+It covers: calculus of variations, Lagrangian, Legendre transform, Hamiltonian, Hamilton's principal function, Hamilton--Jacobi equation, the particle-wave duality, contact geometry, symplectic geometry, Poisson bracket, canonical transformations, infinitesimal generator, Schrödinger's equation, Hamilton's geometric optics, action-angle variables, general relativity, Noether's theorem, adiabaticity, old quantum theory, Bohr--Sommerfeld quantization, Einstein--Brillouin--Keller quantization.
 
-It does not cover: virtual work, d'Alembert's principle, Poisson bracket, canonical perturbation theory, continuum mechanics, rigid bodies, field theory.
+It does not cover: virtual work, d'Alembert's principle, canonical perturbation theory, continuum mechanics, rigid bodies, field theory.
 
 Philosophically, this essay has two undercurrents:
 
@@ -1801,11 +1801,11 @@ $$
 \delta \int pdq - Hdt = 0, \quad q(t_0) = q_0, \; q(t_1) = q_1
 $$
 
-In the end-point constraint, $q$ is fixed, but $p$ is allowed to vary arbitrarily. This means that the trajectory in phase space-time has two end points sliding along two lines. These two lines are *not* Lorentz invariant, because each one is stuck in a slice of time $t_0, t_1$, and if we do a Lorentz transformation, the two lines no longer live in two slices of times. Finally, canonical transformation theory is not relativistic, because symplectic geometry requires even dimensions, but phase space-time has odd dimensions, so even if phase space-time could be constructed, the transformation theory of Hamiltonian mechanics breaks down.
+In the end-point constraint, $q$ is fixed, but $p$ is allowed to vary arbitrarily. This means that the trajectory in phase space-time has two end points sliding along two lines. These two lines are *not* Lorentz invariant, because each one is stuck in a slice of time $t_0, t_1$, and if we do a Lorentz transformation, the two lines no longer live in two slices of times. Finally, canonical transformation theory is not relativistic, because the geometry of Hamiltonian mechanics requires even dimensions, but phase space-time has odd dimensions, so even if phase space-time could be constructed, the transformation theory of Hamiltonian mechanics breaks down.
 
 These difficulties could be bypassed by going one dimension higher. Instead of describing trajectories as a function $\R \to \mathcal C$, describe trajectories as a function $\R \to \R \times \mathcal C$, then insert the speed of light somewhere to convert $\R \times \mathcal C$ to the Minkowski spacetime, solving problems of the form $\delta \int L(t, q, dt/ds, dq/ds) ds = 0$. [@greinerExtendedHamiltonLagrange2010] is an introduction to this approach.
 
-I find this extension rather useless and ugly. Much of the utility and beauty of Lagrangian mechanics is precisely in *not* being imprisoned within the Black Iron Prison of spacetime. Indeed, [@greinerExtendedHamiltonLagrange2010] includes 16 worked examples, but every example either is a generic theory-work, or a single particle in a field. What is the point of constructing a full machinery of Hamiltonian mechanics in $(2n+1)$-dimensional phase space-time, if you are going to only solve problems in $3+1$ anyway?
+I find this extension rather useless and ugly. Much of the utility and beauty of Lagrangian mechanics is precisely in *not* being imprisoned within the Black Iron Prison of spacetime. Indeed, [@greinerExtendedHamiltonLagrange2010] includes 16 worked examples, but every example either is a generic theory-work, or a single particle in a field. What is the point of constructing a full machinery of Hamiltonian mechanics in $(2n+1)$-dimensional phase space-time, if you are going to only solve problems in $6+1$ anyway?
 
 In fact, Hamiltonian mechanics and relativistic classical mechanics do not mix well. There are several "no-interaction theorems" proving that any Lorentz-invariant generalization of Hamiltonian mechanics necessarily cannot allow particle-particle interaction [@currieRelativisticInvarianceHamiltonian1963; @rohrlichRelativisticHamiltonianDynamics1979]. In other words, you can have classical (not quantum) relativistic Hamiltonian mechanics, but all you will get are particles dancing around in a background field, unaware of each other. You cannot even connect two particles by a spring. There are ways to bypass the obstruction, but so far it remains work for a few theoreticians and a dispensable erudition for the others.
 
@@ -1817,8 +1817,9 @@ If this were the case, then why do we bother creating two mechanics, since there
 
 ![](figure/banner/2.png)
 
-
 ## Transformation theory
+
+<small>This section uses the language of differential forms.</small>
 
 Modern physics is founded upon the idea of symmetry. You shall know a system by the symmetries it has. Classical mechanics, when viewed in this perspective, is concerned not with $x, y, z, \theta, \phi, \mu$, or anything so medieval as up-versus-down. Such asymmetric descriptions of reality have been tossed into the wastebasket of history along with Aristotelian physics. Indeed, with general relativity, we have eliminated the distinction between coordinate systems, between reference frames, and even between the straight and the crooked.
 
@@ -2069,13 +2070,13 @@ In fact, Noether's theorem can be further generalized to *quasi-symmetry* by inc
 
 ## Noether's theorem
 
-If $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal gauge symmetry of the Lagrangian, satisfying
+Assume that $(t, q) \mapsto (t + \epsilon T, q + \epsilon Q)$ is an infinitesimal gauge symmetry of the Lagrangian, satisfying
 
 $$
-(T \partial_t + \braket{Q, \nabla_q} + \braket{V, \nabla_v}) L + L D_t T = D_t F, \quad \int_\gamma L dt = \int_{\gamma'} L dt + F|^{1}_{0} + O(\epsilon^{c})
+(T \partial_t + \braket{Q, \nabla_q} + \braket{V, \nabla_v}) L + L D_t T = D_t F
 $$
 
-where $F(t, q)$ is a gauge generator, then the infinitesimal transformation maps physically real trajectories of $L$ to physically real trajectories of $L$, and
+where $F(t, q)$ is a gauge generator. Then the infinitesimal transformation maps physically real trajectories of $L$ to physically real trajectories of $L$, and
 
 $$
 F + H T - \lra{p, Q} = F + (\lra{\nabla_v L, \dot q} - L)T - \lra{\nabla_v L, Q}
@@ -2089,15 +2090,25 @@ is a conserved quantity of motion.
 
 Given any physically real trajectory $\gamma$ from point $A$ to $B$, infinitesimally transform it for an $\epsilon$ amount, obtaining $\gamma_\epsilon$ from $A \to A + \epsilon A$ to $B + \epsilon B \to B$. By assumption of quasi-symmetry, 
 
-$$\int_\gamma Ldt = \int_{\gamma_\epsilon} Ldt + F|^1_0 + o(\epsilon)$$
+$$\int_{\gamma_\epsilon} Ldt = \int_\gamma Ldt + \epsilon F|^1_0 + o(\epsilon)$$
 
 Now, a variation of $\gamma$ maps to a variation of $\gamma_\epsilon$, and vice versa, and therefore,
 
-$$\ub{\delta\int_\gamma Ldt}{$= 0$ since $\gamma$ is physical} = \delta\int_{\gamma_\epsilon} Ldt + \ub{\delta F}{$=0$ by boundary constraint}|^1_0 + o(\epsilon)$$
+$$\ub{\delta\int_\gamma Ldt}{$= 0$ since $\gamma$ is physical} = \delta\int_{\gamma_\epsilon} Ldt + \ub{\delta \epsilon F}{$=0$ by boundary constraint}|^1_0 + o(\epsilon)$$
 
-Thus $\gamma_\epsilon$ is physically real, which allows us to apply @eq-HJ.
+Thus $\gamma_\epsilon$ is physically real.
+
+Since it is physically real, the action of $\gamma_\epsilon$ can also be evaluated by the Hamilton--Jacobi differential (@eq-HJ)
+
+$$
+\int_{\gamma_\epsilon} Ldt = \int_{\gamma_\epsilon} Ldt + \epsilon(\braket{p, Q} - HT)|^1_0 + o(\epsilon)
+$$
+
+At $\epsilon \to 0$ limit, we find $\braket{p, Q} - HT - F$ is a conserved quantity.
 
 :::
+
+Intuitively, Noether's theorem is a form of **symmetry reduction**. The idea is that, because we have a 1-parameter family of transformations that map physically real trajectories to physically real trajectories, we ought to divide out that family, and thus reduce the space of all trajectories down by 1 dimension. The idea is that, instead of solving the trajectories from the full $2n$-dimensional space of possible initial conditions, we can solve it for only a $(2n-1)$-dimensional subspace of them, then apply the 1-parameter family to generate the other trajectories. Which subspace? For any fixed $c \in \R$, the subspace with fixed $\braket{p, Q} - HT - F = c$. Instead of studying the dynamics in the full configuration space-time $\R \times T\mathcal C$, we can study it in the lower-dimensional $\{\braket{p, Q} - HT - F = c\} \subset \R \times T\mathcal C$. 
 
 The proof is similar to the proof of @thm-poincare-cartan, though they differ in that Noether's theorem shows a quantity, defined at a single point, is conserved over a trajectory, while the Poincaré--Cartan invariant is not defined at a single point, but as an integral over an entire cycle.
 
@@ -2191,12 +2202,194 @@ Going one level higher to $J^3$ would not save it, because we can simply make th
 
 And if we were to consider acceleration-dependent transformations, the problem is even worse: we need to go two degrees higher.
 
-This is fundamentally why, though point transformations are everywhere in Lagrangian mechanics, velocity-dependent (or higher-order-dependent) transformations are impossible unless we directly go to the full Taylor expansion. This is in fact the route taken by advanced methods with "generalizde symmetries" [@olverApplicationsLieGroups1993, Chapter 5].
+This is fundamentally why, though point transformations are everywhere in Lagrangian mechanics, velocity-dependent (or higher-order-dependent) transformations are impossible unless we directly go to the full Taylor expansion. If the curve is slightly too curvy in the 103-th derivative, that would have repurcussions throughout all the other derivatives. Instead of mapping point to point, or point-and-velocity to point-and-velocity, we must directly map curve segments to curve segments. Each segment must be large enough to contain all derivatives -- that is, a [germ](https://en.wikipedia.org/wiki/Germ_(mathematics)).
+
+Such advanced "generalized symmetries" are used in exactly integrable models such as the KdV equation and soliton theory, but this is completely beyond our scope. See [@olverApplicationsLieGroups1993, Chapter 5].
 
 ### Hamiltonian mechanics as symplectic geometry
 
-Just as Lagrangian mechanics can be reformulated as contact geometry in 1-jet manifold, so can Hamiltonian mechanics be formulated as a geometric theory of a different kind of manifold, called **symplectic**.
+Similar to Lagrangian mechanics, we can also cast Hamiltonian mechanics into the form of symplectic geometry, which has several benefits:
 
+1. Do we see the heavens fill with coordinate grids? Do we see measuring lines across the earth's foundation? If Nature needs no coordinates then why should we *imitatores Naturae*?
+2. If we can write a formula in coordinate-free language, then it must satisfy the same relations in any coordinate system. Coordinate-freeness frees us from the toil of checking our formulas still work under coordinate transformation.
+3. It is good preparation for modern particle physics, which has almost entirely geometrized.
+
+We begin by inspecting the pieces we have, and calling them by their true geometry. We have mainly thought of of $q$ as a list of $n$ numbers, one per commodity, and $p$ as a list of $n$ numbers, one per commodity-price. However, it is time to admit that we need to let this interpretation go, because we are about to show that we can not only transform $q$ to $q'$, but even $q$ to $p'$.
+
+If our transformations are limited to just point transformations, then we can still interpret it as factory-production. Instead of selling tons of steel and tons of timber, we would sell a bundle of (0.7 tons of steel, 0.7 tons of timber) and a bundle of (0.7 tons of steel, -0.7 tons of timber). Such bundling is quite common in modern commerce. But no meaning at all can be assigned to "selling a bundle of (0.7 tons of steel, 0.7 dollars on price of steel)", though I'm sure the wizards of Wall Street have tried.
+
+So let us begin anew. Consider the motion of a particle moving on a sphere under the influence of a potential well. We write the configuration space as $\mathcal C$, as usual.
+
+Geometrically speaking, $q$ is not a point in $\mathcal C$, but rather a numerical name for a point. We can't write $q \in \mathcal C$, but write $x \in \mathcal C$. So what are coordinates? They are maps from open subsets[^hairy-ball-theorem] of $\mathcal C$ to $\R^n$, so when we write $q$ we have really meant $q(x), x \in \mathcal C$.
+
+[^hairy-ball-theorem]: Why open subsets? Because the configuration space might not allow a global map. In particular, there is no global coordinate chart on the sphere by the [hairy ball theorem](https://en.wikipedia.org/wiki/Hairy_ball_theorem).
+
+Now, what is $p$? We have always said that it is "price". But what is a price? A price is only meaningful when you buy and sell something using it. That is, we are never thinking about $p$ in itself, but always thinking about $\int_\gamma \braket{p, dq}$. This suggests that the real object we want is the 1-form $\theta := \braket{p, dq}$. What does it look like? Why, like any 1-form! It looks like little stacks of infinitesimal planes, one per point in $\mathcal C$... wait a minute. We can't do that,[^type-checker] because $\theta$ depends on $p$, which does not live on $\mathcal C$. Where does it live?
+
+[^type-checker]: You can get far in modern mathematics simply by demanding that all the formulas can pass a typechecker.
+
+When in trouble, go one dimension higher. At every point $x \in \mathcal C$, we can construct a space of all possible market prices there, called $T_x^* \mathcal C$. We can't draw the entire $T_x^* \mathcal C$ as a stack of planes, but any individual $w \in T_x^* \mathcal C$ *can* be interpreted as a bundle of market prices, and drawn as a stack of infinitesimal planes centered on $x$. 
+
+Now we know what $\theta$ truly is: It is a 1-form on $T^* \mathcal C$, which physicists call the **cotangent bundle**. $T^* \mathcal C$ is co-tangent, because any element of it is a (market) machine for turning a tangent vector in $\mathcal C$ (an infinitesimal production plan) into a real number (money). And how do we describe $\theta$ directly? Why, we need to understand what a tangent vector is in $T^* \mathcal C$. Careful! A tangent vector in $T^* \mathcal C$ is *not* a tangent vector in $\mathcal C$. A tangent vector in $T^* \mathcal C$ is a simultaneous commodity production *and* a change in market price. A point in $T^* \mathcal C$ is written as $(x, w)$, and pictured as a little stack of planes at base point $x$, with the direction and tightness of the planes determined by $w$.
+
+So, given an infinitesimal change $(\delta x, \delta w)$, how do we evaluate $\theta$ on it? That's simple enough. The market can change its prices, but the factory will sell all the same. The revenue is still $w(\delta x)$ no matter what $\delta w$ is. Geometrically, we simply project a tangent vector $(\delta x, \delta w)$ at $(x, w) \in T^* \mathcal C$ down to a tangent vector $\delta x$ at $x \in \mathcal C$, then evaluate $w(\delta w)$. This $\theta$ is called the **tautological 1-form**, and it looks like little stacks of planes floating on top of each $x \in \mathcal C$, all parallel to the price-axis, but rotating and changing their density according to the price $w \in T^*_w \mathcal C$.
+
+This moment of ultimate triumph for the market is tinged with sadness, because we really cannot continue playing the market game anymore. We have outlived its usefulness. We have converted our market economy to a differential geometry, and there is no returning.
+
+Now, to fix the equations of motion $\dot q = \nabla_p H, \dot p = -\nabla_q H$. It contains $q, p, \nabla$ which are coordinate-dependent. Well, $\dot q, \dot p$ looks like a single vector field in $T^* \mathcal C$, which we write as $X_H$, and thus:
+
+$$
+X_H = \sum_i \partial_{p_i} H \partial_{q^i} - \partial_{q^i} H \partial_{p_i} 
+$$
+
+Halfway there! To eliminate coordinates on the other side, we should replace it by $?(dH)$:
+
+$$
+\sum_i (\partial_{p_i} H \partial_{q^i} - \partial_{q^i} H \partial_{p_i} ) = ?\lrb{\sum_i (\partial_{p_i} H dp_i + \partial_{q^i} H dq^i)}
+$$
+
+Looking at it for a bit, we see that the only possibility is that it must be 
+
+$$
+? : dp_i \mapsto \partial_{q^i}, \quad dq^i \mapsto -\partial_{p_i}
+$$
+
+So we define it as $\Pi := \partial_{q^i} \wedge \partial_{p_i}$, and write $X_H = -\Pi(dH)$. Now, for reasons of convention and convenience, it is easier to use its inverse $\omega =  \sum_i dq^i \wedge dp_i = -d\theta$, the famous **symplectic form**, in which the equations of motion fits on a single line:
+
+$$
+\omega(X_H \wedge \cdot) = dH
+$$ {#eq-hamilton-eom-symplectic}
+
+Notice what we have accomplished: Using the 2-form $\omega$, we can convert any scalar function $H: T^* \mathcal C \to \R$ to a vector field $X_H$. In fact, the opposite is true locally: Given any smooth vector field $X$, around any point $x \in T^* \mathcal C$, there exists an open neighborhood $U$, and a scalar function $f: U \to \R$, such that $\omega(X \wedge \cdot) = df$ on $U$. 
+
+::: {.callout-tip title="Why only locally?" collapse="true"}
+
+Given a vector field $X$, there might not be a global scalar field $f$ that generates it. This is essentially the same reason why perfect vortices exist: We can construct a curlless vector field $\tfrac 1r \partial_\theta$ in the plane with zero removed $\R^2 \setminus \{0\}$ that is not generated by a potential field, since if you take a cycle that encircles the origin, you get a nonzero line integral.
+
+Consider the phase space of a circle $T^* \mathbb S^1$. If $H$ generates the flow field $\dot \theta = 0, \dot p = 1$, then $dH = -d\theta$, but this is impossible, since we would have $H(2\pi) = H(0) - 2\pi$, breaking single-valuedness.
+
+:::
+
+Having accomplished the labor of abstraction, we turn the world upside down. Instead of defining symplectic geometry $\omega$ from coordinates $(p, q)$, we define coordinates from symplectic geometry! Given a symplectic manifold $(M, \omega)$, we say that $(p, q): M \to \R^n$ are a set of **canonical coordinates** locally at some $x \in M$, iff $\omega = \sum_i dq^i \wedge dp_i$ in a neighborhood of $x$.
+
+::: {#exr-0}
+
+Check that if $(p, q)$ are locally canonical, then locally, $X_H = \sum_i \partial_{p_i} H \partial_{q^i} - \partial_{q^i} H \partial_{p_i}$. Thus, canonical coordinates are precisely those that make the Hamiltonian equations of motion appear in the standard form. In fact, this is why they are called "[canonical](https://en.wiktionary.org/wiki/canonical_form#English)".
+
+:::
+
+Similarly to the Lagrangian case, we should also consider what symmetries are in Hamiltonian mechanics. 
+
+Given a symplectic manifold $(M, \omega)$, a **symplectomorphism** is a diffeomorphism $F: M \to M$, such that $F$ preserves the symplectic form. An **infinitesimal symplectomorphism** (or **symplectic vector field**) is a vector field $X$ on $M$, such that its vector flow generates a whole 1-parameter family of symplectomorphisms.
+
+As it turns out, there is a tropical profusion of symmetries, far beyond what Lagrangian mechanics gives us:
+
+::: {#thm-hamiltonian-flow-is-symplectic}
+
+Given $f: M \to \R$, the vector field $X_f$ it generates is a symplectic vector field. In particular, any Hamiltonian flow is symplectic.
+
+:::
+
+And since Hamiltonian mechanics has been cast into pure symplectic geometry, any symplectomorphism is a symmetry of Hamiltonian mechanics. For example, let $\Phi: M \to M$ be a symplectomorphism:
+
+* If $(p, q): M \to\R^{2n}$ is canonical, then $(p, q) \circ \Phi^{-1}$ is canonical. In pictures: Construct the coordinate grid using $(p, q)$, then map the grid point-by-point forwards using $\Phi$. Then we can construct the same $\omega$ either by summing up the 2-forms $\sum_i dq^i \wedge dp_i$ or by summing up $\sum_i d(q^i \circ \Phi^{-1}) \wedge d((p_i\circ \Phi^{-1}))$.
+* If $H: M \to \R$ is a Hamiltonian, and $X_H$ is its Hamiltonian flow, then $H\circ \Phi^{-1}$ generates $\Phi^*(X_H)$. In pictures: Graph the Hamiltonian field $H$, then map it point-by-point forwards using $\Phi$ to graph $H \circ \Phi^{-1}$. The new field has the flow $\Phi^*(X_H)$, obtained by maping the vectors forward using $\Phi$.
+* If $f, g: M \to \R$, then $\{f, g\} = \{f \circ \Phi^{-1}, g \circ \Phi^{-1}\}$.
+* Given a subset $U \subset M$, it is mapped to $\Phi(U)$. They have the same symplectic volume: $\omega^n(U) = \omega^n(\Phi(U))$.
+
+The last statement gives
+
+::: {#thm-liouville-hamiltonian}
+
+## Liouville's theorem
+
+Given a Hamiltonian $H: \R \times M \to \R$, it generates a (time-dependent) Hamiltonian vector field $X_H$ that preserves symplectic volume.
+
+:::
+
+Liouville's theorem is used everywhere in [statistical mechanics](https://yuxi.ml/essays/posts/statistical-mechanics/#fundamental-theorems). In particular, consider a probability distribution on phase space $\rho_0$, and at $t=0$, we distribute infinitesimal dust-particles according to it, and let the dust cloud move under Hamiltonian flow. This creates a time-dependent probability distribution $\rho(t, x)$. Now, we follow the trajectory of a single particle $(t, \gamma(t))$. Then we have $\frac{d}{dt} \rho(t, \gamma(t)) = 0$. Abstractly speaking, this connects [the Lagrangian and the Eulerian approach](https://en.wikipedia.org/wiki/Lagrangian_and_Eulerian_specification_of_the_flow_field) to flow.
+
+The $\Pi$ also has a name: the **Poisson bivector**, which defines the **Poisson bracket**:
+
+$$
+\{f, g\} := \Pi(df \wedge dg) = \sum_i (\partial_{q^i} f \partial_{p_i}g - \partial_{p_i}f \partial_{q^i} g)
+$$
+
+It is a simple exercise to show:
+
+$$
+\begin{cases}
+\{f, g\} = - \{g, f\} \\
+\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{g, \{h, f\}\} = 0 \\
+\{fg, h\} = f\{g, h\} + \{f, h\}g
+\{p_i, p_j\} = 0, \; \{q^i, q^j\} = 0, \; \{q^i, p_j\} = \delta^{i}_{j}, \\
+\{f, g\} = \omega(X_f \wedge X_g) = -X_f(g) = X_g(f), \\
+[X_f, X_g] = -X_{\{f, g\}} = X_{\{g, f\}}, \\
+\frac{d}{dt} f = (\partial_t + X_H)(f) = (\partial_t - \{H, \cdot\})f, \quad \forall f: \R \times M \to \R
+\end{cases}
+$$
+
+In classical mechanics, the Poisson bracket is rather obscure. It has certain advantages, in that it allows one to study Hamiltonian mechanics [purely algebraically](https://en.wikipedia.org/wiki/Differential_algebra), without ever taking a single derivative or integral, but physicists are usually more scared of algebra than calculus. But once again, the quantum leaks into the classical, and it was the key for Dirac's breakthrough in quantum mechanics.
+
+It was 1925, and he had read Heisenberg's matrix quantum mechanics. Heisenberg's theory explained the structure of atomic spectra using matrix algebra. Each classical observable, such as position and momentum, corresponds to a qunatum observable. A classical observable is a real-valued function, while a quantum observable is an infinite-dimensional matrix. His theory successfully explained various atomic spectra, but noticed something disturbing: If $f, g$ are classical observables, then $fg - gf = 0$. But if $\hat f, \hat g$ are quantum observables, then $\hat f \hat g - \hat g\hat f = 0$ possibly. He even considered it a flaw in his theory.
+
+Dirac concentrated on precisely this point, and one Sunday walk, he had a flash of insight:
+
+> I remembered something which I had read up previously in advanced books of dynamics about these strange quantities, Poisson brackets, and from what I could remember, there seemed to be a close similarity between a Poisson bracket of two quantities, $u$ and $v$, and the commutator $u v-v u$. The idea first came in a flash, I suppose, and provided of course some excitement, and then of course came the reaction "No, this is probably wrong." ... I looked through my notes, the notes that I had taken at various lectures, and there was no reference there anywhere to Poisson brackets. The textbooks which I had at home were all too elementary to mention them. There was just nothing I could do, because it was a Sunday evening then and the libraries were all closed... The next morning I hurried along to one of the libraries as soon as it was open, and then I looked up Poisson brackets in Whittaker's *Analytical Dynamics*, and I found that they were just what I needed.
+> 
+> [@kraghDiracScientificBiography1990, page 17]
+
+His insight was that classical mechanics has non-commutativity: the Poisson brackets. Thus he proposed his quantum-classical correspondence formula: If $f, g$ are classical observables, then their quantum versions $\hat f, \hat g$ should satisfy $\hat f \hat g - \hat g\hat f = i\hbar \{f, g\}$.
+
+### Symplectic Noether's theorem
+
+Noether's theorem becomes almost trivial in the symplectic case. Given a time-independent functions $f, H$,
+
+$$X_H(f) = 0 \iff X_f(H) = 0 \iff \{f, H\} = 0$$
+
+In words, the flow $X_f$ is an infinitesimal symmetry of the Hamiltonian $H$, iff $f$ is a constant of motion under $H$, iff their Poisson brackets vanish. In particular, since $\{H, H\} = 0$, we find that $H$ generates a symmetry of itself. In other words, the Hamiltonian flow within each time-slice is restricted to the constant energy surfaces.
+
+This statement can be generalized to the time-dependent case, but that is rather awkward to say, without actually saying that much, so for this section we will stick to time-independent case.
+
+::: {.callout-warning}
+
+What of $\frac{d}{dt} H = \partial_t H$? Doesn't that mean that energy is only conserved when $H$ is time-independent? Here we have to distinguish time-evolution verses flow-evolution.
+
+Let $H: \R \times M \to \R$ be a time-dependent Hamiltonian. At any *specific* moment $t_0$, we have a frozen-in-time Hamiltonian $H(t_0, \cdot): M \to \R$. Now, this Hamiltonian generates a vector field $X_{H(t_0, \cdot)}$, and we can ask: What happens if we flow $H(t_0, \cdot)$ according to $X_{H(t_0, \cdot)}$, *without* changing $t_0$? That is, we construct a one-parameter family of maps $\Phi_s: M \to M$, such that for any $x \in M$, $\frac{d}{ds}\Phi_s(x) = X_{H(t_0, \cdot)}|_{\Phi_s(x)}$. 
+
+Sure, $\frac{d}{dt} H = \partial_t H$, but we also have $\frac{d}{ds} H(t_0, \Phi_s(x)) = 0$. This is why we say that the Hamiltonian flow within each time-slice generates a symmetry of the Hamiltonian, *even if* $\partial_t H \neq 0$.
+
+If this is confusing, think: Vector flow does not necessarily take place over time! Time is just another parameter, and time-flow is just one particular kind of vector flow. We can use $t$ as a parameter, but just as well use $s$ as a parameter. There is no particular reason to elevate one over another.
+
+:::
+
+We can also get new conservation flows from old. Suppose that $X_f, X_g$ are symplectic vector fields that are symmetries of $H$, then we can take the graph of $H$ and flow it according to $X_f$, and get back $H$. Similarly, we can flow it according to $X_f$, then $X_g$, then $-X_f$, then $-X_g$. We should still get back $H$. Thus, $[X_f, X_g]$ is also an infinitesimal symmetry of $H$. And since $X_{\{g, f\}}$, it is also a symplectic vector field.
+
+We like conservation flows. Given a Hamiltonian $H$, what is the maximal number of conservation flows possible?
+
+::: {#thm-maximal-integrability}
+
+## maximal integrability
+
+Given $\dim M = 2n$, and given $f_1, \dots, f_k$ such that $f_1 = H$ and $\{f_i, f_j\} = 0$ for all $i, j$. Then in general, $k \leq n$. That is, there are at most as many conserved quantities as half that of the phase space.
+
+:::
+
+::: {.callout-note title="Proof" collapse="false"}
+
+Let $X_i$ be the flow generated by $f_i$, then $[X_i, X_j] = -X_{\{f_i, f_j\}} = -X_{0} = 0$. Thus, all these vector fields commute with each other. In particular, we can construct a $k$-dimensional submanifold $N \subset M$ by integrating along $X_1, \dots, X_k$. There is no danger of the integral curves creating a non-closing parallelogram, because all $[X_i, X_j] = 0$.
+
+Now, $\omega(X_i \wedge X_j) = \{f_i, f_j\} = 0$, so the symplectic form restricted to $N$ is identically zero $\omega|_N = 0$. Since $\omega$ is non-degenerate on $M$, $N$ has dimension $\leq n$.
+
+:::
+
+Given a symplectic manifold $(M, \omega)$, a **Lagrangian submanifold** of it is a submanifold $N\subset M$ such that $\dim N = \tfrac 12 \dim M = n$, and $\omega|_N = 0$. A **Lagrangian fibration** is a partition of $M$ into an $n$-parameter family of Lagrangian submanifolds.
+
+The maximal integrability theorem states that given a Hamiltonian, at most we could expect that it has $n$ independent types of infinitesimal symmetries $X_1, \dots, X_n$ generated by $f_1, \dots, f_n$ with $f_1 = H$. These symmetries generate a Lagrangian fibration of the phase space. Each particle moving under the Hamiltonian flow strictly flows within a fiber. The trajectories usually look like dense weaves around $n$-dimensional toruses.
+
+But is that the best we could do? Not really! Each particle is only required to flow within a single 1-dimensional fiber, not an $n$-dimensional submanifold, so we could have $f_2, \dots, f_{2n}$ such that the vector fields $X_H, X_{f_2}, \dots, X_{f_{2n}}$ are linearly independent, and each of $X_{f_2}, \dots, X_{f_{2n-1}}$ is a symmetry of the Hamiltonian. This does not violate maximal integrability theorem, because the vector fields do not commute with each other. Such cases are called **superintegrable**.
+
+In particular, consider the motion of a particle in a plane under a central attractive field $F \propto r^\alpha$. The orbit is generally a dense weave, covering an entire annular region. This is because the system is in general maximally integrable, having two constants of motion -- energy and angular momentum -- corresponding to the two symmetries of the system -- time-symmetry and rotational symmetry. However, when $\alpha = -2$ and $\alpha= +1$, the orbit splits into exact self-closed ellipses. The $\alpha=-2$ case has the conservation of [Laplace–Runge–Lenz vector](https://en.wikipedia.org/wiki/Laplace%E2%80%93Runge%E2%80%93Lenz_vector). The $\alpha=+1$ case has the conservation of [Fradkin tensor](https://en.wikipedia.org/wiki/Fradkin_tensor).
 
 ### Canonical transformation
 
@@ -2214,7 +2407,6 @@ where the constraint is that $q$ is fixed at both ends, but $p$ is allowed to va
 $$
 \delta S = \int_{t_0}^{t_1} (\braket{\dot q - \partial_p H, \delta p} - \braket{\dot p + \partial_q H, \delta q})dt + \braket{p, \delta q}\Big|^{t_1}_{t_0}
 $$
-
 
 ::: {#thm-geometric-canonical-trans}
 
@@ -2256,7 +2448,17 @@ You might be tempted temporarily meddle in the economy by setting $\delta q = 0$
 
 :::
 
-The transformation of $p, q, H$ to $P, Q, K$ is a **canonical transformation**, and $F$ is said to be the **generating function** of the transformation (well-defined up to an additive constant). Classically, however, only 4 types of generating functions are considered easy enough for use. We describe the 1th one carefully and leave the others as exercise.
+The transformation of $p, q, H$ to $P, Q, K$ is a **canonical transformation**, and $F$ is said to be the **generating function** of the transformation (well-defined up to an additive constant). 
+
+::: {#thm-canonical-symplectomorphism}
+
+A canonical transformation generates an entire family of symplectomorphisms, parameterized by time. That is, for any fixed time $t_0$, we have two coordinate systems $(P, Q), (p, q): \{t_0\} \times M \to \R^{2n}$. Then the map $(P, Q)^{-1} \circ (p, q): \{t_0\} \times M \to \{t_0\} \times M$ satisfies $\sum_i dq^i \wedge dp_i = \sum_i dQ^i \wedge dP_i$. 
+
+:::
+
+Proof: $dt \wedge \lrb{\sum_i dq^i \wedge dp_i} = dt \wedge \lrb{\sum_i dQ^i \wedge dP_i}$.
+
+Arbitrary smooth function $F : \R \times T^* \mathcal C \to \R$ can be used in theory, but traditionally, only 4 special types of generating functions are considered good for practical use. We describe the 1th one carefully, and leave the others as exercise.
 
 Type 1: $F(t, x) = F_1(t, q(t, x), Q(t, x))$ for any $t \in \R, x \in M$. Note again that $F_1$ is a function of type $\R^{1 + n + n} \to \R$, but $F$ is a function of type $\R \times M \to \R$. Plugging in the equations, we have
 
@@ -2413,7 +2615,10 @@ $$
 
 where $E'$ could be read as the non-relativistic portion of energy, and $K$ is an unknown constant.[^einstein-metric-tensor-space] This directly yields
 
-[^einstein-metric-tensor-space]: We essentially have no choice in picking $N \approx 1 + \Phi/c^2$, because otherwise $g_{J}$ will not converge to $g_{E}$. However, why not pick $h_{ij} \approx \delta_{ij}$? Two reasons. One, if the metric of time is modified by $\sim\Phi/c^2$, then by the symmetry of space and time, the metric of space ought to be modified by $\sim\Phi/c^2$ as well. Two, because it is the correct result. A funny story is that when I wrote the section, I breezily wrote $h_{ij} \approx 1$, and then proceeded to calculate that the sun bends light by 0.875″. But I remembered Eddington's experiment found a much larger value. So I asked, and ChatGPT said I made the same mistake as Einstein did in 1911, which he fixed after 4 years of "bumpy road".
+[^einstein-metric-tensor-space]:
+    We essentially have no choice in picking $N \approx 1 + \Phi/c^2$, because otherwise $g_{J}$ will not converge to $g_{E}$. However, why not pick $h_{ij} \approx \delta_{ij}$? Two reasons. One, if the metric of time is modified by $\sim\Phi/c^2$, then by the symmetry of space and time, the metric of space ought to be modified by $\sim\Phi/c^2$ as well based on purely aesthetic reasons. Two, because it is the correct result.
+    
+    A funny story is that when I wrote the section, I breezily wrote $h_{ij} \approx 1$, and then proceeded to calculate that the sun bends light by 0.875″. But I remembered Eddington's experiment found a much larger value. So I asked, and ChatGPT said I made the same mistake as Einstein did in 1911, which he fixed after 4 years of "bumpy road". Considering I don't have 4 years to bump around, I called it a day.
 
 $$
 g_{J, ij} \to 2m(E' - m\Phi(q)) \delta_{ij} = g_{E', ij}
@@ -2580,7 +2785,7 @@ Now, we can graphically see that this construction really preserves areas:
 
 ::: {.callout-warning}
 
-This is not as trivial as it seems. The "area" in phase space was defined by $\oint pdq$, but we did not say that $p, q$ are perpendicular in any sense. Thus, it is not obvious that $\delta P \delta Q$ would be the area of the parallelogram. Indeed, we *should not* say that $p, q$ are perpendicular, because angles do not exist and *should not* exist in phase space.
+This is not as trivial as it seems. The "area" in phase space was defined by $\oint pdq$, but we did not say that $p, q$ are perpendicular in any sense. Thus, it is not obvious that $\delta P \delta Q$ would be the area of the parallelogram. Indeed, we *should not* say that $p, q$ are perpendicular, because angles are undefined and *should not* be defined in phase space.
 
 :::
 
@@ -2891,9 +3096,17 @@ Consider the simplest case of the three-body problem: We put two suns in a circu
 
 As the energy of the system is conserved, the motion of the dust is restricted to the constant energy surface $H(q_1, q_2, p_1 p_2) = E$, which is a 3-dimensional blob within the 4-dimensional phase space. However, in general, this is all we can say about it. The motion of the dust is chaotic, and would densely crisscross over a 3-dimensional subset of the blob.
 
-Without a torus in phase space, we cannot find trajectories around the torus, and so the integral $\oint_{\gamma}\lra{p, dq}$ is undefined. Einstein presciently pointed this out in his 1916 paper:
+Without a torus in phase space, we cannod construct the action-angle variables, and thus the integral $\oint_{\gamma}\lra{p, dq}$ is undefined. Einstein presciently pointed this out in his 1916 paper:
 
-> If there exist fewer than $d$ \[constants of motion\], as is the case, for example, according to Poincaré in the three-body problem, then the $p_i$ are not expressible by the $q_i$ and the quantum condition of Sommerfeld-Epstein fails also in the slightly generalized form that has been given here.
+> If there exist fewer than $d$ \[constants of motion\], as is the case, for example, according to Poincaré in the three-body problem, then the $p_i$ are not expressible by the $q_i$ and the quantum condition of Sommerfeld--Epstein fails also in the slightly generalized form that has been given here.
+
+Interestingly, Dirac got tripped up on the exact same point, trying and failing to extend Bohr--Sommerfeld old quantum theory, before he found the way out through the new quantum theory:
+
+> I was very much impressed by action and angle variables. Far too much of the scope of my work was really there; it was much too limited. I see now that it was a mistake; just thinking of action and angle variables one would never have gotten on to the new mechanics. So without Heisenberg and Schrödinger I would never have done it by myself.
+>
+> [@kraghDiracScientificBiography1990, page 16]
+
+Dirac, as we said, approached quantum mechanics through Poisson brackets. Let $f, g$ be classical observables, and $\hat f, \hat g$ be their quantum versions, the formula $\hat f \hat g - \hat g \hat f = i\hbar \{f, g\}$ shows that the operators $\hat f, \hat g$ are commutative precisely where $\{f, g\} = 0$. However, there are classical systems where this is impossible! Let $n$ be the dimension of its configuration space, $H$ be its Hamiltonian, then there does not exist $f_1, \dots, f_n$ such that $\{f_i, f_j\} = 0$ and $f_1 = H$. Old quantum theory simply does not work for such systems, nor does EBK quantization.
 
 This failure of the EBK quantization on classically chaotic systems was forgotten for many years, but eventually rediscovered.[^einstein-quantum-chaos] When it did, it became a seed of [quantum chaos](https://en.wikipedia.org/wiki/Quantum_chaos), which I hope to explain clearly some day. In the mean time, I leave you with some beautiful pictures of quantum chaos instead.
 

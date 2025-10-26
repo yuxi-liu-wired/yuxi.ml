@@ -215,7 +215,7 @@ For any probability distribution $\rho_0$, if after time $t$, it evolves to $\rh
 
 :::
 
-The proof is found in any textbook, and also [Wikipedia](https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)). Since it is already simple enough, and I can't really improve upon it, I won't.
+The proof is found in any textbook, and also [Wikipedia](https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)). The most elegant proof goes through [symplectic geometry](https://yuxi.ml/essays/posts/analytical-mechanics/#thm-liouville-hamiltonian).
 
 ::: {#cor-conservation-entropy}
 
