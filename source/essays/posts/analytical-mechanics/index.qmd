@@ -2,7 +2,7 @@
 title: "Analytical Mechanics"
 author: "Yuxi Liu"
 date: "2024-05-04"
-date-modified: "2025-10-16"
+date-modified: "2025-10-25"
 categories: [math, physics, philosophy]
 format:
   html:

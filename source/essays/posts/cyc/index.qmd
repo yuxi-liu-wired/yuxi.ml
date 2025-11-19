@@ -1005,7 +1005,7 @@ In 1995-01, as MCC wound down, the Cyc group formed Cycorp Inc., a for-profit co
 * The [Total Information Awareness](https://en.wikipedia.org/wiki/Total_Information_Awareness) project funded Cycorp for \$9.8 million in 2003 for a "prototype database" and a system that could "identify phone-calling patterns as they might exist among potential terrorists overseas". [@crensonBigBrotherCould2003]
 * Electronic Surveillance System for the Early Notification of Community-Based Epidemics-II (ESSENCE-II), around 2006. Its title is self-explanatory. [@abbottIntegratedBiologicalWarfare2007]
 * Seven unnamed big companies, for unspecified expert system applications [@cycorpCycTechnologyOverview2021], but probably "common-sense platform for their applications, and as an interlingua to fully, semantically integrate all the data they generate and all the data they license from third parties". [@lenatCreating30MillionRuleSystem2022] 
-* Cleveland Clinic, starting in 2007, to parse clinician queries into database queries and returns the result, [@lenatHarnessingCycAnswer2010; @pierceSemanticDBSemanticWeb2012] [detailed below](#sec-cleveland-clinic).
+* Cleveland Clinic, starting in 2007, to parse clinician queries into database queries and returns the result, [detailed below](#sec-cleveland-clinic). [@lenatHarnessingCycAnswer2010; @pierceSemanticDBSemanticWeb2012]
 * Goldman Sachs, sometime around 2016, to "monitor the inner workings of its technological infrastructure" and detect insider trading. [@metzOneGeniusLonely2016; @shilohHeTaughtAI2023]
 * Unnamed semiconductor foundry, for an expert system for root-cause analysis of fabrication yields. ([Source](https://web.archive.org/web/20130805145356/http://www.cyc.com/enterprise-solutions/success-stories/semiconductor-yield-management))
 * Unnamed big bank, for an expert system for IT support and inventory management. ([Source](https://web.archive.org/web/20130805145023/http://www.cyc.com/enterprise-solutions/success-stories/it-inventory-catalog-and-configuration-management))
@@ -1093,7 +1093,7 @@ There is a kind of insularity in Cycorp that starts to affect you if you look to
 
 ### Lenat's tenets
 
-In [@lenatThresholdsKnowledge1991], a paper coauthored with Feigenbaum, Lenat gave the most comprehensive statement for where he stands philosophically, which he held onto for the rest of his life:
+In [@lenatThresholdsKnowledge1991], a paper coauthored with [Edward Feigenbaum](https://en.wikipedia.org/wiki/Edward_Feigenbaum), Lenat gave the most comprehensive statement for where he stands philosophically, which he held onto for the rest of his life:
 
 - Knowledge Principle. A system exhibits intelligent understanding and action at a high level of competence primarily because of the knowledge that it can bring to bear: the concepts, facts, representations, methods, models, metaphors, and heuristics about its domain of endeavor.
 - Explicit Knowledge Principle. While knowledge may be compiled to opaque lumps of code for efficiency, there should always be a declarative version of that, so that it can be subject to meta-reasoning.
@@ -1386,8 +1386,8 @@ As an old memoria...*
 
 Some reviews:
 
-* [on Twitter](https://x.com/layer07_yuxi/status/1907179435079717134)
-* [On r/mlscaling](https://old.reddit.com/r/mlscaling/comments/1juosnn/cyc_obituary_for_the_greatest_monument_to_logical/)
+* [Twitter](https://x.com/layer07_yuxi/status/1907179435079717134)
+* [r/mlscaling](https://old.reddit.com/r/mlscaling/comments/1juosnn/cyc_obituary_for_the_greatest_monument_to_logical/)
 * [Hacker News](https://news.ycombinator.com/item?id=43625474)
 * [Lobste.rs](https://lobste.rs/s/ab6qap/obituary_for_cyc)
 
