@@ -1,0 +1,190 @@
+---
+title: "Speculations concerning the first ultramathematician"
+author: "Yuxi Liu"
+date: "2025-10-26"
+date-modified: "2025-10-26"
+categories: [AI, math]
+format:
+  html:
+    code-fold: true
+    toc: true
+    resources:
+        "figure/**"
+description: "TODO"
+
+status: "finished"
+confidence: "log"
+importance: 7
+---
+
+{{< include ../../../static/_macros.tex >}}
+
+## Random thoughts (delete after use)
+
+Case -1: No further progress beyond GPT-4. This is impossible, because we already have systems that surpass GPT-4. However, we should recall what it was like in 2023.
+
+Case 0: No further progress beyond current (2025-10) capability. I give it a less than 3% probability. In this case, AI mathematics will permanently remain the present day level
+
+Case 1: Professor's assistant. Formalization. I give it 
+
+Case 2: Independent researcher. Ultramathematician. 
+
+The near future:
+
+The industrial revolution in mathematics. 
+
+* How much is needed to bootstrape the industrial age? 
+  * 300 Springer graduate textbooks?
+* How much money and time would it cost?
+  * How long did it cost to produce various formalization projects?
+* What does it take to have an essentially perfect proofchecker?
+  * "Essentially perfect" would mean something like, 
+* 
+
+The far future:
+
+Catastrophes
+
+The end of the world is imaginable. The end of mathematics is not.
+
+How is it possible to have a catastrope?
+
+Classification of catastrophes: 
+
+* The proofchecker is bugged
+* Some axiomatic system underlying the 
+* Peano arithmetics is shown to be inconsistent.
+
+The proofchecker is almost surely bugged in some sense. However, this is not a problem. 
+
+## The coming storm
+
+People have dreamed of an AI mathematician even before the first electronic computer, but previous methods either could only do one thing well, or could do many things but none well. With the rise of LLM, a general AI mathematician is within reach. A brief recent timeline (2019--2025):
+
+* 2019-10-26: The [IMO Grand Chanllenge](https://imo-grand-challenge.github.io/) began. Given the 6 IMO problems human-formalized in Lean, the AI is to produce answers, also formalized in Lean.
+* 2020-06-11: OpenAI GPT-3 went online through API access. 
+* 2020-07-14: [AI Dungeon began using GPT-3 on its backend](https://x.com/nickwalton00/status/1283143210999484416). One day later, some [4chan people discovered that](https://arch.b4k.dev/vg/thread/299570235/) you can get GPT-3 (accessed through AI Dungeon) to solve math problems by prompting for step-by-step thinking. This became the chain-of-thought (CoT) technique.
+* 2022-06-30: Google published Minerva. It was made by finetuning the base model PaLM on LaTeX text scraped from arXiv and other websites. It solved problems with CoT and achieved ~50% on high-school math benchmarks.
+* 2022-11-15: Meta published Galactica, which is essentially the same as Minerva. The live demo was shut down after 3 days, due to bad publicity about hallucination.
+* 2022-11-30: ChatGPT went online, based on GPT-3.5. It started the current LLM wave of AI.
+* 2023-11-27: The [AIMO Prize](https://aimoprize.com/about) began. It is similar to the IMO Grand Challenge, but this time with a prize of \$10M, and the input-output must be in natural language.
+* 2024-12-20: OpenAI o3 scored 25% on the [FrontierMath](https://epoch.ai/frontiermath) benchmark. The result was controversial. The score was later scaled down for unclear reasons. Nevertheless, it started the era of reasoning LLM.
+* 2025-02-07: Google DeepMind AlphaGeometry 2, which could solve IMO geometry problems, but only in a fully formal language. It involved no LLM.
+* 2025-07: 3 organizations announced they achieved gold-level performance on the 2025 IMO. OpenAI and Google DeepMind used natural language input and output, scored by human judges. Harmonic used human-formalized Lean input and outputted in Lean.
+* 2025-07: FrontierMath updated to Tier 4, which contains research-level problems.
+
+The timeline blurs. An increasing number of mathematicians are reporting that GPT-5 could act as a helpful assistant, which independently prove exactly-specified statements, improve proofs, and perform nontrivial literature searches ([1](https://x.com/PI010101/status/1978123452314718490), [2](https://x.com/nasqret/status/1981445615365111952), [3](https://x.com/ErnestRyu/status/1980759528984686715), [4](https://mathstodon.xyz/@tao/115385028019354838), [5](https://mathstodon.xyz/@tao/115306424727150237), ...). A sudden profusion of startups explicitly aiming at building an ultramathematician ([1](https://harmonic.fun/), [2](https://www.math.inc/), [3](https://www.principialabs.org/), ...)
+
+The tap-tap-tap drums into a shower. The coming storm.
+
+## Mathematics as a structure
+
+The world of mathematics
+
+Read Maddy maybe.
+
+## Mathematics as a practice
+
+The history of mathematics has too often been written from an anthropomorphic point of view. This has two problems:
+
+1. Non-human things in the world *have* practiced mathematics, from the abacus to the differential engine.
+2. Non-human things in the world *will* practice mathematics. That's the entire premise of an artificial mathematician.
+
+So let's look at the history of mathematical practice from a material point of view.
+
+What *is* modern math practice? It's not just the statement-proof-conjecture. The overall framework is less visible, but much of mathematicians' work is there. Before you can even understand the Prime Number Theorem, you have to understand the overall framework of Analytic Number Theory, which is essentially a way of studying discrete things (prime numbers) using smoothly geometric things (complex-analytic functions).
+
+There are increasing grades of math in terms of how rigorous it is.
+1. Community conjecture/cutting edge theory. They can be supported by degrees of evidence. If the conjecture has been used as an "X" in many statements of the form "If X, then Y", if the conjecture survived numerical tests, etc.
+2. Published proof. This is usually the highest level of rigor you can reach before the advent of computers. It is certified correct by a group of mathematicians. Despite how primitive it is, it held up quite well.
+3. Formalized proof. You run a proofchecker (a program) on a formal proof (some computer files, possibly supplemented by pre-computed datasets). If the proofchecker reports no error, then it's a formalized proof. This is the highest level of rigor you can reach now.
+
+The more rigorous ones usually demand less trust from end users:
+1. Community conjectures are hard to use. Usually only fellow experts can use these, unless it's one of those common conjectures like the Riemann Hypothesis. They often require you to personally investigate the evidence, for 2 reasons:
+1.1. The evidence for and against it is subtle, and you may not want to risk relying on it.
+1.2. The conjecture itself may be badly packaged. A conjecture lives inside a theory framework, and a cutting-edge theory framework is a research-preview with "dirty API calls". You can't just plug the theory into your math paper. You have to investigate the codebase itself by reading papers and often personally talking to the main people working on the cutting edge. Otherwise, you wouldn't get the overall framework, and if you don't get that, you wouldn't even understand what conjecture is saying.
+2. Published proofs are usually certified correct by some experts, so you can be pretty sure it's correct. The proofs are invariably wrong in details. Sometimes even the theorem statements are wrong. But most of the times, they can be fixed... if you're an expert.
+3. Formalized proofs are usually the most correct things in math you can access.
+
+https://x.com/layer07_yuxi/status/1966380743288045688
+
+## Historical precedents
+
+The ultramathematician will be a crisis of mathematics. Human mathematics certainly, but more than that -- a crisis in mathematics proper. Historians of math speak of 3 "crises".
+
+The last crisis
+
+The crisis before
+
+The crisis before
+
+But were there really no other?
+
+## Threat model
+
+Szegedy is making a simple analogy between math and programming:
+
+what you think in the head as the math you are doing : what you write down on the paper : the statement you write into the Lean : the proof generated by AI
+what you think in the head as the algorithm : what you write down in pseudocode : the Python code you typed into the computer : the compiled code
+if you believe this analogy is good, then you can expect mostly "business as usual" for mathematicians. They will learn to Lean like how computer scientists learned to Python, but it's still mostly "business as usual" without revolution. 
+
+as for what doomslide is saying... 
+uh, probably he is thinking about how cryptography works
+You have those proofs but they can be hacked thru, and only "large scale consensus" certifies good cryptography
+but he doesn't seem to understand a basic asymmetry: it is much easier to prove that you have a hack, than to understand the hack. 
+In cryptography, the proof of a hack is simply a file. It runs and produces some output that should not occur. That's it. That's a proof of incorrectness. If you trust your eyes then you don't have to trust anything else to see that this is a proof of incorrectness somewhere in the code.
+
+Your objection is difficult to understand. Do you mean that mathematician's intuition is more reliable than proofchecker? This is an incredible statement. We bet it is false. How many times have mathematician's intuition failed? Compare that to how many times a proofchecker has bugged.
+
+Do not be confused about what form of "rigor" is meant. 
+There are at least 2 types of rigor:
+1. Rigor of a proof. That is, given formal assumptions and a formal statement, does this proof object produce the formal statement given the formal assumptions?
+2. Rigor of an interpretation. That is, translating between informal statement and proof with formal statement and proof. This can be pictured in the Platonic realm. You have a brain with some feeling about a math object. That feeling casts a point-cloud over the Platonic realm. Then you ask: is this point in the Platonic realm inside the point-cloud?
+
+People seem very worried about the rigor of a proof. "Oh what if Lean proofchecker is unreliable..." If that's your worry then you should be really worried about modern mathematics, because they contain lots of logical errors (can confirm after trying to read modern math papers and keep finding errors).
+
+Your objection concerns the rigor of an interpretation. That is a different worry. It concerns the human way of doing mathematics, which goes as follows:
+1. You have a rough theorem statement and some rough assumptions. Those are noisy points in an ideal space of all mathematical structures.
+2. You have a rough path from the assumptions to the statement. This is a noisy path from the starting point to the ending point.
+3. Now the hope is that even though the entire thing is noisy, it does not knock you off-course. That is, there really is a point in the starting point-cloud, and really a point in the ending point-cloud, and really a path in the path-cloud that connects the two.
+
+It is possible that there exists a path from the starting point-cloud to the ending point-cloud, but it is not anywhere in the path-cloud. In that case, you could say it's a truly a leap of intuition, but then you are not even concerned about proofs at all. It is about pure mathematical discovery unencumbered by proofs.
+To do proofs in math at all, even post-rigorous proofs, you have to specify a path-cloud, and the path-cloud must contain a correct path.
+
+Given this, we can formulate a quantitative challenge to your objection:
+1. The probability of machine error per proofchecker step is negligible. True hardware bugs can be avoided by using formally verified hardware.
+Volatile bugs (like cosmic rays) can be avoided with standard error-checking code. Error-checking code, and generally, fault-tolerance, has been known to work with computations trillions of steps long. 
+[Historians of computing might remember when von Neumann came on the scene in the 1940s, there was an objection to classical computers that goes like "Computers are made of gates. Gates have errors. As soon as you get an error, the rest of the computation is bunk. The probability of *not* making an error is exponentially decaying. Therefore, upper bound to how much can be computed reliably is very small -- logarithmically small!"
+Von Neumann said no with his threshold theorem. If the individual gates are reliable enough, then you can build composite gates of arbitrarily high reliability.]
+2. There exists very small proofcheckers, such as mmverify (350 lines of Python) for MetaMath.
+3. There is no "positivity bias" in formal verification. Suppose, somewhere during formal verification, an error occurs, be it a CPU hardware bug or the proofchecker bug or whatever. What happens next? Must it always lead to the computer cheerfully saying "lgtm"? There are so many more ways for a verification to falsely *reject* a proof! So a bug could just as easily (in fact, much more likely) lead to the computer gloomily saying "ngmi" even when the proof is correct!
+4. There is no "conspiracy of error". The universe is not conspiring to make it so that the CPU hardware bugs + the lean proofchecker bugs + the unreliable bits in the RAM + Python interpreter for mmverify + ... make up a nefarious conspiracy to ruin AI mathematicians' reputation, by selectively saying "lgtm" on wrong proofs and "ngmi" on right proofs.
+Given this, the probability of error is obtained by multiplying these numbers.
+In particular, the "no conspiracy" theory suggests that even though  "verifying hardware with software running on verified hardware" is circular, it is not a conspiratorial circle, so.
+[Quantum mechanists might notice that this is similar to the "no superdeterminism" assumption. If you assume the entire universe is out to get you, then you don't have to accept any experimental proof of quantum entanglement. But ... do you really want to assume a universal conspiracy against classicists like Einstein and 't Hooft?]
+5. If human intuition cannot be trusted even on a small proofchecker of 350 lines, what hope is there for human intuition to be trusted on a longer book of ... say, Serge Lang?
+6. The noisy process of specifying a proof path-cloud in the space of math has higher probability of error. Some parts might be right, but a big section has to be rerouted *this way*.
+The error rate may be measurable by going through the literature and count the number of documented cases where the overall proof *strategy* is wrong even though the starting and ending points are correct. The *many* failed (and unfixable) intuitive proofs of the Four Color Theorem gives one dataset. There should be more. We would guess the error rate is on the order of 5%.
+7. Therefore, human intuitive proof is less reliable than machine proof.
+
+
+Similarly, if you have a superhuman RL process that generates proofs and it can hack the Lean compiler to do so, then simply let it generate the hack. Prove 1 = 2. 
+Can it be done? 
+If so, then that's all the proof you need. You don't need to read the lean code. Or the compiler. Or the proof. Just run the proof object and see that it outputs |- 1=2
+
+Underspecified. What form of bug at which level?
+1. At the level of the proofchecker, it is a function that maps a statement-and-proof file to a boolean "Correct" or "Incorrect". Exploiting bugs in the proofchecker function would have following possibilities:
+1.1. If the proofchecker is inconsistent, then it would be possible to find two statement-and-proof files with opposite statements, but the proofchecker output "Correct" on both. In that case, let the superhuman RL find it. It's automated bug discovery.
+1.2. If the proofchecker is consistent but consistently wrong... then it has managed to formalize a nonstandard mathematics. This would be astonishing.
+1.3. If the proofchecker is incomplete ... this is probably not a bug. If the checker is consistent, and handles Peano arithmetics, then it's incomplete.
+2. At one level down, it is a compiled executable. Exploiting bugs in the executable is a rather different problem. And what form of "bugging out" are we talking about?
+2.1. If the proofchecker can be bugged out in such a way that, any statement has a proof that makes the proofchecker output "Correct", then once again we can get the superhuman RL to discover it.
+2.2. If the proofchecker is bugged out in such a way that it does not output either "Correct" or "Incorrect", then ... that's already a proof that the proofchecker has a bug!
+3. At one level down, it is 0 and 1 running on silicon, etc.
+
+
+## Metadata {.appendix}
+
+Based on a Twitter argument.
+
+https://x.com/layer07_yuxi/status/1975285618537341077

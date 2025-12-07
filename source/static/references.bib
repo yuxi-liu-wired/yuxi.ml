@@ -91,6 +91,22 @@
   abstract = {This survey is an overview of some of the better known quantization techniques (for systems with finite numbers of degrees-of-freedom) including in particular canonical quantization and the related Dirac scheme, introduced in the early days of quantum mechanics, Segal and Borel quantizations, geometric quantization, various ramifications of deformation quantization, Berezin and Berezin--Toeplitz quantizations, prime quantization and coherent state quantization. We have attempted to give an account sufficiently in depth to convey the general picture, as well as to indicate the mutual relationships between various methods, their relative successes and shortcomings, mentioning also open problems in the area. Finally, even for approaches for which lack of space or expertise prevented us from treating them to the extent they would deserve, we have tried to provide ample references to the existing literature on the subject. In all cases, we have made an effort to keep the discussion accessible both to physicists and to mathematicians, including non-specialists in the field.}
 }
 
+@misc{allen-zhuPhysicsLanguageModels2024,
+  title = {Physics of {{Language Models}}: {{Part}} 3.3, {{Knowledge Capacity Scaling Laws}}},
+  shorttitle = {Physics of {{Language Models}}},
+  author = {{Allen-Zhu}, Zeyuan and Li, Yuanzhi},
+  year = {2024},
+  month = apr,
+  number = {arXiv:2404.05405},
+  eprint = {2404.05405},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2404.05405},
+  urldate = {2025-10-29},
+  abstract = {Scaling laws describe the relationship between the size of language models and their capabilities. Unlike prior studies that evaluate a model's capability via loss or benchmarks, we estimate the number of knowledge bits a model stores. We focus on factual knowledge represented as tuples, such as (USA, capital, Washington D.C.) from a Wikipedia page. Through multiple controlled datasets, we establish that language models can and only can store 2 bits of knowledge per parameter, even when quantized to int8, and such knowledge can be flexibly extracted for downstream applications. Consequently, a 7B model can store 14B bits of knowledge, surpassing the English Wikipedia and textbooks combined based on our estimation. More broadly, we present 12 results on how (1) training duration, (2) model architecture, (3) quantization, (4) sparsity constraints such as MoE, and (5) data signal-to-noise ratio affect a model's knowledge storage capacity. Notable insights include: * The GPT-2 architecture, with rotary embedding, matches or even surpasses LLaMA/Mistral architectures in knowledge storage, particularly over shorter training durations. This arises because LLaMA/Mistral uses GatedMLP, which is less stable and harder to train. * Prepending training data with domain names (e.g., wikipedia.org) significantly increases a model's knowledge capacity. Language models can autonomously identify and prioritize domains rich in knowledge, optimizing their storage capacity.},
+  archiveprefix = {arXiv}
+}
+
 @book{allenExpertSystemsPioneer2018,
   title = {Expert {{Systems Pioneer Meeting}}, Day 2 Session 7: {{Why}} Did the Expert Systems Industry Decline?},
   shorttitle = {{{AI}}},
@@ -1073,6 +1089,35 @@ OCLC: 1059402712}
   urldate = {2023-12-06}
 }
 
+@article{bradyCompressionVisualWorking2009,
+  title = {Compression in Visual Working Memory: Using Statistical Regularities to Form More Efficient Memory Representations.},
+  shorttitle = {Compression in Visual Working Memory},
+  author = {Brady, Timothy F. and Konkle, Talia and Alvarez, George A.},
+  year = {2009},
+  journal = {Journal of Experimental Psychology: General},
+  volume = {138},
+  number = {4},
+  pages = {487},
+  publisher = {American Psychological Association},
+  urldate = {2025-10-29}
+}
+
+@article{bradyVisualLongtermMemory2008,
+  title = {Visual Long-Term Memory Has a Massive Storage Capacity for Object Details},
+  author = {Brady, Timothy F. and Konkle, Talia and Alvarez, George A. and Oliva, Aude},
+  year = {2008},
+  month = sep,
+  journal = {Proceedings of the National Academy of Sciences},
+  volume = {105},
+  number = {38},
+  pages = {14325--14329},
+  issn = {0027-8424, 1091-6490},
+  doi = {10.1073/pnas.0803390105},
+  urldate = {2025-10-29},
+  abstract = {One of the major lessons of memory research has been that human memory is fallible, imprecise, and subject to interference. Thus, although observers can remember thousands of images, it is widely assumed that these memories lack detail. Contrary to this assumption, here we show that long-term memory is capable of storing a massive number of objects with details from the image. Participants viewed pictures of 2,500 objects over the course of 5.5 h. Afterward, they were shown pairs of images and indicated which of the two they had seen. The previously viewed item could be paired with either an object from a novel category, an object of the same basic-level category, or the same object in a different state or pose. Performance in each of these conditions was remarkably high (92\%, 88\%, and 87\%, respectively), suggesting that participants successfully maintained detailed representations of thousands of images. These results have implications for cognitive models, in which capacity limitations impose a primary computational constraint (e.g., models of object recognition), and pose a challenge to neural models of memory storage and retrieval, which must be able to account for such a large and detailed storage capacity.},
+  langid = {english}
+}
+
 @book{bramerFifthGenerationAnnotated1984,
   title = {The Fifth Generation : An Annotated Bibliography},
   shorttitle = {The Fifth Generation},
@@ -1192,6 +1237,21 @@ OCLC: 1059402712}
   number = {3},
   pages = {3--15},
   urldate = {2024-12-04}
+}
+
+@article{bromerLongtermPotentiationExpands2018,
+  title = {Long-Term Potentiation Expands Information Content of Hippocampal Dentate Gyrus Synapses},
+  author = {Bromer, Cailey and Bartol, Thomas M. and Bowden, Jared B. and Hubbard, Dusten D. and Hanka, Dakota C. and Gonzalez, Paola V. and Kuwajima, Masaaki and Mendenhall, John M. and Parker, Patrick H. and Abraham, Wickliffe C. and Sejnowski, Terrence J. and Harris, Kristen M.},
+  year = {2018},
+  month = mar,
+  journal = {Proceedings of the National Academy of Sciences},
+  volume = {115},
+  number = {10},
+  issn = {0027-8424, 1091-6490},
+  doi = {10.1073/pnas.1716189115},
+  urldate = {2025-10-29},
+  abstract = {Significance             Understanding plasticity processes in the hippocampus is critical to our understanding of the biological underpinnings of memory. By applying information theory to quantify information content at synapses, we demonstrate that induction of long-term potentiation (LTP) increases the storage capacity of synapses in hippocampal dentate gyrus. Nevertheless, even after LTP, the information storage capacity of dentate synapses was much lower than in a different part of the hippocampus, area CA1. This work lays a foundation for future studies elucidating the time course for increased information storage content as well as the basis for interregion variability in information storage capacity.           ,              An approach combining signal detection theory and precise 3D reconstructions from serial section electron microscopy (3DEM) was used to investigate synaptic plasticity and information storage capacity at medial perforant path synapses in adult hippocampal dentate gyrus in vivo. Induction of long-term potentiation (LTP) markedly increased the frequencies of both small and large spines measured 30 minutes later. This bidirectional expansion resulted in heterosynaptic counterbalancing of total synaptic area per unit length of granule cell dendrite. Control hemispheres exhibited 6.5 distinct spine sizes for 2.7 bits of storage capacity while LTP resulted in 12.9 distinct spine sizes (3.7 bits). In contrast, control hippocampal CA1 synapses exhibited 4.7 bits with much greater synaptic precision than either control or potentiated dentate gyrus synapses. Thus, synaptic plasticity altered total capacity, yet hippocampal subregions differed dramatically in their synaptic information storage capacity, reflecting their diverse functions and activation histories.},
+  langid = {english}
 }
 
 @article{bronfenbrennerSamuelsonMarxTheir1973,
@@ -3157,6 +3217,18 @@ OCLC: ocm59879802}
   abstract = {A systematic treatment to check adiabatic invariance of phase volume in some easy cases is presented. Systems are classified and studied according to whether or not their Hamiltonian functions depend explicitly on external parameters. When the Hamiltonian function does not depend explicitly on external parameters, some extra hypotheses about the nature of the field of forces in the neighborhood of the walls are needed. In this situation two alternative methods are proposed. One of them uses the virial theorem, the other one uses a kinetic approach.}
 }
 
+@article{ferraraDetailedVisualMemory2017,
+  title = {Detailed Visual Memory Capacity Is Present Early in Childhood},
+  author = {Ferrara, Katrina and Furlong, Sarah and Park, Soojin and Landau, Barbara},
+  year = {2017},
+  journal = {Open Mind},
+  volume = {2},
+  number = {1},
+  pages = {14--25},
+  publisher = {MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info {\dots}},
+  urldate = {2025-10-29}
+}
+
 @article{feutrillReviewShannonDifferential2021,
   title = {A {{Review}} of {{Shannon}} and {{Differential Entropy Rate Estimation}}},
   author = {Feutrill, Andrew and Roughan, Matthew},
@@ -3446,6 +3518,22 @@ OCLC: ocm59879802}
   abstract = {The paper investigates the problems of assembling, describing and computerizing corpora, defined as collections of "texts assumed to be representative of a given language, dialect or other subject of a language, to be used for linguistic analysis." Specific reference is made to the formation of the Brown Standard Corpus. The formation of a corpus is justified in terms of saving effort and in providing a compilation of data that will serve as a research tool in comparative studies. Important questions in the process concern the body of language from which the sample will be drawn, the size of the sample, and its structure. These, in turn, are dependent on the purpose for which the corpus is assembled: graphic analysis will require a different corpus than will phonological or  grammatical analysis, for example, the latter presenting the most problems. Practical constraints on the size of the corpus, including time, energy and money are mentioned. The organization of the corpus is discussed, underlining such factors as the size of the base units, mode of selection and collection, assembly of the corpus and computerization. The question of how much additional explanatory material should accompany the corpus is raised, with particular reference to lexical and semantic analyses. (CLK)},
   langid = {english},
   annotation = {ERIC Number: ED111204}
+}
+
+@misc{frankleLotteryTicketHypothesis2019,
+  title = {The {{Lottery Ticket Hypothesis}}: {{Finding Sparse}}, {{Trainable Neural Networks}}},
+  shorttitle = {The {{Lottery Ticket Hypothesis}}},
+  author = {Frankle, Jonathan and Carbin, Michael},
+  year = {2019},
+  month = mar,
+  number = {arXiv:1803.03635},
+  eprint = {1803.03635},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1803.03635},
+  urldate = {2025-10-29},
+  abstract = {Neural network pruning techniques can reduce the parameter counts of trained networks by over 90\%, decreasing storage requirements and improving computational performance of inference without compromising accuracy. However, contemporary experience is that the sparse architectures produced by pruning are difficult to train from the start, which would similarly improve training performance. We find that a standard pruning technique naturally uncovers subnetworks whose initializations made them capable of training effectively. Based on these results, we articulate the "lottery ticket hypothesis:" dense, randomly-initialized, feed-forward networks contain subnetworks ("winning tickets") that - when trained in isolation - reach test accuracy comparable to the original network in a similar number of iterations. The winning tickets we find have won the initialization lottery: their connections have initial weights that make training particularly effective. We present an algorithm to identify winning tickets and a series of experiments that support the lottery ticket hypothesis and the importance of these fortuitous initializations. We consistently find winning tickets that are less than 10-20\% of the size of several fully-connected and convolutional feed-forward architectures for MNIST and CIFAR10. Above this size, the winning tickets that we find learn faster than the original network and reach higher test accuracy.},
+  archiveprefix = {arXiv}
 }
 
 @incollection{freemanPremisesNeurophysiologicalStudies1984,
@@ -4447,7 +4535,7 @@ OCLC: ocm59879802}
 
 @article{hiltzikBirthThinkingMachine2001,
   title = {Birth of a {{Thinking Machine}}},
-  author = {a Hiltzik, Michael},
+  author = {Hiltzik, Michael A.},
   year = {2001},
   month = jun,
   journal = {Los Angeles Times},
@@ -4836,6 +4924,21 @@ OCLC: ocm59879802}
   isbn = {978-1-00-316834-8}
 }
 
+@misc{ibrahimSimpleScalableStrategies2024,
+  title = {Simple and {{Scalable Strategies}} to {{Continually Pre-train Large Language Models}}},
+  author = {Ibrahim, Adam and Th{\'e}rien, Benjamin and Gupta, Kshitij and Richter, Mats L. and Anthony, Quentin and Lesort, Timoth{\'e}e and Belilovsky, Eugene and Rish, Irina},
+  year = {2024},
+  month = sep,
+  number = {arXiv:2403.08763},
+  eprint = {2403.08763},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2403.08763},
+  urldate = {2025-10-29},
+  abstract = {Large language models (LLMs) are routinely pre-trained on billions of tokens, only to start the process over again once new data becomes available. A much more efficient solution is to continually pre-train these models, saving significant compute compared to re-training. However, the distribution shift induced by new data typically results in degraded performance on previous data or poor adaptation to the new data. In this work, we show that a simple and scalable combination of learning rate (LR) re-warming, LR re-decaying, and replay of previous data is sufficient to match the performance of fully re-training from scratch on all available data, as measured by the final loss and the average score on several language model (LM) evaluation benchmarks. Specifically, we show this for a weak but realistic distribution shift between two commonly used LLM pre-training datasets (English\${\textbackslash}rightarrow\$English) and a stronger distribution shift (English\${\textbackslash}rightarrow\$German) at the \$405\$M parameter model scale with large dataset sizes (hundreds of billions of tokens). Selecting the weak but realistic shift for larger-scale experiments, we also find that our continual learning strategies match the re-training baseline for a 10B parameter LLM. Our results demonstrate that LLMs can be successfully updated via simple and scalable continual learning strategies, matching the re-training baseline using only a fraction of the compute. Finally, inspired by previous work, we propose alternatives to the cosine learning rate schedule that help circumvent forgetting induced by LR re-warming and that are not bound to a fixed token budget.},
+  archiveprefix = {arXiv}
+}
+
 @incollection{ideLegaciesJapan2013,
   title = {Legacies for {{Japan}}},
   booktitle = {The {{Political Economy}} of {{Transnational Tax Reform}}: {{The Shoup Mission}} to {{Japan}} in {{Historical Context}}},
@@ -5181,6 +5284,18 @@ OCLC: ocm59879802}
   urldate = {2024-05-26},
   abstract = {Complex numbers are broadly used in physics, normally as a calculation tool that makes things easier due to Euler's formula. In the end, it is only the real component that has physical meaning or the two parts (real and imaginary) are treated separately as real quantities. However, the situation seems to be different in quantum mechanics, since the imaginary unit i appears explicitly in its fundamental equations. From a learning perspective, this can create some challenges to newcomers. In this article, four conceptually different justifications for the use/need of complex numbers in quantum mechanics are presented and some pedagogical implications are discussed.},
   langid = {english}
+}
+
+@article{karbowskiInformationEncodedVolumes2023,
+  title = {Information Encoded in Volumes and Areas of Dendritic Spines Is Nearly Maximal across Mammalian Brains},
+  author = {Karbowski, Jan and Urban, Paulina},
+  year = {2023},
+  journal = {Scientific Reports},
+  volume = {13},
+  number = {1},
+  pages = {22207},
+  publisher = {Nature Publishing Group UK London},
+  urldate = {2025-10-29}
 }
 
 @misc{karpathyRecipeTrainingNeural2019,
@@ -5608,6 +5723,23 @@ OCLC: ocm59879802}
   lccn = {QA805 .L278 1970}
 }
 
+@article{landauerHowMuchPeople1986,
+  title = {How Much {{Do People Remember}}? {{Some Estimates}} of the {{Quantity}} of {{Learned Information}} in {{Long}}-term {{Memory}}},
+  shorttitle = {How Much {{Do People Remember}}?},
+  author = {Landauer, Thomas K.},
+  year = {1986},
+  month = oct,
+  journal = {Cognitive Science},
+  volume = {10},
+  number = {4},
+  pages = {477--493},
+  issn = {0364-0213, 1551-6709},
+  doi = {10.1207/s15516709cog1004_4},
+  urldate = {2025-05-08},
+  abstract = {How much information from experience does a normal adult remember? The ``functional information content'' of human memory was estimated in several ways. The methods depend on measured rates of input and loss from very long- term memory and on analyses of the informational demands of human memory-based performance. Estimates ranged around 10               9               bits. It is speculated that the flexible and creative retrieval of facts by humans is a function of a large ratio of ``hardware'' capacity to functional storage requirements.},
+  langid = {english}
+}
+
 @article{langfordCOMPBASILISKFAQ1999,
   title = {{{COMP}}.{{BASILISK FAQ}}},
   author = {Langford, David},
@@ -5702,6 +5834,22 @@ OCLC: ocm59879802}
   pages = {18},
   publisher = {North Holland},
   urldate = {2023-12-27}
+}
+
+@article{lehrlBasicParametersHuman1988,
+  title = {The Basic Parameters of Human Information Processing: {{Their}} Role in the Determination of Intelligence},
+  shorttitle = {The Basic Parameters of Human Information Processing},
+  author = {Lehrl, Siegfried and Fischer, Bernd},
+  year = {1988},
+  month = jan,
+  journal = {Personality and Individual Differences},
+  volume = {9},
+  number = {5},
+  pages = {883--896},
+  issn = {0191-8869},
+  doi = {10.1016/0191-8869(88)90006-2},
+  urldate = {2024-11-12},
+  abstract = {Information psychology deals with information processing in humans which is measured in terms of time units (sec) and information units (bits) and is described by relatively simple models. The model of psychostructure is crucial. It adequately refers to information processing which runs as sequential dichotomous decisions on a `yes-no' or an `on-off' basis. The information unit 1 bit is allocated to each decision. Three basic parameters are important in central information processing: (1) The information flow to the short term storage CK (15.0 {\textpm} 3.1 bit/sec in adults). (2) The duration of presence (retention in primary memory) = TR (5.4 {\textpm} 0.8 sec in adults). (3) The basic speed of learning CV (depending on the time to retrieval: 0.01 to 1.00 bit/sec in adults). These capacities increase continuously from childhood to adulthood. Within each age group there are remarkable individual differences which exceed variations of biological variables such as body length or brain weight by far. The prerequisite of information psychological measurement is to determine the information content of the stimuli and the reactions and to measure the time between the stimulus and the response. Based on this it is shown that the basic parameters are unspecific, because the type of information, the sensory modalities and the repertory of signs do not alter the results. Besides, the parameters are independent of each other and reach the level of a ratio scale. According to other concepts and other empirical findings, CK and TR determine the intelligence quotient including the vocabulary while CV corresponds to mechanical learning. Tests for these parameters are given.}
 }
 
 @inproceedings{leightyDevelopingTechnologiesArmy1986,
@@ -6420,6 +6568,17 @@ OCLC: ocm59879802}
   langid = {english}
 }
 
+@inproceedings{liTrainBigThen2020,
+  title = {Train Big, Then Compress: {{Rethinking}} Model Size for Efficient Training and Inference of Transformers},
+  shorttitle = {Train Big, Then Compress},
+  booktitle = {International {{Conference}} on Machine Learning},
+  author = {Li, Zhuohan and Wallace, Eric and Shen, Sheng and Lin, Kevin and Keutzer, Kurt and Klein, Dan and Gonzalez, Joey},
+  year = {2020},
+  pages = {5958--5968},
+  publisher = {PMLR},
+  urldate = {2025-10-29}
+}
+
 @misc{liuDecadesBattleDataset2024,
   title = {A {{Decade}}'s {{Battle}} on {{Dataset Bias}}: {{Are We There Yet}}?},
   shorttitle = {A {{Decade}}'s {{Battle}} on {{Dataset Bias}}},
@@ -6864,6 +7023,19 @@ OCLC: ocm59879802}
   lccn = {QC174.8 .M2513 1985}
 }
 
+@article{mathyWhatsMagicMagic2012,
+  title = {What's Magic about Magic Numbers? {{Chunking}} and Data Compression in Short-Term Memory},
+  shorttitle = {What's Magic about Magic Numbers?},
+  author = {Mathy, Fabien and Feldman, Jacob},
+  year = {2012},
+  journal = {Cognition},
+  volume = {122},
+  number = {3},
+  pages = {346--362},
+  publisher = {Elsevier},
+  urldate = {2025-10-29}
+}
+
 @techreport{matthewsKRAKENKnowledgeRich2004,
   title = {{{KRAKEN}} - {{Knowledge Rich Acquisition}} of {{Knowledge}} from {{Experts Who Are Non-Logicians}}},
   author = {Matthews, G. and Curtis, J. and Hines, K. and Kahlert, R. C. and Miraglia, P.},
@@ -7285,6 +7457,20 @@ OCLC: 254141765}
   year = {2015},
   month = jun,
   address = {Albuquerque, New Mexico}
+}
+
+@article{mollicaHumansStore152019,
+  title = {Humans Store about 1.5 Megabytes of Information during Language Acquisition},
+  author = {Mollica, Francis and Piantadosi, Steven T.},
+  year = {2019},
+  month = mar,
+  journal = {Royal Society Open Science},
+  publisher = {The Royal Society},
+  doi = {10.1098/rsos.181393},
+  urldate = {2025-05-07},
+  abstract = {We introduce theory-neutral estimates of the amount of information learners possess about how language works. We provide estimates at several levels of linguistic analysis: phonemes, wordforms, lex...},
+  copyright = {{\copyright} 2019 The Authors.},
+  langid = {english}
 }
 
 @article{moravecFractalBranchingUltradexterous1996,
@@ -7926,6 +8112,22 @@ OCLC: 245755104}
   pages = {278--302},
   publisher = {Elsevier},
   urldate = {2025-04-18}
+}
+
+@misc{parmarReuseDontRetrain2024,
+  title = {Reuse, {{Don}}'t {{Retrain}}: {{A Recipe}} for {{Continued Pretraining}} of {{Language Models}}},
+  shorttitle = {Reuse, {{Don}}'t {{Retrain}}},
+  author = {Parmar, Jupinder and Satheesh, Sanjev and Patwary, Mostofa and Shoeybi, Mohammad and Catanzaro, Bryan},
+  year = {2024},
+  month = jul,
+  number = {arXiv:2407.07263},
+  eprint = {2407.07263},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2407.07263},
+  urldate = {2025-10-29},
+  abstract = {As language models have scaled both their number of parameters and pretraining dataset sizes, the computational cost for pretraining has become intractable except for the most well-resourced teams. This increasing cost makes it ever more important to be able to reuse a model after it has completed pretraining; allowing for a model's abilities to further improve without needing to train from scratch. In this work, we detail a set of guidelines that cover how to design efficacious data distributions and learning rate schedules for continued pretraining of language models. When applying these findings within a continued pretraining run on top of a well-trained 15B parameter model, we show an improvement of 9{\textbackslash}\% in average model accuracy compared to the baseline of continued training on the pretraining set. The resulting recipe provides a practical starting point with which to begin developing language models through reuse rather than retraining.},
+  archiveprefix = {arXiv}
 }
 
 @article{parrondoThermodynamicsInformation2015,
@@ -9173,6 +9375,22 @@ OCLC: 255652259}
   doi = {10.1016/0167-2681(89)90037-1},
   urldate = {2025-09-15},
   abstract = {Analysis of the main bank system provides insights into the intermediate nature of economic organization in Japan. Close bank-firm ties are interpreted as evidence of a quasi-internal capital market in which the main bank internalizes the monitoring and control functions of the external capital market. A key insight is that the main bank system substitutes for the `missing' takeover market in Japan. This interpretation is helpful in explaining some seemingly paradoxical aspects of bank behavior.}
+}
+
+@misc{shengSLoRAServingThousands2024,
+  title = {S-{{LoRA}}: {{Serving Thousands}} of {{Concurrent LoRA Adapters}}},
+  shorttitle = {S-{{LoRA}}},
+  author = {Sheng, Ying and Cao, Shiyi and Li, Dacheng and Hooper, Coleman and Lee, Nicholas and Yang, Shuo and Chou, Christopher and Zhu, Banghua and Zheng, Lianmin and Keutzer, Kurt and Gonzalez, Joseph E. and Stoica, Ion},
+  year = {2024},
+  month = jun,
+  number = {arXiv:2311.03285},
+  eprint = {2311.03285},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2311.03285},
+  urldate = {2025-10-29},
+  abstract = {The "pretrain-then-finetune" paradigm is commonly adopted in the deployment of large language models. Low-Rank Adaptation (LoRA), a parameter-efficient fine-tuning method, is often employed to adapt a base model to a multitude of tasks, resulting in a substantial collection of LoRA adapters derived from one base model. We observe that this paradigm presents significant opportunities for batched inference during serving. To capitalize on these opportunities, we present S-LoRA, a system designed for the scalable serving of many LoRA adapters. S-LoRA stores all adapters in the main memory and fetches the adapters used by the currently running queries to the GPU memory. To efficiently use the GPU memory and reduce fragmentation, S-LoRA proposes Unified Paging. Unified Paging uses a unified memory pool to manage dynamic adapter weights with different ranks and KV cache tensors with varying sequence lengths. Additionally, S-LoRA employs a novel tensor parallelism strategy and highly optimized custom CUDA kernels for heterogeneous batching of LoRA computation. Collectively, these features enable S-LoRA to serve thousands of LoRA adapters on a single GPU or across multiple GPUs with a small overhead. Compared to state-of-the-art libraries such as HuggingFace PEFT and vLLM (with naive support of LoRA serving), S-LoRA can improve the throughput by up to 4 times and increase the number of served adapters by several orders of magnitude. As a result, S-LoRA enables scalable serving of many task-specific fine-tuned models and offers the potential for large-scale customized fine-tuning services. The code is available at https://github.com/S-LoRA/S-LoRA},
+  archiveprefix = {arXiv}
 }
 
 @inproceedings{shepardKnowledgebasedApproachNetwork2005,
@@ -11117,6 +11335,22 @@ OCLC: 553552880}
   urldate = {2024-08-14},
   abstract = {While Uhlenbeck and his collaborators at Radiation Laboratory improved radar target detection in noisy environments, Norbert Wiener and his assistant Julian Bigelow at MIT designed an antiaircraft gunfire control system for the US Army. Like Uhlenbeck et al., Wiener and Bigelow employed the language of communication engineering and used the notion of noise to characterize the ambient factors that caused errors, fluctuations, and deviations in technological systems. The originality of Wiener and Bigelow's approach was a new way to treat such noise. They aimed to reproduce the enemy target trajectory polluted by random noise in observing and tracking devices, i.e. a prediction problem. Wiener's optimum predictor was later known as the ``Wiener filter,'' which utilized statistical properties of signal and noise---especially their correlation functions---to minimize the latter. In so doing, Wiener turned noise into unwanted waveforms that could be manipulated and filtered through generalized harmonic analysis.},
   isbn = {978-0-19-888776-8}
+}
+
+@misc{yeMLoRAFineTuningLoRA2024,
+  title = {{{mLoRA}}: {{Fine-Tuning LoRA Adapters}} via {{Highly-Efficient Pipeline Parallelism}} in {{Multiple GPUs}}},
+  shorttitle = {{{mLoRA}}},
+  author = {Ye, Zhengmao and Li, Dengchun and Hu, Zetao and Lan, Tingfeng and Sha, Jian and Zhang, Sicong and Duan, Lei and Zuo, Jie and Lu, Hui and Zhou, Yuanchun and Tang, Mingjie},
+  year = {2024},
+  month = sep,
+  number = {arXiv:2312.02515},
+  eprint = {2312.02515},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2312.02515},
+  urldate = {2025-10-29},
+  abstract = {Transformer-based, pre-trained large language models (LLMs) have demonstrated outstanding performance across diverse domains, particularly in the emerging \{{\textbackslash}em pretrain-then-finetune\} paradigm. Low-Rank Adaptation (LoRA), a parameter-efficient fine-tuning method, is commonly used to adapt a base LLM to multiple downstream tasks. Further, LLM platforms enable developers to fine-tune multiple models and develop various domain-specific applications simultaneously. However, existing model parallelism schemes suffer from high communication overhead and inefficient GPU utilization when training multiple LoRA tasks across GPUs and machines. In this paper, we present mLoRA, a parallelism-efficient fine-tuning system designed for training multiple LoRA across GPUs and machines. mLoRA introduces a novel LoRA-aware pipeline parallelism scheme that efficiently pipelines independent LoRA adapters and their distinct fine-tuning stages across GPUs and machines, along with a new LoRA-efficient operator to enhance GPU utilization during pipelined LoRA training. Our extensive evaluation shows that mLoRA can significantly reduce average fine-tuning task completion time, e.g., by 30{\textbackslash}\%, compared to state-of-the-art methods like FSDP. More importantly, mLoRA enables simultaneous fine-tuning of larger models, e.g., two Llama-2-13B models on four NVIDIA RTX A6000 48GB GPUs, which is not feasible for FSDP due to high memory requirements. Hence, mLoRA not only increases fine-tuning efficiency but also makes it more accessible on cost-effective GPUs. mLoRA has been deployed in AntGroup's production environment.},
+  archiveprefix = {arXiv}
 }
 
 @book{yeomansStatisticalMechanicsPhase1992,

@@ -245,7 +245,7 @@ Faced with China’s advancements, the U.S.’s biggest geopolitical rival in al
 
 Source: [Gwern posting on Reddit](https://old.reddit.com/r/mlscaling/comments/1eyophn/hardware_hedging_against_scaling_regime_shifts) (2024-08-22). 
 
-Hyperscalers are investing heavily in AMD/Nvidia-style GPUs optimized for moderate-scale parallelism: less than almost-shared-nothing scientific computing tasks like SETI@home, but not strictly sequential like highly-branching tasks, and with the best interconnects money can buy in a custom datacenter, probably topping out at somewhere ~1m GPUs before the communication overhead/latency & Amdahl's law pushes the diminishing returns to 0.
+Hyperscalers are investing heavily in AMD/Nvidia-style GPUs optimized for moderate-scale parallelism: less than almost-shared-nothing scientific computing tasks like SETI\@home, but not strictly sequential like highly-branching tasks, and with the best interconnects money can buy in a custom datacenter, probably topping out at somewhere ~1m GPUs before the communication overhead/latency & Amdahl's law pushes the diminishing returns to 0.
 
 If you are going to spend $50b+ on GPU hardware (and then another $50b+ on everything wrapped around them), you are going to want to invest a lot into making conservative design choices & derisking as much as possible. So a good question here is: even if that 1m mega-GPU datacenter pencils out now as optimal to train the next SOTA, will it stay optimal?
 

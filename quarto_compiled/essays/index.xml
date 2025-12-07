@@ -16,7 +16,28 @@
 <link>https://yuxi.ml/essays/</link>
 </image>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Tue, 03 Jun 2025 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 26 Oct 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Speculations concerning the first ultramathematician</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/ultramathematician/</link>
+  <description><![CDATA[ TODO ]]></description>
+  <category>AI</category>
+  <category>math</category>
+  <guid>https://yuxi.ml/essays/posts/ultramathematician/</guid>
+  <pubDate>Sun, 26 Oct 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The economics of AI friendship</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/ai-friendship-fermi-estimate/</link>
+  <description><![CDATA[ Fermi estimation for . ]]></description>
+  <category>AI</category>
+  <category>economics</category>
+  <guid>https://yuxi.ml/essays/posts/ai-friendship-fermi-estimate/</guid>
+  <pubDate>Thu, 02 Oct 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/ai-friendship-fermi-estimate/?" medium="image"/>
+</item>
 <item>
   <title>Structure and Interpretation of the Chinese Economy</title>
   <dc:creator>Yuxi Liu</dc:creator>
@@ -117,29 +138,6 @@
   <guid>https://yuxi.ml/essays/posts/renormalization-how-to/</guid>
   <pubDate>Thu, 11 Apr 2024 07:00:00 GMT</pubDate>
   <media:content url="https://yuxi.ml/essays/posts/renormalization-how-to/figure/banner/banner_2.png" medium="image" type="image/png" height="90" width="144"/>
-</item>
-<item>
-  <title>Mixture of Experts</title>
-  <dc:creator>Yuxi Liu</dc:creator>
-  <link>https://yuxi.ml/essays/posts/mixture-of-experts/</link>
-  <description><![CDATA[ How MoE works, its history, and what it is good for. ]]></description>
-  <category>AI</category>
-  <category>scaling</category>
-  <guid>https://yuxi.ml/essays/posts/mixture-of-experts/</guid>
-  <pubDate>Tue, 23 Jan 2024 08:00:00 GMT</pubDate>
-  <media:content url="https://yuxi.ml/essays/posts/mixture-of-experts/figure/sparsified_moe_various_levels.png" medium="image" type="image/png" height="95" width="144"/>
-</item>
-<item>
-  <title>Predicting AGI by the Turing Test</title>
-  <dc:creator>Yuxi Liu</dc:creator>
-  <link>https://yuxi.ml/essays/posts/perplexity-turing-test/</link>
-  <description><![CDATA[ Minimizing log-perplexity loss is equivalent to maximizing survival length in a Turing test. Assuming compute-loss scaling law, a scaled-up GPT that produces human-like science papers would cost ~200 years of global GDP. ]]></description>
-  <category>AI</category>
-  <category>scaling</category>
-  <category>math</category>
-  <guid>https://yuxi.ml/essays/posts/perplexity-turing-test/</guid>
-  <pubDate>Sat, 20 Jan 2024 08:00:00 GMT</pubDate>
-  <media:content url="https://yuxi.ml/essays/posts/perplexity-turing-test/figure/banner_4_edit.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 </channel>
 </rss>

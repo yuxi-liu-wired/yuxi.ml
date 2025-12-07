@@ -571,7 +571,10 @@ $$\begin{aligned}
 	  &= \int_{\R} dq \; e^{-iqN} \left[\int_{\R^N} e^{iqx^T x} dx\right] \\
 	  &= \int_{\R} dq \; e^{-iqN} \left[\int_{\R} e^{iqx^2} dx\right]^N \\
 	  &= \int_{\R} dq \; e^{-iqN} (e^{i\pi/4}\sqrt{\pi/q})^N \\
-	  \end{aligned}$$	- Thus, $\frac 1N \ln |S^{N-1}(\sqrt N)|$ converges to the stationary point of
+	  \end{aligned}$$
+    
+Thus, $\frac 1N \ln |S^{N-1}(\sqrt N)|$ converges to the stationary point of
+
 $$-iq + \frac{i\pi}{4} + \frac 12 \ln \pi - \frac 12 \ln q$$
 
 which occurs at $q^* = i/2$. Plugging it in, we obtain  
@@ -588,17 +591,27 @@ In more detail, we can sample from $\mathcal N(0, I_N)$ in two ways: Either dire
 
 $$r^2 = \|x\|^2 \sim \chi^2_N \approx \mathcal N(N, 2N)$$
 
-When $N$ is large, we can write $r^2 \approx N + \sqrt{2N} z$ where $z \sim \mathcal(0, 1)$, so $r \approx \sqrt N + 2^{-1/2}z$. Therefore, the amount of radial displacement is roughly constant, and we have
+When $N$ is large, we can write $r^2 \approx N + \sqrt{2N} z$ where $z \sim \mathcal N(0, 1)$, so $r \approx \sqrt N + 2^{-1/2}z$. Therefore, the amount of radial displacement is roughly constant, and we have
 
 $$
 \mathrm{Ent}[\mathcal N(0, I_N)] \approx \ln |S^{N-1}(\sqrt N)| + \mathrm{Ent}[\mathcal N(0, 1/2)]
 $$
 
-giving us the second term in the Stirling approximation:
+... which turns out to be wrong. The issues are two: One, differential entropy is *not* scale-invariant! Specifically, the differential entropy of a uniform distribution on $S^{N-1}(r)$ is *smaller than that of $S^{N-1}(2r)$ by $\ln 2^{N-1}$. Therefore, the total entropy is in fact split as
 
 $$
-\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} + \frac{\ln\sqrt{\pi e}}{N} + O(N^{-2})
+\mathrm{Ent}[\mathcal N(0, I_N)] = \ln |S^{N-1}(\sqrt N)| + (N-1)\E \lrb{\ln\frac{r}{\sqrt{N}}} + \mathrm{Ent}[r]
 $$
+
+Furthermore, to evaluate $(N-1)\E \lrb{\ln\frac{R}{\sqrt{N}}}$ accurately, we *cannot* approximate $r$ as $\sqrt N + 2^{-1/2}z$, because we are forced to expand to the quadratic term of the Taylor expansion, since the linear term averages to zero. Thus, we are forced to approximate $r$ *also* to second order, and this I don't know how to do.
+
+I believe that, *if* it is worked through correctly, we should get
+
+$$
+\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} - \frac{\ln\sqrt{\pi}}{N} + O(N^{-2})
+$$
+
+since this is what Stirling's approximation proves. But proving this is outsourced to the reader.
 
 :::
 
