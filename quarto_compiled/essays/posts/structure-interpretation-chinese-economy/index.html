@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -458,7 +460,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-logic-of-chinese-economy" id="toc-the-logic-of-chinese-economy" class="nav-link active" data-scroll-target="#the-logic-of-chinese-economy">The logic of Chinese economy</a></li>
+  <li><a href="#the-logic-of-the-chinese-economy" id="toc-the-logic-of-the-chinese-economy" class="nav-link active" data-scroll-target="#the-logic-of-the-chinese-economy">The logic of the Chinese economy</a></li>
   <li><a href="#a-brief-history-of-the-chinese-economy" id="toc-a-brief-history-of-the-chinese-economy" class="nav-link" data-scroll-target="#a-brief-history-of-the-chinese-economy">A brief history of the Chinese economy</a>
   <ul class="collapse">
   <li><a href="#the-mao-era-19491978" id="toc-the-mao-era-19491978" class="nav-link" data-scroll-target="#the-mao-era-19491978">The Mao era (1949–1978)</a></li>
@@ -492,10 +494,10 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>君亟定變法之慮，殆無顧天下之議之也。且夫有高人之行者，固見負於世；有獨知之慮者，必見訾於民。語曰：『愚者闇於成事，知者見於未萌。民不可與慮始，而可與樂成。』郭偃之法曰：『論至德者，不和於俗；成大功者，不謀於眾。』法者，所以愛民也；禮者，所以便事也。是以聖人苟可以強國，不法其故；苟可以利民，不循其禮。</p>
 <p>You, my lord, should concentrate your thoughts on altering the laws: pay no attention to the criticism of All-under-Heaven. Moreover, he whose actions rise above the rest will be disapproved by his generation; he whose thinking is exceptionally perceptive will certainly be ridiculed by the people. The saying goes: ‘The ignorant are blind even to the things that have been accomplished; the wise grasp [the matter] in the bud.’ One cannot deliberate the beginnings with the people but can rejoice with them once the matter is accomplished. The Methods of Guo Yan says: ‘He who discusses superb virtue does not conform to the common [opinion]; he who accomplishes great achievement does not consult with the multitudes.’ [The purpose of] the law is to care for the people; [the purpose of] ritual is to benefit undertakings. Hence, whenever it is possible to strengthen his state, the sage does not emulate the past; whenever it is possible to benefit the people, he does not follow rituals.</p>
-<p><em>The Book of Lord Shang</em>, 1.3.</p>
+<p>— <em>The Book of Lord Shang</em>, 1.3.</p>
 </blockquote>
-<section id="the-logic-of-chinese-economy" class="level2">
-<h2 class="anchored" data-anchor-id="the-logic-of-chinese-economy">The logic of Chinese economy</h2>
+<section id="the-logic-of-the-chinese-economy" class="level2">
+<h2 class="anchored" data-anchor-id="the-logic-of-the-chinese-economy">The logic of the Chinese economy</h2>
 <ol type="1">
 <li>The party controls the state. The party controls the military. The party controls the legislature. There must be no separation of powers.</li>
 <li>The state knows better, because the state aspires to plan over decades, unlike people or companies.</li>
@@ -528,7 +530,7 @@ window.Quarto = {
 <p>Note that while I say “buy” and “sell”, there was no free market as we understand. There was cash currency, but there were also <a href="https://en.wikipedia.org/wiki/Grain_rationing_in_China">coupons for grain, cotton, oil, clothes, industrial goods, etc</a>. The urban workers received their wages mostly in the various coupons of agricultural, not cash. The farmers received their trade value mostly in the various coupons of industrial goods, not cash. These give the state many valves and gates on the flows of economy. For example, if the state trades more industrial goods coupons to the farmers for the same amount of farm goods, it would increase the demand for industrial goods, but decrease the income of the industrial sectors.</p>
 <p>Soon, however, the farmers were collectivized into <a href="https://en.wikipedia.org/wiki/People%27s_commune">people’s communes</a>, starting ~1955. The <a href="https://en.wikipedia.org/wiki/Great_Leap_Forward">Great Leap Forward</a> would come, with well-known results.</p>
 <p>Seeing Khrushchev denounce Stalin was a terrible blow to Mao, and the failure of the Great Leap Forward made him anxious that he would be denounced in turn. His method was to purify the party and the state ideologically by inspiring the people to become ideologically pure, and attack the impure state organs, the infiltration from the <a href="https://en.wikipedia.org/wiki/Capitalist_roader">capitalist roaders</a>, the saboteurs, the <a href="https://en.wikipedia.org/wiki/Five_Black_Categories">Five Black Categories</a>, etc. It was a grand pincer attack of the high and the low on the middle. This, and other reasons, led him to launch the <a href="https://en.wikipedia.org/wiki/Cultural_Revolution">Cultural Revolution</a>, a time not known for economic development or free trade.</p>
-<p>During his time, the major economic project in China was the <a href="https://en.wikipedia.org/wiki/Third_Front_(China)">Third Front</a>. The state spent a plurality of its budget on industries and infrastructure to the “Third Front of the nation” in preparation of nuclear war. The economic efficiency is unclear, due to how secretive it was, but generally considered to be low for 2 reasons. One, much of its construction was in the mountainous regions, often half-underground or <a href="https://en.wikipedia.org/wiki/File:红日机械厂旧址.jpg">caved into the cliff faces</a>. Two, the project was justified as urgent preparation for nuclear war, yet built up entirely during peacetime, and thus it was not subjected to the discipline of other state departments, the market, or the enemy. Other departments could not restrain it, for who wished to delay an urgent task to make China nuclear-proof? The market could not restrain it, for the market was an organ of the state. The enemy existed in potential only, and never materialized, so the imagination of what the enemy <em>might</em> do resulted in expensive defenses for what could eventuate.</p>
+<p>During this period, the major economic project in China was the <a href="https://en.wikipedia.org/wiki/Third_Front_(China)">Third Front</a>. The state spent a plurality of its budget on industries and infrastructure to the “Third Front of the nation” in preparation of nuclear war. Its economic efficiency is unclear, due to how secretive it was, but generally considered to be low for 2 reasons. One, much of its construction was in the mountainous regions, often half-underground or <a href="https://en.wikipedia.org/wiki/File:红日机械厂旧址.jpg">caved into the cliff faces</a>. Two, the project was justified as urgent preparation for nuclear war, yet built up entirely during peacetime, and thus it was not subjected to the discipline of other state departments, the market, or the enemy. Other departments could not restrain it, for who wished to delay an urgent task to make China nuclear-proof? The market could not restrain it, for the market was an organ of the state. The enemy existed in potential only, and never materialized, so the imagination of what the enemy <em>might</em> do resulted in expensive defenses for what could eventuate.</p>
 <p>The social disruption in the cities led to widespread unemployment among workers and school-absence among students. To prevent disorder, the urban youth was repeatedly sent <a href="https://en.wikipedia.org/wiki/Down_to_the_Countryside_Movement">up to the mountains and down to the countryside</a>, so that they could be re-educated by the virtuous peasants. This was not a good time of scientific or technological education or research.</p>
 </section>
 <section id="the-transition-period-19782000" class="level3 page-columns page-full">
@@ -829,7 +831,7 @@ window.Quarto = {
 Aoki, Masahiko, and Hugh T. Patrick, eds. 1994. <em>The <span>Japanese</span> Main Bank System: Its Relevance for Developing and Transforming Economies</em>. Oxford [England] ; New York: Oxford University Press.
 </div>
 <div id="ref-chungBeijingConfrontingProvinces1994" class="csl-entry" role="listitem">
-Chung, Jae Ho. 1994. <span>“Beijing <span>Confronting</span> the <span>Provinces</span>: <span>The</span> 1994 <span>Tax-Sharing Reform</span> and Its <span>Implications</span> for <span>Central-Provincial Relations</span> in <span>China</span>.”</span> <em>China Information</em> 9 (2-3): 1–23. <a href="https://doi.org/10.1177/0920203X9400900201">https://doi.org/10.1177/0920203X9400900201</a>.
+Chung, Jae Ho. 1994. <span>“Beijing <span>Confronting</span> the <span>Provinces</span>: <span>The</span> 1994 <span>Tax-Sharing Reform</span> and Its <span>Implications</span> for <span>Central-Provincial Relations</span> in <span>China</span>.”</span> <em>China Information</em> 9 (2–3): 1–23. <a href="https://doi.org/10.1177/0920203X9400900201">https://doi.org/10.1177/0920203X9400900201</a>.
 </div>
 <div id="ref-dynanRichMore2004" class="csl-entry" role="listitem">
 Dynan, Karen E., Jonathan Skinner, and Stephen P. Zeldes. 2004. <span>“Do the <span>Rich Save More</span>?”</span> <em>Journal of Political Economy</em> 112 (2): 397–444. <a href="https://doi.org/10.1086/381475">https://doi.org/10.1086/381475</a>.
@@ -841,7 +843,7 @@ Fang, Hanming, Quanlin Gu, Wei Xiong, and Li-An Zhou. 2016. <span>“Demystifyin
 Gaidar, Yegor Timurovich. 2007. <em>Collapse of an Empire: Lessons for Modern <span>Russia</span></em>. Translated by Antonina W. Boris. Washington, D.C: Brookings Institution Press.
 </div>
 <div id="ref-hoshiWhatHappenedJapanese2001" class="csl-entry" role="listitem">
-Hoshi, Takeo. 2001. <span>“What Happened to <span>Japanese</span> Banks?”</span> <em>Monetary and Economic Studies</em> 19 (1): 1–29.
+Hoshi, Takeo. 2001. <span>“What Happened to <span>Japanese</span> Banks?”</span> <em>Monetary and Economic Studies</em> 19 (1): 1–29. <a href="https://www.imes.boj.or.jp/research/papers/english/me19-1-1.pdf">https://www.imes.boj.or.jp/research/papers/english/me19-1-1.pdf</a>.
 </div>
 <div id="ref-hoshiJapaneseBankingCrisis1999" class="csl-entry" role="listitem">
 Hoshi, Takeo, and Anil Kashyap. 1999. <span>“The <span>Japanese Banking Crisis</span>: <span>Where Did It Come</span> from and <span>How Will It End</span>?”</span> <em>NBER Macroeconomics Annual</em> 14 (January): 129–201. <a href="https://doi.org/10.1086/654383">https://doi.org/10.1086/654383</a>.
@@ -853,7 +855,7 @@ Ide, Eisaku, W. Elliot Brownlee, and Yasunori Fukagai, eds. 2013. <span>“Legac
 Kang, Myung-koo. 2018. <span>“The <span>Confidence Trap</span>: <span>Japan</span>’s <span>Past Bubble</span> and <span>China</span>’s <span>Recent Bubble</span>.”</span> <em>New Political Economy</em> 23 (1): 1–26. <a href="https://doi.org/10.1080/13563467.2017.1321626">https://doi.org/10.1080/13563467.2017.1321626</a>.
 </div>
 <div id="ref-kornaiSocialistSystemPolitical1992" class="csl-entry" role="listitem">
-Kornai, Janos. 1992. <em>The Socialist System: <span>The</span> Political Economy of Communism</em>. Princeton University Press.
+Kornai, Janos. 1992. <em>The Socialist System: <span>The</span> Political Economy of Communism</em>. Princeton University Press. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=ed89DwAAQBAJ&amp;oi=fnd&amp;pg=PR15&amp;dq=,+The+Political+Economy+of+Communism&amp;ots=tGCuok8POe&amp;sig=lst9Vhaxd_9NZFEg84oaKk5Q9oY">https://books.google.com/books?hl=en&amp;lr=&amp;id=ed89DwAAQBAJ&amp;oi=fnd&amp;pg=PR15&amp;dq=,+The+Political+Economy+of+Communism&amp;ots=tGCuok8POe&amp;sig=lst9Vhaxd_9NZFEg84oaKk5Q9oY</a>.
 </div>
 <div id="ref-krugmanMythAsiasMiracle1994" class="csl-entry" role="listitem">
 Krugman, Paul. 1994. <span>“The Myth of <span>Asia</span>’s Miracle.”</span> <em>Foreign Affairs</em>, 62–78. <a href="https://www.jstor.org/stable/20046929">https://www.jstor.org/stable/20046929</a>.
@@ -875,73 +877,39 @@ Yang, Keming. 2007. <span>“The <span>Limits</span> on <span>Playing Institutio
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1006,13 +974,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1405,7 +1374,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Structure and Interpretation of the Chinese Economy"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-06-03"</span></span>
@@ -1434,9 +1403,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; You, my lord, should concentrate your thoughts on altering the laws: pay no attention to the criticism of All-under-Heaven. Moreover, he whose actions rise above the rest will be disapproved by his generation; he whose thinking is exceptionally perceptive will certainly be ridiculed by the people. The saying goes: ‘The ignorant are blind even to the things that have been accomplished; the wise grasp </span><span class="sc">\[</span><span class="at">the matter</span><span class="sc">\]</span><span class="at"> in the bud.’ One cannot deliberate the beginnings with the people but can rejoice with them once the matter is accomplished. The Methods of Guo Yan says: ‘He who discusses superb virtue does not conform to the common </span><span class="sc">\[</span><span class="at">opinion</span><span class="sc">\]</span><span class="at">; he who accomplishes great achievement does not consult with the multitudes.’ </span><span class="sc">\[</span><span class="at">The purpose of</span><span class="sc">\]</span><span class="at"> the law is to care for the people; </span><span class="sc">\[</span><span class="at">the purpose of</span><span class="sc">\]</span><span class="at"> ritual is to benefit undertakings. Hence, whenever it is possible to strengthen his state, the sage does not emulate the past; whenever it is possible to benefit the people, he does not follow rituals.</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; *The Book of Lord Shang*, 1.3.</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; --- *The Book of Lord Shang*, 1.3.</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## The logic of Chinese economy</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## The logic of the Chinese economy</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The party controls the state. The party controls the military. The party controls the legislature. There must be no separation of powers.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>The state knows better, because the state aspires to plan over decades, unlike people or companies.</span>
@@ -1475,7 +1444,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Seeing Khrushchev denounce Stalin was a terrible blow to Mao, and the failure of the Great Leap Forward made him anxious that he would be denounced in turn. His method was to purify the party and the state ideologically by inspiring the people to become ideologically pure, and attack the impure state organs, the infiltration from the <span class="co">[</span><span class="ot">capitalist roaders</span><span class="co">](https://en.wikipedia.org/wiki/Capitalist_roader)</span>, the saboteurs, the <span class="co">[</span><span class="ot">Five Black Categories</span><span class="co">](https://en.wikipedia.org/wiki/Five_Black_Categories)</span>, etc. It was a grand pincer attack of the high and the low on the middle. This, and other reasons, led him to launch the <span class="co">[</span><span class="ot">Cultural Revolution</span><span class="co">](https://en.wikipedia.org/wiki/Cultural_Revolution)</span>, a time not known for economic development or free trade.</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>During his time, the major economic project in China was the <span class="co">[</span><span class="ot">Third Front</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Third_Front_(China)). The state spent a plurality of its budget on industries and infrastructure to the "Third Front of the nation" in preparation of nuclear war. The economic efficiency is unclear, due to how secretive it was, but generally considered to be low for 2 reasons. One, much of its construction was in the mountainous regions, often half-underground or <span class="co">[</span><span class="ot">caved into the cliff faces</span><span class="co">](https://en.wikipedia.org/wiki/File:红日机械厂旧址.jpg)</span>. Two, the project was justified as urgent preparation for nuclear war, yet built up entirely during peacetime, and thus it was not subjected to the discipline of other state departments, the market, or the enemy. Other departments could not restrain it, for who wished to delay an urgent task to make China nuclear-proof? The market could not restrain it, for the market was an organ of the state. The enemy existed in potential only, and never materialized, so the imagination of what the enemy *might* do resulted in expensive defenses for what could eventuate.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>During this period, the major economic project in China was the <span class="co">[</span><span class="ot">Third Front</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Third_Front_(China)). The state spent a plurality of its budget on industries and infrastructure to the "Third Front of the nation" in preparation of nuclear war. Its economic efficiency is unclear, due to how secretive it was, but generally considered to be low for 2 reasons. One, much of its construction was in the mountainous regions, often half-underground or <span class="co">[</span><span class="ot">caved into the cliff faces</span><span class="co">](https://en.wikipedia.org/wiki/File:红日机械厂旧址.jpg)</span>. Two, the project was justified as urgent preparation for nuclear war, yet built up entirely during peacetime, and thus it was not subjected to the discipline of other state departments, the market, or the enemy. Other departments could not restrain it, for who wished to delay an urgent task to make China nuclear-proof? The market could not restrain it, for the market was an organ of the state. The enemy existed in potential only, and never materialized, so the imagination of what the enemy *might* do resulted in expensive defenses for what could eventuate.</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>The social disruption in the cities led to widespread unemployment among workers and school-absence among students. To prevent disorder, the urban youth was repeatedly sent <span class="co">[</span><span class="ot">up to the mountains and down to the countryside</span><span class="co">](https://en.wikipedia.org/wiki/Down_to_the_Countryside_Movement)</span>, so that they could be re-educated by the virtuous peasants. This was not a good time of scientific or technological education or research.</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
@@ -1823,7 +1792,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>This essay was initialized by sticking together some mini-lectures I have given to friends on Discord during 2023--2024. The recent <span class="co">[</span><span class="ot">Dwarkesh Patel podcast with Victor Shih</span><span class="co">](https://www.dwarkesh.com/p/victor-shih)</span> finally gave me the motivation to polish them up to post on the open Internet.</span>
 <span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>I originally intended this to be a quick blog post, so it is distinctly under-researched, and large chunks are just pulled out of my brain that I am not bothered enough to find citations for. As I kept trying to polish it, it grew too long to be a blog post, so it is now a proper essay, but it is still uneven, kind of repetitive, and lacks citations to really satisfy my wish for completeness. Still, an essay it is.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>I originally intended this to be a quick blog post, so it is distinctly under-researched, and large chunks are just pulled out of my brain that I am not bothered enough to find citations for. As I kept trying to polish it, it grew too long to be a blog post, so it is now a proper essay, but it is still uneven, kind of repetitive, and lacks citations to really satisfy my wish for completeness. Still, an essay it is.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

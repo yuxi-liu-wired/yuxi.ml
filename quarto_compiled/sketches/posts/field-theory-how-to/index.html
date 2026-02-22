@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -339,7 +340,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -589,12 +591,12 @@ Pr(\hat p) \propto e^{- (\hat p - p)^T NV (\hat p - p)}
 <p>We use field-theoretic techniques to compute the rate function, treating both the empirical distribution <span class="math inline">\(\hat{p}\)</span> and the true distribution <span class="math inline">\(p\)</span> as fields over a finite set of points:</p>
 <p><span class="math display">\[p: \{1, 2, ..., n\} \to \mathbb{R}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="formulate a constraint">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-formulate a constraint
+<span class="screen-reader-only">Note</span>formulate a constraint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -612,12 +614,12 @@ Pr(\hat p =_\epsilon q) = \int_{\mathbb{R}^N} \rho(x) d^N x \left( 1[\hat p(x) =
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="introduce a Dirac delta">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-introduce a Dirac delta
+<span class="screen-reader-only">Note</span>introduce a Dirac delta
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -636,12 +638,12 @@ introduce a Dirac delta
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="do a Fourier transform">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-do a Fourier transform
+<span class="screen-reader-only">Note</span>do a Fourier transform
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -660,12 +662,12 @@ do a Fourier transform
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="exchange the order of integration">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-exchange the order of integration
+<span class="screen-reader-only">Note</span>exchange the order of integration
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -683,12 +685,12 @@ Pr(\hat p =_\epsilon q) &amp;= {\color{red}\int_{\mathbb{R}^N} \rho(x) d^N x} {\
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="inner integral">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-inner integral
+<span class="screen-reader-only">Note</span>inner integral
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -706,12 +708,12 @@ inner integral
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="outer integral">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-outer integral
+<span class="screen-reader-only">Note</span>outer integral
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -729,12 +731,12 @@ Pr(\hat p =_\epsilon q) &amp;= \int d^n \lambda e^{-iN \sum_{k=1}^n \lambda_k q_
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="the mean field equation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-the mean field equation
+<span class="screen-reader-only">Note</span>the mean field equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -792,12 +794,12 @@ C = \sum_k p_k e^{i\lambda_k^*}
 <h3 class="anchored" data-anchor-id="field-theoretic-calculation-1">Field-theoretic calculation</h3>
 <p>This section is based on <span class="citation" data-cites="meiSTAT260MeanField2021">(<a href="#ref-meiSTAT260MeanField2021" role="doc-biblioref">Mei 2021</a>, lecture 8)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="formulate a constraint">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-formulate a constraint
+<span class="screen-reader-only">Note</span>formulate a constraint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -820,12 +822,12 @@ Pr(\bar Q =_\epsilon Q) =_{\ln} \mathbb{E}_\sigma \left[\prod_{1 \leq i &lt; j \
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="formulate a constraint, take 2">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-formulate a constraint, take 2
+<span class="screen-reader-only">Note</span>formulate a constraint, take 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -852,12 +854,12 @@ Pr(\bar Q =_\epsilon Q) &amp;= \mathbb{E}_\sigma [1[\bar Q(\sigma) - Q =_\epsilo
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="the off-shell trick">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-the off-shell trick
+<span class="screen-reader-only">Tip</span>the off-shell trick
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -876,12 +878,12 @@ the off-shell trick
 </div>
 </div>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;If we return to our field-theoretic interpretation, then allowing <span class="math inline">\(\sigma_j\)</span> to have norm <span class="math inline">\(\sqrt N \pm \sqrt N \epsilon\)</span> means that we are allowing the average type-<span class="math inline">\(j\)</span> kinetic energy to fluctuate a bit, even though it is exactly <span class="math inline">\(1\)</span>. Quantum field theorists call this <strong>off the (kinetic) energy shell</strong>, and if you ask, they might wave mysteriously in the air and speak of “virtual particles” and “Faddeev-Popov ghosts”.</p></div></div><div class="callout callout-style-default callout-note callout-titled" title="formulate a constraint, take 3">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-formulate a constraint, take 3
+<span class="screen-reader-only">Note</span>formulate a constraint, take 3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -898,12 +900,12 @@ formulate a constraint, take 3
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="introduce a Dirac delta">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-introduce a Dirac delta
+<span class="screen-reader-only">Note</span>introduce a Dirac delta
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -922,12 +924,12 @@ Pr(\bar Q =_\epsilon Q) =_{\ln}\frac{\int_{\mathbb{R}^{N \times k}} \prod_{j\in 
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="evaluate the numerator by field equation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-evaluate the numerator by field equation
+<span class="screen-reader-only">Note</span>evaluate the numerator by field equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -970,12 +972,12 @@ evaluate the numerator by field equation
 </div>
 </div>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;If you want justification, look up “the method of steepest descent” <span class="citation" data-cites="erdelyiAsymptoticExpansions1956">(<a href="#ref-erdelyiAsymptoticExpansions1956" role="doc-biblioref">Erdélyi 1956, sec. 2.5</a>)</span>. Intuitively speaking, it is because when we are doing an integral like <span class="math inline">\(\int_\mathbb{R}dq (\cdots)\)</span>, we are doing a path integral in the complex plane, and so we can deform the path integral in the complex plane and still get the same result. Thus, we can deform it so hard that it walks across a “mountain pass” in the complex plane, where the saddle-point of the mountain pass is where <span class="math inline">\(\nabla_q (\cdots) = 0\)</span> – i.e., a stationary point.</p></div></div><div class="callout callout-style-default callout-note callout-titled" title="evaluate the denominator by field equation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-evaluate the denominator by field equation
+<span class="screen-reader-only">Note</span>evaluate the denominator by field equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -995,12 +997,12 @@ evaluate the denominator by field equation
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="evaluate the numerator, continued">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-evaluate the numerator, continued
+<span class="screen-reader-only">Note</span>evaluate the numerator, continued
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1047,12 +1049,12 @@ Pr(\bar Q =_\epsilon Q) =_{\ln} \frac{\exp\left(\frac N2(k+ k \ln(2\pi) + \ln \d
 <p>Let <span class="math inline">\(S^{N-1}(r)\)</span> be the sphere of radius <span class="math inline">\(r\)</span> in <span class="math inline">\(\mathbb{R}^N\)</span>, then</p>
 <p><span class="math display">\[|S^{N-1}(\sqrt N)| \sim (2\pi e)^{N/2}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1064,19 +1066,21 @@ Proof
       &amp;= \int_{\mathbb{R}} dq \; e^{-iqN} \left[\int_{\mathbb{R}^N} e^{iqx^T x} dx\right] \\
       &amp;= \int_{\mathbb{R}} dq \; e^{-iqN} \left[\int_{\mathbb{R}} e^{iqx^2} dx\right]^N \\
       &amp;= \int_{\mathbb{R}} dq \; e^{-iqN} (e^{i\pi/4}\sqrt{\pi/q})^N \\
-      \end{aligned}\]</span> - Thus, <span class="math inline">\(\frac 1N \ln |S^{N-1}(\sqrt N)|\)</span> converges to the stationary point of <span class="math display">\[-iq + \frac{i\pi}{4} + \frac 12 \ln \pi - \frac 12 \ln q\]</span></p>
+      \end{aligned}\]</span></p>
+<p>Thus, <span class="math inline">\(\frac 1N \ln |S^{N-1}(\sqrt N)|\)</span> converges to the stationary point of</p>
+<p><span class="math display">\[-iq + \frac{i\pi}{4} + \frac 12 \ln \pi - \frac 12 \ln q\]</span></p>
 <p>which occurs at <span class="math inline">\(q^* = i/2\)</span>. Plugging it in, we obtain</p>
 <p><span class="math display">\[\frac 1N \ln |S^{N-1}(\sqrt N)| \to \ln\sqrt{2\pi e}\]</span></p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Probabilistic interpretation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Probabilistic interpretation
+<span class="screen-reader-only">Note</span>Probabilistic interpretation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1085,14 +1089,20 @@ Probabilistic interpretation
 <p>As is well-known, in high-dimensions, everything looks like a gaussian. Specifically, the standard gaussian distribution <span class="math inline">\(\mathcal N(0, I_N)\)</span> in <span class="math inline">\(\mathbb{R}^N\)</span> space is strongly concentrated around the spherical shell of radius <span class="math inline">\(\sqrt N\)</span>, by the law of large numbers. Therefore, the log-surface area of <span class="math inline">\(S^{N-1}(\sqrt N)\)</span> converges to the entropy of the <span class="math inline">\(\mathcal N(0, I_N)\)</span>, which is just <span class="math inline">\(N\)</span> times the entropy of <span class="math inline">\(\mathcal N(0, 1)\)</span>.</p>
 <p>In more detail, we can sample from <span class="math inline">\(\mathcal N(0, I_N)\)</span> in two ways: Either directly sample <span class="math inline">\(N\)</span> standard normal variables independently, or sample a point on <span class="math inline">\(S^{N-1}(\sqrt N)\)</span>, before shifting it along the radius by an independently sampled displacement. Both ways give us exactly the same entropy. Now, because the radius of <span class="math inline">\(x \sim \mathcal N(0, I_N)\)</span> is distributed as the square-root of the <a href="https://en.wikipedia.org/wiki/Chi-squared_distribution">chi-squared distribution</a> <span class="math inline">\(\chi^2_N\)</span>, we have</p>
 <p><span class="math display">\[r^2 = \|x\|^2 \sim \chi^2_N \approx \mathcal N(N, 2N)\]</span></p>
-<p>When <span class="math inline">\(N\)</span> is large, we can write <span class="math inline">\(r^2 \approx N + \sqrt{2N} z\)</span> where <span class="math inline">\(z \sim \mathcal(0, 1)\)</span>, so <span class="math inline">\(r \approx \sqrt N + 2^{-1/2}z\)</span>. Therefore, the amount of radial displacement is roughly constant, and we have</p>
+<p>When <span class="math inline">\(N\)</span> is large, we can write <span class="math inline">\(r^2 \approx N + \sqrt{2N} z\)</span> where <span class="math inline">\(z \sim \mathcal N(0, 1)\)</span>, so <span class="math inline">\(r \approx \sqrt N + 2^{-1/2}z\)</span>. Therefore, the amount of radial displacement is roughly constant, and we have</p>
 <p><span class="math display">\[
 \mathrm{Ent}[\mathcal N(0, I_N)] \approx \ln |S^{N-1}(\sqrt N)| + \mathrm{Ent}[\mathcal N(0, 1/2)]
 \]</span></p>
-<p>giving us the second term in the Stirling approximation:</p>
+<p>… which turns out to be wrong. The issues are two: One, differential entropy is <em>not</em> scale-invariant! Specifically, the differential entropy of a uniform distribution on <span class="math inline">\(S^{N-1}(r)\)</span> is *smaller than that of <span class="math inline">\(S^{N-1}(2r)\)</span> by <span class="math inline">\(\ln 2^{N-1}\)</span>. Therefore, the total entropy is in fact split as</p>
 <p><span class="math display">\[
-\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} + \frac{\ln\sqrt{\pi e}}{N} + O(N^{-2})
+\mathrm{Ent}[\mathcal N(0, I_N)] = \ln |S^{N-1}(\sqrt N)| + (N-1)\mathbb{E}\left(\ln\frac{r}{\sqrt{N}}\right) + \mathrm{Ent}[r]
 \]</span></p>
+<p>Furthermore, to evaluate <span class="math inline">\((N-1)\mathbb{E}\left(\ln\frac{R}{\sqrt{N}}\right)\)</span> accurately, we <em>cannot</em> approximate <span class="math inline">\(r\)</span> as <span class="math inline">\(\sqrt N + 2^{-1/2}z\)</span>, because we are forced to expand to the quadratic term of the Taylor expansion, since the linear term averages to zero. Thus, we are forced to approximate <span class="math inline">\(r\)</span> <em>also</em> to second order, and this I don’t know how to do.</p>
+<p>I believe that, <em>if</em> it is worked through correctly, we should get</p>
+<p><span class="math display">\[
+\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} - \frac{\ln\sqrt{\pi}}{N} + O(N^{-2})
+\]</span></p>
+<p>since this is what Stirling’s approximation proves. But proving this is outsourced to the reader.</p>
 </div>
 </div>
 </div>
@@ -1108,12 +1118,12 @@ Probabilistic interpretation
 <p>where <span class="math inline">\(x_1, ..., x_N\)</span> are IID samples from the same distribution.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1156,80 +1166,46 @@ Den Hollander, Frank. 2008. <em>Large Deviations</em>. American Mathematical Soc
 Erdélyi, Arthur. 1956. <em>Asymptotic Expansions</em>. 3. Courier Corporation.
 </div>
 <div id="ref-meiSTAT260MeanField2021" class="csl-entry" role="listitem">
-Mei, Song. 2021. <span>“<span>STAT260</span>: <span>Mean Field Asymptotics</span> in <span>Statistical Learning</span>.”</span> https://www.stat.berkeley.edu/<span>~</span>songmei/Teaching/STAT260_Spring2021/index.html.
+Mei, Song. 2021. <span>“<span>STAT260</span>: <span>Mean Field Asymptotics</span> in <span>Statistical Learning</span>.”</span> 2021. <a href="https://www.stat.berkeley.edu/~songmei/Teaching/STAT260_Spring2021/index.html">https://www.stat.berkeley.edu/~songmei/Teaching/STAT260_Spring2021/index.html</a>.
 </div>
 <div id="ref-mezardInformationPhysicsComputation2009" class="csl-entry" role="listitem">
 Mézard, Marc, and Andrea Montanari. 2009. <em>Information, Physics, and Computation</em>. Oxford Graduate Texts. Oxford: Oxford university press.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1294,13 +1270,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1693,7 +1670,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "How to do field-theoretic calculations"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-04-11"</span></span>
@@ -2266,81 +2243,94 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>      &amp;= \int_{\R} dq \; e^{-iqN} \left<span class="co">[</span><span class="ot">\int_{\R^N} e^{iqx^T x} dx\right</span><span class="co">]</span> <span class="sc">\\</span></span>
 <span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>      &amp;= \int_{\R} dq \; e^{-iqN} \left<span class="co">[</span><span class="ot">\int_{\R} e^{iqx^2} dx\right</span><span class="co">]</span>^N <span class="sc">\\</span></span>
 <span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>      &amp;= \int_{\R} dq \; e^{-iqN} (e^{i\pi/4}\sqrt{\pi/q})^N <span class="sc">\\</span></span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>      \end{aligned}$$   - Thus, $\frac 1N \ln |S^{N-1}(\sqrt N)|$ converges to the stationary point of</span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>$$-iq + \frac{i\pi}{4} + \frac 12 \ln \pi - \frac 12 \ln q$$</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>which occurs at $q^* = i/2$. Plugging it in, we obtain  </span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>$$\frac 1N \ln |S^{N-1}(\sqrt N)| \to \ln\sqrt{2\pi e}$$ </span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Probabilistic interpretation" collapse="true"}</span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>As is well-known, in high-dimensions, everything looks like a gaussian. Specifically, the standard gaussian distribution $\mathcal N(0, I_N)$ in $\R^N$ space is strongly concentrated around the spherical shell of radius $\sqrt N$, by the law of large numbers. Therefore, the log-surface area of $S^{N-1}(\sqrt N)$ converges to the entropy of the $\mathcal N(0, I_N)$, which is just $N$ times the entropy of $\mathcal N(0, 1)$.</span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>In more detail, we can sample from $\mathcal N(0, I_N)$ in two ways: Either directly sample $N$ standard normal variables independently, or sample a point on $S^{N-1}(\sqrt N)$, before shifting it along the radius by an independently sampled displacement. Both ways give us exactly the same entropy. Now, because the radius of $x \sim \mathcal N(0, I_N)$ is distributed as the square-root of the <span class="co">[</span><span class="ot">chi-squared distribution</span><span class="co">](https://en.wikipedia.org/wiki/Chi-squared_distribution)</span> $\chi^2_N$, we have </span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>$$r^2 = <span class="sc">\|</span>x<span class="sc">\|</span>^2 \sim \chi^2_N \approx \mathcal N(N, 2N)$$</span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>When $N$ is large, we can write $r^2 \approx N + \sqrt{2N} z$ where $z \sim \mathcal(0, 1)$, so $r \approx \sqrt N + 2^{-1/2}z$. Therefore, the amount of radial displacement is roughly constant, and we have</span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>\mathrm{Ent}<span class="co">[</span><span class="ot">\mathcal N(0, I_N)</span><span class="co">]</span> \approx \ln |S^{N-1}(\sqrt N)| + \mathrm{Ent}<span class="co">[</span><span class="ot">\mathcal N(0, 1/2)</span><span class="co">]</span></span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>giving us the second term in the Stirling approximation:</span>
-<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} + \frac{\ln\sqrt{\pi e}}{N} + O(N^{-2})</span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cramér's theorem</span></span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>The most commonly used result from large deviation theory is Cramér's theorem <span class="co">[</span><span class="ot">@demboLargeDeviationsTechniques2009, theorem 2.2.30</span><span class="co">]</span>.</span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>::: {#thm-cramer}</span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a><span class="fu"># Cramér</span></span>
-<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>Given a vector function $M: X \to \R^m$ and a distribution on $X$, its rate function is the convex transform of its cumulant generating function:</span>
-<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>$$I_X(x) := \sup_{k \in \R^m}(\braket{k,x} - \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{k, M(x)}}</span><span class="co">]</span>)$$</span>
-<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>That is, for any compact subset $A \subset \R^m$, the rate function over the whole subset is just the highest possible rate:</span>
-<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>$$\lim_N\frac 1N \ln Pr\left(\frac 1N \sum_{i=1}^N M(x_i) \in A\right) = \sup_{x\in A} -I_X(x)$$</span>
-<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>where $x_1, ..., x_N$ are IID samples from the same distribution.</span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Proof" collapse="true"}</span>
-<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>It suffices to prove it for $A$ being really small, essentially just a single point, because we can then cut up the whole of $A$ into many pieces like that, and then run the result on each piece. The rate difference is such that only the highest rate can survive, as it races pass every other piece exponentially fast: $N^{-1} \ln (e^{-Na} + e^{-Nb}) \to \max(-a, -b)$, and even if two pieces have the exact same rate, then their combined rate gains a negligible factor of $N^{-1}\ln 2 \to 0$.</span>
-<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>So, we once again repeat the same calculation:</span>
-<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
-<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>Pr\left(\frac 1N \sum_{i=1}^N M(x_i) =_\epsilon m\right) &amp;=_{\ln}  \E_x \left<span class="co">[</span><span class="ot">\delta^{(m)}\left(\sum_i M(x_i) - Nm\right)\right</span><span class="co">]</span> &amp; \text{ only $m$ terms in the Dirac delta}<span class="sc">\\</span></span>
-<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>&amp;=   \E_x \left<span class="co">[</span><span class="ot">\int_{\R^m} dq e^{i\braket{iq, \sum_i M(x_i) - Nm}}\right</span><span class="co">]</span>  &amp; \text{Dirac delta Fourier transform} <span class="sc">\\</span></span>
-<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>&amp;= \int_{\R^m} dq e^{-N \braket{iq, m}}\E_x<span class="co">[</span><span class="ot">e^{\braket{iq, M}}</span><span class="co">]</span>^N&amp; \text{IID assumption} <span class="sc">\\</span></span>
-<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>&amp;= \int_{\R^m}dq e^{N(-\braket{iq, m} + \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{iq, M}}</span><span class="co">]</span>)}</span>
-<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
-<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>      \end{aligned}$$</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>Thus, $\frac 1N \ln |S^{N-1}(\sqrt N)|$ converges to the stationary point of</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>$$-iq + \frac{i\pi}{4} + \frac 12 \ln \pi - \frac 12 \ln q$$</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>which occurs at $q^* = i/2$. Plugging it in, we obtain  </span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>$$\frac 1N \ln |S^{N-1}(\sqrt N)| \to \ln\sqrt{2\pi e}$$ </span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Probabilistic interpretation" collapse="true"}</span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>As is well-known, in high-dimensions, everything looks like a gaussian. Specifically, the standard gaussian distribution $\mathcal N(0, I_N)$ in $\R^N$ space is strongly concentrated around the spherical shell of radius $\sqrt N$, by the law of large numbers. Therefore, the log-surface area of $S^{N-1}(\sqrt N)$ converges to the entropy of the $\mathcal N(0, I_N)$, which is just $N$ times the entropy of $\mathcal N(0, 1)$.</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>In more detail, we can sample from $\mathcal N(0, I_N)$ in two ways: Either directly sample $N$ standard normal variables independently, or sample a point on $S^{N-1}(\sqrt N)$, before shifting it along the radius by an independently sampled displacement. Both ways give us exactly the same entropy. Now, because the radius of $x \sim \mathcal N(0, I_N)$ is distributed as the square-root of the <span class="co">[</span><span class="ot">chi-squared distribution</span><span class="co">](https://en.wikipedia.org/wiki/Chi-squared_distribution)</span> $\chi^2_N$, we have </span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>$$r^2 = <span class="sc">\|</span>x<span class="sc">\|</span>^2 \sim \chi^2_N \approx \mathcal N(N, 2N)$$</span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>When $N$ is large, we can write $r^2 \approx N + \sqrt{2N} z$ where $z \sim \mathcal N(0, 1)$, so $r \approx \sqrt N + 2^{-1/2}z$. Therefore, the amount of radial displacement is roughly constant, and we have</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>\mathrm{Ent}<span class="co">[</span><span class="ot">\mathcal N(0, I_N)</span><span class="co">]</span> \approx \ln |S^{N-1}(\sqrt N)| + \mathrm{Ent}<span class="co">[</span><span class="ot">\mathcal N(0, 1/2)</span><span class="co">]</span></span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>... which turns out to be wrong. The issues are two: One, differential entropy is *not* scale-invariant! Specifically, the differential entropy of a uniform distribution on $S^{N-1}(r)$ is *smaller than that of $S^{N-1}(2r)$ by $\ln 2^{N-1}$. Therefore, the total entropy is in fact split as</span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>\mathrm{Ent}<span class="co">[</span><span class="ot">\mathcal N(0, I_N)</span><span class="co">]</span> = \ln |S^{N-1}(\sqrt N)| + (N-1)\E \lrb{\ln\frac{r}{\sqrt{N}}} + \mathrm{Ent}<span class="co">[</span><span class="ot">r</span><span class="co">]</span></span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>Furthermore, to evaluate $(N-1)\E \lrb{\ln\frac{R}{\sqrt{N}}}$ accurately, we *cannot* approximate $r$ as $\sqrt N + 2^{-1/2}z$, because we are forced to expand to the quadratic term of the Taylor expansion, since the linear term averages to zero. Thus, we are forced to approximate $r$ *also* to second order, and this I don't know how to do.</span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>I believe that, *if* it is worked through correctly, we should get</span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>\frac 1N \ln |S^{N-1}(\sqrt N)| = \ln\sqrt{2\pi e} - \frac{\ln\sqrt{\pi}}{N} + O(N^{-2})</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>since this is what Stirling's approximation proves. But proving this is outsourced to the reader.</span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cramér's theorem</span></span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>The most commonly used result from large deviation theory is Cramér's theorem <span class="co">[</span><span class="ot">@demboLargeDeviationsTechniques2009, theorem 2.2.30</span><span class="co">]</span>.</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>::: {#thm-cramer}</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a><span class="fu"># Cramér</span></span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>Given a vector function $M: X \to \R^m$ and a distribution on $X$, its rate function is the convex transform of its cumulant generating function:</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>$$I_X(x) := \sup_{k \in \R^m}(\braket{k,x} - \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{k, M(x)}}</span><span class="co">]</span>)$$</span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>That is, for any compact subset $A \subset \R^m$, the rate function over the whole subset is just the highest possible rate:</span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>$$\lim_N\frac 1N \ln Pr\left(\frac 1N \sum_{i=1}^N M(x_i) \in A\right) = \sup_{x\in A} -I_X(x)$$</span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>where $x_1, ..., x_N$ are IID samples from the same distribution.</span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Proof" collapse="true"}</span>
 <span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>The last equation is again dominated by the stationary point. This would give us</span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>It suffices to prove it for $A$ being really small, essentially just a single point, because we can then cut up the whole of $A$ into many pieces like that, and then run the result on each piece. The rate difference is such that only the highest rate can survive, as it races pass every other piece exponentially fast: $N^{-1} \ln (e^{-Na} + e^{-Nb}) \to \max(-a, -b)$, and even if two pieces have the exact same rate, then their combined rate gains a negligible factor of $N^{-1}\ln 2 \to 0$.</span>
 <span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>$$=_{\ln}\mathrm{stat}_{q\in \mathbb C^m} e^{N(-\braket{q, m} + \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{q, M}}</span><span class="co">]</span>)}$$</span>
+<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>So, we once again repeat the same calculation:</span>
 <span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>We still don't know *which* stationary point we should pick. However, in large deviation theory, we usually pick the global minimum, and most often, the global minimum is the unique stationary point in the real space. Assuming that, we have</span>
-<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>$$\frac 1N \ln Pr\left(\frac 1N \sum_{i=1}^N M(x_i)\right) \to -\sup_{q\in \mathbb R^m} (\braket{q, m} - \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{q, M}}</span><span class="co">]</span>)$$ </span>
-<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>Pr\left(\frac 1N \sum_{i=1}^N M(x_i) =_\epsilon m\right) &amp;=_{\ln}  \E_x \left<span class="co">[</span><span class="ot">\delta^{(m)}\left(\sum_i M(x_i) - Nm\right)\right</span><span class="co">]</span> &amp; \text{ only $m$ terms in the Dirac delta}<span class="sc">\\</span></span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>&amp;=   \E_x \left<span class="co">[</span><span class="ot">\int_{\R^m} dq e^{i\braket{iq, \sum_i M(x_i) - Nm}}\right</span><span class="co">]</span>  &amp; \text{Dirac delta Fourier transform} <span class="sc">\\</span></span>
+<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>&amp;= \int_{\R^m} dq e^{-N \braket{iq, m}}\E_x<span class="co">[</span><span class="ot">e^{\braket{iq, M}}</span><span class="co">]</span>^N&amp; \text{IID assumption} <span class="sc">\\</span></span>
+<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>&amp;= \int_{\R^m}dq e^{N(-\braket{iq, m} + \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{iq, M}}</span><span class="co">]</span>)}</span>
+<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>The last equation is again dominated by the stationary point. This would give us</span>
+<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>$$=_{\ln}\mathrm{stat}_{q\in \mathbb C^m} e^{N(-\braket{q, m} + \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{q, M}}</span><span class="co">]</span>)}$$</span>
+<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>We still don't know *which* stationary point we should pick. However, in large deviation theory, we usually pick the global minimum, and most often, the global minimum is the unique stationary point in the real space. Assuming that, we have</span>
+<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a>$$\frac 1N \ln Pr\left(\frac 1N \sum_{i=1}^N M(x_i)\right) \to -\sup_{q\in \mathbb R^m} (\braket{q, m} - \ln \E_x<span class="co">[</span><span class="ot">e^{\braket{q, M}}</span><span class="co">]</span>)$$ </span>
+<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

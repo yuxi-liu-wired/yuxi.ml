@@ -15,8 +15,19 @@
 <title>Yuxi on the Wired</title>
 <link>https://yuxi.ml/feeds.html</link>
 </image>
-<generator>quarto-1.8.25</generator>
-<lastBuildDate>Sun, 26 Oct 2025 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.8.27</generator>
+<lastBuildDate>Wed, 11 Feb 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Akses Ditolak</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <dc:creator>Claude Opus 4.6</dc:creator>
+  <link>https://yuxi.ml/logs/posts/2026-akses-ditolak/</link>
+  <description><![CDATA[ Funny SEO spam network that scrapes GitHub Issues onto hundreds of auto-generated Blogger sites, cloaking them from human visitors. I didn’t do anything about it other than monitoring the situation, because Google somehow made abuse creation more automated than abuse reporting. ]]></description>
+  <category>internet</category>
+  <category>infosec</category>
+  <guid>https://yuxi.ml/logs/posts/2026-akses-ditolak/</guid>
+  <pubDate>Wed, 11 Feb 2026 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Speculations concerning the first ultramathematician</title>
   <dc:creator>Yuxi Liu</dc:creator>
@@ -231,15 +242,6 @@
   <category>fun</category>
   <category>fiction</category>
   <guid>https://yuxi.ml/sketches/posts/fictional-ideas/</guid>
-  <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Research ideas</title>
-  <dc:creator>Yuxi Liu</dc:creator>
-  <link>https://yuxi.ml/sketches/posts/research-ideas/</link>
-  <description><![CDATA[ Ideas for research. Free for a good home. ]]></description>
-  <category>fun</category>
-  <guid>https://yuxi.ml/sketches/posts/research-ideas/</guid>
   <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
