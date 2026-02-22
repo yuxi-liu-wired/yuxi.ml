@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -813,7 +815,7 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 <p>When he heard about the “miraculous” backpropagation in the 1980s, he immediately started writing papers in neural networks again.</p>
 <p>If this was an individual case, then I might have dismissed it as Widrow being misled by his background. Before entering a PhD program Widrow took an internship at the military:</p>
 <blockquote class="blockquote">
-<p>… the sky was divided up into a grid, with one mile by one mile regions, and all the computer sensed was that there was a target within that one mile by one mile square. … The radar pulses were transmitted periodically, and then periodically you got samples of the flight path. Say you take a piece of graph paper and draw and nice, smooth flight path for an airplane, and then at uniform points in time put a mark on the actual path based on the radar sample. If you don’t show anybody that nice, smooth line but only the sequence of grid squares that the airplane was in, one could still reconstruct the smooth track. <span class="citation" data-cites="widrowOralHistoryBernard1997">(<a href="#ref-widrowOralHistoryBernard1997" role="doc-biblioref">Widrow 1997</a>)</span></p>
+<p>… the sky was divided up into a grid, with one mile by one mile regions, and all the computer sensed was that there was a target within that one mile by one mile square. … The radar pulses were transmitted periodically, and then periodically you got samples of the flight path. Say you take a piece of graph paper and draw and nice, smooth flight path for an airplane, and then at uniform points in time put a mark on the actual path based on the radar sample. If you don’t show anybody that nice, smooth line but only the sequence of grid squares that the airplane was in, one could still reconstruct the smooth track. <span class="citation" data-cites="widrowOralHistoryBernard1997">(<a href="#ref-widrowOralHistoryBernard1997" role="doc-biblioref">Goldstein 1997</a>)</span></p>
 </blockquote>
 <p>The problem of reconstructing a smooth flight path from discretized radar signals got him interested in quantization, and he did his PhD thesis (1954) in the statistical theory of quantization noise. In the interview 43 years later, he called it “the best piece of work I ever did in my whole life”. He is still the world expert on quantization noise, and wrote an entire textbook on quantization noise <span class="citation" data-cites="widrowQuantizationNoiseRoundoff2008">(<a href="#ref-widrowQuantizationNoiseRoundoff2008" role="doc-biblioref">Widrow and Kollár 2008</a>)</span>.</p>
 <p>So regarding this background, one might be tempted to say that Widrow was misled by his infatuation with quantization, and attempted to use quantized neural networks. However, this does not explain why all the <em>other</em> pioneers went down the same wrong path.</p>
@@ -938,7 +940,7 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 </blockquote>
 <p>Sometime before 1968, he was inspired to do backpropagation from reading Freud.</p>
 <blockquote class="blockquote">
-<p>I talk in there about the concept of translating Freud into mathematics. This is what took me to backpropagation, so the basic ideas that took me to backpropagation were in this journal article in ’68 <span class="citation" data-cites="werbosElementsIntelligence1968">(<a href="#ref-werbosElementsIntelligence1968" role="doc-biblioref">P. Werbos 1968</a>)</span>. I talked a lot about what was wrong with the existing [two state] McCulloch–Pitts neuron model, and how it was only “1” and “0.” I wanted to make that neuron probabilistic. I was going to apply Freudian notions to an upper-level, associative drive reinforcement system. When</p>
+<p>I talk in there about the concept of translating Freud into mathematics. This is what took me to backpropagation, so the basic ideas that took me to backpropagation were in this journal article in ’68 <span class="citation" data-cites="werbosElementsIntelligence1968">(<a href="#ref-werbosElementsIntelligence1968" role="doc-biblioref">Werbos 1968</a>)</span>. I talked a lot about what was wrong with the existing [two state] McCulloch–Pitts neuron model, and how it was only “1” and “0.” I wanted to make that neuron probabilistic. I was going to apply Freudian notions to an upper-level, associative drive reinforcement system. When</p>
 </blockquote>
 <p>For his masters (1969), he majored in mathematical physics, and minored in decision and control. During his PhD at Harvard, he had to take some compulsory courses, which he didn’t want to. To salvage the situation, he took computer courses which would provide him with some computer hours, a scarce resource at the time. I would guess the following event happened early 1971.</p>
 <blockquote class="blockquote">
@@ -1033,10 +1035,10 @@ Figure&nbsp;1: Rosenblith images.
 <p>Minsky also said, “You know, I used to believe in all this kind of stuff with reinforcement learning because I knew reinforcement learning would work. I knew how to implement it. I had a nice guy named Oliver Selfridge who came in and acted as my patron and gave me permission to do it. We coauthored a paper, but it was really my idea, and he was just acting as patron on the Jitters machine. I’ll hand you the tech report, which we have deliberately never published.”</p>
 <p>It was his bad experience with the Jitters machine that turned him off on reinforcement learning and all the neural net ideas. It just didn’t work. I later looked at that paper … He had a system that was highly multivariate with a single reinforcement signal. The system can’t learn efficiently with that. At any rate, he was totally turned off.</p>
 </blockquote>
-<p>The brief description of the unpublished jitters machine was not making sense to me, so I looked around the literature. It was <em>so</em> unpublished that I found only two other references in the entire literature <span class="citation" data-cites="werbosApplicationsAdvancesNonlinear1982 werbosBuildingUnderstandingAdaptive1987">(<a href="#ref-werbosApplicationsAdvancesNonlinear1982" role="doc-biblioref">P. J. Werbos 1982</a>, <a href="#ref-werbosBuildingUnderstandingAdaptive1987" role="doc-biblioref">1987</a>)</span>, both by Werbos. According to him,</p>
+<p>The brief description of the unpublished jitters machine was not making sense to me, so I looked around the literature. It was <em>so</em> unpublished that I found only two other references in the entire literature <span class="citation" data-cites="werbosApplicationsAdvancesNonlinear1982 werbosBuildingUnderstandingAdaptive1987">(<a href="#ref-werbosApplicationsAdvancesNonlinear1982" role="doc-biblioref">Werbos 1982</a>, <a href="#ref-werbosBuildingUnderstandingAdaptive1987" role="doc-biblioref">1987</a>)</span>, both by Werbos. According to him,</p>
 <blockquote class="blockquote">
 <p>There are also some technical reasons to expect better results with the new approach. Almost all of the old perceptron work was based on the McCulloch–Pitts model of the neuron, which was both discontinuous and non-differentiable. It was felt, in the 1950’s, that the output of a brain cell had to be 1 or 0, because the output consisted of sharp discrete “spikes.” More recent work in neurology has shown that higher brain cells output “bursts” or “volleys” of spikes, and that the strength of a volley may vary continuously in intensity. This suggests the CLU model to be discussed in the Appendix. In any event, to exploit basic numerical methods, one must use differentiable processing units. Minsky once experimented with a “jitters” machine, which estimated one derivative per time cycle by making brute-force changes in selected variables; however, the methods to be discussed in the Appendix yield derivatives of all variables and parameters in one major time cycle and thereby multiply efficiency in proportion to the number of parameters <span class="math inline">\((N)\)</span>, which may be huge.</p>
-<p><span class="citation" data-cites="werbosBuildingUnderstandingAdaptive1987">(<a href="#ref-werbosBuildingUnderstandingAdaptive1987" role="doc-biblioref">P. J. Werbos 1987</a>)</span></p>
+<p><span class="citation" data-cites="werbosBuildingUnderstandingAdaptive1987">(<a href="#ref-werbosBuildingUnderstandingAdaptive1987" role="doc-biblioref">Werbos 1987</a>)</span></p>
 </blockquote>
 <p>This makes things clear enough. The jitters machine was an RL agent with multiple continuously adjustable parameters running a very primitive form of policy gradient. During every episode, it would estimate <span class="math inline">\(\partial_{\theta_i} R(\theta)\)</span> using finite difference, but since it used finite difference, it could estimate the partial derivative for one of the parameters <span class="math inline">\(\theta_i\)</span> – only <em>one</em>! No wonder it never managed to learn.</p>
 <p>It is almost comical how much they failed to just use gradient descent. It sometimes feels as if they did everything to <em>avoid</em> just taking the gradient. In the case of Minsky, he made it very clear, in the epilogue of <span class="citation" data-cites="minskyPerceptronsIntroductionComputational1988">(<a href="#ref-minskyPerceptronsIntroductionComputational1988" role="doc-biblioref">Minsky and Papert 1988</a>)</span>, that he did not believe in gradient descent, period. But what explains the gradient-phobia of the others…?</p>
@@ -1068,14 +1070,14 @@ Figure&nbsp;1: Rosenblith images.
 <blockquote class="blockquote">
 <p>I found out that DARPA had spent a lot of effort building a worldwide conflict forecasting model for the Joint Chiefs of Staff that was used in the long-range strategy division of the Joint Chiefs. … I wound up sending a couple of graduate students to create a really good database of Latin America. I said, “You want variance, high variance. Something hard to predict.” I thought conflict in Latin America would be the most beautiful case. I figured there were enough cultural homogeneities that it would be a single stochastic process, but with lots and lots of variance in that process. So we got truly annual data going back, I don’t know, twenty or thirty years for all the countries in Latin America and then reestimated the Joint Chief’s model on it. It had an r2 of about .0016 at forecasting conflict. By jiggling and jiggling we could raise it to about .05. It could predict GNP and economic things decently. Conflict prediction we couldn’t improve, though; it was hopeless.</p>
 <p>DARPA wasn’t happy when I published that result. They wanted me to do something real and practical and useful for the United States. This was useful, but it was an exposé. They didn’t like that. Therefore, the report, which included backpropagation in detail and other advanced methods, was not even entered into DOCSUB. Every time I tried to enter it into DOCSUB, somebody jiggled influence to say, “No, no, no, we can’t publish this. This is too hot.”</p>
-<p>It was published in <span class="citation" data-cites="werbosEmpiricalTestNew1978">(<a href="#ref-werbosEmpiricalTestNew1978" role="doc-biblioref">P. J. Werbos and Titus 1978</a>)</span> anyway because they couldn’t block the journals, but it didn’t include the appendices. So that paper in 1978 said, “We’ve got this great thing called dynamic feedback, which lets you estimate these things. It calculates derivatives in a single swoop, and you can use it for lots of things, like AI.” … <strong>the appendix on how to do it was not there because of page limits</strong> … At that point, DARPA was no longer happy.</p>
+<p>It was published in <span class="citation" data-cites="werbosEmpiricalTestNew1978">(<a href="#ref-werbosEmpiricalTestNew1978" role="doc-biblioref">Werbos and Titus 1978</a>)</span> anyway because they couldn’t block the journals, but it didn’t include the appendices. So that paper in 1978 said, “We’ve got this great thing called dynamic feedback, which lets you estimate these things. It calculates derivatives in a single swoop, and you can use it for lots of things, like AI.” … <strong>the appendix on how to do it was not there because of page limits</strong> … At that point, DARPA was no longer happy.</p>
 </blockquote>
-<p>So he went to the Department of Energy, used backpropagation to create another model, and was silenced once again, unable to publish that report until 1988 <span class="citation" data-cites="werbosGeneralizationBackpropagationApplication1988">(<a href="#ref-werbosGeneralizationBackpropagationApplication1988" role="doc-biblioref">P. J. Werbos 1988</a>)</span>.</p>
+<p>So he went to the Department of Energy, used backpropagation to create another model, and was silenced once again, unable to publish that report until 1988 <span class="citation" data-cites="werbosGeneralizationBackpropagationApplication1988">(<a href="#ref-werbosGeneralizationBackpropagationApplication1988" role="doc-biblioref">Werbos 1988</a>)</span>.</p>
 <blockquote class="blockquote">
 <p>They had a million-dollar contract at Oak Ridge National Laboratory to study that model. They wanted me for several things. One, they wanted me to be a translator between engineering and economics. Two, they wanted a critique. They wanted exposés. They wanted me to rip apart the models of the Department of Energy in a very scientific, objective way that didn’t look like I was trying to rip them apart but was anyway. That’s exactly what they wanted to hire me for, and I didn’t really know that was the motive. These particular people didn’t like modeling very much.</p>
 <p>So at some point, they wanted sensitivity analysis. And I said, “You know, I know a little bit about calculating derivatives.” … I applied it to a natural gas model at the Department of Energy. In the course of applying it, I did indeed discover dirt. They didn’t want me to publish it because it was too politically sensitive. It was a real-world application, but the problem was that it was too real. At DOE, you know, you don’t have First Amendment rights. That’s one of the terrible things somebody’s got to fix in this country. The reality of the First Amendment has deteriorated. Nobody’s breaking the law, but the spirit of the First Amendment has decayed too far for science. At any rate, they finally gave me permission to publish it around ’86 and ’87. I sent it to the journal Neural Nets – that is, how you do simultaneous recurrent nets and time-lag recurrent nets together. Then the editorial process messed around with it, made the paper perhaps worse, and it finally got published in ’88, which makes me very sad because now I gotta worry about, ’Well, gee, didn’t Pineda do this in ’88?</p>
 </blockquote>
-<p>As a side note, one might feel that Werbos’ “turning Freud into mathematics” seems rather strange. This feeling is completely justified. I found a recent paper by him <span class="citation" data-cites="werbosIntelligenceBrainTheory2009">(<a href="#ref-werbosIntelligenceBrainTheory2009" role="doc-biblioref">P. J. Werbos 2009</a>)</span> with this crackpot illustration:</p>
+<p>As a side note, one might feel that Werbos’ “turning Freud into mathematics” seems rather strange. This feeling is completely justified. I found a recent paper by him <span class="citation" data-cites="werbosIntelligenceBrainTheory2009">(<a href="#ref-werbosIntelligenceBrainTheory2009" role="doc-biblioref">Werbos 2009</a>)</span> with this crackpot illustration:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/werbos_2009.jpg" class="img-fluid figure-img"></p>
@@ -1087,12 +1089,12 @@ Figure&nbsp;1: Rosenblith images.
 <p>The model in Figure 1 is actually just a mathematical version of Freud’s model of psychodynamics, where the derivative of <span class="math inline">\(R_i\)</span> represents what Freud called the “cathexis” (or affect) or emotional charge or emotional energy attached to the object which <span class="math inline">\(R_i\)</span> represents. In other words, I came up with backpropagation by not just laughing at Freud’s “nonscientific” model, but by translating it into mathematics and showing that it works.</p>
 <p>More concretely, Freud said that “if A causes B, a forward association or axon develops from A to B; and then, if there is an emotional charge on B, that energy flows backwards, to put a charge in A, proportional to the charge on B and to the strength of the forwards association from A to B.” That’s exactly what backpropagation does. Chronologically, I translated Freud into a way to calculate derivatives across a network of simple neurons (which Harvard simply did not believe), and then proved the more general chain rule for ordered derivatives to prove it and make it more powerful (and to graduate).</p>
 <p>Freud’s term “psychic energy” for this flow really captures the subjective feeling of this subjective reality, which Freud documents many, many times over in his works. (Though of course, it is not conserved like the energy operators of physics. It is a computational flow, however implemented.) But in my view, any really strong collective intelligence would have to be held together by the same kind of thing, propagated over a more complicated network topology, but still the same basic thing. And indeed, almost every major deep culture on earth has a term for the same kind of “psychic energy” at another level – like “qi” or “prana” or “charisma.” What’s more, several different types of derivatives (like derivatives of <span class="math inline">\(J\)</span> versus derivatives of error) need to be propagated, giving rise to different kinds of mental energy. Sensitivity to these flows, to the fact that they are not conserved, and to the mathematics of the factors which govern their flow, is of great importance, in my view and my experience.</p>
-<p><span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Paul Werbos 2011</a>)</span></p>
+<p><span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Werbos 2011</a>)</span></p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/Werbos_1972_thesis_proposal.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">The backpropagation diagram in Werbos’ 1972 thesis proposal, which was a mathematical translation of Freud’s concept of “psychic energy”. <span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Paul Werbos 2011</a>)</span></figcaption>
+<figcaption class="margin-caption">The backpropagation diagram in Werbos’ 1972 thesis proposal, which was a mathematical translation of Freud’s concept of “psychic energy”. <span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Werbos 2011</a>)</span></figcaption>
 </figure>
 </div>
 
@@ -1105,46 +1107,49 @@ Figure&nbsp;1: Rosenblith images.
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-ackleyLearningAlgorithmBoltzmann1985" class="csl-entry" role="listitem">
-Ackley, David H., Geoffrey E. Hinton, and Terrence J. Sejnowski. 1985. <span>“A Learning Algorithm for <span>Boltzmann</span> Machines.”</span> <em>Cognitive Science</em> 9 (1): 147–69.
+Ackley, David H., Geoffrey E. Hinton, and Terrence J. Sejnowski. 1985. <span>“A Learning Algorithm for <span>Boltzmann</span> Machines.”</span> <em>Cognitive Science</em> 9 (1): 147–69. <a href="https://www.sciencedirect.com/science/article/pii/S0364021385800124">https://www.sciencedirect.com/science/article/pii/S0364021385800124</a>.
 </div>
 <div id="ref-bernsteinMarvinMinskysVision1981" class="csl-entry" role="listitem">
-Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December.
+Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December 6, 1981. <a href="https://www.newyorker.com/magazine/1981/12/14/a-i">https://www.newyorker.com/magazine/1981/12/14/a-i</a>.
 </div>
 <div id="ref-childManuscriptsLeibnizHis1917" class="csl-entry" role="listitem">
 Child, J. M. 1917. <span>“The <span>Manuscripts</span> of <span>Leibniz</span> on <span>His Discovery</span> of the <span>Differential Calculus</span>. <span>Part II</span> (<span>Continued</span>).”</span> <em>The Monist</em> 27 (3): 411–54. <a href="https://doi.org/10.5840/monist191727324">https://doi.org/10.5840/monist191727324</a>.
 </div>
+<div id="ref-widrowOralHistoryBernard1997" class="csl-entry" role="listitem">
+Goldstein, Andrew. 1997. <span>“Oral <span>History</span>: <span>Bernard Widrow</span>.”</span> <a href="https://ethw.org/Oral-History:Bernard_Widrow">https://ethw.org/Oral-History:Bernard_Widrow</a>.
+</div>
 <div id="ref-griewankWhoInventedReverse2012" class="csl-entry" role="listitem">
-Griewank, Andreas. 2012. <span>“Who Invented the Reverse Mode of Differentiation.”</span> <em>Documenta Mathematica, Extra Volume ISMP</em> 389400.
+Griewank, Andreas. 2012. <span>“Who Invented the Reverse Mode of Differentiation.”</span> <em>Documenta Mathematica, Extra Volume ISMP</em> 389400. <a href="https://content.ems.press/assets/public/full-texts/books/251/chapters/online-pdf/978-3-98547-540-7-chapter-4949.pdf">https://content.ems.press/assets/public/full-texts/books/251/chapters/online-pdf/978-3-98547-540-7-chapter-4949.pdf</a>.
 </div>
 <div id="ref-kanalPatternCategoriesAlternate1993" class="csl-entry" role="listitem">
-Kanal, Laveen N. 1993. <span>“On Pattern, Categories, and Alternate Realities.”</span> <em>Pattern Recognition Letters</em> 14 (3): 241–55.
+Kanal, Laveen N. 1993. <span>“On Pattern, Categories, and Alternate Realities.”</span> <em>Pattern Recognition Letters</em> 14 (3): 241–55. <a href="http://lnk.com/prl14.pdf">http://lnk.com/prl14.pdf</a>.
 </div>
 <div id="ref-lecunGeneralizationNetworkDesign1989" class="csl-entry" role="listitem">
-LeCun, Yann. 1989. <span>“Generalization and Network Design Strategies.”</span> <em>Connectionism in Perspective</em> 19 (143-155): 18.
+LeCun, Yann. 1989. <span>“Generalization and Network Design Strategies.”</span> <em>Connectionism in Perspective</em> 19 (143–155): 18. <a href="https://www.academia.edu/download/30766382/lecun.pdf">https://www.academia.edu/download/30766382/lecun.pdf</a>.
 </div>
 <div id="ref-linnainmaaTaylorExpansionAccumulated1976" class="csl-entry" role="listitem">
 Linnainmaa, Seppo. 1976. <span>“Taylor Expansion of the Accumulated Rounding Error.”</span> <em>BIT</em> 16 (2): 146–60. <a href="https://doi.org/10.1007/BF01931367">https://doi.org/10.1007/BF01931367</a>.
 </div>
 <div id="ref-mccullochLogicalCalculusIdeas1943" class="csl-entry" role="listitem">
-McCulloch, Warren S., and Walter Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5 (4): 115–33. <a href="https://doi.org/10/djsbj6">https://doi.org/10/djsbj6</a>.
+McCulloch, Warren Sturgis, and Walter H. Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5 (4): 115–33. <a href="https://doi.org/10/djsbj6">https://doi.org/10/djsbj6</a>.
 </div>
 <div id="ref-minskyComputationFiniteInfinite1967" class="csl-entry" role="listitem">
-Minsky, Marvin. 1967. <em>Computation: Finite and Infinite Machines</em>. Englewood Cliffs, NJ: Prentice-Hall.
+Minsky, Marvin L. 1967. <em>Computation: Finite and Infinite Machines</em>. Englewood Cliffs, NJ: Prentice-Hall.
 </div>
 <div id="ref-minskyPerceptronsIntroductionComputational1988" class="csl-entry" role="listitem">
-Minsky, Marvin, and Seymour Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
+Minsky, Marvin L., and Seymour A. Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
 </div>
 <div id="ref-olazaranHistoricalSociologyNeural1991" class="csl-entry" role="listitem">
-Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> PhD thesis, The University of Edinburgh.
+Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> The University of Edinburgh. <a href="https://era.ed.ac.uk/handle/1842/20075">https://era.ed.ac.uk/handle/1842/20075</a>.
 </div>
 <div id="ref-papertSummerVisionProject1966" class="csl-entry" role="listitem">
-Papert, Seymour A. 1966. <span>“The Summer Vision Project.”</span>
+Papert, Seymour A. 1966. <span>“The Summer Vision Project.”</span> <a href="https://dspace.mit.edu/handle/1721.1/6125">https://dspace.mit.edu/handle/1721.1/6125</a>.
 </div>
 <div id="ref-pinkerFutureTense2002" class="csl-entry" role="listitem">
 Pinker, Steven, and Michael T. Ullman. 2002. <span>“The Past and Future of the Past Tense.”</span> <em>Trends in Cognitive Sciences</em> 6 (11): 456–63. <a href="https://doi.org/10.1016/S1364-6613(02)01990-3">https://doi.org/10.1016/S1364-6613(02)01990-3</a>.
 </div>
 <div id="ref-rosenblattPrinciplesNeurodynamicsPerceptrons1962" class="csl-entry" role="listitem">
-Rosenblatt, Frank. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC.
+Rosenblatt, Frank. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC. <a href="https://apps.dtic.mil/sti/citations/AD0256582">https://apps.dtic.mil/sti/citations/AD0256582</a>.
 </div>
 <div id="ref-rosenblithSensoryCommunicationContributions2012" class="csl-entry" role="listitem">
 Rosenblith, Walter A., ed. 2012. <em>Sensory Communication: Contributions to the <span>Symposium</span> on <span>Principles</span> of <span>Sensory Communication</span>, <span>July</span> 19-<span>August</span> 1, 1959, <span>Endicott House</span>, <span>M</span>.<span>I</span>.<span>T</span></em>. Cambridge, Massachusetts: The M.I.T. Press, Massachusetts Institute of Technology.
@@ -1159,13 +1164,10 @@ Rumelhart, David E., Geoffrey E. Hinton, and Ronald J. Williams. 1986. <span>“
 Sejnowski, Terrence J. 2018. <em>The <span>Deep Learning Revolution</span></em>. Illustrated edition. Cambridge, Massachusetts London, England: The MIT Press.
 </div>
 <div id="ref-werbosElementsIntelligence1968" class="csl-entry" role="listitem">
-Werbos, P. 1968. <span>“The Elements of Intelligence.”</span> <em>Cybernetica (Namur)</em> 3: 131–78.
-</div>
-<div id="ref-werbosNeuralNetworksPath2011" class="csl-entry" role="listitem">
-Werbos, Paul. 2011. <span>“Neural Networks as a Path to Self-Awareness.”</span> In <em>The 2011 <span>International Joint Conference</span> on <span>Neural Networks</span></em>, 3264–71. IEEE.
+Werbos, Paul J. 1968. <span>“The Elements of Intelligence.”</span> <em>Cybernetica (Namur)</em> 3: 131–78.
 </div>
 <div id="ref-werbosApplicationsAdvancesNonlinear1982" class="csl-entry" role="listitem">
-Werbos, Paul J. 1982. <span>“Applications of Advances in Nonlinear Sensitivity Analysis.”</span> In <em>System <span>Modeling</span> and <span>Optimization</span></em>, edited by R. F. Drenick and F. Kozin, 38:762–70. Berlin/Heidelberg: Springer-Verlag. <a href="https://doi.org/10.1007/BFb0006203">https://doi.org/10.1007/BFb0006203</a>.
+———. 1982. <span>“Applications of Advances in Nonlinear Sensitivity Analysis.”</span> In <em>System <span>Modeling</span> and <span>Optimization</span></em>, edited by R. F. Drenick and F. Kozin, 38:762–70. Berlin/Heidelberg: Springer-Verlag. <a href="https://doi.org/10.1007/BFb0006203">https://doi.org/10.1007/BFb0006203</a>.
 </div>
 <div id="ref-werbosBuildingUnderstandingAdaptive1987" class="csl-entry" role="listitem">
 ———. 1987. <span>“Building and Understanding Adaptive Systems: <span>A</span> Statistical/Numerical Approach to Factory Automation and Brain Research.”</span> <em>IEEE Transactions on Systems, Man, and Cybernetics</em> 17 (1): 7–20. <a href="https://doi.org/10.1109/TSMC.1987.289329">https://doi.org/10.1109/TSMC.1987.289329</a>.
@@ -1176,17 +1178,17 @@ Werbos, Paul J. 1982. <span>“Applications of Advances in Nonlinear Sensitivity
 <div id="ref-werbosIntelligenceBrainTheory2009" class="csl-entry" role="listitem">
 ———. 2009. <span>“Intelligence in the Brain: <span>A</span> Theory of How It Works and How to Build It.”</span> <em>Neural Networks</em>, Goal-<span>Directed Neural Systems</span>, 22 (3): 200–212. <a href="https://doi.org/10.1016/j.neunet.2009.03.012">https://doi.org/10.1016/j.neunet.2009.03.012</a>.
 </div>
+<div id="ref-werbosNeuralNetworksPath2011" class="csl-entry" role="listitem">
+———. 2011. <span>“Neural Networks as a Path to Self-Awareness.”</span> In <em>The 2011 <span>International Joint Conference</span> on <span>Neural Networks</span></em>, 3264–71. IEEE. <a href="https://ieeexplore.ieee.org/abstract/document/6033654/">https://ieeexplore.ieee.org/abstract/document/6033654/</a>.
+</div>
 <div id="ref-werbosEmpiricalTestNew1978" class="csl-entry" role="listitem">
 Werbos, Paul J., and Jim Titus. 1978. <span>“An Empirical Test of New Forecasting Methods Derived from a Theory of Intelligence: <span>The</span> Prediction of Conflict in <span>Latin America</span>.”</span> <em>IEEE Transactions on Systems, Man, and Cybernetics</em> 8 (9): 657–66. <a href="https://doi.org/10.1109/TSMC.1978.4310051">https://doi.org/10.1109/TSMC.1978.4310051</a>.
 </div>
 <div id="ref-widrowGeneralizationInformationStorage1962" class="csl-entry" role="listitem">
-Widrow, Bernard. 1962. <span>“Generalization and Information Storage in Networks of Adaline Neurons.”</span> <em>Self-Organizing Systems</em>, 435–61.
-</div>
-<div id="ref-widrowOralHistoryBernard1997" class="csl-entry" role="listitem">
-———. 1997. <span>“Oral <span>History</span>: <span>Bernard Widrow</span>.”</span>
+Widrow, Bernard. 1962. <span>“Generalization and Information Storage in Networks of Adaline Neurons.”</span> <em>Self-Organizing Systems</em>, 435–61. <a href="https://cir.nii.ac.jp/crid/1573387449478081920">https://cir.nii.ac.jp/crid/1573387449478081920</a>.
 </div>
 <div id="ref-widrowCybernetics20General2022" class="csl-entry" role="listitem">
-———. 2022. <em>Cybernetics 2.0: <span>A General Theory</span> of <span>Adaptivity</span> and <span>Homeostasis</span> in the <span>Brain</span> and in the <span>Body</span></em>. Vol. 14. Springer Nature.
+———. 2022. <em>Cybernetics 2.0: <span>A General Theory</span> of <span>Adaptivity</span> and <span>Homeostasis</span> in the <span>Brain</span> and in the <span>Body</span></em>. Vol. 14. Springer Nature. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=X_eVEAAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=Cybernetics+2.0%0A&amp;ots=MB6pN7dGcd&amp;sig=hTBUvOlnKBRkfYUNL7Ztn1Zm4Mg">https://books.google.com/books?hl=en&amp;lr=&amp;id=X_eVEAAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=Cybernetics+2.0%0A&amp;ots=MB6pN7dGcd&amp;sig=hTBUvOlnKBRkfYUNL7Ztn1Zm4Mg</a>.
 </div>
 <div id="ref-widrowAncientHistory2023" class="csl-entry" role="listitem">
 ———. 2023. <span>“Ancient <span>History</span>.”</span> In <em>Cybernetics 2.0: <span>A General Theory</span> of <span>Adaptivity</span> and <span>Homeostasis</span> in the <span>Brain</span> and in the <span>Body</span></em>, 277–307. Springer <span>Series</span> on <span>Bio-</span> and <span>Neurosystems</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-98140-2_26">https://doi.org/10.1007/978-3-030-98140-2_26</a>.
@@ -1196,73 +1198,39 @@ Widrow, Bernard, and István Kollár. 2008. <em>Quantization Noise: Roundoff Err
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1327,13 +1295,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1726,7 +1695,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Backstory of Backpropagation"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-12-26"</span></span>
@@ -2446,7 +2415,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
 <span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="co">[</span><span class="ot">@werbosNeuralNetworksPath2011</span><span class="co">]</span></span>
 <span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">The backpropagation diagram in Werbos' 1972 thesis proposal, which was a mathematical translation of Freud's concept of "psychic energy". [@werbosNeuralNetworksPath2011]</span><span class="co">](figure/Werbos_1972_thesis_proposal.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">The backpropagation diagram in Werbos' 1972 thesis proposal, which was a mathematical translation of Freud's concept of "psychic energy". [@werbosNeuralNetworksPath2011]</span><span class="co">](figure/Werbos_1972_thesis_proposal.png)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

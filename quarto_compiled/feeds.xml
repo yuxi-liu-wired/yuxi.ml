@@ -29,27 +29,6 @@
   <pubDate>Wed, 11 Feb 2026 08:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Speculations concerning the first ultramathematician</title>
-  <dc:creator>Yuxi Liu</dc:creator>
-  <link>https://yuxi.ml/essays/posts/ultramathematician/</link>
-  <description><![CDATA[ TODO ]]></description>
-  <category>AI</category>
-  <category>math</category>
-  <guid>https://yuxi.ml/essays/posts/ultramathematician/</guid>
-  <pubDate>Sun, 26 Oct 2025 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>The economics of AI friendship</title>
-  <dc:creator>Yuxi Liu</dc:creator>
-  <link>https://yuxi.ml/essays/posts/ai-friendship-fermi-estimate/</link>
-  <description><![CDATA[ Fermi estimation for . ]]></description>
-  <category>AI</category>
-  <category>economics</category>
-  <guid>https://yuxi.ml/essays/posts/ai-friendship-fermi-estimate/</guid>
-  <pubDate>Thu, 02 Oct 2025 07:00:00 GMT</pubDate>
-  <media:content url="https://yuxi.ml/essays/posts/ai-friendship-fermi-estimate/?" medium="image"/>
-</item>
-<item>
   <title>Gwern visits BAIR</title>
   <dc:creator>Yuxi Liu</dc:creator>
   <link>https://yuxi.ml/logs/posts/2025-gwern-bair/</link>
@@ -243,6 +222,28 @@
   <category>fiction</category>
   <guid>https://yuxi.ml/sketches/posts/fictional-ideas/</guid>
   <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Research ideas</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/sketches/posts/research-ideas/</link>
+  <description><![CDATA[ Ideas for research. Free for a good home. ]]></description>
+  <category>fun</category>
+  <guid>https://yuxi.ml/sketches/posts/research-ideas/</guid>
+  <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Classical Thermodynamics and Economics</title>
+  <dc:creator>Yuxi Liu</dc:creator>
+  <link>https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/</link>
+  <description><![CDATA[ How to think like a classical thermodynamic-economist, delivered with many illustrations and some sci-fi metaphors. Particular emphasis on what traditional pedagogy gets wrong. Prerequisites: multivariate calculus and mathematical maturity. ]]></description>
+  <category>math</category>
+  <category>physics</category>
+  <category>philosophy</category>
+  <category>economics</category>
+  <guid>https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/</guid>
+  <pubDate>Thu, 09 May 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://yuxi.ml/essays/posts/equilibrium-thermoeconomics/figure/banner/banner_1.png" medium="image" type="image/png" height="90" width="144"/>
 </item>
 </channel>
 </rss>

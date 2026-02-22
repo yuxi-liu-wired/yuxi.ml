@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -867,22 +869,22 @@ T(\dots, X_{-1}, X_0, X_1, \dots) := (\dots, X_0, X_1, X_2, \dots)
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-atkinsonDirectApproachInteractive2023" class="csl-entry" role="listitem">
-Atkinson, David. 2023. <span>“Direct <span>Approach Interactive Model</span>.”</span> <em>Epoch</em>. https://epochai.org/blog/direct-approach-interactive-model.
+Atkinson, David. 2023. <span>“Direct <span>Approach Interactive Model</span>.”</span> Epoch. May 31, 2023. <a href="https://epochai.org/blog/direct-approach-interactive-model">https://epochai.org/blog/direct-approach-interactive-model</a>.
 </div>
 <div id="ref-barnettScalingTransformativeAutoregressive2023" class="csl-entry" role="listitem">
-Barnett, Matthew, and Tamay Besiroglu. 2023a. <span>“Scaling Transformative Autoregressive Models.”</span>
+Barnett, Matthew, and Tamay Besiroglu. 2023a. <span>“Scaling Transformative Autoregressive Models.”</span> <a href="https://epochai.org/files/direct-approach.pdf">https://epochai.org/files/direct-approach.pdf</a>.
 </div>
 <div id="ref-barnettDirectApproach2023" class="csl-entry" role="listitem">
-———. 2023b. <span>“The <span>Direct Approach</span>.”</span> <em>Epoch</em>. https://epochai.org/blog/the-direct-approach.
+———. 2023b. <span>“The <span>Direct Approach</span>.”</span> Epoch. April 25, 2023. <a href="https://epochai.org/blog/the-direct-approach">https://epochai.org/blog/the-direct-approach</a>.
 </div>
 <div id="ref-behrjrEstimatingComparingEntropy2002" class="csl-entry" role="listitem">
-Behr Jr, Frederic H., Victoria Fossum, Michael D. Mitzenmacher, and David Xiao. 2002. <span>“Estimating and Comparing Entropy Across Written Natural Languages Using <span>PPM</span> Compression.”</span>
+Behr Jr, Frederic H., Victoria Fossum, Michael D. Mitzenmacher, and David Xiao. 2002. <span>“Estimating and Comparing Entropy Across Written Natural Languages Using <span>PPM</span> Compression.”</span> <a href="https://dash.harvard.edu/handle/1/25104999">https://dash.harvard.edu/handle/1/25104999</a>.
 </div>
 <div id="ref-brownEstimateUpperBound1992" class="csl-entry" role="listitem">
-Brown, Peter F., Stephen A. Della Pietra, Vincent J. Della Pietra, Jennifer C. Lai, and Robert L. Mercer. 1992. <span>“An Estimate of an Upper Bound for the Entropy of <span>English</span>.”</span> <em>Computational Linguistics</em> 18 (1): 31–40.
+Brown, Peter F., Stephen A. Della Pietra, Vincent J. Della Pietra, Jennifer C. Lai, and Robert L. Mercer. 1992. <span>“An Estimate of an Upper Bound for the Entropy of <span>English</span>.”</span> <em>Computational Linguistics</em> 18 (1): 31–40. <a href="https://aclanthology.org/J92-1002.pdf">https://aclanthology.org/J92-1002.pdf</a>.
 </div>
 <div id="ref-burtonLongrangeConstraintsStatistical1955" class="csl-entry" role="listitem">
-Burton, N. G., and J. C. R. Licklider. 1955. <span>“Long-Range Constraints in the Statistical Structure of Printed <span>English</span>.”</span> <em>The American Journal of Psychology</em> 68 (4): 650–53. <a href="https://doi.org/10.2307/1418794">https://doi.org/10.2307/1418794</a>.
+Burton, N. G., and Joseph C. R. Licklider. 1955. <span>“Long-Range Constraints in the Statistical Structure of Printed <span>English</span>.”</span> <em>The American Journal of Psychology</em> 68 (4): 650–53. <a href="https://doi.org/10.2307/1418794">https://doi.org/10.2307/1418794</a>.
 </div>
 <div id="ref-coverElementsInformationTheory2006" class="csl-entry" role="listitem">
 Cover, T. M., and Joy A. Thomas. 2006. <em>Elements of Information Theory</em>. 2nd ed. Hoboken, N.J: Wiley-Interscience.
@@ -891,22 +893,22 @@ Cover, T. M., and Joy A. Thomas. 2006. <em>Elements of Information Theory</em>. 
 Cover, Thomas, and Roger King. 1978. <span>“A Convergent Gambling Estimate of the Entropy of <span>English</span>.”</span> <em>IEEE Transactions on Information Theory</em> 24 (4): 413–21. <a href="https://doi.org/10.1109/TIT.1978.1055912">https://doi.org/10.1109/TIT.1978.1055912</a>.
 </div>
 <div id="ref-feutrillReviewShannonDifferential2021" class="csl-entry" role="listitem">
-Feutrill, Andrew, and Matthew Roughan. 2021. <span>“A <span>Review</span> of <span>Shannon</span> and <span>Differential Entropy Rate Estimation</span>.”</span> <em>Entropy</em> 23 (8): 1046. <a href="https://doi.org/10.3390/e23081046">https://doi.org/10.3390/e23081046</a>.
+Feutrill, Andrew, and Matthew Roughan. 2021. <span>“A <span>Review</span> of <span>Shannon</span> and <span>Differential Entropy Rate Estimation</span>.”</span> <em>Entropy</em> 23 (8, 8): 1046. <a href="https://doi.org/10.3390/e23081046">https://doi.org/10.3390/e23081046</a>.
 </div>
 <div id="ref-grassbergerDataCompressionEntropy2002" class="csl-entry" role="listitem">
-Grassberger, Peter. 2002. <span>“Data <span>Compression</span> and <span>Entropy Estimates</span> by <span class="nocase">Non-sequential Recursive Pair Substitution</span>.”</span> arXiv. <a href="https://arxiv.org/abs/physics/0207023">https://arxiv.org/abs/physics/0207023</a>.
+Grassberger, Peter. 2002. <span>“Data <span>Compression</span> and <span>Entropy Estimates</span> by <span class="nocase">Non-sequential Recursive Pair Substitution</span>.”</span> July 5, 2002. <a href="http://arxiv.org/abs/physics/0207023">http://arxiv.org/abs/physics/0207023</a>.
 </div>
 <div id="ref-hoffmannTrainingComputeOptimalLarge2022" class="csl-entry" role="listitem">
-Hoffmann, Jordan, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de Las Casas, et al. 2022. <span>“Training <span>Compute-Optimal Large Language Models</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2203.15556">https://doi.org/10.48550/arXiv.2203.15556</a>.
+Hoffmann, Jordan, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de Las Casas, et al. 2022. <span>“Training <span>Compute-Optimal Large Language Models</span>.”</span> March 29, 2022. <a href="https://doi.org/10.48550/arXiv.2203.15556">https://doi.org/10.48550/arXiv.2203.15556</a>.
 </div>
 <div id="ref-jannaiHumanNotGamified2023" class="csl-entry" role="listitem">
-Jannai, Daniel, Amos Meron, Barak Lenz, Yoav Levine, and Yoav Shoham. 2023. <span>“Human or <span>Not</span>? <span>A Gamified Approach</span> to the <span>Turing Test</span>.”</span> <em>arXiv.org</em>, May.
+Jannai, Daniel, Amos Meron, Barak Lenz, Yoav Levine, and Yoav Shoham. 2023. <span>“Human or <span>Not</span>? <span>A Gamified Approach</span> to the <span>Turing Test</span>.”</span> <em>arXiv.org</em>, May. <a href="https://arxiv.org/abs/2305.20010v1">https://arxiv.org/abs/2305.20010v1</a>.
 </div>
 <div id="ref-jurafskySpeechLanguageProcessing2023" class="csl-entry" role="listitem">
-Jurafsky, Dan, and James H. Martin. 2023. <em>Speech and <span>Language Processing</span>: <span>An Introduction</span> to <span>Natural Language Processing</span>, <span>Computational Linguistics</span> and <span>Speech Recognition</span></em>. 3rd ed.
+Jurafsky, Daniel, and James H. Martin. 2023. <em>Speech and <span>Language Processing</span>: <span>An Introduction</span> to <span>Natural Language Processing</span>, <span>Computational Linguistics</span> and <span>Speech Recognition</span></em>. 3rd ed.
 </div>
 <div id="ref-kaplanScalingLawsNeural2020" class="csl-entry" role="listitem">
-Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. <span>“Scaling <span>Laws</span> for <span>Neural Language Models</span>.”</span> arXiv. <a href="https://arxiv.org/abs/2001.08361">https://arxiv.org/abs/2001.08361</a>.
+Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. <span>“Scaling <span>Laws</span> for <span>Neural Language Models</span>.”</span> January 22, 2020. <a href="http://arxiv.org/abs/2001.08361">http://arxiv.org/abs/2001.08361</a>.
 </div>
 <div id="ref-shannonPredictionEntropyPrinted1951" class="csl-entry" role="listitem">
 Shannon, Claude E. 1951. <span>“Prediction and Entropy of Printed <span>English</span>.”</span> <em>Bell System Technical Journal</em> 30 (1): 50–64. <a href="https://doi.org/10.1002/j.1538-7305.1951.tb01366.x">https://doi.org/10.1002/j.1538-7305.1951.tb01366.x</a>.
@@ -916,73 +918,39 @@ Teller, Edward, and Allen Brown. 1975. <em>The Legacy of <span>Hiroshima</span><
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1047,13 +1015,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1446,7 +1415,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Predicting AGI by the Turing Test"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
@@ -1920,7 +1889,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>This is the <span class="co">[</span><span class="ot">Shannon--McMillan--Breiman theorem</span><span class="co">](https://en.wikipedia.org/wiki/Shannon-McMillan-Breiman_theorem)</span>.</span>
 <span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>In textbooks and Wikipedia, the SMB theorem is stated rigorously, but you have already understood the idea of SMB, and the rigorous versions are simply paraphrases of the idea.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>In textbooks and Wikipedia, the SMB theorem is stated rigorously, but you have already understood the idea of SMB, and the rigorous versions are simply paraphrases of the idea.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

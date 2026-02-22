@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Speculations concerning the first ultramathematician"
 author: "Yuxi Liu"
 date: "2025-10-26"

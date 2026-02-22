@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -343,7 +344,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -692,7 +694,7 @@ window.Quarto = {
 <figcaption class="margin-caption">The scatterplot itself. The Python code is as follows.</figcaption>
 </figure>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a seed for reproducibility</span></span>
@@ -730,7 +732,7 @@ window.Quarto = {
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'war_curve.svg'</span>)</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/B-17.png" class="img-fluid figure-img"></p>
@@ -1269,34 +1271,31 @@ window.Quarto = {
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-bar-hillelPresentStatusAutomatic1960" class="csl-entry" role="listitem">
-Bar-Hillel, Yehoshua. 1960. <span>“The Present Status of Automatic Translation of Languages.”</span> <em>Advances in Computers</em> 1: 91–163.
+Bar-Hillel, Yehoshua. 1960. <span>“The Present Status of Automatic Translation of Languages.”</span> <em>Advances in Computers</em> 1: 91–163. <a href="https://www.sciencedirect.com/science/article/pii/S0065245808606075">https://www.sciencedirect.com/science/article/pii/S0065245808606075</a>.
 </div>
 <div id="ref-bar-hillelFutureMachineTranslation1964" class="csl-entry" role="listitem">
-———. 1964. <span>“The Future of Machine Translation.”</span> <em>Hartley Rogers, <span>é</span>diteur, Language and Information–Selected Essays on Their Theory and Application, Logic</em>, 180–84.
+———. 1964. <span>“The Future of Machine Translation.”</span> <em>Hartley Rogers, Éditeur, Language and Information–Selected Essays on Their Theory and Application, Logic</em>, 180–84. <a href="https://aclanthology.org/www.mt-archive.info/50/TLS-1962-Bar-Hillel.pdf">https://aclanthology.org/www.mt-archive.info/50/TLS-1962-Bar-Hillel.pdf</a>.
 </div>
 <div id="ref-bernsteinMarvinMinskysVision1981" class="csl-entry" role="listitem">
-Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December.
+Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December 6, 1981. <a href="https://www.newyorker.com/magazine/1981/12/14/a-i">https://www.newyorker.com/magazine/1981/12/14/a-i</a>.
 </div>
 <div id="ref-chomskyEmpiricalAssumptionsModern1969" class="csl-entry" role="listitem">
 Chomsky, Noam. 1969. <span>“Some <span>Empirical Assumptions</span> in <span>Modern Philosophy</span> of <span>Language</span>.”</span> In <em>Philosophy, Science, and Method</em>, edited by Ernest Nagel, Sidney Morgenbesser, Patrick Suppes, and Morton White. St. Martin’s Press.
 </div>
-<div id="ref-denoAnalysisActivityChains1938" class="csl-entry" role="listitem">
-de Nó, Rafael Lorente. 1938. <span>“Analysis of the Activity of the Chains of Internuncial Neurons.”</span> <em>Journal of Neurophysiology</em> 1 (3): 207–44. <a href="https://doi.org/10.1152/jn.1938.1.3.207">https://doi.org/10.1152/jn.1938.1.3.207</a>.
-</div>
 <div id="ref-dertouzosThresholdLogicSynthesis1965" class="csl-entry" role="listitem">
-Dertouzos, Michael. 1965. <em>Threshold Logic: <span>A Synthesis Approach</span></em>.
+Dertouzos, Michael. 1965. <em>Threshold Logic: <span>A Synthesis Approach</span></em>. <a href="https://mitpress.mit.edu/9780262040099/">https://mitpress.mit.edu/9780262040099/</a>.
 </div>
 <div id="ref-dudaPatternClassificationScene1973" class="csl-entry" role="listitem">
 Duda, Richard O., and Peter E. Hart. 1973. <em>Pattern Classification and Scene Analysis</em>. New York: Wiley.
 </div>
 <div id="ref-espinosa-sanchezImportanceCajalsLorente2023" class="csl-entry" role="listitem">
-Espinosa-Sanchez, Juan Manuel, Alex Gomez-Marin, and Fernando de Castro. 2023. <span>“The <span>Importance</span> of <span>Cajal</span>’s and <span>Lorente</span> de <span>N<span>ó</span></span>’s <span>Neuroscience</span> to the <span>Birth</span> of <span>Cybernetics</span>.”</span> <em>The Neuroscientist</em>, July, 10738584231179932. <a href="https://doi.org/10.1177/10738584231179932">https://doi.org/10.1177/10738584231179932</a>.
+Espinosa-Sanchez, Juan Manuel, Alex Gomez-Marin, and Fernando de Castro. 2023. <span>“The <span>Importance</span> of <span>Cajal</span>’s and <span>Lorente</span> de <span>Nó</span>’s <span>Neuroscience</span> to the <span>Birth</span> of <span>Cybernetics</span>.”</span> <em>The Neuroscientist</em>, July, 10738584231179932. <a href="https://doi.org/10.1177/10738584231179932">https://doi.org/10.1177/10738584231179932</a>.
 </div>
 <div id="ref-freemanPremisesNeurophysiologicalStudies1984" class="csl-entry" role="listitem">
-Freeman, Walter J. 1984. <span>“Premises in Neurophysiological Studies of Learning.”</span> In <em>Neurobiology of Learning and Memory</em>. Guilford Press, New York.
+Freeman, Walter J. 1984. <span>“Premises in Neurophysiological Studies of Learning.”</span> In <em>Neurobiology of Learning and Memory</em>. Guilford Press, New York. <a href="https://web.archive.org/web/20001117004400/http://sulcus.berkeley.edu/FreemanWWW/manuscripts/IC4/84.html">https://web.archive.org/web/20001117004400/http://sulcus.berkeley.edu/FreemanWWW/manuscripts/IC4/84.html</a>.
 </div>
 <div id="ref-fukushimaVisualFeatureExtraction1969" class="csl-entry" role="listitem">
-Fukushima, Kunihiko. 1969. <span>“Visual Feature Extraction by a Multilayered Network of Analog Threshold Elements.”</span> <em>IEEE Transactions on Systems Science and Cybernetics</em> 5 (4): 322–33.
+Fukushima, Kunihiko. 1969. <span>“Visual Feature Extraction by a Multilayered Network of Analog Threshold Elements.”</span> <em>IEEE Transactions on Systems Science and Cybernetics</em> 5 (4): 322–33. <a href="https://ieeexplore.ieee.org/abstract/document/4082265/">https://ieeexplore.ieee.org/abstract/document/4082265/</a>.
 </div>
 <div id="ref-hardyMathematiciansApology1940" class="csl-entry" role="listitem">
 Hardy, Godfrey Harold. 1940. <em>A Mathematician’s Apology</em>. Cambridge University Press.
@@ -1305,43 +1304,43 @@ Hardy, Godfrey Harold. 1940. <em>A Mathematician’s Apology</em>. Cambridge Uni
 Hebb, Donald O. 2002. <em>The <span>Organization</span> of <span>Behavior</span> : <span>A Neuropsychological Theory</span></em>. Psychology Press. <a href="https://doi.org/10.4324/9781410612403">https://doi.org/10.4324/9781410612403</a>.
 </div>
 <div id="ref-hopfieldNeuralNetworksPhysical1982" class="csl-entry" role="listitem">
-Hopfield, J J. 1982. <span>“Neural Networks and Physical Systems with Emergent Collective Computational Abilities.”</span> <em>Proceedings of the National Academy of Sciences</em> 79 (8): 2554–58. <a href="https://doi.org/10.1073/pnas.79.8.2554">https://doi.org/10.1073/pnas.79.8.2554</a>.
+Hopfield, John J. 1982. <span>“Neural Networks and Physical Systems with Emergent Collective Computational Abilities.”</span> <em>Proceedings of the National Academy of Sciences</em> 79 (8): 2554–58. <a href="https://doi.org/10.1073/pnas.79.8.2554">https://doi.org/10.1073/pnas.79.8.2554</a>.
 </div>
 <div id="ref-huangDenselyConnectedConvolutional2018" class="csl-entry" role="listitem">
-Huang, Gao, Zhuang Liu, Laurens van der Maaten, and Kilian Q. Weinberger. 2018. <span>“Densely <span>Connected Convolutional Networks</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.1608.06993">https://doi.org/10.48550/arXiv.1608.06993</a>.
+Huang, Gao, Zhuang Liu, Laurens van der Maaten, and Kilian Q. Weinberger. 2018. <span>“Densely <span>Connected Convolutional Networks</span>.”</span> January 28, 2018. <a href="https://doi.org/10.48550/arXiv.1608.06993">https://doi.org/10.48550/arXiv.1608.06993</a>.
 </div>
 <div id="ref-kaplanScalingLawsNeural2020" class="csl-entry" role="listitem">
-Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. <span>“Scaling <span>Laws</span> for <span>Neural Language Models</span>.”</span> arXiv. <a href="https://arxiv.org/abs/2001.08361">https://arxiv.org/abs/2001.08361</a>.
+Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. <span>“Scaling <span>Laws</span> for <span>Neural Language Models</span>.”</span> January 22, 2020. <a href="http://arxiv.org/abs/2001.08361">http://arxiv.org/abs/2001.08361</a>.
 </div>
 <div id="ref-langLearningTellTwo1988" class="csl-entry" role="listitem">
-Lang, Kevin J., and M. J. Witbrock. 1988. <span>“Learning to Tell Two Spirals Apart.”</span> In <em>Proceedings of the 1988 Connectionist Models Summer School</em>, 52–59. Morgan Kaufmann.
+Lang, Kevin J., and M. J. Witbrock. 1988. <span>“Learning to Tell Two Spirals Apart.”</span> In <em>Proceedings of the 1988 Connectionist Models Summer School</em>, 52–59. Morgan Kaufmann. <a href="https://cir.nii.ac.jp/crid/1574231874429435776">https://cir.nii.ac.jp/crid/1574231874429435776</a>.
 </div>
 <div id="ref-larriva-sahdPredictionsRafaelLorente2014" class="csl-entry" role="listitem">
-Larriva-Sahd, Jorge A. 2014. <span>“Some Predictions of <span>Rafael Lorente</span> de <span>N<span>ó</span></span> 80 Years Later.”</span> <em>Frontiers in Neuroanatomy</em> 8 (December). <a href="https://doi.org/10.3389/fnana.2014.00147">https://doi.org/10.3389/fnana.2014.00147</a>.
+Larriva-Sahd, Jorge A. 2014. <span>“Some Predictions of <span>Rafael Lorente</span> de <span>Nó</span> 80 Years Later.”</span> <em>Frontiers in Neuroanatomy</em> 8 (December). <a href="https://doi.org/10.3389/fnana.2014.00147">https://doi.org/10.3389/fnana.2014.00147</a>.
 </div>
 <div id="ref-levy8GoogleEmployees2024" class="csl-entry" role="listitem">
-Levy, Steven. 2024. <span>“8 <span>Google Employees Invented Modern AI</span>. <span>Here</span>’s the <span>Inside Story</span>.”</span> <em>Wired</em>, March.
+Levy, Steven. 2024. <span>“8 <span>Google Employees Invented Modern AI</span>. <span>Here</span>’s the <span>Inside Story</span>.”</span> <em>Wired</em>, March 20, 2024. <a href="https://www.wired.com/story/eight-google-employees-invented-modern-ai-transformers-paper/">https://www.wired.com/story/eight-google-employees-invented-modern-ai-transformers-paper/</a>.
 </div>
 <div id="ref-linWhyDoesDeep2017" class="csl-entry" role="listitem">
 Lin, Henry W., Max Tegmark, and David Rolnick. 2017. <span>“Why Does Deep and Cheap Learning Work so Well?”</span> <em>Journal of Statistical Physics</em> 168 (6): 1223–47. <a href="https://doi.org/10/gbvgmm">https://doi.org/10/gbvgmm</a>.
 </div>
 <div id="ref-linnMicrosoftResearchersWin2015" class="csl-entry" role="listitem">
-Linn, Allison. 2015. <span>“Microsoft Researchers Win <span>ImageNet</span> Computer Vision Challenge.”</span> <em>The AI Blog</em>.
+Linn, Allison. 2015. <span>“Microsoft Researchers Win <span>ImageNet</span> Computer Vision Challenge.”</span> The AI Blog. December 10, 2015. <a href="https://blogs.microsoft.com/ai/microsoft-researchers-win-imagenet-computer-vision-challenge/">https://blogs.microsoft.com/ai/microsoft-researchers-win-imagenet-computer-vision-challenge/</a>.
 </div>
 <div id="ref-mccullochRecollectionsManySources1974" class="csl-entry" role="listitem">
-McCulloch, Warren S. 1974. <span>“Recollections of the Many Sources of Cybernetics.”</span> In <em><span>ASC Forum</span></em>, 6:5–16.
+McCulloch, Warren Sturgis. 1974. <span>“Recollections of the Many Sources of Cybernetics.”</span> In <em><span>ASC Forum</span></em>, 6:5–16. 2.
 </div>
 <div id="ref-mccullochLogicalCalculusIdeas1943" class="csl-entry" role="listitem">
-McCulloch, Warren S., and Walter Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5 (4): 115–33. <a href="https://doi.org/10/djsbj6">https://doi.org/10/djsbj6</a>.
+McCulloch, Warren Sturgis, and Walter H. Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5 (4): 115–33. <a href="https://doi.org/10/djsbj6">https://doi.org/10/djsbj6</a>.
 </div>
 <div id="ref-minskyNeuralanalogueCalculatorBased1952" class="csl-entry" role="listitem">
-Minsky, Marvin. 1952. <span>“A Neural-Analogue Calculator Based Upon a Probability Model of Reinforcement.”</span> <em>Harvard University Psychological Laboratories, Cambridge, Massachusetts</em>.
+Minsky, Marvin L. 1952. <span>“A Neural-Analogue Calculator Based Upon a Probability Model of Reinforcement.”</span> <em>Harvard University Psychological Laboratories, Cambridge, Massachusetts</em>.
 </div>
 <div id="ref-minskyTheoryNeuralanalogReinforcement1954" class="csl-entry" role="listitem">
-———. 1954. <span>“Theory of Neural-Analog Reinforcement Systems and Its Application to the Brain-Model Problem.”</span> PhD thesis, Princeton University.
+———. 1954. <span>“Theory of Neural-Analog Reinforcement Systems and Its Application to the Brain-Model Problem.”</span> Princeton University. <a href="https://search.proquest.com/openview/a4ee1c0c78c1b940b9ec121f0e89cef8/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">https://search.proquest.com/openview/a4ee1c0c78c1b940b9ec121f0e89cef8/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</a>.
 </div>
 <div id="ref-minskyPerceptronsIntroductionComputational1988" class="csl-entry" role="listitem">
-Minsky, Marvin, and Seymour Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
+Minsky, Marvin L., and Seymour A. Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
 </div>
 <div id="ref-murrayStrategyDefeatLuftwaffe1986" class="csl-entry" role="listitem">
 Murray, Williamson. 1986. <em>Strategy for <span>Defeat</span>: <span>The Luftwaffe</span> 1933-1945</em>. 2nd edition. Book Sales.
@@ -1355,29 +1354,32 @@ Nakano, Kaoru. 1971. <span>“Learning <span>Process</span> in a <span>Model</sp
 <div id="ref-nilssonQuestArtificialIntelligence2009" class="csl-entry" role="listitem">
 Nilsson, Nils J. 2009. <em>The <span>Quest</span> for <span>Artificial Intelligence</span></em>. 1st edition. Cambridge ; New York: Cambridge University Press.
 </div>
+<div id="ref-denoAnalysisActivityChains1938" class="csl-entry" role="listitem">
+Nó, Rafael Lorente de. 1938. <span>“Analysis of the Activity of the Chains of Internuncial Neurons.”</span> <em>Journal of Neurophysiology</em> 1 (3): 207–44. <a href="https://doi.org/10.1152/jn.1938.1.3.207">https://doi.org/10.1152/jn.1938.1.3.207</a>.
+</div>
 <div id="ref-norbertwienerExtrapolationInterpolationSmoothing1966" class="csl-entry" role="listitem">
-Norbert Wiener. 1966. <em>Extrapolation, <span>Interpolation</span>, and <span>Smoothing</span> of <span>Stationary Time Series</span></em>.
+Norbert Wiener. 1966. <em>Extrapolation, <span>Interpolation</span>, and <span>Smoothing</span> of <span>Stationary Time Series</span></em>. <a href="http://archive.org/details/extrapolationint0000norb">http://archive.org/details/extrapolationint0000norb</a>.
 </div>
 <div id="ref-norvigChomskyTwoCultures2017" class="csl-entry" role="listitem">
-Norvig, Peter. 2017. <span>“<span>On Chomsky and the Two Cultures of Statistical Learning</span>.”</span> In <em><span>Berechenbarkeit der Welt? Philosophie und Wissenschaft im Zeitalter von Big Data</span></em>, edited by Wolfgang Pietsch, Jörg Wernecke, and Maximilian Ott, 61–83. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-12153-2_3">https://doi.org/10.1007/978-3-658-12153-2_3</a>.
+Norvig, Peter. 2017. <span>“On Chomsky and the Two Cultures of Statistical Learning.”</span> In <em>Berechenbarkeit der Welt? Philosophie und Wissenschaft im Zeitalter von Big Data</em>, edited by Wolfgang Pietsch, Jörg Wernecke, and Maximilian Ott, 61–83. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-12153-2_3">https://doi.org/10.1007/978-3-658-12153-2_3</a>.
 </div>
 <div id="ref-olazaranHistoricalSociologyNeural1991" class="csl-entry" role="listitem">
-Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> PhD thesis, The University of Edinburgh.
+Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> The University of Edinburgh. <a href="https://era.ed.ac.uk/handle/1842/20075">https://era.ed.ac.uk/handle/1842/20075</a>.
 </div>
 <div id="ref-ramonycajalHistologieSystemeNerveux1909" class="csl-entry" role="listitem">
-Ramón y Cajal, Santiago. 1909. <em><span>Histologie du syst<span>è</span>me nerveux de l’homme et des vert<span>é</span>br<span>é</span>s</span></em>. Vol. II. Paris : A. Maloine.
+Ramón y Cajal, Santiago. 1909. <em>Histologie du système nerveux de l’homme et des vertébrés</em>. Vol. II. Paris : A. Maloine. <a href="http://archive.org/details/b2129592x_0002">http://archive.org/details/b2129592x_0002</a>.
 </div>
 <div id="ref-rosenResearchDevelopmentProgram1965" class="csl-entry" role="listitem">
-Rosen, Charles A., Nils J. Nilsson, and Milton B. Adams. 1965. <span>“A Research and Development Program in Applications of Intelligent Automata to Reconnaissance-Phase <span>I</span>.”</span> Proposal for {{Research}} ESU 65-1. Stanford Research Institute.
+Rosen, Charles A., Nils J. Nilsson, and Milton B. Adams. 1965. <span>“A Research and Development Program in Applications of Intelligent Automata to Reconnaissance-Phase <span>I</span>.”</span> Proposal for Research ESU 65-1. Stanford Research Institute.
 </div>
 <div id="ref-rosenblattPerceptronProbabilisticModel1958" class="csl-entry" role="listitem">
 Rosenblatt, Frank. 1958. <span>“The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain.”</span> <em>Psychological Review</em> 65 (6): 386. <a href="https://doi.org/10.1037/h0042519">https://doi.org/10.1037/h0042519</a>.
 </div>
 <div id="ref-rosenblattPerceptualGeneralizationTransformation1960" class="csl-entry" role="listitem">
-———. 1960. <span>“Perceptual Generalization over Transformation Groups.”</span> In <em>Self-Organizing <span>Systems</span>: <span>Proceedings</span> of an <span class="nocase">Inter-disciplinary Conference</span>, 5 and 6 <span>May</span>, 1959</em>, 63–96. Museum of Science; Industry, Chicago, Illinois: Pergamon Press.
+———. 1960. <span>“Perceptual Generalization over Transformation Groups.”</span> In <em>Self-Organizing <span>Systems</span>: <span>Proceedings</span> of an <span class="nocase">Inter-disciplinary Conference</span>, 5 and 6 <span>May</span>, 1959</em>, 63–96. Museum of Science; Industry, Chicago, Illinois: Pergamon Press. <a href="https://archive.org/details/SelfOrganizingSystems/page/n87/mode/1up">https://archive.org/details/SelfOrganizingSystems/page/n87/mode/1up</a>.
 </div>
 <div id="ref-rosenblattPrinciplesNeurodynamicsPerceptrons1962" class="csl-entry" role="listitem">
-———. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC.
+———. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC. <a href="https://apps.dtic.mil/sti/citations/AD0256582">https://apps.dtic.mil/sti/citations/AD0256582</a>.
 </div>
 <div id="ref-rosenfeldTalkingNetsOral2000" class="csl-entry" role="listitem">
 Rosenfeld, Edward, and James A. Anderson, eds. 2000. <em>Talking <span>Nets</span>: <span>An Oral History</span> of <span>Neural Networks</span></em>. Reprint edition. The MIT Press.
@@ -1386,16 +1388,16 @@ Rosenfeld, Edward, and James A. Anderson, eds. 2000. <em>Talking <span>Nets</spa
 Sejnowski, Terrence J. 2018. <em>The <span>Deep Learning Revolution</span></em>. Illustrated edition. Cambridge, Massachusetts London, England: The MIT Press.
 </div>
 <div id="ref-suttonBitterLesson2019" class="csl-entry" role="listitem">
-Sutton, Richard. 2019. <span>“The <span>Bitter Lesson</span>.”</span>
+Sutton, Richard S. 2019. <span>“The <span>Bitter Lesson</span>.”</span> March 13, 2019. <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">http://www.incompleteideas.net/IncIdeas/BitterLesson.html</a>.
 </div>
 <div id="ref-tankCollectiveComputationNeuronlike1987" class="csl-entry" role="listitem">
 Tank, David W., and John J. Hopfield. 1987. <span>“Collective <span>Computation</span> in <span>Neuronlike Circuits</span>.”</span> <em>Scientific American</em> 257 (6): 104–15. <a href="https://www.jstor.org/stable/24979583">https://www.jstor.org/stable/24979583</a>.
 </div>
 <div id="ref-werbosNeuralNetworksPath2011" class="csl-entry" role="listitem">
-Werbos, Paul. 2011. <span>“Neural Networks as a Path to Self-Awareness.”</span> In <em>The 2011 <span>International Joint Conference</span> on <span>Neural Networks</span></em>, 3264–71. IEEE.
+Werbos, Paul J. 2011. <span>“Neural Networks as a Path to Self-Awareness.”</span> In <em>The 2011 <span>International Joint Conference</span> on <span>Neural Networks</span></em>, 3264–71. IEEE. <a href="https://ieeexplore.ieee.org/abstract/document/6033654/">https://ieeexplore.ieee.org/abstract/document/6033654/</a>.
 </div>
 <div id="ref-widrow30YearsAdaptive1990" class="csl-entry" role="listitem">
-Widrow, Bernard, and Michael A. Lehr. 1990. <span>“30 Years of Adaptive Neural Networks: Perceptron, Madaline, and Backpropagation.”</span> <em>Proceedings of the IEEE</em> 78 (9): 1415–42.
+Widrow, Bernard, and Michael A. Lehr. 1990. <span>“30 Years of Adaptive Neural Networks: Perceptron, Madaline, and Backpropagation.”</span> <em>Proceedings of the IEEE</em> 78 (9): 1415–42. <a href="https://ieeexplore.ieee.org/abstract/document/58323/">https://ieeexplore.ieee.org/abstract/document/58323/</a>.
 </div>
 <div id="ref-wienerNorbertWieneraLife2017" class="csl-entry" role="listitem">
 Wiener, Norbert. 2017. <em>Norbert <span class="nocase">Wiener–a</span> Life in Cybernetics</em>. Cambridge, Massachusetts: The MIT Press.
@@ -1408,73 +1410,39 @@ Yeang, Chen-Pang. 2023. <span>“Filtering <span>Noise</span> for <span>Antiairc
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1539,13 +1507,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1938,7 +1907,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Notes for a talk on the history of neural networks"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-08"</span></span>
@@ -2605,7 +2574,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-665"><a href="#cb2-665" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The limitations on the formalization of contextual meaning make it impossible at present -- and conceivably forever -- to design computer programs that come close to full mimicry of human language understanding.</span>  </span>
 <span id="cb2-666"><a href="#cb2-666" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
 <span id="cb2-667"><a href="#cb2-667" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="co">[</span><span class="ot">@winogradComputerSoftwareWorking1984</span><span class="co">]</span>  </span>
-<span id="cb2-668"><a href="#cb2-668" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-668"><a href="#cb2-668" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

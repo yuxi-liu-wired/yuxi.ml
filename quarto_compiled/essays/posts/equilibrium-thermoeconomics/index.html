@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -724,7 +726,7 @@ Warning
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example with <span class="math inline">\(x, y, z\)</span>
+<span class="screen-reader-only">Note</span>Example with <span class="math inline">\(x, y, z\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -747,7 +749,7 @@ Example with <span class="math inline">\(x, y, z\)</span>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example with <span class="math inline">\(\mathbb{R}^2\)</span>
+<span class="screen-reader-only">Note</span>Example with <span class="math inline">\(\mathbb{R}^2\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -831,7 +833,7 @@ N_{N_2} - N_{N_2, 0} = (N_{H_2} - N_{H_2, 0})/3, \quad N_{N_2} - N_{N_2, 0} = (N
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Only one system
+<span class="screen-reader-only">Tip</span>Only one system
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1081,7 +1083,7 @@ C(X) = 0
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1115,12 +1117,12 @@ W\leq F(\beta, U_0, X_0) - F(\beta, U_1, X_1)
 <p>where <span class="math inline">\(W\)</span> is “mechanical work done by the system”, that is, the increase in internal energy of the mechanical system. This is an equality when the process is reversible.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1162,7 +1164,7 @@ df    &amp;= (\partial_X S)_U|_{U=U^*(\beta, X), X = X} dX - U^*(\beta, X) d\bet
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1206,7 +1208,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1315,7 +1317,7 @@ dg      &amp;= (\partial_X S)_{U, V} dX - U^* d\beta - V^* d(\beta P)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Alternate proof of the Maxwell relations
+<span class="screen-reader-only">Note</span>Alternate proof of the Maxwell relations
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1390,7 +1392,7 @@ dq_0 - \sum_i \tilde p_i dq_i = 0
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1419,7 +1421,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What’s so special about energy, or cowry shells?
+<span class="screen-reader-only">Tip</span>What’s so special about energy, or cowry shells?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1510,7 +1512,7 @@ dS = p_1 dq_1 + p_2 dq_2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1559,7 +1561,7 @@ dx \wedge dy = dz \wedge dw
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1591,7 +1593,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1614,12 +1616,12 @@ Proof
 <p><span class="math display">\[dU = TdS - PdV\]</span></p>
 <p>which satisfies <span class="math inline">\(d^2 U = 0\)</span>, that is, it is integrable.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Derivation
+<span class="screen-reader-only">Note</span>Derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1802,7 +1804,7 @@ dn_{N_2O_3} &amp;= d\xi_2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1885,12 +1887,12 @@ Q = \frac{\{C\}^c\{D\}^d}{\{A\}^a\{B\}^b}
 <p>for each reaction <span class="math inline">\(j = 1, 2, \dots, r\)</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1943,12 +1945,12 @@ Q = K_{eq}, \quad K_{eq} := e^{-\frac{(\partial_\xi G)_{T, P}^\circ}{RT}}
 <p><span class="math display">\[\{A\} \approx \frac{[A]}{[A]^\circ} \approx \frac{m_A}{m_A^\circ}\]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1985,7 +1987,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Standard state
+<span class="screen-reader-only">Warning</span>Standard state
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2006,7 +2008,7 @@ Standard state
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Intensive quantities
+<span class="screen-reader-only">Tip</span>Intensive quantities
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2072,7 +2074,7 @@ N_1 + N_2 = N
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The diamond water paradox, and thinking on the margins
+<span class="screen-reader-only">Warning</span>The diamond water paradox, and thinking on the margins
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2094,7 +2096,7 @@ The diamond water paradox, and thinking on the margins
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Interpretation: corporate buyout in an ideal world
+<span class="screen-reader-only">Tip</span>Interpretation: corporate buyout in an ideal world
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2144,12 +2146,12 @@ Interpretation: corporate buyout in an ideal world
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof: Case of $R = 0$">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof: Case of <span class="math inline">\(R = 0\)</span>
+<span class="screen-reader-only">Note</span>Proof: Case of <span class="math inline">\(R = 0\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2192,12 +2194,12 @@ P_1 = \dots = P_P &amp;= P \\
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof: Case of $R \geq 1$">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof: Case of <span class="math inline">\(R \geq 1\)</span>
+<span class="screen-reader-only">Note</span>Proof: Case of <span class="math inline">\(R \geq 1\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2226,7 +2228,7 @@ Proof: Case of <span class="math inline">\(R \geq 1\)</span>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Beyond the Gibbs phase rule
+<span class="screen-reader-only">Tip</span>Beyond the Gibbs phase rule
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2364,7 +2366,7 @@ N_1 + N_2 = N
 <p><small>Based on <a href="https://en.wikipedia.org/wiki/Liu_Cixin">Liu Cixin</a>’s sci-fi story <em>Mountain</em> (2006). For another take on stereodynamics, see Ted Chiang’s <em>Exhalation</em> (2008), printed in <span class="citation" data-cites="chiangExhalation2019">(<a href="#ref-chiangExhalation2019" role="doc-biblioref">Chiang 2019</a>)</span>.</small></p>
 <blockquote class="blockquote">
 <p>Die Raum der Welt ist konstant. Die Entropie der Welt strebt einem Maximum zu.</p>
-<p>Rudolf Klausius, <span class="citation" data-cites="klausiusUeberVerschiedeneFur32850">(<a href="#ref-klausiusUeberVerschiedeneFur32850" role="doc-biblioref">Klausius 32850</a>)</span></p>
+<p>Rudolf Klausius, <span class="citation" data-cites="klausiusUeberVerschiedeneFur32850">(<a href="#ref-klausiusUeberVerschiedeneFur32850" role="doc-biblioref">Klausius, n.d.</a>)</span></p>
 </blockquote>
 <section id="solid-universe-theory" class="level3">
 <h3 class="anchored" data-anchor-id="solid-universe-theory">Solid Universe Theory</h3>
@@ -2507,7 +2509,7 @@ V_{Q,1} = V_W + V_{Q,2} \\
 <p>To handwave a bit, consider three particles with equal mass <span class="math inline">\(m\)</span>, moving under gravitational attraction. It is possible that two particles approach each other so closely that their velocity approaches infinity, then the third particle interjects and gets gravitationally sling-shot away. That is, it is possible for two particles to donate their gravitational energy to the third particle. The two particles would be stuck inside a tiny volume in space, but the third particle would be given a huge momentum <em>and</em> can still go anywhere in space. In this way, a three-body system’s entropy can grow without bound. I’m pretty sure this can be worked out more rigorously with the <span class="math inline">\(N\)</span>-body problem.</p>
 <p>In high school, I was studying physics with a standard textbook used in Chinese universities. It had a curious section on the second law of thermodynamics. I could not find it again but the gist is as follows: <em>The heat death of the universe is an unjustified implication of the second law, on two grounds. First, gravitational systems allow for unlimited entropy production. Second, it opposes the historical science of dialectical materialism, where every development creates its own contradiction and sublation, endlessly.</em></p>
 <p>I will always remember this comment, as the only intrusion of religious sentiment in an otherwise sober textbook. See <span class="citation" data-cites="chengIdeologyCosmologyMaoist2006 bellamyfosterClassicalMarxismSecond2008">(<a href="#ref-chengIdeologyCosmologyMaoist2006" role="doc-biblioref">Cheng 2006</a>; <a href="#ref-bellamyfosterClassicalMarxismSecond2008" role="doc-biblioref">Bellamy Foster and Burkett 2008</a>)</span> for further details on why Marxists dislike the theory of heat death on ideological grounds.</p>
-<p>Actually, since we are on the topic of Marxism and science in China, here is another amusing anecdote: In 1981, there was a sci-fi novel <em>Dream of Comfort Country</em> (温柔之乡的梦, by 魏雅华). It was a cautionary story about a robotic wife, who was so obedient as to cause the protagonist to degenerate into a tyrannical person. Yawn. Just a standard pro-human-relationship morality play? During the <a href="https://en.wikipedia.org/wiki/Campaign_against_spiritual_pollution">campaign against spiritual pollution</a> of 1983, sci-fi novels were denounced, causing a 15-year-long draught in sci-fi. That particular novel was denounced for the following reason: The robotic wives were supposedly reading all kinds of books – then why didn’t they read Marx’s and Lenin’s books? <span class="citation" data-cites="LiuZuiZaoDeYuZhouZuiHaoDeDiQiu2015">(<a href="#ref-LiuZuiZaoDeYuZhouZuiHaoDeDiQiu2015" role="doc-biblioref">刘 2015, 87</a>)</span></p>
+<p>Actually, since we are on the topic of Marxism and science in China, here is another amusing anecdote: In 1981, there was a sci-fi novel <em>Dream of Comfort Country</em> (温柔之乡的梦, by 魏雅华). It was a cautionary story about a robotic wife, who was so obedient as to cause the protagonist to degenerate into a tyrannical person. Yawn. Just a standard pro-human-relationship morality play? During the <a href="https://en.wikipedia.org/wiki/Campaign_against_spiritual_pollution">campaign against spiritual pollution</a> of 1983, sci-fi novels were denounced, causing a 15-year-long draught in sci-fi. That particular novel was denounced for the following reason: The robotic wives were supposedly reading all kinds of books – then why didn’t they read Marx’s and Lenin’s books? <span class="citation" data-cites="liuZuizaoDeYuzhou2015">(<a href="#ref-liuZuizaoDeYuzhou2015" role="doc-biblioref">刘 2015, 87</a>)</span></p>
 <p>Marx, for all his interest in changing the world instead of describing it, did attempt to mathematically model aspects of a capitalist economy, though it is only of historical interest now. Samuelson wrote several papers trying to update Marx’s theory into modern mathematical language, and described Marx – qua mathematical economist – as a “minor post-Ricardian”. <span class="citation" data-cites="bronfenbrennerSamuelsonMarxTheir1973">(<a href="#ref-bronfenbrennerSamuelsonMarxTheir1973" role="doc-biblioref">Bronfenbrenner 1973</a>)</span></p>
 <p>Meanwhile in the USSR, “economics” meant only political economy, and mathematical economics was merely a minor branch of political economy, with mathematical economists having to frame their research as a “critique of bourgeois economic thought”. <span class="citation" data-cites="boldyrevCulturesMathematicalEconomics2017">(<a href="#ref-boldyrevCulturesMathematicalEconomics2017" role="doc-biblioref">Boldyrev and Kirtchik 2017</a>)</span> It is instructive to think that the great mathematical economist, Leonid Kantorovich, discovered linear programming and accidentally improved efficiency so much that he almost ended up in jail.</p>
 <blockquote class="blockquote">
@@ -2558,16 +2560,16 @@ Bazhin, N. M., and V. N. Parmon. 2007. <span>“Conversion of <span>Chemical Rea
 Bellamy Foster, John, and Paul Burkett. 2008. <span>“Classical <span>Marxism</span> and the <span>Second Law</span> of <span>Thermodynamics</span>: <span>Marx</span>/<span>Engels</span>, the <span>Heat Death</span> of the <span>Universe Hypothesis</span>, and the <span>Origins</span> of <span>Ecological Economics</span>.”</span> <em>Organization &amp; Environment</em> 21 (1): 3–37. <a href="https://doi.org/10.1177/1086026607313580">https://doi.org/10.1177/1086026607313580</a>.
 </div>
 <div id="ref-bicklerInvestmentPortfolioDecisionmaking1974" class="csl-entry" role="listitem">
-Bickler, James L., and Paul Anthony Samuelson, eds. 1974. <em>Investment <span class="nocase">Portfolio Decision-making</span></em>. Lexington Books.
+Bickler, James L., and Paul Anthony Samuelson, eds. 1974. <em>Investment <span class="nocase">Portfolio Decision-making</span></em>. Lexington Books. <a href="https://books.google.com?id=wHUpAQAAMAAJ">https://books.google.com?id=wHUpAQAAMAAJ</a>.
 </div>
 <div id="ref-blankschteinCriteriaPhaseEquilibria2020" class="csl-entry" role="listitem">
-Blankschtein, Daniel. 2020. <span>“Criteria of <span>Phase Equilibria</span>, and the <span>Gibbs Phase Rule</span>.”</span> In <em>Lectures in <span>Classical Thermodynamics</span> with an <span>Introduction</span> to <span>Statistical Mechanics</span></em>, 281–89. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-49198-7_27">https://doi.org/10.1007/978-3-030-49198-7_27</a>.
+Blankschtein, Daniel. 2020. <span>“Criteria of <span>Phase Equilibria</span>, and the <span>Gibbs Phase Rule</span>.”</span> In <em>Lectures in <span>Classical Thermodynamics</span> with an <span>Introduction</span> to <span>Statistical Mechanics</span></em>, by Daniel Blankschtein, 281–89. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-49198-7_27">https://doi.org/10.1007/978-3-030-49198-7_27</a>.
 </div>
 <div id="ref-boldyrevCulturesMathematicalEconomics2017" class="csl-entry" role="listitem">
-Boldyrev, Ivan, and Olessia Kirtchik. 2017. <span>“The Cultures of Mathematical Economics in the Postwar <span>Soviet Union</span>: <span>More</span> Than a Method, Less Than a Discipline.”</span> <em>Studies in History and Philosophy of Science</em> 63: 1–10.
+Boldyrev, Ivan, and Olessia Kirtchik. 2017. <span>“The Cultures of Mathematical Economics in the Postwar <span>Soviet Union</span>: <span>More</span> Than a Method, Less Than a Discipline.”</span> <em>Studies in History and Philosophy of Science</em> 63: 1–10. <a href="https://www.academia.edu/download/55714429/Boldyrev_Kirtchik_2017.pdf">https://www.academia.edu/download/55714429/Boldyrev_Kirtchik_2017.pdf</a>.
 </div>
 <div id="ref-bridgmanLogicModernPhysics1927" class="csl-entry" role="listitem">
-Bridgman, Percy Williams. 1927. <em>The Logic of Modern Physics</em>. Vol. 3. Macmillan.
+Bridgman, Percy Williams. 1927. <em>The Logic of Modern Physics</em>. Vol. 3. Macmillan. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=zGUGAQAAIAAJ&amp;oi=fnd&amp;pg=PR17&amp;dq=The+logic+of+modern+physics&amp;ots=G_2vUbjeHO&amp;sig=2hd7gY9OLGV2EDQKSKmpPH2r540">https://books.google.com/books?hl=en&amp;lr=&amp;id=zGUGAQAAIAAJ&amp;oi=fnd&amp;pg=PR17&amp;dq=The+logic+of+modern+physics&amp;ots=G_2vUbjeHO&amp;sig=2hd7gY9OLGV2EDQKSKmpPH2r540</a>.
 </div>
 <div id="ref-bronfenbrennerSamuelsonMarxTheir1973" class="csl-entry" role="listitem">
 Bronfenbrenner, Martin. 1973. <span>“Samuelson, <span>Marx</span>, and <span>Their Latest Critics</span>.”</span> <em>Journal of Economic Literature</em> 11 (1): 58–63. <a href="https://www.jstor.org/stable/2721220">https://www.jstor.org/stable/2721220</a>.
@@ -2585,16 +2587,16 @@ Candeal, Juan C., Juan R. De Miguel, Esteban Induráin, and Ghanshyam B. Mehta. 
 Carnot, Sadi, Émile Clapeyron, and Rudolf Julius Emanuel Clausius. 1988. <em>Reflections on the Motive Power of Fire: And Other Papers on the Second Law of Thermodynamics</em>. Edited by E. Mendoza. New edition of the work first published in this form by Dover Publications, Inc. in 1960. Dover Books on Physics. Mineola, New York: Dover Publications, Inc.
 </div>
 <div id="ref-chengIdeologyCosmologyMaoist2006" class="csl-entry" role="listitem">
-Cheng, Yinghong. 2006. <span>“Ideology and Cosmology: <span>Maoist</span> Discussion on Physics and the <span>Cultural Revolution</span>.”</span> <em>Modern Asian Studies</em> 40 (1): 109–49.
+Cheng, Yinghong. 2006. <span>“Ideology and Cosmology: <span>Maoist</span> Discussion on Physics and the <span>Cultural Revolution</span>.”</span> <em>Modern Asian Studies</em> 40 (1): 109–49. <a href="https://www.cambridge.org/core/journals/modern-asian-studies/article/ideology-and-cosmology-maoist-discussion-on-physics-and-the-cultural-revolution/8E2F42D7BAC6A8F9CEA60441CAD90B7C">https://www.cambridge.org/core/journals/modern-asian-studies/article/ideology-and-cosmology-maoist-discussion-on-physics-and-the-cultural-revolution/8E2F42D7BAC6A8F9CEA60441CAD90B7C</a>.
 </div>
 <div id="ref-chiangExhalation2019" class="csl-entry" role="listitem">
 Chiang, Ted. 2019. <em>Exhalation</em>. First edition. New York: Alfred A. Knopf.
 </div>
 <div id="ref-cooperSurprisingUbiquitySamuelson2006" class="csl-entry" role="listitem">
-Cooper, James B., and Thomas Russell. 2006. <span>“The <span>Surprising Ubiquity</span> of the <span>Samuelson Configuration</span>: <span>Paul Samuelson</span> and the <span>Natural Sciences</span>.”</span> <em>Samuelsonian Economics and the Twenty-First Century</em>, 311.
+Cooper, James B., and Thomas Russell. 2006. <span>“The <span>Surprising Ubiquity</span> of the <span>Samuelson Configuration</span>: <span>Paul Samuelson</span> and the <span>Natural Sciences</span>.”</span> <em>Samuelsonian Economics and the Twenty-First Century</em>, 311. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=KhNREAAAQBAJ&amp;oi=fnd&amp;pg=PA311&amp;dq=%E2%80%9CThe+Surprising+Ubiquity+of+the+Samuelson+Configuration%E2%80%9D&amp;ots=8Ogstp9zvv&amp;sig=nc6RrYqqzSvtxt9s8fANMqqh1zQ">https://books.google.com/books?hl=en&amp;lr=&amp;id=KhNREAAAQBAJ&amp;oi=fnd&amp;pg=PA311&amp;dq=%E2%80%9CThe+Surprising+Ubiquity+of+the+Samuelson+Configuration%E2%80%9D&amp;ots=8Ogstp9zvv&amp;sig=nc6RrYqqzSvtxt9s8fANMqqh1zQ</a>.
 </div>
 <div id="ref-cooperCharacterizingAreaCondition2001" class="csl-entry" role="listitem">
-Cooper, James B., Thomas Russell, and Paul A. Samuelson. 2001. <span>“Characterizing an <span>Area Condition Associated</span> with <span>Minimizing Systems</span>.”</span> In <em>Economic <span>Theory</span>, <span>Dynamics</span> and <span>Markets</span></em>, edited by Takashi Negishi, Rama V. Ramachandran, and Kazuo Mino, 391–403. Boston, MA: Springer US. <a href="https://doi.org/10.1007/978-1-4615-1677-4_29">https://doi.org/10.1007/978-1-4615-1677-4_29</a>.
+Cooper, James B., Thomas Russell, and Paul Anthony Samuelson. 2001. <span>“Characterizing an <span>Area Condition Associated</span> with <span>Minimizing Systems</span>.”</span> In <em>Economic <span>Theory</span>, <span>Dynamics</span> and <span>Markets</span></em>, edited by Takashi Negishi, Rama V. Ramachandran, and Kazuo Mino, 391–403. Boston, MA: Springer US. <a href="https://doi.org/10.1007/978-1-4615-1677-4_29">https://doi.org/10.1007/978-1-4615-1677-4_29</a>.
 </div>
 <div id="ref-coxNotationStatesProcesses1982" class="csl-entry" role="listitem">
 Cox, J. D. 1982. <span>“Notation for States and Processes, Significance of the Word Standard in Chemical Thermodynamics, and Remarks on Commonly Tabulated Forms of Thermodynamic Functions.”</span> <em>Pure and Applied Chemistry</em> 54 (6): 1239–50. <a href="https://doi.org/10.1351/pac198254061239">https://doi.org/10.1351/pac198254061239</a>.
@@ -2606,7 +2608,7 @@ Dais, Photis. 2024. <span>“Josiah <span>Willard Gibbs</span> and <span>Pierre 
 Debreu, Gérard. 1971. <em>Theory of Value: An Axiomatic Analysis of Economic Equilibrium</em>. Monograph / <span>Cowles Foundation</span> for <span>Research</span> in <span>Economics</span> 17. New Haven: Yale Univ. Press.
 </div>
 <div id="ref-emdenWhyWeHave1938" class="csl-entry" role="listitem">
-Emden, Robert. 1938. <span>“Why Do We Have Winter Heating?”</span> <em>Nature</em> 141 (3577): 908–9.
+Emden, Robert. 1938. <span>“Why Do We Have Winter Heating?”</span> <em>Nature</em> 141 (3577): 908–9. <a href="https://www.nature.com/articles/141908a0">https://www.nature.com/articles/141908a0</a>.
 </div>
 <div id="ref-fermiThermodynamics1956" class="csl-entry" role="listitem">
 Fermi, Enrico. 1956. <em>Thermodynamics</em>. Reprint edition. New York: Dover Publications.
@@ -2615,13 +2617,13 @@ Fermi, Enrico. 1956. <em>Thermodynamics</em>. Reprint edition. New York: Dover P
 Gardner, Roy. 1990. <span>“<span>LV Kantorovich</span>: The Price Implications of Optimal Planning.”</span> <em>Journal of Economic Literature</em> 28 (2): 638–48. <a href="https://www.jstor.org/stable/2727266">https://www.jstor.org/stable/2727266</a>.
 </div>
 <div id="ref-gibbsEquilibriumHeterogeneousSubstances1878" class="csl-entry" role="listitem">
-Gibbs, Josiah Willard. 1878. <span>“On the Equilibrium of Heterogeneous Substances.”</span> <em>American Journal of Science</em> 3 (96): 441–58.
+Gibbs, Josiah Willard. 1878. <span>“On the Equilibrium of Heterogeneous Substances.”</span> <em>American Journal of Science</em> 3 (96): 441–58. <a href="https://ajsonline.org/article/63588.pdf">https://ajsonline.org/article/63588.pdf</a>.
 </div>
 <div id="ref-gibbsGraphicalMethodsThermodynamics1957" class="csl-entry" role="listitem">
 ———. 1957. <span>“Graphical Methods in the Thermodynamics of Fluids.”</span> <em>The Collected Works of J. Willard Gibbs, Ph. D., LL. D</em>, 1–32.
 </div>
 <div id="ref-glasserCorrectUseHelmholtz2016" class="csl-entry" role="listitem">
-Glasser, Leslie. 2016. <span>“Correct <span>Use</span> of <span>Helmholtz</span> and <span>Gibbs Function Differences</span>, <span><span class="math inline">\(\Delta\)</span></span> <span><em>A</em></span> and <span><span class="math inline">\(\Delta\)</span></span> <span><em>G</em></span> : <span>The</span> van’t <span>Hoff Reaction Box</span>.”</span> <em>Journal of Chemical Education</em> 93 (5): 978–80. <a href="https://doi.org/10.1021/acs.jchemed.5b00925">https://doi.org/10.1021/acs.jchemed.5b00925</a>.
+Glasser, Leslie. 2016. <span>“Correct <span>Use</span> of <span>Helmholtz</span> and <span>Gibbs Function Differences</span>, <span>Δ</span> <span><span><em>A</em></span></span> and <span>Δ</span> <span><span><em>G</em></span></span> : <span>The</span> van’t <span>Hoff Reaction Box</span>.”</span> <em>Journal of Chemical Education</em> 93 (5): 978–80. <a href="https://doi.org/10.1021/acs.jchemed.5b00925">https://doi.org/10.1021/acs.jchemed.5b00925</a>.
 </div>
 <div id="ref-hotellingGeneralMathematicalTheory1925" class="csl-entry" role="listitem">
 Hotelling, Harold. 1925. <span>“A <span>General Mathematical Theory</span> of <span>Depreciation</span>.”</span> <em>Journal of the American Statistical Association</em> 20 (151): 340–53. <a href="https://doi.org/10.1080/01621459.1925.10503499">https://doi.org/10.1080/01621459.1925.10503499</a>.
@@ -2630,13 +2632,13 @@ Hotelling, Harold. 1925. <span>“A <span>General Mathematical Theory</span> of 
 Jaynes, E. T. 1992. <span>“The <span>Gibbs Paradox</span>.”</span> In <em>Maximum <span>Entropy</span> and <span>Bayesian Methods</span>: <span>Seattle</span>, 1991</em>, edited by C. Ray Smith, Gary J. Erickson, and Paul O. Neudorfer, 1–21. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-017-2219-3_1">https://doi.org/10.1007/978-94-017-2219-3_1</a>.
 </div>
 <div id="ref-klausiusUeberVerschiedeneFur32850" class="csl-entry" role="listitem">
-Klausius, Rudolf. 32850. <span>“Ueber Verschiedene f<span>ü</span>r Die <span>Anwendung</span> Bequeme <span>Formen</span> Der <span>Hauptgleichungen</span> Der Mechanischen <span>Raumtheorie</span>.”</span> <em>Annalen Der Physik Und Chemie</em> 125 (7): 353–400.
+Klausius, Rudolf. n.d. <span>“Ueber Verschiedene Für Die <span>Anwendung</span> Bequeme <span>Formen</span> Der <span>Hauptgleichungen</span> Der Mechanischen <span>Raumtheorie</span>.”</span> <em>Annalen Der Physik Und Chemie</em> 125 (7): 353–400.
 </div>
 <div id="ref-klimenkoTeachingThirdLaw2012" class="csl-entry" role="listitem">
 Klimenko, A. Y. 2012. <span>“Teaching the Third Law of Thermodynamics.”</span> <em>The Open Thermodynamics Journal</em> 6 (1): 1–14. <a href="https://doi.org/10.2174/1874396X01206010001">https://doi.org/10.2174/1874396X01206010001</a>.
 </div>
 <div id="ref-lavendaNonextensiveThermodynamics2010" class="csl-entry" role="listitem">
-Lavenda, Bernard H. 2010. <span>“Nonextensive <span>Thermodynamics</span>.”</span> In <em>A <span>New Perspective</span> on <span>Thermodynamics</span></em>, 145–93. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4419-1430-9_6">https://doi.org/10.1007/978-1-4419-1430-9_6</a>.
+Lavenda, Bernard H. 2010. <span>“Nonextensive <span>Thermodynamics</span>.”</span> In <em>A <span>New Perspective</span> on <span>Thermodynamics</span></em>, by Bernard H. Lavenda, 145–93. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4419-1430-9_6">https://doi.org/10.1007/978-1-4419-1430-9_6</a>.
 </div>
 <div id="ref-lemonsMereThermodynamics2008" class="csl-entry" role="listitem">
 Lemons, Don S. 2008. <em>Mere <span>Thermodynamics</span></em>. Annotated edition. Johns Hopkins University Press.
@@ -2648,19 +2650,19 @@ Lemons, Don S. 2008. <em>Mere <span>Thermodynamics</span></em>. Annotated editio
 Letellier, Pierre, Alain Mayaffre, and Mireille Turmine. 2007. <span>“Solubility of Nanoparticles: Nonextensive Thermodynamics Approach.”</span> <em>Journal of Physics: Condensed Matter</em> 19 (43): 436229. <a href="https://doi.org/10.1088/0953-8984/19/43/436229">https://doi.org/10.1088/0953-8984/19/43/436229</a>.
 </div>
 <div id="ref-mccartyPHParadoxesDemonstrating2006" class="csl-entry" role="listitem">
-McCarty, Christopher G., and Ed Vitz. 2006. <span>“<span class="nocase">pH Paradoxes</span>: <span class="nocase">Demonstrating That It Is Not True That pH</span> <span><span class="math inline">\(\equiv\)</span></span> -Log[<span>H</span>+].”</span> <em>Journal of Chemical Education</em> 83 (5): 752. <a href="https://doi.org/10.1021/ed083p752">https://doi.org/10.1021/ed083p752</a>.
+McCarty, Christopher G., and Ed Vitz. 2006. <span>“<span class="nocase">pH Paradoxes</span>: <span class="nocase">Demonstrating That It Is Not True That pH</span> ≡ -Log[<span>H</span>+].”</span> <em>Journal of Chemical Education</em> 83 (5): 752. <a href="https://doi.org/10.1021/ed083p752">https://doi.org/10.1021/ed083p752</a>.
 </div>
 <div id="ref-pippardElementsClassicalThermodynamics1964" class="csl-entry" role="listitem">
 Pippard, Alfred B. 1964. <em>Elements of Classical Thermodynamics: For Advanced Students of Physics</em>. 1st ed. Cambridge: Univ. Pr.
 </div>
 <div id="ref-quevedoGeometrothermodynamics2007" class="csl-entry" role="listitem">
-Quevedo, Hernando. 2007. <span>“Geometrothermodynamics.”</span> <em>Journal of Mathematical Physics</em> 48 (1).
+Quevedo, Hernando. 2007. <span>“Geometrothermodynamics.”</span> <em>Journal of Mathematical Physics</em> 48 (1). <a href="https://pubs.aip.org/aip/jmp/article/48/1/013506/290587">https://pubs.aip.org/aip/jmp/article/48/1/013506/290587</a>.
 </div>
 <div id="ref-quilezFirstYearUniversityChemistry2012" class="csl-entry" role="listitem">
 Quílez, Juan. 2012. <span>“First-<span>Year University Chemistry Textbooks</span>’ <span>Misrepresentation</span> of <span>Gibbs Energy</span>.”</span> <em>Journal of Chemical Education</em> 89 (1): 87–93. <a href="https://doi.org/10.1021/ed100477x">https://doi.org/10.1021/ed100477x</a>.
 </div>
 <div id="ref-raffSpontaneityEquilibriumWhy2014" class="csl-entry" role="listitem">
-Raff, Lionel M. 2014a. <span>“Spontaneity and <span>Equilibrium</span>: <span>Why</span> <span>‘<span><span class="math inline">\(\Delta\)</span></span> <span><em>G</em></span> <span><span class="math inline">\(&lt;\)</span></span> 0 <span>Denotes</span> a <span>Spontaneous Process</span>’</span> and <span>‘<span><span class="math inline">\(\Delta\)</span></span> <span><em>G</em></span> = 0 <span>Means</span> the <span>System Is</span> at <span>Equilibrium</span>’</span> <span>Are Incorrect</span>.”</span> <em>Journal of Chemical Education</em> 91 (3): 386–95. <a href="https://doi.org/10.1021/ed400453s">https://doi.org/10.1021/ed400453s</a>.
+Raff, Lionel M. 2014a. <span>“Spontaneity and <span>Equilibrium</span>: <span>Why</span> <span>‘<span>Δ</span> <span><span><em>G</em></span></span> <span><span class="math inline">\(&lt;\)</span></span> 0 <span>Denotes</span> a <span>Spontaneous Process</span>’</span> and <span>‘<span>Δ</span> <span><span><em>G</em></span></span> = 0 <span>Means</span> the <span>System Is</span> at <span>Equilibrium</span>’</span> <span>Are Incorrect</span>.”</span> <em>Journal of Chemical Education</em> 91 (3): 386–95. <a href="https://doi.org/10.1021/ed400453s">https://doi.org/10.1021/ed400453s</a>.
 </div>
 <div id="ref-raffSpontaneityEquilibriumII2014" class="csl-entry" role="listitem">
 ———. 2014b. <span>“Spontaneity and <span>Equilibrium II</span>: <span>Multireaction Systems</span>.”</span> <em>Journal of Chemical Education</em> 91 (6): 839–47. <a href="https://doi.org/10.1021/ed4008205">https://doi.org/10.1021/ed4008205</a>.
@@ -2669,16 +2671,16 @@ Raff, Lionel M. 2014a. <span>“Spontaneity and <span>Equilibrium</span>: <span>
 ———. 2014c. <span>“Spontaneity and <span>Equilibrium III</span>: <span>A History</span> of <span>Misinformation</span>.”</span> <em>Journal of Chemical Education</em> 91 (12): 2128–36. <a href="https://doi.org/10.1021/ed500253e">https://doi.org/10.1021/ed500253e</a>.
 </div>
 <div id="ref-samuelsonMaximumPrinciplesAnalytical1971" class="csl-entry" role="listitem">
-Samuelson, Paul A. 1971. <span>“Maximum <span>Principles</span> in <span>Analytical Economics</span>.”</span> <em>Science</em> 173 (4001): 991–97. <a href="https://doi.org/10.1126/science.173.4001.991">https://doi.org/10.1126/science.173.4001.991</a>.
+Samuelson, Paul Anthony. 1971. <span>“Maximum <span>Principles</span> in <span>Analytical Economics</span>.”</span> <em>Science</em> 173 (4001): 991–97. <a href="https://doi.org/10.1126/science.173.4001.991">https://doi.org/10.1126/science.173.4001.991</a>.
 </div>
 <div id="ref-samuelsonMyLifePhilosophy1999" class="csl-entry" role="listitem">
-———. 1999. <span>“My Life Philosophy: <span>Policy</span> Credos and Working Ways.”</span> <em>Economia Aplicada</em> 3 (2): 309–20.
+———. 1999. <span>“My Life Philosophy: <span>Policy</span> Credos and Working Ways.”</span> <em>Economia Aplicada</em> 3 (2): 309–20. <a href="https://www.revistas.usp.br/ecoa/article/download/218529/199662">https://www.revistas.usp.br/ecoa/article/download/218529/199662</a>.
 </div>
 <div id="ref-smithClassicalThermodynamicsEconomic2008" class="csl-entry" role="listitem">
 Smith, Eric, and Duncan K. Foley. 2008. <span>“Classical Thermodynamics and Economic General Equilibrium Theory.”</span> <em>Journal of Economic Dynamics and Control</em>, Applications of statistical physics in economics and finance, 32 (1): 7–65. <a href="https://doi.org/10.1016/j.jedc.2007.01.020">https://doi.org/10.1016/j.jedc.2007.01.020</a>.
 </div>
 <div id="ref-staceyEarthDensityDistribution2020" class="csl-entry" role="listitem">
-Stacey, Frank D., and Paul M. Davis. 2020. <span>“Earth, <span>Density Distribution</span>.”</span> Edited by Harsh K. Gupta. <em>Encyclopedia of Solid Earth Geophysics</em>, 1–6. <a href="https://doi.org/10.1007/978-3-030-10475-7_100-1">https://doi.org/10.1007/978-3-030-10475-7_100-1</a>.
+Stacey, Frank D., and Paul M. Davis. 2020. <span>“Earth, <span>Density Distribution</span>.”</span> In <em>Encyclopedia of <span>Solid Earth Geophysics</span></em>, edited by Harsh K. Gupta, 1–6. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-10475-7_100-1">https://doi.org/10.1007/978-3-030-10475-7_100-1</a>.
 </div>
 <div id="ref-starrGeneralEquilibriumTheory2011" class="csl-entry" role="listitem">
 Starr, Ross M. 2011. <em>General <span>Equilibrium Theory</span>: <span>An Introduction</span></em>. 2nd edition. New York: Cambridge University Press.
@@ -2687,83 +2689,49 @@ Starr, Ross M. 2011. <em>General <span>Equilibrium Theory</span>: <span>An Intro
 Sun, Wenhao, Matthew J Powell-Palm, and Jiadong Chen. 2024. <span>“The Geometry of High-Dimensional Phase Diagrams: <span>I</span>. <span>Generalized Gibbs</span>’ <span>Phase Rule</span>.”</span>
 </div>
 <div id="ref-weinholdThermodynamicsGeometry1976" class="csl-entry" role="listitem">
-Weinhold, Frank. 1976. <span>“Thermodynamics and Geometry.”</span> <em>Physics Today</em> 29 (3): 23–30.
+Weinhold, Frank. 1976. <span>“Thermodynamics and Geometry.”</span> <em>Physics Today</em> 29 (3): 23–30. <a href="https://www.researchgate.net/profile/Frank-Weinhold-2/publication/258879552_Thermodynamics_and_geometry/links/0f31752eff48885858000000/Thermodynamics-and-geometry.pdf">https://www.researchgate.net/profile/Frank-Weinhold-2/publication/258879552_Thermodynamics_and_geometry/links/0f31752eff48885858000000/Thermodynamics-and-geometry.pdf</a>.
 </div>
 <div id="ref-westTernaryPhaseDiagrams2002" class="csl-entry" role="listitem">
 West, David Richard Frederick, and Nigel Saunders. 2002. <em>Ternary Phase Diagrams in Materials Science</em>. 3. ed. Book / <span>The Institute</span> of <span>Materials</span> 737. London: Maney for the Institute of Materials.
 </div>
-<div id="ref-LiuZuiZaoDeYuZhouZuiHaoDeDiQiu2015" class="csl-entry" role="listitem">
+<div id="ref-liuZuizaoDeYuzhou2015" class="csl-entry" role="listitem">
 刘慈欣. 2015. <em>最糟的宇宙，最好的地球</em>. 1st ed. 中国科幻基石丛书. Chengdu: 四川科学技术出版社.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -2828,13 +2796,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -3227,7 +3196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Classical Thermodynamics and Economics"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-05-09"</span></span>
@@ -5419,7 +5388,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-2190"><a href="#cb1-2190" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2191"><a href="#cb1-2191" aria-hidden="true" tabindex="-1"></a>I will always remember this comment, as the only intrusion of religious sentiment in an otherwise sober textbook. See <span class="co">[</span><span class="ot">@chengIdeologyCosmologyMaoist2006; @bellamyfosterClassicalMarxismSecond2008</span><span class="co">]</span> for further details on why Marxists dislike the theory of heat death on ideological grounds.</span>
 <span id="cb1-2192"><a href="#cb1-2192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2193"><a href="#cb1-2193" aria-hidden="true" tabindex="-1"></a>Actually, since we are on the topic of Marxism and science in China, here is another amusing anecdote: In 1981, there was a sci-fi novel *Dream of Comfort Country* (温柔之乡的梦, by 魏雅华). It was a cautionary story about a robotic wife, who was so obedient as to cause the protagonist to degenerate into a tyrannical person. Yawn. Just a standard pro-human-relationship morality play? During the <span class="co">[</span><span class="ot">campaign against spiritual pollution</span><span class="co">](https://en.wikipedia.org/wiki/Campaign_against_spiritual_pollution)</span> of 1983, sci-fi novels were denounced, causing a 15-year-long draught in sci-fi. That particular novel was denounced for the following reason: The robotic wives were supposedly reading all kinds of books -- then why didn't they read Marx's and Lenin's books? <span class="co">[</span><span class="ot">@LiuZuiZaoDeYuZhouZuiHaoDeDiQiu2015, page 87</span><span class="co">]</span></span>
+<span id="cb1-2193"><a href="#cb1-2193" aria-hidden="true" tabindex="-1"></a>Actually, since we are on the topic of Marxism and science in China, here is another amusing anecdote: In 1981, there was a sci-fi novel *Dream of Comfort Country* (温柔之乡的梦, by 魏雅华). It was a cautionary story about a robotic wife, who was so obedient as to cause the protagonist to degenerate into a tyrannical person. Yawn. Just a standard pro-human-relationship morality play? During the <span class="co">[</span><span class="ot">campaign against spiritual pollution</span><span class="co">](https://en.wikipedia.org/wiki/Campaign_against_spiritual_pollution)</span> of 1983, sci-fi novels were denounced, causing a 15-year-long draught in sci-fi. That particular novel was denounced for the following reason: The robotic wives were supposedly reading all kinds of books -- then why didn't they read Marx's and Lenin's books? <span class="co">[</span><span class="ot">@liuZuizaoDeYuzhou2015, page 87</span><span class="co">]</span></span>
 <span id="cb1-2194"><a href="#cb1-2194" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2195"><a href="#cb1-2195" aria-hidden="true" tabindex="-1"></a>Marx, for all his interest in changing the world instead of describing it, did attempt to mathematically model aspects of a capitalist economy, though it is only of historical interest now. Samuelson wrote several papers trying to update Marx's theory into modern mathematical language, and described Marx -- qua mathematical economist -- as a "minor post-Ricardian". <span class="co">[</span><span class="ot">@bronfenbrennerSamuelsonMarxTheir1973</span><span class="co">]</span></span>
 <span id="cb1-2196"><a href="#cb1-2196" aria-hidden="true" tabindex="-1"></a></span>
@@ -5478,7 +5447,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-2249"><a href="#cb1-2249" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2250"><a href="#cb1-2250" aria-hidden="true" tabindex="-1"></a>After I finally understood thermodynamics, I turned my sights on chemical thermodynamics, and remembered this $\Delta G$ nonsense. I started with the idea "No matter what they say, one can't possibly get the units wrong." and got into a shouting match with ChatGPT-4, who kept mumbling about "fugacity" and "real gasses". An hour of shouting later, I finally figured it out. (The new Feynman technique: Try to convince ChatGPT that a widely-held opinion is actually wrong. It worked for me!)</span>
 <span id="cb1-2251"><a href="#cb1-2251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2252"><a href="#cb1-2252" aria-hidden="true" tabindex="-1"></a>As usual, as soon as I unlearned this, I knew the right phrase to search, and discovered that this is a common error, the entire anatomy of which has been autopsied carefully <span class="co">[</span><span class="ot">@raffSpontaneityEquilibriumWhy2014; @raffSpontaneityEquilibriumII2014; @raffSpontaneityEquilibriumIII2014</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-2252"><a href="#cb1-2252" aria-hidden="true" tabindex="-1"></a>As usual, as soon as I unlearned this, I knew the right phrase to search, and discovered that this is a common error, the entire anatomy of which has been autopsied carefully <span class="co">[</span><span class="ot">@raffSpontaneityEquilibriumWhy2014; @raffSpontaneityEquilibriumII2014; @raffSpontaneityEquilibriumIII2014</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

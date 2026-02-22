@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -343,7 +344,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -566,12 +568,12 @@ Do not take them on enemy missions!</p>
 </ul>
 <p>The most important areas are the “unprotected fuel tanks”. Apparently those were not self-sealing, and prone to exploding when shot at.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Full text">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Full text
+<span class="screen-reader-only">Note</span>Full text
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -596,12 +598,12 @@ Full text
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Translation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Translation
+<span class="screen-reader-only">Note</span>Translation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -708,12 +710,12 @@ in the nacelle behind the engines</p>
 <p>Frame 3 shows various locations at which B-24 was armored, and the thickness of the armor measured in mm. Specifically, it shows the armor thickness on cockpit window and several turrets, where human crews were located and needed the armor. Also notable is the “Panzerglass” at the tail, which stands for “armored glass”.</p>
 <p>Frame 5 shows the two hemispheres (front and back) of the complete sphere-of-fire of B-24D. The B-24D itself is visible as a small horizontal line in the middle of each hemisphere. On the diagram, different hatch patterns mark sectors “swept” (<em>bestrichen</em>) by each gun position. For a typical B-24 D, with a Martin 250-CE top turret, hand-held nose guns, waist guns, a Sperry ball turret and the Consolidated A-6 tail turret, the shaded arcs match the hardware fairly well.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Full transcript">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Full transcript
+<span class="screen-reader-only">Note</span>Full transcript
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -790,12 +792,12 @@ Gipfelhöhe 9000 m</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Translation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Translation
+<span class="screen-reader-only">Note</span>Translation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -921,7 +923,7 @@ in the nacelle behind the engines</p>
 <p>Despite the lack of drama in the memoranda, it seems he really did do what the anecdote do, even though we have no idea about the further details, such as which planes’ vulnerabilities he studied:</p>
 <blockquote class="blockquote">
 <p>Wald wrote a series of memoranda on estimating the vulnerability of various parts of an airplane from data showing the number of hits on the respective parts of planes returning from combat. The vulnerability of a part (engine, aileron, pilot, stabilizer, elevator, etc.) is defined as the probability that a hit on that part will result in destruction of the plane (fire, explosion, loss of power, loss of control, etc.). The military was inclined to provide protection for those parts that on returning planes showed the most hits. Wald assumed, on good evidence, that hits in combat were uniformly distributed over the planes. It follows that hits on the more vulnerable parts were less likely to be found on returning planes than hits on the less vulnerable parts, since planes receiving hits on the more vulnerable parts were less likely to return to provide data. From these premises, he devised methods for estimating the vulnerability of various parts.</p>
-<p><span class="citation" data-cites="wallisRejoinder1980">(<a href="#ref-wallisRejoinder1980" role="doc-biblioref">Wallis 1980a</a>)</span></p>
+<p><span class="citation" data-cites="wallisRejoinder1980">(<a href="#ref-wallisRejoinder1980" role="doc-biblioref">Wallis 1980b</a>)</span></p>
 </blockquote>
 <section id="sequential-test" class="level3">
 <h3 class="anchored" data-anchor-id="sequential-test">Sequential test</h3>
@@ -964,13 +966,13 @@ in the nacelle behind the engines</p>
 <p>Milton Friedman was such an expert on <a href="https://en.wikipedia.org/wiki/Proximity_fuze">proximity fuzes</a> that he was consulted on it during the <a href="https://en.wikipedia.org/wiki/Battle_of_the_Bulge">Battle of the Bulge</a>.</p>
 <blockquote class="blockquote">
 <p>During the Battle of the Bulge in December 1944, several high-ranking Army officers flew to Washington from the battle, spent a day discussing the best settings on proximity fuzes for air bursts of artillery shells against ground troops, and flew back to the battle to put into effect advice from, among others, Milton Friedman, whose earlier studies of the fuzes had given him extensive and accurate knowledge of the way the fuzes actually performed.</p>
-<p><span class="citation" data-cites="wallisStatisticalResearchGroup1980">(<a href="#ref-wallisStatisticalResearchGroup1980" role="doc-biblioref">Wallis 1980b</a>)</span></p>
+<p><span class="citation" data-cites="wallisStatisticalResearchGroup1980">(<a href="#ref-wallisStatisticalResearchGroup1980" role="doc-biblioref">Wallis 1980a</a>)</span></p>
 </blockquote>
 <p>Other things he studied included sequential testing, a statistical procedure to ensure that the detonator for the atom bomb worked, the best composition of a high temperature alloy for jet engines, etc.</p>
 <p>The origin of the joke about “statisticians drowning in streams only 1 meter deep on the average”:</p>
 <blockquote class="blockquote">
 <p>Finally, a legend that has had some currency concerning Hotelling’s work at Dahlgren: For his first visit, Hotelling was told that a station wagon to Dahlgren would leave the main Navy building in Washington at 8:00 a.m. Someone else told him 8:30 a.m. He arrived at 8:15, missing the station wagon by 15 minutes. This led to much joking about statisticians drowning in streams only three feet deep on the average. Actually he had started in time to be confident of arriving by 7:45 a.m., but had encountered an extraordinary delay of more than half an hour. Nevertheless, the legend lives on. I do not expect this note to slay it, any more than I expect my paper to slay the legend about Wald’s work being given a security classification and snatched away from him because he lacked a security clearance.</p>
-<p><span class="citation" data-cites="wallisStatisticalResearchGroup1980">(<a href="#ref-wallisStatisticalResearchGroup1980" role="doc-biblioref">Wallis 1980b</a>)</span></p>
+<p><span class="citation" data-cites="wallisStatisticalResearchGroup1980">(<a href="#ref-wallisStatisticalResearchGroup1980" role="doc-biblioref">Wallis 1980a</a>)</span></p>
 </blockquote>
 </section>
 
@@ -985,10 +987,10 @@ in the nacelle behind the engines</p>
 
 </div></section><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-bernsteinMarvinMinskysVision1981" class="csl-entry" role="listitem">
-Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December.
+Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December 6, 1981. <a href="https://www.newyorker.com/magazine/1981/12/14/a-i">https://www.newyorker.com/magazine/1981/12/14/a-i</a>.
 </div>
 <div id="ref-kaplanScalingLawsNeural2020" class="csl-entry" role="listitem">
-Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. <span>“Scaling <span>Laws</span> for <span>Neural Language Models</span>.”</span> arXiv. <a href="https://arxiv.org/abs/2001.08361">https://arxiv.org/abs/2001.08361</a>.
+Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. <span>“Scaling <span>Laws</span> for <span>Neural Language Models</span>.”</span> January 22, 2020. <a href="http://arxiv.org/abs/2001.08361">http://arxiv.org/abs/2001.08361</a>.
 </div>
 <div id="ref-mangelAbrahamWaldsWork1984" class="csl-entry" role="listitem">
 Mangel, Marc, and Francisco J. Samaniego. 1984. <span>“Abraham <span>Wald</span>’s <span>Work</span> on <span>Aircraft Survivability</span>.”</span> <em>Journal of the American Statistical Association</em> 79 (386): 259–67. <a href="https://doi.org/10.1080/01621459.1984.10478038">https://doi.org/10.1080/01621459.1984.10478038</a>.
@@ -999,81 +1001,47 @@ Murray, Williamson. 1986. <em>Strategy for <span>Defeat</span>: <span>The Luftwa
 <div id="ref-waldReprintMethodEstimating1980" class="csl-entry" role="listitem">
 Wald, Abraham. 1980. <span>“A <span>Reprint</span> of" <span>A Method</span> of <span>Estimating Plane Vulnerability Based</span> on <span>Damage</span> of <span>Survivors</span>" by <span>Abraham Wald</span>.”</span> CRC-0204320000.
 </div>
-<div id="ref-wallisRejoinder1980" class="csl-entry" role="listitem">
-Wallis, W. Allen. 1980a. <span>“Rejoinder.”</span> <em>Journal of the American Statistical Association</em> 75 (370): 334–35. <a href="https://doi.org/10.1080/01621459.1980.10477472">https://doi.org/10.1080/01621459.1980.10477472</a>.
-</div>
 <div id="ref-wallisStatisticalResearchGroup1980" class="csl-entry" role="listitem">
-———. 1980b. <span>“The <span>Statistical Research Group</span>, 1942–1945.”</span> <em>Journal of the American Statistical Association</em> 75 (370): 320–30. <a href="https://doi.org/10.1080/01621459.1980.10477469">https://doi.org/10.1080/01621459.1980.10477469</a>.
+Wallis, W. Allen. 1980a. <span>“The <span>Statistical Research Group</span>, 1942–1945.”</span> <em>Journal of the American Statistical Association</em> 75 (370): 320–30. <a href="https://doi.org/10.1080/01621459.1980.10477469">https://doi.org/10.1080/01621459.1980.10477469</a>.
+</div>
+<div id="ref-wallisRejoinder1980" class="csl-entry" role="listitem">
+———. 1980b. <span>“Rejoinder.”</span> <em>Journal of the American Statistical Association</em> 75 (370): 334–35. <a href="https://doi.org/10.1080/01621459.1980.10477472">https://doi.org/10.1080/01621459.1980.10477472</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1138,13 +1106,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1537,7 +1506,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "That Survivorship Bias Plane"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-05-02"</span></span>
@@ -1988,7 +1957,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadata {.appendix}</span></span>
 <span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>Seeds planted by a thread about "1/10 uni experiences" on <span class="co">[</span><span class="ot">twitter</span><span class="co">](https://x.com/norvid_studies/status/1917305595843207545)</span> on 2025-05-01.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>Seeds planted by a thread about "1/10 uni experiences" on <span class="co">[</span><span class="ot">twitter</span><span class="co">](https://x.com/norvid_studies/status/1917305595843207545)</span> on 2025-05-01.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

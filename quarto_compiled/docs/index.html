@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -116,7 +117,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -312,7 +313,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -412,10 +414,10 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNzY2FsaW5nJTJDdHJhbnNsYXRpb24=" data-listing-date-sort="1740643200000" data-listing-file-modified-sort="1752821195742" data-listing-date-modified-sort="1740643200000" data-listing-reading-time-sort="78" data-listing-word-count-sort="15536">
+<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNzY2FsaW5nJTJDdHJhbnNsYXRpb24=" data-listing-date-sort="1740643200000" data-listing-file-modified-sort="1752821195000" data-listing-date-modified-sort="1740643200000" data-listing-reading-time-sort="78" data-listing-word-count-sort="15536">
 <div class="thumbnail"><a href="../docs/posts/2025-02-27-muon/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts\2025-02-27-muon\figure\125501438.jpeg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/2025-02-27-muon/figure/125501438.jpeg"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -444,7 +446,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="QUklMkNzY2FsaW5nJTJDdHJhbnNsYXRpb24=" data-listing-date-sort="1715583600000" data-listing-file-modified-sort="1757535436813" data-listing-date-modified-sort="1715583600000" data-listing-reading-time-sort="17" data-listing-word-count-sort="3318">
+<div class="quarto-post image-right" data-index="1" data-categories="QUklMkNzY2FsaW5nJTJDdHJhbnNsYXRpb24=" data-listing-date-sort="1715583600000" data-listing-file-modified-sort="1757535436000" data-listing-date-modified-sort="1715583600000" data-listing-reading-time-sort="17" data-listing-word-count-sort="3318">
 <div class="thumbnail"><a href="../docs/posts/2024-05-13-multi-latent-attention/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -476,7 +478,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="QUklMkNoaXN0b3J5" data-listing-date-sort="1552460400000" data-listing-file-modified-sort="1752820637678" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1105">
+<div class="quarto-post image-right" data-index="2" data-categories="QUklMkNoaXN0b3J5" data-listing-date-sort="1552460400000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1105">
 <div class="thumbnail"><a href="../docs/posts/2019-richard-sutton/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -506,7 +508,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Q2hpbmElMkNmdW4lMkNzY2lmaSUyQ3RyYW5zbGF0aW9u" data-listing-date-sort="1420070400000" data-listing-file-modified-sort="1752820637682" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="191" data-listing-word-count-sort="38042">
+<div class="quarto-post image-right" data-index="3" data-categories="Q2hpbmElMkNmdW4lMkNzY2lmaSUyQ3RyYW5zbGF0aW9u" data-listing-date-sort="1420070400000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="191" data-listing-word-count-sort="38042">
 <div class="thumbnail"><a href="../docs/posts/liu-cixin-anthology/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -540,10 +542,10 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="ZWNvbm9taWNz" data-listing-date-sort="896684400000" data-listing-file-modified-sort="1752820637676" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="33" data-listing-word-count-sort="6527">
+<div class="quarto-post image-right" data-index="4" data-categories="ZWNvbm9taWNz" data-listing-date-sort="896684400000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="33" data-listing-word-count-sort="6527">
 <div class="thumbnail"><a href="../docs/posts/1998-robin-hanson/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts\1998-robin-hanson\figure\supdef1.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/1998-robin-hanson/figure/supdef1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -568,10 +570,10 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="QUklMkNzY2FsaW5n" data-listing-date-sort="888739200000" data-listing-file-modified-sort="1752820637675" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="70" data-listing-word-count-sort="13915">
+<div class="quarto-post image-right" data-index="5" data-categories="QUklMkNzY2FsaW5n" data-listing-date-sort="888739200000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="70" data-listing-word-count-sort="13915">
 <div class="thumbnail"><a href="../docs/posts/1998-hans-moravec/index.html" class="no-external">
 
-<p class="card-img-top"><img src="posts\1998-hans-moravec\figure\All_things_075.jpg" alt="Power rating of natural and artificial thinkers"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/1998-hans-moravec/figure/All_things_075.jpg" alt="Power rating of natural and artificial thinkers"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -598,7 +600,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="QUk=" data-listing-date-sort="731750400000" data-listing-file-modified-sort="1752820637674" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5765">
+<div class="quarto-post image-right" data-index="6" data-categories="QUk=" data-listing-date-sort="731750400000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5765">
 <div class="thumbnail"><a href="../docs/posts/1993-vernor-vinge/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -626,7 +628,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="QUk=" data-listing-date-sort="694224000000" data-listing-file-modified-sort="1752820637674" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3590">
+<div class="quarto-post image-right" data-index="7" data-categories="QUk=" data-listing-date-sort="694224000000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3590">
 <div class="thumbnail"><a href="../docs/posts/1992-hans-moravec/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -654,7 +656,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="QUk=" data-listing-date-sort="610009200000" data-listing-file-modified-sort="1752820637673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2737">
+<div class="quarto-post image-right" data-index="8" data-categories="QUk=" data-listing-date-sort="610009200000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2737">
 <div class="thumbnail"><a href="../docs/posts/1989-hugo-de-garis/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -682,7 +684,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="QUk=" data-listing-date-sort="486457200000" data-listing-file-modified-sort="1752820637673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3722">
+<div class="quarto-post image-right" data-index="9" data-categories="QUk=" data-listing-date-sort="486457200000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3722">
 <div class="thumbnail"><a href="../docs/posts/1985-ray-solomonoff/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -710,7 +712,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="d2FyJTJDc2NpZmklMkNmdW4=" data-listing-date-sort="433839600000" data-listing-file-modified-sort="1752821195755" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="64" data-listing-word-count-sort="12732">
+<div class="quarto-post image-right" data-index="10" data-categories="d2FyJTJDc2NpZmklMkNmdW4=" data-listing-date-sort="433839600000" data-listing-file-modified-sort="1752821195000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="64" data-listing-word-count-sort="12732">
 <div class="thumbnail"><a href="../docs/posts/1983-lem-upside-down-revolution/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -742,7 +744,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="QUklMkNoaXN0b3J5" data-listing-date-sort="183020400000" data-listing-file-modified-sort="1752820637672" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="60" data-listing-word-count-sort="11914">
+<div class="quarto-post image-right" data-index="11" data-categories="QUklMkNoaXN0b3J5" data-listing-date-sort="183020400000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="60" data-listing-word-count-sort="11914">
 <div class="thumbnail"><a href="../docs/posts/1975-herbert-simon-allen-newell/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -772,7 +774,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="ZnVu" data-listing-date-sort="31564800000" data-listing-file-modified-sort="1752820637671" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4781">
+<div class="quarto-post image-right" data-index="12" data-categories="ZnVu" data-listing-date-sort="31564800000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4781">
 <div class="thumbnail"><a href="../docs/posts/1971-lem-die-kultur-als-fehler/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -800,7 +802,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="bGluZ3Vpc3RpY3MlMkNBSQ==" data-listing-date-sort="-347126400000" data-listing-file-modified-sort="1752820637671" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="102" data-listing-word-count-sort="20280">
+<div class="quarto-post image-right" data-index="13" data-categories="bGluZ3Vpc3RpY3MlMkNBSQ==" data-listing-date-sort="-347126400000" data-listing-file-modified-sort="1752820637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="102" data-listing-word-count-sort="20280">
 <div class="thumbnail"><a href="../docs/posts/1959-noam-chomsky/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -834,73 +836,39 @@ window.Quarto = {
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -965,13 +933,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

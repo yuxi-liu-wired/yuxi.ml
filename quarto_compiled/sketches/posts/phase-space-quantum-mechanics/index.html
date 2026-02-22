@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -343,7 +344,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -662,12 +664,12 @@ P=\begin{bmatrix}
 </div>
 <p>In the following proofs, let <span class="math inline">\(c = -i\hbar\)</span>. The statement of the theorem, as well as the proofs, came from <span class="citation" data-cites="aliQuantizationMethodsGuide2005">(<a href="#ref-aliQuantizationMethodsGuide2005" role="doc-biblioref">Ali and Engliš 2005</a>)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof (A123)">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof (A123)
+<span class="screen-reader-only">Note</span>Proof (A123)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -685,12 +687,12 @@ Proof (A123)
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof (A134)">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof (A134)
+<span class="screen-reader-only">Note</span>Proof (A134)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -730,12 +732,12 @@ Proof (A134)
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof (A24)">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof (A24)
+<span class="screen-reader-only">Note</span>Proof (A24)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -872,12 +874,12 @@ u(x) = \frac{1}{(2\pi)^n} \int d^n k \frac{\hat f(k)}{P(k, x)} e^{i\braket{k,x}}
 <p>If <span class="math inline">\(t\)</span> is not written explicitly, then it is by default <span class="math inline">\(t = i\hbar /2\)</span>. In that case, we have</p>
 <p><span class="math display">\[\{\{f,g\}\} := \frac{f \star g - g \star f}{i\hbar}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Too many brackets">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Too many brackets
+<span class="screen-reader-only">Note</span>Too many brackets
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1018,12 +1020,12 @@ f \star_t g = fg + t \{f, g\} + \frac 12 t^2 (f_{qq} g_{pp} - 2 f_{pq} g_{pq} + 
 \]</span></p>
 <p>and more generally, in any combination of the coordinates.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1091,12 +1093,12 @@ e^{-\tanh (a) \frac{q^2 + p^2}{\hbar }} \star e^{-\tanh (b) \frac{q^2 + p^2}{\hb
 </ul>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1125,12 +1127,12 @@ Proof
 <p>which is the Jacobi identity for the Poisson bracket.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1161,7 +1163,7 @@ f(q', p') g(q'', p'')
 <p><span class="theorem-title"><strong>Lemma 1 (lone star lemma)</strong></span> <span class="math display">\[\int(f\star g) (q,p)dqdp = \int f(q,p) g (q,p)dqdp
 \]</span></p>
 </div>
-<p><span class="citation" data-cites="zachosSurveyStarProduct2001">(<a href="#ref-zachosSurveyStarProduct2001" role="doc-biblioref">C. Zachos 2001</a>)</span> gave a geometric trick picture for the star product.</p>
+<p><span class="citation" data-cites="zachosSurveyStarProduct2001">(<a href="#ref-zachosSurveyStarProduct2001" role="doc-biblioref">Zachos 2001</a>)</span> gave a geometric trick picture for the star product.</p>
 <p>Let <span class="math inline">\(\vec r = (q, p)\)</span>, etc, then</p>
 <p><span class="math display">\[
 (\vec r' - \vec r) \wedge (\vec r'' - \vec r) = \vec r \wedge \vec r' + \vec r' \wedge \vec r'' + \vec r'' \wedge \vec r = (qp' - pq') +(q'p'' - p'q'') +(q''p - p''q)
@@ -1184,7 +1186,7 @@ f( \vec r') g(\vec r'') h(\vec r''')
 </section>
 <section id="quantum-mechanics-on-phase-space" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="quantum-mechanics-on-phase-space">Quantum mechanics on phase space</h2>
-<p>Most of this came from a series of papers written by Zachos et al: <span class="citation" data-cites="zachosDeformationQuantizationQuantum2002 zachosQuantumMechanicsPhase2005 curtrightQuantumMechanicsPhase2012 curtrightConciseTreatiseQuantum2014">(<a href="#ref-zachosDeformationQuantizationQuantum2002" role="doc-biblioref">C. K. Zachos 2002</a>; <a href="#ref-zachosQuantumMechanicsPhase2005" role="doc-biblioref">C. K. Zachos, Fairlie, and Curtright 2005</a>; <a href="#ref-curtrightQuantumMechanicsPhase2012" role="doc-biblioref">T. L. Curtright and Zachos 2012</a>; <a href="#ref-curtrightConciseTreatiseQuantum2014" role="doc-biblioref">T. Curtright, Fairlie, and Zachos 2014</a>)</span>. There are not that many good textbooks on this.</p>
+<p>Most of this came from a series of papers written by Zachos et al: <span class="citation" data-cites="zachosDeformationQuantizationQuantum2002 zachosQuantumMechanicsPhase2005 curtrightQuantumMechanicsPhase2012 curtrightConciseTreatiseQuantum2014">(<a href="#ref-zachosDeformationQuantizationQuantum2002" role="doc-biblioref">Zachos 2002</a>; <a href="#ref-zachosQuantumMechanicsPhase2005" role="doc-biblioref">Zachos, Fairlie, and Curtright 2005</a>; <a href="#ref-curtrightQuantumMechanicsPhase2012" role="doc-biblioref">Curtright and Zachos 2012</a>; <a href="#ref-curtrightConciseTreatiseQuantum2014" role="doc-biblioref">Curtright, Fairlie, and Zachos 2014</a>)</span>. There are not that many good textbooks on this.</p>
 <p>Phase space quantum mechanics is most widely used in quantum optics. I found <span class="citation" data-cites="olivaresQuantumOpticsPhase2012">(<a href="#ref-olivaresQuantumOpticsPhase2012" role="doc-biblioref">Olivares 2012</a>)</span> to contain most of the formulas.</p>
 <p>I feel like this paper would be useful for something…</p>
 <ul>
@@ -1231,12 +1233,12 @@ W^{-1} [\hat f](q,p) =  \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} \hat f \ket
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1266,12 +1268,12 @@ Proof
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1296,12 +1298,12 @@ W\left[\prod_{j=1}^N \xi_{k_j}\right] = \prod_{j=1}^N \xi_{j}
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1342,12 +1344,12 @@ W^{-1}[W[f]] = f
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1430,7 +1432,7 @@ W(q, p) = \frac{1}{(2\pi)^n} \int e^{-i\braket{y, q}}d^ny \; \psi(p - \hbar y/2)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="math inline">\(\hbar = 1\)</span> convention
+<span class="screen-reader-only">Note</span><span class="math inline">\(\hbar = 1\)</span> convention
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1452,12 +1454,12 @@ W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/
 </ul>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1480,7 +1482,7 @@ Proof
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-some pure states are impossible
+<span class="screen-reader-only">Note</span>some pure states are impossible
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1502,12 +1504,12 @@ some pure states are impossible
 <p>Translations and elliptic-rotations preserve the purity of Wigner functions.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1530,12 +1532,12 @@ Proof
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1568,12 +1570,12 @@ W(q,p) = \rho_{\mathcal N(q_0, \Sigma_q)}(q) \rho_{\mathcal N(p_0, \Sigma_p)}(p)
 <p>where <span class="math inline">\(\Sigma_q \Sigma_p = \frac 14 \hbar^2 I\)</span> reaches the lower bound of the uncertainty principle allows.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1593,7 +1595,7 @@ W(q,p) =  \frac{1}{(\pi \hbar)^n}\int d^n y e^{-2ip \cdot y}~\psi(q+y) \psi(q-y)
 </div>
 </div>
 </div>
-<p>There is a more general theorem <span class="citation" data-cites="curtrightConciseTreatiseQuantum2014">(<a href="#ref-curtrightConciseTreatiseQuantum2014" role="doc-biblioref">T. Curtright, Fairlie, and Zachos 2014, 23</a>)</span>:</p>
+<p>There is a more general theorem <span class="citation" data-cites="curtrightConciseTreatiseQuantum2014">(<a href="#ref-curtrightConciseTreatiseQuantum2014" role="doc-biblioref">Curtright, Fairlie, and Zachos 2014, 23</a>)</span>:</p>
 <div id="thm-todo" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 6 (uncertainty principle)</strong></span> For any wavefunction <span class="math inline">\(\psi\)</span>, the convolution of its Wigner function with any Gaussian satisfying <span class="math inline">\(\Sigma_p \Sigma_q \geq \frac 14 \hbar^2 I\)</span> is everywhere non-negative. In other words, all negative parts of the Wigner function is small and jagged. We cannot find a large contiguous region where the Wigner function is negative.</p>
 </div>
@@ -1811,12 +1813,12 @@ W(t, q, p) = W(0, q - pt/m, p)
 <p><span class="theorem-title"><strong>Proposition 21</strong></span> For almost any mixed state of a particle propagating in free space, and almost any <span class="math inline">\(q_1\)</span>, the function <span class="math inline">\(t \mapsto Pr(q &gt; q_1 | t)\)</span> is not monotonic.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Note</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1863,14 +1865,14 @@ Ali, S. Twareque, and Miroslav Engliš. 2005. <span>“Quantization Methods: A G
 <div id="ref-andrewsEvolutionFreeWave2008" class="csl-entry" role="listitem">
 Andrews, Mark. 2008. <span>“The Evolution of Free Wave Packets.”</span> <em>American Journal of Physics</em> 76 (12): 1102–7. <a href="https://doi.org/10.1119/1.2982628">https://doi.org/10.1119/1.2982628</a>.
 </div>
+<div id="ref-curtrightConciseTreatiseQuantum2014" class="csl-entry" role="listitem">
+Curtright, Thomas L., David B. Fairlie, and Cosmas K. Zachos. 2014. <em>A Concise Treatise on Quantum Mechanics in Phase Space</em>. New Jersey: World Scientific.
+</div>
 <div id="ref-curtrightQuantumMechanicsPhase2012" class="csl-entry" role="listitem">
 Curtright, Thomas L., and Cosmas K. Zachos. 2012. <span>“Quantum <span>Mechanics</span> in <span>Phase Space</span>.”</span> <em>Asia Pacific Physics Newsletter</em> 01 (01): 37–46. <a href="https://doi.org/10.1142/S2251158X12000069">https://doi.org/10.1142/S2251158X12000069</a>.
 </div>
-<div id="ref-curtrightConciseTreatiseQuantum2014" class="csl-entry" role="listitem">
-Curtright, Thomas, David Fairlie, and Cosmas Zachos. 2014. <em>A Concise Treatise on Quantum Mechanics in Phase Space</em>. New Jersey: World Scientific.
-</div>
 <div id="ref-englisNogoTheoremNonlinear2002" class="csl-entry" role="listitem">
-Engliš, Miroslav. 2002. <span>“A No-Go Theorem for Nonlinear Canonical Quantization.”</span> <em>Comm. Theor. Phys</em> 37: 287–88.
+Engliš, Miroslav. 2002. <span>“A No-Go Theorem for Nonlinear Canonical Quantization.”</span> <em>Comm. Theor. Phys</em> 37: 287–88. <a href="https://ctp.itp.ac.cn/CN/article/downloadArticleFile.do?attachType=PDF&amp;id=9714">https://ctp.itp.ac.cn/CN/article/downloadArticleFile.do?attachType=PDF&amp;id=9714</a>.
 </div>
 <div id="ref-goussevCommentNegativeFlow2020" class="csl-entry" role="listitem">
 Goussev, Arseni. 2020. <span>“Comment on <span>‘<span>The</span> Negative Flow of Probability’</span> [<span>Am</span>. <span>J</span>. <span>Phys</span>. 88, 325–333 (2020)].”</span> <em>American Journal of Physics</em> 88 (11): 1023–28. <a href="https://doi.org/10.1119/10.0001773">https://doi.org/10.1119/10.0001773</a>.
@@ -1888,7 +1890,7 @@ Miquel, César, Juan Pablo Paz, and Marcos Saraceno. 2002. <span>“Quantum Comp
 Mita, Katsunori. 2007. <span>“Dispersion of Non-<span>Gaussian</span> Free Particle Wave Packets.”</span> <em>American Journal of Physics</em> 75 (10): 950–53. <a href="https://doi.org/10.1119/1.2742399">https://doi.org/10.1119/1.2742399</a>.
 </div>
 <div id="ref-neumannEindeutigkeitSchroedingerschenOperatoren1931" class="csl-entry" role="listitem">
-Neumann, John von. 1931. <span>“<span>Die Eindeutigkeit der Schr<span>ö</span>dingerschen Operatoren</span>.”</span> <em>Mathematische Annalen</em> 104 (1): 570–78. <a href="https://doi.org/10.1007/BF01457956">https://doi.org/10.1007/BF01457956</a>.
+Neumann, John von. 1931. <span>“Die Eindeutigkeit der Schrödingerschen Operatoren.”</span> <em>Mathematische Annalen</em> 104 (1): 570–78. <a href="https://doi.org/10.1007/BF01457956">https://doi.org/10.1007/BF01457956</a>.
 </div>
 <div id="ref-olivaresQuantumOpticsPhase2012" class="csl-entry" role="listitem">
 Olivares, S. 2012. <span>“Quantum Optics in the Phase Space: <span>A</span> Tutorial on <span>Gaussian</span> States.”</span> <em>The European Physical Journal Special Topics</em> 203 (1): 3–24. <a href="https://doi.org/10.1140/epjst/e2012-01532-4">https://doi.org/10.1140/epjst/e2012-01532-4</a>.
@@ -1897,86 +1899,52 @@ Olivares, S. 2012. <span>“Quantum Optics in the Phase Space: <span>A</span> Tu
 Villanueva, Anthony Allan D. 2020. <span>“The Negative Flow of Probability.”</span> <em>American Journal of Physics</em> 88 (4): 325–33. <a href="https://doi.org/10.1119/10.0000856">https://doi.org/10.1119/10.0000856</a>.
 </div>
 <div id="ref-woottersPicturingQubitsPhase2004" class="csl-entry" role="listitem">
-Wootters, William K. 2004. <span>“Picturing Qubits in Phase Space.”</span> <em>IBM Journal of Research and Development</em> 48 (1): 99–110.
+Wootters, William K. 2004. <span>“Picturing Qubits in Phase Space.”</span> <em>IBM Journal of Research and Development</em> 48 (1): 99–110. <a href="https://ieeexplore.ieee.org/abstract/document/5388930/">https://ieeexplore.ieee.org/abstract/document/5388930/</a>.
 </div>
 <div id="ref-zachosSurveyStarProduct2001" class="csl-entry" role="listitem">
-Zachos, Cosmas. 2001. <span>“A <span>Survey</span> of <span>Star Product Geometry</span>.”</span> In <em>Integrable <span>Hierarchies</span> and <span>Modern Physical Theories</span></em>, edited by Henrik Aratyn and Alexander S. Sorin, 423–35. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-010-0720-7_16">https://doi.org/10.1007/978-94-010-0720-7_16</a>.
+Zachos, Cosmas K. 2001. <span>“A <span>Survey</span> of <span>Star Product Geometry</span>.”</span> In <em>Integrable <span>Hierarchies</span> and <span>Modern Physical Theories</span></em>, edited by Henrik Aratyn and Alexander S. Sorin, 423–35. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-010-0720-7_16">https://doi.org/10.1007/978-94-010-0720-7_16</a>.
 </div>
 <div id="ref-zachosDeformationQuantizationQuantum2002" class="csl-entry" role="listitem">
-Zachos, Cosmas K. 2002. <span>“Deformation <span>Quantization</span>: <span>Quantum Mechanics Lives</span> and <span>Works</span> in <span>Phase-Space</span>.”</span> <em>International Journal of Modern Physics A</em> 17 (03): 297–316. <a href="https://doi.org/10.1142/S0217751X02006079">https://doi.org/10.1142/S0217751X02006079</a>.
+———. 2002. <span>“Deformation <span>Quantization</span>: <span>Quantum Mechanics Lives</span> and <span>Works</span> in <span>Phase-Space</span>.”</span> <em>International Journal of Modern Physics A</em> 17 (03): 297–316. <a href="https://doi.org/10.1142/S0217751X02006079">https://doi.org/10.1142/S0217751X02006079</a>.
 </div>
 <div id="ref-zachosQuantumMechanicsPhase2005" class="csl-entry" role="listitem">
 Zachos, Cosmas K., David B. Fairlie, and Thomas L. Curtright. 2005. <em>Quantum Mechanics in Phase Space: An Overview with Selected Papers</em>. World <span>Scientific</span> Series in 20th Century Physics, vol. 34. Singapore: World Scientific.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -2041,13 +2009,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2440,7 +2409,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Phase-space quantum mechanics"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-09-01"</span></span>
@@ -4011,7 +3980,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb3-1569"><a href="#cb3-1569" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-1570"><a href="#cb3-1570" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quantum computing</span></span>
 <span id="cb3-1571"><a href="#cb3-1571" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-1572"><a href="#cb3-1572" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@woottersPicturingQubitsPhase2004; @miquelQuantumComputersPhase2002</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb3-1572"><a href="#cb3-1572" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@woottersPicturingQubitsPhase2004; @miquelQuantumComputersPhase2002</span><span class="co">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

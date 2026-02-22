@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -664,7 +666,7 @@ window.Quarto = {
 <p>Since 2015, the Chinese government has employed <a href="https://web.archive.org/web/20231214165158/https://cybersecurity.att.com/blogs/labs-research/the-great-cannon-has-been-deployed-again">the Great Cannon</a> multiple times to perform <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">DDoS attacks</a> on websites it wants to censor, such as a certain GitHub page hosting softwares for bypassing the Great Firewall.</p>
 <p>The Great Cannon is a <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> DDoS attack. When an external IP address requests for certain JavaScript files hosted on certain servers located inside the Great Firewall<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, as the packet crosses the Great Firewall, a program makes a statistical decision. If the decision rule triggers, it replaces the innocuous JavaScript with a malicious JavaScript, which would rapidly send requests to a list of targeted servers. <span class="citation" data-cites="marczakAnalysisChinasGreat2015">(<a href="#ref-marczakAnalysisChinasGreat2015" role="doc-biblioref">Marczak et al. 2015</a>)</span></p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;<a href="https://en.wikipedia.org/wiki/Mandarin_(bureaucrat)">mandarin</a>-in-the-middle?</p></div><div id="fn4"><p><sup>4</sup>&nbsp;Typically, those are Baidu infrastructure servers that host commonly used analytics, social, or advertising scripts.</p></div></div><p>The two main parties in Taiwan are the DPP and the KMT. The older party, KMT, used to be pro-unification, with <em>them</em> being the unifier, not the CCP. It still is interested in <em>eventual</em> unification at some future date, probably after mainland China becomes democratic. In contrast, the DPP, being the newer party, is more interested in independence. During the 2000–2024 period, the KMT had 1 president and the DPP had 3, and the CCP had been significantly more hostile against the DPP presidents than against the KMT. Speaking from personal experience, the internal propaganda painted the DPP presidents as paper tigers with villainous faces, who would bring an apocalyptic war to Taiwan for a few votes.</p>
-<p>During the lead-up to the <a href="https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election">2024 Taiwanese presidential election</a>, the Chinese government has used generative-AI to smear the pro-independence DPP candidate. <span class="citation" data-cites="hungHowChinaCognitive2022">(<a href="#ref-hungHowChinaCognitive2022" role="doc-biblioref">Hung and Hung 2022</a>)</span></p>
+<p>During the lead-up to the <a href="https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election">2024 Taiwanese presidential election</a>, the Chinese government has used generative-AI to smear the pro-independence DPP candidate. <span class="citation" data-cites="hungHowChinasCognitive2022">(<a href="#ref-hungHowChinasCognitive2022" role="doc-biblioref">Hung and Hung 2022</a>)</span></p>
 <blockquote class="blockquote">
 <p>The key message being spread from the pro-China camp is that William Lai, the candidate from the DPP, is a dictator in the wings who will start a war with his reckless pursuit of Taiwanese independence. … Beijing-backed bots routinely flood the social media accounts of leading DPP candidates with pro-China propaganda.</p>
 <p>“China has been actively waging cognitive warfare against Taiwan through disinformation,” Taiwan’s Premier Chen Chien-jen told the media in reference to how Beijing uses a mixture of economic coercion, military bluster and outright falsehoods to intimidate its neighbor. “Upon receiving the disinformation, local collaborators help disseminate and echo the message, in order to destabilize Taiwanese public sentiment and society.” … In December, a YouTube account called “Eat Rice, No War” put out a deepfake video alleging Lai had three mistresses, according to Taiwan’s Ministry of Justice. YouTube subsequently complied with a government request to remove the videos, and the rumor didn’t snowball into a campaign topic.</p>
@@ -703,13 +705,13 @@ window.Quarto = {
 <section id="defensive" class="level3">
 <h3 class="anchored" data-anchor-id="defensive">Defensive</h3>
 <p>When corporations practice defensive information war, they typically practice it in the form of bland speech.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout callout-style-default callout-caution callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Speculative content follows
+<span class="screen-reader-only">Caution</span>Speculative content follows
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -872,10 +874,10 @@ Speculative content follows
 Adler, Mortimer. 1990. <span>“The Great Conversation Revisited.”</span> <em>The Great Conversation: A Peoples Guide to Great Books of the Western World</em>.
 </div>
 <div id="ref-air-movingdeviceGreatSuggestionControl2022" class="csl-entry" role="listitem">
-Air-Moving Device. 2022a. <span>“Great Suggestion for a Control Group <span>Andy</span>.”</span> Tweet. <em>Twitter</em>.
+Air-Moving Device. 2022a. <span>“Great Suggestion for a Control Group <span>Andy</span>.”</span> Tweet. Twitter. November 28, 2022. <a href="https://twitter.com/AirMovingDevice/status/1597070892021862400">https://twitter.com/AirMovingDevice/status/1597070892021862400</a>.
 </div>
 <div id="ref-air-movingdeviceThreadSearchBeijing2022" class="csl-entry" role="listitem">
-———. 2022b. <span>“Thread: <span>Search</span> for <span>Beijing</span>/<span>Shanghai</span>/Other Cities in <span>Chinese</span> on <span>Twitter</span>.”</span> Tweet. <em>Twitter</em>.
+———. 2022b. <span>“Thread: <span>Search</span> for <span>Beijing</span>/<span>Shanghai</span>/Other Cities in <span>Chinese</span> on <span>Twitter</span>.”</span> Tweet. Twitter. November 28, 2022. <a href="https://web.archive.org/web/20230926020335/https://threadreaderapp.com/thread/1597034969293271040.html">https://web.archive.org/web/20230926020335/https://threadreaderapp.com/thread/1597034969293271040.html</a>.
 </div>
 <div id="ref-boweChinasOverseasUnited2018" class="csl-entry" role="listitem">
 Bowe, Alexander. 2018. <span>“China’s Overseas <span>United Front</span> Work: <span>Background</span> and Implications for the <span>United States</span>.”</span> <span>US-China Economic and Security Review Commission</span>.
@@ -889,114 +891,80 @@ Dowling, William F. 1989. <span>“There <span>Are No Safe Virus Tests</span>.�
 <div id="ref-fuchsSettheoreticGeology2015" class="csl-entry" role="listitem">
 Fuchs, Gunter, Joel David Hamkins, and Jonas Reitz. 2015. <span>“Set-Theoretic Geology.”</span> <em>Annals of Pure and Applied Logic</em> 166 (4): 464–501. <a href="https://doi.org/10.1016/j.apal.2014.11.004">https://doi.org/10.1016/j.apal.2014.11.004</a>.
 </div>
-<div id="ref-hungHowChinaCognitive2022" class="csl-entry" role="listitem">
+<div id="ref-hungHowChinasCognitive2022" class="csl-entry" role="listitem">
 Hung, Tzu-Chieh, and Tzu-Wei Hung. 2022. <span>“How <span>China</span>’s <span>Cognitive Warfare Works</span>: <span>A Frontline Perspective</span> of <span>Taiwan</span>’s <span>Anti-Disinformation Wars</span>.”</span> <em>Journal of Global Security Studies</em> 7 (4): ogac016. <a href="https://doi.org/10.1093/jogss/ogac016">https://doi.org/10.1093/jogss/ogac016</a>.
 </div>
 <div id="ref-kingHowChineseGovernment2017" class="csl-entry" role="listitem">
 King, Gary, Jennifer Pan, and Margaret E. Roberts. 2017. <span>“How the <span>Chinese</span> Government Fabricates Social Media Posts for Strategic Distraction, Not Engaged Argument.”</span> <em>American Political Science Review</em> 111 (3): 484–501. <a href="https://doi.org/10.1017/S0003055417000144">https://doi.org/10.1017/S0003055417000144</a>.
 </div>
 <div id="ref-langfordCOMPBASILISKFAQ1999" class="csl-entry" role="listitem">
-Langford, David. 1999. <span>“<span>COMP</span>.<span>BASILISK FAQ</span>.”</span> <em>Nature</em> 402 (6761): 465–65. <a href="https://doi.org/10.1038/44964">https://doi.org/10.1038/44964</a>.
+Langford, David. 1999. <span>“<span>COMP</span>.<span>BASILISK FAQ</span>.”</span> <em>Nature</em> 402 (6761, 6761): 465–65. <a href="https://doi.org/10.1038/44964">https://doi.org/10.1038/44964</a>.
 </div>
 <div id="ref-lauChinaBombardsTaiwan2024" class="csl-entry" role="listitem">
-Lau, Stuart. 2024. <span>“China Bombards <span>Taiwan</span> with Fake News Ahead of Election.”</span> <em>POLITICO</em>, January.
+Lau, Stuart. 2024. <span>“China Bombards <span>Taiwan</span> with Fake News Ahead of Election.”</span> <em>POLITICO</em>, January 10, 2024. <a href="https://www.politico.eu/article/china-bombards-taiwan-with-fake-news-ahead-of-election/">https://www.politico.eu/article/china-bombards-taiwan-with-fake-news-ahead-of-election/</a>.
 </div>
 <div id="ref-marczakAnalysisChinasGreat2015" class="csl-entry" role="listitem">
-Marczak, Bill, Nicholas Weaver, Jakub Dalek, Roya Ensafi, David Fifield, Sarah McKune, Arn Rey, John Scott-Railton, Ron Deibert, and Vern Paxson. 2015. <span>“An <span>Analysis</span> of <span>China</span>’s <span>‘<span>Great Cannon</span>’</span>.”</span> In <em>5th <span>USENIX Workshop</span> on <span>Free</span> and <span>Open Communications</span> on the <span>Internet</span> (<span>FOCI</span> 15)</em>.
+Marczak, Bill, Nicholas Weaver, Jakub Dalek, Roya Ensafi, David Fifield, Sarah McKune, Arn Rey, John Scott-Railton, Ron Deibert, and Vern Paxson. 2015. <span>“An <span>Analysis</span> of <span>China</span>’s <span>‘<span>Great Cannon</span>’</span>.”</span> In <em>5th <span>USENIX Workshop</span> on <span>Free</span> and <span>Open Communications</span> on the <span>Internet</span> (<span>FOCI</span> 15)</em>. <a href="https://www.usenix.org/conference/foci15/workshop-program/presentation/marczak">https://www.usenix.org/conference/foci15/workshop-program/presentation/marczak</a>.
 </div>
 <div id="ref-mckenzieSeeingBank2023" class="csl-entry" role="listitem">
-McKenzie, Patrick. 2023. <span>“Seeing Like a <span>Bank</span>.”</span> <em>Bits About Money</em>.
+McKenzie, Patrick. 2023. <span>“Seeing Like a <span>Bank</span>.”</span> Bits About Money. November 7, 2023. <a href="https://www.bitsaboutmoney.com/archive/seeing-like-a-bank/">https://www.bitsaboutmoney.com/archive/seeing-like-a-bank/</a>.
 </div>
 <div id="ref-mennTwitterGrapplesChinese2022" class="csl-entry" role="listitem">
-Menn, Joseph. 2022. <span>“Twitter Grapples with <span>Chinese</span> Spam Obscuring News of Protests.”</span> <em>Washington Post</em>, November.
+Menn, Joseph. 2022. <span>“Twitter Grapples with <span>Chinese</span> Spam Obscuring News of Protests.”</span> <em>Washington Post</em>, November 28, 2022. <a href="https://www.washingtonpost.com/technology/2022/11/27/twitter-china-spam-protests/">https://www.washingtonpost.com/technology/2022/11/27/twitter-china-spam-protests/</a>.
 </div>
 <div id="ref-mennChinasMeddlingTaiwan2024" class="csl-entry" role="listitem">
-Menn, Joseph, Naomi Nix, Cat Zakrzewski, and Pranshu Verma. 2024. <span>“China’s Meddling in <span>Taiwan</span> Election Presages Year of Misinformation Threats.”</span> <em>Washington Post</em>, January.
+Menn, Joseph, Naomi Nix, Cat Zakrzewski, and Pranshu Verma. 2024. <span>“China’s Meddling in <span>Taiwan</span> Election Presages Year of Misinformation Threats.”</span> <em>Washington Post</em>, January 13, 2024. <a href="https://www.washingtonpost.com/technology/2024/01/12/taiwan-election-china-misinformation/">https://www.washingtonpost.com/technology/2024/01/12/taiwan-election-china-misinformation/</a>.
 </div>
 <div id="ref-muzaffarChineseJournalistAttempts2022" class="csl-entry" role="listitem">
-Muzaffar, Maroosha. 2022. <span>“Chinese Journalist Attempts Suicide After Cyber-Bullying over <span>Shinzo Abe</span> Reportage.”</span> <em>The Independent</em>, July.
+Muzaffar, Maroosha. 2022. <span>“Chinese Journalist Attempts Suicide After Cyber-Bullying over <span>Shinzo Abe</span> Reportage.”</span> <em>The Independent: Asia</em>, July 22, 2022. <a href="https://www.independent.co.uk/asia/china/zeng-ying-suicide-shinzo-abe-b2128922.html">https://www.independent.co.uk/asia/china/zeng-ying-suicide-shinzo-abe-b2128922.html</a>.
 </div>
 <div id="ref-smithTextualDeference1991" class="csl-entry" role="listitem">
-Smith, Barry. 1991. <span>“Textual Deference.”</span> <em>American Philosophical Quarterly</em> 28 (1): 1–12.
+Smith, Barry. 1991. <span>“Textual Deference.”</span> <em>American Philosophical Quarterly</em> 28 (1): 1–12. <a href="https://web.archive.org/web/20210201165837/http://ontology.buffalo.edu/smith/articles/texdef.html">https://web.archive.org/web/20210201165837/http://ontology.buffalo.edu/smith/articles/texdef.html</a>.
 </div>
 <div id="ref-sobelSignalingGames2020" class="csl-entry" role="listitem">
 Sobel, Joel. 2020. <span>“Signaling <span>Games</span>.”</span> In <em>Complex <span>Social</span> and <span>Behavioral Systems</span></em>, edited by Marilda Sotomayor, David Pérez-Castrillo, and Filippo Castiglione, 251–68. New York, NY: Springer US. <a href="https://doi.org/10.1007/978-1-0716-0368-0_481">https://doi.org/10.1007/978-1-0716-0368-0_481</a>.
 </div>
 <div id="ref-wattsFirefall2017" class="csl-entry" role="listitem">
-Watts, Peter. 2017. <em><span>Firefall</span></em>. London: Head of Zeus.
+Watts, Peter. 2017. <em>Firefall</em>. London: Head of Zeus.
 </div>
 <div id="ref-zapffeLastMessiah2004" class="csl-entry" role="listitem">
-Zapffe, Peter. 2004. <span>“The Last Messiah.”</span> Translated by Gisle Tangenes. <em>Philosophy Now</em> 45: 35–39.
+Zapffe, Peter Wessel. 2004. <span>“The Last Messiah.”</span> Translated by Gisle Tangenes. <em>Philosophy Now</em> 45: 35–39.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1061,13 +1029,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1460,7 +1429,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Information Warfare"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-12-16"</span></span>
@@ -1686,7 +1655,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>The two main parties in Taiwan are the DPP and the KMT. The older party, KMT, used to be pro-unification, with *them* being the unifier, not the CCP. It still is interested in *eventual* unification at some future date, probably after mainland China becomes democratic. In contrast, the DPP, being the newer party, is more interested in independence. During the 2000--2024 period, the KMT had 1 president and the DPP had 3, and the CCP had been significantly more hostile against the DPP presidents than against the KMT. Speaking from personal experience, the internal propaganda painted the DPP presidents as paper tigers with villainous faces, who would bring an apocalyptic war to Taiwan for a few votes.</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>During the lead-up to the <span class="co">[</span><span class="ot">2024 Taiwanese presidential election</span><span class="co">](https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election)</span>, the Chinese government has used generative-AI to smear the pro-independence DPP candidate. <span class="co">[</span><span class="ot">@hungHowChinaCognitive2022</span><span class="co">]</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>During the lead-up to the <span class="co">[</span><span class="ot">2024 Taiwanese presidential election</span><span class="co">](https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election)</span>, the Chinese government has used generative-AI to smear the pro-independence DPP candidate. <span class="co">[</span><span class="ot">@hungHowChinasCognitive2022</span><span class="co">]</span></span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The key message being spread from the pro-China camp is that William Lai, the candidate from the DPP, is a dictator in the wings who will start a war with his reckless pursuit of Taiwanese independence. ... Beijing-backed bots routinely flood the social media accounts of leading DPP candidates with pro-China propaganda.</span></span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span>  </span>
@@ -1880,7 +1849,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; What binds the authors together in an intellectual community is the great conversation in which they are engaged. In the works that come later in the sequence of years, we find authors listening to what their predecessors have had to say about this idea or that, this topic or that. They not only harken to the thought of their predecessors, they also respond to it by commenting on it in a variety of ways. </span><span class="co">[</span><span class="ot">@adlerGreatConversationRevisited1990, page 28</span><span class="co">]</span></span>
 <span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>With the Great Conversation, continental philosophy reproduces itself. The old master texts remain inscrutable. New inscrutable texts are added to the canon. New texts that are too clear or sensible are denounced as derivative, analytical, reductionistic, or perhaps kitsch, and denied entrance to the canon. Continental philosophy reproduces itself socially, somehow piling higher and deeper but never making a single bit of progress.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>With the Great Conversation, continental philosophy reproduces itself. The old master texts remain inscrutable. New inscrutable texts are added to the canon. New texts that are too clear or sensible are denounced as derivative, analytical, reductionistic, or perhaps kitsch, and denied entrance to the canon. Continental philosophy reproduces itself socially, somehow piling higher and deeper but never making a single bit of progress.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

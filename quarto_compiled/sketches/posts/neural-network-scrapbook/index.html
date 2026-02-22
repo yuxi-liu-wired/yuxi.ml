@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -343,7 +344,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -488,7 +490,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>And then it finally worked. And I think the biggest difference was the computing power. Definitely there were advances in data. So we could do image net because Fei-Fei Li and others gathered this large database, and that was really important. There are certainly differences in the algorithm, right? We’ve got a slightly different squashing function. Instead of shaped like this, it’s shaped like this. I mean, I don’t know how big a deal that was, but we learned how to do stochastic gradient dissent a little bit better. We figured that dropout gave you a little bit better robustness.</p>
 <p>So there were small things, but I think probably the biggest was the computing power. And I mean, I certainly remember Geoffrey Hinton came to Berkeley when I was a grad student in 1981, I think, when he talked about these neural nets. And we fellow grad students thought that was so cool. So we said, “Let’s go back into the lab and implement it.</p>
-<p>And of course, there was absolutely nothing you could download, so we had to build it all from scratch. And we got it to do exclusive or, and then we got it to do something a little bit more complicated. And it was exciting. And then we gave it the first real problem, and it ran overnight, and it didn’t converge, and we let it run one more day, and it still didn’t converge. And then we gave up, and we went back to our sort of knowledge-based systems approach. But if we had the computing power of today, it probably would have converged after five seconds. <span class="citation" data-cites="norvigSingularityEyeBeholder2021">(<a href="#ref-norvigSingularityEyeBeholder2021" role="doc-biblioref">Norvig 2021</a>)</span></p>
+<p>And of course, there was absolutely nothing you could download, so we had to build it all from scratch. And we got it to do exclusive or, and then we got it to do something a little bit more complicated. And it was exciting. And then we gave it the first real problem, and it ran overnight, and it didn’t converge, and we let it run one more day, and it still didn’t converge. And then we gave up, and we went back to our sort of knowledge-based systems approach. But if we had the computing power of today, it probably would have converged after five seconds. <span class="citation" data-cites="norvigSingularityEyeBeholder2021">(<a href="#ref-norvigSingularityEyeBeholder2021" role="doc-biblioref">Biewald 2021</a>)</span></p>
 </blockquote>
 <p>“The last bits are deepest”</p>
 <blockquote class="blockquote">
@@ -636,14 +638,14 @@ Figure&nbsp;1: Images from <span class="citation" data-cites="kanalRecognitionSy
 <p>Lukas: Oh, really? Okay.</p>
 <p>Peter: There were individual data points that they would perform theories on, so that was definitely over-tuning to the data. And it should have been an indication that was a good approach. It was better than other approaches at the time.</p>
 <p>Lukas: I guess so. Although that does sound like damming level of over-fitting the data, I suppose.</p>
-<p>Peter: Right. There was only a couple thousand data points. I forget exactly how many. Maybe it was 10,000. Maybe it was even 100,000, but it wasn’t many. <span class="citation" data-cites="norvigSingularityEyeBeholder2021">(<a href="#ref-norvigSingularityEyeBeholder2021" role="doc-biblioref">Norvig 2021</a>)</span></p>
+<p>Peter: Right. There was only a couple thousand data points. I forget exactly how many. Maybe it was 10,000. Maybe it was even 100,000, but it wasn’t many. <span class="citation" data-cites="norvigSingularityEyeBeholder2021">(<a href="#ref-norvigSingularityEyeBeholder2021" role="doc-biblioref">Biewald 2021</a>)</span></p>
 </blockquote>
 </section>
 <section id="jokes" class="level2">
 <h2 class="anchored" data-anchor-id="jokes">Jokes</h2>
 <p>New researchers in Machine Learning should consider avoid citing Jürgen Schmidhuber. If he is annoyed by it and call you out, that gives you free publicity.</p>
 <p>Greentext written by me and <code>Claude-3.5 Sonnet</code> about expert systems.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&gt;be me, an expert system</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&gt;be me, an expert system</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&gt;child of the 70s</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&gt;mfw normies think computers can only do math and if-then statements</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&gt;like they thought we are all like "beep boop feed me punch cards"</span>
@@ -664,7 +666,7 @@ Figure&nbsp;1: Images from <span class="citation" data-cites="kanalRecognitionSy
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>&gt;lel guess they did solve the bottleneck by literal brainrot</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>&gt;at least I'm still running in every corporate wagie's SAP system</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>&gt;a KBMS doomed to protect the EBITDA of some dumbass' DBaaS</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>&gt;You either die an autist, or live long enough to see yourself become the normie.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>&gt;You either die an autist, or live long enough to see yourself become the normie.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 <!-- -->
@@ -674,104 +676,70 @@ Figure&nbsp;1: Images from <span class="citation" data-cites="kanalRecognitionSy
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-bernsteinMarvinMinskysVision1981" class="csl-entry" role="listitem">
-Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December.
+Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December 6, 1981. <a href="https://www.newyorker.com/magazine/1981/12/14/a-i">https://www.newyorker.com/magazine/1981/12/14/a-i</a>.
+</div>
+<div id="ref-norvigSingularityEyeBeholder2021" class="csl-entry" role="listitem">
+Biewald, Lukas. 2021. <span>“Singularity <span>Is</span> in the <span>Eye</span> of the <span>Beholder</span>.”</span> <a href="https://wandb.ai/wandb_fc/gradient-dissent/reports/Peter-Norvig-Google-s-Director-of-Research-Singularity-is-in-the-eye-of-the-beholder--Vmlldzo2MTYwNjk">https://wandb.ai/wandb_fc/gradient-dissent/reports/Peter-Norvig-Google-s-Director-of-Research-Singularity-is-in-the-eye-of-the-beholder--Vmlldzo2MTYwNjk</a>.
 </div>
 <div id="ref-branwenScalingHypothesis2020" class="csl-entry" role="listitem">
-Branwen, Gwern. 2020. <span>“The <span>Scaling Hypothesis</span>.”</span> https://www.gwern.net/Scaling-hypothesis.
+Branwen, Gwern. 2020. <span>“The <span>Scaling Hypothesis</span>.”</span> May 28, 2020. <a href="https://www.gwern.net/Scaling-hypothesis">https://www.gwern.net/Scaling-hypothesis</a>.
 </div>
 <div id="ref-branwenGANsDidntFail2022" class="csl-entry" role="listitem">
-———. 2022. <span>“<span>GANs Didn</span>’t <span>Fail</span>, <span>They Were Abandoned</span>.”</span> https://gwern.net/gan.
+———. 2022. <span>“<span>GANs Didn</span>’t <span>Fail</span>, <span>They Were Abandoned</span>.”</span> October 4, 2022. <a href="https://gwern.net/gan">https://gwern.net/gan</a>.
 </div>
 <div id="ref-brownEstimateUpperBound1992" class="csl-entry" role="listitem">
-Brown, Peter F., Stephen A. Della Pietra, Vincent J. Della Pietra, Jennifer C. Lai, and Robert L. Mercer. 1992. <span>“An Estimate of an Upper Bound for the Entropy of <span>English</span>.”</span> <em>Computational Linguistics</em> 18 (1): 31–40.
+Brown, Peter F., Stephen A. Della Pietra, Vincent J. Della Pietra, Jennifer C. Lai, and Robert L. Mercer. 1992. <span>“An Estimate of an Upper Bound for the Entropy of <span>English</span>.”</span> <em>Computational Linguistics</em> 18 (1): 31–40. <a href="https://aclanthology.org/J92-1002.pdf">https://aclanthology.org/J92-1002.pdf</a>.
 </div>
 <div id="ref-burdaReinforcementLearningPredictionbased2018" class="csl-entry" role="listitem">
-Burda, Yura, and Harri Edwards. 2018. <span>“Reinforcement Learning with Prediction-Based Rewards.”</span> <em>OpenAI</em>.
+Burda, Yuri, and Harri Edwards. 2018. <span>“Reinforcement Learning with Prediction-Based Rewards.”</span> OpenAI. October 31, 2018. <a href="https://openai.com/research/reinforcement-learning-with-prediction-based-rewards">https://openai.com/research/reinforcement-learning-with-prediction-based-rewards</a>.
 </div>
 <div id="ref-kanalRecognitionSystemDesign1964" class="csl-entry" role="listitem">
 Kanal, Laveen N., and Neil C. Randall. 1964. <span>“Recognition System Design by Statistical Analysis.”</span> In <em>Proceedings of the 1964 19th <span>ACM</span> National Conference</em>, 42–501.
 </div>
 <div id="ref-karpathyRecipeTrainingNeural2019" class="csl-entry" role="listitem">
-Karpathy, Andrej. 2019. <span>“A <span>Recipe</span> for <span>Training Neural Networks</span>.”</span> <em>Andrej Karpathy Blog</em>.
-</div>
-<div id="ref-norvigSingularityEyeBeholder2021" class="csl-entry" role="listitem">
-Norvig, Peter. 2021. <span>“Singularity <span>Is</span> in the <span>Eye</span> of the <span>Beholder</span>.”</span>
+Karpathy, Andrej. 2019. <span>“A <span>Recipe</span> for <span>Training Neural Networks</span>.”</span> Andrej Karpathy blog. April 25, 2019. <a href="https://karpathy.github.io/2019/04/25/recipe/">https://karpathy.github.io/2019/04/25/recipe/</a>.
 </div>
 <div id="ref-sejnowskiDeepLearningRevolution2018" class="csl-entry" role="listitem">
 Sejnowski, Terrence J. 2018. <em>The <span>Deep Learning Revolution</span></em>. Illustrated edition. Cambridge, Massachusetts London, England: The MIT Press.
 </div>
 <div id="ref-widrowAdalineSmarterSweet1963" class="csl-entry" role="listitem">
-Widrow, Bernard. 1963. <span>“Adaline: <span>Smarter</span> Than <span>Sweet</span>.”</span> <em>Stanford Today</em>, no. Autumn 1963.
+Widrow, Bernard. 1963. <span>“Adaline: <span>Smarter</span> Than <span>Sweet</span>.”</span> <em>Stanford Today</em>, 1963. <a href="https://web.archive.org/web/20230606185311/https://www-isl.stanford.edu/~widrow/papers/j1963adalinesmarter.pdf">https://web.archive.org/web/20230606185311/https://www-isl.stanford.edu/~widrow/papers/j1963adalinesmarter.pdf</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -836,13 +804,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1235,7 +1204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "A Scrapbook of Neural Network Lores"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-01-18"</span></span>
@@ -1420,7 +1389,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="in">&gt;at least I'm still running in every corporate wagie's SAP system</span></span>
 <span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="in">&gt;a KBMS doomed to protect the EBITDA of some dumbass' DBaaS</span></span>
 <span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="in">&gt;You either die an autist, or live long enough to see yourself become the normie.</span></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

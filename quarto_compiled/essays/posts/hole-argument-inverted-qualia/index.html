@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -343,7 +344,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -832,7 +834,7 @@ C(I) = \sum_{i=1}^3 (x_i - x_0x_{i, 0}) C(P_i)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Technically
+<span class="screen-reader-only">Note</span>Technically
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -919,7 +921,7 @@ C_{\text{CIE 1931}}(I) := \left(\int I(\lambda) \bar r(\lambda) d\lambda , \int 
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Conjecture: perceived lightness and hues are totally geodesic foliations
+<span class="screen-reader-only">Note</span>Conjecture: perceived lightness and hues are totally geodesic foliations
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -955,7 +957,7 @@ Conjecture: perceived lightness and hues are totally geodesic foliations
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Conjecture: color space is not conformally flat
+<span class="screen-reader-only">Note</span>Conjecture: color space is not conformally flat
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -994,7 +996,7 @@ Conjecture: color space is not conformally flat
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Beyond Riemannian geometry
+<span class="screen-reader-only">Note</span>Beyond Riemannian geometry
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1013,12 +1015,12 @@ Beyond Riemannian geometry
 <p>The hard problem is the easy problem, but with something extra that seems impossible to even fit into a scientific system. What that <em>something extra</em> is, philosophers are unable to say, but they typically give it the name of “qualia”, “experience”, “phenomenal awareness”, etc.</p>
 <blockquote class="blockquote">
 <p>What makes the hard problem hard and almost unique is that it goes beyond problems about the performance of functions. To see this, note that even when we have explained the performance of all the cognitive and behavioral functions in the vicinity of experience—perceptual discrimination, categorization, internal access, verbal report–there may still remain a further unanswered question: <em>Why is the performance of these functions accompanied by experience?</em></p>
-<p><span class="citation" data-cites="chalmersFacingProblemConsciousness1995">(<a href="#ref-chalmersFacingProblemConsciousness1995" role="doc-biblioref">D. J. Chalmers 1995</a>)</span></p>
+<p><span class="citation" data-cites="chalmersFacingProblemConsciousness1995">(<a href="#ref-chalmersFacingProblemConsciousness1995" role="doc-biblioref">Chalmers 1995</a>)</span></p>
 </blockquote>
 <p>While decades of science have made good progress on the easy problem, centuries of philosophical disputations have not made progress on the hard problem. To bypass the impasse, Chalmers proposed the meta problem: Why is the hard problem a problem?</p>
 <blockquote class="blockquote">
 <p>What exactly are the problem data that need explaining? They can be construed as verbal reports (my saying ‘Consciousness is hard to explain’), as judgments (my forming the judgment that consciousness is hard to explain), or as dispositions to make these reports and judgments. Verbal reports are perhaps the most objective data here, but they are also a relatively superficial expression of an underlying state that is really what we want to explain. So I will generally focus on dispositions to make verbal reports and judgments as what we want to explain.</p>
-<p><span class="citation" data-cites="chalmersMetaproblemConsciousness2018">(<a href="#ref-chalmersMetaproblemConsciousness2018" role="doc-biblioref">D. Chalmers 2018</a>)</span></p>
+<p><span class="citation" data-cites="chalmersMetaproblemConsciousness2018">(<a href="#ref-chalmersMetaproblemConsciousness2018" role="doc-biblioref">Chalmers 2018</a>)</span></p>
 </blockquote>
 <p>The easy problem of consciousness, being part of the domain of science, excited little philosophical attention, while the hard and the meta problems excited a vast discourse. It is not within my power to review the literature, though it might be within my power to solve them.</p>
 <p>Let’s consider an analogy. The easy problem of biology would be: How does biological machines work? The hard problem: Why is the performance of these functions accompanied by <em>life</em>? The meta problem: What kind of cognition do people have, such that they can see a machine performing all the motions of life, and yet still call it “lifeless”? This analogy was considered by Dennett and rejected by Chalmers as a disanalogy. <span class="citation" data-cites="garrettWhatHistoryVitalism2006">(<a href="#ref-garrettWhatHistoryVitalism2006" role="doc-biblioref">Garrett 2006</a>)</span></p>
@@ -1176,7 +1178,7 @@ Beyond Riemannian geometry
 <p>The above, I hope, constitutes a good argument for dissolving the hard problem of consciousness as a pseudoproblem, much as the hole argument of general relativity is dissolved as a pseudoproblem. However, even if the hard problem resists philosophical dissolution by the gauge freedom argument, it might still be dissolved practically, since the meta problem has a purely material basis, and thus cannot resist materialist invasions in practice, because <a href="https://en.wikipedia.org/wiki/Damn_the_torpedoes">damn the metaphysics</a>.</p>
 <section id="dual-process-theory" class="level3">
 <h3 class="anchored" data-anchor-id="dual-process-theory">Dual-process theory</h3>
-<p>While some argue that the meta problem is just the hard problem in disguise, and therefore is not solvable by purely materialist methods, the opinion seems to be a minority. In the paper that proposed it <span class="citation" data-cites="chalmersMetaproblemConsciousness2018">(<a href="#ref-chalmersMetaproblemConsciousness2018" role="doc-biblioref">D. Chalmers 2018</a>)</span>, Chalmers discussed no less than 12 possible solutions to the meta problem that are within the materialist paradigm of modern science. Here I describe one that gives a flavor of how things might go.</p>
+<p>While some argue that the meta problem is just the hard problem in disguise, and therefore is not solvable by purely materialist methods, the opinion seems to be a minority. In the paper that proposed it <span class="citation" data-cites="chalmersMetaproblemConsciousness2018">(<a href="#ref-chalmersMetaproblemConsciousness2018" role="doc-biblioref">Chalmers 2018</a>)</span>, Chalmers discussed no less than 12 possible solutions to the meta problem that are within the materialist paradigm of modern science. Here I describe one that gives a flavor of how things might go.</p>
 <p>In cognitive psychology, there are many dual-process theories for explaining many cognitive processes. A theory is a dual-process theory if it follows the dual-process template. That is, if it models a cognitive process with an algorithm that has two parts, termed System 1 and System 2. System 1 is characterized by automatic, fast, and intuitive processing, while System 2 is deliberative, slower, and more analytical.</p>
 <p><span class="citation" data-cites="fialaPsychologicalOriginsDualism2012">(<a href="#ref-fialaPsychologicalOriginsDualism2012" role="doc-biblioref">Fiala, Arico, and Nichols 2012</a>)</span> proposed a dual-process theory for the meta problem of consciousness. According to them, people recognize something as an agent or not by a dual process. This is evolutionarily important for ancestral humans, because detecting whether that shaking in the grass is caused by an animal or not could be a life-and-death decision.</p>
 <p>System 1 for detecting agency uses the following heuristics: eye-like shapes on a head-like bump, unpredictable environmental reactions, and self-initiated movement beyond mere inertia. System 2 for detecting agency involves rational deliberation, theory application, and conscious reasoning. These processes are engaged when evaluating complex concepts, such as brain-based theories of consciousness.</p>
@@ -1210,10 +1212,10 @@ Garbage time is running out.<br>
 Can what is playing you make it to level-2?</p>
 <p>— <a href="http://www.ccru.net/swarm1/1_melt.htm">Nick Land, <em>Meltdown</em></a></p>
 </blockquote>
-<p>In 2009, Chalmers sent out questionnaires to some fellow professional philosophers – largely analytical – asking them their stance on each of over 30 major problems of philosophy. The results showed that the philosophers could hardly agree on anything, and only two problems enjoyed a rough consensus (over 70% agreement): most philosophers agreed that the external world exists, and that God does not. Chalmers noted that, though the arguments become progressively more complex and precise, the philosophers do not actually get convinced by them, and there has been little convergence towards any consensus over time, other than the question of God. <span class="citation" data-cites="chalmersWhyIsntThere2015">(<a href="#ref-chalmersWhyIsntThere2015" role="doc-biblioref">D. J. Chalmers 2015</a>)</span></p>
+<p>In 2009, Chalmers sent out questionnaires to some fellow professional philosophers – largely analytical – asking them their stance on each of over 30 major problems of philosophy. The results showed that the philosophers could hardly agree on anything, and only two problems enjoyed a rough consensus (over 70% agreement): most philosophers agreed that the external world exists, and that God does not. Chalmers noted that, though the arguments become progressively more complex and precise, the philosophers do not actually get convinced by them, and there has been little convergence towards any consensus over time, other than the question of God. <span class="citation" data-cites="chalmersWhyIsntThere2015">(<a href="#ref-chalmersWhyIsntThere2015" role="doc-biblioref">Chalmers 2015</a>)</span></p>
 <blockquote class="blockquote">
 <p>… none of these methods have led to recent convergence on answers to the big questions of philosophy. In the wake of each of these methods, philosophical disagreement is as rife as it ever was. Even within a tradition, there are few cases where the big questions are regarded as settled. Instead, these methods have led us again to more sophisticated versions of old disagreements.</p>
-<p><span class="citation" data-cites="chalmersWhyIsntThere2015">(<a href="#ref-chalmersWhyIsntThere2015" role="doc-biblioref">D. J. Chalmers 2015</a>)</span></p>
+<p><span class="citation" data-cites="chalmersWhyIsntThere2015">(<a href="#ref-chalmersWhyIsntThere2015" role="doc-biblioref">Chalmers 2015</a>)</span></p>
 </blockquote>
 <p>While the existence of the external world had always commanded a near-consensus, the question of God is interesting, as it has a dramatic and unidirectional change in opinions, from almost total consensus on the existence of God, to 73% consensus on His nonexistence. This is an example of historical change in the meta problem of theology.</p>
 <p>I consider the meta problem of consciousness as an example of “philosophy with a deadline” <span class="citation" data-cites="bostromSuperintelligencePathsDangers2014">(<a href="#ref-bostromSuperintelligencePathsDangers2014" role="doc-biblioref">Bostrom 2014, chap. 15</a>)</span>. Traditionally, philosophy is a rather glacial activity,<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> a great conversation down the ages. It was simply assumed that, barring some kind of human extinction event, there has been and will always be time to think things through. However, if the meta problem is indeed scientifically explanable, then it is exposed to <em>technological intervention</em>, because if the meta problem can be naturalized in theory, then it will be naturalized in practice.</p>
@@ -1222,7 +1224,7 @@ Can what is playing you make it to level-2?</p>
 <p>This might be too abstract, so consider <span class="citation" data-cites="chiangWhatsExpectedUs2005">(<a href="#ref-chiangWhatsExpectedUs2005" role="doc-biblioref">Chiang 2005</a>)</span>, a sci-fi story that sketches out just such a scenario concerning free will. The retrocausal device is a button that lights up exactly 1 second before it is pressed. A human that interacts with such a device undergoes permanent and irreversible change of its neural circuitry. Before interaction, a human is prone to say “I believe in free will”, and act as if it believes in free will, but afterwards, the human is prone to say and act as if not. The proliferation of the retrocausal device has created a dramatic shift in the problem-ecology of free will, from almost total consensus on free will, to almost total consensus on the opposite, more dramatic than the shift to atheism during the past few centuries.</p>
 <p>This “Gordian scenario” (cutting the Gordian knot of consciousness) seems patently conceivable. Indeed, it has been conceived previously, although in the opposite direction. In a seminal essay in analytical philosophy, <a href="https://en.wikipedia.org/wiki/Wilfrid_Sellars">Wilfrid Sellars</a> sketched out <em>The Myth of Jones</em> scenario <span class="citation" data-cites="sellarsEmpiricismPhilosophyMind1956">(<a href="#ref-sellarsEmpiricismPhilosophyMind1956" role="doc-biblioref">Sellars 1956</a>)</span>. In the myth, humans were originally without a theory of mind. They lived, worked, and spoke, but not of mind, consciousness, or qualia. Instead, they spoke only of skin, sky, and everything there is to see and touch. These ancient humans were continuously frustrated by the black box of other people, as the same person in the same situation might do a totally different thing, and a person, unprovoked, might suddenly stand up and run off on its own. Eventually, a genius named Jones made up a new theory – the theory of mind. According to the theory of mind, people not only speak with their mouths, but might also speak inaudibly “inside their heads”. People not only have skin and hair, but might also have invisible but real personalities. And so on. The effect is that, in the problem-ecology of primitive human society, theory of mind appeared as an adaptive solution.</p>
 <p>And the process might be reversed.</p>
-<p>In the <a href="https://plato.stanford.edu/entries/zombies/">p-zombie version of the conceivability argument</a>, by merely entertaining the possibility of p-zombies, one may be convinced that consciousness is non-physical. Similarly, by merely entertaining the possibility of the Gordian scenario, one may be convinced that qualia is debunked. This <em>debunking argument</em> may or may not be philosophically valid <span class="citation" data-cites="chalmersDebunkingArgumentsIllusionism2020">(<a href="#ref-chalmersDebunkingArgumentsIllusionism2020" role="doc-biblioref">D. Chalmers 2020</a>)</span>. However, its practical consequences do not hinge on its philosophical validity. Even if it has no philosophical import, it is still a future where consciousness is rendered <em>ineffectual</em>. It is entirely possible that God has existed and still exists, but if He does, He has certainly become rather hands-off recently.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+<p>In the <a href="https://plato.stanford.edu/entries/zombies/">p-zombie version of the conceivability argument</a>, by merely entertaining the possibility of p-zombies, one may be convinced that consciousness is non-physical. Similarly, by merely entertaining the possibility of the Gordian scenario, one may be convinced that qualia is debunked. This <em>debunking argument</em> may or may not be philosophically valid <span class="citation" data-cites="chalmersDebunkingArgumentsIllusionism2020">(<a href="#ref-chalmersDebunkingArgumentsIllusionism2020" role="doc-biblioref">Chalmers 2020</a>)</span>. However, its practical consequences do not hinge on its philosophical validity. Even if it has no philosophical import, it is still a future where consciousness is rendered <em>ineffectual</em>. It is entirely possible that God has existed and still exists, but if He does, He has certainly become rather hands-off recently.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn13"><blockquote class="blockquote"><sup>13</sup>&nbsp;
 <p>故圣人云：“我无为，而民自化；我好静，而民自正；我无事，而民自富；我无欲，而民自朴。</p>
 </blockquote>
@@ -1251,22 +1253,22 @@ Buchsbaum, Gershon, A. Gottschalk, and Horace Basil Barlow. 1997. <span>“Trich
 Bujack, Roxana, Emily Teti, Jonah Miller, Elektra Caffrey, and Terece L. Turton. 2022. <span>“The Non-<span>Riemannian</span> Nature of Perceptual Color Space.”</span> <em>Proceedings of the National Academy of Sciences</em> 119 (18): e2119753119. <a href="https://doi.org/10.1073/pnas.2119753119">https://doi.org/10.1073/pnas.2119753119</a>.
 </div>
 <div id="ref-byrneInvertedQualia2004" class="csl-entry" role="listitem">
-Byrne, Alex. 2004. <span>“Inverted Qualia.”</span> <em>Stanford Encyclopedia of Philosophy</em>.
-</div>
-<div id="ref-chalmersMetaproblemConsciousness2018" class="csl-entry" role="listitem">
-Chalmers, David. 2018. <span>“The Meta-Problem of Consciousness.”</span>
-</div>
-<div id="ref-chalmersDebunkingArgumentsIllusionism2020" class="csl-entry" role="listitem">
-———. 2020. <span>“Debunking Arguments for Illusionism about Consciousness.”</span> <em>Journal of Consciousness Studies</em> 27 (5-6): 258–81.
+Byrne, Alex. 2004. <span>“Inverted Qualia.”</span> In <em>Stanford <span>Encyclopedia</span> of <span>Philosophy</span></em>. <a href="https://plato.stanford.edu/Entries/qualia-inverted/">https://plato.stanford.edu/Entries/qualia-inverted/</a>.
 </div>
 <div id="ref-chalmersFacingProblemConsciousness1995" class="csl-entry" role="listitem">
-Chalmers, David J. 1995. <span>“Facing up to the Problem of Consciousness.”</span> <em>Journal of Consciousness Studies</em> 2 (3): 200–219.
+Chalmers, David John. 1995. <span>“Facing up to the Problem of Consciousness.”</span> <em>Journal of Consciousness Studies</em> 2 (3): 200–219. <a href="https://www.ingentaconnect.com/content/imp/jcs/1995/00000002/00000003/653">https://www.ingentaconnect.com/content/imp/jcs/1995/00000002/00000003/653</a>.
 </div>
 <div id="ref-chalmersWhyIsntThere2015" class="csl-entry" role="listitem">
 ———. 2015. <span>“Why <span>Isn</span>’t <span>There More Progress</span> in <span>Philosophy</span>?”</span> <em>Philosophy</em> 90 (1): 3–31. <a href="https://doi.org/10.1017/S0031819114000436">https://doi.org/10.1017/S0031819114000436</a>.
 </div>
+<div id="ref-chalmersMetaproblemConsciousness2018" class="csl-entry" role="listitem">
+———. 2018. <span>“The Meta-Problem of Consciousness.”</span>
+</div>
+<div id="ref-chalmersDebunkingArgumentsIllusionism2020" class="csl-entry" role="listitem">
+———. 2020. <span>“Debunking Arguments for Illusionism about Consciousness.”</span> <em>Journal of Consciousness Studies</em> 27 (5–6): 258–81. <a href="https://consc.net/papers/debunking.pdf">https://consc.net/papers/debunking.pdf</a>.
+</div>
 <div id="ref-chatterjeeIntersectionNaturalStructural2022" class="csl-entry" role="listitem">
-Chatterjee, Atrouli. 2022. <span>“At the <span>Intersection</span> of <span>Natural Structural Coloration</span> and <span>Bioengineering</span>.”</span> <em>Biomimetics</em> 7 (2): 66. <a href="https://doi.org/10.3390/biomimetics7020066">https://doi.org/10.3390/biomimetics7020066</a>.
+Chatterjee, Atrouli. 2022. <span>“At the <span>Intersection</span> of <span>Natural Structural Coloration</span> and <span>Bioengineering</span>.”</span> <em>Biomimetics</em> 7 (2, 2): 66. <a href="https://doi.org/10.3390/biomimetics7020066">https://doi.org/10.3390/biomimetics7020066</a>.
 </div>
 <div id="ref-chiangWhatsExpectedUs2005" class="csl-entry" role="listitem">
 Chiang, Ted. 2005. <span>“What’s Expected of Us.”</span> <em>Nature</em> 436 (7047): 150–50. <a href="https://doi.org/10.1038/436150a">https://doi.org/10.1038/436150a</a>.
@@ -1275,22 +1277,16 @@ Chiang, Ted. 2005. <span>“What’s Expected of Us.”</span> <em>Nature</em> 4
 Churchland, Paul M. 1981. <span>“Eliminative <span>Materialism</span> and the <span>Propositional Attitudes</span>.”</span> <em>The Journal of Philosophy</em> 78 (2): 67–90. <a href="https://doi.org/10.2307/2025900">https://doi.org/10.2307/2025900</a>.
 </div>
 <div id="ref-clarkeCollectionPapersWhich1717" class="csl-entry" role="listitem">
-Clarke, Samuel. 1717. <em>A <span>Collection</span> of <span>Papers</span>, <span>Which</span> Passed Between the Late <span>Learned Mr</span>. <span>Leibnitz</span>, and <span>Dr</span>. <span>Clarke</span>, <span>In</span> the <span>Years</span> 1715 and 1716</em>. Vol. 1. James Knapton, at the Crown in St. Paul’s Church-Yard.
+Clarke, Samuel. 1717. <em>A <span>Collection</span> of <span>Papers</span>, <span>Which</span> Passed Between the Late <span>Learned Mr</span>. <span>Leibnitz</span>, and <span>Dr</span>. <span>Clarke</span>, <span>In</span> the <span>Years</span> 1715 and 1716</em>. Vol. 1. James Knapton, at the Crown in St. Paul’s Church-Yard. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=_RUHAAAAQAAJ&amp;oi=fnd&amp;pg=PA2&amp;dq=Samuel+Clarke,+A+Collection+of+Papers,+Which+passed+between+the+late+Learned+Mr.+Leibnitz,+and+Dr.+Clarke,+In+the+Years+1715+and+1716+(London:+1717).&amp;ots=nRv4bJ0Uk3&amp;sig=Dp0XCWNuRWcpep7VvaNX8qgqS0k">https://books.google.com/books?hl=en&amp;lr=&amp;id=_RUHAAAAQAAJ&amp;oi=fnd&amp;pg=PA2&amp;dq=Samuel+Clarke,+A+Collection+of+Papers,+Which+passed+between+the+late+Learned+Mr.+Leibnitz,+and+Dr.+Clarke,+In+the+Years+1715+and+1716+(London:+1717).&amp;ots=nRv4bJ0Uk3&amp;sig=Dp0XCWNuRWcpep7VvaNX8qgqS0k</a>.
 </div>
 <div id="ref-cloneyChromatophoreOrgansReflector1983" class="csl-entry" role="listitem">
-Cloney, Richard A., and Steven L. Brocco. 1983. <span>“Chromatophore Organs, Reflector Cells, Iridocytes and Leucophores in Cephalopods.”</span> <em>American Zoologist</em> 23 (3): 581–92.
+Cloney, Richard A., and Steven L. Brocco. 1983. <span>“Chromatophore Organs, Reflector Cells, Iridocytes and Leucophores in Cephalopods.”</span> <em>American Zoologist</em> 23 (3): 581–92. <a href="https://academic.oup.com/icb/article-abstract/23/3/581/318965">https://academic.oup.com/icb/article-abstract/23/3/581/318965</a>.
 </div>
 <div id="ref-cossinsGroovyColor2013" class="csl-entry" role="listitem">
-Cossins, Dan. 2013. <span>“Groovy <span>Color</span>.”</span> <em>The Scientist Magazine</em>, July.
-</div>
-<div id="ref-dinverno2+2FormalismGeneral1984" class="csl-entry" role="listitem">
-d’Inverno, R. A. 1984. <span>“{2+2} <span>Formalism</span> in <span>General Relativity</span>.”</span> In <em>Problems of <span>Collapse</span> and <span>Numerical Relativity</span></em>, edited by Daniel Bancel and Monique Signore, 221–38. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-009-6460-0_16">https://doi.org/10.1007/978-94-009-6460-0_16</a>.
-</div>
-<div id="ref-dafonsecaDerivationHumanChromatic2016" class="csl-entry" role="listitem">
-da Fonseca, María, and Inés Samengo. 2016. <span>“Derivation of Human Chromatic Discrimination Ability from an Information-Theoretical Notion of Distance in Color Space.”</span> <em>Neural Computation</em> 28 (12): 2628–55.
+Cossins, Dan. 2013. <span>“Groovy <span>Color</span>.”</span> <em>The Scientist Magazine</em>, July 2013. <a href="https://www.the-scientist.com/groovy-color-39101">https://www.the-scientist.com/groovy-color-39101</a>.
 </div>
 <div id="ref-disalleSpaceTimeInertial2020" class="csl-entry" role="listitem">
-DiSalle, Robert. 2020. <span>“Space and <span>Time</span>: <span>Inertial Frames</span>.”</span> Edited by Edward N. Zalta. <em>The Stanford Encyclopedia of Philosophy</em>.
+DiSalle, Robert. 2020. <span>“Space and <span>Time</span>: <span>Inertial Frames</span>.”</span> In <em>The <span>Stanford Encyclopedia</span> of <span>Philosophy</span></em>, edited by Edward N. Zalta, Winter 2020. Metaphysics Research Lab, Stanford University. <a href="https://plato.stanford.edu/archives/win2020/entries/spacetime-iframes/">https://plato.stanford.edu/archives/win2020/entries/spacetime-iframes/</a>.
 </div>
 <div id="ref-dominyLiminalLightPrimate2020" class="csl-entry" role="listitem">
 Dominy, Nathaniel J., and Amanda D. Melin. 2020. <span>“Liminal <span>Light</span> and <span>Primate Evolution</span>.”</span> <em>Annual Review of Anthropology</em> 49 (1): 257–76. <a href="https://doi.org/10.1146/annurev-anthro-010220-075454">https://doi.org/10.1146/annurev-anthro-010220-075454</a>.
@@ -1308,10 +1304,13 @@ Firestone, Chaz. 2013. <span>“On the <span>Origin</span> and <span>Status</spa
 Firestone, Chaz, and Brian J. Scholl. 2014. <span>“<span>‘<span>Top-Down</span>’</span> <span>Effects Where None Should Be Found</span>: <span>The El Greco Fallacy</span> in <span>Perception Research</span>.”</span> <em>Psychological Science</em> 25 (1): 38–46. <a href="https://doi.org/10.1177/0956797613485092">https://doi.org/10.1177/0956797613485092</a>.
 </div>
 <div id="ref-firestoneCognitionDoesNot2016" class="csl-entry" role="listitem">
-———. 2016. <span>“Cognition Does Not Affect Perception: <span>Evaluating</span> the Evidence for <span>‘Top-down’</span> Effects.”</span> <em>Behavioral and Brain Sciences</em> 39: e229.
+———. 2016. <span>“Cognition Does Not Affect Perception: <span>Evaluating</span> the Evidence for <span>‘Top-down’</span> Effects.”</span> <em>Behavioral and Brain Sciences</em> 39: e229. <a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/cognition-does-not-affectperception-evaluating-the-evidence-for-topdown-effects/920E2AE74C642DD3CB3FA8160EA1D84A">https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/cognition-does-not-affectperception-evaluating-the-evidence-for-topdown-effects/920E2AE74C642DD3CB3FA8160EA1D84A</a>.
 </div>
 <div id="ref-fodorPsychosemanticsProblemMeaning1987" class="csl-entry" role="listitem">
 Fodor, Jerry A. 1987. <em>Psychosemantics: <span>The</span> Problem of Meaning in the Philosophy of Mind</em>. First Edition. Cambridge, Mass: MIT Press.
+</div>
+<div id="ref-dafonsecaDerivationHumanChromatic2016" class="csl-entry" role="listitem">
+Fonseca, María da, and Inés Samengo. 2016. <span>“Derivation of Human Chromatic Discrimination Ability from an Information-Theoretical Notion of Distance in Color Space.”</span> <em>Neural Computation</em> 28 (12): 2628–55. <a href="https://direct.mit.edu/neco/article-abstract/28/12/2628/8222">https://direct.mit.edu/neco/article-abstract/28/12/2628/8222</a>.
 </div>
 <div id="ref-garrettWhatHistoryVitalism2006" class="csl-entry" role="listitem">
 Garrett, Brian Jonathan. 2006. <span>“What the <span>History</span> of <span>Vitalism Teaches Us About Consciousness</span> and the <span>‘<span>Hard Problem</span>’</span>.”</span> <em>Philosophy and Phenomenological Research</em> 72 (3): 576–88. <a href="https://doi.org/10/d8gvtd">https://doi.org/10/d8gvtd</a>.
@@ -1320,61 +1319,64 @@ Garrett, Brian Jonathan. 2006. <span>“What the <span>History</span> of <span>V
 Halsey, Rita M., and A. Chapanis. 1951. <span>“On the <span>Number</span> of <span>Absolutely Identifiable Spectral Hues</span>*.”</span> <em>JOSA</em> 41 (12): 1057–58. <a href="https://doi.org/10.1364/JOSA.41.001057">https://doi.org/10.1364/JOSA.41.001057</a>.
 </div>
 <div id="ref-hatfieldSenseData2021" class="csl-entry" role="listitem">
-Hatfield, Gary. 2021. <span>“Sense <span>Data</span>.”</span> Edited by Edward N. Zalta. <em>The Stanford Encyclopedia of Philosophy</em>.
+Hatfield, Gary. 2021. <span>“Sense <span>Data</span>.”</span> In <em>The <span>Stanford Encyclopedia</span> of <span>Philosophy</span></em>, edited by Edward N. Zalta, Fall 2021. Metaphysics Research Lab, Stanford University. <a href="https://plato.stanford.edu/archives/fall2021/entries/sense-data/">https://plato.stanford.edu/archives/fall2021/entries/sense-data/</a>.
 </div>
 <div id="ref-hilbertColorInvertedSpectrum2000" class="csl-entry" role="listitem">
-Hilbert, David R., and Mark Eli Kalderon. 2000. <span>“Color and the Inverted Spectrum.”</span> <em>Color Perception: Philosophical, Psychological, Artistic, and Computational Perspectives</em> 9: 187–214.
+Hilbert, David R., and Mark Eli Kalderon. 2000. <span>“Color and the Inverted Spectrum.”</span> <em>Color Perception: Philosophical, Psychological, Artistic, and Computational Perspectives</em> 9: 187–214. <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=2c7b6f0b91b3a78da0370e54704dc77b6494f81c">https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=2c7b6f0b91b3a78da0370e54704dc77b6494f81c</a>.
 </div>
 <div id="ref-huntMeasuringColour2011" class="csl-entry" role="listitem">
 Hunt, R. W. G., and Michael Pointer. 2011. <em>Measuring Colour</em>. 4th ed. Wiley-<span>IS</span>&amp;<span>T</span> Series in Imaging Science and Technology. Chichester, West Sussex, U.K: Wiley.
+</div>
+<div id="ref-dinverno2+2FormalismGeneral1984" class="csl-entry" role="listitem">
+Inverno, R. A. d’. 1984. <span>“{2+2} <span>Formalism</span> in <span>General Relativity</span>.”</span> In <em>Problems of <span>Collapse</span> and <span>Numerical Relativity</span></em>, edited by Daniel Bancel and Monique Signore, 221–38. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-009-6460-0_16">https://doi.org/10.1007/978-94-009-6460-0_16</a>.
 </div>
 <div id="ref-jacobsComparativeColorVision1982" class="csl-entry" role="listitem">
 Jacobs, Gerald. 1982. <em>Comparative <span>Color Vision</span></em>. 1st edition. New York: Academic Press.
 </div>
 <div id="ref-johnsonTotallyGeodesicFoliations1980" class="csl-entry" role="listitem">
-Johnson, David L., and Lee B. Whitt. 1980. <span>“Totally Geodesic Foliations.”</span> <em>Journal of Differential Geometry</em> 15 (2): 225–35.
+Johnson, David L., and Lee B. Whitt. 1980. <span>“Totally Geodesic Foliations.”</span> <em>Journal of Differential Geometry</em> 15 (2): 225–35. <a href="https://projecteuclid.org/journalArticle/Download?urlid=10.4310%2Fjdg%2F1214435492">https://projecteuclid.org/journalArticle/Download?urlid=10.4310%2Fjdg%2F1214435492</a>.
 </div>
 <div id="ref-kleinlogelSecretWorldShrimps2008" class="csl-entry" role="listitem">
-Kleinlogel, Sonja, and Andrew G. White. 2008. <span>“The Secret World of Shrimps: Polarisation Vision at Its Best.”</span> <em>PLoS One</em> 3 (5): e2190.
+Kleinlogel, Sonja, and Andrew G. White. 2008. <span>“The Secret World of Shrimps: Polarisation Vision at Its Best.”</span> <em>PLoS One</em> 3 (5): e2190. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0002190">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0002190</a>.
 </div>
 <div id="ref-macadamGeometryColorSpace1944" class="csl-entry" role="listitem">
 MacAdam, David L. 1944. <span>“On the Geometry of Color Space.”</span> <em>Journal of the Franklin Institute</em> 238 (3): 195–210. <a href="https://doi.org/10.1016/S0016-0032(44)90800-8">https://doi.org/10.1016/S0016-0032(44)90800-8</a>.
 </div>
 <div id="ref-macevoyGeometryColorPerception2015" class="csl-entry" role="listitem">
-MacEvoy, Bruce. 2015. <span>“The Geometry of Color Perception.”</span> <em>Handprint</em>. https://www.handprint.com/HP/WCL/color2.html.
+MacEvoy, Bruce. 2015. <span>“The Geometry of Color Perception.”</span> handprint. 2015. <a href="https://www.handprint.com/HP/WCL/color2.html">https://www.handprint.com/HP/WCL/color2.html</a>.
 </div>
 <div id="ref-metzingerBeingNoOne2004" class="csl-entry" role="listitem">
 Metzinger, Thomas. 2004. <em>Being No One: The Self-Model Theory of Subjectivity</em>. 1. paperback ed. A <span>Bradford</span> Book. Cambridge, Mass.: MIT Press.
 </div>
 <div id="ref-NeuronFiringRates2015" class="csl-entry" role="listitem">
-<span>“Neuron Firing Rates in Humans.”</span> 2015. <em>AI Impacts</em>. https://aiimpacts.org/rate-of-neuron-firing/.
+<span>“Neuron Firing Rates in Humans.”</span> 2015. AI Impacts. April 14, 2015. <a href="https://aiimpacts.org/rate-of-neuron-firing/">https://aiimpacts.org/rate-of-neuron-firing/</a>.
 </div>
 <div id="ref-niallErwinSchrodingersColor2017" class="csl-entry" role="listitem">
-Niall, Keith K., ed. 2017. <em>Erwin <span class="nocase">Schr<span class="nocase">ö</span>dinger</span>’s <span>Color Theory</span>: <span>Translated</span> with <span>Modern Commentary</span></em>. 1st ed. 2017. Cham: Springer International Publishing : Imprint: Springer. <a href="https://doi.org/10.1007/978-3-319-64621-3">https://doi.org/10.1007/978-3-319-64621-3</a>.
+Niall, Keith K., ed. 2017. <em>Erwin <span>Schrödinger</span>’s <span>Color Theory</span>: <span>Translated</span> with <span>Modern Commentary</span></em>. 1st ed. 2017. Cham: Springer International Publishing : Imprint: Springer. <a href="https://doi.org/10.1007/978-3-319-64621-3">https://doi.org/10.1007/978-3-319-64621-3</a>.
 </div>
 <div id="ref-nortonHoleArgument1999" class="csl-entry" role="listitem">
-Norton, John D., Oliver Pooley, and James Read. 1999. <span>“The <span>Hole Argument</span>.”</span> <em>Stanford Encyclopedia of Philosophy</em>, February.
+Norton, John D., Oliver Pooley, and James Read. 1999. <span>“The <span>Hole Argument</span>.”</span> In <em>Stanford <span>Encyclopedia</span> of <span>Philosophy</span></em>. <a href="https://plato.stanford.edu/ENTRIES/spacetime-holearg/">https://plato.stanford.edu/ENTRIES/spacetime-holearg/</a>.
 </div>
 <div id="ref-pavlidisBriefHistoryColour2021" class="csl-entry" role="listitem">
 Pavlidis, George. 2021. <em>A <span>Brief History</span> of <span>Colour Theory</span>: <span>Foundations</span> of <span>Colour Science</span></em>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-87771-2">https://doi.org/10.1007/978-3-030-87771-2</a>.
 </div>
 <div id="ref-riemannHypothesesWhichLie2016" class="csl-entry" role="listitem">
-Riemann, Bernhard. 2016. <em>On the <span>Hypotheses Which Lie</span> at the <span>Bases</span> of <span>Geometry</span></em>. Edited by Jürgen Jost. 1st ed. 2016. Classic <span>Texts</span> in the <span>Sciences</span>. Cham: Springer International Publishing : Imprint: Birkh<span>ä</span>user. <a href="https://doi.org/10.1007/978-3-319-26042-6">https://doi.org/10.1007/978-3-319-26042-6</a>.
+Riemann, Bernhard. 2016. <em>On the <span>Hypotheses Which Lie</span> at the <span>Bases</span> of <span>Geometry</span></em>. Edited by Jürgen Jost. 1st ed. 2016. Classic <span>Texts</span> in the <span>Sciences</span>. Cham: Springer International Publishing : Imprint: Birkhäuser. <a href="https://doi.org/10.1007/978-3-319-26042-6">https://doi.org/10.1007/978-3-319-26042-6</a>.
 </div>
 <div id="ref-rodenPosthumanLifePhilosophy2015" class="csl-entry" role="listitem">
 Roden, David. 2015. <em>Posthuman Life: Philosophy at the Edge of the Human</em>. London: Routledge.
 </div>
 <div id="ref-rynasiewiczSimultaneityConventionGauge2012" class="csl-entry" role="listitem">
-Rynasiewicz, Robert. 2012. <span>“Simultaneity, Convention, and Gauge Freedom.”</span> <em>Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics</em> 43 (2): 90–94.
+Rynasiewicz, Robert. 2012. <span>“Simultaneity, Convention, and Gauge Freedom.”</span> <em>Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics</em> 43 (2): 90–94. <a href="https://www.sciencedirect.com/science/article/pii/S1355219812000068">https://www.sciencedirect.com/science/article/pii/S1355219812000068</a>.
 </div>
 <div id="ref-schrodingerGrundlinienTheorieFarbenmetrik1920" class="csl-entry" role="listitem">
-Schrödinger, Erwin. 1920. <span>“Grundlinien Einer Theorie Der Farbenmetrik Im Tagessehen.”</span> <em>Annalen Der Physik</em> 368 (21): 427–56.
+Schrödinger, Erwin. 1920. <span>“Grundlinien Einer Theorie Der Farbenmetrik Im Tagessehen.”</span> <em>Annalen Der Physik</em> 368 (21): 427–56. <a href="https://scholar.archive.org/work/4scmjsmbija4neicwmcgq7ieei/access/ia_file/crossref-pre-1923-scholarly-works/10.1002%252Fandp.19183622102.zip/10.1002%252Fandp.19203682103.pdf">https://scholar.archive.org/work/4scmjsmbija4neicwmcgq7ieei/access/ia_file/crossref-pre-1923-scholarly-works/10.1002%252Fandp.19183622102.zip/10.1002%252Fandp.19203682103.pdf</a>.
 </div>
 <div id="ref-sellarsEmpiricismPhilosophyMind1956" class="csl-entry" role="listitem">
 Sellars, Wilfrid. 1956. <span>“Empiricism and the <span>Philosophy</span> of <span>Mind</span>.”</span> <em>Minnesota Studies in the Philosophy of Science</em> 1 (19): 253–329.
 </div>
 <div id="ref-snobelenApocalypticThemesIsaac2020" class="csl-entry" role="listitem">
-Snobelen, Stephen D. 2020. <span>“Apocalyptic Themes in <span>Isaac Newton</span>’s Astronomical Physics.”</span> In <em>Intersections of <span>Religion</span> and <span>Astronomy</span></em>, 95–104. Routledge.
+Snobelen, Stephen D. 2020. <span>“Apocalyptic Themes in <span>Isaac Newton</span>’s Astronomical Physics.”</span> In <em>Intersections of <span>Religion</span> and <span>Astronomy</span></em>, 95–104. Routledge. <a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9780367407995-12/apocalyptic-themes-isaac-newton-astronomical-physics-1-stephen-snobelen">https://www.taylorfrancis.com/chapters/edit/10.4324/9780367407995-12/apocalyptic-themes-isaac-newton-astronomical-physics-1-stephen-snobelen</a>.
 </div>
 <div id="ref-stachelHoleArgumentPhysical2014" class="csl-entry" role="listitem">
 Stachel, John. 2014. <span>“The <span>Hole Argument</span> and <span>Some Physical</span> and <span>Philosophical Implications</span>.”</span> <em>Living Reviews in Relativity</em> 17 (1): 1. <a href="https://doi.org/10.12942/lrr-2014-1">https://doi.org/10.12942/lrr-2014-1</a>.
@@ -1387,73 +1389,39 @@ Wyszecki, Günter, and W. S. Stiles. 1982. <em>Color Science: Concepts and Metho
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1518,13 +1486,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1917,7 +1886,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Hole Argument and Inverted Qualia"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-06-18"</span></span>
@@ -2598,7 +2567,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a>It is as if the material world has again stirred awake from a bad dream of consciousness into the second eternal night, while the fate of the soul world becomes even more immaterial. Perhaps they will continue to experience the qualia of saying "I don't exist" forever (a Cartesian nightmare), or perhaps they will bud off into a world of pure qualias (a Berkeleyan dream). No matter what, it seems that no matter how much consciousness tries to claim its (partial) priority or autonomy over the material, the Gordian scenario is an existential threat. Even immortals can't subsist on pure aether.</span>
 <span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a><span class="ot">[^souls-are-real]: </span>It is just convenient to use the word "soul", as so much talk of non-reductive consciousness resembles the soul in its mysterious resistance to reduction to mere materialism.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a><span class="ot">[^souls-are-real]: </span>It is just convenient to use the word "soul", as so much talk of non-reductive consciousness resembles the soul in its mysterious resistance to reduction to mere materialism.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

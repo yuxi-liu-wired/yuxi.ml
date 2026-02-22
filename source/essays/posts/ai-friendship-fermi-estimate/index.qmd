@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "The economics of AI friendship"
 author: "Yuxi Liu"
 date: "2025-10-2?"

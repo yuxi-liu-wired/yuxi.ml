@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -640,12 +642,12 @@ f(x) = 1 - a_2 x^2 + a_4 x^4 + \dots
 <source src="figure/Logistic_scaling_with_varying_scaling_factor.webm" type="video/webm">
 </video>
 <div class="callout callout-style-default callout-note callout-titled" title="Solving the equation at order 2">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solving the equation at order 2
+<span class="screen-reader-only">Note</span>Solving the equation at order 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -706,12 +708,12 @@ f_0 = 1-(a_2^* + \Delta)x^2, \quad f_1 = 1-(a_2^* + \delta\Delta)x^2, \quad f_1 
 </div>
 <p><span class="math inline">\(\delta\)</span> is called <strong>Feigenbaum’s first constant</strong>, and <span class="math inline">\(\alpha\)</span> is <strong>Feigenbaum’s second constant</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Solving the equation at order 4">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solving the equation at order 4
+<span class="screen-reader-only">Note</span>Solving the equation at order 4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -980,12 +982,12 @@ Z = \sum_s e^{-H}, \quad H = -J \sum_{i, j \text{ are neighbors}} s_i s_j
 -H' = J_{nn} \sum_{i, j \text{ are nn}} s_i s_j + J_{nnn} \sum_{i, j \text{ are nnn}} s_i s_j + J_{\square} \sum_{i, j, k, l \text{ are }\square} s_i s_j s_k s_l
 \]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Exact solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exact solution
+<span class="screen-reader-only">Note</span>Exact solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1108,12 +1110,12 @@ X_1, \frac{X_1 + X_2}{\sqrt 2}, \frac{\frac{X_1 + X_2}{\sqrt 2} + \frac{X_3 + X_
 <p><span class="math display">\[\tilde{\rho'}(k) = \tilde\rho(k/\sqrt 2)^2\]</span></p>
 <p>Thus, we define an operator by <span class="math inline">\(R[\tilde f](k) = \tilde f(k/\sqrt 2)^2\)</span>, and the problem of central limit theorem is finding the fixed points of <span class="math inline">\(R\)</span> and their local stability.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="derivation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-derivation
+<span class="screen-reader-only">Note</span>derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1152,12 +1154,12 @@ He_0 = 1, He_1 = x, He_2 = x^2 - 1, He_3 = x^3 - 3x, \dots
 <p>where</p>
 <p><span class="math display">\[e^{\frac 12 k^2}\tilde \rho(k) = 1 + a_3 (ik)^3+ a_4 (ik)^4 + \cdots\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="example: Bernoulli variable">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-example: Bernoulli variable
+<span class="screen-reader-only">Note</span>example: Bernoulli variable
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1204,12 +1206,12 @@ a_4 = -\frac{1}{12}, a_6 = \frac{1}{45}, \dots
 <li><span class="math inline">\(a_n, b_n\)</span> are two sequences of real numbers, such that <span class="math inline">\(\frac{S_n - b_n}{a_n}\)</span> converges in distribution to a nontrivial random variable <span class="math inline">\(Z\)</span> with characteristic function <span class="math inline">\(\phi(t)\)</span>.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled" title="Deriving the field equation by RN">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Deriving the field equation by RN
+<span class="screen-reader-only">Note</span>Deriving the field equation by RN
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1242,12 +1244,12 @@ Deriving the field equation by RN
 <p>from which we can perform another coarse-graining by a factor of <span class="math inline">\(100\)</span>, ending up with a coarse-grain by a factor of <span class="math inline">\(400\)</span>. Now, if the system has a nontrivial scaling limit, then this should give us the same result as doing a coarse-graining by <span class="math inline">\(5\)</span>, then by <span class="math inline">\(80\)</span>, or first <span class="math inline">\(6\)</span> then <span class="math inline">\(67\)</span>. This is the RN argument we used here.</p>
 <p>Now, since <span class="math inline">\(S_n \approx a_n Z + b_n\)</span>, we see that <span class="math inline">\(b_n\)</span> can be thought of as the coarse-grained height of the height field, and <span class="math inline">\(a_n\)</span> as the coarse-grained jaggedness of the height-field. Then, the field equation describes how the two numbers vary according to <span class="math inline">\(n\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Exercise: extreme value distribution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise: extreme value distribution
+<span class="screen-reader-only">Note</span>Exercise: extreme value distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1733,31 +1735,31 @@ Amir, Ariel. 2020. <span>“An Elementary Renormalization-Group Approach to the 
 Anderson, Philip W. 1972. <span>“More Is Different: Broken Symmetry and the Nature of the Hierarchical Structure of Science.”</span> <em>Science</em> 177 (4047): 393–96. <a href="https://doi.org/10.1126/science.177.4047.393">https://doi.org/10.1126/science.177.4047.393</a>.
 </div>
 <div id="ref-bakHowNatureWorks1996" class="csl-entry" role="listitem">
-Bak, Per. 1996. <em>How <span>Nature Works</span>: The <span>Science</span> of <span>Self-Organized Criticality</span>.</em> New York, NY: Springer.
+Bak, Per. 1996. <em>How <span>Nature Works</span>: The <span>Science</span> of <span>Self-Organized Criticality</span>.</em> New York, NY: Springer. <a href="https://public.ebookcentral.proquest.com/choice/publicfullrecord.aspx?p=5555394">https://public.ebookcentral.proquest.com/choice/publicfullrecord.aspx?p=5555394</a>.
 </div>
 <div id="ref-bakSelforganizedCriticalityExplanation1987" class="csl-entry" role="listitem">
 Bak, Per, Chao Tang, and Kurt Wiesenfeld. 1987. <span>“Self-Organized Criticality: <span>An</span> Explanation of the 1/f Noise.”</span> <em>Physical Review Letters</em> 59 (4): 381–84. <a href="https://doi.org/10/bh9v3d">https://doi.org/10/bh9v3d</a>.
 </div>
 <div id="ref-battermanUniversalityRGExplanations2019" class="csl-entry" role="listitem">
-Batterman, Robert W. 2019. <span>“Universality and <span>RG</span> Explanations.”</span> <em>Perspectives on Science</em> 27 (1): 26–47.
+Batterman, Robert W. 2019. <span>“Universality and <span>RG</span> Explanations.”</span> <em>Perspectives on Science</em> 27 (1): 26–47. <a href="https://direct.mit.edu/posc/article-abstract/27/1/26/15429">https://direct.mit.edu/posc/article-abstract/27/1/26/15429</a>.
 </div>
 <div id="ref-bernLoopsTreesSearch2012" class="csl-entry" role="listitem">
 Bern, Zvi, Lance J. Dixon, and David A. Kosower. 2012. <span>“Loops, Trees and the Search for New Physics.”</span> <em>Scientific American</em> 306 (5): 34–41. <a href="https://www.jstor.org/stable/26014420">https://www.jstor.org/stable/26014420</a>.
 </div>
 <div id="ref-brooksElephantsDontPlay1990" class="csl-entry" role="listitem">
-Brooks, Rodney A. 1990. <span>“Elephants Don’t Play Chess.”</span> <em>Robotics and Autonomous Systems</em> 6 (1-2): 3–15. <a href="https://doi.org/10/bk6">https://doi.org/10/bk6</a>.
+Brooks, Rodney A. 1990. <span>“Elephants Don’t Play Chess.”</span> <em>Robotics and Autonomous Systems</em> 6 (1–2): 3–15. <a href="https://doi.org/10/bk6">https://doi.org/10/bk6</a>.
 </div>
 <div id="ref-burkhardtRealSpaceRenormalization1982" class="csl-entry" role="listitem">
 Burkhardt, T. W., and J. M. J. van Leeuwen, eds. 1982. <em>Real-<span>Space Renormalization</span></em>. Springer.
 </div>
 <div id="ref-dombCriticalPhenomenaBrief1985" class="csl-entry" role="listitem">
-Domb, C. 1985. <span>“Critical Phenomena: <span>A</span> Brief Historical Survey.”</span> <em>Contemporary Physics</em> 26 (1): 49–72. <a href="https://doi.org/10.1080/00107518508210738">https://doi.org/10.1080/00107518508210738</a>.
+Domb, Cyril. 1985. <span>“Critical Phenomena: <span>A</span> Brief Historical Survey.”</span> <em>Contemporary Physics</em> 26 (1): 49–72. <a href="https://doi.org/10.1080/00107518508210738">https://doi.org/10.1080/00107518508210738</a>.
 </div>
 <div id="ref-evangelouAnatomyRetinaOptic2016" class="csl-entry" role="listitem">
 Evangelou, Nikos, and Omar S. M. Alrawashdeh. 2016. <span>“Anatomy of the <span>Retina</span> and the <span>Optic Nerve</span>.”</span> In <em>Optical <span>Coherence Tomography</span> in <span>Multiple Sclerosis</span>: <span>Clinical Applications</span></em>, edited by Axel Petzold, 3–19. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-20970-8_2">https://doi.org/10.1007/978-3-319-20970-8_2</a>.
 </div>
 <div id="ref-fisherScalingUniversalityRenormalization1983" class="csl-entry" role="listitem">
-Fisher, Michael E. 1983. <span>“Scaling, Universality and Renormalization Group Theory.”</span> <em>Critical Phenomena (Stellenbosch 1982)</em>, 1–139.
+Fisher, Michael E. 1983. <span>“Scaling, Universality and Renormalization Group Theory.”</span> <em>Critical Phenomena (Stellenbosch 1982)</em>, 1–139. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=g7glCQAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=Scaling,+Universality+and+Renormalization+Group+Theory&amp;ots=f_pqWPfi-N&amp;sig=xsx4lUrrioVQCL1H0g_WQ7eeRmI">https://books.google.com/books?hl=en&amp;lr=&amp;id=g7glCQAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=Scaling,+Universality+and+Renormalization+Group+Theory&amp;ots=f_pqWPfi-N&amp;sig=xsx4lUrrioVQCL1H0g_WQ7eeRmI</a>.
 </div>
 <div id="ref-fisherRenormalizationGroupTheory1998" class="csl-entry" role="listitem">
 ———. 1998. <span>“Renormalization Group Theory: <span>Its</span> Basis and Formulation in Statistical Physics.”</span> <em>Reviews of Modern Physics</em> 70 (2): 653–81. <a href="https://doi.org/10.1103/RevModPhys.70.653">https://doi.org/10.1103/RevModPhys.70.653</a>.
@@ -1781,22 +1783,22 @@ Kadanoff, Leo P. 1999a. <em>From Order to Chaos <span>II</span>: <span>Essays</s
 ———. 1999b. <em>Statistical Physics: Statics, Dynamics and Renormalization</em>. Repr. Singapore: World Scientific.
 </div>
 <div id="ref-loweThingsWontWork2013" class="csl-entry" role="listitem">
-Lowe, Derek. 2013. <span>“Things <span>I Won</span>’t <span>Work With</span>: <span>Dimethylcadmium</span>.”</span> Blog. <em>In the Pipeline</em>. https://www.science.org/content/blog-post/things-i-won-t-work-dimethylcadmium.
+Lowe, Derek. 2013. <span>“Things <span>I Won</span>’t <span>Work With</span>: <span>Dimethylcadmium</span>.”</span> Blog. In the pipeline. May 8, 2013. <a href="https://www.science.org/content/blog-post/things-i-won-t-work-dimethylcadmium">https://www.science.org/content/blog-post/things-i-won-t-work-dimethylcadmium</a>.
 </div>
 <div id="ref-marisTeachingRenormalizationGroup1978" class="csl-entry" role="listitem">
-Maris, Humphrey J., and Leo P. Kadanoff. 1978. <span>“Teaching the Renormalization Group.”</span> <em>American Journal of Physics</em> 46 (6): 652–57.
+Maris, Humphrey J., and Leo P. Kadanoff. 1978. <span>“Teaching the Renormalization Group.”</span> <em>American Journal of Physics</em> 46 (6): 652–57. <a href="https://faculty.kfupm.edu.sa/phys/imnasser/Phase_transition/Maris_Kadanoff.pdf">https://faculty.kfupm.edu.sa/phys/imnasser/Phase_transition/Maris_Kadanoff.pdf</a>.
 </div>
 <div id="ref-mehtaExactMappingVariational2014" class="csl-entry" role="listitem">
-Mehta, Pankaj, and David J. Schwab. 2014. <span>“An Exact Mapping Between the <span>Variational Renormalization Group</span> and <span>Deep Learning</span>.”</span> arXiv. <a href="https://arxiv.org/abs/1410.3831">https://arxiv.org/abs/1410.3831</a>.
+Mehta, Pankaj, and David J. Schwab. 2014. <span>“An Exact Mapping Between the <span>Variational Renormalization Group</span> and <span>Deep Learning</span>.”</span> October 14, 2014. <a href="http://arxiv.org/abs/1410.3831">http://arxiv.org/abs/1410.3831</a>.
 </div>
 <div id="ref-peierlsIsingsModelFerromagnetism1936" class="csl-entry" role="listitem">
-Peierls, Rudolf. 1936. <span>“On <span>Ising</span>’s Model of Ferromagnetism.”</span> In <em>Mathematical <span>Proceedings</span> of the <span>Cambridge Philosophical Society</span></em>, 32:477–81. Cambridge University Press.
+Peierls, Rudolf. 1936. <span>“On <span>Ising</span>’s Model of Ferromagnetism.”</span> In <em>Mathematical <span>Proceedings</span> of the <span>Cambridge Philosophical Society</span></em>, 32:477–81. 3. Cambridge University Press. <a href="https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/on-isings-model-of-ferromagnetism/C0584C5711BC3D25830B63A4C2F09609">https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/on-isings-model-of-ferromagnetism/C0584C5711BC3D25830B63A4C2F09609</a>.
 </div>
 <div id="ref-peskinIntroductionQuantumField1995" class="csl-entry" role="listitem">
 Peskin, Michael Edward, and Daniel V. Schroeder. 1995. <em>An Introduction to Quantum Field Theory</em>. Reading, Mass: Addison-Wesley Pub. Co.
 </div>
 <div id="ref-sethnaCourse6Crackling2007" class="csl-entry" role="listitem">
-Sethna, James P. 2007. <span>“Course 6 <span>Crackling</span> Noise and Avalanches: <span>Scaling</span>, Critical Phenomena, and the Renormalization Group.”</span> <em>Les Houches</em> 85: 257–88.
+Sethna, James P. 2007. <span>“Course 6 <span>Crackling</span> Noise and Avalanches: <span>Scaling</span>, Critical Phenomena, and the Renormalization Group.”</span> <em>Les Houches</em> 85: 257–88. <a href="https://www.sciencedirect.com/science/article/pii/S0924809907800138">https://www.sciencedirect.com/science/article/pii/S0924809907800138</a>.
 </div>
 <div id="ref-sethnaStatisticalMechanicsEntropy2021" class="csl-entry" role="listitem">
 ———. 2021. <em>Statistical Mechanics: Entropy, Order Parameters, and Complexity</em>. Second Edition. Oxford Master Series in Statistical, Computational, and Theoretical Physics. Oxford, United Kingdom ; New York, NY: Oxford University Press.
@@ -1830,73 +1832,39 @@ Zee, Anthony. 2010. <em>Quantum <span>Field Theory</span> in a <span>Nutshell</s
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1961,13 +1929,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2360,7 +2329,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "How to do Renormalization"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-04-11"</span></span>
@@ -3527,7 +3496,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-1165"><a href="#cb1-1165" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a><span class="fu">## Appendix {.appendix}</span></span>
 <span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1168"><a href="#cb1-1168" aria-hidden="true" tabindex="-1"></a>If only I understood what this is saying, then I would have written it in. <span class="co">[</span><span class="ot">@mehtaExactMappingVariational2014</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-1168"><a href="#cb1-1168" aria-hidden="true" tabindex="-1"></a>If only I understood what this is saying, then I would have written it in. <span class="co">[</span><span class="ot">@mehtaExactMappingVariational2014</span><span class="co">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

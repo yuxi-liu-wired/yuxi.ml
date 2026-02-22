@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -343,7 +344,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -568,12 +570,12 @@ window.Quarto = {
 </blockquote>
 <p>In this scenario, an RNN-Transformer hybrid might become the common architecture for cutting-edge training, in two phases. In the first phase, it would be pretrained in parallel over ~1 million GPUs with ~1 million batch size. In the second phase, it would be reinforcement-learning with a minibatch of rollouts per update, on special hardware that maximizes the update frequency. This future hardware could be a small cluster of ~10 massive RL-specific chips with diameter ~1 meter packaged closely to maximize memory bandwidth, immersed in liquid nitrogen cooling to run at ~100 GHz without melting. Such hardware does not exist today, since it is highly uneconomical compared to existing GPUs, as measured in FLOP/sec.&nbsp;However, in a scenario where a long sequence of serial training is necessary, such hardware may be economical as measured in serial FLOP/sec.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Why these numbers?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Why these numbers?
+<span class="screen-reader-only">Note</span>Why these numbers?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -768,12 +770,12 @@ d\hat{x}_t = \frac{1}{2} \hat{x}_t dt + f_\theta(\hat{x}_t, t) dt + dW_t
 </ul>
 <p>By smoothing the corners of the paths, we obtain a smooth force field.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="How to keep the ball on grooves">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How to keep the ball on grooves
+<span class="screen-reader-only">Note</span>How to keep the ball on grooves
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -829,116 +831,82 @@ How to keep the ball on grooves
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-andersonReversetimeDiffusionEquation1982" class="csl-entry" role="listitem">
-Anderson, Brian DO. 1982. <span>“Reverse-Time Diffusion Equation Models.”</span> <em>Stochastic Processes and Their Applications</em> 12 (3): 313–26.
+Anderson, Brian DO. 1982. <span>“Reverse-Time Diffusion Equation Models.”</span> <em>Stochastic Processes and Their Applications</em> 12 (3): 313–26. <a href="https://www.sciencedirect.com/science/article/pii/0304414982900515">https://www.sciencedirect.com/science/article/pii/0304414982900515</a>.
 </div>
 <div id="ref-arriolaBlockDiffusionInterpolating2025" class="csl-entry" role="listitem">
-Arriola, Marianne, Aaron Gokaslan, Justin T. Chiu, Zhihan Yang, Zhixuan Qi, Jiaqi Han, Subham Sekhar Sahoo, and Volodymyr Kuleshov. 2025. <span>“Block <span>Diffusion</span>: <span>Interpolating Between Autoregressive</span> and <span>Diffusion Language Models</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2503.09573">https://doi.org/10.48550/arXiv.2503.09573</a>.
+Arriola, Marianne, Aaron Gokaslan, Justin T. Chiu, Zhihan Yang, Zhixuan Qi, Jiaqi Han, Subham Sekhar Sahoo, and Volodymyr Kuleshov. 2025. <span>“Block <span>Diffusion</span>: <span>Interpolating Between Autoregressive</span> and <span>Diffusion Language Models</span>.”</span> March 18, 2025. <a href="https://doi.org/10.48550/arXiv.2503.09573">https://doi.org/10.48550/arXiv.2503.09573</a>.
 </div>
 <div id="ref-austinStructuredDenoisingDiffusion2021" class="csl-entry" role="listitem">
-Austin, Jacob, Daniel D. Johnson, Jonathan Ho, Daniel Tarlow, and Rianne van den Berg. 2021. <span>“Structured <span>Denoising Diffusion Models</span> in <span>Discrete State-Spaces</span>.”</span> In <em>Advances in <span>Neural Information Processing Systems</span></em>, 34:17981–93. Curran Associates, Inc.
+Austin, Jacob, Daniel D. Johnson, Jonathan Ho, Daniel Tarlow, and Rianne van den Berg. 2021. <span>“Structured <span>Denoising Diffusion Models</span> in <span>Discrete State-Spaces</span>.”</span> In <em>Advances in <span>Neural Information Processing Systems</span></em>, 34:17981–93. Curran Associates, Inc. <a href="https://proceedings.neurips.cc/paper/2021/hash/958c530554f78bcd8e97125b70e6973d-Abstract.html">https://proceedings.neurips.cc/paper/2021/hash/958c530554f78bcd8e97125b70e6973d-Abstract.html</a>.
 </div>
 <div id="ref-fengRevealingMysteryChain2023" class="csl-entry" role="listitem">
-Feng, Guhao, Bohang Zhang, Yuntian Gu, Haotian Ye, Di He, and Liwei Wang. 2023. <span>“Towards Revealing the Mystery Behind Chain of Thought: A Theoretical Perspective.”</span> <em>Advances in Neural Information Processing Systems</em> 36: 70757–98.
+Feng, Guhao, Bohang Zhang, Yuntian Gu, Haotian Ye, Di He, and Liwei Wang. 2023. <span>“Towards Revealing the Mystery Behind Chain of Thought: A Theoretical Perspective.”</span> <em>Advances in Neural Information Processing Systems</em> 36: 70757–98. <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/dfc310e81992d2e4cedc09ac47eff13e-Abstract-Conference.html">https://proceedings.neurips.cc/paper_files/paper/2023/hash/dfc310e81992d2e4cedc09ac47eff13e-Abstract-Conference.html</a>.
 </div>
 <div id="ref-fischerCounterMachinesCounter1968" class="csl-entry" role="listitem">
 Fischer, Patrick C., Albert R. Meyer, and Arnold L. Rosenberg. 1968. <span>“Counter Machines and Counter Languages.”</span> <em>Mathematical Systems Theory</em> 2 (3): 265–83. <a href="https://doi.org/10.1007/BF01694011">https://doi.org/10.1007/BF01694011</a>.
 </div>
 <div id="ref-kingmaVariationalDiffusionModels2021" class="csl-entry" role="listitem">
-Kingma, Diederik, Tim Salimans, Ben Poole, and Jonathan Ho. 2021. <span>“Variational Diffusion Models.”</span> <em>Advances in Neural Information Processing Systems</em> 34: 21696–707.
+Kingma, Diederik P., Tim Salimans, Ben Poole, and Jonathan Ho. 2021. <span>“Variational Diffusion Models.”</span> <em>Advances in Neural Information Processing Systems</em> 34: 21696–707. <a href="https://proceedings.neurips.cc/paper/2021/hash/b578f2a52a0229873fefc2a4b06377fa-Abstract.html">https://proceedings.neurips.cc/paper/2021/hash/b578f2a52a0229873fefc2a4b06377fa-Abstract.html</a>.
 </div>
 <div id="ref-leisersonTheresPlentyRoom2020" class="csl-entry" role="listitem">
 Leiserson, Charles E., Neil C. Thompson, Joel S. Emer, Bradley C. Kuszmaul, Butler W. Lampson, Daniel Sanchez, and Tao B. Schardl. 2020. <span>“There’s Plenty of Room at the <span>Top</span>: <span>What</span> Will Drive Computer Performance After <span>Moore</span>’s Law?”</span> <em>Science</em> 368 (6495): eaam9744. <a href="https://doi.org/10.1126/science.aam9744">https://doi.org/10.1126/science.aam9744</a>.
 </div>
 <div id="ref-liuTransformersLearnShortcuts2023" class="csl-entry" role="listitem">
-Liu, Bingbin, Jordan T. Ash, Surbhi Goel, Akshay Krishnamurthy, and Cyril Zhang. 2023. <span>“Transformers <span>Learn Shortcuts</span> to <span>Automata</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2210.10749">https://doi.org/10.48550/arXiv.2210.10749</a>.
+Liu, Bingbin, Jordan T. Ash, Surbhi Goel, Akshay Krishnamurthy, and Cyril Zhang. 2023. <span>“Transformers <span>Learn Shortcuts</span> to <span>Automata</span>.”</span> May 2, 2023. <a href="https://doi.org/10.48550/arXiv.2210.10749">https://doi.org/10.48550/arXiv.2210.10749</a>.
 </div>
 <div id="ref-luoUnderstandingDiffusionModels2022" class="csl-entry" role="listitem">
-Luo, Calvin. 2022. <span>“Understanding Diffusion Models: <span>A</span> Unified Perspective.”</span> <em>arXiv Preprint arXiv:2208.11970</em>. <a href="https://arxiv.org/abs/2208.11970">https://arxiv.org/abs/2208.11970</a>.
+Luo, Calvin. 2022. <span>“Understanding Diffusion Models: <span>A</span> Unified Perspective.”</span> <a href="https://papers.baulab.info/papers/also/Luo-2022.pdf">https://papers.baulab.info/papers/also/Luo-2022.pdf</a>.
 </div>
 <div id="ref-merrillIllusionStateStateSpace2025" class="csl-entry" role="listitem">
-Merrill, William, Jackson Petty, and Ashish Sabharwal. 2025. <span>“The <span>Illusion</span> of <span>State</span> in <span>State-Space Models</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2404.08819">https://doi.org/10.48550/arXiv.2404.08819</a>.
+Merrill, William, Jackson Petty, and Ashish Sabharwal. 2025. <span>“The <span>Illusion</span> of <span>State</span> in <span>State-Space Models</span>.”</span> March 5, 2025. <a href="https://doi.org/10.48550/arXiv.2404.08819">https://doi.org/10.48550/arXiv.2404.08819</a>.
 </div>
 <div id="ref-minskyComputationFiniteInfinite1967" class="csl-entry" role="listitem">
-Minsky, Marvin. 1967. <em>Computation: Finite and Infinite Machines</em>. Englewood Cliffs, NJ: Prentice-Hall.
+Minsky, Marvin L. 1967. <em>Computation: Finite and Infinite Machines</em>. Englewood Cliffs, NJ: Prentice-Hall.
 </div>
 <div id="ref-parberryParallelComputationThreshold1988" class="csl-entry" role="listitem">
-Parberry, Ian, and Georg Schnitger. 1988. <span>“Parallel Computation with Threshold Functions.”</span> <em>Journal of Computer and System Sciences</em> 36 (3): 278–302.
+Parberry, Ian, and Georg Schnitger. 1988. <span>“Parallel Computation with Threshold Functions.”</span> <em>Journal of Computer and System Sciences</em> 36 (3): 278–302. <a href="https://www.sciencedirect.com/science/article/pii/002200008890030X">https://www.sciencedirect.com/science/article/pii/002200008890030X</a>.
 </div>
 <div id="ref-ravishankarScalingPropertiesDiffusion2024" class="csl-entry" role="listitem">
-Ravishankar, Rahul, Zeeshan Patel, Jathushan Rajasegaran, and Jitendra Malik. 2024. <span>“Scaling <span>Properties</span> of <span>Diffusion Models</span> for <span>Perceptual Tasks</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2411.08034">https://doi.org/10.48550/arXiv.2411.08034</a>.
+Ravishankar, Rahul, Zeeshan Patel, Jathushan Rajasegaran, and Jitendra Malik. 2024. <span>“Scaling <span>Properties</span> of <span>Diffusion Models</span> for <span>Perceptual Tasks</span>.”</span> November 17, 2024. <a href="https://doi.org/10.48550/arXiv.2411.08034">https://doi.org/10.48550/arXiv.2411.08034</a>.
 </div>
 <div id="ref-wewerSpatialReasoningDenoising2025" class="csl-entry" role="listitem">
-Wewer, Christopher, Bart Pogodzinski, Bernt Schiele, and Jan Eric Lenssen. 2025. <span>“Spatial <span>Reasoning</span> with <span>Denoising Models</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2502.21075">https://doi.org/10.48550/arXiv.2502.21075</a>.
+Wewer, Christopher, Bart Pogodzinski, Bernt Schiele, and Jan Eric Lenssen. 2025. <span>“Spatial <span>Reasoning</span> with <span>Denoising Models</span>.”</span> February 28, 2025. <a href="https://doi.org/10.48550/arXiv.2502.21075">https://doi.org/10.48550/arXiv.2502.21075</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1003,13 +971,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1402,7 +1371,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Perfect diffusion is TC&lt;sup&gt;0&lt;/sup&gt; -- Bad diffusion is Turing-complete"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-04-17"</span></span>
@@ -1749,7 +1718,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>I don't read conclusions in papers, and I don't write them either. They seem like a stupid convention, when having an abstract and an introduction is not enough to pad your page numbers, so you had to rephrase them, differently but the same... In fact, the only reason there is a conclusion in the arXiv paper is because academic style requires there to be one, which is why I got Claude 3.7 to write it... without any modification!</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>I don't read conclusions in papers, and I don't write them either. They seem like a stupid convention, when having an abstract and an introduction is not enough to pad your page numbers, so you had to rephrase them, differently but the same... In fact, the only reason there is a conclusion in the arXiv paper is because academic style requires there to be one, which is why I got Claude 3.7 to write it... without any modification!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

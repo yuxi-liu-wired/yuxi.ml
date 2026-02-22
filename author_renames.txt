@@ -1,0 +1,207 @@
+MERGE: Stephen R. Carpenter <- S. R. Carpenter, Steve Carpenter
+MERGE: Robert C. Solomon <- Robert C Solomon
+MERGE: Richard S. Sutton <- Richard Sutton
+MERGE: Harry M. Markowitz <- Harry Markowitz
+MERGE: Jonathan C. Horton <- Jonathan C Horton
+MERGE: Daniel L. Adams <- Daniel L Adams
+MERGE: Richard O. Duda <- R. O. Duda
+MERGE: Peter E. Hart <- Peter Hart, P. E. Hart
+MERGE: Zellig Sabbettai Harris <- Zellig S. Harris
+MERGE: George Henry Harris <- G. H. Harris
+MERGE: Aaron C. Courville <- Aaron Courville
+MERGE: Geoffrey E. Hinton <- Geoffrey Hinton, Geoffrey E Hinton
+MERGE: Charles A. Murray <- Charles Murray
+MERGE: David E. Rumelhart <- D. E. Rumelhart
+MERGE: James L. McClelland <- James McClelland, J. L. McClelland
+MERGE: Charles C. Weems <- Charles Weems
+MERGE: Hod Lipson <- Hood Lipson
+MERGE: Peter C. Perdue <- Peter Perdue
+MERGE: Hans P. Moravec <- Hans Moravec
+MERGE: John Horton Conway <- John H. Conway, John Conway
+MERGE: Yuri Burda <- Yura Burda
+MERGE: Geoffrey E. Hinton <- Geoffrey Hinton, Geoffrey E Hinton
+MERGE: Charles A. Murray <- Charles Murray
+MERGE: David E. Rumelhart <- D. E. Rumelhart
+MERGE: James L. McClelland <- James McClelland, J. L. McClelland
+MERGE: Charles C. Weems <- Charles Weems
+MERGE: Douglas A. Brown <- D. A. Brown
+MERGE: Hod Lipson <- Hood Lipson
+MERGE: William P. Thurston <- William Thurston
+MERGE: Arnold Johannes Wilhelm Sommerfeld <- Arnold Sommerfeld
+MERGE: Ferdinand Verhulst <- F. Verhulst
+MERGE: Friedrich Wilhelm Nietzsche <- Friedrich Nietzsche
+MERGE: Luís M. A. Bettencourt <- Luis Bettencourt
+MERGE: Geoffrey B. West <- Geoffrey West, Geoffrey B West
+MERGE: Albert Einstein <- A. Einstein
+MERGE: Percy S. Liang <- Percy Liang
+MERGE: William A. Brock <- W. A. Brock, William Brock
+MERGE: Philip K. Dick <- Philip K Dick
+MERGE: Edward A. Feigenbaum <- Edward Feigenbaum, E. A. Feigenbaum, E. Feigenbaum
+MERGE: Feng-Hsiung Hsu <- Feng-hsiung Hsu
+MERGE: Tommi S. Jaakkola <- Tommi Jaakkola
+MERGE: Herbert Alexander Simon <- Herbert A. Simon, H. A. Simon
+MERGE: Quoc V. Le <- Quoc Le
+MERGE: James A. Benn <- James A Benn
+MERGE: Kenneth Ward Church <- Kenneth Church, Kenneth W. Church
+MERGE: Gary F. Marcus <- Gary Marcus
+MERGE: John Maynard Smith <- J. Maynard Smith
+MERGE: Norman Lloyd Johnson <- Norman L. Johnson
+MERGE: Neil F. Johnson <- Neil Johnson
+MERGE: George Lindsay Johnson <- George Johnson, G. L. Johnson
+MERGE: Yuval Noah Harari <- Yuval N Harari
+MERGE: Eugene Paul Wigner <- Eugene P. Wigner, Eugene Wigner
+MERGE: Murray S. Campbell <- Murray Campbell
+MERGE: Tom M. Mitchell <- T. M. Mitchell
+MERGE: Dennis H. Klatt <- Dennis Klatt
+MERGE: Arthur Robert Jensen <- Arthur Jensen, Arthur R. Jensen
+MERGE: Léon Bottou <- Leon Bottou
+MERGE: Donald Ervin Knuth <- Donald Knuth
+MERGE: Roger C. Schank <- Roger Schank
+MERGE: Chris J. L. Doran <- Chris Doran, Chris JL Doran
+MERGE: Stuart J. Russell <- Stuart Russell
+MERGE: James W. Forgie <- Jim W. Forgie
+MERGE: D. Raj Reddy <- D. R. Reddy, D.R. Reddy
+MERGE: Satinder P. Singh <- Satinder Singh
+MERGE: Vilayanur S. Ramachandran <- V. S. Ramachandran
+MERGE: Francis Crick <- F. H. C. Crick
+MERGE: Cosmas K. Zachos <- Cosmas Zachos
+MERGE: David B. Fairlie <- David B. Fairlie, David Fairlie
+MERGE: Thomas L. Curtright <- Thomas Curtright
+MERGE: Freeman J. Dyson <- Freeman Dyson
+MERGE: Angélique O. J. Cramer <- Angélique OJ Cramer
+MERGE: David John Chalmers <- David J. Chalmers, David John Chalmers, David Chalmers
+MERGE: Richard Phillips Feynman <- Richard P. Feynman, Richard Phillips Feynman, Richard P Feynman
+MERGE: Karthik R. Narasimhan <- Karthik R. Narasimhan, Karthik Narasimhan
+MERGE: Jürgen Schmidhuber <- Jürgen Schmidhuber, Juergen Schmidhuber
+MERGE: Michael I. Jordan <- M. I. Jordan
+MERGE: Igor M. Sokolov <- Igor M Sokolov
+MERGE: Kilian Q. Weinberger <- K. Q. Weinberger
+MERGE: Nassim Nicholas Taleb <- N. N. Taleb
+MERGE: Jeremy J. Gray <- Jeremy Gray
+MERGE: Brian R. Hunt <- Brian Hunt
+MERGE: Diederik P. Kingma <- Diederik Kingma
+MERGE: Seymour A. Papert <- Seymour Papert
+MERGE: Stephen W. Hawking <- Stephen Hawking
+MERGE: Stephen P. Stich <- Stephen Stich
+MERGE: Vladimir Naumovich Vapnik <- V. N. Vapnik, Vladimir Vapnik
+MERGE: Richard Scott Bakker <- R. Scott Bakker
+MERGE: Donald J. Black <- Donald Black
+MERGE: Stéphane Boucheron <- Stephane Boucheron
+MERGE: Gábor Lugosi <- Gabor Lugosi
+MERGE: Nils J. Nilsson <- N. J. Nilsson
+MERGE: Tomáš Mikolov <- Tomas Mikolov
+MERGE: Greg S. Corrado <- Greg Corrado, Greg S Corrado
+MERGE: Cristian S. Calude <- Cristian Calude
+MERGE: Alan E. Bollard <- Alan Bollard
+MERGE: E. M. Cioran <- E. M Cioran
+MERGE: Zenon W. Pylyshyn <- Zenon Pylyshyn
+MERGE: Patricia Smith Churchland <- Patricia S. Churchland
+MERGE: Benoît B. Mandelbrot <- Benoit B. Mandelbrot, Benoit Mandelbrot
+MERGE: Antonio R. Damasio <- Antonio Damasio, Antonio R Damasio
+MERGE: David Sloan Wilson <- David Sloan Wilson
+MERGE: Edward O. Wilson <- Edward O. Wilson
+MERGE: Godfrey Harold Hardy <- G. H. Hardy, Godfrey H. Hardy
+MERGE: Rodney A. Brooks <- Rodney Brooks
+MERGE: Bruce G. Buchanan <- B. G. Buchanan
+MERGE: Bala R. Iyer <- B. R. Iyer
+MERGE: Robert L. Mercer <- Robert Mercer
+MERGE: Kip S. Thorne <- K. S. Thorne
+MERGE: Alexei A. Efros <- Alexei Efros
+MERGE: Piergiorgio Odifreddi <- Piergiogio Odifreddi
+MERGE: George Neville Watson <- G. N. Watson
+MERGE: Timothy M. Lenton <- T. M. Lenton
+MERGE: David Jeffrey Griffiths <- David J. Griffiths
+MERGE: Mark L. Spano <- Mark Spano
+MERGE: Michael T. Ullman <- Michael Ullman
+MERGE: Paul Anthony Samuelson <- Paul A. Samuelson
+MERGE: Howard C. Berg <- H. C. Berg, H C Berg
+MERGE: Jakob N. Foerster <- Jakob Foerster
+MERGE: Cyril Domb <- C. Domb
+MERGE: Roderick S. C. Wong <- Roderick Wong, Roderick S.C. Wong
+MERGE: George Nagy <- GEORGE Nagy
+MERGE: Raymond M. Smullyan <- Raymond M Smullyan
+MERGE: Harry Frederick Harlow <- Harry F. Harlow
+MERGE: Margaret Kuenne Harlow <- Margaret K. Harlow
+MERGE: Horace Basil Barlow <- Horace B. Barlow, H. B. Barlow
+MERGE: Helge S. Kragh <- Helge Kragh
+MERGE: William D. Hamilton <- W. D. Hamilton
+MERGE: Robert M. May <- Robert May
+MERGE: Nikolay V. Kuznetsov <- N.V. Kuznetsov
+MERGE: Gennady A. Leonov <- G.A. Leonov
+MERGE: Joseph C. R. Licklider <- J. C. R. Licklider, Joseph CR Licklider
+MERGE: Jean Alexandre Dieudonné <- Jean Dieudonné, Jean A. Dieudonné
+MERGE: Victor R. Lesser <- Victor Lesser
+MERGE: Lee D. Erman <- Lee Erman
+MERGE: Ruslan R. Salakhutdinov <- Ruslan Salakhutdinov
+MERGE: Paul J. Werbos <- P. J. Werbos, Paul Werbos, P. Werbos
+MERGE: Philip Charles Nelson <- Philip Nelson
+MERGE: Lawrence D. Jackel <- L. D. Jackel
+MERGE: Jared M. Diamond <- Jared Diamond
+MERGE: Gerald B. Folland <- G. B. Folland
+MERGE: John Robinson Pierce <- John R. Pierce
+MERGE: Warren Sturgis McCulloch <- Warren S. McCulloch
+MERGE: Jerome Y. Lettvin <- Jerome Y Lettvin
+MERGE: Russell C. Meister <- Russell C. Meister
+MERGE: John P. McCutcheon <- John P. McCutcheon, John P. McCutcheon
+MERGE: Mark Y. Liberman <- Mark Y. Liberman, Mark Liberman
+MERGE: Michael F. Land <- Michael F. Land, M. F. Land
+MERGE: Paul R. Halmos <- Paul R. Halmos, P. R. Halmos
+MERGE: Joel H. Spencer <- Joel H. Spencer, Joel Spencer
+MERGE: Douglas R. Hofstadter <- Douglas R. Hofstadter, Douglas Hofstadter
+MERGE: Vitali D. Milman <- Vitali Milman, V. D. Milman
+MERGE: Marvin L. Minsky <- Marvin Minsky
+MERGE: James D. Meiss <- J. D. Meiss
+MERGE: David A. Seekell <- D. A. Seekell
+MERGE: Grigory Isaakovich Barenblatt <- G. I. Barenblatt
+MERGE: James P. Crutchfield <- J. P. Crutchfield
+MERGE: Yee-Whye Teh <- Yee Whye Teh
+MERGE: Daniel C. Dennett <- D. C Dennett, Daniel Dennett, Daniel C Dennett
+MERGE: Anthony N. Lasenby <- Anthony Lasenby
+MERGE: Dimitri P. Bertsekas <- Dmitri P. Bertsekas, Dimitri Bertsekas
+MERGE: Paul A. M. Dirac <- P. A. M. Dirac
+MERGE: Egbert H. van Nes <- Egbert H. van Nes, Egbert H. Van Nes
+MERGE: Alan Mathison Turing <- Alan Mathison Turing, A. M. Turing
+MERGE: Richard A. Fortey <- Richard Fortey, Richard A. Fortey
+MERGE: Isaac L. Chuang <- I. L. Chuang, Isaac L. Chuang
+MERGE: John J. Hopfield <- J J Hopfield, John J. Hopfield
+MERGE: John C. Baez <- John C. Baez, John Baez
+MERGE: John E. Littlewood <- John E. Littlewood, J. E. Littlewood
+MERGE: James A. Yorke <- James A Yorke, James A. Yorke
+MERGE: John H. Werren <- John H. Werren, J. H. Werren
+MERGE: Leslie Pack Kaelbling <- Leslie Pack Kaelbling, Leslie Kaelbling
+MERGE: Steven T. Piantadosi <- Steven Piantadosi, Steven T. Piantadosi
+MERGE: Mark E. J. Newman <- M. E. J. Newman, Mark E. J. Newman
+MERGE: Edmund Taylor Whittaker <- Edmund T. Whittaker, Edmund Taylor Whittaker
+MERGE: Eugene V. Koonin <- Eugene V. Koonin, Eugene V Koonin
+MERGE: David G. Biron <- David G. Biron, D. G Biron
+MERGE: Timothy P. Lillicrap <- Timothy Lillicrap, Timothy P. Lillicrap
+MERGE: John Willard Milnor <- John Milnor, John W. Milnor
+MERGE: Michael Edward Peskin <- Michael E. Peskin
+MERGE: Walter H. Pitts <- Walter Pitts
+MERGE: Stephen J. Shennan <- Stephen Shennan
+MERGE: Rodney G. Downey <- R. G. Downey
+MERGE: Günther Witzany <- Guenther Witzany
+MERGE: Michael D. Mitzenmacher <- Michael Mitzenmacher
+MERGE: David A. Patterson <- David Patterson
+MERGE: Stanisław Lem <- Stanislaw Lem
+MERGE: Richard S. Zemel <- Richard Zemel
+MERGE: Brian Jonathan Garrett <- Brian Garrett
+MERGE: Peter Wessel Zapffe <- Peter Zapffe
+MERGE: Gian-Carlo Rota <- G.-C. Rota
+MERGE: Azim F. Shariff <- Azim Shariff
+MERGE: Genevieve B. Orr <- Geneviève B. Orr
+MERGE: Howard Phillips Lovecraft <- H. P. Lovecraft
+MERGE: Lloyd M. Beidler <- L. M. Beidler
+MERGE: Paul M. B. Vitányi <- P. M. B Vitányi, P. M. B. Vitányi
+MERGE: Douglas E. LaRowe <- D. E. LaRowe
+MERGE: Jan P. Amend <- J. P. Amend
+MERGE: M. Hebert <- M Hebert
+MERGE: Vladimir Igorevich Arnold <- V. I. Arnol'd, V.I. Arnol'd
+MERGE: Egbert H. van Nes <- E. H. van Nes
+MERGE: William R. Easterly <- William Easterly
+MERGE: Edward Mills Purcell <- E. M. Purcell, E M Purcell
+MERGE: Rajesh P. N. Rao <- Rajesh PN Rao
+MERGE: Ricard V. Solé <- Ricard Solé
+MERGE: Jaime G. Carbonell <- Jaime Carbonell
+MERGE: W. Nelson Francis <- W. N. Francis
+MERGE: S. K. Donaldson <- Simon Donaldson

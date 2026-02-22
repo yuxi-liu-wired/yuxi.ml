@@ -224,7 +224,7 @@ The Great Cannon is a [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-t
 
 The two main parties in Taiwan are the DPP and the KMT. The older party, KMT, used to be pro-unification, with *them* being the unifier, not the CCP. It still is interested in *eventual* unification at some future date, probably after mainland China becomes democratic. In contrast, the DPP, being the newer party, is more interested in independence. During the 2000--2024 period, the KMT had 1 president and the DPP had 3, and the CCP had been significantly more hostile against the DPP presidents than against the KMT. Speaking from personal experience, the internal propaganda painted the DPP presidents as paper tigers with villainous faces, who would bring an apocalyptic war to Taiwan for a few votes.
 
-During the lead-up to the [2024 Taiwanese presidential election](https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election), the Chinese government has used generative-AI to smear the pro-independence DPP candidate. [@hungHowChinaCognitive2022]
+During the lead-up to the [2024 Taiwanese presidential election](https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election), the Chinese government has used generative-AI to smear the pro-independence DPP candidate. [@hungHowChinasCognitive2022]
 
 > The key message being spread from the pro-China camp is that William Lai, the candidate from the DPP, is a dictator in the wings who will start a war with his reckless pursuit of Taiwanese independence. ... Beijing-backed bots routinely flood the social media accounts of leading DPP candidates with pro-China propaganda.
 >  

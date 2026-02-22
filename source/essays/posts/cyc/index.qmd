@@ -187,13 +187,13 @@ The swirling controversy came to a head with the publication of [@ritchieAMCaseS
 
 In short, because of the various issues, AM was an event that happened, but not an entity that could be built upon. One could not build upon it directly in source code, since it's unavailable. One could not build upon it by reimplementing the pseudocode, since the rules were vaguely specified, and the control structure was probably wrong. One could not build upon it by reimplementing the high-level ideas, since it's unclear which part, out of the several dozen tightly integrated parts of AM, was responsible for AM's good outputs, and which were just implementation details. In our language, there was no ablation study.
 
-Lenat quickly replied with [@lenatWhyAmEurisko1984]. He dismissed the criticism as mostly miscommunication, and went on to describe the *real* lesson of AM. If I were to be dab, Lenat was saying that it is fine for AM's source,[^am-source-code] or even pseudocode, to be unavailable, because Lenat had learned the lessons, and you, dear reader, need only listen to the lessons from him.
+Lenat quickly replied with [@lenatWhyAMEURISKO1984]. He dismissed the criticism as mostly miscommunication, and went on to describe the *real* lesson of AM. If I were to be dab, Lenat was saying that it is fine for AM's source,[^am-source-code] or even pseudocode, to be unavailable, because Lenat had learned the lessons, and you, dear reader, need only listen to the lessons from him.
 
 > The AM thesis never explained, precisely, how concepts such as 'not very often' and 'related to' were implemented. By and large, these omissions were due to the fact that the code Lenat wrote for these predicates was quite trivial... inevitable, yet regrettable process of simplifying large pieces of code, translating them to brief English phrases. This process left out many exceptional cases, and made the English condensations less accurate... Some problems that Ritchie and Hanna cite... are simply errors of mis-reading what was stated in the thesis or articles... A few of the problems raised in Ritchie and Hanna's article are, annoyingly, genuine inconsistencies in the thesis document, such as whether or not facets had subfacets. These reflect the fact that AM was a running and evolving program, changing daily in small ways even as the thesis document was being written... the changes in representation were driven simply by AM's running out of list space in 1975 [INTERLISP](https://en.wikipedia.org/wiki/Interlisp) code; we were forced to shift representations time and time again just to gain a few hundred precious list cells.
 >
-> [@lenatWhyAmEurisko1984]
+> [@lenatWhyAMEURISKO1984]
 
-[^am-source-code]: Though Lenat admitted that "the code ought to have been provided" [@lenatWhyAmEurisko1984] for AM, he would never publish the code, not with AM, nor with EURISKO. He had often claimed it had been long lost, yet the source code for AM and EURISKO had [recently been found](https://white-flame.com/am-eurisko.html), right where it should be -- the [DBL folder in the Stanford AI Laboratory backup data](https://www.saildart.org/DBL). It could only be found because Lenat had died, thus releasing the password protection on the folder. I wonder if Lenat had lied, and simply wished to protect his source code. It would correlate with his later behavior.
+[^am-source-code]: Though Lenat admitted that "the code ought to have been provided" [@lenatWhyAMEURISKO1984] for AM, he would never publish the code, not with AM, nor with EURISKO. He had often claimed it had been long lost, yet the source code for AM and EURISKO had [recently been found](https://white-flame.com/am-eurisko.html), right where it should be -- the [DBL folder in the Stanford AI Laboratory backup data](https://www.saildart.org/DBL). It could only be found because Lenat had died, thus releasing the password protection on the folder. I wonder if Lenat had lied, and simply wished to protect his source code. It would correlate with his later behavior.
 
 And what were the lessons?
 
@@ -211,7 +211,7 @@ And what were the lessons?
 > 
 > We did not perceive until writing this paper that the way in which `Similar-To`, `Not-Often`, `Notice-Regularity`, and scores of other 'primitives' were coded do themselves embody a large amount of heuristic knowledge. We exploited the structure of (or, if you prefer, partially encoded) the domain of elementary mathematics, in the process of making *trivial yet adequate* LISP versions of those extremely complex and subtle notions (such as similarity of concepts).
 >
-> [@lenatWhyAmEurisko1984]
+> [@lenatWhyAMEURISKO1984]
 
 How do we know that Lenat learned the lessons?
 
@@ -237,7 +237,7 @@ Why would analogies give genuinely new ideas? Well, intelligence is messy! If ev
 
 > The apparent adhoc-ness in both the heuristics' content themselves, and in the control knowledge guiding the application of those heuristics, is clearly the source of many methodological objections to the work. But we believe that this adhocracy -- indeed, adhocracy controlling adhocracy -- may be the source of EURISKO's underlying potential especially as a model for cognition.
 >
-> [@lenatWhyAmEurisko1984]
+> [@lenatWhyAMEURISKO1984]
 
 Those are the lessons Lenat drew, but what did EURISKO really do?
 
@@ -407,7 +407,7 @@ In his review article, Lenat made a brief philosophical comment that EURISKO is 
 > 
 > The classical perceptrons did hill-climbing, in spaces whose topology was defined explicitly by weights on arcs between nodes (nodes which did straightforward Boolean combinations plus thresholding). The EURISKO style of system does hill-climbing at both the object- (performance-program) and meta- (control decision) levels, in spaces whose terrain is defined implicitly, symbolically, by the contents of the nodes (nodes which are full-fledged concepts, at both object- and meta-levels). The new scheme fully exploits the same source of power (synergy through abundance) yet it is free from many of the limitations of the classical perceptron scheme.
 > 
-> [@lenatWhyAmEurisko1984]
+> [@lenatWhyAMEURISKO1984]
 
 If this sounds familiar, it is because this Lenat had the same idea as Marvin Minsky, a friend of his,[^minsky-anecdote] and he was writing in 1984, at the second coming of neural networks. Minsky would soon write his *Society of Mind* in 1986, which the Cyc project resembled, then [re-reject neural networks by writing a long epilogue in 1988](https://yuxi.ml/essays/posts/perceptron-controversy/#minsky-and-papert-struck-back) to his infamous *Perceptrons* (1969), often blamed for the first neural network winter. Indeed, Lenat's objection to neural networks was essentially the same as Minsky's, if you compare that with Minsky's epilogue. Lenat's approach to Cyc was the same as the Society of Mind of Minsky. Reciprocating, Minsky had often called the field of AI "brain-dead", holding Lenat's Cyc as the only one worth mentioning. [@baardAIFounderBlasts2003]
 

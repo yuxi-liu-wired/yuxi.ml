@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,18 +70,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,13 +110,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js" integrity="sha512-EKW5YvKU3hpyyOcN6jQnAxO/L8gts+YdYV6Yymtl8pk9YlYFtqJgihORuRoBXK8/cOIlappdU6Ms8KdK6yBCgA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
     </script>
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
-
 <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js">
-
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -132,7 +129,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -328,7 +325,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -988,7 +986,7 @@ window.Quarto = {
 \begin{equation}\boldsymbol{X}_{t+1} = a \boldsymbol{X}_t + b\boldsymbol{X}_t(\boldsymbol{X}_t^{\top}\boldsymbol{X}_t) + c\boldsymbol{X}_t(\boldsymbol{X}_t^{\top}\boldsymbol{X}_t)^2\end{equation}
 \]</span> with <span class="math inline">\((a,b,c) = (15/8, -5/4, 3/8) = (1.875, -1.25, 0.375)\)</span></p>
 <p>But if we look up the official code for Muon, we’d see that the Newton–Schulz iteration does appear in this form, but with <span class="math inline">\((a,b,c) = (3.4445, -4.7750,  2.0315)\)</span>. Further, the original author made no attempt to derive this mathematically, but just wrote it in as a magic constant:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zeropower_via_newtonschulz5(G, steps<span class="op">=</span><span class="dv">10</span>, eps<span class="op">=</span><span class="fl">1e-7</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zeropower_via_newtonschulz5(G, steps<span class="op">=</span><span class="dv">10</span>, eps<span class="op">=</span><span class="fl">1e-7</span>):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Newton-Schulz iteration to compute the zeroth power / orthogonalization of G. We opt to use a</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    quintic iteration whose coefficients are selected to maximize the slope at zero. For the purpose</span></span>
@@ -1010,7 +1008,7 @@ window.Quarto = {
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> a <span class="op">*</span> X <span class="op">+</span> b <span class="op">*</span> B <span class="op">+</span> c <span class="op">*</span> A <span class="op">@</span> B</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> G.size(<span class="dv">0</span>) <span class="op">&gt;</span> G.size(<span class="dv">1</span>):</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X.T</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="convergence-acceleration" class="level2">
 <h2 class="anchored" data-anchor-id="convergence-acceleration">Convergence acceleration</h2>
@@ -1057,7 +1055,7 @@ n &amp; m &amp; T &amp; \kappa &amp; x_1 &amp; x_2 &amp; a &amp; b &amp; c &amp;
 <summary>
 Code for generating the table above
 </summary>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1084,7 +1082,7 @@ Code for generating the table above
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>k, x1, x2 <span class="op">=</span> w</span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> k <span class="op">*</span> x1<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> x2<span class="op">**</span><span class="dv">2</span>, <span class="op">-</span>k <span class="op">*</span> (x1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> x2<span class="op">**</span><span class="dv">2</span>), k</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>m<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>k<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>x1<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>x2<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>a<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>b<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>c<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>f(w, data)<span class="sc">:.5f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>m<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>k<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>x1<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>x2<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>a<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>b<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>c<span class="sc">:.3f}</span><span class="ss"> &amp; </span><span class="sc">{</span>f(w, data)<span class="sc">:.5f}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="some-thoughts" class="level2">
@@ -1456,7 +1454,7 @@ Code for generating the table above
 <style>table { border-collapse: collapse; width: 100%; margin: 20px 0; font-family: Arial, sans-serif; } th, td { padding: 8px; text-align: center; } th.left-align, td.left-align { text-align: left; } .border-top { border-top: 2px solid black; } .border-bottom { border-bottom: 2px solid black; } .border-right { border-right: 2px solid black; } .border-left { border-left: 2px solid black; } .bold { font-weight: bold; } .category { text-align: center; }</style>
 
 
-<table class="table-hover caption-top table" data-quarto-postprocess="true">
+<table class="table-hover caption-top table">
 <caption>Table 4: Comparison of different models at around 1.2T tokens.</caption>
 <thead>
 <tr class="border-top header">
@@ -1469,99 +1467,99 @@ Code for generating the table above
 </thead>
 <tbody>
 <tr class="border-top odd">
-<td data-quarto-table-cell-role="th"></td>
-<td class="left-align" data-quarto-table-cell-role="th">Activated Params<sup>†</sup></td>
+<th data-quarto-table-cell-role="th"></th>
+<th class="left-align" data-quarto-table-cell-role="th">Activated Params<sup>†</sup></th>
 <td>2.24B</td>
 <td>2.24B</td>
 <td>2.24B</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th"></td>
-<td class="left-align" data-quarto-table-cell-role="th">Total Params<sup>†</sup></td>
+<th data-quarto-table-cell-role="th"></th>
+<th class="left-align" data-quarto-table-cell-role="th">Total Params<sup>†</sup></th>
 <td>15.29B</td>
 <td>15.29B</td>
 <td>15.29B</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th"></td>
-<td class="left-align" data-quarto-table-cell-role="th">Training Tokens</td>
+<th data-quarto-table-cell-role="th"></th>
+<th class="left-align" data-quarto-table-cell-role="th">Training Tokens</th>
 <td>1.33T</td>
 <td>1.2T</td>
 <td>1.2T</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th"></td>
-<td class="left-align" data-quarto-table-cell-role="th">Optimizer</td>
+<th data-quarto-table-cell-role="th"></th>
+<th class="left-align" data-quarto-table-cell-role="th">Optimizer</th>
 <td>AdamW</td>
 <td>AdamW</td>
 <td>Muon</td>
 </tr>
 <tr class="border-top odd">
-<td rowspan="4" class="category" data-quarto-table-cell-role="th">English</td>
-<td class="left-align" data-quarto-table-cell-role="th">MMLU</td>
+<th rowspan="4" class="category" data-quarto-table-cell-role="th">English</th>
+<th class="left-align" data-quarto-table-cell-role="th">MMLU</th>
 <td>53.3</td>
 <td>60.2</td>
 <td class="bold">60.4</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">MMLU-pro</td>
+<th class="left-align" data-quarto-table-cell-role="th">MMLU-pro</th>
 <td>-</td>
 <td>26.8</td>
 <td class="bold">28.1</td>
 </tr>
 <tr class="odd">
-<td class="left-align" data-quarto-table-cell-role="th">BBH</td>
+<th class="left-align" data-quarto-table-cell-role="th">BBH</th>
 <td>41.4</td>
 <td class="bold">45.3</td>
 <td>43.2</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">TriviaQA</td>
+<th class="left-align" data-quarto-table-cell-role="th">TriviaQA</th>
 <td>-</td>
 <td>57.4</td>
 <td class="bold">58.1</td>
 </tr>
 <tr class="border-top odd">
-<td rowspan="2" class="category" data-quarto-table-cell-role="th">Code</td>
-<td class="left-align" data-quarto-table-cell-role="th">HumanEval</td>
+<th rowspan="2" class="category" data-quarto-table-cell-role="th">Code</th>
+<th class="left-align" data-quarto-table-cell-role="th">HumanEval</th>
 <td>26.8</td>
 <td>29.3</td>
 <td class="bold">37.2</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">MBPP</td>
+<th class="left-align" data-quarto-table-cell-role="th">MBPP</th>
 <td>36.8</td>
 <td>49.2</td>
 <td class="bold">52.9</td>
 </tr>
 <tr class="border-top odd">
-<td rowspan="3" class="category" data-quarto-table-cell-role="th">Math</td>
-<td class="left-align" data-quarto-table-cell-role="th">GSM8K</td>
+<th rowspan="3" class="category" data-quarto-table-cell-role="th">Math</th>
+<th class="left-align" data-quarto-table-cell-role="th">GSM8K</th>
 <td>31.4</td>
 <td>43.8</td>
 <td class="bold">45.0</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">MATH</td>
+<th class="left-align" data-quarto-table-cell-role="th">MATH</th>
 <td>10.7</td>
 <td>16.1</td>
 <td class="bold">19.8</td>
 </tr>
 <tr class="odd">
-<td class="left-align" data-quarto-table-cell-role="th">CMath</td>
+<th class="left-align" data-quarto-table-cell-role="th">CMath</th>
 <td>-</td>
 <td>57.8</td>
 <td class="bold">60.2</td>
 </tr>
 <tr class="border-top even">
-<td rowspan="2" class="category" data-quarto-table-cell-role="th">Chinese</td>
-<td class="left-align" data-quarto-table-cell-role="th">C-Eval</td>
+<th rowspan="2" class="category" data-quarto-table-cell-role="th">Chinese</th>
+<th class="left-align" data-quarto-table-cell-role="th">C-Eval</th>
 <td>-</td>
 <td>57.2</td>
 <td class="bold">59.9</td>
 </tr>
 <tr class="border-bottom odd">
-<td class="left-align" data-quarto-table-cell-role="th">CMMLU</td>
+<th class="left-align" data-quarto-table-cell-role="th">CMMLU</th>
 <td>-</td>
 <td>58.2</td>
 <td class="bold">58.8</td>
@@ -1586,7 +1584,7 @@ Code for generating the table above
 </style>
 
 
-<table class="table-hover caption-top table" data-quarto-postprocess="true">
+<table class="table-hover caption-top table">
 <caption>Table 6: Examining the impact of optimizer interchangeability between pretraining and SFT phases.</caption>
 <thead>
 <tr class="border-top header">
@@ -1597,7 +1595,7 @@ Code for generating the table above
 </thead>
 <tbody>
 <tr class="border-top odd">
-<td class="left-align" data-quarto-table-cell-role="th">Pretraining Optimizer</td>
+<th class="left-align" data-quarto-table-cell-role="th">Pretraining Optimizer</th>
 <td class="border-right">-</td>
 <td class="border-right">Muon</td>
 <td class="border-right">AdamW</td>
@@ -1605,7 +1603,7 @@ Code for generating the table above
 <td>AdamW</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">SFT Optimzier</td>
+<th class="left-align" data-quarto-table-cell-role="th">SFT Optimzier</th>
 <td class="border-right">-</td>
 <td class="border-right">Muon</td>
 <td class="border-right">Muon</td>
@@ -1613,7 +1611,7 @@ Code for generating the table above
 <td>AdamW</td>
 </tr>
 <tr class="border-top odd">
-<td class="left-align" data-quarto-table-cell-role="th">MMLU (EM)</td>
+<th class="left-align" data-quarto-table-cell-role="th">MMLU (EM)</th>
 <td class="border-right">0-shot (CoT)</td>
 <td class="border-right bold">55.7</td>
 <td class="border-right">55.3</td>
@@ -1621,7 +1619,7 @@ Code for generating the table above
 <td>52.0</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">HumanEval (Pass@1)</td>
+<th class="left-align" data-quarto-table-cell-role="th">HumanEval (Pass@1)</th>
 <td class="border-right">0-shot</td>
 <td class="border-right bold">57.3</td>
 <td class="border-right">53.7</td>
@@ -1629,7 +1627,7 @@ Code for generating the table above
 <td>53.1</td>
 </tr>
 <tr class="odd">
-<td class="left-align" data-quarto-table-cell-role="th">MBPP (Pass@1)</td>
+<th class="left-align" data-quarto-table-cell-role="th">MBPP (Pass@1)</th>
 <td class="border-right">0-shot</td>
 <td class="border-right bold">55.6</td>
 <td class="border-right">55.5</td>
@@ -1637,7 +1635,7 @@ Code for generating the table above
 <td>55.2</td>
 </tr>
 <tr class="border-bottom even">
-<td class="left-align border-bottom" data-quarto-table-cell-role="th">GSM8K (EM)</td>
+<th class="left-align border-bottom" data-quarto-table-cell-role="th">GSM8K (EM)</th>
 <td class="border-right border-bottom">5-shot</td>
 <td class="border-right border-bottom bold">68.0</td>
 <td class="border-right border-bottom">62.1</td>
@@ -1652,7 +1650,7 @@ Code for generating the table above
 </style>
 
 
-<table class="table-hover caption-top table" data-quarto-postprocess="true">
+<table class="table-hover caption-top table">
 <caption>Table 7: Comparison of Adam and Muon optimizers applied to the SFT of the Qwen2.5-7B pretrained model.</caption>
 <thead>
 <tr class="border-top header">
@@ -1669,25 +1667,25 @@ Code for generating the table above
 </thead>
 <tbody>
 <tr class="border-top odd">
-<td class="left-align" data-quarto-table-cell-role="th">MMLU (EM)</td>
+<th class="left-align" data-quarto-table-cell-role="th">MMLU (EM)</th>
 <td class="border-right">0-shot (CoT)</td>
 <td class="border-right bold">71.4</td>
 <td>70.8</td>
 </tr>
 <tr class="even">
-<td class="left-align" data-quarto-table-cell-role="th">HumanEval (Pass@1)</td>
+<th class="left-align" data-quarto-table-cell-role="th">HumanEval (Pass@1)</th>
 <td class="border-right">0-shot</td>
 <td class="border-right bold">79.3</td>
 <td>77.4</td>
 </tr>
 <tr class="odd">
-<td class="left-align" data-quarto-table-cell-role="th">MBPP (Pass@1)</td>
+<th class="left-align" data-quarto-table-cell-role="th">MBPP (Pass@1)</th>
 <td class="border-right">0-shot</td>
 <td class="border-right bold">71.9</td>
 <td>71.6</td>
 </tr>
 <tr class="border-bottom even">
-<td class="left-align border-bottom" data-quarto-table-cell-role="th">GSM8K (EM)</td>
+<th class="left-align border-bottom" data-quarto-table-cell-role="th">GSM8K (EM)</th>
 <td class="border-right border-bottom">5-shot</td>
 <td class="border-right border-bottom bold">89.8</td>
 <td class="border-bottom">85.8</td>
@@ -1717,77 +1715,41 @@ Code for generating the table above
 
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script>
-
     pseudocode.renderClass("pseudocode");
-
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1853,13 +1815,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2252,7 +2215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Muon Anthology"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jianlin Su"</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-02-27"</span></span>
@@ -3785,7 +3748,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb4-1531"><a href="#cb4-1531" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-1532"><a href="#cb4-1532" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadata {.appendix}</span></span>
 <span id="cb4-1533"><a href="#cb4-1533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-1534"><a href="#cb4-1534" aria-hidden="true" tabindex="-1"></a>These are several blogposts on the homepage of Jianlin Su (苏剑林) that I selected because they are relevant for understanding Muon. I organized them in a chronological sequence, and simplified certain derivations and made certain explanations easier to follow.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb4-1534"><a href="#cb4-1534" aria-hidden="true" tabindex="-1"></a>These are several blogposts on the homepage of Jianlin Su (苏剑林) that I selected because they are relevant for understanding Muon. I organized them in a chronological sequence, and simplified certain derivations and made certain explanations easier to follow.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

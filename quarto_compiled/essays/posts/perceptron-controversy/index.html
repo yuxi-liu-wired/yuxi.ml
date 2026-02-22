@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -345,7 +346,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -546,7 +548,7 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Theorem 1 (Kakutani’s fixed point theorem on the sphere)</strong></span> If <span class="math inline">\(f\)</span> is an <span class="math inline">\(\mathbb{R}^2\)</span>-valued continuous function on the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span>, then for any side length <span class="math inline">\(r \in (0, \sqrt{3})\)</span>, there exist <span class="math inline">\(x_1, x_2, x_3\)</span> on the sphere forming an equilateral triangle with side length <span class="math inline">\(r\)</span>, such that <span class="math inline">\(f(x_1) = f(x_2) = f(x_3)\)</span>.</p>
 <p>Equivalently, if <span class="math inline">\(x_1, x_2, x_3\)</span> form an equilateral triangle on the unit sphere, then there exists a rotation <span class="math inline">\(T\)</span> such that <span class="math inline">\(f(T(x_1)) = f(T(x_2)) = f(T(x_3))\)</span>.</p>
 </div>
-<p>Using knot theory, Minsky proved an extension where <span class="math inline">\(x_1, x_2, x_3\)</span> are three points of a square or a regular pentagon <span class="citation" data-cites="minskyMyUndergraduateThesis2011">(<a href="#ref-minskyMyUndergraduateThesis2011" role="doc-biblioref">Minsky 2011</a>)</span>. The manuscript “disappeared” <span class="citation" data-cites="minskySelectedPublicationsMarvin">(<a href="#ref-minskySelectedPublicationsMarvin" role="doc-biblioref">Minsky n.d.</a>)</span>.</p>
+<p>Using knot theory, Minsky proved an extension where <span class="math inline">\(x_1, x_2, x_3\)</span> are three points of a square or a regular pentagon <span class="citation" data-cites="minskyMyUndergraduateThesis2011">(<a href="#ref-minskyMyUndergraduateThesis2011" role="doc-biblioref"><span>“My Undergraduate Thesis in Fixed Point Theorems (70/151)”</span> 2011</a>)</span>. The manuscript “disappeared” <span class="citation" data-cites="minskySelectedPublicationsMarvin">(<a href="#ref-minskySelectedPublicationsMarvin" role="doc-biblioref">Minsky n.d.</a>)</span>.</p>
 <blockquote class="blockquote">
 <p>I wrote it up and gave it to Gleason. He read it and said, ‘You are a mathematician.’ Later, I showed the proof to Freeman Dyson, at the Institute for Advanced Study, and he amazed me with a proof <span class="citation" data-cites="dysonContinuousFunctionsDefined1951">(<a href="#ref-dysonContinuousFunctionsDefined1951" role="doc-biblioref">Dyson 1951</a>)</span> that there must be at least one square that has the same temperature at all four vertices. He had found somewhere in my proof a final remnant of unused logic. <span class="citation" data-cites="bernsteinMarvinMinskysVision1981">(<a href="#ref-bernsteinMarvinMinskysVision1981" role="doc-biblioref">Bernstein 1981</a>)</span></p>
 </blockquote>
@@ -602,7 +604,7 @@ window.Quarto = {
 <p>The radical way is to decenter the orthodoxy and let a thousand heterodoxies bloom. Why go for the orthodoxy, when the <a href="https://en.wikipedia.org/wiki/Duhem%E2%80%93Quine_thesis">Duhem–Quine thesis</a> tells us that evidence is never enough to constrain us to only one orthodoxy? And given that objectively no theory deserves the high name of “orthodoxy”, how did the scientific “orthodoxy” become dominant? A critical analysis of the history shows that its dominance over Aboriginal and woman ways of knowing is merely a historical accident due to an alliance with <a href="https://en.wikipedia.org/wiki/World-systems_theory">the hegemonic reason of the metropole over the periphery</a>.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;This is not a joke, since <a href="https://en.wikipedia.org/wiki/Decoloniality">decolonial studies</a> literally begin with this assumption.</p></div></div><p>Papert went with the radical way.</p>
 <p>After four years of study under Piaget, he arrived in MIT in 1963, and began working with Minsky on various topics, including the <a href="https://en.wikipedia.org/wiki/Turtle_(robot)">Logo Turtle robot</a>, and the <em>Perceptrons</em> book. The computer revolution was starting, and Papert saw computers as a way to bring radical constructivism to children.</p>
-<p>In the real world, phenomena are limited by nature, and aspiring little heterodoxy-builders are limited by their ability to construct theories and check their consequences. In the computer world, every child could program and construct “microworlds” from their own theories. Thus, computers would bring constructivism to the classroom. Furthermore, the constructed world inside computers could then flow out to the physical world via robots. This is why Papert worked on both <em>Logo</em> the programming language and <em>Logo</em> the turtle robots. In his words, he intended to fight “instructionism” with “constructionism” by bringing the power of the computer to every child, so that they would grow up to be “<a href="https://en.wikipedia.org/wiki/The_Savage_Mind">bricoleurs</a>”, working with whatever little tool they have available doing whatever is necessary to accomplish little things. This is a vital piece in his overarching project of epistemological pluralism, to liberate heterodoxical ways of knowing <span class="citation" data-cites="papertChildrensMachineRethinking1994">(<a href="#ref-papertChildrensMachineRethinking1994" role="doc-biblioref">S. A. Papert 1994, chap. 7</a>)</span>:</p>
+<p>In the real world, phenomena are limited by nature, and aspiring little heterodoxy-builders are limited by their ability to construct theories and check their consequences. In the computer world, every child could program and construct “microworlds” from their own theories. Thus, computers would bring constructivism to the classroom. Furthermore, the constructed world inside computers could then flow out to the physical world via robots. This is why Papert worked on both <em>Logo</em> the programming language and <em>Logo</em> the turtle robots. In his words, he intended to fight “instructionism” with “constructionism” by bringing the power of the computer to every child, so that they would grow up to be “<a href="https://en.wikipedia.org/wiki/The_Savage_Mind">bricoleurs</a>”, working with whatever little tool they have available doing whatever is necessary to accomplish little things. This is a vital piece in his overarching project of epistemological pluralism, to liberate heterodoxical ways of knowing <span class="citation" data-cites="papertChildrensMachineRethinking1994">(<a href="#ref-papertChildrensMachineRethinking1994" role="doc-biblioref">Papert 1994, chap. 7</a>)</span>:</p>
 <blockquote class="blockquote">
 <p>Traditional education codifies what it thinks citizens need to know and sets out to feed children this “fish.” Constructionism is built on the assumption that children will do best by finding (“fishing”) for themselves the specific knowledge they need … it is as well to have good fishing lines, which is why we need computers, and to know the location of rich waters, which is why we need to develop a large range of mathetically rich activities or “microworlds.”</p>
 <p>… School math, like the ideology, though not necessarily the practice, of modern science, is based on the ideal of generality – the single, universally correct method that will work for all problems and for all people. Bricolage is a metaphor for the ways of the old-fashioned traveling tinker, the jack-of-all-trades who knocks on the door offering to fix whatever is broken. Faced with a job, the tinker rummages in his bag of assorted tools to find one that will fit the problem at hand and, if one tool does nor work for the job, simply tries another without ever being upset in the slightest by the lack of generality. The basic tenets of bricolage as a methodology for intellectual activity are: Use what you’ve got, improvise, make do. And for the true bricoleur, the tools in the bag will have been selected over a long time by a process determined by more than pragmatic utility. These mental tools will be as well worn and comfortable as the physical tools of the traveling tinker; they will give a sense of the familiar, of being at ease with oneself …</p>
@@ -690,11 +692,11 @@ window.Quarto = {
 <p>Minsky and his crew thought that Frank Rosenblatt’s work was a waste of time, and they certainly thought that our work at SRI was a waste of time. Minsky really didn’t believe in perceptrons, he didn’t think it was the way to go. I know he knocked the hell out of our perceptron business. <span class="citation" data-cites="olazaranSociologicalHistoryNeural1993">(<a href="#ref-olazaranSociologicalHistoryNeural1993" role="doc-biblioref">Olazaran 1993, 622</a>)</span></p>
 </blockquote>
 <p>When <em>Perceptrons</em> was finally published in 1969, the connectionist camp was already deserted. The SRI group had switched to symbolic AI projects; Widrow’s group had switched to adapting single perceptrons to adaptive filtering; Frank Rosenblatt was still labouring, isolated, with dwindling funds, until his early death in 1971.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;The 1972 reprinting of <em>Perceptrons</em> included a handwritten note, “In memory of Frank Rosenblatt”. This was not an ironic dedication, as Minsky and Rosenblatt were personally friendly, although their research paradigms had been fighting for dominance.</p></div></div><p>During the last days of Rosenblatt, he worked on a massive expansion of the Mark I Perceptron, the Tobermory (1961–1967). Named after a talking cat, it was built for speech recognition. It had 4 layers with 45-1600-1000-12 neurons, and 12,000 adjustable weights implemented with tape-wound magnetic cores. As usual for Rosenblatt, these adjustable weights are all in the last layer (<span class="math inline">\(12000 = 1000 \times 12\)</span>). By the time of its completion, simulation on digital computers had become faster than purpose-built perceptron machines. <span class="citation" data-cites="nagyNeuralNetworksthenNow1991">(<a href="#ref-nagyNeuralNetworksthenNow1991" role="doc-biblioref">George Nagy 1991</a>)</span> Indeed, often during the history of neural networks, someone would think “this calls for a purpose-made computer” and a few years later, Moore’s law obsoleted their effort. A kind of hardware bitter lesson.</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;The 1972 reprinting of <em>Perceptrons</em> included a handwritten note, “In memory of Frank Rosenblatt”. This was not an ironic dedication, as Minsky and Rosenblatt were personally friendly, although their research paradigms had been fighting for dominance.</p></div></div><p>During the last days of Rosenblatt, he worked on a massive expansion of the Mark I Perceptron, the Tobermory (1961–1967). Named after a talking cat, it was built for speech recognition. It had 4 layers with 45-1600-1000-12 neurons, and 12,000 adjustable weights implemented with tape-wound magnetic cores. As usual for Rosenblatt, these adjustable weights are all in the last layer (<span class="math inline">\(12000 = 1000 \times 12\)</span>). By the time of its completion, simulation on digital computers had become faster than purpose-built perceptron machines. <span class="citation" data-cites="nagyNeuralNetworksthenNow1991">(<a href="#ref-nagyNeuralNetworksthenNow1991" role="doc-biblioref">Nagy 1991</a>)</span> Indeed, often during the history of neural networks, someone would think “this calls for a purpose-made computer” and a few years later, Moore’s law obsoleted their effort. A kind of hardware bitter lesson.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/Tobermory.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Tobermory schematic. <span class="citation" data-cites="nagySystemCircuitDesigns1963">(<a href="#ref-nagySystemCircuitDesigns1963" role="doc-biblioref">GEORGE Nagy 1963</a>)</span></figcaption>
+<figcaption class="margin-caption">Tobermory schematic. <span class="citation" data-cites="nagySystemCircuitDesigns1963">(<a href="#ref-nagySystemCircuitDesigns1963" role="doc-biblioref">Nagy 1963</a>)</span></figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="olazaranHistoricalSociologyNeural1991">(<a href="#ref-olazaranHistoricalSociologyNeural1991" role="doc-biblioref">Olazaran 1991</a>)</span> gathered evidence that the publication of <em>Perceptrons</em> was not the cause but a “marker event” for the end of the perceptron controversy and the ascendancy of the symbolic AI school. The book was not the neural network killer, but its epitaph.</p>
@@ -881,7 +883,7 @@ window.Quarto = {
 </section>
 <section id="sec-papert-struck-back" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="sec-papert-struck-back">Papert struck back</h3>
-<p>While it appears that Minsky was the main author for the new prologue and epilogue, Papert solo-authored <span class="citation" data-cites="papertOneAIMany1988">(<a href="#ref-papertOneAIMany1988" role="doc-biblioref">S. Papert 1988</a>)</span>, an essay that gave the controversy a uniquely Papert-styled spin. It is an extensive reframing of the perceptron controversy into a social and philosophical issue, with the prediction of ultimate victory for epistemological pluralism:</p>
+<p>While it appears that Minsky was the main author for the new prologue and epilogue, Papert solo-authored <span class="citation" data-cites="papertOneAIMany1988">(<a href="#ref-papertOneAIMany1988" role="doc-biblioref">Papert 1988</a>)</span>, an essay that gave the controversy a uniquely Papert-styled spin. It is an extensive reframing of the perceptron controversy into a social and philosophical issue, with the prediction of ultimate victory for epistemological pluralism:</p>
 <blockquote class="blockquote">
 <p>The field of artificial intelligence is currently divided into what seem to be several competing paradigms … for mechanisms with a universal application. I do not foresee the future in terms of an ultimate victory for any of the present contenders. What I do foresee is a change of frame, away from the search for universal mechanisms. I believe that we have much more to learn from studying the differences, rather than the sameness, of kinds of knowing.</p>
 </blockquote>
@@ -1111,18 +1113,18 @@ Interjection
 </blockquote>
 <p>At last, a testable hypothesis! I asked GPT-4 to <code>Draw a syntax tree for "Can eagles that fly swim?"</code>, and received this:<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn24"><p><sup>24</sup>&nbsp;The code it gave failed on the first try, due to an environment variable issue on the Linux virtual machine it ran on. We fixed it after two more plies of conversation.</p></div></div><div class="callout callout-style-default callout-note callout-titled" title="Code">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Code
+<span class="screen-reader-only">Note</span>Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> Tree</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span>
@@ -1147,7 +1149,7 @@ Code
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>tree_svg <span class="op">=</span> svgling.draw_tree(tree)</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>tree_svg.get_svg().save()</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>display(SVG(tree_svg.get_svg()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>display(SVG(tree_svg.get_svg()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1189,23 +1191,23 @@ Code
 <p>… fairly soon ideas that have been brewing in AI since the 1960’s, on making computers understand significant fragments of natural language, will enter and, I’m sure, soon dominate the main stream of Linguistics. (In the era of these memos, it was the students in AI, almost alone, who carried on the quest for meaningful theories of linguistic processes, when most all other language work was stuck in shallow, syntax-oriented, formalisms.)</p>
 <p><span class="citation" data-cites="minskyIntroductionCOMTEXMicrofiche1983">(<a href="#ref-minskyIntroductionCOMTEXMicrofiche1983" role="doc-biblioref">Minsky 1983</a>)</span></p>
 </blockquote>
-<p>Similarly, Gary Marcus has consistently criticized neural network language models since at least 1992 <span class="citation" data-cites="marcusOverregularizationLanguageAcquisition1992">(<a href="#ref-marcusOverregularizationLanguageAcquisition1992" role="doc-biblioref">G. F. Marcus et al. 1992</a>)</span>. His theory of intelligence is fundamentally Chomskyan: neural networks can exhibit intelligence but only if they implement rules for symbolic manipulation.<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a> Moreover, many symbolic rules must be present at birth, by the poverty of stimulus.</p>
-<div class="no-row-height column-margin column-container"><div id="fn25"><p><sup>25</sup>&nbsp;See <span class="citation" data-cites="marcusAlgebraicMindIntegrating2003">(<a href="#ref-marcusAlgebraicMindIntegrating2003" role="doc-biblioref">G. F. Marcus 2003</a>)</span> for a book-length treatment.</p></div></div><p>For example, here is him saying in 1993:</p>
+<p>Similarly, Gary Marcus has consistently criticized neural network language models since at least 1992 <span class="citation" data-cites="marcusOverregularizationLanguageAcquisition1992">(<a href="#ref-marcusOverregularizationLanguageAcquisition1992" role="doc-biblioref">Marcus et al. 1992</a>)</span>. His theory of intelligence is fundamentally Chomskyan: neural networks can exhibit intelligence but only if they implement rules for symbolic manipulation.<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a> Moreover, many symbolic rules must be present at birth, by the poverty of stimulus.</p>
+<div class="no-row-height column-margin column-container"><div id="fn25"><p><sup>25</sup>&nbsp;See <span class="citation" data-cites="marcusAlgebraicMindIntegrating2003">(<a href="#ref-marcusAlgebraicMindIntegrating2003" role="doc-biblioref">Marcus 2003</a>)</span> for a book-length treatment.</p></div></div><p>For example, here is him saying in 1993:</p>
 <blockquote class="blockquote">
 <p>Whether children require “negative evidence” (i.e., information about which strings of words are not grammatical sentences) to eliminate their ungrammatical utterances is a central question in language acquisition because, lacking negative evidence, a child would require internal mechanisms to unlearn grammatical errors. … There is no evidence that noisy feedback is required for language learning, or even that noisy feedback exists. Thus internal mechanisms are necessary to account for the unlearning of ungrammatical utterances.</p>
-<p><span class="citation" data-cites="marcusNegativeEvidenceLanguage1993">(<a href="#ref-marcusNegativeEvidenceLanguage1993" role="doc-biblioref">G. F. Marcus 1993</a>)</span></p>
+<p><span class="citation" data-cites="marcusNegativeEvidenceLanguage1993">(<a href="#ref-marcusNegativeEvidenceLanguage1993" role="doc-biblioref">Marcus 1993</a>)</span></p>
 </blockquote>
 <p>And here is him in 2012, quoting the old past tense debate to urge caution against the hype of AlexNet:</p>
 <blockquote class="blockquote">
 <p>They learned slowly and inefficiently, and as Steven Pinker and I showed, couldn’t master even some of the basic things that children do, like learning the past tense of regular verbs. By the late nineteen-nineties, neural networks had again begun to fall out of favor. … Realistically, deep learning is only part of the larger challenge of building intelligent machines. Such techniques lack ways of representing causal relationships, and are likely to face challenges in acquiring abstract ideas like “sibling” or “identical to”. They have no obvious ways of performing logical inferences, and they are also still a long way from integrating abstract knowledge, such as information about what objects are, what they are for, and how they are typically used. … Norvig is clearly very interested in seeing what Hinton could come up with. But even Norvig didn’t see how you could build a machine that could understand stories using deep learning alone.</p>
-<p><span class="citation" data-cites="marcusDeepLearningRevolution2012">(<a href="#ref-marcusDeepLearningRevolution2012" role="doc-biblioref">G. Marcus 2012</a>)</span></p>
+<p><span class="citation" data-cites="marcusDeepLearningRevolution2012">(<a href="#ref-marcusDeepLearningRevolution2012" role="doc-biblioref">Marcus 2012</a>)</span></p>
 </blockquote>
 <p>And here is him writing in 2018 dismissing deep learning as not working on the problem of general intelligence, just working on applications:</p>
 <blockquote class="blockquote">
 <p>Once upon a time, before the fashionable rise of machine learning and “big data”, A.I. researchers tried to understand how complex knowledge could be encoded and processed in computers. This project, known as knowledge engineering… A.I. researchers need to return to that project sooner rather than later, ideally enlisting the help of cognitive psychologists who study the question of how human cognition manages to be endlessly flexible. Today’s dominant approach to A.I. has not worked out. Yes, some remarkable applications have been built from it, including Google Translate and Google Duplex. But the limitations of these applications as a form of intelligence should be a wake-up call.</p>
-<p><span class="citation" data-cites="marcusOpinionAIHarder2018">(<a href="#ref-marcusOpinionAIHarder2018" role="doc-biblioref">G. Marcus and Davis 2018</a>)</span></p>
+<p><span class="citation" data-cites="marcusOpinionAIHarder2018">(<a href="#ref-marcusOpinionAIHarder2018" role="doc-biblioref">Marcus and Davis 2018</a>)</span></p>
 </blockquote>
-<p>As it happens, 2018 was the year of Transformer revolution in natural language modeling, with BERT and GPT-1. Never one to give up, he continued with the same criticisms as easily as substituting “Transformers” for “recurrent networks”. Given the track record, he is conveniently predictable,<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> and we can expect nothing less than his recent criticisms of deep learning in general <span class="citation" data-cites="marcusDeepLearningCritical2018">(<a href="#ref-marcusDeepLearningCritical2018" role="doc-biblioref">G. Marcus 2018</a>)</span> and <a href="https://www.technologyreview.com/2020/08/22/1007539/gpt3-openai-language-generator-artificial-intelligence-ai-opinion/">large language models in particular</a>, <a href="https://www.theatlantic.com/technology/archive/2023/03/ai-chatbots-large-language-model-misinformation/673376/">repeatedly</a>.</p>
+<p>As it happens, 2018 was the year of Transformer revolution in natural language modeling, with BERT and GPT-1. Never one to give up, he continued with the same criticisms as easily as substituting “Transformers” for “recurrent networks”. Given the track record, he is conveniently predictable,<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> and we can expect nothing less than his recent criticisms of deep learning in general <span class="citation" data-cites="marcusDeepLearningCritical2018">(<a href="#ref-marcusDeepLearningCritical2018" role="doc-biblioref">Marcus 2018</a>)</span> and <a href="https://www.technologyreview.com/2020/08/22/1007539/gpt3-openai-language-generator-artificial-intelligence-ai-opinion/">large language models in particular</a>, <a href="https://www.theatlantic.com/technology/archive/2023/03/ai-chatbots-large-language-model-misinformation/673376/">repeatedly</a>.</p>
 
 
 <!-- -->
@@ -1218,16 +1220,16 @@ Code
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-bahdanauNeuralMachineTranslation2014" class="csl-entry" role="listitem">
-Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. 2014. <span>“Neural <span>Machine Translation</span> by <span>Jointly Learning</span> to <span>Align</span> and <span>Translate</span>.”</span> arXiv. <a href="https://arxiv.org/abs/1409.0473">https://arxiv.org/abs/1409.0473</a>.
+Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. 2014. <span>“Neural <span>Machine Translation</span> by <span>Jointly Learning</span> to <span>Align</span> and <span>Translate</span>.”</span> arXiv. <a href="http://arxiv.org/abs/1409.0473">http://arxiv.org/abs/1409.0473</a>.
 </div>
 <div id="ref-beerProgressNoteResearch1962" class="csl-entry" role="listitem">
 Beer, Stafford. 1962. <span>“A Progress Note on Research into a Cybernetic Analogue of Fabric.”</span>
 </div>
 <div id="ref-bernsteinMarvinMinskysVision1981" class="csl-entry" role="listitem">
-Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December.
+Bernstein, Jeremy. 1981. <span>“Marvin <span>Minsky</span>’s <span>Vision</span> of the <span>Future</span>.”</span> <em>The New Yorker</em>, December 6, 1981. <a href="https://www.newyorker.com/magazine/1981/12/14/a-i">https://www.newyorker.com/magazine/1981/12/14/a-i</a>.
 </div>
 <div id="ref-borgesSelectedNonfictions2000" class="csl-entry" role="listitem">
-Borges, Jorge Luis. 2000. <em>Selected Non-Fictions</em>. Edited by Eliot Weinberger. New York: Penguin Books.
+Borges, Jorge Luis. 2000. <em>Selected Non-Fictions</em>. Edited by Eliot Weinberger. New York: Penguin Books. <a href="http://books.google.com/books?id=BpUrAQAAMAAJ">http://books.google.com/books?id=BpUrAQAAMAAJ</a>.
 </div>
 <div id="ref-breimanReflectionsRefereeingPapers1995" class="csl-entry" role="listitem">
 Breiman, Leo. 1995. <span>“Reflections <span>After Refereeing Papers</span> for <span>NIPS</span>.”</span> In <em>The <span>Mathematics Of Generalization</span></em>. CRC Press.
@@ -1242,13 +1244,13 @@ Cariani, Peter. 1993. <span>“To Evolve an Ear. <span>Epistemological</span> Im
 Chomsky, Noam. 1969. <span>“Some <span>Empirical Assumptions</span> in <span>Modern Philosophy</span> of <span>Language</span>.”</span> In <em>Philosophy, Science, and Method</em>, edited by Ernest Nagel, Sidney Morgenbesser, Patrick Suppes, and Morton White. St. Martin’s Press.
 </div>
 <div id="ref-chomskyPovertyStimulusUnfinished2010" class="csl-entry" role="listitem">
-———. 2010. <span>“Poverty of <span>Stimulus</span>: <span>Unfinished Business</span>.”</span> Johannes Gutenberg-Universit<span>ä</span>t.
+———. 2010. <span>“Poverty of <span>Stimulus</span>: <span>Unfinished Business</span>.”</span> Presented at the Sprache und <span>Gehirn</span> – <span>Zur Sprachfähigkeit</span> des <span>Menschen</span>, Johannes Gutenberg-Universität, March 24. <a href="https://web.archive.org/web/20230216033431/https://www.blogs.uni-mainz.de/studgen-stiftung-jgsp-eng/files/2019/01/Mainz_transcript_edited2.pdf">https://web.archive.org/web/20230216033431/https://www.blogs.uni-mainz.de/studgen-stiftung-jgsp-eng/files/2019/01/Mainz_transcript_edited2.pdf</a>.
 </div>
 <div id="ref-colapintoInterpreter2007" class="csl-entry" role="listitem">
-Colapinto, John. 2007. <span>“The Interpreter.”</span> <em>The New Yorker</em>, April, 125.
+Colapinto, John. 2007. <span>“The Interpreter.”</span> <em>The New Yorker</em>, April 16, 2007. <a href="https://blogs.baruch.cuny.edu/anthropology1001/files/2011/01/NewYorkerPirahaArticle1.pdf">https://blogs.baruch.cuny.edu/anthropology1001/files/2011/01/NewYorkerPirahaArticle1.pdf</a>.
 </div>
 <div id="ref-dertouzosThresholdLogicSynthesis1965" class="csl-entry" role="listitem">
-Dertouzos, Michael. 1965. <em>Threshold Logic: <span>A Synthesis Approach</span></em>.
+Dertouzos, Michael. 1965. <em>Threshold Logic: <span>A Synthesis Approach</span></em>. <a href="https://mitpress.mit.edu/9780262040099/">https://mitpress.mit.edu/9780262040099/</a>.
 </div>
 <div id="ref-dudaPatternClassificationScene1973" class="csl-entry" role="listitem">
 Duda, Richard O., and Peter E. Hart. 1973. <em>Pattern Classification and Scene Analysis</em>. New York: Wiley.
@@ -1260,19 +1262,19 @@ Duda, Richard O., Peter E. Hart, and David G. Stork. 2001. <em>Pattern Classific
 Dyson, Freeman J. 1951. <span>“Continuous Functions Defined on Spheres.”</span> <em>Annals of Mathematics</em>, 534–36. <a href="https://doi.org/10.2307/1969487">https://doi.org/10.2307/1969487</a>.
 </div>
 <div id="ref-fodorConnectionismCognitiveArchitecture1988" class="csl-entry" role="listitem">
-Fodor, Jerry A., and Zenon W. Pylyshyn. 1988. <span>“Connectionism and Cognitive Architecture: <span>A</span> Critical Analysis.”</span> <em>Cognition</em> 28 (1-2): 3–71. <a href="https://doi.org/10.1016/0010-0277(88)90031-5">https://doi.org/10.1016/0010-0277(88)90031-5</a>.
+Fodor, Jerry A., and Zenon W. Pylyshyn. 1988. <span>“Connectionism and Cognitive Architecture: <span>A</span> Critical Analysis.”</span> <em>Cognition</em> 28 (1–2): 3–71. <a href="https://doi.org/10.1016/0010-0277(88)90031-5">https://doi.org/10.1016/0010-0277(88)90031-5</a>.
 </div>
 <div id="ref-foersterNonlinearComputationDeep2017" class="csl-entry" role="listitem">
-Foerster, Jakob. 2017. <span>“Nonlinear Computation in Deep Linear Networks.”</span> https://openai.com/research/nonlinear-computation-in-deep-linear-networks.
+Foerster, Jakob N. 2017. <span>“Nonlinear Computation in Deep Linear Networks.”</span> September 29, 2017. <a href="https://openai.com/research/nonlinear-computation-in-deep-linear-networks">https://openai.com/research/nonlinear-computation-in-deep-linear-networks</a>.
 </div>
 <div id="ref-fukushimaVisualFeatureExtraction1969" class="csl-entry" role="listitem">
-Fukushima, Kunihiko. 1969. <span>“Visual Feature Extraction by a Multilayered Network of Analog Threshold Elements.”</span> <em>IEEE Transactions on Systems Science and Cybernetics</em> 5 (4): 322–33.
+Fukushima, Kunihiko. 1969. <span>“Visual Feature Extraction by a Multilayered Network of Analog Threshold Elements.”</span> <em>IEEE Transactions on Systems Science and Cybernetics</em> 5 (4): 322–33. <a href="https://ieeexplore.ieee.org/abstract/document/4082265/">https://ieeexplore.ieee.org/abstract/document/4082265/</a>.
 </div>
 <div id="ref-galisonOntologyEnemyNorbert1994" class="csl-entry" role="listitem">
 Galison, Peter. 1994. <span>“The Ontology of the Enemy: <span>Norbert Wiener</span> and the Cybernetic Vision.”</span> <em>Critical Inquiry</em> 21 (1): 228–66. <a href="https://doi.org/10/fpfd3b">https://doi.org/10/fpfd3b</a>.
 </div>
 <div id="ref-gordonNaturalHistoryNetworks1959" class="csl-entry" role="listitem">
-Gordon, Pask. 1959. <span>“The Natural History of Networks.”</span> <em>Proceedings of International Tracts In Computer Science and Technology and Their Application</em> 2: 232–63.
+Gordon, Pask. 1959. <span>“The Natural History of Networks.”</span> <em>Proceedings of International Tracts In Computer Science and Technology and Their Application</em> 2: 232–63. <a href="https://www.pangaro.com/pask/Pask-1960-TheNaturalHistoryofNetworks.pdf">https://www.pangaro.com/pask/Pask-1960-TheNaturalHistoryofNetworks.pdf</a>.
 </div>
 <div id="ref-hubelReceptiveFieldsSingle1959" class="csl-entry" role="listitem">
 Hubel, David H., and Torsten N. Wiesel. 1959. <span>“Receptive Fields of Single Neurones in the Cat’s Striate Cortex.”</span> <em>The Journal of Physiology</em> 148 (3): 574. <a href="https://doi.org/10.1113/jphysiol.1959.sp006308">https://doi.org/10.1113/jphysiol.1959.sp006308</a>.
@@ -1281,76 +1283,76 @@ Hubel, David H., and Torsten N. Wiesel. 1959. <span>“Receptive Fields of Singl
 Johnson, Kent. 2004. <span>“Gold’s Theorem and Cognitive Science.”</span> <em>Philosophy of Science</em> 71 (4): 571–92. <a href="https://doi.org/10.1086/423752">https://doi.org/10.1086/423752</a>.
 </div>
 <div id="ref-kanalPatternCategoriesAlternate1993" class="csl-entry" role="listitem">
-Kanal, Laveen N. 1993. <span>“On Pattern, Categories, and Alternate Realities.”</span> <em>Pattern Recognition Letters</em> 14 (3): 241–55.
+Kanal, Laveen N. 1993. <span>“On Pattern, Categories, and Alternate Realities.”</span> <em>Pattern Recognition Letters</em> 14 (3): 241–55. <a href="http://lnk.com/prl14.pdf">http://lnk.com/prl14.pdf</a>.
 </div>
 <div id="ref-knightAI30Years2016" class="csl-entry" role="listitem">
-Knight, Will. 2016. <span>“An <span>AI</span> with 30 <span>Years</span>’ <span>Worth</span> of <span>Knowledge Finally Goes</span> to <span>Work</span>.”</span> <em>MIT Technology Review</em>, March.
+Knight, Will. 2016. <span>“An <span>AI</span> with 30 <span>Years</span>’ <span>Worth</span> of <span>Knowledge Finally Goes</span> to <span>Work</span>.”</span> <em>MIT Technology Review</em>, March 14, 2016. <a href="https://www.technologyreview.com/2016/03/14/108873/an-ai-with-30-years-worth-of-knowledge-finally-goes-to-work/">https://www.technologyreview.com/2016/03/14/108873/an-ai-with-30-years-worth-of-knowledge-finally-goes-to-work/</a>.
 </div>
 <div id="ref-lenatCycMidtermReport1990" class="csl-entry" role="listitem">
-Lenat, Douglas B., and Ramanathan V. Guha. 1990. <span>“Cyc: <span>A</span> Midterm Report.”</span> <em>AI Magazine</em> 11 (3): 32–32.
+Lenat, Douglas B., and Ramanathan V. Guha. 1990. <span>“Cyc: <span>A</span> Midterm Report.”</span> <em>AI Magazine</em> 11 (3): 32–32. <a href="https://ojs.aaai.org/index.php/aimagazine/article/view/842">https://ojs.aaai.org/index.php/aimagazine/article/view/842</a>.
 </div>
 <div id="ref-lenatCycUsingCommon1985" class="csl-entry" role="listitem">
-Lenat, Douglas B., Mayank Prakash, and Mary Shepherd. 1985. <span>“Cyc: <span>Using</span> Common Sense Knowledge to Overcome Brittleness and Knowledge Acquisition Bottlenecks.”</span> <em>AI Magazine</em> 6 (4): 65–65.
+Lenat, Douglas B., Mayank Prakash, and Mary Shepherd. 1985. <span>“Cyc: <span>Using</span> Common Sense Knowledge to Overcome Brittleness and Knowledge Acquisition Bottlenecks.”</span> <em>AI Magazine</em> 6 (4): 65–65. <a href="https://ojs.aaai.org/index.php/aimagazine/article/view/510/0">https://ojs.aaai.org/index.php/aimagazine/article/view/510/0</a>.
 </div>
 <div id="ref-levyHackersHeroesComputer2010" class="csl-entry" role="listitem">
 Levy, Steven. 2010. <em>Hackers: <span>Heroes</span> of the <span>Computer Revolution</span></em>. 1st edition. Sebastopol, CA: O’Reilly Media.
-</div>
-<div id="ref-marcusDeepLearningRevolution2012" class="csl-entry" role="listitem">
-Marcus, Gary. 2012. <span>“Is <span>‘<span>Deep Learning</span>’</span> a <span>Revolution</span> in <span>Artificial Intelligence</span>?”</span> <em>The New Yorker</em>, November.
-</div>
-<div id="ref-marcusDeepLearningCritical2018" class="csl-entry" role="listitem">
-———. 2018. <span>“Deep <span>Learning</span>: <span>A Critical Appraisal</span>.”</span> arXiv. <a href="https://arxiv.org/abs/1801.00631">https://arxiv.org/abs/1801.00631</a>.
 </div>
 <div id="ref-marcusNegativeEvidenceLanguage1993" class="csl-entry" role="listitem">
 Marcus, Gary F. 1993. <span>“Negative Evidence in Language Acquisition.”</span> <em>Cognition</em> 46 (1): 53–85. <a href="https://doi.org/10.1016/0010-0277(93)90022-N">https://doi.org/10.1016/0010-0277(93)90022-N</a>.
 </div>
 <div id="ref-marcusAlgebraicMindIntegrating2003" class="csl-entry" role="listitem">
-———. 2003. <em>The Algebraic Mind: <span>Integrating</span> Connectionism and Cognitive Science</em>. MIT press.
+———. 2003. <em>The Algebraic Mind: <span>Integrating</span> Connectionism and Cognitive Science</em>. MIT press. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=7YpuRUlFLm8C&amp;oi=fnd&amp;pg=PR9&amp;dq=the+algebraic+mind&amp;ots=asKHu3nT8m&amp;sig=mu9Myw9KuXRhKsBa1Ywa0CgKB2g">https://books.google.com/books?hl=en&amp;lr=&amp;id=7YpuRUlFLm8C&amp;oi=fnd&amp;pg=PR9&amp;dq=the+algebraic+mind&amp;ots=asKHu3nT8m&amp;sig=mu9Myw9KuXRhKsBa1Ywa0CgKB2g</a>.
 </div>
-<div id="ref-marcusOverregularizationLanguageAcquisition1992" class="csl-entry" role="listitem">
-Marcus, Gary F., Steven Pinker, Michael Ullman, Michelle Hollander, T. John Rosen, Fei Xu, and Harald Clahsen. 1992. <span>“Overregularization in Language Acquisition.”</span> <em>Monographs of the Society for Research in Child Development</em>, i–178. <a href="https://www.jstor.org/stable/1166115">https://www.jstor.org/stable/1166115</a>.
+<div id="ref-marcusDeepLearningRevolution2012" class="csl-entry" role="listitem">
+———. 2012. <span>“Is <span>‘<span>Deep Learning</span>’</span> a <span>Revolution</span> in <span>Artificial Intelligence</span>?”</span> <em>The New Yorker</em>, November 25, 2012. <a href="https://www.newyorker.com/news/news-desk/is-deep-learning-a-revolution-in-artificial-intelligence">https://www.newyorker.com/news/news-desk/is-deep-learning-a-revolution-in-artificial-intelligence</a>.
+</div>
+<div id="ref-marcusDeepLearningCritical2018" class="csl-entry" role="listitem">
+———. 2018. <span>“Deep <span>Learning</span>: <span>A Critical Appraisal</span>.”</span> January 2, 2018. <a href="http://arxiv.org/abs/1801.00631">http://arxiv.org/abs/1801.00631</a>.
 </div>
 <div id="ref-marcusOpinionAIHarder2018" class="csl-entry" role="listitem">
-Marcus, Gary, and Ernest Davis. 2018. <span>“Opinion <span></span> <span>A</span>.<span>I</span>. <span>Is Harder Than You Think</span>.”</span> <em>The New York Times</em>, May.
+Marcus, Gary F., and Ernest Davis. 2018. <span>“Opinion | <span>A</span>.<span>I</span>. <span>Is Harder Than You Think</span>.”</span> <em>The New York Times: Opinion</em>, May 18, 2018. <a href="https://www.nytimes.com/2018/05/18/opinion/artificial-intelligence-challenges.html">https://www.nytimes.com/2018/05/18/opinion/artificial-intelligence-challenges.html</a>.
+</div>
+<div id="ref-marcusOverregularizationLanguageAcquisition1992" class="csl-entry" role="listitem">
+Marcus, Gary F., Steven Pinker, Michael T. Ullman, Michelle Hollander, T. John Rosen, Fei Xu, and Harald Clahsen. 1992. <span>“Overregularization in Language Acquisition.”</span> <em>Monographs of the Society for Research in Child Development</em>, i–178. <a href="https://www.jstor.org/stable/1166115">https://www.jstor.org/stable/1166115</a>.
 </div>
 <div id="ref-mccullochLogicalCalculusIdeas1943" class="csl-entry" role="listitem">
-McCulloch, Warren S., and Walter Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5 (4): 115–33. <a href="https://doi.org/10/djsbj6">https://doi.org/10/djsbj6</a>.
+McCulloch, Warren Sturgis, and Walter H. Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5 (4): 115–33. <a href="https://doi.org/10/djsbj6">https://doi.org/10/djsbj6</a>.
 </div>
 <div id="ref-metzGeniusMakersMavericks2021" class="csl-entry" role="listitem">
 Metz, Cade. 2021. <em>Genius Makers: The Mavericks Who Brought <span>A</span>.<span>I</span>. To <span>Google</span>, <span>Facebook</span>, and the World</em>. New York: Dutton, an imprint of Penguin Random House LLC.
 </div>
 <div id="ref-minskyNeuralanalogueCalculatorBased1952" class="csl-entry" role="listitem">
-Minsky, Marvin. 1952. <span>“A Neural-Analogue Calculator Based Upon a Probability Model of Reinforcement.”</span> <em>Harvard University Psychological Laboratories, Cambridge, Massachusetts</em>.
+Minsky, Marvin L. 1952. <span>“A Neural-Analogue Calculator Based Upon a Probability Model of Reinforcement.”</span> <em>Harvard University Psychological Laboratories, Cambridge, Massachusetts</em>.
 </div>
 <div id="ref-minskyTheoryNeuralanalogReinforcement1954" class="csl-entry" role="listitem">
-———. 1954. <span>“Theory of Neural-Analog Reinforcement Systems and Its Application to the Brain-Model Problem.”</span> PhD thesis, Princeton University.
+———. 1954. <span>“Theory of Neural-Analog Reinforcement Systems and Its Application to the Brain-Model Problem.”</span> Princeton University. <a href="https://search.proquest.com/openview/a4ee1c0c78c1b940b9ec121f0e89cef8/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">https://search.proquest.com/openview/a4ee1c0c78c1b940b9ec121f0e89cef8/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</a>.
 </div>
 <div id="ref-minskyComputationFiniteInfinite1967" class="csl-entry" role="listitem">
 ———. 1967. <em>Computation: Finite and Infinite Machines</em>. Englewood Cliffs, NJ: Prentice-Hall.
 </div>
 <div id="ref-minskyIntroductionCOMTEXMicrofiche1983" class="csl-entry" role="listitem">
-———. 1983. <span>“Introduction to the <span>COMTEX</span> Microfiche Edition of the Early <span>MIT Artificial Intelligence Memos</span>.”</span> <em>AI Magazine</em> 4 (1): 19–22.
+———. 1983. <span>“Introduction to the <span>COMTEX</span> Microfiche Edition of the Early <span>MIT Artificial Intelligence Memos</span>.”</span> <em>AI Magazine</em> 4 (1): 19–22. <a href="https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/384">https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/384</a>.
 </div>
 <div id="ref-minskySocietyMind1988" class="csl-entry" role="listitem">
 ———. 1988. <em>The Society of Mind</em>. 6. Pb-pr. A <span>Touchstone</span> Book. New York: <span>Simon and Schuster</span>.
 </div>
-<div id="ref-minskyMyUndergraduateThesis2011" class="csl-entry" role="listitem">
-———. 2011. <span>“My Undergraduate Thesis in Fixed Point Theorems (70/151).”</span>
-</div>
 <div id="ref-minskySelectedPublicationsMarvin" class="csl-entry" role="listitem">
-———. n.d. <span>“Selected <span>Publications</span> of <span>Marvin Minsky</span>.”</span> https://web.media.mit.edu/<span>~</span>minsky/bibliography.html. Accessed December 25, 2023.
+———. n.d. <span>“Selected <span>Publications</span> of <span>Marvin Minsky</span>.”</span> Accessed December 25, 2023. <a href="https://web.media.mit.edu/~minsky/bibliography.html">https://web.media.mit.edu/~minsky/bibliography.html</a>.
 </div>
 <div id="ref-minskyPerceptronsIntroductionComputational1988" class="csl-entry" role="listitem">
-Minsky, Marvin, and Seymour Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
+Minsky, Marvin L., and Seymour A. Papert. 1988. <em>Perceptrons: An Introduction to Computational Geometry</em>. Expanded ed. Cambridge, Mass: MIT Press.
 </div>
 <div id="ref-morozovPlanningMachineProject2014" class="csl-entry" role="listitem">
-Morozov, Evgeny. 2014. <span>“The Planning Machine. <span>Project Cybersyn</span> and the Origins of the Big Data Nation.”</span> <em>The New Yorker</em>.
+Morozov, Evgeny. 2014. <span>“The Planning Machine. <span>Project Cybersyn</span> and the Origins of the Big Data Nation.”</span> <em>The New Yorker</em>, 2014.
+</div>
+<div id="ref-minskyMyUndergraduateThesis2011" class="csl-entry" role="listitem">
+<span>“My Undergraduate Thesis in Fixed Point Theorems (70/151).”</span> 2011. <a href="https://www.youtube.com/watch?v=k6yRP203UaM">https://www.youtube.com/watch?v=k6yRP203UaM</a>.
 </div>
 <div id="ref-nagySystemCircuitDesigns1963" class="csl-entry" role="listitem">
-Nagy, GEORGE. 1963. <span>“System and Circuit Designs for the Tobermory Perceptron.”</span> <em>OTS, AD</em> 604: 459.
+Nagy, George. 1963. <span>“System and Circuit Designs for the Tobermory Perceptron.”</span> <em>OTS, AD</em> 604: 459. <a href="https://apps.dtic.mil/sti/trecms/pdf/AD0607459.pdf">https://apps.dtic.mil/sti/trecms/pdf/AD0607459.pdf</a>.
 </div>
 <div id="ref-nagyNeuralNetworksthenNow1991" class="csl-entry" role="listitem">
-Nagy, George. 1991. <span>“Neural Networks-Then and Now.”</span> <em>IEEE Transactions on Neural Networks</em> 2 (2): 316–18. <a href="https://doi.org/10.1109/72.80343">https://doi.org/10.1109/72.80343</a>.
+———. 1991. <span>“Neural Networks-Then and Now.”</span> <em>IEEE Transactions on Neural Networks</em> 2 (2): 316–18. <a href="https://doi.org/10.1109/72.80343">https://doi.org/10.1109/72.80343</a>.
 </div>
 <div id="ref-newellHumanProblemSolving1972" class="csl-entry" role="listitem">
 Newell, Allen, and Herbert Alexander Simon. 1972. <em>Human Problem Solving</em>.
@@ -1359,19 +1361,19 @@ Newell, Allen, and Herbert Alexander Simon. 1972. <em>Human Problem Solving</em>
 Nilsson, Nils J. 2009. <em>The <span>Quest</span> for <span>Artificial Intelligence</span></em>. 1st edition. Cambridge ; New York: Cambridge University Press.
 </div>
 <div id="ref-norvigChomskyTwoCultures2017" class="csl-entry" role="listitem">
-Norvig, Peter. 2017. <span>“<span>On Chomsky and the Two Cultures of Statistical Learning</span>.”</span> In <em><span>Berechenbarkeit der Welt? Philosophie und Wissenschaft im Zeitalter von Big Data</span></em>, edited by Wolfgang Pietsch, Jörg Wernecke, and Maximilian Ott, 61–83. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-12153-2_3">https://doi.org/10.1007/978-3-658-12153-2_3</a>.
+Norvig, Peter. 2017. <span>“On Chomsky and the Two Cultures of Statistical Learning.”</span> In <em>Berechenbarkeit der Welt? Philosophie und Wissenschaft im Zeitalter von Big Data</em>, edited by Wolfgang Pietsch, Jörg Wernecke, and Maximilian Ott, 61–83. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-12153-2_3">https://doi.org/10.1007/978-3-658-12153-2_3</a>.
 </div>
 <div id="ref-olazaranHistoricalSociologyNeural1991" class="csl-entry" role="listitem">
-Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> PhD thesis, The University of Edinburgh.
+Olazaran, Mikel. 1991. <span>“A Historical Sociology of Neural Network Research.”</span> The University of Edinburgh. <a href="https://era.ed.ac.uk/handle/1842/20075">https://era.ed.ac.uk/handle/1842/20075</a>.
 </div>
 <div id="ref-olazaranSociologicalHistoryNeural1993" class="csl-entry" role="listitem">
 ———. 1993. <span>“A <span>Sociological History</span> of the <span>Neural Network Controversy</span>.”</span> In <em>Advances in <span>Computers</span></em>, edited by Marshall C. Yovits, 37:335–425. Elsevier. <a href="https://doi.org/10.1016/S0065-2458(08)60408-8">https://doi.org/10.1016/S0065-2458(08)60408-8</a>.
 </div>
 <div id="ref-papertOneAIMany1988" class="csl-entry" role="listitem">
-Papert, Seymour. 1988. <span>“One <span>AI</span> or Many?”</span> <em>Daedalus</em>, 1–14. <a href="https://www.jstor.org/stable/20025136">https://www.jstor.org/stable/20025136</a>.
+Papert, Seymour A. 1988. <span>“One <span>AI</span> or Many?”</span> <em>Daedalus</em>, 1–14. <a href="https://www.jstor.org/stable/20025136">https://www.jstor.org/stable/20025136</a>.
 </div>
 <div id="ref-papertChildrensMachineRethinking1994" class="csl-entry" role="listitem">
-Papert, Seymour A. 1994. <em>The <span>Children</span>’s <span>Machine</span>: <span>Rethinking School In The Age Of The Computer</span></em>. Revised ed. edition. New York: Basic Books.
+———. 1994. <em>The <span>Children</span>’s <span>Machine</span>: <span>Rethinking School In The Age Of The Computer</span></em>. Revised ed. edition. New York: Basic Books.
 </div>
 <div id="ref-pickeringScienceUnknowableStafford2004" class="csl-entry" role="listitem">
 Pickering, Andrew. 2004. <span>“The Science of the Unknowable: <span>Stafford Beer</span>’s Cybernetic Informatics.”</span> <em>Kybernetes</em> 33 (3/4): 499–521. <a href="https://doi.org/10/dqjsk8">https://doi.org/10/dqjsk8</a>.
@@ -1383,16 +1385,16 @@ Pinker, Steven, and Michael T. Ullman. 2002. <span>“The Past and Future of the
 Raina, Rajat, Anand Madhavan, and Andrew Y. Ng. 2009. <span>“Large-Scale Deep Unsupervised Learning Using Graphics Processors.”</span> In <em>Proceedings of the 26th <span>Annual International Conference</span> on <span>Machine Learning</span></em>, 873–80. Montreal Quebec Canada: ACM. <a href="https://doi.org/10.1145/1553374.1553486">https://doi.org/10.1145/1553374.1553486</a>.
 </div>
 <div id="ref-rosenResearchDevelopmentProgram1965" class="csl-entry" role="listitem">
-Rosen, Charles A., Nils J. Nilsson, and Milton B. Adams. 1965. <span>“A Research and Development Program in Applications of Intelligent Automata to Reconnaissance-Phase <span>I</span>.”</span> Proposal for {{Research}} ESU 65-1. Stanford Research Institute.
+Rosen, Charles A., Nils J. Nilsson, and Milton B. Adams. 1965. <span>“A Research and Development Program in Applications of Intelligent Automata to Reconnaissance-Phase <span>I</span>.”</span> Proposal for Research ESU 65-1. Stanford Research Institute.
 </div>
 <div id="ref-rosenblattPrinciplesNeurodynamicsPerceptrons1962" class="csl-entry" role="listitem">
-Rosenblatt, Frank. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC.
+Rosenblatt, Frank. 1962. <em>Principles of Neurodynamics: <span>Perceptrons</span> and the Theory of Brain Mechanisms</em>. Vol. 55. Spartan books Washington, DC. <a href="https://apps.dtic.mil/sti/citations/AD0256582">https://apps.dtic.mil/sti/citations/AD0256582</a>.
 </div>
 <div id="ref-rosenfeldTalkingNetsOral2000" class="csl-entry" role="listitem">
 Rosenfeld, Edward, and James A. Anderson, eds. 2000. <em>Talking <span>Nets</span>: <span>An Oral History</span> of <span>Neural Networks</span></em>. Reprint edition. The MIT Press.
 </div>
 <div id="ref-rumelhartLearningInternalRepresentations1985" class="csl-entry" role="listitem">
-Rumelhart, David E., Geoffrey E. Hinton, and Ronald J. Williams. 1985. <span>“Learning Internal Representations by Error Propagation.”</span> Institute for Cognitive Science, University of California, San Diego La <span>…</span>.
+Rumelhart, David E., Geoffrey E. Hinton, and Ronald J. Williams. 1985. <span>“Learning Internal Representations by Error Propagation.”</span> Institute for Cognitive Science, University of California, San Diego La …. <a href="https://apps.dtic.mil/sti/citations/ADA164453">https://apps.dtic.mil/sti/citations/ADA164453</a>.
 </div>
 <div id="ref-rumelhartParallelDistributedProcessing1986" class="csl-entry" role="listitem">
 Rumelhart, David E., and James L. McClelland. 1986. <em>Parallel Distributed Processing: Explorations in the Microstructure of Cognition</em>. Computational Models of Cognition and Perception. Cambridge, Mass: MIT Press.
@@ -1401,7 +1403,7 @@ Rumelhart, David E., and James L. McClelland. 1986. <em>Parallel Distributed Pro
 Sejnowski, Terrence J. 2018. <em>The <span>Deep Learning Revolution</span></em>. Illustrated edition. Cambridge, Massachusetts London, England: The MIT Press.
 </div>
 <div id="ref-singhExaminingSocietyMind2003" class="csl-entry" role="listitem">
-Singh, Push. 2003. <span>“Examining the Society of Mind.”</span> <em>Computing and Informatics</em> 22 (6): 521–43.
+Singh, Push. 2003. <span>“Examining the Society of Mind.”</span> <em>Computing and Informatics</em> 22 (6): 521–43. <a href="https://www.cai.sk/ojs/index.php/cai/article/view/467/0">https://www.cai.sk/ojs/index.php/cai/article/view/467/0</a>.
 </div>
 <div id="ref-slocumRobotExcessMachine2024" class="csl-entry" role="listitem">
 Slocum, Brian, and Maria Yablonina. 2024. <span>“Robot Excess: Machine Histories and a Hermeneutics of Movement.”</span> <em>Construction Robotics</em> 8 (2): 18. <a href="https://doi.org/10.1007/s41693-024-00129-7">https://doi.org/10.1007/s41693-024-00129-7</a>.
@@ -1422,83 +1424,49 @@ Thompson, Adrian, and Paul Layzell. 1999. <span>“Analysis of Unconventional Ev
 Thompson, Adrian, Paul Layzell, and Ricardo Salem Zebulum. 1999. <span>“Explorations in Design Space: <span>Unconventional</span> Electronics Design Through Artificial Evolution.”</span> <em>IEEE Transactions on Evolutionary Computation</em> 3 (3): 167–96. <a href="https://doi.org/10.1109/4235.788489">https://doi.org/10.1109/4235.788489</a>.
 </div>
 <div id="ref-turkleEpistemologicalPluralismStyles1990" class="csl-entry" role="listitem">
-Turkle, Sherry, and Seymour Papert. 1990. <span>“Epistemological <span>Pluralism</span>: <span>Styles</span> and <span>Voices</span> Within the <span>Computer Culture</span>.”</span> <em>Signs: Journal of Women in Culture and Society</em> 16 (1): 128–57. <a href="https://doi.org/10.1086/494648">https://doi.org/10.1086/494648</a>.
+Turkle, Sherry, and Seymour A. Papert. 1990. <span>“Epistemological <span>Pluralism</span>: <span>Styles</span> and <span>Voices</span> Within the <span>Computer Culture</span>.”</span> <em>Signs: Journal of Women in Culture and Society</em> 16 (1): 128–57. <a href="https://doi.org/10.1086/494648">https://doi.org/10.1086/494648</a>.
 </div>
 <div id="ref-widrow30YearsAdaptive1990" class="csl-entry" role="listitem">
-Widrow, Bernard, and Michael A. Lehr. 1990. <span>“30 Years of Adaptive Neural Networks: Perceptron, Madaline, and Backpropagation.”</span> <em>Proceedings of the IEEE</em> 78 (9): 1415–42.
+Widrow, Bernard, and Michael A. Lehr. 1990. <span>“30 Years of Adaptive Neural Networks: Perceptron, Madaline, and Backpropagation.”</span> <em>Proceedings of the IEEE</em> 78 (9): 1415–42. <a href="https://ieeexplore.ieee.org/abstract/document/58323/">https://ieeexplore.ieee.org/abstract/document/58323/</a>.
 </div>
 <div id="ref-wienerCyberneticsControlCommunication2019" class="csl-entry" role="listitem">
 Wiener, Norbert. 2019. <em>Cybernetics: Or Control and Communication in the Animal and the Machine</em>. Edited by Doug Hill and Sanjoy K. Mitter. Reissue of the 1961 second edition. Cambridge, Massachusetts London, England: The MIT Press.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1563,13 +1531,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1962,7 +1931,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Perceptron Controversy"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-01-01"</span></span>
@@ -2790,7 +2759,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-826"><a href="#cb2-826" aria-hidden="true" tabindex="-1"></a><span class="ot">[^llm-simulation]</span>:</span>
 <span id="cb2-827"><a href="#cb2-827" aria-hidden="true" tabindex="-1"></a>    It would be funny if someone could train a language model to pass the "Gary Marcus test": impersonate Gary Marcus in a Turing test setup. If such a model were to pass, Marcus would either have to admit that the language model makes sense or accept that what he says is indistinguishable from nonsense.</span>
 <span id="cb2-828"><a href="#cb2-828" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-829"><a href="#cb2-829" aria-hidden="true" tabindex="-1"></a><span class="in">    The same could work for Noam Chomsky -- a statistical language model who can editorialize against every one of GPT-5, Gemini 2, GPT-6, etc, as soon as they come out. A [performative contradiction](https://en.wikipedia.org/wiki/Performative_contradiction).</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-829"><a href="#cb2-829" aria-hidden="true" tabindex="-1"></a><span class="in">    The same could work for Noam Chomsky -- a statistical language model who can editorialize against every one of GPT-5, Gemini 2, GPT-6, etc, as soon as they come out. A [performative contradiction](https://en.wikipedia.org/wiki/Performative_contradiction).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

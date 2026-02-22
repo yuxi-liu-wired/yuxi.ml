@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-493ec8732bc442be923a7677f0a4f8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c590cb3103796f9f406a17afdd3881b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -146,7 +147,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -348,7 +349,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/favicon.ico" alt="" class="navbar-logo">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../../../img/favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuxi on the Wired</span>
@@ -552,7 +554,7 @@ window.Quarto = {
 <li>If you move a physical clock from physical-here to physical-there, it is still ticking at the same mathematical constant rate.</li>
 <li>…</li>
 </ul>
-<p>Einstein’s The Meaning of Relativity* <span class="citation" data-cites="einsteinMeaningRelativityFour1922">(<a href="#ref-einsteinMeaningRelativityFour1922" role="doc-biblioref">Albert Einstein 1922</a>)</span> details physical and mathematical correspondences, such as clock synchronization and the movement of meter sticks.</p>
+<p>Einstein’s The Meaning of Relativity* <span class="citation" data-cites="einsteinMeaningRelativityFour1922">(<a href="#ref-einsteinMeaningRelativityFour1922" role="doc-biblioref">Einstein 1922</a>)</span> details physical and mathematical correspondences, such as clock synchronization and the movement of meter sticks.</p>
 <blockquote class="blockquote">
 <p>As far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality.</p>
 </blockquote>
@@ -608,18 +610,18 @@ window.Quarto = {
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Code">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Code
+<span class="screen-reader-only">Note</span>Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>delta_t <span class="op">=</span> <span class="fl">0.1</span></span>
@@ -671,7 +673,7 @@ Code
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -838,12 +840,12 @@ new p5(discreteLorentz1D, 'discrete-lorentz-1d');
 \begin{bmatrix} x \\ y \\ t \end{bmatrix}
 \tag{3}\]</span></span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Four ways to derive it">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Four ways to derive it
+<span class="screen-reader-only">Note</span>Four ways to derive it
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -893,12 +895,12 @@ I + \sinh(w) \vec{n} \cdot \vec{K} + (\cosh(w) - 1) (\vec{n} \cdot \vec{K})^2
 \tag{5}\]</span></span></p>
 <p>This equation extends naturally to relativity in n+1 dimensions, but we will not need it.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Deriving $(\vec{n} \cdot \vec{K})^3 = \vec{n} \cdot \vec{K}$">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Deriving <span class="math inline">\((\vec{n} \cdot \vec{K})^3 = \vec{n} \cdot \vec{K}\)</span>
+<span class="screen-reader-only">Note</span>Deriving <span class="math inline">\((\vec{n} \cdot \vec{K})^3 = \vec{n} \cdot \vec{K}\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -947,12 +949,12 @@ Deriving <span class="math inline">\((\vec{n} \cdot \vec{K})^3 = \vec{n} \cdot \
 <p>Therefore, after three pure boosts, we end up with a rotation by <span class="math inline">\((\gamma - 1)d \varphi\)</span> radians in the opposite direction. Here, <span class="math inline">\(\gamma\)</span> is the long semiradius of the boosted space circle, after projecting it down to the <span class="math inline">\(xy\)</span> plane. This is the “Lorentz factor” often used in special relativity:</p>
 <p><span class="math display">\[\gamma = \frac{1}{\sqrt{1-v^2}}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Deriving the Lorentz factor">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Deriving the Lorentz factor
+<span class="screen-reader-only">Note</span>Deriving the Lorentz factor
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1009,12 +1011,12 @@ Deriving the Lorentz factor
 \tag{6}\]</span></span></p>
 <p>Experiments with particles moving in cyclotrons have verified this, thus justifying our guess that we should transport space circles without twisting.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Deriving the Thomas precession formula">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Deriving the Thomas precession formula
+<span class="screen-reader-only">Note</span>Deriving the Thomas precession formula
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1064,12 +1066,12 @@ Deriving the Thomas precession formula
 ds^2 = \frac{dv_\theta^2}{1-v_r^2} + \frac{dv_r^2}{(1-v_r^2)^2}
 \tag{7}\]</span></span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Deriving the metric of the 3-velocity disk">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Deriving the metric of the 3-velocity disk
+<span class="screen-reader-only">Note</span>Deriving the metric of the 3-velocity disk
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1138,7 +1140,7 @@ ds^2 = dx^2 + dy^2 - dt^2 = \| (dx, dy, dt) \|^2
 <h3 class="anchored" data-anchor-id="the-history-of-the-phenomenon">The history of the phenomenon</h3>
 <p>The history of the Wigner rotation is winding and complicated. Here is a brief summary. The details are given in <span class="citation" data-cites="walterNonEuclideanStyleMinkowskian1999">(<a href="#ref-walterNonEuclideanStyleMinkowskian1999" role="doc-biblioref">Walter 1999</a>)</span>.</p>
 <ul>
-<li>1905: Einstein published special relativity. <span class="citation" data-cites="einsteinZurElektrodynamikBewegter1905">(<a href="#ref-einsteinZurElektrodynamikBewegter1905" role="doc-biblioref">A. Einstein 1905</a>)</span></li>
+<li>1905: Einstein published special relativity. <span class="citation" data-cites="einsteinZurElektrodynamikBewegter1905">(<a href="#ref-einsteinZurElektrodynamikBewegter1905" role="doc-biblioref">Einstein 1905</a>)</span></li>
 <li>1908: Minkowski published the spacetime interpretation of special relativity. <span class="citation" data-cites="minkowskiGrundgleichungenFurElektromagnetischen1908">(<a href="#ref-minkowskiGrundgleichungenFurElektromagnetischen1908" role="doc-biblioref">Minkowski 1908</a>)</span></li>
 <li>1910: Vladimir Varićak <span class="citation" data-cites="varicakApplicationLobachevskianGeometry1910">(<a href="#ref-varicakApplicationLobachevskianGeometry1910" role="doc-biblioref">Varićak 1910</a>)</span> and Edmund Taylor Whittaker <span class="citation" data-cites="whittakerHistoryTheoriesAether1910">(<a href="#ref-whittakerHistoryTheoriesAether1910" role="doc-biblioref">Whittaker 1910, 441</a>)</span> both introduced the hyperbolic functions and the rapidity parameter.</li>
 <li>1911: Alfred Robb named the rapidity parameter, and found that velocities compose in hyperbolic space. <span class="citation" data-cites="robbOpticalGeometryMotion1911">(<a href="#ref-robbOpticalGeometryMotion1911" role="doc-biblioref">Robb 1911</a>)</span>.</li>
@@ -1261,7 +1263,7 @@ document.querySelectorAll('.diamond-sketch').forEach((elem) => {
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-borelTheorieRelativiteCinematique1913" class="csl-entry" role="listitem">
-Borel, Émile. 1913. <span>“La Th<span>é</span>orie de La Relativit<span>é</span> Et La Cin<span>é</span>matique.”</span> <em>Comptes Rendus Des s<span>é</span>ances de l’Acad<span>é</span>mie Des Sciences</em> 156: 215–17.
+Borel, Émile. 1913. <span>“La Théorie de La Relativité Et La Cinématique.”</span> <em>Comptes Rendus Des Séances de l’Académie Des Sciences</em> 156: 215–17.
 </div>
 <div id="ref-criadoThomasRotationFoucault2009" class="csl-entry" role="listitem">
 Criado, C., and N. Alamo. 2009. <span>“Thomas Rotation and <span>Foucault</span> Pendulum Under a Simple Unifying Geometrical Point of View.”</span> <em>International Journal of Non-Linear Mechanics</em> 44 (8): 923–27. <a href="https://doi.org/10.1016/j.ijnonlinmec.2009.06.008">https://doi.org/10.1016/j.ijnonlinmec.2009.06.008</a>.
@@ -1273,10 +1275,10 @@ Dray, Tevian. 2017. <span>“The Geometry of Relativity.”</span> <em>American 
 ———. 2021. <em>The Geometry of Special Relativity</em>. Second edition. Advances in Applied Mathematics. Boca Raton: Chapman &amp; Hall/CRC Press.
 </div>
 <div id="ref-einsteinZurElektrodynamikBewegter1905" class="csl-entry" role="listitem">
-Einstein, A. 1905. <span>“Zur <span>Elektrodynamik</span> Bewegter <span class="nocase">K<span class="nocase">ö</span>rper</span>.”</span> <em>Annalen Der Physik</em> 322 (10): 891–921. <a href="https://doi.org/10.1002/andp.19053221004">https://doi.org/10.1002/andp.19053221004</a>.
+Einstein, Albert. 1905. <span>“Zur <span>Elektrodynamik</span> Bewegter <span>Körper</span>.”</span> <em>Annalen Der Physik</em> 322 (10): 891–921. <a href="https://doi.org/10.1002/andp.19053221004">https://doi.org/10.1002/andp.19053221004</a>.
 </div>
 <div id="ref-einsteinMeaningRelativityFour1922" class="csl-entry" role="listitem">
-Einstein, Albert. 1922. <em>The Meaning of Relativity: Four Lectures Delivered at <span>Princeton University</span>, <span>May</span>, 1921</em>. Methuen &amp; Company Limited.
+———. 1922. <em>The Meaning of Relativity: Four Lectures Delivered at <span>Princeton University</span>, <span>May</span>, 1921</em>. Methuen &amp; Company Limited. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=0nIxAQAAMAAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=The+Meaning+of+Relativity&amp;ots=eknjBZkyAQ&amp;sig=daAb3Bm6-Ip-kzb-aTc6fNI3HhI">https://books.google.com/books?hl=en&amp;lr=&amp;id=0nIxAQAAMAAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=The+Meaning+of+Relativity&amp;ots=eknjBZkyAQ&amp;sig=daAb3Bm6-Ip-kzb-aTc6fNI3HhI</a>.
 </div>
 <div id="ref-fermiSullelettrostaticaDiCampo1921" class="csl-entry" role="listitem">
 Fermi, Enrico. 1921. <span>“Sull’elettrostatica Di Un Campo Gravitazionale Uniforme e Sul Peso Delle Masse Elettromagnetiche.”</span> <em>Il Nuovo Cimento (1911-1923)</em> 22: 176–88. <a href="https://doi.org/10.1007/BF02959697">https://doi.org/10.1007/BF02959697</a>.
@@ -1291,10 +1293,10 @@ Klein, Felix. 1893. <span>“A Comparative Review of Recent Researches in Geomet
 Lightman, Alan P., William H. Press, Richard H. Price, and Saul A. Teukolsky. 1975. <em>Problem <span>Book</span> in <span>Relativity</span> and <span>Gravitation</span></em>. First Edition. Princeton, NJ: Princeton University Press.
 </div>
 <div id="ref-minkowskiGrundgleichungenFurElektromagnetischen1908" class="csl-entry" role="listitem">
-Minkowski, Hermann. 1908. <span>“Die <span>Grundgleichungen</span> f<span>ü</span>r Die Elektromagnetischen <span class="nocase">Vorg<span class="nocase">ä</span>nge</span> in Bewegten <span class="nocase">K<span class="nocase">ö</span>rpern</span>.”</span> <em>Nachrichten von Der Gesellschaft Der Wissenschaften Zu G<span>ö</span>ttingen, Mathematisch-Physikalische Klasse</em> 1908: 53–111.
+Minkowski, Hermann. 1908. <span>“Die <span>Grundgleichungen</span> Für Die Elektromagnetischen <span>Vorgänge</span> in Bewegten <span>Körpern</span>.”</span> <em>Nachrichten von Der Gesellschaft Der Wissenschaften Zu Göttingen, Mathematisch-Physikalische Klasse</em> 1908: 53–111. <a href="https://eudml.org/doc/58707">https://eudml.org/doc/58707</a>.
 </div>
 <div id="ref-robbOpticalGeometryMotion1911" class="csl-entry" role="listitem">
-Robb, Alfred Arthur. 1911. <em>Optical Geometry of Motion: <span>A</span> New View of the Theory of Relativity</em>. W. Heffer.
+Robb, Alfred Arthur. 1911. <em>Optical Geometry of Motion: <span>A</span> New View of the Theory of Relativity</em>. W. Heffer. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=XGBDAAAAIAAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=Alfred+Robb+(1911)+Optical+Geometry+of+Motion&amp;ots=cwyFVfhPKJ&amp;sig=TVyiyZ5nd5jg2ioAiBjuoeOKyWo">https://books.google.com/books?hl=en&amp;lr=&amp;id=XGBDAAAAIAAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=Alfred+Robb+(1911)+Optical+Geometry+of+Motion&amp;ots=cwyFVfhPKJ&amp;sig=TVyiyZ5nd5jg2ioAiBjuoeOKyWo</a>.
 </div>
 <div id="ref-thomasMotionSpinningElectron1926" class="csl-entry" role="listitem">
 Thomas, Llewellyn H. 1926. <span>“The Motion of the Spinning Electron.”</span> <em>Nature</em> 117 (2945): 514–14. <a href="https://doi.org/10.1038/117514a0">https://doi.org/10.1038/117514a0</a>.
@@ -1306,83 +1308,49 @@ Varićak, Vladimir. 1910. <span>“Application of <span>Lobachevskian Geometry</
 Walker, Arthur G. 1932. <span>“<span>XXI</span>.—<span class="nocase">Relative Co-ordinates</span>.”</span> <em>Proceedings of the Royal Society of Edinburgh</em> 52: 345–53. <a href="https://doi.org/10.1017/S0370164600019611">https://doi.org/10.1017/S0370164600019611</a>.
 </div>
 <div id="ref-walterNonEuclideanStyleMinkowskian1999" class="csl-entry" role="listitem">
-Walter, Scott. 1999. <span>“The Non-<span>Euclidean</span> Style of <span>Minkowskian</span> Relativity.”</span> In <em>The <span>Symbolic Universe</span></em>, edited by Jeremy Gray, 91–127. Oxford University PressOxford. <a href="https://doi.org/10.1093/oso/9780198500889.003.0007">https://doi.org/10.1093/oso/9780198500889.003.0007</a>.
+Walter, Scott. 1999. <span>“The Non-<span>Euclidean</span> Style of <span>Minkowskian</span> Relativity.”</span> In <em>The <span>Symbolic Universe</span></em>, edited by Jeremy J. Gray, 91–127. Oxford University PressOxford. <a href="https://doi.org/10.1093/oso/9780198500889.003.0007">https://doi.org/10.1093/oso/9780198500889.003.0007</a>.
 </div>
 <div id="ref-whittakerHistoryTheoriesAether1910" class="csl-entry" role="listitem">
-Whittaker, Edmund Taylor. 1910. <em>A <span>History</span> of the <span>Theories</span> of <span>Aether</span> and <span>Electricity</span> from the <span>Age</span> of <span>Descartes</span> to the <span>Close</span> of the <span>Nineteenth Century</span></em>. <span>Longmans, Green and Company</span>.
+Whittaker, Edmund Taylor. 1910. <em>A <span>History</span> of the <span>Theories</span> of <span>Aether</span> and <span>Electricity</span> from the <span>Age</span> of <span>Descartes</span> to the <span>Close</span> of the <span>Nineteenth Century</span></em>. <span>Longmans, Green and Company</span>. <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=CGJDAAAAIAAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=E.+T.+Whittaker+(1910)+A+History+of+the+Theories+of+Aether+and+Electricity,+page&amp;ots=S2ac0rBORb&amp;sig=NwkF-WCaGjk21hR3TISLX_txJXw">https://books.google.com/books?hl=en&amp;lr=&amp;id=CGJDAAAAIAAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=E.+T.+Whittaker+(1910)+A+History+of+the+Theories+of+Aether+and+Electricity,+page&amp;ots=S2ac0rBORb&amp;sig=NwkF-WCaGjk21hR3TISLX_txJXw</a>.
 </div>
 <div id="ref-wignerUnitaryRepresentationsInhomogeneous1939" class="csl-entry" role="listitem">
-Wigner, Eugene. 1939. <span>“On Unitary Representations of the Inhomogeneous <span>Lorentz</span> Group.”</span> <em>Annals of Mathematics</em>, 149–204. <a href="https://doi.org/10.2307/1968551">https://doi.org/10.2307/1968551</a>.
+Wigner, Eugene Paul. 1939. <span>“On Unitary Representations of the Inhomogeneous <span>Lorentz</span> Group.”</span> <em>Annals of Mathematics</em>, 149–204. <a href="https://doi.org/10.2307/1968551">https://doi.org/10.2307/1968551</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <!-- file: html/copy‑anchors-js.html -->
-
 <script type="module">
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // 1. All little ¶ icons Quarto/AnchorJS adds
-
   document.querySelectorAll("a.anchorjs-link").forEach(anchor => {
-
     anchor.addEventListener("click", async (evt) => {
-
       // Keep normal scroll behaviour but stop full page reload
-
       evt.preventDefault();
 
-
-
       // Build absolute URL: origin + path + #hash
-
       const url = `${location.origin}${location.pathname}${anchor.getAttribute("href")}`;
 
-
-
       // 2. Try modern Clipboard API first
-
       try {
-
         await navigator.clipboard.writeText(url);
-
       } catch {
-
         // 3. Fallback for legacy browsers
-
         const helper = Object.assign(document.createElement("input"), { value: url });
-
         document.body.appendChild(helper);
-
         helper.select();
-
         document.execCommand("copy");
-
         helper.remove();
-
       }
-
       // TODO: The following two doesn't work yet
-
       // 4. Brief visual confirmation (optional)
-
       anchor.dataset.tooltip = "Copied!";
-
       setTimeout(() => delete anchor.dataset.tooltip, 1500);
 
-
-
       // 5. Still jump to the heading
-
       history.pushState(null, "", anchor.getAttribute("href"));
-
     }, false);
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1447,13 +1415,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1846,7 +1815,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Wigner Rotation in Special Relativity via Hyperbolic Geometry"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yuxi Liu"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2018-05"</span></span>
@@ -2757,7 +2726,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-909"><a href="#cb2-909" aria-hidden="true" tabindex="-1"></a><span class="ot">[^angel-devil-geometry]</span>:</span>
 <span id="cb2-910"><a href="#cb2-910" aria-hidden="true" tabindex="-1"></a>    <span class="at">&gt; In these days the angel of topology and the devil of abstract algebra fight for the soul of each individual mathematical domain. </span></span>
 <span id="cb2-911"><a href="#cb2-911" aria-hidden="true" tabindex="-1"></a><span class="at">    &gt; </span></span>
-<span id="cb2-912"><a href="#cb2-912" aria-hidden="true" tabindex="-1"></a><span class="at">    &gt; --- Hermann Weyl</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-912"><a href="#cb2-912" aria-hidden="true" tabindex="-1"></a><span class="at">    &gt; --- Hermann Weyl</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
