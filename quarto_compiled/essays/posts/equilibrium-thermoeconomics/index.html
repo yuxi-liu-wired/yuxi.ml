@@ -736,8 +736,8 @@ Warning
 <p><span class="math display">\[f = f_{x, y}(x, y) = f_{y, z}(y, z) = f_{z, x}(z, x)\]</span></p>
 <p>This gives us two different ways to “differentiate <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span>”:</p>
 <p><span class="math display">\[
-\left(\pp{f}{x}\right)_y := \partial_1 f_{x, y}, \quad
-\left(\pp{f}{x}\right)_z := \partial_2 f_{z, x}
+\left(\frac{\partial f}{\partial x}\right)_y := \partial_1 f_{x, y}, \quad
+\left(\frac{\partial f}{\partial x}\right)_z := \partial_2 f_{z, x}
 \]</span></p>
 <p>where <span class="math inline">\(\partial_1\)</span> means “partial differentiation with respect to the first input”, etc.</p>
 </div>
@@ -757,14 +757,14 @@ Warning
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(x, y\)</span> be the usual coordinates on the 2D plane <span class="math inline">\(\mathbb{R}^2\)</span>, and let <span class="math inline">\(z = x + y, w = x - y\)</span>. We can pick any 2 of <span class="math inline">\(x, y, z, w\)</span> to construct a coordinate system. Then,</p>
 <p><span class="math display">\[
-\left(\pp{y}{x}\right)_y = 0 \quad \left(\pp{y}{x}\right)_z = -1 \quad \left(\pp{y}{x}\right)_w = 1
+\left(\frac{\partial y}{\partial x}\right)_y = 0 \quad \left(\frac{\partial y}{\partial x}\right)_z = -1 \quad \left(\frac{\partial y}{\partial x}\right)_w = 1
 \]</span></p>
 </div>
 </div>
 </div>
 <p>In general, if we pick <span class="math inline">\(x_1, \dots, x_d, y\)</span> from a list of many smooth scalar functions on a surface, such that <span class="math inline">\(x_1, \dots, x_d\)</span> form a smooth and linearly independent coordinate system on the surface, then we can express <span class="math inline">\(y = f(x_1, \dots, x_d)\)</span> for some function <span class="math inline">\(f : \mathbb{R}^d \to \mathbb{R}\)</span>, and define</p>
 <p><span class="math display">\[
-\left(\pp{y}{x_1}\right)_{x_2, \dots, x_d} = \partial_1 f, \quad
+\left(\frac{\partial y}{\partial x_1}\right)_{x_2, \dots, x_d} = \partial_1 f, \quad
 \left(\frac{\partial y}{\partial x_1\partial x_2}\right)_{x_3, \dots, x_d} = \partial_1\partial_2 f, \quad \dots
 \]</span></p>
 <p>In particular, we have</p>
@@ -1585,7 +1585,7 @@ dx \wedge dy = dz \wedge dw
 <section id="example-ideal-gas" class="level4">
 <h4 class="anchored" data-anchor-id="example-ideal-gas">Example: ideal gas</h4>
 <p>Suppose we know from experiment that a tank of ideal gas satisfies two equations</p>
-<p><span class="math display">\[PV = \Const, \quad PV^\gamma = \Const\]</span></p>
+<p><span class="math display">\[PV = \mathop{\mathrm{Const}}, \quad PV^\gamma = \mathop{\mathrm{Const}}\]</span></p>
 <p>under isothermal and adiabatic conditions respectively, then the <span class="math inline">\(P, V\)</span> diagram with these two families of curves satisfy the area ratio condition. It is tedious but straightforward to verify this by direct integration. Alternatively, we can use the <a href="https://en.wikipedia.org/wiki/Method_of_exhaustion">method of exhaustion</a> and <a href="https://en.wikipedia.org/wiki/Eudoxus_of_Cnidus">Eudoxus’ theory of proportions</a> to prove this, in a way that even ancient Greeks would approve.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">

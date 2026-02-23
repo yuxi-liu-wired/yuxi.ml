@@ -12,9 +12,9 @@ map $request_uri $yuxi_redirect {
   ~^/project/?$                                              /projects/;
 
 
-  ~^/essays/posts/renormalization-how-to/?$                  /renormalization/;
-  ~^(?:/essays)?/(?:posts/)?renormaliz[^/]*(?:/)?$           /renormalization/;
+  ~^/essays/posts/renormalization-how-to(?:/(?:index\.html)?)?$   /renormalization/;
+  ~^(?:/essays)?/(?:posts/)?renormaliz[^/]*(?:/(?:index\.html)?)?$  /renormalization/;
 
-  ~^(?:/essays)?/(?:posts/)?cyc(?:/)?$                       /cyc/;
+  ~^(?:/essays)?/(?:posts/)?cyc(?:/(?:index\.html)?)?$       /cyc/;
   ~^(?:/essays)?/(?:posts/)?lenat(?:/)?$                     /cyc/;
 }

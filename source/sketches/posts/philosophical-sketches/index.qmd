@@ -182,7 +182,7 @@ Praise the extremists, for they expand the convex hull of possibilities.
 
 In high-dimensional space, the way of the golden mean is almost useless. -- But in ultrametric space, it is *entirely* useless.[^golden-mean-ultrametric]
 
-[^golden-mean-ultrametric]: In high dimensions, most probability mass of a gaussian distribution (and most other ones) are concentrated on a thin shell. Exponentially few points live in the middle. In an ultrametric space, *every* point inside a ball is equidistant to its edges, meaning that the "average" point is undefined. Also, a set of random sampled points in $\R^n$ for $n\to \infty$ look pretty ultrametric, with the characteristic fractal structure. [@aggarwalSurprisingBehaviorDistance2001; @zubarevStochasticGenerationUltrametrics2014] This probably has something to do with spin glass fractal energy landscapes.
+[^golden-mean-ultrametric]: In high dimensions, most probability mass of a gaussian distribution (and most other ones) are concentrated on a thin shell. Exponentially few points live in the middle. In an ultrametric space, *every* point inside a ball is equidistant to its edges, meaning that the "average" point is undefined. Also, a set of random sampled points in $\mathbb{R}^n$ for $n\to \infty$ look pretty ultrametric, with the characteristic fractal structure. [@aggarwalSurprisingBehaviorDistance2001; @zubarevStochasticGenerationUltrametrics2014] This probably has something to do with spin glass fractal energy landscapes.
 
 A little extremism once in a while never hurts anybody.
 
