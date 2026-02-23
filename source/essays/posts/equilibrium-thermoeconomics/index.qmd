@@ -19,6 +19,11 @@ Made in Ideogram V1, with prompt 'A stunning conceptual artwork featuring a whit
 status: "finished"
 confidence: "certain"
 importance: 5
+nocite: |
+  @klausiusUeberVerschiedeneFur32850
+bibliography:
+  - ../../../static/references.bib
+  - references-override.json
 ---
 
 {{< include ../../../static/_macros.tex >}}
@@ -339,7 +344,7 @@ Forget about heat. **Heat does not exist** -- it is not a noun, not even an adje
 
 Heat energy and work energy are both misnomers. Neither are types of energy. Instead, they are types of energy-flow. We should speak of only the heatly flow of energy and the workly flow of energy. In this way, both "heat" and "work" are revealed to be actually adverbs. This is a bit awkward, so we will continue to speak of "heat" and "work", but you should understand that it's a shorthand, and that there is neither "heat energy" nor "work energy".
 
-To perform work, one must perform work *upon* something. In other words, there is no such thing as "system A performed work". There is really "some energy and length is between A and B, in compliance with an equation constraint, such that the total entropy of the compound system has remained constant".
+To perform work, one must perform work *upon* something. In other words, there is no such thing as "system A performed work". There is really "some energy and length is exchanged between A and B, in compliance with an equation constraint, such that the total entropy of the compound system has remained constant".
 
 Forget about time. **Time does not exist** in classical thermodynamics. We can say nothing at all about what happens between equilibria. We can only say, "This is an equilibrium, but that is not an equilibrium.". That is all we can say. See this, and you will see thermodynamics aright. As to what happened "between them", that we must pass over in silence.
 
@@ -2000,7 +2005,7 @@ The effect is that we have a nonlinear optimization problem, allowing interior s
 
 > Die Raum der Welt ist konstant. Die Entropie der Welt strebt einem Maximum zu.
 >
-> Rudolf Klausius, [@klausiusUeberVerschiedeneFur32850]
+> --- Rudolf Klausius ([Klausius 32850](#ref-klausiusUeberVerschiedeneFur32850){.citation})
 
 ### Solid Universe Theory
 

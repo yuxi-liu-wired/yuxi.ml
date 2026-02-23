@@ -4,10 +4,12 @@ Yuxi Liu's personal website.
 
 ## Testing
 
-Currently just eyeballing this.
-
 ```bash
+# Hard copies the compiled website, then starts a local server.
 sudo bash server_infra/nginx/test-local.sh
+
+# Check for errors in rendered math.
+NODE_PATH="$(npm root -g)" node scripts/check-math-errors.mjs
 ```
 
 ## Deployment
