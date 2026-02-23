@@ -2,6 +2,14 @@
 
 Yuxi Liu's personal website.
 
+## Testing
+
+Currently just eyeballing this.
+
+```bash
+sudo bash server_infra/nginx/test-local.sh
+```
+
 ## Deployment
 
 ### Initialize server machine
