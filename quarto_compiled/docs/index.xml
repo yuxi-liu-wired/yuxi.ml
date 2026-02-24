@@ -108,13 +108,14 @@
   <pubDate>Mon, 01 May 1989 07:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>The time scale of artificial intelligence</title>
-  <dc:creator>Ray Solomonoff</dc:creator>
-  <link>https://yuxi.ml/docs/posts/1985-ray-solomonoff/</link>
-  <description><![CDATA[ Ray Solomonoff’s 1985 essay on forecasting the progress towards AGI, reaching AGI around 2022–2076. ]]></description>
-  <category>AI</category>
-  <guid>https://yuxi.ml/docs/posts/1985-ray-solomonoff/</guid>
-  <pubDate>Sat, 01 Jun 1985 07:00:00 GMT</pubDate>
+  <title>Heidegger’s Die Sprache im Gedicht and the Cultivation of the Grapheme</title>
+  <dc:creator>Nicolas Land</dc:creator>
+  <link>https://yuxi.ml/docs/posts/1987-09-nick-land/</link>
+  <description><![CDATA[ Nick Land’s PhD thesis. ]]></description>
+  <category>literature</category>
+  <category>philosophy</category>
+  <guid>https://yuxi.ml/docs/posts/1987-09-nick-land/</guid>
+  <pubDate>Tue, 01 Sep 1987 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
