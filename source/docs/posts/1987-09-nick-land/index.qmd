@@ -242,7 +242,7 @@ Earth</span>
 <span class="dots"></span>
 <span class="page">163</span>
 </div>
-<center>– iv –</center>
+<p class="pn">– iv –</p>
 <div class="toc-entry">
 <span class="title">Part Four: The Protraction of Difference</span>
 <span class="dots"></span>
@@ -288,7 +288,7 @@ Kinship, and Desire</span>
 </div>
 ```
 
-<center>\– v –</center>
+<p class="pn">\– v –</p>
 
 ## Key to Works Cited
 
