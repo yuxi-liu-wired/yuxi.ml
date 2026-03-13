@@ -1,0 +1,12 @@
+<link rel="prefetch" href="/search.json" as="fetch" crossorigin>
+<script>
+// Auto-detect OS dark mode for first-time visitors.
+// Runs in <head> before Quarto's inline script reads localStorage.
+(function() {
+  if (localStorage.getItem("quarto-color-scheme") === null) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      localStorage.setItem("quarto-color-scheme", "alternate");
+    }
+  }
+})();
+</script>

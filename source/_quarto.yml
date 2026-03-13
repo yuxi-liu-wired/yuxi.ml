@@ -97,6 +97,7 @@ format:
     code-tools: false
     code-link: true
     anchor-sections: true
+    include-in-header: html/detect-color-scheme.html
     include-after-body: html/copy-anchors-js.html
     fig-cap-location: margin
     reference-location: margin
