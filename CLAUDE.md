@@ -19,7 +19,7 @@ deploy.sh         — runs deploy on remote via ssh
 
 - **Quarto render**: `cd source && quarto render` → outputs to `quarto_compiled/`
 - **Image optimization**: `node scripts/generate-image-variants.mjs` → generates `.avif` and `.webp` siblings for every image in `quarto_compiled/`. Run after every `quarto render`.
-- **Deploy**: `bash deploy.sh` (requires SSH to `yuxi-ml` host)
+- **Deploy**: `bash deploy.sh` — tags `deploy-YYYY-MM-DD`, pushes to GitHub, SSHs to `yuxi-ml` and runs remote deploy. Multiple deploys per day get `.1`, `.2`, etc.
 - **Local nginx test**: `bash server_infra/nginx/test-local.sh` (serves on localhost:8080)
 - **Lighthouse audit**: `node scripts/lighthouse-audit.mjs` (local) or `node scripts/lighthouse-live.mjs` (production). Requires Chromium.
 
