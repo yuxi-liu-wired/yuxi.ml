@@ -10,6 +10,7 @@ website:
   navbar:
     pinned: true
     logo: /img/favicon.ico
+    logo-alt: "Yuxi on the Wired home"
     
     # your sub-pages
     left:

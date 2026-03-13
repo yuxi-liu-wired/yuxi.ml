@@ -10,6 +10,7 @@ format:
 description: "How MoE works, its history, and what it is good for."
 
 image: "figure/sparsified_moe_various_levels.png"
+image-alt: "Visualizations of sparsified mixture-of-experts models at various sparsity levels."
 status: "finished"
 confidence: "certain"
 importance: 3

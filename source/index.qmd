@@ -3,6 +3,7 @@ about:
   template: trestles
   id: about-block
   image: "img/blog icon.png"
+  image-alt: "Yuxi Liu"
   links:
     - icon: twitter
       text: Twitter

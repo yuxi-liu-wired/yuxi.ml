@@ -12,6 +12,7 @@ format:
 description: "The hole argument in general relativity is formally analogous to the inverted qualia problem in philosophy. Like how spacetime points have no existence beyond gauge freedom, qualias have no existence beyond their geometric-functional roles, thus dissolving the hard problem of consciousness."
 
 image: "figure/banner/banner.png"
+image-alt: "Banner illustration for an essay on the hole argument in general relativity and inverted qualia."
 
 status: "finished"
 confidence: "low"

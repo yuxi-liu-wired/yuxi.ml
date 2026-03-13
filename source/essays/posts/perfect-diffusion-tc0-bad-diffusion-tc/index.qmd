@@ -13,6 +13,7 @@ format:
 description: "An application of computational complexity theory to diffusion language models. Unlikely to be useful for anything, but it is cute!"
 
 image: "figure/banner.png"
+image-alt: "Banner illustration for an essay on the computational complexity of diffusion models."
 status: "finished"
 confidence: "likely"
 importance: 1

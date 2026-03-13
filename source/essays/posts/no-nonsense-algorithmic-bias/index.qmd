@@ -10,6 +10,7 @@ format:
 
 description: "The racial algorithmic bias controversy, as seen by a mathematician."
 image: "figure/square_with_4_blocks.png"
+image-alt: "A square divided into four colored blocks, illustrating algorithmic bias categories."
 
 status: "finished"
 confidence: "certain"
