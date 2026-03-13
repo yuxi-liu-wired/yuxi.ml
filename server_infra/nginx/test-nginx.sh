@@ -168,13 +168,6 @@ check_status "/cyc/figure/opencyc-kb-browser.gif"               "/cyc/figure/ope
 check_status "/cyc/figure/Vauquois%20triangle.png"              "/cyc/figure/Vauquois%20triangle.png"  "200"
 
 echo ""
-echo "--- Figure paths absolutified (build-time fix) ---"
-check_body     "/cyc has absolute figure paths"                     "/cyc" 'src="/essays/posts/cyc/figure/'
-check_body_not "/cyc no relative figure paths"                      "/cyc" 'src="figure/'
-check_body     "scaling-law page has absolute figure paths"         "/essays/posts/scaling-law-by-data-manifold" 'src="/essays/posts/scaling-law-by-data-manifold/figure/'
-check_body_not "scaling-law page no relative figure paths"          "/essays/posts/scaling-law-by-data-manifold" 'src="figure/'
-
-echo ""
 echo "--- Trailing slash stripping ---"
 check_status "/about/ → /about"                                 "/about/"                           "301" "/about"
 check_status "/essays/ → /essays"                               "/essays/"                          "301" "/essays"
@@ -219,7 +212,6 @@ check_all_pages() {
   local failed_urls=""
 
   while IFS= read -r html_file; do
-    # Convert file path to URL: strip root and /index.html
     local url_path="${html_file#$root}"
     url_path="${url_path%/index.html}"
     [[ -z "$url_path" ]] && url_path="/"
@@ -246,6 +238,83 @@ check_all_pages() {
   fi
 }
 check_all_pages
+
+echo ""
+echo "--- No broken assets (crawl every page, resolve every src/href) ---"
+check_all_assets() {
+  local root="/tmp/www/yuxi.ml"
+  local asset_total=0
+  local asset_fail=0
+  local failed_assets=""
+  local refs_file="/tmp/nginx-test-refs.$$"
+
+  while IFS= read -r html_file; do
+    # Page URL as browser sees it (no trailing slash, no index.html)
+    local page_url="${html_file#$root}"
+    page_url="${page_url%/index.html}"
+    [[ -z "$page_url" ]] && page_url="/"
+
+    # Fetch the page as nginx serves it
+    local tmpf="/tmp/nginx-test-assets.$$"
+    curl -s "$BASE$page_url" -o "$tmpf" 2>/dev/null
+
+    # Extract src="..." and href="..." values, filter out non-asset refs
+    grep -oP '(?:src|href)="\K[^"]+' "$tmpf" 2>/dev/null | \
+      grep -v '^#' | grep -v '^mailto:' | grep -v '^javascript:' | \
+      grep -v '^https\?://' | grep -v '^data:' | \
+      sort -u > "$refs_file" 2>/dev/null
+
+    while IFS= read -r ref; do
+      # Resolve relative URL the way a browser does
+      local resolved=""
+      if [[ "$ref" == /* ]]; then
+        resolved="$ref"
+      elif [[ "$page_url" == "/" ]]; then
+        resolved="/$ref"
+      else
+        # Browser base dir is parent of the URL path (no trailing slash)
+        local base_dir="${page_url%/*}"
+        [[ -z "$base_dir" ]] && base_dir=""
+
+        local remaining="$ref"
+        local base="$base_dir"
+        while [[ "$remaining" == ../* ]]; do
+          remaining="${remaining#../}"
+          base="${base%/*}"
+        done
+        resolved="$base/$remaining"
+      fi
+
+      [[ -z "$resolved" ]] && continue
+      resolved="${resolved%%#*}"
+      local check_url="${resolved%%\?*}"
+      [[ -z "$check_url" ]] && continue
+
+      local status
+      status=$(curl -sI -o /dev/null -w '%{http_code}' "$BASE$check_url" 2>/dev/null)
+      asset_total=$((asset_total + 1))
+
+      if [[ "$status" == "404" || "$status" == "403" || "$status" == "500" ]]; then
+        asset_fail=$((asset_fail + 1))
+        failed_assets="$failed_assets\n    $status $check_url (from $page_url, ref=$ref)"
+      fi
+    done < "$refs_file"
+
+    rm -f "$tmpf" "$refs_file"
+  done < <(find "$root" -name 'index.html' -type f | sort)
+
+  ((TOTAL++))
+
+  if [[ $asset_fail -eq 0 ]]; then
+    echo "  $(green PASS): all $asset_total assets serve OK"
+    ((PASS++))
+  else
+    echo "  $(red FAIL): $asset_fail/$asset_total assets broken"
+    echo -e "$failed_assets"
+    ((FAIL++))
+  fi
+}
+check_all_assets
 
 echo ""
 echo "==========================================="

@@ -41,8 +41,13 @@ Short vanity paths map to long Quarto output paths:
 When adding vanity URLs, you must handle:
 1. Serving the page at the short path (no trailing slash)
 2. Redirecting the long path to the short path
-3. Fixing relative asset paths (images, CSS, JS) via `sub_filter`
-4. Serving sub-resources (figures, code) at the vanity prefix
+3. Serving sub-resources (figures, code) at the vanity prefix
+
+## Testing philosophy
+
+- **Test actual behavior, not inferred intent.** Don't check whether HTML contains "absolute paths" — check whether the browser would get a 404. The test should fetch every page, extract every `src`/`href`, resolve it the way a browser would, and verify the asset actually serves 200.
+- **Do NOT "fix" Quarto output with post-processing scripts.** Quarto generates relative paths for a reason. If they break, the problem is in nginx (how URLs are served), not in the HTML. Fix the serving layer.
+- **nginx is the source of truth.** The test suite hits the actual running nginx. If the test says it's broken, it's broken. If the test says it's fine but the browser disagrees, the test is wrong.
 
 ## Style & URL policy
 
