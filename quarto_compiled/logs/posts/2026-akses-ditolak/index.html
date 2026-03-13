@@ -81,9 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-927c7f2ff55d2ccf6c9d59d1f6133d6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,6 +110,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link rel="prefetch" href="../../../search.json" as="fetch" crossorigin="">
+<script>
+// Auto-detect OS dark mode for first-time visitors.
+// Runs in <head> before Quarto's inline script reads localStorage.
+(function() {
+  if (localStorage.getItem("quarto-color-scheme") === null) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      localStorage.setItem("quarto-color-scheme", "alternate");
+    }
+  }
+})();
+</script>
 
 
 <meta property="og:title" content="Akses Ditolak – Yuxi on the Wired">
@@ -439,21 +451,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>I was working in VS Code when it updated itself, as it does.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Updating VS Code Server.png" class="img-fluid figure-img"></p>
+<p><img src="/logs/posts/2026-akses-ditolak/figure/Updating VS Code Server.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">VS Code updating to a new version.</figcaption>
 </figure>
 </div>
 <p>The commit hash <code>591199df409fbf59b4b52d5ad4ee0470152a9b31</code> caught my eye. I Googled it out of idle curiosity, expecting the VS Code GitHub release page. Instead I got this:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/weird google search results.png" class="img-fluid figure-img"></p>
+<p><img src="/logs/posts/2026-akses-ditolak/figure/weird google search results.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Google search results dominated by Blogger spam sites.</figcaption>
 </figure>
 </div>
 <p>Every result is a Blogger site with a random subdomain: <code>answoamhd.blogspot.com</code>, <code>answnpxxk.blogspot.com</code>, <code>dhofar-edu-bok.blogspot.com</code>, <code>assktkrlbh.blogspot.com</code>, etc. The snippets definitely look like GitHub Issues but the domains are all wrong, and clicking through to any of these sites gives you this instead:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/akses ditolak.png" class="img-fluid figure-img"></p>
+<p><img src="/logs/posts/2026-akses-ditolak/figure/akses ditolak.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">“Akses Ditolak”</figcaption>
 </figure>
 </div>
@@ -531,14 +543,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Since these are Blogger sites hosted by Google, the more direct route should be Blogger’s own abuse reporting.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/trying to report a community violation.png" class="img-fluid figure-img"></p>
+<p><img src="/logs/posts/2026-akses-ditolak/figure/trying to report a community violation.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Trying to report a community violation on Blogger.</figcaption>
 </figure>
 </div>
 <p>Its code is an unreadable mess in the <a href="https://en.wikipedia.org/wiki/Single-page_application#JavaScript_frameworks">JavaScript SPA</a> style:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/html hell.png" class="img-fluid figure-img"></p>
+<p><img src="/logs/posts/2026-akses-ditolak/figure/html hell.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The HTML of the report form.</figcaption>
 </figure>
 </div>

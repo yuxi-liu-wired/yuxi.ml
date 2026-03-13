@@ -100,9 +100,9 @@ div.csl-indent {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-927c7f2ff55d2ccf6c9d59d1f6133d6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,6 +129,18 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<link rel="prefetch" href="../../../search.json" as="fetch" crossorigin="">
+<script>
+// Auto-detect OS dark mode for first-time visitors.
+// Runs in <head> before Quarto's inline script reads localStorage.
+(function() {
+  if (localStorage.getItem("quarto-color-scheme") === null) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      localStorage.setItem("quarto-color-scheme", "alternate");
+    }
+  }
+})();
+</script>
 <script type="text/javascript" charset="UTF-8" src="./static/jsxgraphcore.min.js"></script>
 <script type="text/javascript" charset="UTF-8" src="./static/p5.min.js"></script>
 <script type="text/javascript" charset="UTF-8" src="./static/math.min.js"></script>
@@ -605,7 +617,7 @@ window.Quarto = {
 <p>Now, if we compose two boosts, first with <span class="math inline">\(v\)</span> then with <span class="math inline">\(-v\)</span>, then we would send <span class="math inline">\((0, 1)\)</span> to <span class="math inline">\((0, 1+ 2\delta t)\)</span>. But we really should get back to <span class="math inline">\((0, 1)\)</span> since we are back to the resting frame again. Therefore <span class="math inline">\(\delta t = 0\)</span>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/three-infinitesimal-boosts-output-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="/essays/posts/wigner-rotation/figure/three-infinitesimal-boosts-output-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption class="margin-caption">Three infinitesimal boosts</figcaption>
 </figure>
 </div>
@@ -756,7 +768,7 @@ new p5(discreteLorentz1D, 'discrete-lorentz-1d');
 </script>
 <p>In the diagram, <span class="math inline">\(v\)</span> is “rapidity”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We apply the Lorentz boost with the given <span class="math inline">\(v\)</span> repeatedly forwards and backwards. The resulting image is beautiful and suggestive: it looks like the unit hyperbolas!</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;The reason for calling it “rapidity”, instead of “velocity” would be soon clear.</p></div></div><div style="display: flex; justify-content: center;">
-    <img src="figure/discrete_lorentz_rapidity_0.1_boosts_17.png" style="width: 400px; height: 400px;">
+    <img src="/essays/posts/wigner-rotation/figure/discrete_lorentz_rapidity_0.1_boosts_17.png" style="width: 400px; height: 400px;">
 </div>
 <p>Having guessed the answer, we proceed with the explicit integral to confirm our guess.</p>
 <p><span id="eq-1d-lorentz"><span class="math display">\[
@@ -792,9 +804,9 @@ new p5(discreteLorentz1D, 'discrete-lorentz-1d');
 <p>Given a manifoldness [smooth space] and a group of transformations of the same; to develop <strong>theory of invariants</strong> relating to that group.</p>
 </blockquote>
 <p>In plane geometry, we know that although <span class="math inline">\(x, y, x', y'\)</span> are geometrically meaningless, the norm-squared <span class="math inline">\((x-x')^2 + (y-y')^2\)</span> is meaningful, because that quantity is not changed (invariant) if you apply the rotation matrix <span class="math inline">\(\begin{bmatrix}\cos\theta &amp; \sin\theta \\ -\sin\theta &amp; \cos\theta \end{bmatrix}\)</span> to it. What would be an invariant for spacetime?</p>
-<p>Looking at the picture of the Lorentz transformation in 1+1 dimensions, we can see that the intersection of the two light cones appears to have a constant area. In particular, the upper rectangle <img src="figure/sparkline_upper_square_shaded.png" style="vertical-align: middle; height: 1em;"> has constant area. That is, the quantity <span class="math inline">\((x-t)(x+t)\)</span> is preserved.</p>
+<p>Looking at the picture of the Lorentz transformation in 1+1 dimensions, we can see that the intersection of the two light cones appears to have a constant area. In particular, the upper rectangle <img src="/essays/posts/wigner-rotation/figure/sparkline_upper_square_shaded.png" style="vertical-align: middle; height: 1em;"> has constant area. That is, the quantity <span class="math inline">\((x-t)(x+t)\)</span> is preserved.</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/spacetime_diagram_1d_squeeze.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/spacetime_diagram_1d_squeeze.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Thus we define the Minkowski norm-squared: <span class="math inline">\(\|(x, t)\|^2 := x^2 - t^2\)</span>. Note that this is not an actual square because it can be negative. However it is preserved under Lorentz transformations.</p>
 <p>Once we have a norm-squared, we can extend it to an inner product::</p>
@@ -822,7 +834,7 @@ new p5(discreteLorentz1D, 'discrete-lorentz-1d');
 <p>In 1+1 dimensions, we have only two spatial directions: left and right. In 2+1 dimensions, there is a whole circle of directions. We call this circle the “space circle”, because the alternative name “hula hoop for spacetime” sounds too silly.</p>
 <p>Just like in 1+1 dimensions, the space circle is constructed by shooting a forward light cone at <span class="math inline">\((0, 0, -1)\)</span> and a backward light cone at <span class="math inline">\((0, 0, +1)\)</span>. Their intersection is the space circle. A space circle plus a ticking clock together allows us to define a coordinate system with three unit vectors <span class="math inline">\((1, 0, 0), (0, 1, 0), (0, 0, 1)\)</span>. Both the clock and the space circle can be boosted. We will pick the simplest possible way to transport the ticking clock and the space circle, and experiments with <a href="#sec-thomas-precession">Thomas precession</a> would show that this is the right way.</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/infinitesimal_boost_2+1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/infinitesimal_boost_2+1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Suppose we perform an infinitesimal boost by <span class="math inline">\((v_x, 0)\)</span>, then, by the same picture as in the 1+1 dimension case, we know that the clock-tick <span class="math inline">\((0, 0, 1)\)</span> is boosted to <span class="math inline">\((v_x, 0, 1)\)</span>, and the space circle is boosted to the ellipse with long semiaxis <span class="math inline">\((1, 0, v_x)\)</span> and short semiaxis <span class="math inline">\((0, 1, 0)\)</span>. Where should each point on the space circle go to? Since the space circle is rigid, if we know where <em>one</em> point must go to, we know where <em>all</em> points must go to.</p>
 <p>The semiaxis <span class="math inline">\((0, 1, 0)\)</span> is both on the original space circle and the boosted space circle. It stands to reason that the simplest pick would preserve it after the infinitesimal boost. That is, we should not “twist” the space circle under boosting. With this choice, we are forced to pick <span class="math inline">\((1, 0, v_x)\)</span> as the boosted <span class="math inline">\((1, 0, 0)\)</span>, since it is the unique unit vector that is perpendicular to <span class="math inline">\((0, 1, 0), (v_x, 0, 1)\)</span>, and infinitesimally close to <span class="math inline">\((1, 0, 0)\)</span>.</p>
@@ -926,25 +938,25 @@ I + \sinh(w) \vec{n} \cdot \vec{K} + (\cosh(w) - 1) (\vec{n} \cdot \vec{K})^2
 <h3 class="anchored" data-anchor-id="step-by-step-demonstration-of-the-wigner-rotation">Step-by-step demonstration of the Wigner rotation</h3>
 <p>Consider the simplest type of three-boost cycle as shown in the figure below. We start at the rest frame, boost to the frame with a 3-velocity of <span class="math inline">\((v_x, 0)\)</span>, then boost to the frame with a 3-velocity of <span class="math inline">\((v_x, v_x d\varphi)\)</span>, and finally boost back to the rest frame.</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/wigner_rotation_3-velocity_cycle_1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3-velocity_cycle_1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Tracing out the trajectory of every point on the space circle gives the following sequence:</p>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="figure/wigner_rotation_4-velocity_1.png" class="img-fluid"></p>
+<p><img src="/essays/posts/wigner-rotation/figure/wigner_rotation_4-velocity_1.png" class="img-fluid"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="figure/wigner_rotation_4-velocity_2.png" class="img-fluid"></p>
+<p><img src="/essays/posts/wigner-rotation/figure/wigner_rotation_4-velocity_2.png" class="img-fluid"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="figure/wigner_rotation_4-velocity_3.png" class="img-fluid"></p>
+<p><img src="/essays/posts/wigner-rotation/figure/wigner_rotation_4-velocity_3.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
 <p>When projected to the <span class="math inline">\(xy\)</span>-plane, the sequence looks like:</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/wigner_rotation_3-velocity_cycle_2.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3-velocity_cycle_2.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Therefore, after three pure boosts, we end up with a rotation by <span class="math inline">\((\gamma - 1)d \varphi\)</span> radians in the opposite direction. Here, <span class="math inline">\(\gamma\)</span> is the long semiradius of the boosted space circle, after projecting it down to the <span class="math inline">\(xy\)</span> plane. This is the “Lorentz factor” often used in special relativity:</p>
 <p><span class="math display">\[\gamma = \frac{1}{\sqrt{1-v^2}}\]</span></p>
@@ -967,7 +979,7 @@ I + \sinh(w) \vec{n} \cdot \vec{K} + (\cosh(w) - 1) (\vec{n} \cdot \vec{K})^2
 </div>
 <p>Performing boosts around a full cycle of 3-velocities and returning to our starting 3-velocity is equivalent to performing an infinite number of infinitesimal triangle-circuit boosts:</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/wigner_rotation_3-velocity_cycle_3.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3-velocity_cycle_3.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Therefore, a full cycle of boosts rotates our space circle by a full <span class="math inline">\((\gamma - 1)2\pi\)</span> radians in the opposite direction.</p>
 </section>
@@ -992,15 +1004,15 @@ I + \sinh(w) \vec{n} \cdot \vec{K} + (\cosh(w) - 1) (\vec{n} \cdot \vec{K})^2
 <p>Here is a “tourist’s guide to the visualization”.</p>
 <p>The three boosts in animated form:</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/wigner_rotation_infinitesimal_sector.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/wigner_rotation_infinitesimal_sector.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Because <span class="math inline">\(\gamma - 1 = \frac{2}{3}\)</span>, if you drag the 3-velocity for 3 full cycles at maximal velocity, the space circle would complete -2 full cycles.</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/wigner_rotation_3_full_cycles.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3_full_cycles.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 <p>Suppose a particle is moving close to the speed of light and emitting photons at equal angular density in all directions <em>in its own frame</em>, then <em>in the rest frame</em> the photons are bunched in front of the particle. This is the <a href="https://en.wikipedia.org/wiki/Relativistic_beaming">relativistic beaming effect</a>, or the headlight effect.</p>
 <div style="display: flex; justify-content: center; width: 80%; margin: auto;">
-    <img src="figure/headlight_effect.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
+    <img src="/essays/posts/wigner-rotation/figure/headlight_effect.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;">
 </div>
 </section>
 <section id="sec-thomas-precession" class="level3 page-columns page-full">
@@ -2108,7 +2120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center;"&gt;</span></span>
-<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/discrete_lorentz_rapidity_0.1_boosts_17.png" style="width: 400px; height: 400px;"&gt;</span></span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/discrete_lorentz_rapidity_0.1_boosts_17.png" style="width: 400px; height: 400px;"&gt;</span></span>
 <span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a></span>
@@ -2170,7 +2182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/spacetime_diagram_1d_squeeze.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/spacetime_diagram_1d_squeeze.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-358"><a href="#cb2-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a></span>
@@ -2212,7 +2224,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/infinitesimal_boost_2+1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/infinitesimal_boost_2+1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a></span>
@@ -2323,7 +2335,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/wigner_rotation_3-velocity_cycle_1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3-velocity_cycle_1.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-510"><a href="#cb2-510" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-511"><a href="#cb2-511" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a></span>
@@ -2341,7 +2353,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-525"><a href="#cb2-525" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/wigner_rotation_3-velocity_cycle_2.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3-velocity_cycle_2.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a></span>
@@ -2359,7 +2371,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-543"><a href="#cb2-543" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-544"><a href="#cb2-544" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/wigner_rotation_3-velocity_cycle_3.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3-velocity_cycle_3.png" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a></span>
@@ -2396,7 +2408,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-579"><a href="#cb2-579" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-580"><a href="#cb2-580" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-581"><a href="#cb2-581" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-582"><a href="#cb2-582" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/wigner_rotation_infinitesimal_sector.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-582"><a href="#cb2-582" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/wigner_rotation_infinitesimal_sector.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-583"><a href="#cb2-583" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-584"><a href="#cb2-584" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-585"><a href="#cb2-585" aria-hidden="true" tabindex="-1"></a></span>
@@ -2404,7 +2416,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-587"><a href="#cb2-587" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-588"><a href="#cb2-588" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-589"><a href="#cb2-589" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-590"><a href="#cb2-590" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/wigner_rotation_3_full_cycles.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-590"><a href="#cb2-590" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/wigner_rotation_3_full_cycles.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-591"><a href="#cb2-591" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-592"><a href="#cb2-592" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-593"><a href="#cb2-593" aria-hidden="true" tabindex="-1"></a></span>
@@ -2412,7 +2424,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb2-595"><a href="#cb2-595" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-596"><a href="#cb2-596" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-597"><a href="#cb2-597" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div style="display: flex; justify-content: center; width: 80%; margin: auto;"&gt;</span></span>
-<span id="cb2-598"><a href="#cb2-598" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="figure/headlight_effect.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
+<span id="cb2-598"><a href="#cb2-598" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;img src="/essays/posts/wigner-rotation/figure/headlight_effect.gif" alt="Spacetime Diagram" style="max-width: 100%; height: auto;"&gt;</span></span>
 <span id="cb2-599"><a href="#cb2-599" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
 <span id="cb2-600"><a href="#cb2-600" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-601"><a href="#cb2-601" aria-hidden="true" tabindex="-1"></a></span>

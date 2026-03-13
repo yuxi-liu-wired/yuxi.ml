@@ -380,45 +380,45 @@ body {
 
 @font-face {
   font-family: 'OpenSans';
-  src: url(..\..\..\..\..dist/b8a45faeebd38e942164a3e262feff18.eot);
-  src: url(..\..\..\..\..dist/b8a45faeebd38e942164a3e262feff18.eot?#iefix) format("embedded-opentype"), url(./85fb30fc6627a67c29718aefdc4614e4.woff) format("woff"), url(..\..\..\..\..dist/67f66a21a1aa8f13b7f15df65ccd320b.ttf) format("truetype"), url(..\..\..\..\..dist/c8743c33e928a7041128864aa0f0a6c0.svg#Nobel) format("svg");
+  src: url(../../../../..dist/b8a45faeebd38e942164a3e262feff18.eot);
+  src: url(../../../../..dist/b8a45faeebd38e942164a3e262feff18.eot?#iefix) format("embedded-opentype"), url(./85fb30fc6627a67c29718aefdc4614e4.woff) format("woff"), url(../../../../..dist/67f66a21a1aa8f13b7f15df65ccd320b.ttf) format("truetype"), url(../../../../..dist/c8743c33e928a7041128864aa0f0a6c0.svg#Nobel) format("svg");
   font-weight: bold;
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSans';
-  src: url(..\..\..\..\..dist/0ea04502930623aa3de110aac9f9e4fd.eot);
-  src: url(..\..\..\..\..dist/0ea04502930623aa3de110aac9f9e4fd.eot?#iefix) format("embedded-opentype"), url(..\..\..\..\..dist/9f2144213fad53d4e0fdb26ecf93865f.woff) format("woff"), url(..\..\..\..\..dist/33f225b8f5f7d6b34a0926f58f96c1e9.ttf) format("truetype"), url(..\..\..\..\..dist/bb100c995f1d20b8a96462fe5f528bd4.svg#Nobel) format("svg");
+  src: url(../../../../..dist/0ea04502930623aa3de110aac9f9e4fd.eot);
+  src: url(../../../../..dist/0ea04502930623aa3de110aac9f9e4fd.eot?#iefix) format("embedded-opentype"), url(../../../../..dist/9f2144213fad53d4e0fdb26ecf93865f.woff) format("woff"), url(../../../../..dist/33f225b8f5f7d6b34a0926f58f96c1e9.ttf) format("truetype"), url(../../../../..dist/bb100c995f1d20b8a96462fe5f528bd4.svg#Nobel) format("svg");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSans';
-  src: url(..\..\..\..\..dist/6254566102bf84ab7bf0f83f76d11bff.eot);
-  src: url(..\..\..\..\..dist/6254566102bf84ab7bf0f83f76d11bff.eot?#iefix) format("embedded-opentype"), url(./261484f7b7811651ed481211705e6555.woff) format("woff"), url(..\..\..\..\..dist/b1809ffa9a88a17e371edf3e1faa94a2.ttf) format("truetype"), url(..\..\..\..\..dist/ba8bcd8ddb0416b85f656fb34d2dcafd.svg#opensans) format("svg");
+  src: url(../../../../..dist/6254566102bf84ab7bf0f83f76d11bff.eot);
+  src: url(../../../../..dist/6254566102bf84ab7bf0f83f76d11bff.eot?#iefix) format("embedded-opentype"), url(./261484f7b7811651ed481211705e6555.woff) format("woff"), url(../../../../..dist/b1809ffa9a88a17e371edf3e1faa94a2.ttf) format("truetype"), url(../../../../..dist/ba8bcd8ddb0416b85f656fb34d2dcafd.svg#opensans) format("svg");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'NotoNaskhArabic';
-  src: url(..\..\..\..\..dist/596101fc6cf0d95fd2a8deeed285fa8b.eot);
-  src: url(..\..\..\..\..dist/596101fc6cf0d95fd2a8deeed285fa8b.eot?#iefix) format("embedded-opentype"), url(..\..\..\..\..dist/9c78005dbb876ab07f5e49ced1578a4c.woff) format("woff"), url(..\..\..\..\..dist/443260f65ac5cf45e5b79c249cc2a459.ttf) format("truetype");
+  src: url(../../../../..dist/596101fc6cf0d95fd2a8deeed285fa8b.eot);
+  src: url(../../../../..dist/596101fc6cf0d95fd2a8deeed285fa8b.eot?#iefix) format("embedded-opentype"), url(../../../../..dist/9c78005dbb876ab07f5e49ced1578a4c.woff) format("woff"), url(../../../../..dist/443260f65ac5cf45e5b79c249cc2a459.ttf) format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'NotoNaskhArabic';
-  src: url(..\..\..\..\..dist/547bceb986325fbc9adb640361e678fd.eot);
-  src: url(..\..\..\..\..dist/547bceb986325fbc9adb640361e678fd.eot?#iefix) format("embedded-opentype"), url(..\..\..\..\..dist/ad81c7a967df3e095073049263f8fed6.woff) format("woff"), url(..\..\..\..\..dist/561edc23949b0f997497230b01392b62.ttf) format("truetype");
+  src: url(../../../../..dist/547bceb986325fbc9adb640361e678fd.eot);
+  src: url(../../../../..dist/547bceb986325fbc9adb640361e678fd.eot?#iefix) format("embedded-opentype"), url(../../../../..dist/ad81c7a967df3e095073049263f8fed6.woff) format("woff"), url(../../../../..dist/561edc23949b0f997497230b01392b62.ttf) format("truetype");
   font-weight: bold;
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: 'icons';
-  src: url(..\..\..\..\..dist/598e7b4a975293c19bf62ef3bfcca6a5.eot);
-  src: url(..\..\..\..\..dist/598e7b4a975293c19bf62ef3bfcca6a5.eot?#iefix) format("embedded-opentype"), url(..\..\..\..\..dist/3390fe6dc76cc6f65a6f1fb772c9bd50.woff) format("woff"), url(..\..\..\..\..dist/fc80cfa3d83ed4ef4e4bdff1806b2a2b.ttf) format("truetype"), url(..\..\..\..\..dist/12d27b24f5dc71e8eb89ea9cd0883a4b.svg#Icons) format("svg");
+  src: url(../../../../..dist/598e7b4a975293c19bf62ef3bfcca6a5.eot);
+  src: url(../../../../..dist/598e7b4a975293c19bf62ef3bfcca6a5.eot?#iefix) format("embedded-opentype"), url(../../../../..dist/3390fe6dc76cc6f65a6f1fb772c9bd50.woff) format("woff"), url(../../../../..dist/fc80cfa3d83ed4ef4e4bdff1806b2a2b.ttf) format("truetype"), url(../../../../..dist/12d27b24f5dc71e8eb89ea9cd0883a4b.svg#Icons) format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1513,7 +1513,7 @@ label,
       appearance: none;
       -moz-appearance: none;
       -webkit-appearance: none;
-      background: url("..\..\..\..\..assets/images/select-arrow.svg") 24px;
+      background: url("../../../../..assets/images/select-arrow.svg") 24px;
       background-repeat: no-repeat;
       background-position: right center;
       font-size: 14px;
@@ -7477,7 +7477,7 @@ ul.chart-list .location-detail-item.no-link .name:after {
           #homepage .bottom .tool-card-list .tool-card a:hover .title {
             color: #006eb6; } }
       #homepage .bottom .tool-card-list .tool-card .icon {
-        background: url(..\..\..\..\..dist/e4ac647407285c69bbf7bc8d81fd04b5.png) #fff no-repeat;
+        background: url(../../../../..dist/e4ac647407285c69bbf7bc8d81fd04b5.png) #fff no-repeat;
         border: 1px solid #e4e9ec;
         border-radius: 50%;
         height: 55px;

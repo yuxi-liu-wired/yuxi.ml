@@ -1,0 +1,3806 @@
+---
+title: "Heidegger's <u>Die Sprache im Gedicht</u> and the Cultivation of the Grapheme"
+author: "Nick Land"
+date: "1987-09"
+categories: [literature, philosophy]
+format:
+ html:
+  toc: true
+  css: pagination.css
+  resources:
+    - "code/**/**"
+description: "Nick Land's PhD thesis."
+
+status: "finished"
+confidence: "log"
+importance: 0
+---
+
+The University of Essex
+
+
+Heidegger's <u>Die Sprache im Gedicht</u><br>
+and the Cultivation of<br>
+the Grapheme.
+
+
+A Thesis submitted to the<br>
+School of Comparative Studies<br>
+in candidacy for the Degree of<br>
+Doctor of Philosophy
+
+
+by
+
+
+Nicholas Land
+
+
+September 1987
+
+<p class="pn">\- i -</p>
+
+
+## Outline
+
+In this thesis I attempt to explore the implications of Heidegger's 1953
+essay on the work of the Austrian poet Georg Trakl - <u>Die Sprache im Gedicht</u>
+- for that network of contemporary researches concerned with the
+differentiation executed by the written sign. I sketch out some of the salient
+features of Heidegger's essay in my introduction, and then re-examine them at
+greater length in the body of the text. The first of these features is that of
+the gathering wave; Heidegger's variation upon Trakl's 'Icy Wave of Eternity'.
+The wave introduces a thought of temporality as recurrent departure, and a
+problem of typology as the graphic subversion of signification. My focus then
+shifts to the figure of the stranger, who deepens the thematic of the
+grapheme by 'exemplifying' Heidegger's etymological strategy. The stranger
+also adds an anthropological dimension to the investigation by posing a
+question of fraternity which seems to transgress all ethnological realism by
+suppressing the issue of (the sister's) exogamic dispersion. The line of
+migration traced by the stranger traverses the polysemic German word
+<u>Geschlecht</u> and the associated problematic of 'genus' (or, more precisely, of
+the 'gen-' in general), indicating lupine trails and nocturnal paths that
+desert the interiority of any possible genre. I conclude that a reading of
+such departures or differentiations need not invoke a repudiation of generic
+positivity, but may rather point to a primordial tendency towards cultivation
+implicit in specificities, and that a reading along these lines is better able
+to re-open the conduits of force connecting Heidegger's Trakl interpretation
+to our contemporary perplexities.
+
+<p class="pn">\- ii -</p>
+
+## Acknowledgements
+
+The precise genealogy of this thesis is quite beyond my grasp, but it has
+been nourished in the rich and stimulating soil of the University of Essex
+philosophy department, whose graduate students and faculty have been a
+constant source of enlightenment, provocation, and comradeship. I am
+particularly indebted to Dr Robert Bernasconi and Dr Jay Bernstein for their
+assistance, which in the case of Dr Bernstein reached what can only be
+described as extravagant proportions. But my most extensive thanks are due to
+my supervisor, Dr David Farrell Krell, for the countless hours of discussion,
+reading, and thinking which he so recklessly squandered on this project, in a
+true 'economy without reserve'. From the loftiest abstraction of my research
+to its most sordid detail his help has been immeasurable.
+
+I owe great thanks to Jacques Derrida for allowing me access to several
+unpublished papers that have been of decisive importance to my work; in
+particular some of the unfinished stages in his continuing meditation upon
+<u>Geschlecht</u>.
+
+Outside the Essex milieu I would especially like to thank Linda Williams,
+Lees Fellow at the University of Manchester, for her inspiring work in the
+field of psychoanalytic research. And finally, in lieu of typists, I would like
+to thank the purveyor of my Amstrad PCW8256, Alan Sugar, for presenting the
+(almost) acceptable face of capitalism.
+
+<p class="pn">\- iii -</p>
+
+## Contents
+
+
+```{=html}
+ <style>
+  .toc-entry {
+    display: flex;
+    align-items: baseline;
+  }
+  .toc-entry .title {
+    white-space: nowrap;
+  }
+  .toc-entry .dots {
+    flex: 1;
+    border-bottom: 1px dotted;
+    margin: 0 0.4em;
+    position: relative;
+    top: -0.2em;
+  }
+  .toc-entry .page {
+    white-space: nowrap;
+  }
+  </style>
+
+ <div class="toc-entry">
+<span class="title">Outline</span>
+<span class="dots"></span>
+<span class="page">i</span>
+</div>
+<div class="toc-entry">
+<span class="title">Acknowledgements</span>
+<span class="dots"></span>
+<span class="page">ii</span>
+</div>
+<div class="toc-entry">
+<span class="title">Contents</span>
+<span class="dots"></span>
+<span class="page">iii</span>
+</div>
+<div class="toc-entry">
+<span class="title">Key to works cited</span>
+<span class="dots"></span>
+<span class="page">v</span>
+</div>
+<div class="toc-entry">
+<span class="title">Introduction</span>
+<span class="dots"></span>
+<span class="page">1</span>
+</div>
+<div class="toc-entry">
+<span class="title">i)   The Waves of Reading</span>
+<span class="dots"></span>
+<span class="page">2</span>
+</div>
+<div class="toc-entry">
+<span class="title">ii)  The Stamp of Sorority</span>
+<span class="dots"></span>
+<span class="page">12</span>
+</div>
+<div class="toc-entry">
+<span class="title">iii) Departing from the Sister</span>
+<span class="dots"></span>
+<span class="page">23</span>
+</div>
+<div class="toc-entry">
+<span class="title">iv)  <u>Geschlecht</u> and the Trajectory of
+Deconstruction</span>
+<span class="dots"></span>
+<span class="page">35</span>
+</div>
+<div class="toc-entry">
+<span class="title">Part One: The Icy Wave of Eternity</span>
+<span class="dots"></span>
+<span class="page">45</span>
+</div>
+<div class="toc-entry">
+<span class="title">i)   The Opening</span>
+<span class="dots"></span>
+<span class="page">46</span>
+</div>
+<div class="toc-entry">
+<span class="title">ii)  The Gathering of Sense</span>
+<span class="dots"></span>
+<span class="page">57</span>
+</div>
+<div class="toc-entry">
+<span class="title">iii) <u>Verlassenheit</u></span>
+<span class="dots"></span>
+<span class="page">66</span>
+</div>
+<div class="toc-entry">
+<span class="title">iv)  The Rhythm of Type</span>
+<span class="dots"></span>
+<span class="page">76</span>
+</div>
+<div class="toc-entry">
+<span class="title">Part Two: Something Strange is the Soul on
+Earth</span>
+<span class="dots"></span>
+<span class="page">85</span>
+</div>
+<div class="toc-entry">
+<span class="title">i)  The Abyss of the Sun</span>
+<span class="dots"></span>
+<span class="page">86</span>
+</div>
+<div class="toc-entry">
+<span class="title">ii)  Migrations of Mortality</span>
+<span class="dots"></span>
+<span class="page">99</span>
+</div>
+<div class="toc-entry">
+<span class="title">iii) The One Who Perished Early</span>
+<span class="dots"></span>
+<span class="page">112</span>
+</div>
+<div class="toc-entry">
+<span class="title">iv)  The Others</span>
+<span class="dots"></span>
+<span class="page">125</span>
+</div>
+<div class="toc-entry">
+<span class="title">Part Three: Degenerations</span>
+<span class="dots"></span>
+<span class="page">134</span>
+</div>
+<div class="toc-entry">
+<span class="title">i)   Lupine Lines</span>
+<span class="dots"></span>
+<span class="page">135</span>
+</div>
+<div class="toc-entry">
+<span class="title">ii)  The Father's Steps</span>
+<span class="dots"></span>
+<span class="page">142</span>
+</div>
+<div class="toc-entry">
+<span class="title">iii) Reflections upon Narcissus</span>
+<span class="dots"></span>
+<span class="page">153</span>
+</div>
+<div class="toc-entry">
+<span class="title">iv)  The Marks of Delirium</span>
+<span class="dots"></span>
+<span class="page">163</span>
+</div>
+<p class="pn">– iv –</p>
+<div class="toc-entry">
+<span class="title">Part Four: The Protraction of Difference</span>
+<span class="dots"></span>
+<span class="page">172</span>
+</div>
+<div class="toc-entry">
+<span class="title">i) The Casting of the Sign</span>
+<span class="dots"></span>
+<span class="page">173</span>
+</div>
+<div class="toc-entry">
+<span class="title">ii) <u>L'écriture mauvaise</u></span>
+<span class="dots"></span>
+<span class="page">184</span>
+</div>
+<div class="toc-entry">
+<span class="title">iii) <u>Dissémination</u>: The Hegelian
+Antechamber</span>
+<span class="dots"></span>
+<span class="page">193</span>
+</div>
+<div class="toc-entry">
+<span class="title">iv) The Cultivation of the Grapheme</span>
+<span class="dots"></span>
+<span class="page">201</span>
+</div>
+<div class="toc-entry">
+<span class="title">Conclusion: Heidegger's Trakl: Writing,
+Kinship, and Desire</span>
+<span class="dots"></span>
+<span class="page">211</span>
+</div>
+<div class="toc-entry">
+<span class="title">Appendix: On the Translation of the German Word
+<u>Wesen</u></span>
+<span class="dots"></span>
+<span class="page">220</span>
+</div>
+<div class="toc-entry">
+<span class="title">Bibliography</span>
+<span class="dots"></span>
+<span class="page">224</span>
+</div>
+```
+
+<p class="pn">\– v –</p>
+
+## Key to Works Cited
+
+
+```{=html}
+<style>
+    .abbrev-table, .abbrev-table td {
+    border: none;
+    border-collapse: collapse;
+  }
+  .abbrev-table td {
+    padding: 0.2em 1em 0.2em 0;
+    vertical-align: top;
+  }
+  .abbrev-table td:last-child {
+    padding-right: 0;
+  }
+</style>
+ <table class="abbrev-table">
+<tr><td>AO:</td><td>Deleuze and Guattari,
+<u>L'Antioedipe</u></td></tr>
+<tr><td>Ba:</td><td>Basil, <u>Trakl</u></td></tr>
+<tr><td>CS:</td><td>Irigaray, <u>Ce Sexe qui n'est pas
+Une</u></td></tr>
+<tr><td>D:</td><td>Derrida, <u>Dissémination</u></td></tr>
+<tr><td>DG:</td><td>Derrida, <u>De la Grammatologie</u></td></tr>
+<tr><td>DR:</td><td>Deleuze, <u>Différence et
+Répétition</u></td></tr>
+<tr><td>G:</td><td>Derrida, <u>Glas</u></td></tr>
+<tr><td>Gi:</td><td>Derrida, 'Geschlecht: différence sexuel,
+différence ontologique.'</td></tr>
+<tr><td>Gii:</td><td>Derrida, 'Geschlecht: La main de l'homme selon
+Heidegger.'</td></tr>
+<tr><td>Giii:</td><td>Derrida, 'Geschlecht: (untitled third part on
+<u>Die Sprace im Gedicht</u>)'</td></tr>
+<tr><td>GP:</td><td>Heidegger, <u>Grundprobleme der
+Phänomenologie</u></td></tr>
+<tr><td>GR:</td><td>Sallis, <u>The Gathering of
+Reason</u></td></tr>
+<tr><td>GTP:</td><td>Lindenberger, <u>Georg Trakl's
+Poetry</u></td></tr>
+<tr><td>HA:</td><td>Heidegger, <u>Hölderlins Andenken</u></td></tr>
+<tr><td>HE:</td><td>Hegel, <u>System der Philosophie. Zweiter Teil.
+Die Naturphilosophie</u></td></tr>
+<tr><td>IM:</td><td>Krell, <u>Intimations of
+Mortality</u></td></tr>
+<tr><td>KLM:</td><td>Deleuze and Guattari, <u>Kafka: pour une
+littérature mineure</u></td></tr>
+<tr><td>KK:</td><td>Heidegger, <u>Kants Kritik der reinen
+Vernunft</u></td></tr>
+<tr><td>KrV:</td><td>Kant, <u>Kritik der reinen
+Vernunft</u></td></tr>
+<tr><td>MA:</td><td>Heidegger, <u>Metaphysische Anfangsgründe der
+Logik im Ausgang von Leibniz</u></td></tr>
+<tr><td>MP:</td><td>Derrida, <u>Marges de la
+philosophie</u></td></tr>
+<tr><td>N:</td><td>Novalis, <u>Dichtungen</u></td></tr>
+<tr><td>NC:</td><td>Klossowski, <u>Nietzsche et le cercle
+vicieux</u></td></tr>
+<tr><td>NN:</td><td>Allison (ed.), <u>The New
+Nietzsche</u></td></tr>
+<tr><td>PG:</td><td>Hegel, <u>Phänomenologie des
+Geistes</u></td></tr>
+<tr><td>R:</td><td>Rimbaud, <u>Collected Poems</u></td></tr>
+<tr><td>Si:</td><td>Nietzsche, <u>Werke</u>, edited by Karl
+Schlechta, Band I</td></tr>
+<tr><td>Sii:</td><td>Nietzsche, <u>Werke</u>, Band II</td></tr>
+<tr><td>Siii:</td><td>Nietzsche, <u>Werke</u>, Band III</td></tr>
+<tr><td>SH:</td><td>Foti, 'Situating Heidegger Situating
+Trakl'</td></tr>
+<tr><td>Sp:</td><td>Spoerri, <u>Georg Trakl</u></td></tr>
+</table>
+<p class="pn">- vi -</p>
+ <table class="abbrev-table">
+<tr><td>SR:</td><td>Carlyle, <u>Sartor Resartus</u></td></tr>
+<tr><td>SZ:</td><td>Heidegger, <u>Sein und Zeit</u></td></tr>
+<tr><td>T:</td><td>Trakl, <u>Das dichterische Werk</u></td></tr>
+<tr><td>TT:</td><td>Freud, <u>Totem und Tabu</u></td></tr>
+<tr><td>TW:</td><td>Trakl, <u>Werke, Entwürfe, Briefe</u></td></tr>
+<tr><td>US:</td><td>Heidegger, <u>Unterwegs zur
+Sprache</u></td></tr>
+<tr><td>WHD:</td><td>Heidegger, <u>Was Heisst Denken?</u></td></tr>
+<tr><td>WG:</td><td>Graves, <u>The White Goddess</u></td></tr>
+</table>
+```
+
+<p class="pn">\- 1 -</p>
+
+## Introduction
+
+
+<blockquote><i>Verträumte Romantik abseits der technisch-wirtschaftlichen Welt des modernen Massendaseins? Oder - das klare Wissen des 'Wahnsinnigen', der Anderes sieht und sinnt als die Berichterstatter des Aktuellen, die sich in der Historie des Gegenwärtigen erschöpfen, dessen vorgerechnete Zukunft je nur die Verlängerung des Aktuellen ist, eine Zukunft, die ohne Ankunft eines Geschickes bleibt, das den Menschen erst im Anbeginn seines Wesens angeht.</i>
+
+[US, 80]</blockquote>
+
+<p class="pn">\- 2 -</p>
+
+### One: Waves of Reading
+
+
+Martin Heidegger's thinking continues to have a massive - and constantly growing - influence on the development of modern 'philosophy'; in the formulation of its questions, the selection of its 'objects', and the constructions of its history. Yet this in itself might not be enough to explain why his 1953 essay on the Austrian poet Georg Trakl should be of interest to us. Does Heidegger's essay perhaps represent Trakl to us in a way that is enlightening or informative? Does it tell us something about poetry, or history, or language in general? Does it, in fact, succeed in doing anything at all? In his safely vacuous text on Trakl's poetry Herbert Lindenberger writes:
+
+<blockquote>It would seem gratuitous to complain of the wrongheadedness of Heidegger's approach to Trakl, for Heidegger does not even pretend to use the poets he writes about for any purpose except the exposition of his own philosophy. But Heidegger's study of Trakl seems to me considerably less successful than his study of Hölderlin... [GTP, 141].</blockquote>
+
+Lindenberger does not ask what meaning can be given to 'success' within a history - like Heidegger's history of being - for which the proper sense of progress has always been the expansion of devastation, a history, that is, which has been perpetually deflected from thinking by a pervasive theo-technical tradition. Platonic-Christian culture has made it not only possible, but also imperative, to think of poetry as the product of a poet, and, derivatively, as something to be 'used' by a philosopher for the purpose of illustrating representational concepts. It is this tradition which directs us to ask about the usefulness and representational adequacy of Heidegger's essay. Such questions are symptoms of a profound and positively constituted
+
+<p class="pn">\- 3 -</p>
+
+illiteracy, whose hegemony it has been the intellectual task of the modern and perhaps postmodern age to question.
+
+As for Trakl - who failed to organize his desires according to the laws of his civilization, failed to keep a job, became addicted to opium, enmeshed in alcoholism, failed to defeat his psychosis and died of a cocaine overdose in a military pharmacy - what would we be doing to him if we said he had 'succeeded' as a poet? Appropriating his delicate, futile ardour to a society that has forgotten how to despise itself? Trakl's traces are the ruins of a miserable, even horrific, failure. A failure to adapt or conform, to repress or sublimate adequately, to produce, resolve, comfort, or conclude. This failure is not merely a default, however, but a violently traumatic condition. The evolution of his style, if it is still possible to write coherently of such a thing, is a drive towards the dissolution of every criterion for evaluation. It is this above all which he learns from his decisive encounters with Rimbaud and Hölderlin. The traditional aesthetics which would distinguish a traumatic content from a perfectly 'achieved' formal presentation loses all pertinence as Trakl presses language into the shadows. The last thing we should want is for Heidegger to 'master' these traumatized signs. To learn from Trakl is to write in ashes.
+
+In a January 1914 letter to Karl Borromaeus Heinrich Trakl wrote:
+
+<blockquote><u>Mir geht es nicht am besten. Zwischen Trübsinn und Trunkenheit verloren, fehlt mir Kraft und Lust eine Lage zu verändern, die sich täglich unheilvoller gestaltet, bleibt nur mehr der Wunsch, ein Gewitter möchte hereinbrechen und mich reinigen oder zerstören. O Gott, durch welche Schuld und Finsterniß müssen wir doch gehn. Möchten wir an Ende nicht unterliegen.</u> (Things are not going that well with me. Lost between melancholy and drunkenness, and without the force or inclination to change a position which proves to be unhealthier with each day, only the wish remains that a storm would break in and purify or destroy me.</blockquote>
+
+<p class="pn">\- 4 -</p>
+
+<blockquote>O God, through what guilt and gloom we must pass. may we not be defeated in the end.) [TV, 242].</blockquote>
+
+The sense of passivity - or of patience in its Aristotelian, philosophical sense - that pervades this despairing note should not prevent us from recognizing its positively suicidal character. The inertia referred to is not that of motionlessness, but of free-fall. For there is no contradiction between Trakl releasing himself into the spontaneous trajectory of his life - accepting it as a pathos - and the fact that he dashed himself against death at the age of twenty-seven. It is quite possible to be the patient of a savage and frenzied destiny. It might even be worth considering whether the ontotheological inheritance which constitutes the modern subject, based upon tyrannical repression of the instincts, preserving a sovereign contractual agent, create an inherent and general vector towards such self-destructive hopelessness; suicidal impulse as the norm. Trakl's writing coincides with an era in which Europe was scrambling into its obliterating new discovery; the total war of 1914-18. A cliché of this decisively pointless conflict was that it began with people cheering in the streets, and ended with Trakl's nation drained and splintered (fodder for the next spasm of annihilation). So much for one context.
+
+As for what one has come to expect as the torments of the poet, distilled by German romanticism, it has become a commonplace of the modern age that artists kill themselves, and the suspicion is that, if one thinks about life, one ends it. But there is a vague and uneasy feeling that they do it for reasons other than those accessible to individual psychobiographies, reasons that stem less from their peculiarities than from the social pathology they let speak. The overt mortality of poets is an ironic jest upon our painful and humiliating longevities, a mocking question that momentarily rends the
+
+<p class="pn">\- 5 -</p>
+
+rage of our hollow aspirations and idiot dreams. Perhaps it is thought that we need poets because someone must be rash enough to see. But to read them! - that is asking for trouble. And of course we cannot admit that everything we hold on to has rotted in the vault, that all our work is wasted, that there is no God to redeem our miseries. Where could a will be found to write off such investments of labour, pain and denial? Like hopeless gamblers we keep raising the stakes, because we cannot accept the immensity of what we have already thrown away.
+
+In the sixty-first (1953) issue of the German literary periodical <u>Merkur</u> a long essay by Heidegger appeared, discussing the work of Georg Trakl. This mysterious text, at once intensely personal and strangely detached, was entitled <u>Georg Trakl. Eine Erörterung seines Gedichtes</u> ('Georg Trakl. A situating of his poetry.'). The same essay, renamed <u>Die Sprache im Gedicht</u> ('Language in the Poem'), and now subtitled <u>Eine Erörterung von Georg Trakls Gedicht</u> ('A situating of Georg Trakl's poetry'), was later published (in 1959) as the second division of Heidegger's book <u>Unterwegs zur Sprache</u> ('On the Way to Language'). The essay which precedes it in the book, <u>Die Sprache</u> ('Language'), is also concerned with Trakl, or, more precisely, with the reading of a single Trakl poem <u>Ein Winterabend</u> ('A Winter Evening'). <u>Die Sprache im Gedicht</u>, in comparison, cites, or sites, no fewer than forty-three of Trakl's poems in the course of a wide-ranging search for the well-spring of their peculiar language. Outside of these two texts Heidegger makes only glancing references to Trakl's work and to the impact it had on his own thinking.
+
+The 1953 essay consists of three numbered sections of uneven length, prefaced by a short untitled introduction or prologue. These basic partitions are not interrelated according to any conventional pedagogical principle, and do not unfold the stages of a developing argument. It is, for instance, very
+
+<p class="pn">\- 6 -</p>
+
+difficult to discriminate between the essay's three main sections in terms of theses or themes, since each successive section recollects the discussion of the last and subtly displaces it. To follow this complex progression it is perhaps necessary to borrow the 'metaphor' Heidegger himself calls upon, that of a wave, which describes motion coiling into an enigmatic pulsion and cyclical repetition. Yet the peaks and troughs that furrow Heidegger's text do not follow the regular trace of an oscillograph; they cut a jagged and confusing path. As they rise a distinct 'theme' emerges, momentarily isolated from a maelstrom of interweaving currents. Due to the intensity of Trakl's language, and to the momentum historically invested within it, each theme shatters into blinding foam when concentrated at its apex, and sinks again into swirling depths.
+
+To seek the foci of Heidegger's essay, therefore, might involve searching for the points at which his argumentation dissolves into a dazzling blur. This is partially acknowledged within the text, since it introduces a term to 'balance' (and even 'redeem') the disruptive surge of situating: <u>Erläuterung</u>, 'clarification'. The play of situating and clarifying, of peak and trough, does not escalate towards a climax. Instead, the situating of Trakl within the essay is most climactic in its early stages, becoming increasingly clarificatory as it continues. The imperative of lucidity, which is to say, of an increasingly urgent requirement that something be 'retrieved' from the reading, seems to achieve a precarious but waxing, authority over the course of the essay.
+
+The movement of the prologue climaxes in the first of the essay's crests. This is reached in its fifth paragraph, where a deeply cryptic and suggestive passage introduces the wave itself:
+
+<blockquote><u>Dem Ort des Gedichtes entquillt die Woge, die jeweils das Sagen als ein dichtendes bewegt. Die Woge verläßt jedoch den Ort des Gedichtes so</u></blockquote>
+
+<p class="pn">\- 7 -</p>
+
+<blockquote><u>wenig, daß ihr Entquellen vielmehr alles Bewegen der Sage in den stets verhüllteren Ursprung zurückfließen läßt. Der Ort des Gedichtes birgt als die Quelle der bewegenden Woge das verhüllte Wesen dessen, was dem metaphysisch-ästhetischen Vorstellen zunächst als Rhythmus erscheinen kann.</u> (From the site of the poem wells the wave which each time moves the saying as poetic. So little does the wave abandon the site, however, that its welling instead lets all movement of the saying flow back into the increasingly veiled origin. The site of the poem, as the source of the moving wave, conceals the veiled weft of that which is able to appear to metaphysical-aesthetic representation as rhythm.) [US, 38]</blockquote>
+
+The approach to this figure is guided by the question of the 'site' (<u>Ort</u>) of Trakl's poetry, which is thought as the wave's source. The wave is said to be the movement which characterizes the poetical in language, a movement historically apprehended - perhaps by any possible poetics - as rhythm. Yet it is not easy to detect any effects stemming from this thought in the text which follows, even though there are two other references to the wave in the essay (both in the second section). Heidegger seems deliberately to avoid any appeal to either the 'pulse' or the 'architecture' of Trakl's poems; to their graphic or phonic distribution in time and space. Nevertheless, a suspension of judgement is necessary here, since such an observation remains dependent upon an implicit distinction between the form and content of Trakl's language, and so cannot dissociate itself from precisely those aesthetic concepts which Heidegger wishes to call into quesion. What it would be to read a composition beyond the terms of metaphysical conception remains almost entirely obscure, and it is questionable whether we have the criteria either to recognize such an interpretation or competently judge its default.
+
+Caught within the imagery of the wave are a complex web of references to the relation of language and time, and especially to Heidegger's own concept of the 'hermeneutical circle'. It is the thought of the circle of interpretation,
+
+<p class="pn">\- 8 -</p>
+
+in turn, that regulates the discussion of 'situating', 'clarification', and their reciprocity within the prologue. The importance of this context is that it abandons the terrain of sterile antagonism between 'theoretical' and 'empirical' schools of reading, a division that has bedeviled the question of method in literary-critical debates. The hermeneutical circle retains its pertinence as a sign that the priority of a methodological question - even one that would resolve itself into an empiricist anti-methodologism - has become unsustainable. The encounter with language is to be thought as a way (<u>Weg</u>) that has already exceeded the origin and that is therefore no longer at the place from which a foundation can be established for one's reading. The reification of reading into intelligible and sensible phases, into theoretical reflection and practical criticism, dissolves back into a more open questioning of the temporality of language. The theoretical is implicitly seen by Heidegger to be that which appears to the naïve strata of any reading as already reached. The very existence of theory poses a question about time, which arises with the process of reading, but which has not been addressed in the models of reading produced by aesthetic, literary or art criticism.
+
+It is the refusal to participate affirmatively in the discourse of European aesthetics, and the associated project of rigorously bracketing subject-object epistemological categories, that most distinctively characterizes Heidegger's readings of poetry. When the categories of aesthetics are carried into the domain of linguistics or other varieties of language study they take the form of a distinction between a normal and a meta-language. The minimal notion of meta-language is a technical terminology which is distinctive to the critical or interpretative text. This terminology traces an ancestry for itself that is divergent in principle from that of the texts to which it is 'applied'. The kinship of 'thinker' and 'poet' is annihilated. At variance with this
+
+<p class="pn">\- 9 -</p>
+
+sedimenting of metaphysics, Heidegger pursues a tendency towards the uttermost erasure of terminological distinctiveness. The language of poetry is not to be translated, but simply guided into a relationship with itself. And this guidance is not to be that of the thinker qua subject, but that of an impersonal thinking which is no longer disguised in the cloak of philosophy. Philosophy would no longer be the guardian of this relation, since the epoch of philosophy is simultaneous with that of meta-language, or, put differently, meta-language is pre-eminently the language of metaphysics.
+
+The final essay in <u>Unterwegs zur Sprache</u>, entitled <u>Der Weg zur Sprache</u>, begins by citing a sentence from Novalis' 1798 text <u>Monolog</u>: <u>Gerade das Eigentümlich der Sprache, daß sie sich bloß um sich selbst bekümmert, weiß keiner.</u> ("Precisely what is most peculiar about language, that it only concerns itself with itself, nobody knows.") [US, 241; N, 5]. It is from this thought - of language accounting for itself in itself - that Heidegger begins his meditation on poetry. The vocabulary for the meditation is to stem from the reading itself. Indeed, thought is to be carefully dissolved into poetry, but only in such a way that poetry is strengthened in its thinking. Heidegger trusts that the key to what is said in the reserve of Western languages, while itself reserved, is yet able to be elicited. He suggests:
+
+<blockquote><u>Also in ihr eigenes Freies entbunden, kann die Sprache sich einzig um sich selbst bekümmern. Dies hört sich an wie die Rede von einem egoistischen Solipsismus. Aber die Sprache versteift sich nicht auf sich im Sinne einer nur eigensüchtigen, alles vergessenden Selbstspiegelung. Als die Sage ist das Sprachwesen das ereignende Zeigen, das gerade von sich absieht, um so das Gezeigte in das Eigene seines Erscheinens zu befreien.</u> (Thus released into its own freedom, language can concern itself solely with itself. This sounds like the discourse upon an egoistic solipsism. But language does not insist on itself in the sense of a self-centred all-forgetting self-mirroring. As</blockquote>
+
+<p class="pn">\- 10 -</p>
+
+<blockquote>saying, the weft of language is the propriative showing, which precisely deflects its gaze from itself, in order to free what is shown into its appropriate appearing.) [US, 262].</blockquote>
+
+Language is to be understood in a way that could be misread as a theory of narcissism, since it relates itself to itself, and this could be taken to be analagous to the self-regard of a subject enraptured by its own reflection. The discourse on language must therefore fend off a misinterpretation that threatens to appropriate it, or at least deflect it, into a psychoanalysis of the sign. At this crucial moment the circle of language seems to symptomize a type of auto-eroticism, displacing itself into a geometric figure of desire. In insisting that his approach to language is not to be confused with a dissolution of the subject into unconscious energetics - and in the prologue to <u>Die Sprache im Gedicht</u> the reference to psychoanalysis is explicit - Heidegger marks a crucial historical crossroads in the interpretation of Nietzsche's doctrine of the cosmic circle, the eternal recurrence of the same. Heidegger seeks rigorously to distinguish his own reading of eternal recurrence - as the last attempt to conceive the temporality of beings, as recapitulation of the history of being, as the circle of language, and even as Trakl's 'icy wave of eternity' - from what has been interpreted within the Freudian research programme as the 'death drive', as the economy of desire, and as the return of the inorganic. Return, which is perhaps the crucial thought of modernity, must now be read elsewhere. The dissolution of humanism is stripped even of the terminology which veils collapse in the mask of theoretical mastery. It must be hazarded to poetry.
+
+The first section of the essay foams with the collision of four exploding crests. It begins with the introduction of a stranger, who has no gender, and follows a trail that traverses both the surface of the earth and
+
+<p class="pn">\- 11 -</p>
+
+the history of the German language. From the very start the essay descends into a labyrinth of shadowy paths. Yet the intensity of this almost impossible 'situating' then calms for a few pages, and settles into a clarification - of death. This reprieve does not last for long, however, and the last part of the section inserts, in breathless succession, the three dominant and most perplexing themes of the essay: the sister, 'genus' (<u>Geschlecht</u>), and 'departedness' (<u>Abgeschiedenheit</u>).
+
+The essay takes its orientation from a line of Trakl's <u>Frühling der Seele</u> ('Springtime of the Soul'): <u>Es ist die Seele ein Fremdes auf Erden</u> ("The soul is something strange on the earth.") [T, 78]. Heidegger asks:
+
+<blockquote><u>Doch was heißt 'fremd'? Man versteht unter dem Fremdartigen gewöhnlich das Nichtvertraute, was nicht anspricht, solches, das eher lastet und beunruhigt. Allein 'fremd', althochdeutsch 'fram', bedeutet eigentlich: anderswohin vorwärts, unterwegs nach..., dem Voraufbehaltenen entgegen. Das Fremde wandert voraus. Doch es irrt nicht, bar jeder Bestimmung, ratlos umher. Das Fremde geht suchend auf den Ort zu, wo es als ein Wanderndes bleiben kann.</u> (But what does 'strange' [<u>fremd</u>] mean? One habitually understands the strange type as the unfamiliar, the unappealing, the sort which is burdensome and disquieting. 'Strange', Old High German '<u>fram</u>' signifies solely and properly: heading elsewhere, being underway towards..., encountering what has been reserved ahead. The strange goes in search of the site where it (the German neuter <u>es</u>) can remain as something that wanders. ) [US, 41].</blockquote>
+
+The poem does not call for theoretical rigor, or for empirical sensitivity, but for a reading of strangeness and a strangeness of reading; a self-displacement of interpretation into what is not its own. This will not lead to a stable foundation, but to a gathering place of sundry migrations. The
+
+<p class="pn">\- 12 -</p>
+
+site Heidegger seeks is to be a source or spring, a <u>Quelle</u>, where movement refreshes itself. Situating is not therefore a process that will conclude in an unproblematical notion of rest. It is such a notion that is tested in the discussion of death which follows, where Heidegger questions the thought of death as a simple and punctual annihilation of vitality. Following the course of Trakl's stranger induces Heidegger to interpret death not as a point, but as a line, or a descending path. To think death as a precise and singular event is to conspire with the tradition, and leave open the possibility of a dialectic of (im)mortality that protects the integrity of the soul. As soon as death is thought as negativity, or the relation of life to death is taken to be oppositional (which could lead to life, rather than death, being characterized negatively) it becomes theologically recuperable. Heidegger searches for a notion of death that stems from an encounter with irrecoverable alterity, a search that ultimately leads into the 'departedness', <u>Abgeschiedenheit</u>, that looms at the end of the essay's first division.
+
+
+### Two: The Stamp of Sorority
+
+
+The discussion of death is subtly modulated into an excursus which leads through ancient Greek mythology to the voice of the sister. And if there is a single problem which marks the vertiginous singularity of Heidegger's task, a problem which seems strenuously to resist universalizing thought of any kind and therefore every conceivable transcendence, it is surely that of 'the sister'
+
+<p class="pn">\- 13 -</p>
+
+and her 'place' in Trakl's poetry\*. Is this figure the trace of a now irrecoverable incident in the life of a child in late nineteenth-century Austria? The fragmentary, distorted, pathological symptom of a personal trauma? Heidegger does not think so.
+
+Heidegger's treatment of this issue is at once complex, suggestive, and perhaps ultimately unsatisfying. Its poles are a vigorous attempt at some kind of resolution through a reading of Trakl's <u>Geistliche Dämmerung</u> ('Spiriting Twilight'), and (at the other extreme) an almost despairing gesture of helplessness in which the role of the sister becomes purely 'destructive', particularly in relation to those religious interpretative projects which would crush Trakl's imagery into the triangle of christian mythology. Between these poles the sister is scattered throughout the text in a dazzling myriad of masks, dissolving into an indeterminate feminine power, whose imagery ultimately spirals outwards into the impersonal and even inanimate.
+
+How are the signs of the sister to mean anything to a reading which remains in constant negotiation with philosophy, a 'thinking dialogue with the poet'? Is not the 'subject' addressed by philosophy supposedly unspecified in respect of both gender and kinship? And who is this sister? Perhaps it is impetuous simply to identify her as Trakl's sister Margarethe, called Gretl by Georg and the rest of her family, with whom he is supposed to have been entangled incestuously during his childhood. Heidegger does not mention these names or alleged entanglements. In the essay <u>Die Sprache</u> he writes:
+
+____________________
+\* In this biographical mode of reflection Spoerri writes of: <u>die schicksalhafte Beziehung Trakls zu seiner Schwester</u>) ("the fateful relation of Trakl to his sister") [Sp, 41].
+
+<p class="pn">\- 14 -</p>
+
+<blockquote><u>Das Gedicht hat Georg Trakl gedichtet. Daß er der Dichter ist, bleibt unwichtig; hier, wie bei jedem anderen großgeglückten Fall eines Gedichtes. Das Großgeglückte besteht sogar mit darin, daß es Person und Namen des Dichters verleugnen kann.</u> (The poem was written by Georg Trakl. That he is the poet remains unimportant; here, as with every other case of great poetic achievement. The great achievement even consists in this, that it can disown the person and name of the poet.) [US, 17-18].</blockquote>
+
+If we are to set aside the name of the poet, along with every biographical index, any traces of the sister which remain will no longer be propriated to a determinate kinship position. This could be taken as a move typical of philosophy; excessive specificity is delegated to regional ontologies or sciences, in order to make room for the transcendental theory which will in turn ground these very regions. In the prologue to <u>Die Sprache im Gedicht</u> Heidegger provides an exemplary list of such sciences: history, biography, psychoanalysis, and sociology. Such discourses are perhaps thought to be too concrete for the purposes of unearthing the site of Trakl's poetry, their terminology tending too much towards the 'proper name', rendering them irredeemably ontical and empirical in character. It might also be the case that Heidegger refuses any attempt to place Trakl's poetry in 'contexts' that seem to supersede the hermeneutical openness of language, and which substitute an apparently unproblematical factuality. Whatever his methodological principles, and we might never erase their ambiguities altogether, Heidegger's search for 'Trakl's' sister restricts itself to his poetry, and most crucially to the poem <u>Geistliche Dämmerung</u> ('Spiriting Twilight')\*.
+
+____________________
+\* The German <u>Dämmerung</u> is as ambiguous as the English 'twilight', and can mean the half-light of dawn as well as that of dusk. As Baudelaire is almost
+
+<p class="pn">\- 15 -</p>
+
+The immense question posed by the terms of Heidegger's meditation, a question which the essay itself is able to address only tentatively, is concerned with the possibility of thinking kinship through the signifier, or more accurately, through what we ultimately shall have to name (under the compulsion of the 'thought' of <u>Geschlecht</u>) the specifier. This problematic forces us to investigate those difficulties 'immanent' in Trakl's text, and perhaps intrinsic to textuality in general, difficulties which demand an interrogation of sorority. This perspective is quite incompatible with an attempt to interpret the issues of sorority and incest in Trakl's poetry as an expression of imputed biographical events. Instead it leads to a reading of any such events as stemming from and 'staging' concerns that have their source in the generation of the poetical text. Not that kinship or incest have a simple fictive origin, but that kinship is at its origin already organized and instituted in and through texts, so that there is a poetic stratum which is co-emergent with a crisis of kinship.
+
+The passage in which this apparent detour occurs most fully is one of only three in which the sister - who is perpetually invoked in Trakl's poetry - is named as such in Heidegger's text. Of the three short passages in which the sister becomes an explicit concern of Heidegger's reading, two are deeply interconnected both theoretically and referentially, whilst the third is far more marginal and gestural. This third passage, in which the poem <u>Grodek</u> is
+
+____________________
+certainly Trakl's first major poetical influence [Ba, 42-9] it is tempting to read the title <u>Geistliche Dämmerung</u> as a translation of <u>L'Aube spirituelle</u> ('Spiritual dawn'), the forty-seventh poem of <u>Spleen et Idéale</u> [B, 46]. Heidegger, however, is determined to maintain the ambiguity of <u>Dämmerung</u> in his interpretation [US, 42-3], and the importance of <u>Abend</u> ('evening') in Trakl's poetry lends weight to this 'decision'.
+
+<p class="pn">\- 16 -</p>
+
+mentioned, is most easily discussed when raising the question of Trakl's relation to Christianity. In the first instance the sister is associated with Semele, the mother of the vine-Dionysus, who is called the moon-woman:
+
+<blockquote><u>Das kühle Licht entstammt dem Scheinen der Mondin (Selanna). Rings um ihr Leuchten verblassen und erkühlen sogar, wie altgriechische Verse sagen, die Sterne. Alles wird 'monden'. Der die Nacht durchschreitende Fremde heißt 'der Mondene'. Die 'mondene Stimme' der Schwester, die immer durch die geistliche Nacht tönt, hört der Bruder dann, wenn er in seinem Kahn, der noch ein 'schwarzer' ist und kaum beglänzt vom Goldenen des Fremdlings, diesem auf nächtiger Weiherfahrt zu folgen versucht.</u> (The cool light stems from the shining of the lunar woman (Selanna). Ringing her radiance, as ancient Greek verse says, the stars fade and even cool. Everything becomes 'lunar'. The stranger [German masculine <u>der</u>] stepping through the night is called 'the lunar one'. The 'lunar voice' of the sister, which always sounds through the spiriting night, is then heard by the brother in his boat, when he attempts to follow the stranger in a nocturnal journey across the pool, which is still 'black' and scarcely illuminated by the stranger's goldenness.) [48-9].</blockquote>
+
+The sister is allied to the moon, and thus to the luminosity of the night. Her power to render a world visible holds sway in the epoch of darkness initiated by the flight of the gods, whose end is heralded by the stranger's goldenness, which is the flickering light of a new dawn. It is the sister who guides the path of the wanderer during the modern age, after the securities of ontotheology lose their authority and disappear into their twilight, and before the arising of that new thinking which betrays itself in the scarcely perceptible hints of mo(u)rning. The sister is associated with transition, and with the indeterminacy of an unthreaded time. The seal that stamped the distinctive mark of scholasticism and theological apologetic is broken, but no new type has taken its place. The haunting voice of the sister is heard as the brother drifts away from the ancient genus of theological metaphysics and
+
+<p class="pn">\- 17 -</p>
+
+towards the genus of the stranger. Yet the sister's voice cannot be identified with the type of the past or with that of the future, it cannot be subsumed within a genre.
+
+The first word in the title of David Farrell Krell's essay 'Strokes of Love and Death' translates the German word <u>Schlag</u>. It is this word more than any other which gives <u>Die Sprache im Gedicht</u> its peculiar character (in the sense of the Greek χαρακτήρ). Krell discusses its meanings carefully in the opening pages of his text, pages Derrida himself refers to [Gii, 37]:
+
+<blockquote>What do the words <u>Schlag</u>, <u>schlagen</u> mean? Hermann Paul's <u>Deutsches Wörterbuch</u> lists six principal areas of meaning for <u>der Schlag</u>, and for the verb <u>schlagen</u> six 'proper' senses and ten 'distant' meanings. Devolving from the Old High German and Gothic <u>slahan</u> (from which the English word 'slay' also derives) and related to the modern German word <u>schlachten</u>, 'to slaughter,' <u>schlagen</u> means to strike a blow, to hit or beat. A <u>Schlag</u> may be the stroke of a hand, of midnight, or of the brain; the beating of wings or of a heart. <u>Schlagen</u> may be done with a hammer or a fist. God does it through his angels and his plagues; a nightingale does it with his song. One of the most prevalent senses of <u>schlagen</u> is to mint or stamp a coin. <u>Der Schlag</u> may therefore mean a particular coinage, imprint, or type: a horse dealer might refer to <u>einen guten Schlag Pferde</u>. It is by virtue of this sense that <u>Schlag</u> forms the root of a word that is very important for Trakl, <u>das Geschlecht</u>. Paul lists three principal meanings for <u>Geschlecht</u> (Old High German <u>gislahti</u>). First, it translates the Latin word <u>genus</u>, being equivalent to <u>Gattung</u>: <u>das Geschlecht</u> is a group of people who share a common ancestry, especially if they constitute a part of the hereditary nobility. Of course, if the ancestry is traced back far enough we mayspeak of <u>das menschliche Geschlecht</u>, 'humankind'. Second, <u>das Geschlecht</u> may mean one generation of men and women who die to make way for a succeeding generation. Third, there are male and female <u>Geschlechter</u>, and <u>Geschlecht</u> becomes the root of many words for the things males and females have and do for the sake of the first two meanings: <u>Geschlechts- glied</u> or <u>-teil</u>, the genitals; <u>-trieb</u>, the sex</blockquote>
+
+<p class="pn">\- 18 -</p>
+
+<blockquote>drive; <u>-verkehr</u>, sexual intercourse; and so on. All three shades of meaning haunt Trakl's poetry. [IM, 165].</blockquote>
+
+<u>Geschlecht</u> is not a word that frequents Heidegger's works. On the contrary, it is precisely because of this word's rarity in Heidegger's texts that Derrida is able to focus his discussion of <u>Geschlecht</u> (almost entirely) upon two of them; a section from the 1928 Leibniz course, and <u>Die Sprache im Gedicht</u>. But in these two pieces the word is not introduced casually, but diligently examined. The 1928 text yields many clues as to Heidegger's apparent aversion to the word, since he approaches it there in terms of the ostensibly 'negative' <u>Geschlechtslosigkeit</u>, which can be loosely translated as 'asexuality'. Heidegger wants to insist that <u>Geschlechtslosigkeit</u> is a positive potentiality of Dasein, marking a transcendence of every ontical specification (and hence a projection into the nothing). This suggests that in 1928 <u>Geschlecht</u> was interpreted by Heidegger as the ontico-empirical determinacy of the being, an accretion of ontical differentiations, and as such inadequate for the thinking of ontological difference.
+
+The opening pages of <u>Sein und Zeit</u> reinforce this suspicion, since the constitution of the question of being depends upon the discrimination of the universality of being from the generality of a genus (<u>Gattung</u>)\*. It is
+
+____________________
+\* Heidegger is quite explicit about this in the opening pages of <u>Sein und Zeit</u>: 
+
+<blockquote><u>Aber die 'Allgemeinheit' von 'Sein' ist nicht die der Gattung. 'Sein' umgrenzt nicht die oberste Region des Seienden, sofern dieses nach Gattung und Art begrifflich artikuliert ist: οὔτε τὸ ὄν γένος. Die 'Allgemeinheit' des Seins 'übersteigt' alle gattungsmäßige Allgemeinheit. 'Sein' ist nach der Bezeichnung der Mittelalterlichen Ontologie ein 'transcendens'. Die Einheit dieses transzendental 'Allgemeinen' gegenüber der Mannigfaltigkeit der sachhaltigen obersten Gattungsbegriffe hat schon Aristoteles als die Einheit der Analogie erkannt.</u> (But the 'universality'</blockquote>
+
+<p class="pn">\- 19 -</p>
+
+this discrimination which raises the theme of transcendence; minimally thought as non-generic universality. In this context <u>Gattung</u> translates <u>γένος</u>, which is translated elsewhere by Heidegger as <u>Geschlecht</u>\*. The question of being
+
+____________________
+<blockquote>of 'being' is not that of a genus. 'Being' does not delimit the highest region of beings, insofar as this is articulated in terms of genus and type: <u>οὔτε τὸ ὄν γένος</u>. The 'universality' of being 'exceeds' all generic universality. 'Being' is, according to the characterization of medieval ontology, a '<u>transcendens</u>'. The unity of this transcendental 'universal' over against the multiplicity of generic concepts with material applicability was already recognized by Aristotle as the unity of analogy.) [SZ, 3].</blockquote>
+
+____________________
+\* This is exemplified by a fascinating discussion of <u>Gattung</u> and <u>Geschlecht</u> (which I have translated as 'kind' and 'genus' respectively) in Heidegger's 1927 text <u>Grundprobleme der Phänomenologie</u>:
+
+<blockquote><u>Was ein Seiendes vor der Verwirklichung schon war, das Aussehen, dem sich die Herstellung anmißt, ist zugleich dasjenige, von woher das geprägte stammt. Das εἶδος, das, was ein Ding im vorhinein schon war, gibt das Geschlecht des Dinges, seine Abstammung, sein γένος an. Daher ist auch die Sachheit identisch mit γένος, das als Geschlecht und Stamm zu übersetzen ist. Das ist der ontologische Sinn diese Ausdrucks und nicht etwa der geläufige im Sinne von Gattung. Die logische Bedeutung ist in der ersteren fundiert. Plato spricht meist, wenn er von den höchsten Wasbestimmungen des Seienden handelt, von den γενῶν τῶν ὄντων, von den Stämmen, den Geschlechtern des Seienden, auch hier ist die Sachheit im Hinblick auf das interpretiert, woher das Seiende im Geprägtwerden stammt.</u> (What a being already was before its realization, the gaze according to which production measures itself, is at the same time that from whence the thing minted descends. The <u>εἶδος</u>, that which a thing already was in advance, gives the genus of the thing, its descent, its <u>γένος</u>. Therefore factuality is also identical with <u>γένος</u>, which is to be translated as genus and descendence. That is the ontological sense of this expression and not anything like the habitual sense of kind. The</blockquote>
+
+<p class="pn">\- 20 -</p>
+
+therefore arises in the transcendence of every possible problematic of genus, and is sustained only in the thought of such a transcendence. Fundamental ontology is dependent upon the containment of the issue of <u>Geschlecht</u> on one side of the ontological difference†. Yet the distinction between ontological difference and generic difference relates to ontological difference itself, since ontological difference is, in part, already this very distinction; a departure from the thought of generic differentiation, and therefore from the determination of being as a generically distinctive being. To this extent one term of the distinction (the ontological) is placed in a position of mastery over the articulation between it and 'its' other†.
+
+____________________
+<blockquote>logical significance is founded in the former. When Plato treats of the highest what-determination of beings, he speaks mostly of the <u>γενῶν τῶν ὄντων</u>, of the lines of descent, of the genera of beings, and here also factuality is interpreted in regards to that from whence the becoming-minted descends.) [GP, 151].</blockquote>
+
+____________________
+\* This suggestion - posed in terms of those specific genres which 'constitute' sexual difference - opens the first of Derrida's <u>Geschlecht</u> texts: <u>différence sexuelle, différence ontologique</u>. The 'asexuality' (<u>Geschlechtslosigkeit</u>) of Dasein described in Heidegger's 1928 Leibniz lectures [MA 171-2] is first approached by Derrida as a hierarchical denigration of sexual difference in relation to ontological difference.
+
+____________________
+† Such logicizing of difference (see p. 185 of this thesis) is the most basic characteristic of the perdurant historical power Derrida has called 'logocentrism'. In <u>De la Grammatologie</u> Derrida argues for a thought of the difference in the ontological difference that is not derivative in respect of its 'poles'. Being and beings would rather derive from differentiation, thought as <u>différance</u>, or as a difference which is not the other of identity. Derrida suspects that this thought is subversive in respect to those important strands
+
+<p class="pn">\- 21 -</p>
+
+But this hierarchy is not a stable or conclusive one, and the radicalization of the thought of difference in Heidegger's work comes increasingly to perturb it.
+
+In <u>Die Sprache im Gedicht</u> Heidegger's reading of <u>Geschlecht</u> is far more ambiguous, although the traces of his fundamental-ontological position remain legible. The genus is primarily the genus of the others, which is the type of human deterioration within the deepening ontological amnesia of metaphysics. Nevertheless, genus is no longer seen solely as factuality, exhausted within the thought of a metaphysics to be abandoned, since generic difference, of a more complex kind, is now taken to infiltrate even the distinction between metaphysics and its other(s):
+
+<blockquote><u>Die Anderen - das ist der Schlag der verwesten Gestalt des Menschen. Unsere Sprache nennt das aus einem Schlag geprägte und in diesen Schlag verschlagene Menschenwesen das 'Geschlecht'. Das Wort bedeutet sowohl das Menschengeschlecht im Sinne der Menschheit, als auch die Geschlechter im Sinn der Stämme, Sippen und Familien, dies alles wiederum geprägt in das Zweiefache der Geschlechter. Es ist aus der Art seines Wesens herausgesetzt und darum das 'entsetzte' Geschlecht. Womit ist dieses Geschlecht geschlagen, d.h. verflucht? Fluch heißt griechisch πληγή, unser Wort 'Schlag'. Der Fluch des verwesenden Geschlechtes besteht darin, daß dieses alte Geschlecht in die Zwietracht der Geschlechter auseinandergeschlagen ist. Aus ihr trachtet jedes der Geschlechter in den losgelassenen Aufruhr der je vereinzelten und bloßen Wildheit des Wildes. Nicht die Zwiefache als solches, sondern die Zwietracht ist der Fluch. Sie trägt aus dem Aufruhr der blinden Wildheit das Geschlecht in die Entzweiung und verschlägt es so in die losgelassene Vereinzelung. Also entzweit und zerschlagen vermag das 'verfallene Geschlecht' von sich aus nicht mehr in den rechten Schlag zu finden.</u> (The others - that is the stamp of man's unraveled [verwesten]</blockquote>
+
+____________________
+of Heidegger's texts that privilege the disclosive power of the spoken word, but that this thought is not simply alien to Heidegger's meditation is, of course, implicit in deconstructive 'interpretation' [DG 38].
+
+<p class="pn">\- 22 -</p>
+
+<blockquote>figure. Our language names the human weft (<u>Wesen</u>) which is formed by a casting (<u>Schlag</u>) and cast away in this casting a genus (<u>Geschlecht</u>). The word signifies the human genus in the sense of humanity, as well as genera in the sense of tribes, populations, and families, all of these in turn formed within the twofold of genders. The poet names the genus of the 'unravelled figure' of humans the 'unravelling' genus. It has been removed from the type of its weft, and it is therefore the 'dislocated' genus. With what is this genus cast, i.e. cursed? Cursed names the Greek πληγή, our word 'casting'. The curse of the unfastened genus consists in this, that this ancient genus is cast apart into the discord of genders. Each genus strives for unleashed revolt in an individuated and naked wildness of the beast. It is not the twofold that is the curse, but rather the discord duality. Out of the revolt of blind wildness it carries the genus, cast away into torn duality and unleashed individuation. Thus divided and cast down the 'ruined genus' is no longer able to find the 'right cast'. [US, 50]</blockquote>
+
+The importance of <u>Geschlecht</u> cannot be taken as merely and immediately 'conceptual', in the sense that it contributes to the formulation of philosophical propositions. Its importance is - perhaps even primarily - due to its weight of transmitted connotation, its peculiar poetic traits. The possibility of thinking the 'trait' (a word which enters into a certain sympathy with one of the crucial terminological matrices organizing Heidegger's discussions of language, the German <u>ziehen</u>) and its 'communication' cannot avoid being attracted to the question of inheritance, heritability, and the heir, the entire weft of which is a crucial feature of Trakl's usage of <u>Geschlecht</u>. The inheritance of the curse is dependent upon the prior possibility of the replication of specificities in general, a possibility which, in the context of the 'sign', Derrida names 'iterability'. It is this possibility which will first allow us to cease thinking the persistence of essence.
+
+<p class="pn">\- 23 -</p>
+
+### Three: Departing from the Sister
+
+Of all the themes in the 1953 essay the one Heidegger invests with most significance is that of <u>Abgeschiedenheit</u> or 'departedness'. It is this word that is taken as the privileged name for the site of Trakl's poetry. Heidegger suggests:
+
+<blockquote><u>Die bisher genannten Strophen und Verse weisen uns in eine Versammlung, d.h. an einen Ort. Welcher Art ist dieser Ort? Wie sollen wir ihn benennen? Doch wohl aus der Anmessung an die Sprache des Dichters. Alles sagen der Dichtungen Georg Trakls bleibt auf den wandernden Fremdling versammelt. Er ist und er heißt 'der Abgeschiedene'. Durch ihn hindurch und um ihn her ist das dichtende Sagen auf einen einzigen Gesang gestimmt. Weil die Dichtungen dieses Dichters in das Lied des Abgeschiedenen versammelt sind, nennen wir den Ort seines Gedichtes <u>die Abgeschiedenheit</u>.</u> The previously cited stanzas and verses point us towards a gathering, i.e. a site. Of what type is this site? How should we name it? Surely in conformity to the language of the poet. All that is said in the poetry of Georg Trakl remains gathered to the wandering stranger. He is, and is called, 'the departed one'. Through, from, and about him, the poetic saying is attuned to a single song. Because the poems of this poet are gathered in the song of the departed one we name the site of his poetry 'departedness'. [US, 52].</blockquote>
+
+We hear of departedness from the stranger, whose wandering is departure, and who conducts the entire flow of Trakl's poetry. Heidegger insists that Trakl's language reaches us only through the sign of the stranger, who deflects it - as if at a certain enigmatic point it has to be translated for us - into our more sedentary and provincial tongue.
+
+If there is a 'thesis' to Heidegger's essay, then, it is this: the site of the unity comprised by Trakl's poetry is departedness. The stranger is
+
+<p class="pn">\- 24 -</p>
+
+subordinated to this announcement, and to this thesis, as a sign which guides, but does not absorb, attention. If it were not for his wanderings the stranger would not even be a cipher, since his characteristic strangeness is derived solely from the place to which he migrates. There is but one additional, and seemingly trivial, feature of the stranger, which is that between the beginning and the end of the essay's first section he changes his gender from a neuter to a masculine. But such an occurrence, it could readily be argued, is a superficial accident of German grammar, an extraneous property stemming from regional peculiarities in the medium of communication. What possible significance could lie in the gender of a figure who is only of indirect interest, functioning as a sign? A sign, since it might be rash to speak of a sign-post here, although it is indeed a place marker of some sort that is in question. In fact it has become a commonplace (outside philosophy) that the sign is sexed within patrilineal exogamic cultural systems. The place where such issues can best be negotiated with the essay, however, lies elsewhere. We shall soon return to it by following the sister's footprints.
+
+Prior to that, however, departedness 'itself' raises other questions. Is it, for instance, a position or a relation? Does it mark a spatial or a temporal discontinuity? Is it an abstract and universal notion of distinction, or a concrete and particular severence? And if the latter, from what is it differentiated? Supplementing such questions, which are raised in the terminology of developed metaphysics, are a further series of more 'modern' and suspicious interrogations. According to what type of strategy does departedness evade reduction to the terminology of metaphysics? How does it resist the reduction to identity? To ideality? To onto-theology? To logocentrism? How does it interrupt the appropriative movement of the dialectic? Of ontical hermeneutics? Of structural determination? In raising
+
+<p class="pn">\- 25 -</p>
+
+these questions the strategic complexity of departedness begins to emerge, since it suggests a certain foreclosure of its own problematic status. Departedness would be the pure and explicit renunciation of metaphysics and of all its reappropriative strategies. Even to ask whether departedness is inscribed outside the traditional vocabulary of Western philosophy is to imply a strange illegibility of the word, to refuse its announcement of itself, and to approach it indirectly through its displacement, via a more extended characterization.
+
+<u>Abgeschiedenheit</u> is built upon the verb <u>scheiden</u> which means to split, separate, or part. The word that most crucially regulates the other Trakl essay in <u>Unterwegs zur Sprache</u>, <u>Die Sprache</u>, is <u>Unterschied</u> ('difference'), which is also built on this base. It is tempting to read this insistence on partition as a perpetuation of the mark of ontological difference, or at least as an intertwining of ontological rupture with that of historical discontinuity. Heidegger's project in the 1920s of grounding historical theory in existential historicity implies that the construction of historical totalities (such as ontotheology) and discontinuities (such as the end of philosophy) remains dependent upon the temporalization of the ontological difference. The progressive dissolution of existential structures into the history of being in Heidegger's later writings does not necessarily erase this dependence entirely. Caught between a Kantian grounding of history in <u>a priori</u> structures of temporality, and a Hegelian grounding of temporality in the historical moment, Heidegger is unable to decide unambiguously either for the being of history or the history of being. <u>Abgeschiedenheit</u> cannot be thought simply as historical dissociation if it is to escape the ultimately futile debates of nineteenth-century metaphysics. The history of being (as ontotheology) becomes thinkable
+
+<p class="pn">\- 26 -</p>
+
+only in the breakdown of its powers of determination, and to the extent that it is inscribed 'within' another - and excessive - economy of 'time'. This economy is not - despite an etymology which has become familiar (e.g. Derrida's <u>Glas</u> p.187a) - domestic, but dissolves every domesticity (including that of totalizing histories) into alienating exchanges with alterity. Departedness cannot be unproblematically historical, because it conditions the very possibility of the constitution of any history. Yet neither is departedness an ahistorical ground of history, since it only arises as an event that simultaneously interrupts and opens history. A pre-existing history does not break, since history first emerges in the course of a breaking that cannot be appropriated to any undisrupted scheme of chronology or periodization.
+
+Such is the provisional conclusion of an interpretation that tries to read <u>Abgeschiedenheit</u> and the propriative event (<u>Ereignis</u>) together, as they are written together in the text of 1953. Yet this interweaving is only the 'abstract' relation of Heidegger's thinking to the philosophical tradition; it is not yet a reading of Trakl. In Trakl's texts <u>Abgeschiedenheit</u> is marked both pervasively and rarely: it names a poem (<u>Gesang des Abgeschiedenen</u>) which in turn names a book of poetry, and yet is almost never found within his poetry. It appears emphatically only in the plural form in the poem <u>Gesang des Abgeschiedenen</u> as <u>Maß und Gesetz und die mondenen pfade der Abgeschiedenen</u>. ("Measure and law and the lunar paths of those departed.") [T, 79]. It is employed almost incidentally in the poem <u>Elis</u>, where it is said: <u>Ein brauner Baum steht abgeschieden da</u> ("A brown tree stands there set apart") [T, 51]. (This is perhaps a rewriting of the simple second line of <u>De Profundis</u> [T, 27] which mentions a 'solitary' (<u>einsam</u>) tree.) The word is also used in a line
+
+<p class="pn">\- 27 -</p>
+
+from <u>Offenbarung und Untergang</u> which reads: <u>und schwärzer immer umwölkt die Schwermut das abgeschiedene Haupt</u> ("blacker and blacker melancholy enwreathed his departed head") [T, 97]. In Trakl's deployment of the term 'departedness', therefore, there is already a certain distanced, summarizing function. It is not primarily a word dispersed within the poems, but a term that gathers groups of words or poems under an encompassing figure. Departedness is deployed in titles as a sign signifying signs, and is thus analogous to the metaphysical determination of writing as the representation of representation.
+
+The peculiar status of the title is worthy of further scrutiny, since at the moment of a specific theoretical conjunction it seems to appropriate the status of the paradigmatic sign. Insofar as the title functions discursively it occupies the position that has been allocated to 'meta-language' (or metaphysical language) within the philosophical tradition; that of a function grounding signification within a second-order language that takes naive or 'immediate' language as its object. It is precisely this relation that Heidegger takes to be subverted by departedness, and by all the nominations of difference which he draws out of poetical texts. Departedness would, therefore, not only stand in the position of the title as a commentary on the text, but would also stand as a commentary upon the title and the history of its interpretation; the commentary upon a commentary (and upon a commentary that has itself always been the commentary upon a commentary, upon a text qua commentary). This labyrinth of recursion can no longer be organized according to ontotheological hierarchical schemas, within the traditional interpretation of recursion, that is, as the indefinite regression of ground. Such hierarchies depend upon the purity of differences and the incommensurability of strata, or, in other words, upon the transcendence of the title, which is the absoluteness of subjective mastery over the signifier (and which becomes its perfect
+
+<p class="pn">\- 28 -</p>
+
+arbitrariness in modern linguistics). Departedness is not compliant with such a reading of the title, since it opens a genealogy of its own relation to the text, and pursues the effect of transcendence back into terrestrial migrations. The title does not transcendentally determine the text, but opens it, and attests to its inherent nomadism.
+
+Trakl entitles one of his poetic books, and one of the poems within this book, 'The Song of the Departed'. The title attributes a source to the words of a poem, and to all the poems bound together with it. Heidegger takes this source to be the site of Trakl's poetry as a whole, which is a step beyond anything that could be culled simply from the manner in which Trakl entitles and arranges his work. It could even be suggested that Heidegger's reading provides a title for the Trakl corpus, propriating a name to repair an originary default. But departedness also marks a path that cuts through other problems of naming, since following the path of the departed-one leads back to the question of the sister, who, we discover, is the sister of the stranger. And this return is not guided by an easily recognized patronymic. The brother is only related to the sister in and through strangeness. She is not one who has been near since infancy, but one who comes from the distance, so that the encounter with the sister is not a return to familiarity:
+
+<blockquote><u>Dem heimsuchenden Wohllaut der Schritte des Fremdlings entspricht die Einladung des Freundes zum Gespräch, dessen Sagen ist das singende Wandern den Fluß hinunter, das Folgen in den Untergang zur Bläue der Nacht, die der Geist des Frühverstorbenen beseelt. In solchem Gespräch schaut der singende Freund den Abgeschiedenen an. Durch sein Anschauen wird er im Gegenblick dem Fremdling zum Bruder. Mit dem Fremdling wandernd gelangt der Bruder zu dem stilleren Aufenthalt in der Frühe. ... Aber indem der nachlauschende Freund den 'Gesang des Abgeschiedenen' singt und so zu dessen Bruder wird, wird der Bruder des</u></blockquote>
+
+<p class="pn">\- 29 -</p>
+
+<blockquote><u>Fremdlings durch diesen erst zum Bruder seiner Schwester, deren 'mondene Stimme durch die geistliche Nacht tönt'</u>... (The haunting melody of the stranger's steps befit the invitation of the friend to converse, whose saying is the singing wandering along the river, following in descent to the blue of the night, which the spirit of the one who died early imbues with soul. In such conversation the friend looks at the departed one. Through his look he becomes a brother in the countering gaze of the stranger. Wandering with the stranger the brother attains a still residence in the dawn. ... But insofar as the hearkening friend sings the 'song of the departed one' and so becomes his brother, the brother of the stranger first comes to be the brother of his sister, whose 'lunar voice sounds through the spiriting night' ... [69-70].</blockquote>
+
+To trace the path of the stranger requires conversation, thus exchange. To accept the stranger's song is the same as to pursue his steps. Both involve a regression into what is initial - the dawn or earliness (<u>Frühe</u>) - which is not yet inside time. The question of temporality or of what is earliest is only hinted at in this passage, it is buried beneath a metaphorics of kinship which points towards another (perhaps 'biographical') earliness. The dispersive or exogamic forces which scatter blood relatives over time are suspended and perhaps reversed in Heidegger's discourse, so that brother and sister are brought together, rather than separated. He takes the relation of brother and sister to be initiated by the process of becoming, not dissolved, although this initiation occurs within a shared separation. The tendency of blood relatives to separate is not excised from Heidegger's text, or merely denied, but is displaced onto a more profound dissociation, one which gathers all dispersion to itself. The embracing notion of dissociation in Heidegger's text is called, as we have seen, <u>Abgeschiedenheit</u>. But if <u>Abgeschiedenheit</u> is to take upon itself the force of familial dispersion, it must convey the peculiar intensity
+
+<p class="pn">\- 30 -</p>
+
+of affect that such dispersion involves, as depicted, for instance, in this passage of extraordinary beauty from Freud's <u>Totem und Tabu</u>:
+
+<blockquote><u>...verläßt auf Lepers Island, einer der Neuhebriden, der Knabe von einem bestimmten Alter an das mütterliche Heim und übersiedelt ins 'Klubhaus', wo er jetzt regelmäßig schläft und seine Mahlzeiten einnimmt. Er darf sein Heim zwar noch besuchen, um dort Nahrung zu verlangen; wenn aber seine Schwester zuhause ist, muß er fortgehen, ehe er gegessen hat; ist keine Schwester anwesend, so darf er sich in der Nähe der Türe zum Essen niedersetzen. Begegnen sich Bruder und Schwester zufällig im Freien, so muß sie weglaufen oder sich seitwärts verstecken. Wenn der Knabe gewisse Fußspuren im Sande als die seiner Schwester erkennt, so wird er ihnen nicht folgen, ebensowenig wie sie den seinigen. Ja, er wird nicht einmal ihren Namen aussprechen und wird sich hüten, ein geläufiges Wort zu gebrauchen, wenn es als Bestandteil in ihrem Namen enthalten ist.</u> (On Lepers Island, one of the New Hebrides, the boy abandons the maternal home at a certain age, and resides in the 'club house', where he now regularly sleeps and takes his meals. He may certainly still go to his home to request food; but if his sister is there he must leave before eating; if no sister is there he may sit near the door to eat. If brother and sister accidentally encounter each other in the open, she must run away or hide. If the boy recognizes certain footprints in the sand as those of his sister he will not follow them, just as she must not follow his. He will not even speak her name, and will guard against using a common word if it is contained in her name as a part.) [TT, 17].</blockquote>
+
+The familiar trace of the sister's foot in the sand - her vestige - is but one of many subtle tracks which cut across the terrain of Heidegger's investigation. However, like the boy of the New Hebrides, acting in accord with the directives of deep taboo, Heidegger is wary of this trail above all. For Heidegger the brother is not shielded from the sister, he becomes the shield of the sister, her chaperon, mediating all exchanges. The power of taboo is
+
+<p class="pn">\- 31 -</p>
+
+exercised through the brother, who alone opens the relation to alterity: crossing the boundary of metaphysics, and protecting poet from thinker. The relation to the sister is derived from the relation to her brother, it is masterable because always already a displacement of an earlier fraternal bond. So Heidegger would want us to believe.\*
+
+Freud's text casts suspicion upon the possibility of mediating the relation to the sister, or representing it within an inviolate and transcendent symbolic order. The Hegelian project of sublating the natural family and natural language into superordinate pure concepts, one of the themes of Derrida's <u>Glas</u>, has a certain pertinence here. The unsublatable 'gl-' that disrupts the Hegelian programme might be fruitfully compared to a Traklean 'gr-' which binds Gretl to 'Grodek' as the one who greets (<u>grüßt</u>) [T, 94-5]. In the seemingly arbitrary play of colours dappling Trakl's text, is it possible to slip unhesitatingly across the 'green' (<u>grün</u>)? Why is the mother in labour, fated to bear incestuous progeny, named the 'old woman' (<u>Greisin</u>)? [T, 64]. And what particular horror (<u>Grauen</u>) is associated with the music of the <u>Orgel</u> in so many of Trakl's last poems (for example <u>Klage I</u> [T, 93].) It is at least conceivable that the relation of the sister is not registered primarily in symbolical pronouncements, but is rooted in a compulsive replication of graphic elements (which is what would be expected from the primary process 'logic' of cathexis). Heidegger is, of course, alert to the possibilities of
+
+____________________
+\* Hegel's reading of Antigone, which I can't discuss adequately here without being led too far afield, is also concerned with the issues of <u>Geschlecht</u> [e g PG, 262, 264] and a problematic of <u>Abgeschiedenheit</u> [PG, 267]. And for Hegel too, it seems, the question of the sister is ultimately a question about brothers [PG, 267].
+
+<p class="pn">\- 32 -</p>
+
+graphic resonance, since this is the ultimate ground of his complex etymological strategies. His extreme tentativeness - and even evasiveness - when confronted by the incest question in Trakl's work stems largely from the mysterious paralysis of his graphematic sophistication at this point, as symptomatized by a sudden and apparently rather directionless fascination with ancient astrological symbolism. On one level at least, the enigma of the grapheme is deflected into that of cryptic symbols, and is thus distracted by the unredeemable promise of an ultimate resolution into significance.
+
+Recent philosophers, especially in France, have also mapped the contours of a crucial problematic of incest\*. This problematic has been strongly influenced by the researches of psychoanalysis and anthropology which - although following very different paths of investigation - have both arrived at the conclusion that the question of 'man', and thus the very orientation of the human sciences, is inscribed within the more fundamental and embracing space opened by incest prohibition. For both psychoanalysts and
+
+____________________
+\* I am thinking primarily of the deconstruction of Rousseau in the second division of Derrida's <u>De la Grammatologie</u>, especially chapter three part III (<u>Ce 'simple mouvement de doigt'. L'écriture et la prohibition de l'inceste</u>) [DG, 361-78] and Deleuze and Guattari's <u>L'Anti-Oedipe</u>, especially chapter three part three (<u>Problème d'Oedipe</u> [AO, 181-95] (where Derrida's Rousseau interpretation is cited [AO, 189n, 240])). Both Derrida and Deleuze-Guattari remain in negotiation with Lévi-Strauss' <u>Les Structures élémentaires de la parenté</u> which is challenged (somewhat ironically) for the 'functionalism' of its explanations, since deconstruction and schizoanalysis coincide in the thought of the <u>impossibility</u> of incest and the ultimate groundlessness of law (a groundlessness which both Derrida and Deleuze-Guattari suggest is concealed by a systematic fiction rooted in profound representational structures). Derrida's relation to the order of representation is more fatalistic however, and perhaps also more conciliatory.
+
+<p class="pn">\- 33 -</p>
+
+anthropologists the prohibition of incest is understood as co-emergent with the law, and thus with the very foundations of symbolization in general, which is to say, with culture. The forms of knowledge do not command the problematic of incest as one area of research among others, but conversely allow themselves to be unfolded within the terms of this specific and primordial prohibition. To put the conclusion which such a discovery leads to as radically as possible is to suggest that philosophy is the ideological rationalization of incest prohibition. This is to work purely from within the perspective of the negative characteristic of the forbidden, but it is equally possible, and more fruitful, to orient the investigation in terms of the positivity of exogamic surplus. It is perhaps this surplus or 'bonus' of exogamic conjugation - whether understood in terms of alliance, communication, or the deflection of patricide - which demarcates the most compelling and yet most mysterious theme of contemporary thought. It is this theme which I hope to develop in the text that follows.
+
+Rather than taking the relation between <u>Geschlecht</u> and incest to be a self-evident or analytical one, I hope ultimately to guide both issues to a synthetic conjunction upon the terrain of a further issue: that of cultivation or <u>Züchtung</u>. This word can be read as the neglected term in the series of words deriving from <u>ziehen</u>, which, as I have already suggested at the end of the previous section, Heidegger employs as a crucial organizational factor in his essays on language. The multiple connotations of <u>ziehen</u> can be mapped onto the English 'draw', or onto the family of English words stemming from the Latin <u>tractus</u> (trace, traction, train, trait), with a considerable degree of correspondence. It is due to the traces of a 'discourse' upon cultivation, I shall attempt to argue, that Heidegger's Trakl essay is able to participate in a genealogy of deconstruction: marking the circulation and metamorphosis of
+
+<p class="pn">\- 34 -</p>
+
+traits; tracing lines of descent, proliferation, exclusion and selection;
+training, constraining or intensifying textual developments. The 'gen-' of this
+genealogy is the <u>Geschlecht</u> which is already 'within' deconstruction before
+becoming its 'object'. It is the rich inheritance of a fully positive genre of
+writing. But this 'gen-' is also the result of a long and complicated process
+of cultivation; incorporating subtle and exotic cruelties, ingenious
+mnemotechnics, profound and remorseless strategies - often forgotten, or
+deflected into unexpected channels. It is this intensive, violent, and even
+hideous ancestry of our most delicate intellectual refinements - like an
+ancient and unacknowledged wound - that Heidegger's essay re-opens to the
+scalpel eyes of our (still incompletely disillusioned) modernity. Before
+proceeding further I shall briefly hint at the the implications of Heidegger's
+1953 Trakl essay for what is perhaps the most delicate and ambiguous product
+of this long and tortuous fructuation: the deconstruction of Jacques Derrida.
+
+<p class="pn">\- 35 -</p>
+
+### Four: 'Geschlecht' and the Trajectory of Deconstruction
+
+Upon reading this title it will be asked at once, of course, whether it is
+legitimate to speak so incautiously of the trajectory of deconstruction. Could
+such a formulation avoid complicity with the linear teleologies which stem, it
+now seems, from that most fateful inheritance of the 'West', alphabetical
+script? Is it indeed still possible, after marking the closure of the system
+guided by this script, to be gripped by the thought of a single, singular
+destiny?
+
+It might be a salient characteristic of languages that no word - not
+even 'being' - is indissolubly integrated into them. If such is the case it is
+impossible to argue that the complex German word <u>Geschlecht</u> poses an
+unavoidable problem for the contemporary 'theory' of the 'sign'. But even if the
+word 'unavoidable' is to be prohibited here, there are profound and compelling
+forces directing modern thought towards an encounter with <u>Geschlecht</u>, a word
+which might be minimally interpreted to mean differential consistency, and
+which would therefore describe properties attributed by post-Saussurean
+linguistics to the 'signifier'. Unlike the signifier, however, <u>Geschlecht</u> does
+not imply either the totality of a system of differences or the transcendence
+of this system in respect of the material it renders significant. On the
+contrary, it directs thinking away from the attempt to conceive difference
+through system, since it is intrinsically alien to the dream of negation. As a
+return to the question of type, <u>Geschlecht</u> solicits that source of all
+philosophical radicalism which has been perpetually obscured by the deflection
+
+<p class="pn">\- 36 -</p>
+
+of empiricism into a naive repudiation of its own history; it marks the
+stubborn but intermittent project of thinking irreducible difference.
+
+But why deconstruction? According to a vulgar interpretation (and these
+almost inevitably have the greatest historical efficacy) Derrida is the only
+philosopher since Hegel to clarify a coherent methodological schema for the
+reading of metaphysical texts. Deconstruction, like speculative dialectic, seems
+to offer a general programme for the appropriation of the philosophical
+tradition as a whole to the theoretical matrix of a new epoch. The fact that
+such an interpretation of deconstruction is a travesty - enmeshed in
+unsustainable Kantian dichotomies - is perhaps a precondition for its cultural
+transmission and reproduction within the most vigorously globalizing and
+capitalizing phase of Western history. The demand for a consistently
+formulated method is, after all, the demand that theory continues to inscribe
+its own limits within itself, so that the scope for revolutionary rupture
+remains stringently demarcated in advance.
+
+Subversive reading strategies of various kinds have been painstakingly
+rehearsed throughout modernity, which seems to be writing itself as the
+terminal epoch of (at least) Western history. Such strategies have a rich and
+complex genealogy, largely obscured by vulgar appropriations of the most
+recent and in some ways most rigorously formulated variation, which is to say
+the 'double reading' of Derrida's deconstruction. Double reading is the rigorous
+inscription of a textual fatality which has come to be conventionally (and
+problematically) characterized by the term 'undecidability'. Heidegger's term
+<u>das Zwischen</u> ('the between') [US, 26-7] is sedimented in similar connotations.
+The necessity of subverting binary conceptuality has tended to result in a
+stripping of all positivity from the characterization of this gaping non-
+
+<p class="pn">\- 37 -</p>
+
+object, which is adopted by any and every system of writing and re-inscribed
+in each opening of theoretical discourse. Yet the connotations of impasse,
+renunciation and negativity in the term 'undecidability', whilst not becoming
+an explicit problem, are powerfully challenged in the course of Derrida's own
+deciphering of the arche-textual implications of genus. Furthermore, the text
+Derrida selects for his first concerted foray into the problematic of
+<u>Geschlecht</u> explicitly repudiates the <u>weder/noch</u> ('neither/nor'), which is the
+dominant trope of undecidability. Perhaps the most important aspect of his
+'project', oriented towards <u>Geschlecht</u>, is that it indicates how generic
+positivity might be re-thought beyond binarity, as that which is unassimilable
+to systematic determination, and which cannot in principle ever be negated.
+
+Derrida's reading of <u>Geschlecht</u> in Heidegger's text begins with his
+brief article <u>Geschlecht: différence sexuelle, différence ontologique</u> and takes
+as its point of inception the beginning of the tenth section of Heidegger's
+1928 logic course [MA], which then leads to a deconstructive annotation of <u>Sein
+und Zeit</u>. Derrida turns to passages from the 1928 lecture course in order to
+pursue an apparently disingenuous question: is there a discussion of sexuality
+to be found in Heidegger's work? Every philosopher since Plato has written
+about sexuality somewhere, with the apparent exception of Heidegger. But how
+should a search for Heidegger's discourse on sexuality begin? According to
+which indices would it be recognized? This last question is of special
+interest, since the rigorous demand it poses seems at times to create a tremor
+even within the terms of Derrida's 'reply'.
+
+There seem at first to be no words, formulae, or themes in <u>Sein und Zeit</u>
+upon which such an interrogation can attach itself. However, Derrida takes one
+of the nuclear terms of the text, the word <u>Dasein</u>, and attends carefully to its
+
+<p class="pn">\- 38 -</p>
+
+characterization in the 1928 course. The first passage to which he responds is
+the following:
+
+<blockquote><u>Die eigentümliche Neutralität des Titels 'das Dasein' ist wesentlich, weil
+die Interpretation dieses Seienden vor aller faktischen Konkretion
+durchzuführen ist. Diese Neutralität besagt auch, daß das Dasein keines
+von beiden Geschlechtern ist. Aber diese Geschlechtslosigkeit ist nicht
+die Indifferenz des leeren Nichtigen, die schwache Negativität eines
+indifferenten ontischen Nichts. Das Dasein in seiner Neutralität ist
+nicht indifferent Niemand und Jeder, sondern die ursprüngliche
+Positivität und Mächtigkeit des Wesens.</u> (The peculiar neutrality of the
+title 'the Dasein' is intrinsic to its fabric, because the interpretation
+of this being is to be pursued prior to every factual concretion. This
+neutrality also indicates that the Dasein is neither of the two genders
+[<u>Geschlechtern</u>]. But this asexuality is not the indifference of empty
+nullity, the feeble negativity of an indifferent ontical nothing. The
+Dasein in its neutrality is not indifferently nobody and everybody;
+rather, it is the primordial positivity and power of the weft.)
+[MA, 171-2].</blockquote>
+
+In deciphering this paragraph Derrida makes an initial move whose implications
+seem to me both enormously complex and problematic. He first focuses on the
+term 'neutrality', which is to be one of the two axes of deconstruction, the
+other being 'dispersion'. (This twofold approach is apparently quite
+independent of the fissioning of each axis, which is constitutive of the double
+reading; neutrality and dispersion will each be seen to decompose into
+antagonistic meanings.) He remarks:
+
+<blockquote><u>Le premier exemple de 'concrétion', ce serait donc l'appartenance à l'un
+ou à l'autre des sexes. Heidegger ne doute pas qu'ils soient deux: 'Cette
+neutralité signifie aussi (je souligne J.D.) que le <u>Dasein</u> n'est d'aucun
+des deux sexes' (<i>keines von beiden Geschlechtern ist</i>).</u> (The primary
+example of 'concretion', will therefore be the belonging to one or the
+other sex. Heidegger does not doubt that they are two: 'That neutrality
+signifies also (my emphasis J.D.) that the <u>Dasein</u> is neither of the two
+sexes' <u>keines von beiden Geschlechtern ist</u>.) [Gi, 422].</blockquote>
+
+<p class="pn">\- 39 -</p>
+
+A strange folding occurs in this reading, an almost imperceptible
+contortion of interpretation, which is hidden by the accomplishment of a
+translation. Heidegger, it is said, in writing of sexes, "does not doubt that
+they are two". It is as if Heidegger is telling us something about gender;
+supplementing the mark of gender, or installing it within a synthetic
+proposition. But what would have to be written to raise doubt about this
+duality of the sexes within the German language? Such a question would pose no
+difficulties if the Latinate <u>Sexualität</u> were in play; it would be unproblematic
+in such a case to combine the notion of gender with any plurality, or to
+attach a number to sexuality as an extrinsic predicate. But it is precisely the
+absence of this word that orients Derrida's entry into the issue of <u>Geschlecht</u>
+in Heidegger's work. What would three <u>Geschlechter</u> be?
+
+What is most dazzling in this matter, partially blocking our access to
+the difficulties involved, is the fact that duality does not provoke or
+necessitate decision here - establishing the terrain of decision - but
+functions instead as the principle of decidability itself. Duality does not
+open an ambiguity in the thought of <u>Geschlecht</u>, it is the key which locks
+<u>Geschlecht</u> into a certain sense, suppressing its ambiguity. A profound code,
+almost certainly the deepest and most ancient, folds gender upon binarity, and
+binarity upon gender. Derrida's meditation is sited at the margin of this
+closure, which simultaneously facilitates and resists the direction of his
+reading. It would no doubt be to borrow what is already Derrida's question if
+one were to ask: is it possible to retrieve a notion of gender, to serve as the
+subject for quantitative predications, which has ever meant anything other than
+binary specification? Such a question challenges Derrida's text only insofar as
+it interrogates the possibility of discriminating the subject and predicate in
+the assertion which is ascribed to Heidegger; namely, that 'gender is binary'.
+
+<p class="pn">\- 40 -</p>
+
+Such a statement, which at first seems to be propositional in form, retreats
+into a strange simplicity, in which the predicate collapses into the subject,
+almost in the form of Hegel's speculative proposition. Engraved within
+Derrida's text, simultaneously stirred and resisted, is a vortex which
+devastates every projected clarification of both sexual distinction and the
+distinctiveness of the sexual. A deeply rooted cultural automatism, according
+to which every dichotomy is inscribed as male/female, renders the specificity
+of sexual difference almost unthinkable, inasmuch as the difference of the
+sexes has been adopted as the key to conceptualizing and deciphering
+difference in general. Within the terms of this alignment sexual difference and
+what differs from it would have themselves to be articulated as a difference
+of gender.
+
+Derrida's reading of <u>Geschlechtslosigkeit</u> as 'asexuality' (<u>asexualité</u>) is
+in some respects elegantly simple, since it plays on the ambiguity of
+sexuality's two dominant senses of 'libido' and 'gender' in order to map (what
+seems to be) the familiar trajectory of a 'deconstruction'. This is first made
+to hinge upon the term 'neutrality' which, read in the 'context' of sexuality,
+can be taken as a libidinal neutralization aligned with gender, or as a
+primordial libido undetermined by the 'decision' of gender. These positions
+play out the implications of a covert interpretation which takes gender as the
+exhaustion or suppression of (poly-perverse?) libido, a tension obscured by the
+single (and hence explosive) term 'sexuality'. Libido is therefore implicitly
+thought as a potential for differentiation that is crushed by any structural-
+teleological realization.
+
+Certain difficulties arise with this interpretation, however, since it
+seems to separate all the instituted specifications or differentiations
+indicated by the term <u>Geschlecht</u> (and identified by Derrida with the binarity
+
+<p class="pn">\- 41 -</p>
+
+of gender distinction) from sexuality thought as the power of differentiation.
+Of course, it might not be obvious that such a separation is unsustainable, or
+even undesirable. What is most immediately at stake is the 'hetero-' of
+heterosexuality, which rapidly monopolizes any discourse on sexual dispersion
+to a violently policed behavioral norm. In dissociating the sexual drive from
+the specifications of its 'factual concretion', Derrida refuses to derive
+desire from gender difference, and thus constitute it as primordially
+heterotropic.
+
+What can readily be questioned is whether the thought of dispersion is
+inevitably aligned - outside of relatively contingent and strenuously
+ideological metaphorization - with a prevalent heterosexism. At an abstract
+level the centripetal forces of narcissism, incest, and homosexuality can be
+grouped in opposition to the centrifugal forces of self-estrangement, exogamy,
+and heterosexuality. Heterosexuality establishes the pattern for a certain
+reading of the relation to alterity as reflective opposition; a difference so
+perfectly negative that it returns to the mirror image, to the figure of
+Narcissus. The difference between incest and exogamy does not map onto the
+difference of homosexuality to heterosexuality, because (binary) gender
+difference is the re-capturing of difference within reflective or mediated
+identity, and not the opening of radical dispersion. In this respect Derrida's
+precaution concerning a dichotomous gender difference does not involve a
+retreat into auto-relation. In fact, the rigorous deconstruction of such a
+dichotomy would make the thought of unproblematic homosexuality or
+heterosexuality impossible, since these notions both demand a structural
+replication of the same disjunctive gender identity, a point made with great
+thoroughness in Deleuze and Guattari's <u>L'Anti-Oedipe</u> [e.g. AO, 380-1].
+
+<p class="pn">\- 42 -</p>
+
+The unassimilability of <u>Geschlecht</u> to gender would mark the astructural
+differentiation that could first think 'homo-' and 'hetero-sexualities'
+indifferently according to a more radical stratum of specification. Such a
+stratum would perhaps concern the differential intensity of the body as the
+programme for every comparison, connection, or exchange between bodies. In
+terms of Derrida's project, this would involve thinking <u>Geschlecht</u> as the
+instituted graphic trace in general. The word would then be taken as radically
+excessive in respect of the 'plus' and 'minus' ontical determinations of
+phallogocentrism. All this, needless to say, by way of anticipation.
+
+Even at the moment at which a certain asexuality is dissociated from
+the thought of impotence, and two pages after introducing Heidegger's
+<u>ursprüngliche Positivität und Mächtigkeit des Wesens</u> ("primordial positivity
+and potency of the weft") Derrida remains cautious about speaking of the
+positive or affirmative. The grounds for such restraint are clear enough, even
+though such hesitation risks reinforcing the hegemony of diacritical
+metaphysics over this abandoned terrain. Derrida oscillates between a
+realization that the thought of the 'plus' is not intrinsically oppositional,
+and a suspicion that it has become hopelessly enmeshed in binary metaphysics.
+Ultimately, primordial positivity is unthinkable within such an antagonistic
+dichotomy, because oppositional relations are precisely those which are
+determined or articulated as negations. This means there can be no symmetry
+between 'plus' and 'minus', inasmuch as negation is inherently diacritical,
+whilst affirmation is primordially differentiated not from the negative, but
+
+<p class="pn">\- 43 -</p>
+
+from the zero-point of discernible intensities, or chaos\*. Every possible
+'deconstructionist' move is historically programmed as a reaction that is
+simultaneously against and within the repression of primordial positivity,
+since this repression institutes the whole of metaphysics as negational
+rationality, and as unsustainable construction. Only when deconstruction is
+able to decipher the text of positivity, which marks the radical contingency
+(or, more accurately, specificity) of metaphysics, will it open a new history,
+releasing the intensities of its graphic heritage.
+
+<u>Geschlecht</u> is at once a differentiated specificity and a type or order
+of replicable similarities. A structural analysis would attempt to unify these
+dimensions within a notion of systemic position. Such a notion would interpret
+the differentiation of the type in terms of distinction between types within a
+single plane of distribution. Heidegger's insistence that ontical
+differentiation is derivative breaks with such thinking, since it points
+towards a thought of 'differentiatedness' which is inherited by, rather than
+constituted within, the plane of ontical distribution (although even the
+persistence of a discrimination between planes is ultimately a retreat into
+metaphysically assimilable disjunction). Ontical or 'structural' relations would
+then be based upon comparisons of differences that do not originate within the
+interstices between tactical beings, but first construct, compose, or isolate
+
+____________________
+\* In <u>Différence et Répétition</u> Deleuze speaks of a <u>distinction unilatérale</u> that
+breaks with the history of the conceptualization of difference by thinking of a
+distinguishing without reciprocity; a distinction that is an immediate
+differentiation from the zero point of intensity, from the undifferentiated, or
+from what becomes termed in <u>L'Anti-Oedipe</u> the 'body without organs'. [DR, 43].
+
+<p class="pn">\- 44 -</p>
+
+the being as comparable. Such comparability is assumed, and therefore not
+explored, by diacritical interpretations of difference. The prevalent notion of
+the 'difference between signs' covertly subordinates difference to constituted
+identities which organize it within a system. In contrast, Heidegger's 1928
+text might be taken to indicate that identity, as a typing of the being,
+emerges as an effect of the movement of difference. It is the tension of this
+thought which energizes everything to follow.
+
+In the first part of this thesis I shall discuss the movement of
+difference as the wave or, more precisely, as the 'icy wave of eternity' which
+Heidegger introduces in his Prologue. It is this figure that allows Heidegger
+to enter into the most direct dialogue with the history of metaphysics, and to
+question its thought of derivative or passive differences. In the second part
+the movement of difference is encountered as the migration into strangeness; a
+concretization of Heidegger's 'ecstatic' analyses from the late 1920's. In the
+third part this difference is pursued along nocturnal paths amongst werewolves
+and exploding stars, whilst in the final phase of my thesis I attempt to
+consolidate a rigorous thought of protracted differences that transect the
+texts of Nietzsche and Freud, as well as those of Heidegger, Derrida, and
+Trakl.
+
+<p class="pn">\- 45 -</p>
+
+## Part One: The Icy Wave of Eternity
+
+
+<blockquote><i>Dem Ort des Gedichtes entquillt die Woge, die jeweils das Sagen als ein
+dichtendes bewegt. Die Woge verläßt jedoch den Ort des Gedichtes so
+wenig, daß ihr Entquellen vielmehr alles Bewegen der Sage in den stets
+verhüllteren Ursprung zurückfließen läßt. Der Ort des Gedichtes birgt als
+die Quelle der bewegenden Woge das verhüllte Wesen dessen, was dem
+metaphysisch-ästhetischen Vorstellen zunächst als Rhythmus erscheinen
+kann.</i><br>
+<br>
+[US, 38].</blockquote>
+
+<blockquote><i>Schlaf und Tod, die düstern Adler<br>
+Umrauschen nachtlang dieses Haupt:<br>
+Des Menschen goldnes Bildnis<br>
+Verschlänge die eisige Woge<br>
+Der Ewigkeit.</i><br>
+<br>
+[T, 94].</blockquote>
+
+<p class="pn">\- 46 -</p>
+
+### One: The Opening
+
+Heidegger's essay begins with a three-page untitled section which I shall
+refer to as the 'prologue'. The status and function of this section is far
+from evident. Indeed, as Derrida suggests, the entire trajectory of the
+essay is in a sense already coiled within this brief text: <u>Trois pages
+préliminaires, mais tout me paraît déja décidé.</u> ("Three preliminary pages,
+but to me everything appears already decided.") [Giii, 17]. This <u>déja</u> is the
+index of a network of insistent problems surrounding anteriority. The
+philosophical inheritance of this network leads back at least to the <u>a
+priori</u> status of the categories in the Kantian critique, and perhaps to the
+recollection of anterior knowledge of the forms in Platonic thought. A
+discourse of the 'prior' seems to have been historically intrinsic to the
+institution and reproduction of philosophy as such. Between this theoretical
+concern, and the textual openings to philosophical works - prefaces,
+prologues, introductions etc. - there has been a complicated interchange
+whose terms, procedures, and implications remain obscure. If Heidegger's
+prologue in some way maps the course of the whole essay this is not simply
+reducible to what it 'says' or 'contains', but results additionally from its
+architectural specificity, and the questions which this 'already' encodes.
+
+And yet it is necessary to resist a persuasive but fundamentally
+misleading interpretation of the prologue's role. We are not confronted here
+by a sketch of the 'method' that will then be applied in the reading to
+follow. If there is a 'prior' theory or method at work it is precisely a
+careful dismantling of any such notion of 'application'. In addition, the
+
+<p class="pn">\- 47 -</p>
+
+apparent (temporal) precedence of this text in relation to a reading of
+Trakl's poetry is ultimately subverted by the path of Heidegger's reading. I
+believe we shall find that the apparatus Heidegger outlines in these few
+pages is the echo of a devastating confrontation with Trakl's poetry, rather
+than the sober anticipation of a 'future' encounter consigned to a
+masterable stage in the linearity of a text.
+
+In his text on prefaces, the <u>Hors livre</u> to <u>La Dissémination</u>, Derrida
+investigates the interweaving of the problem of method and the institution
+of the preface within the field of Hegelian inquiry. The 'auto-critique' of
+the Hegelian preface is shown to interpret itself as the symptom of a
+'dead' or mechanically recurring 'formalism' which resists exorcism from
+the living self-production of the concept. Much of Derrida's reading seems
+to be guided by the thought of an analogy between the preface and the sign,
+each displacing and deferring the presentation of the concept. The
+composition and implications of this analogy are not unfolded, however,
+beyond the point to which they symptomize a generalized function of
+differance. There does not seem to be a fully architectural question raised
+by Derrida's investigation, except insofar as composition exhibits what
+remains a simple operation of postponement. If a highly complex
+organizational stratum of language (that of textual architecture) can
+replicate patterns occurring on a more basic level (that of the word) then
+the prevalent methods of research applied to each level are reciprocally
+subverted by more general (but stratified) functional regularities. I will
+return to this question in the final section of this division.
+
+The first paragraphs of the prologue in some respects constitute an
+
+<p class="pn">\- 48 -</p>
+
+appendix to the essay's title, or rather titles\*. They first detach the word
+<u>Erörterung</u> (conventionally 'discussion' but for reasons that will become
+manifest we must translate it here as 'situating') common to both titles,
+and unfold from it an indication of the path that is to be followed. This
+path both 'points into' and 'attends to' the 'site' (<u>Ort</u>). These two steps
+are described as 'preparatory' (<u>vorbereitend</u>), a word of considerable
+importance in <u>Sein und Zeit</u> where it characterizes a crucial temporal and
+'methodological' aspect of the existential analytic of <u>Dasein</u>; its perpetual
+openness to fundamental revision. The term 'step' (<u>Schritt</u>) is also of
+considerable importance, both as a name for a 'position' of reading, which
+is the first clue for an investigation of the prologue itself, and as a word
+with powerful resonances within Trakl's poetry. What the prologue indicates
+by the term 'preparatory steps' is ultimately the temporality of language, a
+problematic that is thought with some consistency both by Heidegger and
+Derrida as deferment. This re-inscription of the problem is a displacement
+that facilitates, but cannot fully replace, an exploratory task (which can
+no longer be confidently named philosophical, or even semiological). For
+Heidegger the dominant sense of deferment is interrogative. The situation
+(<u>Erörterung</u>) is not to result in a concluding thesis but in a question, "as
+befits a thinking way" (<u>...wie es einem Denkweg entspricht...</u>). This question
+is to concern the "situatedness of the site" (<u>...der Ortschaft des Ortes</u>).
+
+____________________
+\* <u>Georg Trakl. Eine Erörterung seines Gedichtes</u> ('Georg Trakl. A situating
+of his poetry.') in the original 'Merkur' version and <u>Die Sprache im Gedicht.
+Eine Erörterung von Georg Trakls Gedicht</u> ('Language in the poem. A
+situating of Georg Trakl's poetry.') in the version published in <u>Unterwegs
+zur Sprache</u> ('On the way to language'). Between these two titles the primary
+position of the poet is supplanted by that of the language of poetry itself.
+
+<p class="pn">\- 49 -</p>
+
+How is it possible for Heidegger to name the destination of his
+reading at this stage, even though it is simultaneously the non-destination
+of further questioning? Is he acknowledging that the prologue is in fact
+the postface to an accomplished task? Or is there some peculiar
+characteristic of the <u>Ort</u> which prevents it from closing the path which is
+directed towards it? Perhaps this question could be guided by the word
+<u>wagen</u> ('venture' or 'dare') which suggests that, at least rhetorically, the
+arrival of the reading remains hazardous, and therefore potent. <u>Wagen</u> -
+which is a word of great importance to Heidegger's Rilke essay <u>Wozu
+Dichter?</u> ('What are poets for?') - stems from <u>Waage</u> ('balancing scales'),
+used figuratively in a manner similar to the English 'hanging in the
+balance' to mean unclear outcome. <u>Waage</u> in turn derives from the Indo-
+germanic <u>\*wegh-</u> 'to move' from which derive other German terms which will
+be of great importance in the reading to follow, in particular <u>bewegen</u> ('to
+move'), <u>Weg</u> ('path') and <u>Woge</u> ('wave'). Heidegger remarks elsewhere:
+
+<blockquote><u>Nach altem Sprachgebrauch der schwäbisch-alemannischen Mundart kann
+'wägen' besagen: einen Weg bahnen, z.B. durch tief verschneites
+Land. / Wägen und Be-wägen als Weg-bereiten und Weg als das
+Gelangenlassen gehören in denselben Quell- und Strombereich wie die
+Zeitwörter: wiegen und wagen und wogen. Vermutlich ist das Wort
+'Weg' ein Urwort der Sprache...</u> (After the usage of the Swabian-
+Alemanic dialect <u>wägen</u> can say: to clear a way, e.g. through deeply
+snow-covered land. / <u>Wägen</u> and <u>Be-wägen</u> as preparing a way, and
+'way' as 'letting-arrive' belong in the same domain of welling and
+flow as the verbs: <u>wiegen</u> (sway or weigh) and <u>wagen</u> (venture) and
+<u>wogen</u> (wave or undulate). Apparently the word 'way' is a primeval
+word of language...) [US, 198].</blockquote>
+
+The venture with which we are concerned is one that is strongly associated
+with movement or movements, risings and fallings, whose nature is still to
+
+<p class="pn">\- 50 -</p>
+
+be unfolded. The balancing that regulates Heidegger's opening words seems
+to emerge etymologically from a background of oscillation or originary dis-
+equilibrium, so that the path of the text is historically and graphically
+interwoven with a primordial risk: 'way', 'weigh', and 'wager' open together.
+The vocabulary of the essay's beginning orbits a forgotten sign in which
+motion and economy can be read together, cryptic and fluctuating.
+
+The economic reference is entrenched as the passage continues; <u>Doch
+wagen wir schon genug...</u> ("Although we already venture enough...") [US, 37].
+What are we to make of this enigmatic 'stake' (or wager) of which a
+quantitative character is indicated in the term <u>begnügen</u> ('satiate') built
+upon the word <u>genug</u>, which is both translated by and etymologically related
+to the English 'enough'? It seems to demand an intensive or extensive
+quantity of motion, or the imposition of a quantitative limit upon the
+'preparatory steps' we have already encountered. The advance to be made has
+a certain economic imperative or restraint. But along which axis of
+measurement, and according to which directives, does it become possible so
+early to know what it would mean to say 'enough'?
+
+The following paragraph expands on the discussion of the 'site' by
+examining some further words from the title. Primarily, it seeks to renounce
+any 'expressionist' treatment of the proper name 'Georg Trakl'. Trakl's name
+is taken to refer only to the site of his poetry, which is to say that it
+is taken up by and for situating alone. We are to be told nothing about
+Trakl's life, his family, society, or history, except insofar as such things
+are collected at the site of his poetry. We shall have to return to this
+issue when its effects on Heidegger's reading become evident. This decision
+is named a 'procedure' (<u>Vorgehen</u>), a type of path which marks temporality
+(in the <u>vor-</u>, or 'pro-'), and which is re-cast at the end of the line, in the
+
+<p class="pn">\- 51 -</p>
+
+voice of expressionism, as an 'errant way' (<u>Irrweg</u>). These terms constitute
+a list of tracks which is already considerable when added to the 'thinking
+way' (<u>Denkweg</u>) and 'preparatory steps' we met in the first paragraph. If
+these trails are not merely imported into a reading of Trakl, and we
+already have good reasons for assuming that they are not, then the relation
+of poetry and site is likely to be neither unproblematic nor comfortably
+sedentary. Perhaps this relation will be characterized by the stalking
+pursuit of a hunt (we shall find ourselves following the spoor of an
+enigmatic 'blue beast'), or by the drift of a boat, although it is not
+impossible that it will seem at times like a religious pilgrimage, a
+migration, or even a family visit.
+
+Not only is a single site ascribed to Trakl's poetry, but this poetry
+is also invested with an intrinsic unity: <u>Jeder große Dichter dichtet nur
+aus einem einzigen Gedicht.</u> ("Every great poet writes ['dichtet', most
+accurately rendered as 'poetizes'] from out of a single poem.") [US, 37]. The
+effects stemming from this declaration are considerable. None of the
+separate poems are to persist as autonomous totalities, instead their
+elements are to be reconstituted on the basis of a single and total poetic
+saying. No 'individual' poem is to be read according to a meaning specific
+to itself. It could easily seem as if an <u>a priori</u> unity is established for
+all Trakl's poetry, that its unity is to be decreed in advance. Within
+rigorous limits this is indeed an adequate definition of the manoeuvre we
+are witnessing. The '<u>a priori</u>' is not to be thought as a foundation, however,
+but rather as a problem (and possibly <u>the</u> problem). We should not therefore
+be too hasty in ascribing a meaning or strategy to this move, since there
+are many possible impulsions that might be active here.
+
+<p class="pn">\- 52 -</p>
+
+There is a deep complicity, often indirect, between the singular unity
+of the poem and the special status of that sign which functions as a proper
+name - in this case, Georg Trakl. The coherence of the writer's texts is the
+necessary condition for the writer's name losing its exorbitant
+particularity and entering the circulation of language as a nonproper name
+or even technical term. This process is most often marked by the appendage
+'-ism' (which Heidegger, in the context of 'Kantianism' for instance,
+professes to despise, for reasons that are profoundly related to a general
+hostility to the technicizing of language). What is at stake in this
+displacement of all the individualizing characteristics of the proper name
+onto a depersonalized site is a translation of ontical (i.e. biographical)
+integrity into a scarcely conceivable ontological individuality. By this is
+not meant the rootedness of the isolation of the self in its existence, so
+familiar from 'existentialist' readings of <u>Sein und Zeit</u>\*. Ontological
+individuality, which will later be given the name <u>Abgeschiedenheit</u>
+('departedness'), is a matter of the specifications that the 'same' has
+undergone before being thought (which is equally to say named) at any stage
+
+____________________
+\* In <u>Sein und Zeit</u> <u>Abgeschiedenheit</u> is already employed, but 'derogatively'
+to designate a flight from the world (<u>weltflüchtige Abgeschiedenheit</u>)
+[SZ, 310], a movement Heidegger associates with <u>zerstreuen</u> ('dispersion' or
+'distraction') and <u>Ausweg</u> ('exit'), and which he names earlier in <u>Sein und
+Zeit</u> an <u>Entweltlichung</u> ('de-worlding') [SZ, 65]. It might be interesting to
+ask how much of this related terminology should be 'revalued' along with
+<u>Abgeschiedenheit</u> in terms of Heidegger's later writings, and how far this
+revaluation can help us to re-read the issue of <u>Verfallen</u> ('ruination') with
+its accompanying themes in <u>Sein und Zeit</u>. I have insufficient space to
+pursue this question in the present thesis, however.
+
+<p class="pn">\- 53 -</p>
+
+within the very history which such specification initiates. Ontological
+individuality is what allows every determination of being to have its own
+time\*.
+
+Heidegger's contention, developed most fully in his discussion of the
+Anaximander fragment, and also treated in this essay's final section, is
+that history is possible only as the series of epochal modifications that
+determine the eclipse of 'being' (a word remarkable for its absence in this
+text), since only within eclipse can there 'be' differentiation and
+dispersion. Although none of Heidegger's thought can be completely separated
+from an historical questioning we must postpone for a while the point at
+which historicality is addressed as an explicit issue.
+
+The one poem cannot ever become legible in itself, <u>es bleibt
+ungesprochen</u>. ("it remains unspoken.") [US, 37]. If the central objective of
+the elevation of the 'one poem' is to attain a certain security, in a manner
+akin to a regulative principle of judgement, in which the absolute
+simplicity and determinateness of the project would be established <u>de jure</u>,
+it is quite futile. The sentence that follows jeopardises everything once
+again, since hidden within it is a radical departure from every conceivable
+guarantee:
+
+<blockquote><u>Die Größe bemißt sich daraus, inwieweit er diesem Einzigen so
+anvertraut wird, daß er es vermag, sein dichtendes Sagen rein darin
+zu halten.</u> (Greatness is allocated according to the extent to which
+he [the poet] becomes so entrusted to this singularity that he is
+able to keep his poetic saying purely within it.) [US, 37].</blockquote>
+
+____________________
+\* In the forward to his <u>Nietzsche</u> volumes Heidegger explicitly states that
+Nietzsche's name is to be taken as the designation for the matter of his
+thought, a suggestion that Derrida pursues in his recent text <u>Interpréter
+les Signatures (Nietzsche/Heidegger)</u> [IS, 9].
+
+<p class="pn">\- 54 -</p>
+
+In this sentence the essay entangles itself in a web of complex problems which continue to enmesh it throughout its length. In order to begin a sketch of this trajectory it might be valuable to turn back to the discussion of the etymology of <u>Ort</u> earlier on the same page (although the direction, strategic efficacy, and implications of this philological turn itself can be fully interpreted only on the basis of later passages):
+<blockquote><u>Ursprünglich bedeutet der Name 'Ort' die Spitze des Speers. In ihr läuft alles zusammen.</u> ("Originally the '<u>Ort</u>' signified the tip of a spear. In it everything runs together.") [US, 37].</blockquote>
+There are a number of interesting facets to this derivation, even after provisionally setting aside all questions concerning the deployment of etymological references as such. In particular, if we naively repeat this move ourselves in respect of the word <u>Speer</u>, we find that it is related to the word <u>sperren</u> meaning to close, block, or obstruct. The <u>Speer</u> is not only an implement for penetration, which <u>durchdringt</u> ('penetrates'), it is also a means of fending off, akin no doubt (through the Latin <u>sparus</u>) to the 'spur' of Derrida's famous text on Nietzsche's styles. And the word <u>Spitze</u> is perhaps even more interesting. It is a word which, whilst not common in Trakl's poems, nevertheless enters into association with two other terms which he very often does employ, and which cluster tightly about the notion of summit, tip, or peak ; <u>Gipfel</u>, and <u>Haupt</u> (the latter also meaning 'head', and related to 'capital'). Heidegger explicitly comments: <u>Der Ort versammelt zu sich ins Höchste und Äußerste.</u> ("The site gathers to itself in the direction of the highest and outermost.") [US, 37]. The site is elevated, and it is also described as gathering to itself either in the most extreme, or (the German is ambiguous) in the most exterior, exiled, expelled, or ejected. Despite the archaising pastoralism that at times infects the language of both Heidegger
+
+<p class="pn">\- 55 -</p>
+
+and Trakl, 'gather' is not exhaustively determined by notions of 'shepherding'. 'Gather' stems from the Middle High German <u>gatern</u>, which is the source of the modern German <u>Gattung</u>, meaning 'genus', and which is, therefore, partially synonymous with <u>Geschlecht</u>. Gathering is the clustering of type, the resonance of a positivity. To be gathered is to participate in a common differentiation, and thus to affirm the replication of specific differences.
+
+In his annotations to this passage [Giii, 7-10] Derrida comments on the phallic imagery involved, referring to the role of the phallus in sustaining the symbolic order in Jacques Lacan's re-working of psychoanalysis. He also suggests that the blatant symbolism is laden with a certain irony, since Heidegger has only just - two sentences previously - dismissed psychoanalytical hermeneutics. For Lacan the loss (or signification) of the phallus (the imaginary representation of the penis) entailed in traversing the Oedipus complex hollows out the subject, on the model of the signifier, and opens desire as a lack of plenitude and identity. The position of the father in the Oedipal structure interdicts any attempt to establish an immediate relation with the integrity represented by the phallus, and re-directs desire through the symbolic order, which effects the entry of the subject into language.
+
+Such an analysis is challenged by Luce Irigaray, who argues that a historically and politically contingent '<u>specular logic</u>' undergirds the particular system of symbolization characterizing patriarchy. This logic appropriates to itself universal powers of articulation, concealing the fact that it is rooted in a specific modality of perception. On the basis of a certain visualization of the difference between the sexes they are articulated as plus and minus, with female genitalia thought as negative or
+
+<p class="pn">\- 56 -</p>
+
+(in a clitoral 'phase' determined as prior to the female Oedipus complex) inferior reflections of the male's. On the basis of this interpretation, which is in part a splicing of the famous footnote to section IV of <u>Civilization and its Discontents</u> on the effects of the vertical posture of hominids to section 36 of <u>Sein und Zeit</u>\*, Irigaray is able to provide a new comprehension of the relation between blinding and castration. To lose one's eyes is not merely to suffer a symbolic castration, but to lose the foundation of the very symbolic order which represents the absence of the phallus as loss. The supremacy of vision grounds a system of symbolic exchange within which the phallus is the ultimate term, and this system in turn organizes the entire economy of patriarchy:
+
+<blockquote>The exchanges organizing patriarchal societies take place, exclusively, among men. Women, signs, merchandise, money pass always from one man to another man, under the threat - it is affirmed - of falling back into incestuous and exclusively endogamic lines which paralyse all commerce. [CS, 189].</blockquote>
+
+The phallus (which is read by Irigaray as the condition of subjectivity within patriarchy) opens a certain spatiality or territoriality, and thus the conditions of a circulation or transit between places or sites. It is directly equivalent to 'position' within the topology of patriarchy, the principle of spatial identification. Now, if the 'spear' is profoundly
+
+____________________
+\* Irigaray seems to agree with Heidegger's claim in <u>Sein und Zeit</u> #36 that metaphysics has been historically constituted on the basis of an inexplicit notion of visual objectivity. Freud's contribution to this problematic is to specify (and thus mark the political contingency of) the dominance of vision within a hypothetical account of human prehistory, he also suggests that the transformation, or rehierarchization, of perceptual modality has definite implications for the valuation of the signs of sexual difference, for instance, by organizing the terms of the taboo on menstruation.
+
+<p class="pn">\- 57 -</p>
+
+associated with the site (<u>Ort</u>) the implication is that the means of transport, communication, and interaction between sites will at least to some extent tend to be determined according to a notion of 'femininity', or of 'woman', perhaps in a figure not devoid of resonance in psychoanalytical discourse - 'the sister'. To raise the question of the site in terms of the image of the spear necessitates the introduction, at some 'point' (to use an unfortunate turn of phrase) of further questions concerning the relation of femininity and movement; of what cultural anthropology calls 'exogamy'.
+
+### Two: The Gathering of Sense
+
+How are we to understand the power of the site to gather? Heidegger's descriptions rely heavily on composites employing the preposition <u>durch</u> ('through'); <u>durchdringen</u>, <u>durchwesen</u>, <u>durchscheinen</u>, and <u>durchleuchten</u> (respectively, penetrate-, persist-, appear-, and shine- through). Gathering seems to be strongly associated with the 'permeation' of a multiplicity, or
+
+____________________
+\* In <u>The Gathering of Reason</u> John Sallis employs the thought of gathering in order to gain access to a problematic of an originary default of presence in Kant's work. He starts from Kant's ideal point of '<u>original intuition</u>' or perfect phenomenal plenitude (constitutive of its own objects), and traces the necessity of gathering from the incommensurability of this ideal to finite sensibility. Gathering is thus shown to be the index of a certain '<u>destitution</u>' in regards to this ideal, since "original intuition is such that from its very inception the object is posed in its full presence - that is, original intuition involves no need for the object to be gathered into presence." [GR, 22]
+
+<p class="pn">\- 58 -</p>
+
+with what Heidegger calls a <u>zu-holen</u> ('compiling'). Something strikingly similar to this process is already familiar to modern philosophy in the guise of the Kantian 'schematism'. The unwritten second part of <u>Sein und Zeit</u> was to begin with a section discussing <u>Kants Lehre vom Schematismus und der Zeit als Vorstufe einer Problematik der Temporalität</u>. ("Kant's doctrine of the schematism and time as the preliminary step of a Temporal problematic.") [SZ, 40]. The Kantian schematism is interpreted with great consistency by Heidegger as the sole contribution to the thinking of time within the history of metaphysics to advance (albeit in a very limited manner) beyond the Aristotelian framework. Whilst Aristotle is explicitly mentioned early in the Trakl essay, Kant is not introduced at all. This is not a mere default, but the result of a positive historical orientation; the attempt to comprehend ontotheology as a totality which comprehends occidental history. We must nevertheless briefly sketch some elements of Kant's work, since the new possibilities and problems opened by critical philosophy and the thought of transcendental synthesis decisively guide the terminal stage of western metaphysics, and, in a problematic manner, puncture it.
+
+Those elements of the critical philosophy which are most susceptible to a theoretical and historical situating are involved in a re-organization of metaphysical distinctions. Kant inherited a philosophical tradition whose binary architecture he delineated in the transcendental dialectic. By interpreting this dichotomous heritage as a problem the thought of the transcendental dialectic initiates a radically new phase of western philosophy, now characterized as the critique of metaphysics. But the transcendental structure of Kantian critique also perpetuates the oppositional form of metaphysical thought, since its resolution of the antinomies depends upon the
+
+<p class="pn">\- 59 -</p>
+
+mobilization of further dichotomies, in particular those of transcendental / empirical, phenomenon / noumenon, concept / intuition, and analysis / synthesis. Kant argues that the tendency of previous metaphysics to conceive coherent, but unpersuasive and antagonistic, intellectual systems resulted from the application of pure (transcendental) concepts to arguments concerning the nature of things in themselves (noumena). The critical philosophy therefore restricts the jurisdiction of all concepts to the realm of possible intuition, suggesting that the a priori forms of knowledge have no purchase on any reality transcending the phenomenon. Since 'reality' is itself a transcendental concept this example already suggests a crucial difficulty with Kant's project, since every attempt to formulate a relation or distinction between the phenomenal and noumenal realms must itself relapse into the pre-critical and illegitimate deployment of pure concepts. The vocabulary that would describe the other of metaphysics is itself inscribed within metaphysics, since the inside and the outside are both determined from the inside. Philosophy must then turn itself inside-out, to discover how the outside was first received into the inside.\* This process is the transcendental doctrine of judgement (<u>Urteilskraft</u>), whose first part is the schematism of the pure concepts of the understanding (<u>Schematismus der reinen Verstandsbegriffe</u>)†.
+
+____________________
+\* Sallis (op.cit.) poses the question thus: "How can there be knowledge of something that is 'elsewhere' (outside the mere thought, the concept) without that knowledge having come from 'elsewhere'?" [GR, 16]
+
+____________________
+† In discussing the schematism Heidegger argues in his 1927-8 winter semester Kant course that: <u>dieses Stück das Kernstück der 'Kritik' sei</u> ("this part is the core of the <u>Critique</u>") [KK, 429].
+
+<p class="pn">\- 60 -</p>
+
+The role of judgement in Kant's thought derives its peculiar importance from a certain resistance of intuition to the concept. With intuition the the sensibility undergoes an empirical modification, which means that a content is introduced whose logical order cannot be guaranteed <u>a priori</u>. External intuitions are represented according to the pure forms of space and time, whilst internal intuitions are organized by time alone. These forms of apprehension, however, do not render experience intelligible, but merely provide its aesthetic precondition or ground. The spatial and temporal conditions of intuition do not suffice to stamp a logical order upon it, since the forms of sensibility do not in themselves subsume intuition under the logical categories of the understanding. 'Between' sensibility and the understanding, therefore, an intermediate element, or '<u>schema</u>', is necessary which compares with (<u>vergleicht</u>), or is similar (<u>gleichartig</u>) to, both the intuition and the concept. The subsumption - or gathering - of intuitions under empirical concepts also requires schemas, but such schemas are themselves empirical; the concepts they schematize are not transcendental (necessary, universal, and <u>a priori</u>). For the schematization of pure <u>a priori</u> concepts the schema itself must be transcendental:
+
+<blockquote><u>Nun ist klar, daß es ein Drittes geben müsse, was einerseits mit der Kategorie, andererseits mit der Erscheinung in Gleichartigkeit stehen muß und die Anwendung der ersteren auf die letzte möglich macht. Diese vermittelnde Vorstellung muß rein (ohne alles Empirische) und doch einerseits intellectuell, andererseits sinnlich sein. Eine solche ist das transcendentale Schema.</u> (Now it is clear, there must be a third term, similar in kind to the categories on the one hand, and on the other with appearance, and which makes the application of the former to the latter possible. This mediating representation must be pure (without anything empirical) and yet on the one hand intellectual, and on the other sensible. Such is the transcendental schema.) [KrV, B, 177].</blockquote>
+
+<p class="pn">\- 61 -</p>
+
+How is it possible for contingent intuitions to share any characteristics with necessary logical forms? It is, indeed, quite impossible; unless the categories of logic can be read within the terms of an aesthetic. The aesthetic form of space is inapplicable, because of (or despite) the interiority of the categories, since Kant insists upon the spacelessness of the inside, or upon the fundamental exteriority of space. With the elimination of space the only a priori aesthetic form is time:
+
+<blockquote><u>Nun ist eine transcendentale Zeitbestimmung mit der Kategorie (die die Einheit derselben ausmacht) sofern gleichartig, als sie allgemein ist und auf einer Regel a priori beruht. Sie ist aber andererseits mit der Erscheinung so fern gleichartig, als die Zeit in jeder empirischen Vorstellung des Mannigfaltigen enthalten ist.</u> (Now a transcendental determination of time is similar in kind to the category (which constitutes its unity) to the extent that it is universal and rests upon an <u>a priori</u> rule. It is, on the other hand, similar in kind to appearance to the extent that time is contained in every empirical representation of the manifold.) [KrV, B, 177-8].</blockquote>
+
+The transcendental schema, and the structure of judgement, cannot be distributed between oppositional concepts. It is this characteristic which persists (or recurs) through Heidegger's temporal studies, and into the deconstructive 'time structure' of <u>differance</u>. But Kant's project is constructive rather than deconstructive. The time of the schematism is not mobilized in order to subvert the transcendence of the concept, but in order to reconcile the transcendence of the concept with its empirical application. The devastating implications that follow from the grounding of logical categories in temporality are, as Heidegger suggests, evaded:
+
+<blockquote><u>Der Erste und Einzige, der sich eine Strecke untersuchendes Weges in der Richtung auf die Dimension der Temporalität bewegte...ist Kant. Wenn erst die Problematik der Temporalität fixiert ist, dann kann es gelingen, dem Dunkel der Schematismuslehre Licht zu verschaffen. Auf diesem Wege läßt</u></blockquote>
+
+<p class="pn">\- 62 -</p>
+
+<blockquote><u>sich aber dann auch zeigen, warum für Kant dieses Gebiet in seinen eigentlichen Dimensionen und seiner zentralen ontologischen Funktion verschlossen bleiben mußte.</u> (The first and only person who has gone any stretch of the way in the direction of investigating the dimension of Temporality ... is Kant. Only when the problematic of temporality is fixed can illumination be successfully provided for the darkness of his teaching of the schematism. But this way also comes to indicate why this region is one which had to remain closed off to him in its appropriate dimensions and its central ontological function. [SZ, 23].</blockquote>
+
+In the doctrine of the schematism Kant grasps the question of the transcendence of the subject as grounded in temporality, but he does not pursue this discovery into an ontology of <u>Dasein</u>, or into an ecstative analysis of the <u>horizon of transcendence</u>\*. Kant allows temporality and transcendence mutually
+
+____________________
+\* This is perhaps what Heidegger challenges when he suggests: <u>Von unserer Interpretation aus gesehen ist der Schematismus die Anweisung auf die ursprüngliche Sphäre der radikalen Begründung der Möglichkeit der ontologischen Erkenntnis.</u> ("Seen from the perspective of our interpretation the schematism is the transference onto the original grounding of the possibility of ontological knowledge.") [KK, 431]. This 'original ground' is ecstatic <u>Dasein</u> in which the three forms of Kantian synthesis (or, more precisely, the two forms of 'apprehension', and 'reproduction', since Heidegger substitutes 'precognition' for 'recognition') are unified in primordial temporalization:
+
+<blockquote><u>Wenn aber diese drei weisen des ausgreifenden Umgreifens nichts anderes sind als die ursprünglich einige Gliederung der Urhandlung des Ich als Ich-denke - das Kant auch 'Ich-verbinde' nennt -, dann ist das Subjekt als diese Einheit der Urhandlung selbst etwas, das ausgreifend wesenhaft aus sich heraustritt, ohne sich doch schlechthin zu verlassen, sondern das gerade indiesem Heraustreten die Dimension konstituiert, die die Möglichkeit einer Hinzugehörigkeit von etwas gewährleistet. Dieses ausgreifende Heraustreten des Subjekts nennen wir seine Ekstasis.</u>
+(But if the three ways of far-reaching appropriation are nothing other than the original accordant articulation of the primordial act of I as</blockquote>
+
+<p class="pn">\- 63 -</p>
+
+to guarantee each other, inhibiting the disruptive drift of his insight that temporality facilitates the application of the concept only because it explodes the interiority of reason.
+
+It is this boundary sign of an abandoned path in the occidental interpretation of time that is perhaps the most crucial philosophical background to Heidegger's thought of gathering. Yet this problem, whose ancestry leads back to (and through) the Kantian schematism, is not brought by Heidegger to the reading of Trakl from without. Heidegger's reading of Trakl in a sense begins with the discovery of a re-inscription of the <u>Schematismuslehre</u> in a poem entitled <u>Klage</u> ('Plaint') (referred to as <u>Klage II</u> in the <u>Historisch-kritischen Ausgabe</u> to distinguish it from another Trakl poem of the same name). This re-inscription resists the terms of western onto-theology, whilst still gathering temporality and transcendence together. It is not until the end of the essay's second section that this phrase is cited by Heidegger, but its effects and indices are disseminated throughout the text. The phrase reads:
+
+<blockquote><u>...die eisige Woge<br>
+Der Ewigkeit.</u><br>
+(...the icy wave / of eternity.) [T, 94].</blockquote>
+
+Before attempting to reconstruct Heidegger's interpretation of this phrase we should follow the movement initiated by the introduction of the wave
+
+____________________
+<blockquote>I-think - that Kant also names I-join -, then the subject as the unity of the primordial act is itself something that essentially steps out of itself in reaching-out, although without in the least abandoning itself, rather, in this stepping-out, it constitutes the dimension which ensures the possibility of a <u>belonging-to-me</u>. We call this far-reaching stepping-out of the subject <u>ecstasis</u>.) [KK, 390].</blockquote>
+
+<p class="pn">\- 64 -</p>
+
+into the prologue, where none of Trakl's poems are explicitly cited. <u>Die Woge</u> is nevertheless the very first word in the essay which seems to be derived from Trakl's texts, and is therefore the point at which the essay first takes on the relatively unambiguous signs of a reading. Heidegger begins: <u>Der Ort des Gedichtes entquillt die Woge, die jeweils das Sagen als ein dichtendes bewegt.</u> ("From the site of the poem [the one poem] wells the wave which each time moves the saying as poetizing.") [US, 38]. The wave flows out of the site in a movement that can be neither analyzed into moments of scattering and gathering nor composed out of such moments. Dispersion and compilation - as antagonistic or negatively articulated tendencies - are derivative concepts, resulting from a concealed analysis, or theoretical appropriation, of a primordial fluctuation. This movement is named <u>entquellen</u> ('welling'), and is closely related to the word for spring or source <u>Quelle</u>. The association of 'wave' and 'spring' bears every trace of attentiveness to Trakl's words, <u>des blauen Quells / Kristallne Woge</u> ("the crystal wave of the blue spring") [T, 87]; <u>In der kristallne Woge / Des kühlen Quells</u> ("In the crystal wave / of the cool spring") [T, 181]; <u>In der blauen Woge des Quells</u> ("In the blue wave of the spring") [T, 187]. Distance from the site is regulated by a welling, the motion of a wave. This motion is communicated to the 'text', and only through this communication does it receive the 'mark' of poetry. Poetry is 'branded' by an undulation or fluctuation, by a pulse. It is not a property or stable characteristic of language, but rather a motion into which language coils.
+
+The associations developed in the deployment of this metaphor are not without precedent, since Rimbaud - one of the most important poetic 'influences' for Trakl - also seems to suggest that poetry is embraced in the wave, when he writes of <u>le Poème / De la Mer</u> ("the poem / of the sea") [R, 166]. And (in an astonishing passage from the 'Illuminations') of <u>plages</u>
+
+<p class="pn">\- 65 -</p>
+
+<u>nommées par des vagues sans vaisseaux</u> ("beaches named by waves without vessels") [R, 235]. Indeed, the whole of <u>Le Bateau Ivre</u> ("The drunken boat") is a navigation of this association. Nevertheless, in the case of Trakl we shall be forced to depart from these oceanic references. Trakl's wave is the welling of the inland spring.
+
+What is the motion that, when imparted to the word, renders it poetic? Heidegger continues: <u>Die Woge verläßt jedoch den Ort des Gedichtes so wenig, daß ihr Entquellen vielmehr alles Bewegen der Sage in den stets verhüllteren Ursprung zurückfließen läßt.</u> ("So little does the wave abandon the site, however, that instead its welling lets all movement of the saying flow back into the increasingly veiled origin.") [US, 38]. The metaphorics of the single term <u>zurückfließen</u> weaves together the liquid connotations of 'flow' with those of regular or rhythmic recession, perhaps even - returning to the sea - of tidal patterns of return or ebb, like Nietzsche's great tides of recurrence. It is a word that seems inextricably tied to the breaking of waves, and therefore with coastal waters. It is as if the matter in question was indeed <u>le Poème de la Mer</u>, a negotiation between ocean and beach, conducted by waves whose regular strokes cast the wrecks and secrets of the depths onto the shore, without themselves escaping the retractive influence of the gulfs\*. But what work does this figure do?
+
+____________________
+\* In his reading of Hölderlin's <u>Andenken</u> ('Remembrance') Heidegger attempts to think the relation of <u>Quelle</u> to <u>Ort</u> across a network of words that coincide to a considerable extent with those of the 1953 Trakl essay. He suggests '<u>An der Quelle', das meint den Ort in der Nähe des Ursprungs.</u> ("'At the spring', that means the site in the proximity of the origin.") [HA, 173] and problematizes the questioning by asking <u>Kann einer überhaupt je unmittelbar 'an' der Quelle sein? Wie, wenn die Quelle zunächst gerade von sich weg weist in die Richtung des ihr entquellenden Stromes?</u> ("Is it possible in general ever to be
+
+<p class="pn">\- 66 -</p>
+
+### Three: Verlassenheit
+
+The wave is not an abandonment. The word <u>verlassen</u> is repudiated at the moment it is introduced, but will be reserved throughout the text, not without paradox, to mark repudiation itself. In the Trakl essay, 'Abandonment' is at first used ironically by Heidegger as a mark of metaphysical transcendence\*, but at one crucial point in the text it is borrowed, in order to refuse
+
+____________________
+immediately 'at' the spring? How, if the spring from the first points precisely away from itself in the direction of the welling current?") [HA, 174]. The movement of departure from the spring is also rephrased in terms that resonate strikingly with another strand of terminology crucial to the Heidegger-Trakl encounter: <u>Weg von der Quelle, d.h. fort aus der Heimat in die Fremde.</u> ("Away from the spring, i.e. forth out of the home into strangeness.") [HA, 175]. But rather than pre-empting Heidegger's 1953 discussion of 'site', 'departure', and 'strangeness' by pursuing these issues in the <u>Andenken</u> course I will draw this digression to a close, whilst noting that such themes are not regional problems of the Trakl interpretation, but 'general' issues bearing upon the primordial welling of language (a hydraulics of poetry?).
+
+____________________
+\* In constructing a 'habitual' or metaphysical reading of Trakl's phrase <u>Es ist die Seele ein Fremdes auf Erden</u> ("Something strange is the soul on earth") [H, 39-42; T, 78] Heidegger suggests that our current metaphysical-psychological conceptuality leads us to think terrestriality as imprisonment, <u>So bleibt der Seele anscheinend keine andere Aussicht, als den bereich des Sinnlichen, der, platonisch gesehen, das Nicht-wahrhaft-Seiende und nur Verwesende ist, möglichst bald zu verlassen.</u> ("So no other prospect remains to the soul,
+
+<p class="pn">\- 67 -</p>
+
+precisely that metaphysics which originates in the gesture of abandonment†. In both cases it is a type of decomposition (<u>Verwesung</u>: the 'unwesing' of the 'weft' of <u>Wesen</u>) that is, or would have been, abandoned. For Platonic metaphysics it is the decomposed earth that must be repudiated, whilst for Heidegger it is the epoch of metaphysics itself which is in decomposition. When abandonment is refused its 'erasure' perpetually obstructs the transition from departure to repudiation or negation, and therefore works to prevent separation becoming transmuted into a dialectical relation. The trace of a ruptural synthesis - a non-reciprocal separation which sustains a relation - between what at first seem to be finite and infinite modes of differentiation, displaces any reading of separation as pure (absolute) distinction. (Derrida employs a similar fissional integration when, for instance, he plays 'closure' against 'end' [e.g. DG, 14].) But what separates the relation which I have designated 'ruptural synthesis' from the disjunctive syntheses of
+
+____________________
+apparently, than to abandon the realm of the sensuous, that, seen platonically, is the not-truly-being and merely decomposing, as soon as possible.") [US, 40]. Such a thought can also be conceived as an imperative: <u>Die Seele soll ihre irdische Wanderschaft beenden und die Erde verlassen.</u> ("The soul should terminate its terrestrial wandering and abandon the earth.") [US, 42].
+
+____________________
+† Heidegger says of the stranger, who he will later identify with Trakl's enigmatic figure 'Elis': <u>Sein Tod ist nicht die Verwesung, sondern das Verlassen der verwesten Gestalt des Menschen.</u> ("His death is not decomposition, rather the abandonment of the decomposed figure of humanity.") [US, 46].
+
+<p class="pn">\- 68 -</p>
+
+classical metaphysics? Is not the difference between these types of difference in danger of itself reinstating negative articulation? This is the danger Heidegger faces when he allows <u>verlassen</u> to fluctuate at the margins of his vocabulary during his reading of Trakl.
+
+The principle of cohesion for oppositional or disjunctive relations, explicated most systematically in Hegel's <u>Wissenschaft der Logik</u>, is negation as reflective identity. Such differences are logically determinable in principle, so that conclusions reached about one pole are applicable, according to a calculus of reciprocity and inversion, to the other. It is this type of relation, for instance, that mobilizes the Kantian discourse upon the noumenal realm which grounds the ethical dimension of the critical philosophy. Interpreted crudely, the necessity governing the phenomenal world leads, through a process of inversion, to the practical postulate of freedom in its other. This speculative appropriation of difference cannot be conducted within the Heideggerian text; the inversion of abandonment does not comprehend the <u>Entquellen</u> of the wave, and we cannot arrive at a new epoch or style of thinking through the negation of ontotheology. The non-applicability of categories across a ruptural relation does not legitimate the introduction of negative categories, but instead provokes a species of writing which is able to mark the obsolescence of categories within difference. A Heideggerian rupture does not articulate the difference between two poles at all, but introduces a difference which, as it is traversed, only becomes more different. It is probable that such a rupture cannot ever be crossed - even when being is crossed out - and that there are no stable poles of the ontological difference. Heidegger remarks in the essay <u>Das Wesen der Sprache</u> ('The weft of Language') that:
+
+<p class="pn">\- 69 -</p>
+
+<blockquote><u>Wir sind nicht, und wenn, dann nur selten und dabei kaum, in der Lage, eine Beziehung, die zwischen zwei Dingen, zwischen zwei Wesen waltet, rein aus ihr selbst her zu erfahren. Wir stellen uns die Beziehung sogleich von den aus vor, was jeweils in der Beziehung steht. Wir sind wenig darüber verständigt, wie, wodurch und woher sich die Beziehung ergibt und wie sie als diese Beziehung ist.</u> (We are not in a position, except perhaps rarely and scarcely, to experience [erfahren] the relation that reigns between two things, between two wefts, purely from out of itself. We immediately represent the relation in terms of what stands within it. We understand little concerning how, through what, and from where the relation gives itself, and how it is as this relation.) [US, 188].</blockquote>
+
+The tendency of Dasein to represent itself as commensurate with beings at hand (<u>Vorhandensein</u>) which is so crucial to the hermeneutics of <u>Sein und Zeit</u> has become displaced into the more austere - and even more radically depersonalized - thought of difference being represented, and thus obscured, through what is differentiated by it.
+
+The implications of Heidegger's employment of <u>verlassen</u> cannot be exhausted within the terms of a strategy proper to his own essay, since its referential effects are of labyrinthine complexity. It is by following the textual drift of this sign that an otherwise scarcely visible complicity between Heidegger and Trakl in respect of the marks of writing becomes detectable. Such a pursuit may be guided first by a prose piece of Trakl's entitled <u>Verlassenheit</u>, a text Heidegger does not refer to in the 1953 essay (or elsewhere).
+
+Few would contend that this text is comparable to the prose poems that were published in Trakl's lifetime, in terms of distinctiveness of
+
+<p class="pn">\- 70 -</p>
+
+imagery or technical inventiveness and dexterity. It tends to evoke the somewhat forced mournfulness of a decadent romanticism. However, despite a certain nostalgic indulgence, and below its somewhat mannered plaintiveness, this early text exhibits a more exuberant morbidity, Baudelairean perhaps, and free of cliché. As when describing lilies in the waters surrounding a castle: <u>Und wenn die einen dahinsterben, kommen andere aus der Tiefe. Und sie sind wie kleine, tote Frauenhände.</u> ("And when some perish, others come out of the deep. And they are like small, dead women's hands.") [T, 121].
+
+<u>Verlassenheit</u> is divided into three sections. It is written with a passive dreamlike descriptiveness that is both countered and re-iterated by the strangely inert actions of the castle's inhabitant, the Count (<u>Graf</u>) in the final paragraphs. The whole piece is subtly undulating due to alternations of tempo, <u>rhythmischer Bewegungen</u> (rhythmic movements) [T, 120]. Sudden punctual exclamations break the limpid surface of the text, and quickly recede into the torpor of an almost unchanging - but unmistakably entropic - backdrop: <u>Und dann versinkt der Park wieder in seinen Todesschlaf.</u> ("And then the park sinks back into its death-sleep.") [T, 120]. The sections are also bound together by the repetition of imagery, often in identical formulations, this adds to the sense of detachment and reverie, as well as to the atmosphere of oppressive ennui. The first two sections end with the line: <u>Und alles durchdringt das Schweigen der Verlassenheit.</u> ("And the silence of abandonment permeates everything.") [T, 120-1]. This line also concludes the third section, but with the phrase appended to another sentence, and modified by a re-arrangement of word-order, and also by the addition of the word <u>wieder</u>
+
+<p class="pn">\- 71 -</p>
+
+('again')\*. A provocative resonance between this text and Heidegger's seems simply to result from consistencies within Trakl's works. In a short paragraph towards the end of the first section there is a discussion of the past: <u>Hier ist sie eines Tages erstarrt in einer einzigen, verzerrten Rose. An ihrer Wesenlosigkeit geht die Zeit achtlos vorüber.</u> ("Here it [the past] is solidified one day in a single, distorted rose. Time passes heedlessly over its unwovenness.") [T, 120]. The word <u>Wesenlosigkeit</u> points towards <u>Verwesung</u>, which is to play an enormously important role both in Trakl's later poetry and in Heidegger's interpretation of it. It is also clear that the temporal dimension of <u>Wesen</u>, which is powerfully stressed by Heidegger (but which cannot be captured in translation), is already being thought by Trakl in these lines. There will be nothing 'arbitrary' in reading Trakl alongside a history of determinations of time.
+
+If the loss of coherence is in some sense a designation of temporality, it is also tied to a certain metaphorics of life. The park is a single gigantic <u>Lebewesen</u> ('weft of the living' or 'life-form'). What is most important to us about this last strand of the text is the way it intertwines with the castle, an organized but inorganic (and disintegrating) mass. This mass is first depicted in the second paragraph of the first section, overshadowing waters that appear <u>abgründlich</u> (abyssal):
+
+____________________
+\* Echoes of this line and its thought of total pervasiveness reverberate in Heidegger's discussion of the site, where: <u>Das Versammelnde durchdringt und durchwest alles.</u> ("The gathering permeates and is interposed into everything.") [US, 37].
+
+<p class="pn">\- 72 -</p>
+
+<blockquote><u>Inmitten des schweigsamen Teiches ragt das Schloß zu den Wolken empor mit Spitzen, zerschlissenen Türmen und Dächern. Unkraut wuchert über die schwarzen, geborstenen Mauern, und an den runden, blinden Fenstern prallt das Sonnenlicht ab. In den düsteren, dunklen Höfen fliegen Tauben umher und suchen sich in den Ritzen des Gemäuers ein Versteck.</u> (In the middle of the pond the castle towers upwards to the clouds, with pinnacles, deteriorated towers and roofs. Weeds proliferate over the broken black walls, and sunlight glances off the round, blind windows. Doves fly about in the dark and gloomy courtyards, seeking a hiding-place for themselves in the cracks of the wall.) [T, 119].</blockquote>
+
+The deterioration of the castle is indissolubly associated with the proliferation of a vegetable life that is either a cause or symptom of its decay. The walls have broken or burst, victims of a destructive force. A blinding cataract, which has presumably grown across its windows, shelters it from the impact of the sun's energy. For the doves of the courtyards, too, the process of disintegration provides shelter and concealment. The encroachments upon, and breachings of, the castle are not characterized by a 'ruination' (from the Latin <u>ruere</u>, to fall) since the metaphorics of vertical aspiration (<u>ragen</u> [to tower], <u>Spitzen</u> [pinnacles]) are not compromised or counteracted. A more complicated conspiracy between deterioration and vitality is indicated, a knitting of life and death.
+
+The interlacing of life and death within the thematic of abandonment reaches a climax in the final section of <u>Verlassenheit</u>, in which the life of the Count is 'related' to temporality and the text:
+
+<blockquote><u>Wenn es Abend wird, zündet er seine alte, verrußte Lampe an und liest in mächtgen, vergilbten Büchern von der Vergangenheit Größe und Herrlichkeit. / Er liest mit fieberndem, tönendem Herzen, bis die Gegenwart, der er nicht angehört, versinkt. Und die Schatten der Vergangenheit steigen herauf - riesengroß. Und er lebt das Leben, das herrlich schöne Leben seiner Väter</u> (When evening comes, he</blockquote>
+
+<p class="pn">\- 73 -</p>
+
+lights his old sooty lamp and reads in mighty, yellowed tomes of the greatness and magnificence of the past. / He reads with feverish, resounding heart, until the present, to which he does not belong, sinks away. And the shadows of the past loom - vast. And he lives the life, the magnificently beautiful life of his fore-fathers.) [T, 121-2].
+
+The Count lives the paradox of the sign, reproduced but inert, both sustained and abandoned by a vitality perpetually sinking into mechanical repetition. Through the textualization of life, the Count retreats from the present, haunted by ancestral traces. The wave of the past floods from ancient books, to be met by a violence from without:
+
+<blockquote><u>In Nächten, da der Sturm um den Turm jagt, daß die Mauern in ihren Grundfesten dröhnen und die Vögel angstvoll vor seinem Fenster kreischen, überkommt den Grafen eine namenlose Traurigkeit.</u> (In nights, when the storm hunts about the tower, that the walls rumble in their foundations and birds anxiously screech before his window, a nameless melancholy overcomes the Count.) [T, 122].</blockquote>
+
+The tower is still being written even in its decadence, insulating a space of memory from the forces of the storm. The written trace comes both from the most interior heart of meaning and from the most exterior source of frenzied destructiveness. It is possible that these positions are not simply opposed. The wall separating the melancholic reflections of the Count from the wild howling of the elements is scratched and fractured, but cradles a delicate inner scription. It has to be thought more subtly than in terms of crude dichotomies or limits.
+
+All my questions in this thesis are perhaps, in the end, a matter of walls. The walls traversing and bisecting Trakl's poems for instance, bursting with violets [T, 54] or with leprosy [T, 41]. Walls separating an inside from an outside (since leprosy is that <u>Aussatz</u> which sets one
+
+<p class="pn">\- 74 -</p>
+
+outside), thinker from poet, or metaphysics from its other(s). The wall provides a surface upon which <u>shadows</u> can be cast [T, 28, 33, etc.] or <u>colours</u> can be spread [T, 38, 40 etc.], it is the positive boundary upon which any <u>schematism</u> - gathering two demarcated regions to each other - would have to be written. But here we must be careful, because Trakl's walls do not transcendentally unify what has been empirically sundered (thus sublimating a conjugation), nor do they protect the integrity of a civilized subject from the ravages of bestiality, madness, and incest. Trakl's walls participate in the state of desolation that spreads throughout the poems, they are typically in ruins, and transected by chaotic conjugations.
+
+If there is a problematic of synthesis, gathering, or integration to be faced in the reading of Trakl it is not one of sober reflection upon limits or demarcations. The boundaries of and within Trakl's poetry are already in ruins. Heidegger might have good reasons, therefore, for ignoring the wall in his interpretation, and focusing instead (as he does during his reading of Trakl's <u>Ein Winterabend</u> in <u>Die Sprache</u> [US, 26-81])
+
+____________________
+\* It is upon the wall that Trakl often depicts the dilapidation which is so characteristic of his poetry, in <u>Menschliches Elend</u> ('Human Misery') <u>Gebeine durch verfallne Mauern schimmern</u> ("Bones glimmer through ruined walls") [T, 37]. In <u>Helian</u>, <u>Verfallen die schwarzen Mauern am Platz</u> ("The black walls in the square fall to ruin"). In <u>Sebastian im Traum</u> ('Sebastian Dreaming') Trakl writes of <u>die verfallene Mauer der Stadt</u> ("the ruined city wall"). Even in <u>Im Frühling</u> ('In the Spring'), where violets bloom by the wall it is <u>an verfallener Mauer</u>.
+
+<p class="pn">\- 75 -</p>
+
+on the 'threshold' (<u>die Schwelle</u>) or unstable boundary. The limit is a point of conjugation rather than a disjunction. Thus it is that the wave is not an abandonment, as Heidegger insists [US, 37], acknowledging the default of demarcation or rigorous distinction. The wave's surge breaches the network of dikes and channels that would determine the site of the poem; pouring through every barrier or exclusion with an irresistible power of repetition. For it is repetition which is the counter-concept (or one alternative concept) to renunciatory abandonment in Heidegger's discussion of the wave. It is what Kant terms the 'reproductive synthesis' in repetition that defies all negative determination in traversing the boundary. As I shall attempt to indicate in the following section, it is repetition that is at work when the wave flows over the wall, transforming demarcations of essence into differentials of fluctuation; categorization into rhythm.
+
+____________________
+\* For the 'petrified threshold' (<u>versteinerte Schwelle</u>) in Trakl's poems see, in addition to <u>Ein Winterabend</u> [T, 58] the eighteenth line of <u>Gesang des Abgeschiedenen</u> ('Song of the Departed One') [T, 79]. For petrifying pain see the first and second versions of <u>Nächtliche Klage</u> [T, 184] (line three of both) and <u>Klage I</u> [T, 93] line nineteen.
+
+____________________
+† Rather than there being a 'schema' which draws the wall into the wave, the two co-exist only within a state of desolation; an iciness common to both. The wall is cut across by an icy wind in a poem from Trakl's <u>Siebengesang des Todes</u> ('Seven Songs of Death'); <u>Anif</u>, which speaks of <u>ein eisiger Wind an den Mauern des Dorfs</u> ('an icy wind at the town's walls'). I shall discuss the iciness of the wave in the following section.
+
+<p class="pn">\- 76 -</p>
+
+### The Rhythm of Type
+
+In section 84 of <u>Die Fröhliche Wissenschaft</u> Nietzsche raises some questions about poetry, a type of language he calls the <u>Rhythmisierung der Rede</u> (<u>Rhythmizing of discourse</u>) [Sii, 92]. He attempts to find the subterranean source of the value of poetry, and asks: How is it possible that the rhythmic re-ordering of language, which seems to degrade its communicative function, can be seen as useful? He first indicates that the utility of rhythm is superstitious (<u>abergläubisch</u>), it is a means of seducing a god. The path to this superstition, however, traverses the body, stemming from the discovery that rhythmic discourse is printed more indelibly upon (or as) the memory. Rhythm is felt to be overpowering, compelling, and ultimately tranquillizing, and hence a potential instrument of mastery. Music and poetry are grasped primordially as force (<u>Kraft</u>), and in a remark that could be Freud's Nietzsche writes: <u>der Rhythmus ist ein Zwang</u> (rhythm is a compulsion) [Sii, 93].
+
+Rhythm has a mnemotechnical power because it engenders an irresistible desire to consent to it, that is, participatively to attune (<u>einstimmen</u>) oneself to it. It imprints itself as a contagion does, replicating itself within and between bodies. And because rhythm is nothing other than the seductiveness of coming-back it is the energetic basis of recollection; the general condition of all those specific processes summarized as memory. The memorableness of rhythm is not an extrinsic property appended to it, since it is inherently self-supplementing, or reiterating. The memory of rhythm is itself only the protraction of rhythm (one more time, or - as Nietzsche repeatedly says - <u>noch einmal</u>) the compulsion of return. But this inscriptive element of rhythm is in
+
+<p class="pn">\- 77 -</p>
+
+a profound relation with a dissipative element, which has a tendency towards the discharge of intensities. The investment of rhythm is eventually draining, it exhausts the force which it intoxicates. Thus it is that Nietzsche suggests:
+
+<blockquote><u>alle orgiastischen Kulte wollen die ferocia einer Gottheit auf einmal entladen und zur Orgie machen, damit sie hinterher sich freier und ruhiger fühle und den Menschen in Ruhe lasse. <i>Melos</i> bedeutet seiner Wurzel nach ein besänftigungsmittel, nicht weil es selber sanft ist, sondern weil seine Nachwirkung sanft macht.</u> (all orgiastic cults want to discharge the <u>ferocia</u> of a deity at once into orgy, so that it afterwards feels itself freed and restful, leaving humanity in peace [<u>Ruhe</u>, rest]. From its root <i>Melos</i> signifies a means of tranquillization, not because it is itself gentle, but rather because it after-effects make one gentle.) [Sii, 93].</blockquote>
+
+Nietzsche's thought of rhythm, like Freud's death drive, participates simultaneously in the problematics of repetition and rest. Repetition is even taken to be the path to rest, oscillating confusingly towards its own annulment. In Freud's work this relation remains enigmatic and thought provoking, despite hasty and simplistic appropriations (even of his own) which might suggest otherwise. Repetition is not merely the form according to which rest is modelled by desire, it is inherently sculpted by rest, or inertia. It is the deep implication of the Nietzschean-psychoanalytical project, therefore, that neither rest nor repetition can be rigorously thought in isolation from the other. At the very least their conjunction would not be logically accidental. This is an interpretation Heidegger seems to share, since in his essay <u>Das Wort</u> ('The word') from <u>Unterwegs zur Sprache</u> he writes:
+
+<blockquote><u>Rhythmus, ῥυθμός, heißt indes nicht Fluß und Fließen sondern Fügung. Der Rhythmus ist das Ruhende, das die Be-wegung des Tanzens und Singens fügt und so in sich beruhen läßt. Der Rhythmus verleiht die Ruhe.</u> (Rhythm, <u>ῥυθμός</u>, means, however, not flux or flowing but construction. Rhythm is what rests, which constructs the movement of dance and song,</blockquote>
+
+<p class="pn">\- 78 -</p>
+
+<blockquote>and thus lets them rest in themselves. Rhythm lends rest.) [US, 230].</blockquote>
+
+The word <u>Fügung</u> is of enormous importance to Heidegger's writings on language. It is a derivative noun from the verb <u>fügen</u> meaning to order or ordain, but also to comply (ordering oneself in accordance with). <u>Fügen</u> is related to the word <u>Fuge</u> which means joint or crack (<u>Riß</u>), and derives from the Old High German <u>fuogan</u> meaning to 'bind'. <u>Fügung</u>, however, also refers to the order of chance or fate; to the way things 'turn out' irrespective of design. Rhythm both orders dancing and singing, and is that which is fateful within them.
+
+Heidegger's introductory discussion of the wave, which is only supplemented in the body of the essay by the most tentative and insubstantial of hints, culminates in a kind of symptomatology. The 'factical concretion' of the wave, its signature, is to be detected in 'something' which has been conceptually apprehended in the West as rhythm. It seems as if certain traditional characteristics of the poem are to be interpreted as an interface between a primordial and a derivative order of time: <u>Der Ort des Gedichtes birgt als die Quelle der bewegenden Woge das verhüllte Wesen dessen, was dem metaphysisch-ästhetischen Vorstellen zunächst als Rhythmus erscheinen kann.</u> (The site of the poem conceals as the source of the moving wave the veiled composition of that which is able to appear to metaphysical-aesthetic representation as rhythm.) [US, 38]. In order to pursue the implications of this single provocative sentence, it is necessary to think, simultaneously and rigorously, both the metaphysical-aesthetic conception of rhythm, and the difference which displaces it towards the wave. A striking peculiarity immediately arises, however, since even the metaphysical sense of rhythm seems to be exiled from Heidegger's text. At no stage in his reading is there any reference to the elements in Trakl's writings that would be aesthetically apprehended as 'poetical structure', except for glancing comments on
+
+<p class="pn">\- 79 -</p>
+
+grammatical construction, and these are apparently guided by purely semantic or theoretico-hermeneutical considerations. Indeed, the architecture of Trakl's texts is not only ignored, it is violently decomposed, and re-ordered according to the exigencies of a 'thinking dialogue'. And it is precisely this dialogue, ambiguously participating in - or negotiating with - a certain 'Platonism', which might seem to programme the exclusion of graphico-architectural considerations from the reading.
+
+What would it be to focus on the rhythmic elements of Trakl's poetry? The conventional approach of Western poetics is to formulate a typology of metrical forms and then to allocate particular textual examples to places within such a typology. There are many reasons why Heidegger cannot adopt such a method, predominant among them being that 'type' itself is a crucial problem for the essay and not an untheorized methodological resource, and that Trakl's poetry is itself largely (and increasingly) taken up into a programmatic dissolution of poetical forms. Heidegger's essay is, indeed, a forceful repudiation of typological rationality. Perhaps even more destructively Heidegger's reading suggests an ultimate dependence of type upon 'rhythm', so that the metrics of language - far from being an object of typology - would be a deteriorated symptom of that which is the 'material' precondition of any possible science of types. And this is perhaps the route to a far more sophisticated approach to rhythm; an investigation into the 'foundations' of typological/typographical order. The word that has become most inextricable from this project is <u>Geschlecht</u>.
+
+Before displacing the problematic of rhythm, a naïve question remains to be asked under its familiar rubric: what is it that opens and conditions the traditional distinction between metrics and semantics? Or, in other words: where is the inscription of that difference which generates the space of the
+
+<p class="pn">\- 80 -</p>
+
+metaphysical-aesthetic study of metrics? If we cannot bring the the thoughts of 'sense' (or 'meaning') and 'rhythm' together, Heidegger's attention to either of these 'aspects' of the poem will seem quite arbitrary in respect of the other. Heidegger seems to urge such a question by subverting the conception of rhythm as extrinsic form, but the issue remains intractable, even after the widespread deployment of deconstructive procedures that have displaced many apparently similar interpretive binarities. The differences whose deconstruction constitutes the mark of differance - the difference between signifiers, between signifier and signified, between writing and speech etc. - do not obviously seem to function as displacements of the opposition of metrics to semantics. Differance, as the 'object' of graphematics, is constituted by a rigorous differentiation of writing from the traditional concept of speech. Within the terms of Derrida's grammatology (phonetic) writing is determined as the representation of representation, the sign of the sign. Beginning with this determination, which in Derrida's work is only the provisional moment of inversion, it is possible to consolidate certain principles regarding both the theoretical shift in the paradigm of language
+
+____________________
+\* Whilst discussing the late Hölderlin fragment beginning <u>In lieblicher Bläue</u> ('In lovely blue'), and focusing on the phrase <u>Giebt es auf Erden ein Maß?</u> ("Is there a measure on earth?") Heidegger says of calculative measurement: <u>Dieses Vermessen hat sein eigenes μέτρον und deshalb seine eigene Metrik</u> ("This measurement has its own <u>μέτρον</u> and therefore its own metrics") [VA, 190]. Poetic rhythm calls for a more fundamental encounter than can be provided by any metrical calculation, however, since <u>Im Dichten ereignet sich, was alles Messen im Grunde seines Wesens ist.</u> ("In poetry that propriates itself which all measuring is in its basic weave") [VA, 190]. For this whole issue see D.F. Krell's essay 'The Wave's Source: Rhythm in the Language of Poetry and Thought'.
+
+<p class="pn">\- 81 -</p>
+
+from speech to writing, and the transformative processes involved in the profound historical project of phoneticization. Such a procedure takes as its starting point the contention that the 'representation' of speech is simultaneously its decomposition, which is to say, the analytical specification of its constitutive elements:
+
+<blockquote><u>Celui qui écrit dans l'alphabet n'imite même plus. Sans doute aussi parce qu'il imite, en un sens, parfaitement. Il a plus de chance de reproduire la voix puisque l'écriture phonétique la décompose mieux et la transforme en éléments abstraits et spatiaux. Cette dé-composition de la voix est ici à la fois ce qui la conserve et ce qui la corrompt le mieux.</u> (He who writes in an alphabet no longer imitates. Doubtlessly because he also imitates, in a sense, perfectly. He has more chance of reproducing the voice because phonetic writing decomposes it better and transforms it into abstract and spatial elements. That de-composition of the voice is simultaneously that which conserves and corrupts most completely.) [DG, 159].</blockquote>
+
+There is no 'phoneme' prior to the graphic duplication and typification of the components of speech. The phoneticization of writing, therefore, dissects and displaces speech at the same time, and with the same movements, as it institutes the mastery of the voice. It is a process which stratifies the phonic 'signifier'; precipitating a limited series of sub-semantic phonic elements out of integrated signs, and codifying these as an alphabet. It is this complex of interrelated processes that Derrida summarizes in the term <u>décomposition</u>; a word that translates the German <u>Verwesung</u>.
+
+The isolation of metrical structure in an instance of language is dependent upon the precipitation of component and compound strata out of the semiotic medium, most markedly in the precipitation of letters (as the resource of any rigorous syllabification) from out of words (as signifying unities). The implications of this aspect of phoneticization can only be grasped when the
+
+<p class="pn">\- 82 -</p>
+
+thoroughgoing atomism of the linguistics of the signifier is taken into account. Such atomism is underpinned by the theoretico-historically crucial notion of 'arbitrariness', which radically brackets and excludes all questions concerning the compositional characteristics of the sign. In a far-reaching sense the shift in the focus of research announced by Derrida, from the phoneme to the phono-grapheme - or occidental written compound - is a movement into 'sub-atomic' semiotic investigation. Even the most superficial graphematic study makes it impossible to conserve the conceptuality of a linguistics which is based upon the model of a synthesis between a signifier and a signified, where each is thought as an undecomposable element of pure systematic disjunction. The irruption of rhythm as a thematic concern is so deeply interconnected in principle with the disintegration of the thought of the signifier that no rigid order of precedence can be established between these two disruptive interventions into the thought of 'the sign'. The most accessible - and for substantial ethno-historical reasons even 'exemplary' - dimension of this relationship might best be caught in the suggestion that rhythm negotiates the difference between the word and the letter, a thematic I shall return to in parts III and IV of the thesis.
+
+The wave of eternity is also icy (<u>eisig</u>, frozen, like the glaciers whose <u>blaue Woge</u> (blue wave) Trakl writes of in the poem <u>Die Nacht</u>. Trakl also writes of the 'crystal wave' (<u>kristallne Woge</u>) [T, 87], following a coinage of Novalis' from <u>Hymnen an die Nacht</u> [N, 57]. The distance between these names is not great, since the German word <u>Kristall</u> derives from the Greek <u>krystallos</u> meaning ice. Crystallization and freezing are not necessarily to be distinguished. If a technical terminology were appropriate to such an image it might be said to indicate the suspension of a dynamic potential, a process which inhibits the actualization of movement. The icy wave of eternity is the
+
+<p class="pn">\- 83 -</p>
+
+movement at - and of - the end(ing) of movement. It is the animation of death.
+
+Because the thought of the icy wave of eternity negotiates on so many levels with that of transience, it is natural that Heidegger should take it as the crucial resource for placing Trakl's poetry in relation to the ontotheological tradition. As a largely inexplicit theme the figure of this wave orchestrates the general task of 'situating' Trakl throughout the essay, but as a specifically referenced phrase the <u>einige Woge der Ewigkeit</u> does not serve to focus Heidegger's reading, but is whelmed in a flood of defiant questions:
+
+<blockquote><u>Ein Urteil über die Christlichkeit des Traklschen Gedichtes müßte vor allem seine beiden letzten Dichtungen 'Klage' und 'Grodek' bedenken. Er müßte fragen: Warum ruft der Dichter hier, in der äußersten Not seines letzten Sagens, nicht Gott an und Christus, wenn er ein so entschiedener Christ ist? Warum nennt er statt dessen den 'schwankenden Schatten der Schwester' und sie als die 'grüßende'? Warum endet das Lied nicht mit dem zuversichtlichen Ausblick auf die christliche Erlösung sondern mit dem Namen der 'ungebornen Enkel'? Warum erscheint die Schwester auch in der anderen letzten Dichtung 'Klage'? Warum heißt 'die Ewigkeit' hier 'die eisige Woge'? Ist das christlich gedacht? Es ist nicht einmal christliche Verzweiflung.</u> (A judgement about the christianity of Trakl's poetry must consider above all else his last two poems 'Plaint' and 'Grodek'. It must ask: why does the poet here, in the outermost need of his last saying, not call to God and Christ, if he is so decidedly a christian? Why, instead of this, does he name the 'hovering shadow of the sister' and call her the 'one who greets'? Why does the song not end with the confident prospect of christian redemption, but rather with name of the 'unborn grandson'? Why does the sister also appear in the other of the last poems 'Plaint'? Why is 'eternity' here called 'the icy wave'? Is that thought in a christian manner? It is not even christian despair.) [US, 76]</blockquote>
+
+Heidegger is not only suggesting that the icy wave of eternity is unrecognizable as a christian image, but also that this image substantively
+
+<p class="pn">\- 84 -</p>
+
+resists the christian path of departure from transience. Trakl's language does not reverse such a departure - far from it, since both the eternity and the frozenness of the wave detract from its transience - but the eternity of the icy wave does not stem from superterrestriality and timelessness. It is frozen or suspended in a process of becoming. It is not only a matter of a becoming that is frozen, but of the freezing as a becoming, or in all its divergent senses becoming-frozen. If eternity is an icy wave, and this if eternity is not instituted as the negation of time, then the suspension of motion is not only a species of intra-temporal becoming, but the paradigm of becoming in general. Eternity is not thought in this manner as the negation of time, but as its excess, or the measure of its differentiation. Time eternalizes itself in the replication of its difference from itself. In the re-engendering of itself the wave is only frozen, and therefore eternalized, as the unending possibility of redeparture. When the negation of transience is resisted by the demand for a perpetual redeparture another eternity is opened in the heart of becoming, an excess of time that has been given the (slightly) more familiar name 'the eternal recurrence of the same'.
+
+The icy wave is eternalization as temporal process, and it is the undulation which both binds and differentiates word and letter. These profound themes are developed within the essay in two complex interacting movements: the first is that of the stranger, death, and of turning-home as remigration; the second is that of <u>Geschlecht</u>, the question of etymology, the sister, and of the architectonics of type. In pursuing these themes within the two succeeding divisions of my thesis I shall remain, therefore, beneath the overarching thought of the wave.
+
+<p class="pn">\- 85 -</p>
+
+## Part Two: Something Strange in the Soul on Earth
+
+
+<blockquote><i>Reinheit! Reinheit! Wo sind die furchtbaren Pfade des Todes,<br>
+Des grauen steinernen Schweigens, die Felsen der Nacht<br>
+Und die friedlosen Schatten? Strahlender Sonnenabgrund.<br>
+<br>
+Schwester, da ich dich fand an einsamer Lichtung<br>
+Des Waldes und Mittag war und groß das Schweigen des Tiers;<br>
+Weiße unter wilder Eiche, und es blühte silbern der Dorn.<br>
+Gewaltiges Sterben und die singende Flamme im Herzen.<br>
+<br>
+Dunkler umfließen die Wasser die schönen Spiele der Fische.<br>
+Stunde der Trauer, schweigender Anblick der Sonne;<br>
+Es ist die Seele ein Fremdes auf Erden.</i><br>
+<br>
+[T, 77-8]</blockquote>
+
+<p class="pn">\- 86 -</p>
+
+### One: Abyss of the Sun
+
+The main body of the essay begins abruptly with a phrase from Trakl, taken from the poem <u>Frühling der Seele</u>, a poem which will also provide its closing lines: <u>Es ist die Seele ein Fremdes auf Erden.</u> (Something strange is the soul on earth.) [T, 78]. This line alone is repeated six times during the essay, providing an almost continuous theme, or refrain, or rhythmic linkage. And almost equally abruptly we encounter the peculiar reading strategy which is to characterize Heidegger's 'thinking dialogue', since this phrase is taken to have a certain Platonism as its most immediate or vulgar connotation. The first interpretative 'code' to be advanced is therefore philosophical, but this word must be understood as bearing a distinctively ethno-historical weight, and, therefore, as fundamentally compromised in regard to any supposed universality.
+
+The issues engaged during the discussion of this fragmentary utterance are to be of a such scope that the entire history of western philosophy comes into question, as a coherent, and specifically organized, totality. This is because the varieties of transcendence which have been, implicitly or explicitly, demarcated as the only possible positions from which philosophy can be legitimated are (according to Heidegger's reading) radically put at hazard in Trakl's text. Absolute abstraction from the terrestrial, which has traditionally been taken as the opening of the space of philosophical judgement, is consumed in an uncontrollable and indeterminable abyss of non-conceptual differentiation. This unmasterable dispersion does not lead to a paralysis or neutralization of thought, however, but for the first time connects philosophy with the processes of a more profound regime: that of the
+
+<p class="pn">\- 87 -</p>
+
+graphic specifities underlying each and every system of signification. To follow this process leads into the vortex of our most intractable contemporary perplexities.
+
+The importance of <u>Frühling der Seele</u> for framing Heidegger's entire discussion or 'situation' of Trakl is acknowledged by Veronique Foti in her essay 'Situating Heidegger Situating Georg Trakl', since this text is also nucleated upon a sensitive reading of this poem. Foti draws attention to the term <u>Sonnenabgrund</u> ('abyss of the sun') from the lines:
+
+<blockquote><u>Reinheit! Reinheit! Wo sind die furchtbaren Pfade des Todes, Des grauen steinernen Schweigens, die Felsen der Nacht Und die friedlosen Schatten? Strahlender Sonnenabgrund.</u> (Purity! Purity! Where are the fearful paths of death, / Of horrific petrified silence, the crags of night / And the shadows without peace? Radiant abyss of the sun.) [T, 77]</blockquote>
+
+The imagery is very similar to that of Nietzsche's <u>Also Sprach Zarathustra</u> when in the section entitled <u>Vor Sonnen-Aufgang</u> ('Before sunrise') Zarathustra names the sky a <u>Licht-Abgrund</u> ('Abyss of light'). This usage of the notion of 'abyss' is close to the classical or Hesiodic thought of chaos as the yawning gulf of the sky. Foti associates this term with the incestual crisis in the fourth stanza, "clearly the heart of the poem" [SH, 24]:
+
+<blockquote><u>Schwester, da ich dich fand an einsamer Lichtung Des Waldes und Mittag war und groß das Schweigen des Tiers Weiße unter wilder Eiche, und es blühte silbern der Dorn. Gewaltiges Sterben und die singende Flamme im Herzen."</u> (Sister, when I found you in a solitary clearing of the woods,/ It was midday, and great was the silence of the animals,/ White under wild oaks, silver blossomed the thorn,/ Mighty perishing and singing flame in the heart.) [T, 78].</blockquote>
+
+In this stanza, writes Foti,
+
+<blockquote>the protagonist glimpses in the enchanted space of solitude ... the</blockquote>
+
+<p class="pn">\- 88 -</p>
+
+<blockquote>sister who, as another self, introduces alterity into the self and yet shows the sameness of the other ... The moments of alterity and of sameness keep referring one to the other in an unstillable play which is corrosive and, indeed, abyssal. [SH, 25].</blockquote>
+
+Perhaps it is possible to specify further the complex intertwining of self and other, incest and chaos. It certainly remains to ask whether the abyss, opened by the unwinding of identity, is a final obstacle, the collapse of thought into a nihilism beyond which no further step is possible. Or whether it is a provocation to descent, and even to an accelerated cycle of rumination. For Heidegger the directives of thinking retain their pertinence, and his reading of <u>Frühling der Seele</u> is propelled by the prehension of the same:
+
+<blockquote><u>Der Abgeschiedene schaut in die Bläue der geistlichen Nacht voraus. Die weißen Lider, die sein Schauen behüten, erglänzen im bräutlichen Schmuck, der die sanftere Zwiefalt des Geschlechtes verspricht. / Stille blüht die Myrthe über den weißen Lidern des Toten. / Dieser Vers gehört in dieselbe Dichtung, die sagt: / 'Es ist die Seele ein Fremdes auf Erden.' / Beide Sätze stehen in unmittelbarer Nachbarschaft. Der 'Tote' ist der Abgeschiedene, der Fremde, der Ungeborene.</u> (The departed one gazes ahead into the blue of the spiriting night. The white eyelids, which protect his gaze, shine with bridal embellishment, which befits the gentle twofold of the genus. / 'Silently blossoms the myrtle over the white eyelids of the dead.' / This verse belongs in the same poem which says: / 'The soul is something strange on earth.' / Both sentences stand in immediate neighbourhood. The 'dead one' is the departed one, the stranger, the unborn one.) [US, 55].</blockquote>
+
+Heidegger begins with the characterization of a certain historical 'effectivity' of Trakl's statement. It produces for 'us' a single definite 'representation'. This representation is not only an instance of metaphysics, it is definitive for metaphysics. It represents the difference between 'earth' and 'soul' as infinite, qualitative, and essential. The soul's relation to the earth is a
+
+<p class="pn">\- 89 -</p>
+
+hierarchical one, since the latter is described as 'superterrestrial' or 'over-earthly' in its genesis and destination. This difference corresponds to a similarly radical discrimination between a realm of transience and one of permanence. The German terms for these temporal domains are distinguished by the simple negative prefix '<u>Un-</u>':
+
+<blockquote><u>Unversehens finden wir uns bei diesem Satz in einer geläufigen Vorstellung. Sie stellt uns die Erde als das Irdische im Sinne des Vergänglichen dar. Die Seele gilt dagegen als das Unvergängliche, Überirdische.</u> (Unexpectedly we find ourselves by [means of] this statement in a current representation. It portrays the earth as the earthly in the sense of the transient. Against this, the soul is counted as the non-transient [or im-mutable], over-earthly.) [US, 39-40].</blockquote>
+
+Our spontaneous reading of Trakl's phrase would understand it as the re-affirmation of the rigidly oppositional relation between soul and earth. The 'common sense' of such a naïve reading would be Platonic metaphysics. There is a hierarchy of earth and soul which regiments all desire into a binary structure; the sublimation of eros into the sophia of philosophy. The dynamics of desire - the longing to depart, to fly - is channelled towards only one permitted destination. According to such a schema there can be no improvement upon the finite other than the leap to the infinite, or in Nietzsche's words:
+
+<blockquote><u>Müdigkeit, die mit einem Sprunge zum letzten will, mit einem Todessprunge, eine arme unwissende Müdigkeit, die nicht einmal mehr wollen will: die schuf alle Götter und Hinterwelten.</u> (Weariness, that wants to reach the ultimate with one leap, with a death-leap, a poor ignorant weariness, that does not will to will further: that created all gods and afterworlds.) [Sii, 298].</blockquote>
+
+Every transition or nomadic path becomes a line of rejection, infected by negativity. The great migrations take on a sickly, religious hue. The adventures of the intellect are twisted into a vicious war against the body.
+
+<p class="pn">\- 90 -</p>
+
+Heidegger suggests that within such an interpretation the temporality of transience that characterizes the earth is thought as 'decomposition' or 'unweaving' (<u>Verwesung</u>). It is this word, the 'supplemented' version of the German <u>Wesen</u> (which is conventionally translated as 'essence'), that is the most 'automatic' (primordially corrupted or decomposed) name for 'immanent' or terrestrial time. The transient earth is not only thought, but also fundamentally constituted for philosophy, as the decay of pure intelligible essence.
+
+In a manner that is typical of his interpretative strategy, Heidegger first unfolds a reading of Trakl's phrase which ironizes the history of reading itself:
+
+<blockquote><u>Ein 'Einsames', 'ein Fremdes' könnte etwas Vereinzeltes meinen, das von Fall zu Fall 'einsam', das zufällig, nach einer besonderen und beschränkten Hinsicht 'fremd' ist. 'Fremdes' dieser Art läßt sich in die Gattung des Fremden überhaupt einordnen und dahin abstellen. So vorgestellt, wäre die Seele lediglich ein Fall des Fremden unter anderen Fällen.</u> ('A solitary', 'a stranger' could mean something singular that is in some cases 'alone', or is to a special and limited regard 'strange'. 'Something strange' of this type lets itself be classified within the species of the strange in general and thus disposed of. Represented thus, the soul would be merely one case of the strange among other cases.) [US, 40-41].</blockquote>
+
+This vulgar interpretation has two major axes, since it is construed as a possible reading both of the syntax of the sentence and the sense of the word <u>fremd</u>. The term <u>Fremdartigen</u> indexes the issue of syntax, because it indicates that the soul is being classified as one element among others within the genus or kind (<u>Art</u>) of the strange, as if strangeness were an additional property to be appended by the predication of an adjective to the already fixed meaning of 'soul', at least when this entity finds itself accidentally deposited on the
+
+<p class="pn">\- 91 -</p>
+
+earth. The word 'soul' is thus treated as a noun which is dropped into a sentence from a prior site in which its meaning was already secure (a celestial dictionary or system of star signs perhaps). This reading takes the sentence to consist of three elements; the soul, which is the subject of the sentence; strangeness, which is predicated of the soul; and being upon the earth, which qualifies the predication. The implication of this syntactical construal is that the soul would be at home if it were not upon the earth. All the terms derive their meaning from somewhere other than their mutual interaction, so that, for instance, the conception of soul (as Descartes explicitly thought) is possible independently of any mundane contribution. This simple syntactical construction is, therefore, already steeped in metaphysics, since it supposes both a textually transcendental origin of meaning, and a semantic spontaneity and autonomy of all terms.
+
+A bifurcation into syntactical and semantic problems might, nevertheless, be overhasty, since what is at stake in both is really a single problem. What the interpretation of the sentence as a simple synthetic proposition shares with the current reading of the word (which we have still to examine) is that it delimits and neutralizes the impact of the strange in the very movement that attempts to elicit it. For an interpretation to be vulgar in this sense is for it to have radically excluded the strange even before its inception, and the persistence of customary syntax is disturbingly complicit with such occlusion of discovery. Before Heidegger even begins to outline an alternative reading he has marked a problematic rigidity in the interpretative processes that would unfold in a customary encounter with a text.
+
+<p class="pn">\- 92 -</p>
+
+Heidegger characterizes the vulgar, or habitual, reading of <u>fremd</u> in terms that are broadly 'aesthetic'. What is strange is found unpleasant and disturbing, perhaps even threatening and vaguely horrific:
+
+<blockquote><u>Doch was heißt 'fremd'? Man versteht unter dem Fremdartigen gewöhnlich das Nichtvertraute, was nicht anspricht, solches, das eher lastet und beunruhigt.</u> (But what does <u>fremd</u> mean? One habitually understands the strange type as the unfamiliar, the unappealing, the sort which is burdensome and disquieting.) [US, 41].</blockquote>
+
+The strange is treated with suspicion and loaded with negative characteristics. But even this naked devaluation is of only marginal and symptomatic importance, beside the effective repression of the strange by an interpretative strategy that imposes familiarity and consistency of sense on a word that explicitly defies such treatment. The violence directed at the strange derives not from a contingent polemic or passive prejudice inscribed within a language; rather, the entire language regime is founded upon a pervasive repression of alterity. It is here that Heidegger makes his problematical but intriguing intervention, by reading strangely, and taking the word <u>fremd</u> out of the economy of the familiar altogether:
+
+<blockquote><u>Allein 'fremd', althochdeutsch 'fram', bedeutet eigentlich: anderswohin vorwärts, unterwegs nach..., dem Voraufbehaltenen entgegen.</u> (<u>Fremd</u>, Old high German <u>fram</u> signifies solely and properly: heading elsewhere, underway towards..., encountering what has been reserved ahead.) [US, 41].</blockquote>
+
+Heidegger's reading of 'strangeness', then, passes not through the habitual, but through the Old High German <u>fram</u> whose proper (<u>eigentlich</u>) meaning is to be 'heading elsewhere' (<u>anderswohin vorwärts</u>) or 'underway towards' (<u>unterwegs nach</u>). The 'strange' (and even this casual translation is complicit with a violence against the irreducible foreignness of the sign <u>fremd</u>) is no longer to
+
+<p class="pn">\- 93 -</p>
+
+be thought as the surprising or mysterious, but as that which is migrant or (according to a rather more incautious translation) nomadic. That which is <u>fremd</u> is not the passive object of revulsion, but a dynamic principle of departure or migration. The conception of strangeness as an inert predicate already involves the coercion of the strange into a strategy of (grammatical) appropriation. Such appropriation does not even exploit strangeness, but merely denies or negates it. If strangeness is to be theoretically encountered at all, in an interpretation that does not fall back into hollow auto-relation, it has to be read as vigorously constituted by a migratory process; as the trace of a procedure which does not circulate on the inside of customary syntax.
+
+To begin to understand the importance of such migratory processes to Heidegger's project we must move back a page, to where we are told that the familiar (<u>geläufig</u>) representation of the meaning of this phrase would be historically determined by Platonism. By telling us this the essay is fulfilling its promise to be a 'thinking dialogue', which relates Trakl in a certain manner to the tradition of Western metaphysics, 'ontotheology'. This tradition leads to the reading which we have already characterized in terms of collapsed language, and according to which the soul is something known in advance of its predication in a sentence, which is as out of place when distributed within poetic signs as it is when imprisoned in a body. For such a 'metaphysical reading' of the poem (and this concept itself should surely surprise us) <u>Es ist die Seele ein Fremdes auf Erden</u> means straightforwardly that the soul is something which we know does not belong on the earth.
+
+For Heidegger the meaning of Trakl's phrase is that the soul is nothing other than that which is on the way to the earth. The phrase does not add to a pre-existing knowledge of the soul, nor does it suggest that the soul could be at home elsewhere than on earth. In fact this reading makes the very notion of
+
+<p class="pn">\- 94 -</p>
+
+a soul that is not under the sway of the earth utterly unintelligible. The
+radicality of this reading lies largely in its implicit suggestion that we
+treat this phrase as an origin of meaning, as the place where a word takes on
+a sense that is profoundly discontinuous with anything it has previously
+invoked. If we are to accept that the poetic text (and we must not yet attempt
+to be unduly precise about what such an 'entity' might be) is the site of the
+emergence of intelligibility - and such a suggestion seems at least sustainable
+in the context of this exemplary reading - then any notion of the <u>linguistic
+system</u>, <u>linguistic structure</u> (particularly in the Saussurian sense) or <u>langue</u>
+in general becomes fundamentally misleading and inapplicable. The propriation
+of meaning to the sign can no longer be seen as mediated by the totality of a
+language, and must instead be seen as an event occurring within the immanent
+specificity of a text (or instance of language).
+
+Perhaps this is a relatively marginal criticism of a theory of meaning
+that bases itself upon a totally untheorized presupposition of the represented
+manifold, and therefore attempts to arrive at the individuated 'signified'
+through a process of division, which is a return to what is perhaps the
+dominant principle of modern <u>metaphysics</u>; that of determinate negation. It is
+nevertheless necessary to refer with a certain persistence to Saussure, since
+his model of systematic differentiation retains a crucial relation to
+Heidegger's project, and to the general programme of closing the history of
+metaphysics within an account of the misapprehension of difference. It can
+also be maintained that the structuralist tradition in contemporary
+metaphysics - whilst fatally flawed - has been able to constitute and sustain
+significance as a problem exceeding that of <u>intentional consciousness</u>. To this
+extent it demands at least a brief and tentative response from those engaging
+
+<p class="pn">\- 95 -</p>
+
+seemingly analagous questions. In this thesis the negotiation with Saussure's
+conceptuality is undertaken only on the basis of a thought of <u>genus</u> that has
+first to be 'extracted' from the Traklean and Heideggerian text. It is therefore
+dispersed within the convolutions of a reading. What should perhaps be noted
+here, however, is that the thought of generic differentiation which such a
+reading must pursue is already an implicit challenge to the Saussurean notion
+of difference, in that such differentiation is not effectuated at the level of
+the signifier. This is to say that generic difference is not the local effect
+or expression of a global articulated system. In parts III and IV of this
+thesis I will attempt to support this assertion by exhibiting the
+impossibility of any such resolution of the Trakl/Heidegger problematic of
+<u>Geschlecht</u> within a system of differences.
+
+____________________
+\* I am not interpreting structuralism as a theory of discontinuity replacing
+nineteenth-century continualist etymologizing. Saussure's deployment of the
+distinction between signifier and signified simply juggles the opposition
+between continuity and discontinuity, attributing qualitative differences to the
+cultural articulation of signs and quantitative differences to the natural
+articulations of pre-structured reality or perception. This sleight of hand,
+which is completed by articulating the difference between signifiers and
+signifieds qualitatively, and thus by the employment of that (the sign) which
+it was intended to justify, is utterly unable to account for the configurations
+of positive marks accruing to the sign which are necessary to any etymological
+activity. This default is the lack of a grasp of gradations of difference, a
+failure either to negotiate or effectively displace the Hegelian dialectic of
+Quantity and Quality. The great importance of etymology for this problem is
+that the 'scientific' basis of etymological investigation is precisely a
+compilation of theories on the gradations of differences, that is, of the
+relative likelihood of different transformations between elements within signs,
+or steps of differentiation.
+
+<p class="pn">\- 96 -</p>
+
+Derrida notes Heidegger's etymological approach to the question of <u>das
+Fremde</u> with deep suspicion. The 'resource' of an Old High German root seems to
+Derrida to be a turning away from the frontier; from those other - or foreign
+- words for strangeness which, stemming from the Latin <u>extraneus</u>, introduce
+the problematic of the border. Yet this 'criticism' of Heidegger over the non-
+introduction of foreign languages into the question of the stranger, whilst
+fruitfully opening the discussion, is in danger of repeating the structuralist
+error of ignoring the gradation of differences and therefore the real thrust of
+etymological interpretation. In this context it would be a potentially
+disastrous mistake to refuse the vocabulary and results of etymological
+research, since the thinking of <u>Geschlecht</u> and thus of 'type' cannot resolve
+itself into the pure, atomic, and qualitative discontinuities of structural
+analysis. If the question of translation is not interwoven with the historical
+and graphic positivity of languages, that is to say, with etymology, it cannot
+avoid reducing the relations between alien signs to those of representational
+equivalences. There is no secure authority according to which Derrida is able
+
+____________________
+\* Derrida points out <u>Il exclut toute considération d'une autre langue</u> [Giii, 20],
+a default which is doubly significant because of the fact that it excludes, and
+because of what it excludes. <u>L'étranger</u> is both the other and the other's name
+for the other. Heidegger does not translate the German <u>fremd</u> into a Latinate
+tongue, but the word itself absolves Heidegger from responsibility for this,
+since it does not pose the problem of the frontier for as long as it remains
+in German [Giii, 21]. Heidegger's exclusion of that which lies beyond the
+frontier is thus a default which can only be read from outside. If this is to
+be thought as a repression it is one that has only taken place from the
+perspective of the 'repressed'; a 'passive repression' that has happened without
+ever having been enacted. See also Derrida's discussion of the relation of
+<u>Geschlecht</u> to the enlightenment nationalism of Fichte's discourse [Gii, 1-6].
+
+<p class="pn">\- 97 -</p>
+
+to translate <u>fremd</u> by <u>étrange</u>, certainly not the traditional and Saussurean one
+of equivalent position within a representational totality. Such a step would
+crush the sign(ifier) against a 'signified' and devastate its positive character
+with a dismissive notion such as 'arbitrariness'. If exchanges between the
+words of different languages are rendered possible by their intrinsically
+ecstatic-nomadic character and not by their isomorphic structures in respect
+of the signified, there can be no totality to be represented existing in-itself
+as a standard by which sign systems can be objectively compared. Unless
+resort is to be made to a dogmatic ontology it can only be because signs
+perpetually uproot themselves that they are able to generate an effect of
+universality, the mirage of perfect independence from historical specificities,
+which grounds translation between languages. It is for this reason that there
+is the complicity between translation and universalizing philosophical
+discourses to which Derrida teaches us to be scrupulously attentive.
+
+Notwithstanding the 'legitimacy' of an appeal to etymology, Heidegger's
+move does not seem unproblematic. A vertiginous gulf is opened by the appeal
+to such archaic strata of sense, as if all restraints upon the potential
+directions of reading are suddenly dissolved. Superficially, it seems as if all
+historical indices have been violently dissolved, and that the pure
+alphabetical elements of every Indo-Germanic utterance had become deposited
+together in a quasi-Freudian unconscious, in which all temporal reference, and
+therefore all chronological discrimination, simply disappears. Are we expected
+to forget the 'everyday' sense of words and erase their effects? In which texts
+are we to understand words in their archaic usage, and from which epoch(s) do
+we take such usages? It is impossible even to begin answering such questions
+without a far more detailed grasp of the theoretical and strategic stakes of
+the turn to etymology.
+
+<p class="pn">\- 98 -</p>
+
+What makes Heidegger's etymological strategy so perplexing is that the
+'archaeological' path it takes seems to make it dependent on what must
+ultimately be a severely restricted and conservative 'hermeneutical fund'. It
+might appear that the only resources of estrangement Heidegger allows himself
+derive from a turning back out of a prior estrangement from the history of
+languages. Which is to say that we can be surprised by etymological
+discussions only because of a migratory drift that has taken languages away
+from the site of their archaic meanings. Once a language has completed a
+return to its abandoned territory no force remains in the reserve of its
+historicality, and estrangement based on etymology ceases to be possible. Such
+an objection would be very premature, however, since the conjunction of return
+with departure - that return of, from, and to departure which Deleuze and
+Guattari call a 'redeparture' - is neither a negation of negation nor a
+restitution, but something far more complex and intriguing. But here we are
+faced with the figure of a 'turning home' (<u>Heimkehr</u>), one of the essay's most
+intense lexical foci.
+
+____________________
+\* See <u>L'Anti-Oedipe</u> p.198 and (quoting Beckett) p.18-19.
+
+<p class="pn">\- 99 -</p>
+
+### Two: Migrations of Mortality
+
+A turning home seems to reverse a prior emigration or conclude a prior
+migration. This might in turn suggest that Heidegger's etymological project is
+guided by an attempt to eliminate errancy, to restore to the deteriorated
+language of being what the devastation of history has eroded from it. In this
+way the wandering of the stranger would be an anti-nomadism. Furthermore, <u>fram</u>
+is said to mean 'encountering what has been reserved ahead' (<u>dem
+Voraufbehaltenen entgegen</u>), and it is this meaning, perhaps, that leads
+Derrida's to firmly differentiate the wandering of the stranger from any kind
+of nomadism\*.
+
+____________________
+\* Derrida notes that the wandering of the stranger is anticipatory, and that
+for this reason <u>cette pérégrination n'est pas une errance, encore moins un état
+de nomadisation</u> ("that peregrination is not an errancy, still less a state of
+nomadisation") [Giii, 21]. The stranger migrates towards a site (<u>Ort</u>, <u>Lieu</u>)
+where, Derrida seems to suspect, a re-sedentarisation will terminate the
+process of wandering. This suspicion would align Heidegger with the
+metaphysical comprehension of return, and thus with the vulgar Freudianism for
+which the death-drive is interpreted as the auto-annihilation of dynamis. It
+would, indeed, place Heidegger on the side of that profound metaphysical
+project seeking to turn difference into dialectic; reading it as the mediated
+suppression of itself. Derrida insists: <u>le mouvement vers le propre est sans
+aucun doute un mouvement de retour, même si le retour reste une aventure</u> ("the
+movement towards the proper is without any doubt a movement of return, even if
+the return remains an adventure") [Giii, 21-2].
+
+<p class="pn">\- 100 -</p>
+
+The migration of the stranger is oriented towards a destination, but this destination should not be hastily conceived as a goal or telos, as excluding nomadism, because: <u>Das Fremde geht suchend auf den Ort zu, wo es als ein Wanderndes bleiben kann.</u> (The strange goes in search of the site where it (<u>es</u>) can remain as something that wanders.) [US, 41]. The stranger might be destined according to Heidegger, but the guiding call to this destination remains obscure to it, scarcely unveiled (<u>kaum enthüllt</u>). The strange(r) (whose gender neutrality proves unsustainable within the essay) is drawn by an enigmatic destiny. There is no representation of a goal, but rather a tug or pull (<u>Zug</u>) which initiates migration, a calling that does not explicitly signify but seduces, an exorbitant power that seems indistinguishable from desire. The strange(r) gravitates towards the very origin of movement, or to the place where movement itself is conserved. Heidegger names this site <u>Abgeschiedenheit</u> ('departedness'):
+
+<blockquote><u>Alles Sagen der Dichtungen Georg Trakls bleibt auf den wandernden Fremdling versammelt. Er ist und heißt 'der Abgeschiedene'. Durch ihn hindurch und um ihn her ist das dichtende Sagen auf einen einzigen Gesang gestimmt. Weil die Dichtungen dieses Dichters in das Lied des Abgeschiedenen versammelt sind, nennen wir den Ort seines Gedichtes die Abgeschiedenheit.</u> (All the saying of the poet Georg Trakl remains gathered upon the wandering stranger. He is, and is called, 'the departed one'. The poetic saying is attuned to its singular song through and about him. Because the poems of this poet are gathered in the song of the departed one, we name the site of his poetry departedness.) [US, 52].</blockquote>
+
+With the word <u>Abgeschiedenheit</u> the essay arrives at the end it has set for itself; it has named the site of Trakl's poetry. Yet this arrival occurs at the end of what is only the essay's first section. It is an end without satiation. Heidegger's text will initiate two further forays.
+
+<p class="pn">\- 101 -</p>
+
+As the mark, obscure yet legible, of its tortuous historical legacy, <u>Abgeschiedenheit</u> has inherited two fundamental and interwoven referential dimensions, one apocalyptic-historical, and the other - as I will try to show - libidinal. History is marked as radically split by the <u>scheiden</u> (the German verb 'to split') marked within it. But departedness is not only the far side of a catastrophic historical rupture, it is also the trajectory of desire in its positivity, the inherent migrancy of drives. In <u>Jenseits des Lustprinzips</u> Freud interprets drives as the propulsion backwards along the path of a departure: all desire is oriented to return, following the trace of a traumatic rupture. Any discussion of departedness, therefore, is able to remain in dialogue with the ultimate principles of psychoanalysis, since it names the place from which desire inevitably speaks. Every step in thinking Heidegger's text at this point can negotiate with Freud's metapsychological masterpiece. Understood trivially, departedness is a simple termination. But within a radicalized thought of departedness there can be no terminal satiation of the migratory impulse, because the trace of each leaving is a provocation to a further departure. Every departure is a re-departure, not as a negation of negation, but as the recurrence of the nomadic impetus, or re-activation of the trace. As a name for affirmative differentiation in this sense, <u>Abgeschiedenheit</u> is a valuable terminological key to the final phase of western culture. But within the epoch of ontotheology, to depart has meant to die (in the sense of interment and deterrestrialization), since difference has always been appropriated to negation. The site of Trakl's poetry must involve both the re-invigoration of a migration and a re-thinking of death. The surprising question Heidegger asks, in trying to pursue the stranger's path, is: <u>Aber welches Toten?</u> ("But of which dead?") [US, 42]. For the tradition of European Platonic-Christian thought this question is aberrant, since for such thinking there is only one way to leave
+
+<p class="pn">\- 102 -</p>
+
+the earth, and that is through the portal of the negation of life. Because of the problematic relation Heidegger must adopt towards this tradition there are, perhaps inevitably, at least two readings of the path he follows in navigating the question of death. According to the first of these readings, he is caught within an evasion, since he seems to retreat from the brutal existential-ontological realism of <u>Sein und Zeit</u>. Yet for the second, in a complex struggle with 'the tradition', he is seeking a way to think death from a terrestrial 'perspective'. This ambiguity is not merely imposed by Heidegger upon Trakl's texts from without, inasmuch as the ambiguity is a historical fatality cutting deep into the heart of European thought. At the point where the conceptual decisiveness of Heidegger's meditation is at its peak, his engagement with Trakl is also at its most intense. This also occurs when history itself comes most explicitly into question, in the reading of Trakl's <u>Abendländisches Lied</u>. But the path towards Heidegger's reading of this poem is a long and circuitous one.
+
+The stranger is summoned towards what would conventionally, and precipitately, be translated as 'death', but what is in fact the more ambiguous word <u>Untergang</u>. Heidegger writes <u>Die Seele ist in den Untergang gerufen.</u> (The soul is summoned into descent.) [US, 42]. <u>Untergang</u> has demise as its most immediate denotation, but it also means descent in general, since it is constructed in the same manner as <u>Uebergang</u>, which means transition or traversal. A persuasive reference for such terms must be the mountain journeys of Zarathustra, and Heidegger associates Trakl's 'Elis' with Nietzsche's migrant sage precisely because both begin <u>ihr Wesen und Wandern mit dem Untergang</u> (their weave and wandering with a descent) [US, 54]. Echoes from the elevations of the Alps, <u>6000 Fuß jenseits Mensch und Zeit</u> (6000 feet beyond man and time) [Sii, 574] reverberate among the spasmodic death throes of the
+
+<p class="pn">\- 103 -</p>
+
+West: <u>Das Land des Untergangs ist der Uebergang in den Anfang der in ihm verborgene Frühe.</u> (The land of descent is the transition into the origin of the dawn buried within it.) [US, 77].
+
+Within the rigorous pursuit of return - through the texts of Nietzsche, Freud, and Heidegger - historical fatality, death, and the trajectory of desire, are woven into a single vast and shadowy tapestry. To fathom the 'logic' of such a fabric requires what Krell has termed 'descensional reflection'; meditation within the imminence of <u>katabasis</u> and <u>katastrophe</u>. Such a term is not far removed from the one Carlyle coins for a dimension of the philosophy of clothes: 'descendentalism' [SR, 51]. Descent, whether genealogy or necrology, is a journey into the dawn; <u>die Frühe</u>, which stems from the word <u>früh</u>, meaning simply 'early'. Descent is therefore a regression or return, a <u>Heimkehr</u>. It is this that Zarathustra has learnt during his wandering in the mountains:
+
+<blockquote><u>Woher kommen die höchsten Berge? so fragte ich einst. da lernte ich, daß sie aus dem Meere kommen.<br>
+Dies Zeugnis ist in ihr Gestein geschrieben und in die Wände ihrer Gipfel. Aus dem Tiefsten muß das Höchste zu seiner Höhe kommen.</u> (Where do the highest mountains come from? I once asked, then I learnt that they come out of the sea. / The mark of this is written in their stones and in the faces of their summits. The highest must come to its height from out of what is deepest.) [Sii, 679].</blockquote>
+
+Each peak has been spawned by the depths, so that to descend is to approach what is earliest. What is below is the past of every summit. It would be absurd to suggest that ascent could oppose descent or negate it, because the depths are the matrix of all inscription, the terminus of every destiny, the abyss in which every migration is sketched. The binary concepts of high and the low, heaven and earth (or hell), are therefore distorted metaphysical reifications of the relation between elevations. The emergence of elevated
+
+<p class="pn">\- 104 -</p>
+
+strata from out of the abyss, from the depths of chaos, is far from being a negation or transcendence of the abyss. Indeed, ascending strata are the very inscriptions of the abyss: chaos writes itself in mountains.
+
+Descent is a regression, the residue of a movement, since the traces which mark its path constitute a 'wake'. The persistence of a trace is propulsive - with every excitation inherently a stimulus - and constitutes a drive. Any attempt to conceptualize the trace in terms of an opposition of theory to practice is, therefore, clearly inadequate. It is within the Freudian theory of the death drive, I would argue, that this formation is most precisely detailed, although the ambiguities of this account have generally led to its metaphysical re-appropriation. The source of these ambiguities lies in the 're-' or <u>Wieder-</u> ('again') of repetition, return, and restoration (<u>die Wiederholung</u>, <u>die Wiederkehr</u>, <u>die Wiederherstellung</u>), which even within Freud's thinking has not altogether escaped its ontotheological determination as the cancellation of departure:
+
+<blockquote><u>Hier muß sich uns die Idee aufdrängen, daß wir einen allgemeinen, bisher nicht klar erkannten - oder wenigstens nicht ausdrücklich betonten - Charakter der Triebe, vielleicht alles organischen Lebens überhaupt, auf die Spur gekommen sind. Ein Trieb wäre also ein dem belebten Organischen innewohnender Drang zur Wiederherstellung eines früheren Zustandes, welchen dies Belebte unter dem Einflusse äußerer Störungskräfte aufgeben mußte, eine Art von organischer Elastizität, oder wenn man will, die Äußerung der Trägheit im organischen Leben.</u> (Here the idea that we have come upon the trace of a universal and previously not clearly recognized - or at least not expressly emphasized - character of the drives, and perhaps of all organic life in general, must be compelling. A drive would be therefore a compulsion inherent in vitalized organic matter to the restoration of an earlier condition, which has had to be abandoned by the vital matter under the influence of external disruptive forces, a type of organic elasticity, or if you will, the</blockquote>
+
+<p class="pn">\- 105 -</p>
+
+<blockquote>assertion of inertia in organic life.) [J, 246].</blockquote>
+
+The term 'elasticity' both furthers and retards Freuds thinking of repetition compulsion. It successfully captures the persistence of dynamic tension within the transformation of, and into, organic life. On the other hand it connotes a pure negativity within this tension which is incompatible with the development of the drive to restoration in its elaborated sense. The metaphor of elasticity implies that organic inertia tends to drag the organism back towards a single 'natural' condition. It suggests that tension expresses the deformation of such an originary condition, and promises a mechanical resolution whose adequacy to the deformation is both automatic and total. Such a metaphor, in other words, functions like a crude reading of Anaximander's fragment, postulating a law exterior to all vicissitudes; containing and then erasing every eruption of difference. Ultimately the thought of 'elasticity' can only obstruct Freud's various and subtle analyses of regression - both those 'internal' and those 'external' to an explicit thematic of the death drive - since it desexualizes the movement of repetition. Perhaps Freud's greatest achievement in <u>Jenseits</u> was to have shown, in contrast to any such notion of desexualization, that the opposition of Eros to Thanatos might be superficial, and that the repetition compelled by the death drive is precisely that of the difference (or movement of differentiation) which parts the organism from the inorganic. Thanatos can thus be read as the vitality of Eros, or as the re-assertion of what is most catastrophic in organic life; the difference separating it from inorganic persistence. This would be the peculiarly Freudian development which contributes most fully to a post-metaphysical reading of recurrence\*.
+
+____________________
+\* In the opening (draft) pages of <u>Abriß der Psychoanalyse</u> (<u>An Outline of Psychoanalysis</u>) Freud writes of the drives in general that: <u>Obwohl letzte</u>
+
+<p class="pn">\- 106 -</p>
+
+For both Freud and Heidegger the thought of death first arises within a metaphysical determination, as the very termination proper to determination in general. Within psychoanalysis this is manifested by Freud's pre-war notion of the death-wish, which is a longing for the abolition of the object. Such a notion has a certain equivalence to castration, since it is both a victim of - and reaction to - repression within the structure of the oedipal complex. Indeed, a death-wish directed by the child at the parent of its own sex is a fundamental aspect of the oedipal triangle, since it organizes the mimetic process of identification which underlies the transmission of gender positions. The duality of gender is ultimately constituted as and by the reciprocity of desire and mortal hatred in the child's relation to its parents. The negative absolute of castration-anxiety mirrors itself in the death-wish, through a master-slave dialectic aimed at a total expropriation of the tyrant from the object of desire. By exhausting the terrors of castration the slave comes to think the death of the master with dialectical clarity as a pure limit. This is the judgement of an implacable enemy who has traversed, in imagination, a condition in which everything is lost.
+
+____________________
+<u>Ursache jeder Aktivität, sind sie konservativer Natur: aus jedem Zustand, den ein Wesen erreicht hat, geht ein Bestreben hervor, diesen Zustand wiederherzustellen, sobald er verlassen worden ist.</u> ("Although they are the final cause of every activity they are of a conservative nature: from out of every condition which a being has reached an endeavour emerges, to restore this condition as soon as it is abandoned.") (my italics) [AP, 11]. The compulsion to repeat is not thought as an antithesis to transformation but as its 'final cause'. This text is a fascinating one, since what was tentatively cast in the hypothetical mode in <u>Jenseits</u> - the radicalization of the compulsion to repeat into a general characteristic of drives - is admitted without qualification into psychoanalytical 'orthodoxy'.
+
+<p class="pn">\- 107 -</p>
+
+Within Heidegger's <u>Sein und Zeit</u> death is thought as a 'passing-over' (<u>Uebergang</u>) which cannot be traversed by the 'there' (<u>Da</u>) of Dasein: <u>Der Uebergang zum Nichtmehrdasein hebt das Dasein gerade aus der Möglichkeit, diesen Uebergang zu erfahren und als erfahrenen zu verstehen.</u> ("The passage to no-longer-being-there precisely deprives the Dasein of the possibility of traversing and, as traversed, understanding this passage.\*) [SZ, 237]. In dying, finite transcendence is itself 'transcended', but in such a way that it is the passing away of passage itself. There is a priority given to the thinking of death as the immanent possibility of all relation to being ceasing, since such a relation precedes, in principle, any ontical relation. Such a priority demotes the theological discourse on death to a secondary status: <u>Die diesseitige ontologische Interpretation des Todes liegt vor jeder ontisch-jenseitigen Spekulation.</u> (The this-worldly ontological interpretation of death lies before every ontico-other-worldly speculation.) [SZ, 248]. Although the subordination of theological approaches to death to those of fundamental ontology frees the problematic of death from dogmatics, and therefore, of special importance in Heidegger's case, from those of Kierkegaard (whose discussion of death in the <u>Concluding Unscientific Postscripts</u> is similar in many ways to that of <u>Sein und Zeit</u>), it also conserves a possible position for theology by suspending atheological critique. Since the more or less violent suppression of atheistic thinking is at least partially constitutive of the history of ontotheology, this suspension is in effect far from neutral. There is a tendency for this deferral to result in the perpetuation of a substantialist thought of the self as 'something' that dies, rather than as the symptom of the process of dying.
+
+____________________
+\* The notion of experience as an 'under-going' or 'passing-through' which is captured in the German <u>erfahren</u> cannot easily be rendered into English.
+
+<p class="pn">\- 108 -</p>
+
+This allows dying to be interpreted through something called death, appropriated to Dasein as a limit. This in turn facilitates the production of a dichotomizing structure of life and death. Dying cannot be intensified, stimulated, or propagated according to this notion, it can only be precipitated. As such, the metaphysics of death, even in its fundamental ontological-agnostic phase, is inadequate to a thinking of the energetics of the death drive. The definitive statement of this stage in the interpretation is that death cannot be 'overtaken':
+
+<blockquote><u>Als Seinkönnen vermag das Dasein die Möglichkeit des Todes nicht zu überholen. Der Tod ist die Möglichkeit der schlechthinnigen Daseinsunmöglichkeit. So enthüllt sich der Tod als die eigenste, unbezügliche, unüberholbare Möglichkeit.</u> (As a potency of being the Dasein is not able to overtake the possibility of death. Death is the possibility of the sheer impossibility of being there [<u>Dasein</u>]. Death therefore unveils itself as the most proper, non-relational possibilty, which is not to be overtaken.) [SZ, 250].</blockquote>
+
+It is the determination of death, or of the end, as 'not to be overtaken' which is directly challenged in Heidegger's reading of Trakl. This reading is guided to a considerable extent by the necessity of interpreting a word from the poem '<u>Abendländisches Lied</u>' which seems at first to be an irrecoverable or irreducible remnant of christian theology, derived from <u>Auferstehung</u> ('resurrection'). Trakl writes in the last line of the poem: <u>...der süße Gesang der Auferstandenen.</u> (...the sweet song of those resurrected.) [T, 67]. How is a notion of resurrection to be thought other than within a speculative metaphysics or theology of immortality? Heidegger first searches for a displacement which is able to enrich the meaning of re-arising, and finds one in the term <u>ungeborenen</u> ('unborn'), which is also used to speak of an emerging genus; the unborn:
+
+<blockquote><u>Das Ende ist hier nicht die Folge und das Verklingen des Anbeginns. Das</u></blockquote>
+
+<p class="pn">\- 109 -</p>
+
+<blockquote><u>Ende geht nämlich als das Ende des verwesenden Geschlechtes, dem Anbeginn des ungeborenen Geschlechtes vorauf. Der Anbeginn hat jedoch als die frühere Frühe das Ende schon überholt.</u> (The end is here not the result and fading of the beginning. The end arises namely as the end of the decomposed species, the beginning of the unborn species. The beginning however, as the earlier dawn, has already overtaken the end.) [US, 57].</blockquote>
+
+Mortality is the immanent stamp of a species, not a transcendentally instituted limit, because it is only from the specificity of a stock that it becomes possible to define those paths which would lead it away from itself. Dying presupposes a writing - or more precisely a 'typing' - which serves as an index of dissolution. Death as a process is inextricably connected to a notion of decomposition, since it is registered only as the departure from a composition or organization; from the tension which arises with 'organism' in general. But this end is also a beginning, a specificity, or a radical finitude. The end of the species does not lead to a collapse into amorphous negativity, it is a positive dissolution, because the end is programmed by a primal specificity - 'a dawn' or horizon of intensity - which it is unable to cancel or determine. If each type has its own death (or deaths) it is not for the Hegelian reason that every positivity must find its own proper negation, but rather because the dissolution of type is fully positive throughout, never attaining the abstract condition of a general and indifferent annihilation.
+
+Any suspicion that 'the end' (<u>Das Ende</u>) marks a break from the meditation on death is unsustainable, since there is a definite coherence to Heidegger's entire treatment of termination within the essay. The question of finitude is actually drawn into a discussion of de-finition which is seen to more adequately characterize its temporality:
+
+<blockquote><u>Der Tod wird hier nicht unbestimmt und im allgemeinen als Beendigung irdischen Lebens vorgestellt. 'Der Tod' meint dichterisch jenen</u></blockquote>
+
+<p class="pn">\- 110 -</p>
+
+<blockquote><u>'Untergang', in den 'ein Fremdes' gerufen ist. Darum heißt das so gerufene Fremde auch 'ein Toter'. Sein Tod ist nicht die Verwesung, sondern das Verlassen der verwesten Gestalt des Menschen.</u> (Death does not become represented here indeterminately and generally as the finishing of earthly life. 'Death' means poetically that 'descent' in which 'a stranger' is called. Therefore, the friend thus called is also named 'one who is dead'. His death is not decomposition, but rather the abandonment of man's decomposed figure.) [US, 48].</blockquote>
+
+The finitude which specifies metaphysics is not established or conceived according to a limit or boundary, it is not circumscribed at all; it is abandoned. But death and abandonment are traditionally retrieved by religious discourse, since they are either determined as mere negativities, or through negative articulations which cast life into the role of the negative. Migration is thought, according to such a schema, as the decomposition or deterioration of positivity, so that distance becomes a measure of nullity. To abandon a positivity is thought as the abandonment of positivity in general, i.e. as negation. But such a conceptualization only discloses the total absence of anything other than a sophistical sense of positivity (one which takes it as determinable through the negativity of oppositional relations). Since absolute negation cannot be exceeded, it is a necessary presumption of metaphysical thinking that death cannot be overtaken.
+
+To depart from the thought of death as absolute limit might seem to be a retreat into ontico-religious speculation, and insofar as such a departure does have an atheological component such a suspicion is even justified. It would be misleading to think that a transcendental agnosticism is a less theologically compromised position, since the thought of negativity has never been anything other than a (or rather the) covert theological motif. In his second untimely meditation Nietzsche opens a new line of attack, while treading
+
+<p class="pn">\- 111 -</p>
+
+the margin of this theology, when he asks the question, directed anachronistically at the 'who' of Dasein, 'what is there in the end to bury?':
+
+<blockquote><u>Wenn der gemeine Mensch diese Spanne Zeit so trübsinnig ernst und begehrlich nimmt, wußten jene, auf ihrem Wege zur Unsterblichkeit und zur monumentalen Historie, es zu einem olympischen Lachen oder mindestens zu einem erhabenen Hohne zu bringen; oft stiegen sie mit Ironie in ihr Grab - denn was war an ihnen zu begraben! Doch nur das, was sie als Schlacke, Unrat, Eitelkeit, Tierheit immer bedrückt hatte und was jetzt der Vergessenheit anheimfällt, nachdem es längst ihrer Verachtung preisgegeben war. Aber eines wird leben, das Monogramm ihres eigenstens Wesens, ein Werk, eine Tat, eine seltene Erleuchtung, eine Schöpfung: es wird leben, weil keine Nachwelt es entbehren kann.</u> (If the common man clutches at this span of time so greedily and with such gloomy seriousness, those others, on their way to immortality and monumental history, have known how to bring it to an Olympian laughter, or at least to a sublime scorn; often they climb with irony into the grave - because what was there of them to bury! Only that which had weighed upon them as slag, refuse, vanity, animality, and that now passed into oblivion, long after being surrendered to their contempt. But one thing will live, the monogram of their most proper weft, a work, an act, a rare inspiration, a creation: it will live, because no posterity can do without it.) [Si, 221].</blockquote>
+
+All that is left to death is what dying has failed to squander, the 'capital' so to speak. Everything else has been invested in history, in 'affects' or traces. Metaphysics is unable to follow such a thought because it interprets dying as a process undergone by a subject who dies, it fails to pursue the erosion of the subject, even when the question of the subject is displaced by that of the <u>Dasein</u>, because it thinks the limit of the self as a simplicity which can only end once, and finally. What Nietzsche suggests is that death is not postponed, but rather occurs as a perpetual quantitative / qualitative dissolution of that arrangement of drives whose temporary alliance sketches a
+
+<p class="pn">\- 112 -</p>
+
+self. Death itself loses its pertinence at that point of terminal corporeal disaggregation that ontotheology has always called death. When 'somebody' dies it is death itself, as a process, which finishes. Once dying ceases to be thought as simple and absolute, an economy of death - which is no longer merely a defence against death - becomes conceivable. The overcoming of death loses its metaphysical sense, which has always been that of an eternal life, and becomes rather the movement which pushes death further. The only 'thing' which arises in a resurrection is the death drive 'itself', elevated in intensity.
+
+### Three: The One who Perished Early
+
+Heidegger seeks to consolidate a reading of death beyond metaphysics by pursuing Trakl's figure of 'the one who perished early'. This reading allows us to take the measure of earliness as a route into the intensity of dying. Earliness is an axis upon which death is able to differentiate itself from itself, without returning to an other of mortality. Heidegger's reading of <u>An einen Frühverstorbenen</u> ('To one who perished early') begins on page 68 of <u>Unterwegs</u>, where the second and third stanzas are quoted in full. The final stanza is quoted on the following page after the intervening, but still preliminary, discussion of death.
+
+A brief recapitulation of <u>An einen Frühverstorbenen</u> as a whole is indispensable to an understanding of the figures Heidegger comes to deploy at crucial stages in his interpretation. Within the terms of his reading
+
+<p class="pn">\- 113 -</p>
+
+these figures are not merely specific to a single poem, rather, they derive their importance from their transcendence in respect of any individual text. The most urgent requirement of such a reconstruction is a sketch of the poem's narrative structure, since a shift of emphasis in Heidegger's reading, away from the historico-semantic weight of words, and towards the element of fabulation, is apparent at this stage of his interpretation. The poem reads:
+
+<blockquote><u>O, der schwarze Engel, der leise aus dem Innern des Baums trat,<br>
+Da wir sanfte Gespielen am Abend waren,<br>
+Am Rand des bläulichen Brunnens.<br>
+Ruhig war unser Schritt, die runden Augen in der braunen Kühle des Herbstes,<br>
+O, die purpurne Süße der Sterne.<br>
+<br>
+Jener aber ging die steinernen Stufen des Mönchsbergs hinab,<br>
+Ein blaues Lächeln im Antlitz und seltsam verpuppt<br>
+In seine stillere Kindheit und starb;<br>
+Und im Garten blieb das silberne Antlitz des Freundes zurück,<br>
+Lauschend im Laub oder im alten Gestein.<br>
+<br>
+Seele sang den Tod, die grüne Verwesung des Fleisches<br>
+Und es war das Rauschen des Walds,<br>
+Die inbrünstige Klage des Wildes.<br>
+Immer klangen von dämmernden Türmen die blauen Glocken des Abends.<br>
+<br>
+Stunde kam, da jener die Schatten in purpurner Sonne sah,<br>
+Die Schatten der Fäulnis im kahlen Geäst;<br>
+Abend, da an dämmernder Mauer die Amsel sang,<br>
+Der Geist des Frühverstorben stille im Zimmer erschien.<br>
+<br>
+O, das Blut, das aus der Kehle des Tönenden rinnt.</u></blockquote>
+
+<p class="pn">\- 114 -</p>
+
+<blockquote><u>Blaue Blume: o die feurige Träne</u><br>
+<u>Geweint in die Nacht.</u><br>
+<br>
+<u>Goldene Wolke und Zeit. In einsamer Kammer</u><br>
+<u>Lädst du öfter den Toten zu Gast,</u><br>
+<u>Wandelst in trautem Gespräch unter Ulmen den grünen Fluß hinab.</u><br>
+<br>
+(O, the black angel, who softly stepped out from the interior of the tree, / When we were gentle playmates in the evening, / At the blue fountain's edge. / Our step was tranquil, round eyes in the brown autumn cool, / O, the purple sweetness of the stars. // But the other descended the stony steps of the Mönchsberg, / A blue smile upon his face and strangely pupated / In his more silent childhood and died; / And in the garden the silver face of his friend remained, / Listening in the foliage and in the ancient stones. // Soul sang of death, the green decomposition of the flesh / And it was the rustling of the forest, / The ardent lament of the beasts. / From twilit towers the blue bells of evening always sounded. // A time came when the other saw the shadows in the purple sun, / The shadows of decay in the naked branches; / Evening, when the blackbird sang by the twilit wall, / The spirit of the one who died early silently appeared in the room. // O, the blood, that runs from the throat of the tonal one, / Blue flower; o the fiery tear / Wept in the night. // Golden cloud and time. In a solitary room / You often summon the dead one as a guest, / to wander in intimate conversation under elms, along the green river.) [T, 65]</blockquote>
+
+The poem begins with the introduction of a threatening figure, a black angel emerging from a tree as two children ('we') play together of an autumn evening. These forebodings of death are developed in the following verse with a character designated <u>Jener</u> ('the other' or 'that one') who traverses the stony steps of the Mönchsberg, strangely
+
+<p class="pn">\- 115 -</p>
+
+metamorphosed, to perish into his <u>stillere Kindheit</u> ('stiller' but also, perhaps, his suckling childhood, since <u>stillen</u> also means to breast-feed an infant). In the following line 'the friend' is left, listening to the foliage and stones. It is clearly compelling to fold these characters onto each other, despite the switching from second to third person that this entails for one figure and a similar switching from first to third for the other. The one who perished early, the 'you' of the former 'we', the 'I' is now 'the friend'. The spirit of the one who perished early returns at the end of the poem, and finally (in the lines cited above) another 'you' (intimate, <u>Du</u>) is inserted, who welcomes the dead, and converses with them under elms. This last pronoun is the most difficult to allocate, and the questions surrounding its reference should perhaps be temporarily suspended, in order to trace a path back toward it within Heidegger's reading.
+
+Heidegger organizes these characters by distributing the names they are given between two character 'positions', to which is appended a supplementary and problematic third character. The first character is the stranger, the one who perished early, the departed. He is male, and serves as the centre of the 'structure'. The second character is the friend, also male, who follows the stranger by singing the song that is dedicated to him, and in this way the friend becomes a brother to the stranger. Through this relation a third character is introduced, the sister. Of this character all that is said is that her 'lunar voice rings through the spiriting night' (quoting <u>Geistliche Dämmerung</u>) and that she is first of all the sister of the stranger, becoming the sister of the friend only through the mysterious 'fraternization' that connects the male characters.
+
+<p class="pn">\- 116 -</p>
+
+The relation between the male characters is sketched first, isolated and specified, before the final verse of the poem is cited:
+
+<blockquote><u>Ein Freund lauscht dem Fremdling nach. Also nachlauschend folgt er dem Abgeschiedenen und wird dadurch selbst zum Wanderer, zu einem Fremdling.</u> (A friend hearkens after the stranger. Hearkening thus, he follows the departed one and becomes in this way himself a wanderer, a stranger.) [US, 68].</blockquote>
+
+There is a profound historical and cultural necessity underlying the priority of fraternity in this construction, which indicates nothing other than a <u>rapport</u> before exchange and communication, a law before any economy. Heidegger argues that the song of the departed one is without an intermediary, it is a poem which has not been compromised by relays through a network of alliances, and it is thus characterized by the perfect lucidity which in the history of the West has always been thought as the uninterrupted male voice. This lucidity is achieved through the departure of the stranger, which is able to denote the formlessness and confusion of the decomposed species as something which has been left behind:
+
+<blockquote><u>Mit dem Tod des Abgeschiedenen aber singt er [der Freund] zugleich die 'grüne Verwesung' jenes Geschlechtes, von dem ihn das dunkle Wandern 'schied'.</u> (But with the death of the departed one he [the friend] also sings of the 'green decomposition' of that genus, from which the dark wandering has 'parted' him.) [US, 68].</blockquote>
+
+The movement of departure is not thought as a sheer and irreparable severance of relation by Heidegger, since he suggests that the friend himself becomes a stranger and a wanderer in following the stranger, and listens to death by singing of it. This song of death thus sings of departure from the decomposed species, which is a consequence of following the path of the departed one. Rather than directly pursuing his reading of
+
+<p class="pn">\- 117 -</p>
+
+<u>An einen Frühverstorbenen</u>, Heidegger takes a detour through the poem <u>Abendlied</u> (Song of Evening), and quotes the end of the penultimate line: <u>wann dunkler Wehllaut die Seele heimsucht</u> (when dark melody stalks the soul). [T, 65].
+
+<u>Heimsuchen</u> (haunt or afflict) is constructed from the words <u>Heim</u> (closely related etymologically and semantically to the English 'home') and <u>suchen</u> (to search or seek) from the Indogermanic <u>sag-</u> (to track by scent) originally referring to the behaviour of hunting dogs. <u>Heimsuchen</u> still bears the clear traces of its early sense (Middle High German <u>heim suochen</u>) of visiting, or seeking at home, with either friendly or hostile intent. The ambiguity here is akin to that of the word <u>Heimlich</u>, which means both familiar and unfamiliar, or uncanny (which can also be indicated by a word that is for this reason simultaneously its synonym and its opposite, <u>Unheimlich</u>, an important technical term in both <u>Sein und Zeit</u> and Freud's <u>Das Unheimliche</u>). <u>Heimsuchen</u> and <u>Heimkehren</u> converge, despite having very different archaic connotations.
+
+Only if the melody of the stranger's steps haunts the soul can the departed one be pursued. If this occurs the spirit of the one who perished early, whose spiriting years are the true time (<u>die wahre Zeit</u>) of the stranger and his friend, appear in the gleam of the dawn (<u>im Glanz der Frühe</u>). The <u>Frühverstorbenen</u> has not only died young, he has died into the dawn (<u>Frühe</u>) of a more primordial temporality, which is sketched a few pages before. Let us return to Heidegger's words:
+
+<blockquote><u>Das Ende ist hier nicht die Folge und das Verklingen des Anbeginns. Das ende geht, nämlich als das Ende des verwesenden Geschlechtes, dem Anbeginn des Ungeborenen Geschlechtes vorauf. Der Anbeginn hat jedoch als die frühere Frühe das Ende schon überholt. Diese Frühe verwahrt das immer noch verhüllte ursprüngliche Wesen</u></blockquote>
+
+<p class="pn">\- 118 -</p>
+
+<blockquote><u>der Zeit. Es bleibt dem herrschenden Denken auch fernerhin verschlossen, solange die seit Aristoteles überall noch maßgebende Vorstellung von der Zeit in Geltung bleibt.</u> (The end is not here the result and the fading of the beginning. The end arises, rather, as the end of the decomposed species, the beginning of the unborn genus. The beginning has, however, as the earlier dawn already overtaken the end. / This dawn safeguards the ever veiled primordial weft of time. That weft will continue to be closed to prevailing thought, as long as the representation of time which has been everywhere decisive since Aristotle remains current.) [US, 57].</blockquote>
+
+It might seem as if the 'abstract' or 'transcendental' question of time is totally distinct from the emergent problem of gender. Sexual difference is, after all, thought as something which is trivially within time, and therefore logically unrelated to it. The close historical coincidence of the consolidation of occidental patriarchy with that of the ontotheological determination of time seems accidental, and is given little attention. But such complacency is without grounds, since the social and semiotic form of the patronymic is the crucial resource for the construction of the dominant western model of time as the structural appropriation of alterity (a complicity which will be examined when we come to study Trakl's naming of the father in the following part of this text).
+
+The return to <u>An einen Frühverstorbenen</u> involves an even more concentrated meditation on the significance of friendship:
+
+<blockquote><u>Dem heimsuchenden Wohllaut der Schritte des Fremdlings entspricht die Einladung des Freundes zum Gespräch, dessen Sagen ist das singende Wandern den Fluß hinunter, das Folgen in den Untergang zur Bläue der Nacht, die der Geist des Frühverstorbenen beseelt.</u> (The haunting music of the stranger's steps accords with the friend's invitation to conversation, whose saying is the singing journey down river, the following into descent [or into death], into the blue of</blockquote>
+
+<p class="pn">\- 119 -</p>
+
+<blockquote>the night whose soul is imbued by the spirit of the one who perished early.) [US, 69].</blockquote>
+
+The relation between stranger and friend is strongly mimetic; the friend repeats the steps of the stranger, harmonizing with them in conversation. The wandering of the friend is a singing journey since it is guided by harmonious accordance, by a 'representation', or reiteration, of an originary journey. Singing establishes the possibility of a certain 'accompaniment', perhaps even of a coincidence. The steps of the stranger lead into the depths of the night, but a night animated with 'soul', which is to say, strangeness.
+
+Through a type of conversation, which is also a pursuit, the friend, who is becoming a stranger, looks at the departed one:
+
+<blockquote><u>Im solchen Gespräch schaut der singende Freund den Abgeschiedenen an. Durch sein Anschauen wird er im Augenblick dem Fremdling zum Bruder.</u> (In such conversation the singing friend looks at the departed. Through his look the singing friend, in the countering gaze, comes to be the stranger's brother.) [US, 69].</blockquote>
+
+The passage with which the reading of <u>An Einen Frühverstorbenen</u> culminates comprises the vortex of a spiral of questioning by Heidegger concerned with a peculiar thought of kinship. It begins by introducing the final lines of the poem:
+
+<blockquote><u>Goldene Wolke und Zeit. In einsamer Kammer</u><br>
+<u>Lädst du öfter den Toten zu Gast,</u><br>
+<u>Wandelst in trautem Gespräch unter Ulmen den grünen Fluß hinab.</u><br>
+(Golden cloud and time. In a solitary room / You often summon the dead youth as a guest, / to wander in intimate conversation under elms, down the green river.) [T, 65].</blockquote>
+
+Heidegger takes the wandering conversation with the dead youth to be a communion with the departed one. With one, that is to say, whose passing
+
+<p class="pn">\- 120 -</p>
+
+away is no longer determinable according to a thought of the negative. As such it is to be a dialogue that exceeds the historical and cultural limits of ontotheological metaphysics, establishing a relation with what has differentiated itself from this devastated 'site'. The relation thus instituted is not primarily cognitive, since it is established as a fraternal connection. The end of ontotheology is to involve an upheaval in the organization of kinship. What is abandoned is a nexus of genealogical connections; a <u>Geschlecht</u>. As we have seen, the path that leaves this interlocking web also comes to adopt the form of a family relationship:
+
+<blockquote><u>Dem heimsuchenden Wohllaut der Schritte des Fremdlings entspricht die Einladung des Freundes zum Gespräch, dessen Sagen ist das singende Wandern den Fluß hinunter, das Folgen in den Untergang zur Bläue der Nacht, die der Geist des Frühverstorbenen beseelt. In solchem Gespräch schaut der singende Freund den Abgeschiedenen an. Durch sein Anschauen wird er im Augenblick dem Fremdling zum Bruder. Mit dem Fremdling wandernd gelangt der Bruder zu dem stilleren Aufenthalt in der Frühe. ... Aber indem der nachlauschende Freund den 'Gesang des Abgeschiedenen' singt und so zu dessen Bruder wird, wird der Bruder des Fremdlings durch diesen erst zum Bruder seiner Schwester, deren 'mondene Stimme durch die geistliche Nacht tönt'.</u> (The haunting melody of the stranger's steps befit the invitation of the friend to converse, whose saying is the singing wandering along the river, following in descent to the blue of the night, which the spirit of the one who died early imbues with soul. In such conversation the friend looks at the departed one. Through his look he becomes a brother in the countering gaze of the stranger. Wandering with the stranger the brother attains a more silent residence in the dawn. ... But insofar as the hearkening friend sings the 'song of the departed one' and so becomes his brother, the brother of the stranger can in this way first comes to be the brother of his sister, whose 'lunar voice sounds through the spiriting night' ...) [US, 69-70].</blockquote>
+
+<p class="pn">\- 121 -</p>
+
+The fact that friend becomes the stranger's brother has a number of implications. Perhaps the most evident of these is that he comes to share at least one parent with the stranger, and within the fabric of patriarchal organization this parent is pre-eminently the father. To become a brother would therefore also involve coming to share a name - the patronymic - and the site over which it prevails (the household of the father). The adoption of such a relation cannot be registered in the syntax of the dominant Western kinship system, since to become a brother would be to change one's name, whilst the semiotics of patriarchy are founded on the principle that it is only women who are subjected to this symbolic transformation\*. It is possible for radical forms of patrilineal exogamy to result in a re-naming of the brother, but this is derivative from - and complementary to - the exiling of the sister from a restricted
+
+____________________
+\* This does not, of course, prevent a notion of (more or less generalized) 'fraternity' being an important element of humanist ideology with ambiguous political implications. This ideological function serves simultaneously to mobilize relatively indeterminate political groupings (from <u>sans culottes</u> to the <u>Broederbond</u>) and to reproduce patriarchal hierarchies across discontinuities of regimes ('we revolutionaries were all brothers after all'). Heidegger cannot altogether avoid participation in such a discourse insofar as he poses the question of the brother <u>among</u> brothers, rather than to the sister. That Heidegger takes the brother of Trakl's poetry to be first of all the brother of a brother is not a step that the poems obviously support. The only line of Trakl I have found that reinforces the direction of Heidegger's reading in this matter is from the poem <u>Psalm</u> where it is said <u>Hinter ihm steht sein toter Bruder</u> ("Behind him stands his dead brother") [T, 33].
+
+<p class="pn">\- 122 -</p>
+
+symbolic economy. Freud gives an example of such a process in <u>Totem und Tabu</u>:
+
+<blockquote><u>Auf der Gazellenen-Halbinsel in Neubritannien darf eine Schwester von ihrer Heirat an mit ihrem Bruder nicht mehr sprechen, sie spricht auch seinen Namen nicht mehr aus, sondern bezeichnet ihn mit einer Umschreibung.</u> (On the Gazelle-peninsula in New Britain a sister may not speak to her brother beyond the day of her wedding, nor may she speak his name, but must rather indicate him by a circumlocution.) [TT, 18].</blockquote>
+
+At the root of the intellectual obstacle posed by the thought of an unmediated fraternity extended into alterity is a deeper problem, which is that the metamorphosis of kinship positions is 'in reality' effectuated, perhaps 'universally', by a culturally appropriated relation between the sexes, one which anthropologists seem to have found little difficulty translating into the word 'marriage'. Becoming brothers is not something that occurs primarily between men, it is a surface symptom of a re-arranging of conjugal relations which crosses both the sexes and the bounds of the tribe. The entire terminology of kinship position has its foundation in this channelling of sexual flow, which is an organized and coded irrigation of fertility and alliance. In the narrow sense, becoming a brother can only denote the relatively rare case of an instituted sexual conjunction between the parents of two families, so that the mother of one male child, and the father of another, amalgamate their families in some fashion. In a broader sense (which we qualify with the term 'in-law') such a conjunction may be instituted between the sister of one man and the man who is to become his 'brother'. More distant conjunctions are both conceivable, and indeed practiced, within terms that could be quite
+
+<p class="pn">\- 123 -</p>
+
+readily characterized as 'fratrogenic', but these would also demand both 'mediating' relatives and a marriage as the axis of transformation.
+
+Caught up, perhaps, in the humanistic rhetoric of <u>Verbruderung</u> Heidegger does not introduce the figures of either the father or the mother, who are frequently deployed within Trakl's poems, into his own text. Nor does he allow the process of fraternization to develop by way of the sister. Furthermore, the axial role of sexual conjunction in the reconstitution of kinship relations is wholly unacknowledged by his interpretation. On the basis of these refusals, it is tempting to read the word 'brother' as a hollow metaphor, borrowed (perhaps reluctantly) from Trakl's vocabulary, and stripped of syntactic intelligibility. A path remains open, however, which allows such a precipitous judgement to be at least suspended, and perhaps withdrawn. Such a path would involve the attempt to think two hypothetical undercurrents of Heidegger's reading together: that brotherhood is community of genus/<u>Geschlecht</u>, and that thinker and poet have to become brothers.
+
+It is almost a truism of Heidegger scholarship that his thinking is deeply antagonistic to biologistic tendencies, and that it reads these as the most profoundly inappropriate ontical reductions. This dimension of his work is perhaps most clearly illustrated in his Nietzsche lectures. Following from this it would seem to be but a short step to an interpretative assumption concerning Heidegger's thought of the brother. This would suggest that Heidegger's brother is likely to be a more 'spiritualized' relative than Trakl's, and for this reason resistant to concrete anthropological determination. I would contend that the implications of such a reading are profoundly misleading, and that one important reason for Heidegger's refusal to think fraternity through the
+
+<p class="pn">\- 124 -</p>
+
+sister is that he is interested only in a blood brother. Or, more accurately, he is interested only in a brother who will share the site of the patronymic (and this can never be a brother-in-law). But perhaps the term 'patronymic' is something of a misnomer here, since the word Heidegger seeks will no longer be the name of anything previously thought as a father, not even that of a God thought as the highest being. The word under which thinker and poet are to be conjoined marks a power not of ontical engendering, but of propriation (<u>Ereignis</u>) which Heidegger writes of in the third part of the essay as [<u>der] Ereignis des rechten Schlages</u> (the propriation of the right stamp) [US, 79]. It is the propriation of this stamp which comes to invest poet and thinker as brethren within a 'more silent residence in the dawn'. But what is 'it' that comes to propriate this concrete kinship? Heidegger is more definitive on this point than perhaps any other in the essay; the word that names the site of brotherhood, where the friend arrives to reside with the stranger, is <u>Abgeschiedenheit</u>, or 'departedness'. Now, however - at the point of naming the site of brotherhood between thinker and poet - Heidegger's discourse violently recoils upon itself. The sister has been displaced to the margin of the relation between friend and stranger, in order to conserve the unity of the site and its name, and to evade the intercession of a marriage with its ensuing nomino-geographical dispersion. But the name given to the site whose integrity is protected by this displacement denotes precisely and explicitly the place of the sister's adopted people, the name, that is, of a <u>Geschlecht</u> which has earlier in the essay been termed <u>die Anderen</u>.
+
+<p class="pn">\- 125 -</p>
+
+### Four: The Others
+
+Heidegger enters into his discussion of <u>Geschlecht</u> through an attempt at defining the 'others' (<u>Andern</u>), a word from the poem <u>Herbstseele</u> ('Autumn soul'), the same verse of which is quoted in full twice in the course of the essay:
+
+<blockquote><u>Bald entgleitet Fisch und Wild.</u><br>
+<u>Blaue Seele, dunkles Wandern</u><br>
+<u>Schied uns bald von Lieben, Andern</u><br>
+<u>Abend wechselt Sinn und Bild</u><br>
+(Soon fish and beast slip away. / Blue soul, dark wandering / Soon parted us from loved ones, others. / Evening changes sense and image.) [T, 61]</blockquote>
+
+Heidegger takes these lines to be the account of a profound cultural departure, the anticipatory trace of a radical discontinuity in the history of the West. He elaborates upon this catastrophist interpretation in the third (and final) section of his essay. Yet, more immediately, the deployment of this verse within the essay is a decisive clue for any attempt to understand the position and functioning of genus and its specificity in Heidegger's reading, since he takes genus to be always already approached from a point of dissociation. Considerable attentiveness on our part is necessary if we are to mark the enormous difficulties of this crucial interpretative gesture, with which a great deal is decided very rapidly.
+
+It is the word <u>Andern</u> that most immediately propels Heidegger's first reading of <u>Herbstseele</u>. Yet this word itself, and therefore the entire interpretation, takes a more profound trajectory from another term; <u>schied</u>
+
+<p class="pn">\- 126 -</p>
+
+from <u>scheiden</u>, to part or separate. This word is recognizable in one of the key terms from Heidegger's essay <u>Die Sprache</u> ('Language') as the <u>Unter-Schied</u> (which, unhyphenated, is the common German word for difference). Perhaps even more importantly for our purposes, Heidegger explicitly relates <u>Schied</u>, <u>scheiden</u> to <u>Abgeschiedenheit</u>, which is the principal conduit of its force in this text. In the first discussion of this stanza departedness is not placed in the foreground, but it nevertheless strictly regulates the unfolding of the meaning of species. In the second discussion the hidden composition of departedness is taken to be what is named when Trakl writes of the 'West' (<u>Das Abendland</u>).
+
+'The others', Heidegger proposes, are humans who have strayed from their type, who presumably have departed from their humanity. Are they also, as Derrida's discussion might lead us to suggest [Giii, 20-21], implied as the other of the 'we' who share <u>unsere Sprache</u>? If so, what is 'their' language? And what is the force of the association - which Heidegger ignores - of these others with loved ones, beloved, <u>Lieben</u>? Heidegger refuses (or possibly sublimates) such questions, under the necessity of grasping the meaning of their terms through an untranslatable German word, <u>Geschlecht</u>. The others have lost the key to their own composition because the word giving access to it is inscribed only in 'our' language. The loss of their language has, in some fundamental sense, left them cast away (<u>verschlagen</u>). But what is pronoun-ced in the word <u>Andern</u> cannot be a philosophical concept of alterity, because its pronominality perpetually displaces the site of its meaning. The others cannot be grasped 'here' because they do not occupy a fixed position, which is to say that they are not marked by a proper sign, a proper name or word of their own, one which specifies them in their appropriateness.
+
+<p class="pn">\- 127 -</p>
+
+Heidegger's reading of the 'others' is perhaps too rapid, at this point, to negotiate the inevitable and frustrating 'obstacle' that must result from the fact that the others are always elsewhere. Their words have no place in the discourse that surveys them, nor are they even addressed as passive recipients of an alien narrative. It does not seem as if there is any need for such contact, since the very indeterminateness of the pronoun is alien to the semantic enrichment which results from any exchange with a concrete reference. This understanding is completely at variance with the direction of Heidegger's reading, although a clarification of this variance leads into considerable difficulties. Principally, it is impossible to read 'others' as a simple pronoun in this context because it is 'the others' who bear the weight of specificity, or of 'factical concretion'. Following the extreme tendency of Heidegger's essay would lead to a reading of 'the others' as the proper name for a discrete, concrete, historical totality: it would name western civilization in the epoch of ontotheology. Whereas, '<u>Jener', der Fremdling, ist der Andere zu den Anderen...</u> ('That one', the stranger, is the other to the others...) [US, 50]. As we shall see, genus, from its introduction, is the model of the other. But identification with a species is possible by following the one who is, according to a very dubious traditional trope, an other to the other. Not only does this formulation imply negation and re-entrenchment of negation, it also implies symmetry or reciprocity of relation, thus adding further weight to the suggestion crucial both to Hegelian and anti-Hegelian thinking that negation is complicit with (mediated) identity.
+
+<blockquote><u>Die Anderen - das ist der Schlag der verwesten Gestalt des Menschen. Unsere Sprache nennt das aus einem Schlag geprägte und in diesen</u></blockquote>
+
+<p class="pn">\- 128 -</p>
+
+<blockquote><u>Schlag verschlagene Menschenwesen das 'Geschlecht'.</u> (The others - that is the cast of man's decaying figure. Our language names the human frame which is minted by a casting and cast away in this cast a 'genus'.) [US, 49].</blockquote>
+
+The translation of every important word in this passage is precarious, since a drift away from what is conventionally taken to be the meaning of the dominant terms here inevitably results from even an imperfect attempt at conserving the coherence of terminology. There are immensely powerful imperatives directed to the sacrifice not only of the graphic composition of the text - such a sacrifice is translation itself - but more than this, to the abandonment of every graphic 'relation'. The peculiar clustering of the translated text (which approaches a witticism in the Freudian sense), emerging as a symptom of the attempt to avoid sacrificing the cohesion of graphic resonance, is itself a means of access to the 'meaning' of <u>Geschlecht</u> and the casting that mints it. A <u>Geschlecht</u> is precisely a gathering of likenesses, or common traits. Not that we are able to say that <u>Geschlecht</u> is somehow like the translation-effects it provokes, or that it is comparable to such effects. Comparison already presupposes the distribution of a species across the stroke that would divide it into discrete and manipulable identities. The kinship of species and translation has none of the security of a simile or metaphorizing trope which plays across a basis of some prior rigorous conceptuality. Species does not become clarified within such an analogy, although it is grafted onto a domain of elusive concretion, the supposed familiarity of a linguistic problematic. Instead, it is translation that becomes problematical. Species cannot be illuminated through the analogical relation to translation, thought as an extrinsic and autonomously
+
+<p class="pn">\- 129 -</p>
+
+conceptualized discursive function, since a 'type' must always already be at work 'within' any such relation, marking the grade of differentiation and therefore of similitude. Derrida goes as far as to write in his very first note addressing Heidegger's deployment of <u>Geschlecht</u>: <u>A un moment déterminé, nous pourrons même apercevoir que la pensée du Geschlecht et la pensée de la traduction sont essentiellement la même.</u> (At a determinate moment, we shall be even able to observe that the thought of <u>Geschlecht</u> and the thought of translation are essentially the same.) [Gi, 425 n.].
+
+There is a question involved in the writing of 'genus' and 'species' which is scarcely able to emerge without an upheaval in terminology. At the most banal level the rigid dichotomy of genus and species within scholastic logic is overthrown, and replaced by a far more fluid and open difference of stratification. This transformation means that the distinction between genus and species merely marks a relation, conserving the specificity of the genus and the generality of species. This usage is current in biological taxonomy, where additional terms (for instance, Linnaeus' superordinate levels of 'class' and 'order', and the subordinate levels of 'subspecies', 'variety', and 'race') mark the dissolution of any residual binarity. The difference between genus and species in modern thought is one of intensity of characterization, of specification. In relation to the genus, species is specification taken further. But is it ever possible for a species to be <u>signified</u>? Which is to ask whether the sense of a specificity is captured by the distribution of signifiers in a structure. If such a question were sustainable the further question would arise as to how the exorbitance of specificity, which effects the explosion of the signifying totality, could possibly be inscribed. What
+
+<p class="pn">\- 130 -</p>
+
+would the writing be which adequately specified? And where would we seek the germinal prints for a 'science' of the specifier?
+
+Heidegger continues:
+
+<blockquote><u>Das Wort [Geschlecht] bedeutet sowohl das Menschengeschlecht im Sinne der Menschheit, als auch die Geschlechter im Sinne der Stämme, Sippen und Familien, dies alles wiederum geprägt in das Zwiefache der Geschlechter.</u> (The word signifies the human genus in the sense of humanity, as well as genera in the sense of tribes, populations, and families, all of these in turn minted into the twofold of genders.) [US, 50].</blockquote>
+
+Perhaps what is most immediately striking about this definition is that it omits any reference to 'generation' (in the sense of temporal segmentation), a meaning of the word which seems to preoccupy Heidegger throughout the essay (and which, ironically, Hertz employs, with every legitimacy, as one of its principal translations)\*. Is it possible that
+
+____________________
+\* In section seventy-four of <u>Sein und Zeit</u> Heidegger introduces the (Latinate German) word <u>Generation</u> in terms that are deeply disturbing (especially considering their historical and political context). Heidegger distinguishes 'destiny' (<u>das Geschick</u>) from 'fate' (<u>das Schicksal</u>); attributing the former to the ominously vague totalities of community (<u>die Gemeinschaft</u>) and people (<u>das Volk</u>), he writes: <u>In der Mitteilung und im Kampf wird die Macht des Geschickes erst frei. Die schicksalhafte Geschick des Daseins in und mit seiner 'Generation' macht das volle, eigentliche Geschehen des Dasein aus.</u> (The power of fate first becomes free in communicating and in struggle. The fateful destiny of <u>Dasein</u> in and with its 'generation' settles the full, authentic occurrence of the <u>Dasein</u>). [SZ, 384-5]. It is difficult not to associate this discussion with the <u>andere Generation</u> and 'the unborn grandchildren' (<u>die ungeborenen Enkel</u>) of the Trakl essay, a generation which is in some sense 'lost', and which is invoked during Heidegger's reading of Trakl's <u>Grodek</u>: a reading that
+
+<p class="pn">\- 131 -</p>
+
+Heidegger is trying to conserve here a reading of the word that corresponds broadly to the English 'type', used in its widest sense, especially with regard to notions of kinship and biological relatedness? There is certainly a strong consistency in the shades of meaning he indicates, and one that would be shattered if the 'historical' decomposition of species into generations were included among the groupings in this list. This is quite simply because a generation has no 'horizontal' kinship cohesion. For the purposes of the isolation of discrete living 'types', relations between generations have an indispensable function as lines of consistency, whose internal and temporal differentiations belong to a distinct order of analysis. Within the terms of a purely biological investigation a generation is of significance only insofar as it conserves or dissipates the traits of a type.
+
+In some respects it is the generational sense of <u>Geschlecht</u> that makes the word most strongly resistant to consistent English translation. The ambivalence of the English word 'generation' is, however, very revealing. The reading of generation as a process of propagation aligns it far more closely to a notion of type, and the 'gen-' of generation haunts any attempt to translate <u>Geschlecht</u>, invoking 'gender', 'gene',
+
+____________________
+seeks to interpret the poem otherwise than as a war poem [US, 65]. The irony of this reading is that <u>Grodek</u> is an almost perfect comment upon Heidegger's usage of 'generation' in <u>Sein und Zeit</u>, and it is a comment whose appropriateness lies precisely in its status as a 'war poem'. There is, after all, little mystery about the 'destiny' of this generation; they were killed in a war.
+
+<p class="pn">\- 132 -</p>
+
+'genealogy', 'genera', 'general', 'generate', 'genesis', 'genital', 'genre', and 'genus', and functioning powerfully in French as well as English\*. These words stem from the the Latin <u>gignere</u>, Greek <u>γίγνεσθαι</u> meaning 'to beget'. The 'decomposed genus' Heidegger will compel us shortly to speak of cannot be far from Rimbaud's <u>...gens qui meurent sur les saisons.</u> (... races who perish with the seasons.) [R, 344]. It might even be possible, although this would seem to pass beyond the letter of the German text, provisionally to substitute 'degenerated' for 'decomposed'. If <u>Geschlecht</u> is to be indicated by such a coinage it is necessary to decompose such words explicitly, in order to conserve the problematical unity of the German term†. To write de-gen-erated is to
+
+____________________
+\* In the final paragraph of <u>Signature Événement Context</u> Derrida plays on this series in writing of <u>la force de généralité, de généralisation et de générativité</u> [MP, 393].
+
+____________________
+† As Derrida remarks in the case of an analagous difficulty:
+
+<blockquote><u>On verra aussi à quel point l'unité plastique de ce concept, sa règle plutôt et l'étrange logique qui le lie à son signifiant, ont été dispersées, masquées, oblitérées, frappées d'une relative illisibilité par l'imprudence ou l'empirisme des traducteurs, certes, mais d'abord par la redoutable et iréductible difficulté de la traduction. Difficulté de principe qui tient moins au passage d'une langue dans une autre, d'une langue philosophique dans une autre, qu'à la tradition déjà, nous le verrons, du grec au grec, et violente, d'un non-philosophème dans un philosophème. Avec ce problème de traduction nous n'aurons affaire à rien de moins qu'au problème du passage à la philosophie.</u> (It will also be seen to what extent the plastic unity of the concept, or rather its rule, and the strange logic which links it with its signifier, has been dispersed, masked, obliterated, and stricken with a relative illegibility by</blockquote>
+
+<p class="pn">\- 133 -</p>
+
+insist upon the 'cultural' incommunicability of the specification of 'gen-' in respect of the German language. Or, more precisely, it is to mark a definite failure of English to 'reproduce' an alien sign. In the terminology of Derrida's deconstruction, undoubtedly 'misused' here, the supplement of 'gen-' is placed under erasure, or transferred into a condition of parenthesized legibility. Such an operation is necessary if one is to recover the partially obliterated ancestral traces of (a) gen-re. To undertake such a task is to follow Trakl into cobwebbed vaults that few have wished to enter.
+
+____________________
+<blockquote>the imprudence or empiricism of the translators, certainly, but primarily by the redoutable, irreducible difficulty of [the] translation. It is a difficulty of principle, resting less in the passage from one language into another, from one philosophical language into another, than already in the tradition, as we shall see, from Greek into Greek, and violently, from a nonphilosopheme into a philosopheme. With this problem of translation we will be concerned with nothing less than the problem of the very passage into philosophy.) [D, 80].</blockquote>
+
+<p class="pn">\- 134 -</p>
+
+## Part Three: Degenerations
+
+<blockquote>
+<i>Par la lune d'été vaguement éclairée,<br>
+Debout, nue, et rêvant dans sa pâleur dorée<br>
+Que tache le flot lourd de ses longs cheveux bleus,<br>
+Dans la clairière sombre où la mousse s'étoile,<br>
+La Dryade regarde au ciel silencieux...<br>
+- La blanche Séléné laisse flotter son voile,<br>
+Craintive, sur les pieds du bel Endymion,<br>
+Et lui jette un baiser dans un pâle rayon.<br>
+- La Source pleure au loin dans une longue extase...<br>
+C'est la nymphe qui rêve, un coude sur son vase,<br>
+Au beau jeune homme blanc que son onde a pressé,<br>
+- Un brise d'amour dans la nuit a passé,<br>
+Et, dans les bois sacrés, dans l'horreur des grands arbres,<br>
+Majestueusement debout, les sombres Marbres,<br>
+Les Dieux, au front desquels le Bouvreuil fait son nid,<br>
+- Les Dieux écoutent l'Homme et le Monde infini!</i><br>
+<br>
+[R, 32]
+</blockquote>
+
+<p class="pn">\- 135 -</p>
+
+### One: Lupine Lines
+
+As Heidegger displaces his investigation of 'the others' into that of <u>Geschlecht</u> the question of 'type' is explicitly invoked:
+
+<blockquote>
+<u>Das Geschlecht der 'verwesten Gestalt' des Menschen nennt der Dichter das 'verwesende' Geschlecht. Es ist aus der Art seines Wesens herausgesetzt und darum das 'entsetzte' Geschlecht.</u> (The poet names the gen-us of the '<u>unraveled figure</u>' of humans the '<u>unraveling</u>' gen-us. It has been removed from the type of its weft, and it is therefore the '<u>dislocated</u>' [<u>'entsetzte'</u>: horrified, Hertz settles for '<u>unsettled</u>'] gen-us.) [US, 50]
+</blockquote>
+
+The loss of a weft, or of a specific type of weave, is to be thought as a departure. Or, more accurately, it is linked to an <u>Aussetzung</u> which translates into a knot of indeterminate differentiations or distantiations (abandonment, interruption, or deferment). These might nevertheless prove, within a new 'logic', to be rigorously precise. But the question of precision can only be effectively raised once the anterior implications of gen-era or species have been addressed, since precision is primarily the characteristic of a specification. <u>Aussetzung</u> is closely related to the German word for leprosy (<u>Aussatz</u>), which is also to be found in the text which is the source of the term <u>entsetzte Geschlecht</u>, Trakl's tenebrous and powerful <u>Traum und Umnachtung</u>, which includes the despairing passage:
+
+<blockquote>
+<u>Nachtlang wohnte er in kristallener Höhle und der Aussatz wuchs silbern auf seiner Stirne. Ein Schatten ging er den Saumpfad hinab unter herbstlichen Sternen. Schnee fiel, und blaue Finsternis erfüllte das Haus. Eines Blinden klang die harte Stimme des Vaters und beschwor das Grauen. Weh der gebeugten Erscheinung der Frauen. Unter erstarrten Händen verfielen Frucht und Gerät dem entsetzten Geschlecht. Ein Wolf</u>
+</blockquote>
+
+<p class="pn">\- 136 -</p>
+
+<blockquote>
+<u>zerriß das Erstgeborene und die Schwestern flohen in dunkle Gärten zu knöchernen Greisen.</u> (All night he dwelt in the crystal cave and leprosy grew silver on his brow. He descended the path at the forest's rim, a shadow under autumn stars. As if from a blind man, the hard voice of the father rang, and conjured horror. Woe the stooped appearance of women. At the touch of rigidified hands the fruit and tools of a dislocated gen-us decayed. A wolf devoured the first-born, and the sisters fled to bony old men in dark gardens.) [T, 82-83].
+</blockquote>
+
+So many violent and oppressive images are collected in this short text that interpretation founders. A solitary trajectory opens a path of escape, a path that leads away from the brooding confinement of a family scene into a frozen night. Yet this path, laden with contagion and shadow, collapses back into the domain of the father, who cries out, afflicted like an aged Oedipus. Women stoop under an enigmatic burden, and a wolf preys upon the inheritors of the ruined dynasty, whilst its female pro-geny flee towards another decrepitude. There is an atmosphere of protracted and inexorable <u>de-gen-eration</u>. In addition, an actively ruinous spasm - or descent into lycanthropy - is sketched. The family, in both the narrow and the wider '<u>metaphorical</u>' sense, is exploded by a variety of centrifugal energies, and depredated from within. The heart of the type is depicted as a maelstrom of ferociously destructive forces.
+
+____________________
+\* It is fittingly during a prolonged discussion of the autobiographical dimension of Nietzsche's thinking - a discussion that focuses equally upon the auto-, the bio-, and the graphical - that Derrida comes to remark upon degeneration: <u>L'expression de 'dégénérescence' désigne à la fois la perte de la force vitale, génétique ou généreuse, et celle du type, de espèce ou du genre. L'Entartung.</u> (The expression 'degenerescence' designates at once the loss of vital force, genetic or generous, and that of type, of species or of genre, <u>Entartung</u>.) [OB, 42].
+
+<p class="pn">\- 137 -</p>
+
+When the force which explodes gen-era is most intensely depicted in Trakl's poetry it often bears the mask of a wolf. In one of his most violent war poems, entitled <u>In Osten</u> ('In the East'), occurs the stanza:
+
+<blockquote>
+<u>Dornige Wildnis umgürtet die Stadt</u><br>
+<u>Von blutenden Stufen jagt der Mond</u><br>
+<u>Die erschrockenen Frauen.</u><br>
+<u>Wilde Wölfe brechen durchs Tor.</u><br>
+(Thorny wilderness girdles the city / From bloody steps the moon hunts / The terrified women. / Wild wolves break through the gate.) [T, 94].
+</blockquote>
+
+The wolf is unleashed as that wildness always lurking at the edge of the city. With the wolf, the ferocity of an unrestrained nature crosses the threshold, in a mysterious and predatory conspiracy with the moon. The architecture of this scene remains dispersed, with no precise relation indicated between the steps running with blood and the splintered gate. Does the moon descending the steps come across the wolves bounding up them? In what construction are the celestial and the feral conjoined? These questions can be closely pursued through the jagged geometries of Trakl's texts. In the first version of <u>Passion</u> occur the following lines:
+
+<blockquote>
+<u>Zwei Wölfe im finsteren Wald</u><br>
+<u>Mischten wir unser Blut in steinerner Umarmung</u><br>
+<u>Und die Sterne unseres Geschlechtes fielen auf uns.</u><br>
+(Two wolves in the sinister wood / We mixed our blood in stony embrace / And the stars of our gen-us fell upon us.) [T, 216].
+</blockquote>
+
+The voice of the poet - or one of his voices - speaks as one wolf to another, whilst the forest and the star of a gen-us overhang a savagely dehumanized, petrified, perhaps even inanimate sexual coupling. The starred gen-us is that of the wolves, who no longer invade from without. It is no longer possible that the sister be one of the <u>erschrockenen Frauen</u> hounded by the wolves; it
+
+<p class="pn">\- 138 -</p>
+
+is possible, however, that she is a wolf herself. The '<u>interiority</u>' of the lupine is doubly reinforced by the incestuous embrace which remains inside the gen-us (the family), and by the stony character of this embrace, since the German <u>Stein</u> derives from the Indogermanic <u>stai-</u> meaning to coagulate or compress. The copulative entwining is echoed in a clotting of incestual blood. In the final version of the poem the wolves have become alien, identification withdrawn:
+
+<blockquote>
+<u>Unter finsteren Tannen</u><br>
+<u>Mischten zwei Wölfe ihr Blut</u><br>
+<u>In steinerner Umarmung...</u><br>
+(Under sinister pines / Two wolves mixed their blood / in stony embrace...) [T, 69].
+</blockquote>
+
+The wolf is the 'representative' of a terrifying exteriority. Yet the one who speaks at times becomes the wolf. The wolf is also the alien predator falling upon a gen-us, but without a sustainable relation of exteriority, since the gen-us becomes the wolf's own 'line'. Correlatively, the gen-us is assaulted by a wave of undomesticated frenzy, but is unable to withdraw its roots from the forest, and remains deeply embedded in unregulated wilderness. The wolf, it seems, can never be bolted outside: its itinerary of violence passes through the outside <u>within</u> the inside.
+
+But where are the tracks of the wolf to be found in Heidegger's text? The pursuit of this question (which is also a riddle in the most classical Sophoclean sense, in that it turns upon '<u>ourselves</u>') leads through the entire problematic of <u>Geschlecht</u>. An important clue lies in the sentence from Rimbaud's <u>Une Saison en Enfer</u> which reads:
+
+<blockquote>
+<u>Il m'est bien évident que j'ai toujours été race inférieure. Je ne puis comprendre la révolte. Ma race ne se souleva jamais que pour piller: tels les loups à la bête qu'ils n'ont tuée.</u> (It is quite evident to me that I have always been of an inferior race. I am not able to comprehend
+</blockquote>
+
+<p class="pn">\- 139 -</p>
+
+<blockquote>
+revolt. My race does not ever stir itself except for pillage: like wolves at the beast they have not killed.) [R, 302].
+</blockquote>
+
+What is Rimbaud suggesting when he says that he is of an inferior race? In the quotation just cited, from the section of <u>Une Saison en Enfer</u> entitled <u>Mauvais Sang</u> ('Evil Blood'), he suggests two interconnected themes: unpreparedness for the rigors of revolution, and an evasion of work. The inferior race neither cooperates with the existing ruling forces, nor does it aid the future rulers, plotting in the wings. It is parasitic on both, opportunistically scavenging on the labours and insurgencies of others, <u>plus oisif que le crapaud</u> (lazier than a toad) [R, 301-2]. The inferior race is the genius of economy, it understands the key to history as the hatred of work, and the betrayal of history as the perpetual frustration of this affect:
+
+<blockquote>
+<u>J'ai horreur de tous les métiers. Maîtres et ouvriers, tous paysans, ignobles. La main à plume vaut la main à charrue.</u> (I have a horror of all trades. Masters and workers, all peasants, ignoble. The hand at the quill just as the hand at the plough.) [R, 301].
+</blockquote>
+
+But above all, the inferior race speaks with the voice of the unconscious:
+
+<blockquote>
+<u>Je n'ai jamais été de ce peuple-ci; je n'ai jamais été chrétien; je suis de la race qui chantait dans le supplice; je ne comprends pas les lois; je n'ai pas le sens moral, je suis une brute: vous vous trompez ...</u> (I have never been of this people; I have never been a christian; I am of the race who sings under torture; I do not understand the laws, I am a beast: you fool yourselves ...) [R, 308].
+</blockquote>
+
+What does it mean to be of an inferior race? Within the tradition of western metaphysics there is a ready legend for such a question, one that contrasts the superior to the inferior in order to produce a table of oppositional characteristics. If such a programme is followed one can rapidly say that the superior race is industrious, obedient, moral, religious, whilst the inferior race is lazy, disobedient, immoral, and blasphemous. The inferior race would
+
+<p class="pn">\- 140 -</p>
+
+then be required to work hard, obey, follow alien moral laws, believe in the white man's God and perhaps, with luck, it too could join the elect:
+
+<blockquote>
+<u>Les blancs débarquent. Le canon! Il faut se soumettre au baptême, s'habiller, travailler.</u><br>
+<u>J'ai reçu au coeur le coup de la grâce. Ah! je ne l'avais pas prévu!</u> (The whites disembark. The cannon! It is necessary to submit oneself to baptism, to dress, work. / I have received the stroke of grace. Ah! I had not forseen it!) [R, 309].
+</blockquote>
+
+To follow Rimbaud requires a quite different tread. Inferiority is not negativity, the poor relative of superiority, but the space of desire; aspirational distance. The tradition has always understood such desire as the longing for self-abolition in perfection. In terms of such a reading the inferior race would seek to eliminate itself, becoming its opposite. But if desire affirmed itself, against the raging current of christianized Europe, it would defiantly cry <u>Je suis de race inférieure de toute éternité.</u> (I am of an inferior race to all eternity.) [R, 304] and our question would then be; how is it possible to become even more inferior, to take inferiority further? The inferior race is nomadic, it carries within itself the inscription of a departure, living its desire. It does not seek to conserve itself, perpetually to restate itself in mechanical labour; rather, it exerts itself only to follow the line of its longing. Its inferiority is after all precisely this: that it knows its given mode of existence to be incommensurable with the destiny it craves. It is the embodiment of a hunger that never returns to the same. Unless differently.
+
+The inferior race gazes at civilization with lupine eyes, with a longing that is still almost indecipherable to us. It is true, as the civilized man thinks, that the distance between the forest and the city is everything. But only if it can be protracted. And if the wolf's pulse races at the thought of
+
+<p class="pn">\- 141 -</p>
+
+covering this distance it is only with the excitement of momentum; with the thought of carrying the velocity of its trajectory into the city; of shifting the city beyond itself. Much rather the forest, says the voice of desire, than a city which forgets how to think like a wolf. Because, if the city loses the trace of the inferiority that attaches it to desire, or infinitizes it - which amounts to the same - it becomes christian; a eunuch metropolis ashamed of its feral past. For the inferior race, every civilization is something to be overcome.
+
+As the nineteenth century approached its end and Europe began to harvest the corrupt fruit of its decaying theo-phallo-plutocracies; tottering into a new epoch of mass warfare, systematic racist ideology, and fascism. The logic of the system which was thus entering its terminal but protracted dementia - and a possible alternative to the politics of totalitarianism and genocide - was mapped by two overlapping images: Nietzsche's <u>Uebermensch</u> and Rimbaud's <u>race inférieure</u>. But the thoughts propelling these images, rather than redirecting the reactive flood of European libido, were either ignored, misunderstood, or deliberately twisted out of recognition, until they even seemed to echo the jargon of mass murder. It is perhaps only with the opening of the project of interpreting <u>Geschlecht</u> that we can recover their active and radical sense.
+
+<p class="pn">\- 142 -</p>
+
+### Two: The Father's Steps
+
+There are particular difficulties with the thought of a thematic of <u>Geschlecht</u>. This is because the term 'theme' is generally employed to denote or specify a gen-re of discourse, so that the very possibility of thematic coherence is sustainable only on the basis of a species of writing. Within the terms of this caution it is nevertheless possible tentatively to suggest that <u>Traum und Umnachtung</u> is Trakl's most developed composition on the theme of <u>Geschlecht</u>, and therefore on the 'theme' as such. It is only by entering this text that the most virulent and intractable 'sources' for Heidegger's reading of gen-us can be unearthed. It begins:
+
+<blockquote>
+<u>Am Abend ward zum Greis der Vater; in dunklen Zimmern versteinerte das Antlitz der Mutter und auf dem Knaben lastete der Fluch des entarteten Geschlechts. Manchmal erinnerte er sich seiner Kindheit, erfüllt von Krankheit, Schrecken und Finsternis, verschwiegener Spiele im Sternengarten, oder daß er die Ratten fütterte im dämmernden Hof. Aus blauem Spiegel trat die schmale Gestalt der Schwester und er stürzte wie tot ins Dunkel.</u> (In the evening the father became senescent; in dark rooms the mother's visage petrified, and the curse of the degenerate gen-us weighed upon the boy. Sometimes he remembered his childhood, filled with sickness, terror, and gloom, secret games in the star-garden, or that he fed rats in the twilit courtyard. From a blue mirror stepped the slender figure of the sister, and he plunged, as if dead, into the dark.) [T, 80].
+</blockquote>
+
+From its very beginning the text is haunted by the father, who is scarcely mentioned outside of the three prose poems, <u>Verwandlung des Bösen</u>, <u>Traum und Umnachtung</u>, and <u>Offenbarung und Untergang</u>. But within these three poems - and particularly within the first two - the shadowy traces of the father are
+
+<p class="pn">\- 143 -</p>
+
+insistant. The father is written at the edge of death, a fragile boundary sign between house and graveyard, stalking his son's nightmares:
+
+<blockquote>
+<u>Seine Träume erfüllten das alte Haus der Väter. Am abend ging er gerne über den verfallenen Friedhof, oder er besah in dämmernder Totenkammer die Leiche, die grünen Flecken der Verwesung auf ihren schönen Händen.</u> (His dreams filled the old house of his fathers. In the evening he liked to cross the ruined cemetery, or he viewed the corpses in the twilit chamber, the green flecks of decomposition on their beautiful hands.) [T, 80].
+</blockquote>
+
+As in English, the German word <u>Haus</u> has two basic senses. It can mean a building which functions as a domicile, or it can translate the Latin <u>gens</u> meaning a family - normally aristocratic - for instance, <u>das Haus Habsburg</u>. This second meaning, of course, 'translates' one of the important senses of <u>Geschlecht</u>. These meanings are systematically 'confused' by kinship organizations, which exist in order to map genealogies onto a politico-geographical territory; families onto their 'places'. European culture has its ultimate term in the father's house, which is the place where the continuity of property and nomenclature is founded. This is to say that the ideal of the father's house is the site of arrival for the 'signifier', the axis of communication. The patriarchal family takes responsibility for its name, underwriting the law of the sign. Hence the family acts as the model signified, accepting its obligations to the signifier, and therefore subscribing to the 'right' of the sign system, whose ultimate explication occurs in the development of logic. It is due to this juridical function that the very thought of the 'signifier' has only been sustained within the closure of the system of the house, of the 'house rules' as it were. The re-appropriation of the family name by the householder is a metaphysics long accepted by Europe's
+
+<p class="pn">\- 144 -</p>
+
+postal systems, and with the introduction of complex credit economies came the development of the 'banking house' where the fiscal signifier finds a domicile. Perhaps all the conditions for a metaphorics of the <u>eigen</u> ('own') - which Derrida has shown to be so crucial to Heidegger's discourse - arise in a certain proximity to the house of the father.
+
+The house insulates cultural and dynastic self-possession from the empirical annihilation of each generation. In principle it opens the space for a controlled - or domesticated - confrontation with death. With a death, that is, which is unable to threaten the continuity of the system of signs which regulates its representation. In the widest archaeological sense this continuity is the legibility of tombstones. But is the young boy of the poem able to read the inscriptions in the graveyard and the family vault? Which is ultimately to ask the same as; how intact is the father's house? Or how securely is Trakl's language rooted in the ground of onto-theological representation? It is with this last formulation that we seem to have regained some contact with Heidegger's reading.
+
+Trakl raises his own question about the father's house, asking in the poem <u>Erinnerung</u>, which can be read as the first version of <u>Verwandlung des Bösen</u>:
+
+<blockquote>
+<u>Was zwingt so still zu stehen auf verfallener Wendeltreppe im Haus der Väter und es erlöscht in schmächtigen Händen der flackernde Leuchter. Stunde einsamer Finsternis, stummes Erwachen im Hausflur im fahlen Gespinst des Mondes</u> (What compels one to stand so still upon ruined spiral stairs in the father's house and the flickering candlestick is extinguished in delicate hands. Hour of solitary gloom, silent awakening in the hallway in the pale skein of the moon.) [T, 210].
+</blockquote>
+
+What Trakl hunts is a certain compulsion - a <u>Zwang</u> - which leads to a suspension of movement on the ruined stairs of the father's house. In the
+
+<p class="pn">\- 145 -</p>
+
+questioning of this paralysis is coiled a further interrogation, directed perhaps at Dante's <u>Divine Comedy</u>. In the temporary freezing of ascent the spiral of christian transcendence is wound back into its foundation in western patriarchy. But this questioning is not to be illuminated by the sunken sun of European <u>Aufklärung</u>, since everything is plunged into sinister darkness, and comes to seem like a dream. Who is it that, features buried in shadow, is so compelled? In this draft or tug of the question it is only possible to assume that it is the figure introduced in the poem's first line and named 'the child' (<u>Das Kind</u>). Perhaps it is the father's child? It seems to be this child who is later named <u>der Knabe</u> (the boy), and who would, therefore, be the father's son\*.
+
+____________________
+\* Heidegger would not legitimate such moves, perhaps, since in his reading of <u>An den Knaben Elis</u> ('To the boy Elis') he suggests:
+
+<blockquote>
+<u>Elis' Untergang geht in die uralte Frühe, die älter ist denn das altgewordene verwesende Geschlecht, älter, weil sinnender, sinnender, weil stiller, stiller, weil selbst stillender.</u><br>
+<u>In der Gestalt des Knaben Elis beruht das Knabenhafte nicht in einem Gegensatz zum Mädchenhaften. Das Knabenhafte ist die Erscheinung der stilleren Kindheit. Diese birgt und spart in sich die sanfte Zwiefalt der Geschlechter, des Jünglings sowohl wie der 'goldenen Gestalt der Jünglingin'.</u> (Elis' descent passes into the primeval dawn, which is older than the aged, decomposing genus; older, because more meditative; more meditative, because more silent, more silent because itself more silencing. / In the figure of the boy Elis, boyishness does not rest in an opposition to girlishness. Boyishness is the appearance of the more silent childhood. This safeguards and rescues the gentle twofold of the gen-ders in itself, that of the young man as well as that of the 'golden figure of the young woman'.) [US, 55].
+</blockquote>
+
+<p class="pn">\- 146 -</p>
+
+Trakl's question is directed at a compulsive 'inertia' of the son, which freezes him upon the stairs of his father's house. He rephrases this question twice in the final version of <u>Verwandlung des Bösen</u>. The first reads:
+
+<blockquote>
+<u>Was zwingt dich still zu stehen auf der verfallenen Stiege, im Haus deiner Väter? Bleierne Schwärze. Was hebst du mit silberner Hand an die Augen; und die Lider sinken wie trunken von Mohn?</u> (What compels you to stand silent upon ruined stairs, in the house of your father? Leaden blackness. What do you lift to your eyes with a silvered hand; and lids sink as if drunk with opium?) [57].
+</blockquote>
+
+Here a 'leaden blackness' is introduced (which might also imply a dark blue since the German word's <u>Blei</u> and <u>Blau</u> are etymologically interrelated). Might this oppressive darkness be what compels the son's strange paralysis? But a further question is raised, or the same question is raised by a further step, and oriented towards an 'object' that is lifted to the eyes. Is it this which has compelled the son's immobility? Perhaps in the poet's language it is the 'same' for eyelids to sink as if intoxicated as to stand still on ruined stairs? Both would be symptoms of an overpowering affect, an almost narcotic gathering of darkness, such as is caught in the German <u>Umnachtung</u>, a word often translated as 'derangement' but having the literal sense of envelopment in the night (<u>Nacht</u>). In the poem <u>Nachts</u> (At Night), which appears immediately before <u>Verwandlung des Bösen</u> in Trakl's book <u>Sebastian im Traum</u>, occurs the line <u>Dein roter Mund besiegelte des Freundes Umnachtung</u> ("Your red mouth seals the friend's derangement") [T, 56]. In the final draft of the question, later in the same paragraph, a flame is reintroduced, but this time springing from the son's hand. There is also another child, disturbed in its sleep. But the most imposing transformation lies in the imagery of religious sacrifice, which intervenes before the repetition of the question:
+
+<blockquote>
+<u>Du, ein blaues Tier, das leise zittert; du, der bleiche Priester, der es</u>
+</blockquote>
+
+<p class="pn">\- 147 -</p>
+
+<blockquote>
+<u>hinschlachtet am schwarzen Altar. O dein Lächeln im Dunkel, traurig und böse, daß ein Kind im Schlaf erbleicht. Eine rote Flamme sprang aus deiner Hand und ein Nachtfalter verbrannte daran. O die Flöte des Lichts; o die Flöte des Tods. Was zwang dich still zu stehen auf verfallener Stiege, im Haus deiner Väter?</u> (You, a blue animal, that softly trembles; you, the pale priest, who slaughters it at a black alter. O your laugh in the dark, mournful and evil, such that a child turns wan in its sleep. A red flame sprang out of your hand and a moth incinerated within it. O the flute of light; o the flute of death. What compelled you to stand so silent upon ruined stairs, in the house of your father?) [T, 57].
+</blockquote>
+
+Both slaughter and its German equivalent <u>schlachten</u> derive from the Old High German <u>slahan</u>, which is the terminal root of <u>Schlag</u> and thus of <u>Geschlecht</u>. As we shall see, Heidegger enriches his reading of <u>Schlag</u> by associating it with the Greek word <u>πληγη</u>, which is translated both by <u>Schlag</u> and by the German <u>Fluch</u> ('curse'). An analagous, although perhaps rather more indirect route to the thought of the <u>Schlag</u> winds through an investigation into the English word 'stamp'. This displaces the lexical focus of the investigation, since 'stamp' is a rather precarious translation of <u>Schlag</u>. But despite a shift of semantic gravity towards the foot - which is not wholly unimpelled by the flow of Heidegger's text - 'stamp' does seem to bear the weight of those connotations of <u>Schlag</u> which apply most strongly to the issue of 'print'.
+
+Both the word 'stamp' and its closest German equivalent <u>stampfen</u> (to tread down forcefully with the foot) derive from the Germanic <u>stap</u>. From <u>stampfen</u> an old but subtle divergence of composition and sense leads to the word <u>stapfen</u>, which has particular reference to pedestrian movement in the snow. The English 'step' shares this ancestry, and although one its German counterparts - <u>Schritte</u> (from the verb <u>schreiten</u> 'to step') - has a quite separate line of descent, the German equivalent of its alternative sense (<u>Stufe</u> meaning 'step' as in stair) is derived from the same root. From the perspective
+
+<p class="pn">\- 148 -</p>
+
+of the English language, and of its etymology, it is possible to read a peculiar coherence between <u>Schlag</u> and <u>Stufe</u>; a coherence traced by the graphic of the foot. Indeed, the interweaving of inscription with the foot, which regulates both the dissemination of 'stamp' and the entire terminological diffusion of <u>stap</u>, seems to depart from the footprint (<u>Stapfe</u>) as from an originary impulse. Perhaps the print is a footprint precisely insofar as it bears the trace of its own migratory 'origin'; primordially referred to a source or resource of diffusion. There is no such thing as a radically singularized or unique footprint, there are only trails and the punctuations of trails, serialized marks which are both inherently directional and generic. It is only the elementary structures of the footprint, simulated within the technologies of print in general, that allow textual cohesion (uniformity of the graphic medium), and even reading as such, which is to say, the process which follows the marks of an inscription.
+
+In the poem <u>Helian</u> one finds the lines:
+
+<blockquote>
+<u>Ein bleicher Engel</u><br>
+<u>Tritt der Sohn ins leere Haus seiner Väter.</u><br>
+(A pale angel / The son steps into the empty house of his fathers.) [T, 42].
+</blockquote>
+
+Further in the same poem the word <u>Stufen</u> is employed in a context which is strongly resonant with <u>Traum und Umnachtung</u>:
+
+<blockquote>
+<u>Die Stufen des Wahnsinns in schwarzen Zimmern,</u><br>
+<u>Die Schatten der Alten unter der offenen Tür,</u><br>
+<u>Da Helians Seele sich im rosigen Spiegel beschaut</u><br>
+<u>Und Schnee und Aussatz von seine Stirne sinken.</u><br>
+(The steps of madness in black rooms, / The shadows of the parents under the open door, / There Helian's soul gazes on itself in the rosy mirror / And snow and leprosy sink from his brow.) [T, 43].
+</blockquote>
+
+<p class="pn">\- 149 -</p>
+
+What is it that is connected, or separated, by such steps? It is no longer conceivable that we are faced here by a metaphor which conserves the organization of <u>inferno</u>, <u>purgatorio</u> and <u>paradiso</u>. By a terraced structure, that is, which is fully penetrated - at every level - by the teleological rationality of an omnipotent judge. Rather, it is sense itself, and with it every possible teleology, that is linked by steps to an other that it does not comprehend. At the bottom of Trakl's staircase there is no familiarity, and no eschatologically ordered destination, not even that of a hell. The step from <u>Stiege</u> to <u>Stufe</u> is itself a descending movement, crossing the threshold from one type of difference to another. The stair (<u>Stiege</u>) is a gradation instituted within the domain of the father's house. It is characterized by the anguished indecision and paralysis which stems from an imperative to choose between antagonistic possibilities: opposing sexual identities; domesticity or exile; life or death; acceptance or refusal of the law. <u>Fiebernd saß er auf der eisigen Stiege, rasend gen Gott, daß er stürbe.</u> (He sat feverish upon the icy stair, raging against God that he would die.) [T, 81]. The narrow coil constricts movement between the absolutes of ascent to identity or descent into negativity. A gloomy downward spiral, leading away from identification with the father's law, might seem to crumble into bestiality, monstrosity, incest, and divine retribution\*. But following this descending course leads Trakl somewhere else:
+
+____________________
+\* In their reading of Kafka, Deleuze and Guattari discuss <u>L'inceste avec la soeur qui s'oppose à l'inceste oedipien, l'inceste qui témoigne d'une sexualité non humaine comme devenir animal.</u> ("the incest with the sister that opposes itself to oedipal incest, the incest that testifies to a non-human sexuality like a becoming-animal.") [KLM, 27].
+
+<p class="pn">\- 150 -</p>
+
+<blockquote>
+<u>Silberne Wasser rinnen über die Stufen des Walds,</u>
+<u>Die Nacht und sprachlos ein vergessenes Leben.</u>
+(Silver waters run over the steps of the wood, / Night, and speechless a forgotten life, ...) [T, 54].
+</blockquote>
+
+The path of exile and descent forsakes the logic of domesticity, and with it the negative predicates that organize the denigration and exclusion of alterity. The steps that lead into the wild take on a new sense, and are specified within another order of difference. Alphonso Lingis sketches the broad outlines of such an order in discussing Nietzsche's conception of difference:
+
+<blockquote>
+To see difference is not to see absolute opposition, contradiction; it is to see gradatisms of divergence. But if we see greater and lesser difference, that means we also see lesser and greater similarity. If in a succession of appearances each differs from the preceding one, each is also similar to it; otherwise one would not say even that this one diverges from that one. [NN, 39].
+</blockquote>
+
+It would be misleading, however, to imagine that such a conceptual framework can be formulated, grasped, and substituted for the oppositional notion of difference without encountering profound and subtle resistances. The thought, or the terminology and syntax, of gradation must first be painstakingly teased away from its metaphysical appropriations, which include notions of continuity, uninterrupted evolution, purely quantitative distinctions, etc. Gradation, which is built upon the Latin <u>gradum</u> meaning 'step' (and with the cluster of associations which includes 'gradual', 'degradation', 'gradient', and 'degree') cannot, perhaps, be defined or accommodated (without repression) in the existing structures of Western rationality. On the level of wild speculation it might be possible to suggest that the difficulty of this thought, whilst involved in the Latinization of Greek philosophy that Heidegger interprets as being devastating for Western ontology, stems not from the effacing of Greek
+
+<p class="pn">\- 151 -</p>
+
+thinking, but rather from a perversion of the difference from Greece. <u>Gradus</u> might be the index of a de-Hellenizing that (for as long as it still remained a pagan notion) was not anti-Hellenic, and, indeed, could not possibly function within a logic of reciprocal negativity and an excluded middle.
+
+In his <u>Méditations Métaphysiques</u> Descartes writes of <u>degrés d'être</u> ("degrees of being") [MM, 107], a concept bound together in his meditations with an onto-theological hierarchy, and according to which 'being' and 'perfection' are interchangeable. Such a scheme would seem to support a reading of Latinization ('graduation') such as Heidegger's; one that related it directly to the consolidation of theistic metaphysics. But is there not a sense in which the theologization of gradation destroys the thought of difference as a matter of the step in order to recapitulate it within an oppositional structure of finitude / infinitude? Would not Descartes thinking then be a complex skein of incompatible threads, amongst which was a calculative (graduating) rationality exceeding any possible pyramidal stability or theological foundation? To tease these threads apart it is of at least provisional value to deploy the hermeneutical discrimination between 'method' and 'system', a distinction that has been applied stubbornly and inappropriately to the reading of Hegel, and that is far more relevant to Descartes' thinking. 'Method' and 'system', that is to say 'truth' as degree or direction, and truth as apodicticity or dogma. Such a tension can be traced wherever the issue of degree is raised by Descartes, as for instance when he questions whether God can be a deceiver:
+
+<blockquote>
+<u>Et afin que je puisse avoir occasion d'examiner cela sans interrompre l'ordre de méditer que je me suis proposé, qui est de passer par degrés des notions que je trouverai les premières en mon esprit à celles que j'y pourrai trouver par après, il faut ici que je divise toutes mes pensées en certains genres, et que je considère dans lesquels de ces genres il y</u>
+</blockquote>
+
+<p class="pn">\- 152 -</p>
+
+<blockquote>
+<u>a proprement de la vérité ou de l'erreur.</u> ("And in order to be able to have occasion to examine this without interrupting the order of thought that I have proposed for myself, which is to pass by degrees from notions that I find to be primary in my spirit to those that I will be able to find there later, it is necessary here that I divide all my thoughts into certain genres, and that I consider in which of these genres there is properly truth or error.") [MM, 101].
+</blockquote>
+
+Buried in this procedure are two distinct notions of precedence; on the one hand a precedence of gradation, according to which something will precede something else as a pure effect of gradualness or relatively commensurable difference - which is to say, due to differences in the degree of difference or the scale of the step -, and on the other hand a precedence that is properly 'ontological', according to which something is prior by nature, irrespective of comparison or line of approach. The gradational sense of precedence constitutes 'epistemology' as the economy of thought; a thoroughgoing pragmatism of the intellect in which the calculation of the step and the step of calculation are unified in a generics or a genealogy of difference. Such thinking bypasses the entire dialectic of belief and suspicion with its institution of subject-object correspondences and its search for guarantees. Yet such thinking - the <u>pulsion</u> of the Cartesian inquiry - is subordinated to a theological imperative that erects a transcendental criterion of truth above the immanent flux of thought. This criterion marks out a tribunal or 'secondary process' within the meditation; re-evaluating a thinking which has already been graded according to its power, and which must now be judged according to its legitimacy. This legitimacy can only be gauged if the order of differences arising out of the exigencies of 'method' are mapped onto a stable hierarchy rooted in the order of being; a mapping that Descartes effects through a
+
+<p class="pn">\- 153 -</p>
+
+variant of the ontological argument where the concept of God functions as the principle of correspondence between reality and thought. It is at this moment, and not at the point of the introduction of gradational thinking, that modern philosophy submits (in the hollow defiance of its inception) to the ontotheological tradition.
+
+### Three: Reflections upon Narcissus
+
+Although the German language employs the term <u>Grad</u>, it is not dependent upon such progeny of the Latin <u>gradus</u> to mark non-oppositional differences, since it also has access to the word <u>Abstufung</u>, which can be taken relatively unproblematically as a translation of 'gradation'. This means that in the German term the sense of gradation as stepped difference is far more explicit than in its English equivalent. Trakl's language pushes even further in this direction, however, by degrading any possibility of recuperating simple distinction. The steps of Trakl's poems are typically 'mossy' (<u>moosig</u>), simultaneously covered and decrepit. The German <u>Moos</u> is a close relative of the English 'moss', and both stem from an earlier sense of 'swamp', so that <u>Moos</u> is related to <u>Moder</u> or 'rot', akin, of course, to <u>Verwesung</u>. <u>Stufen von Moos</u> ('steps of moss') [56] do not merely have the nihilistic sense of degraded difference or disordered gradation, they also suggest the gradation of disorder, pointing to a regularity beyond - and independent of - the law. But according to the foundational principles of patriarchal culture, the outside of the father's house in general - where the threat of castration no longer underwrites articulation - is without regularity of any kind. All social,
+
+<p class="pn">\- 154 -</p>
+
+economic, and communicative exchanges must pass from the eyes of one father to another. Castration, as the extirpation of the possibility of pleasure, not only symbolically polices the law, but also serves as the basic metaphor for the horror of alterity; a figuration of the other condition, or the condition of the other. The metamorphoses of desire must be crushed under the ego and the ideal of identity, if they are not to drain away into the swamps of transgression, madness and death. The fading of identity always transmutes, therefore, according to a dialectic of indefinate complexity, into violent extirpation and negation.
+
+Trakl, however, gives another account of fading, one that is bound together with the decay of the step. In the prose poem <u>Offenbarung und Untergang</u> the last line of the first paragraph contains the phrase, <u>verklangen die Schritte der Schatten auf verfallenen Stufen</u> (the footsteps of the shadows died away upon ruined steps) [T, 95]. Fading is gradual, not in the sense of something protracted or continuous, but in that of a transformation which does not participate in negativity. Such fading is however not simple; the distantiation of the metaphysical sense of repudiation is only a preliminary stage leading towards the labyrinthine problem which extends beneath it. This more profound and intricate problem is that of the 'origin' or descent of intensities, and is pursued in an exemplary fashion within a poem that begins with the fading of wind, birdsong and autumn's flutes, moving inexorably into an exploration of destructured intensities. This poem is called <u>Geistliche Dämmerung</u> ('Spiriting Twilight').
+
+<u>Geistliche Dämmerung</u> is the only poem cited by Heidegger in its entirety in the essay, and this is of some considerable significance. Dissolving the unity and specificity of the separate poems plays a vital role in Heidegger's
+
+<p class="pn">\- 155 -</p>
+
+project of uncovering a site that relates to the Trakl corpus indifferently and as a whole. Up to the point at which <u>Geistliche Dämmerung</u> is introduced Heidegger conserves the status of this site as the sole 'ontologically' significant totality by splintering, re-arranging, and repeating fragments of the individual poems. The resilient integrity of this particular poem in Heidegger's text might therefore indicate a special difficulty, one that obstructs the process of assimilation and resists the hegemony of the site. If this is so it is possible that an issue is at stake in the reading of this poem which resists absorption into any readily communicable truth of Trakl's poetry, an issue that perhaps remains in some sense exterior to a 'thinking dialogue' with the poet, but one that also retains a peculiar insistence. As Heidegger's reading unfolds it comes to chart a closure of communication of precisely this kind.
+
+There is no unambiguous point at which the discussion of <u>Geistliche Dämmerung</u> begins. It is approached through a discussion of the final lines of <u>Sommersneige</u> ('Summer Solstice') in which the steps of the stranger ring through the silver night, and the blue beast is brought to the memory of his path, the melody of his spiriting year. To this is conjoined the hyacinthine countenance of twilight from the poem <u>Unterwegs</u> ('Underway'). It is therefore in order to address what is named in the poem's title that it is introduced, without any hint that the perplexing figure of the sister is to haunt it both here and in its later citation, displacing all other preoccupations. It reads:
+
+<blockquote>
+<u>Stille begegnet am Saum des Waldes</u><br>
+<u>Ein dunkles Wild;</u><br>
+<u>Am Hügel endet leise der Abendwind,</u><br>
+<br>
+<u>Verstummt die Klage der Amsel,</u>
+</blockquote>
+
+<p class="pn">\- 156 -</p>
+
+<blockquote>
+<u>Und die sanften Flöten des Herbstes</u><br>
+<u>Schweigen im Rohr.</u><br>
+<br>
+<u>Auf schwarzer Wolke</u><br>
+<u>Befährst du trunken von Mohn</u><br>
+<u>Den nächtigen Weiher,</u><br>
+<br>
+<u>Den Sternenhimmel.</u><br>
+<u>Immer tönt der Schwester mondene Stimme</u><br>
+<u>Durch die geistliche Nacht.</u><br>
+<br>
+(At the forest's rim silence meets / A dark beast; / Quietly, on the hill, dies the evening wind, // The plaint of the blackbird ceases, / And the gentle flutes of autumn / Fall silent in the reed. // On a black cloud you sail, / Drunk on poppies, / The nocturnal pool, // The starry sky. / The lunar voice of the sister sounds Unceasing / Through the spiriting night.) [T, 66].
+</blockquote>
+
+The translation of 'beast' for <u>Wild</u> is of course unsatisfactory. In German the word <u>Wild</u> denotes a feral animal, especially one hunted as game, and sometimes it specifies such animals as deer. In addition it connotes wildness and wilderness, since the adjective 'wild' exists in German as well as English. Furthermore, it is probably etymologically related to the similar word <u>Wald</u>, forest. This network of associations seems impossible even to approach in translation. Such difficulties are particularly frustrating inasmuch as this translation must bear almost the entire weight of Trakl's exploration of animality, and the further stresses of Heidegger's response to it.
+
+For Heidegger the 'dark beast' is clearly the 'blue beast' who negotiates the difference between animality and the opening of the horizon of being - <u>der Mensch</u>. The wildness of the beast is not swallowed by the forest; instead it gives to the forest a margin. But this margin is not a fixed demarcation, and
+
+<p class="pn">\- 157 -</p>
+
+is not illuminated by the light of day. The shadowy animal, trembling with uncertainty in the evening wind, is man:
+
+<blockquote>
+<u>Das blaue Wild ist ein Tier, dessen Tierheit vermutlich nicht im Tierischen, sondern in jenem schauenden Gedenken beruht, nach dem der Dichter ruft. Diese Tierheit ist noch fern und kaum zu erblicken, so schwankt denn die Tierheit des hier gemeinten Tieres im unbestimmten. Sie ist noch nicht in ihr Wesen eingebracht. Dieses Tier, nämlich das denkende, das animal rationale, der Mensch, ist nach einem Wort Nietzsche's noch nicht fest gestellt.</u> (The blue beast is an animal whose animality presumably rests, not in animalness, but rather in that thoughtful gaze, after which the poet calls. This animality is yet distant, and scarcely to be registered, so that the animality of the animal noted here oscillates in the indeterminate. It is not yet brought into its weft. This animal, the one that thinks, <u>animal rationale</u>, humanity, is, according to Nietzsche's words, not yet firmly established.) [US, 45].
+</blockquote>
+
+Heidegger takes the weave of the distance separating humanity from the beasts of the wilderness to rest in a type of thinking that is irreducible to adaptive biological calculation. Such thinking is rooted in the temporalization of the ontological difference, and has been traditionally unified - if only confusedly so - about the thought of transcendence. Transcendental thinking, as we saw at the outset, has the peculiar characteristic of relating itself to the thematic of thought itself, a tendency which has been systematized within epistemological philosophy. Within the western tradition this type of cognition has been designated 'reflection'. The human is that animal caught in the play of its reflection. The line of approach that Heidegger follows, in what is to be his first and sole decisive encounter with the poem, begins with its final stanza:
+
+<blockquote>
+<u>Der Sternenhimmel ist im dichterischen Bild des nächtigen Weihers dargestellt. So meint es unser gewöhnliches Vorstellen. Aber der nächtliche Himmel ist in der Wahrheit seines Wesens dieser Weiher.</u>
+</blockquote>
+
+<p class="pn">\- 158 -</p>
+
+<blockquote>
+<u>Dagegen bleibt, was wir sonst die Nacht nennen, eher nur ein Bild, nämlich das verblaßte und entleerte Nachbild ihres Wesens.</u> (The starry sky is portrayed ['dar-ge-stellt', staged, placed there, the 'stellac' is decisive here] in the poetic image of the nocturnal pool. So our habitual representation ['vor-stellen'] thinks it. But the night sky is in the truth of its weft this pool. Over against this, what we otherwise call the night remains only an image, namely, the faded and vacuous after-image ['Nachbild', perhaps also 'copy'] of its weft.) [US, 48].
+</blockquote>
+
+The insistence that the night sky is in truth a pool is not irreducible either to Heidegger's phenomenological stubbornness, or to a defence of the primordiality of metaphor. It is far more intimately connected with the problematic of spatiality in post-Kantian thinking, and beyond this with the Greek thought of the heavens as χάος. These concerns are bound up with Heidegger's pursuit of that reflection which yields an image of human transcendence, and therefore marks a firmly established separation of Dasein from the psychology of animals. This pursuit is perhaps the aspect of Heidegger's work which is closest to the concerns of the ontotheological tradition, the point where his thinking is most 'human, all-to-human'. But there is, nevertheless, something both crucial and 'technically' precise at issue in this play of mirrors. The passage continues:
+
+<blockquote>
+<u>Oft kehrt im Gedicht des Dichters der Weiher wieder und der Weiherspiegel. Die bald schwarzen, bald blauen Wasser zeigen den Menschen sein eignes Antlitz, seinen Gegenblick. Im nächtigen Weiher des Sternenhimmels aber erscheint die dämmernde Bläue der geistlichen Nacht. Ihr Glanz ist kühl.</u> (The pool and the mirror-pool often recur in the poet's poetry. The water, sometimes blue, sometimes black, shows humanity its own countenance, its returning gaze. But in the nocturnal pool of the starry sky appears the twilight blue of the spiriting night. Its gleam is cool.) [US, 48].
+</blockquote>
+
+<p class="pn">\- 159 -</p>
+
+The starry sky has an integral relation to reflection, but one which is of daunting complexity. Heidegger first turns to the pool itself, besides which humanity lies, lost in Narcissistic reverie. Here humanity sees itself, although we are not told whether, like Narcissus, its gaze is inflamed with desire.
+
+This imagery has an insistence in Trakl's poetry which psychoanalysis has taught us to associate with the drive and with the obsessional relations that trace the organization of repression. The ripples of primary narcissism stem from a primordial stage of psychic development, before the excitations traversing the organism - constitutive of its drives - are relayed through the reality principle. According to Freud's late work, primary narcissism pre-exists the coding of the drive in terms of pleasures and unpleasures resulting from relations to objects; it corresponds to the self-relation of intensities prior to the intervention of interpretation. The crushing of this intra-uterine pathos under the ego occurs along with the motor development of the infant, and with the discrimination between reality and fantasy that results from the respective coordination or non-coordination of motility and stimulus. This process organizes the mechanisms of repression that will later be utilized in the formation of the oedipus complex; a system of anti-incestual repression that is orchestrated within the psychic apparatus as the most extreme of its adaptations to reality, casting it under the imperatives of a newly discovered but implacable alterity. Within Kantian terminology it is possible to suggest that the Freudian stage of primary narcissism corresponds to a condition anterior to the necessity of schematism, because the disengagement of intuition from the concept - which marks the acknowledgement of an external order delimiting the legislative powers of the 'subject' - is yet to occur. A reign of unfettered fantasy resists the separation of thought and perception.
+
+<p class="pn">\- 160 -</p>
+
+It would be easy to think that the model of primary narcissism conspires with idealist and phenomenological accounts of subjectivity as pure self-relation. I would argue that such a reading fails to take account of the theoretical condition for primary narcissism, which is not the sovereignty of individuated subjectivity, but rather the anegoic vanishing point of any possibility of subjectivity or intentional consciousness within the physiological matrix of the inter-uterine state. The 'self'-absorbtion of the drive does not initiate subjectivity, it merely antedates the dispersion of the drive into the adoption of strategy, which is in turn dependent on the physiological individuation of the infant. Before the death drive of the infant detaches itself from the mortal destiny of the mother's body, it remains a passive echo of what is not yet another process, an excess or surplus of the dying mother. The individuation of the infant involves, therefore, a detour from the death drive of the mother, an additional loop of intensity which suspends a fragment of her own dying. Primary narcissism is able to persist as long as the harmonics of death between mother and child are undisrupted, since the intensities of the infantile psyche originate as a perfect accident of the pulsional recurrences that organize the mother's body. Primary narcissism, therefore, far from being a state of self-sufficiency, involves living the dying of another.
+
+Heidegger finds the compulsive character of Trakl's imagery to be indicative of a repression that is not primarily sexual, but which seems to be at least superficially of quite another type. He takes the reflectivity of Trakl's mirrors to exceed all representation and ontical objectivity (<u>Vorhandenheit</u>). In the darkened pool the gaze does not return in a familiar form; it reveals instead an abyssal twilit blue, which colours both the dawn and dusk of the spiriting night. The image of no thing returns. Reflection is
+
+<p class="pn">\- 161 -</p>
+
+shattered against the impersonal, against the impassive shade of a pure opening or cleft in beings. Humanity is thus reflected as the default of an (ontical) image; as a lack of ground or <u>Abgrund</u> which is the transcendental condition of any possible ontology. The heavens are an abyss: χάος. As we follow Heidegger's discussion of <u>Geistliche Dämmerung</u> further, this classical comprehension of chaos enters into a problematic negotiation with the contemporary sense of the word as disorder. It is this negotiation which re-opens the path to Trakl's most crucial explorations.
+
+### Four: The Marks of Delirium
+
+As the reading of <u>Geistliche Dämmerung</u> proceeds Heidegger's discussion suddenly changes key, without indicating that there is any thematic unity between the mirror and the mysterious figure who is now introduced, the sister:
+
+<blockquote>
+<u>Das kühle Licht entstammt dem Scheinen der Mändin (Selanna). Rings um ihr Leuchten verblassen und erkühlen sogar, wie altgriechische Verse sagen, die Sterne. Alles wird 'monden'. Der die Nacht durchschreitende Fremde heißt 'der Mondene'. Die 'mondene Stimme' der Schwester, die immer durch die geistliche Nacht tönt, hört der Bruder dann, wenn er in seinem Kahn, der noch ein 'schwarzer' ist und kaum beglänzt vom Goldenen des Fremdlings,diesem auf nächtiger Weiherfahrt zu folgen versucht.</u> (The cool light stems from the shining of the lunar woman (Selanna). Ringing her radiance, as ancient Greek verse says, the stars fade and even cool. Everything becomes 'lunar'. The stranger (masculine) stepping through the night is called 'the lunar one'. The 'lunar voice' of the sister, which always sounds through the spiriting night, is then heard by the brother in his boat when he attempts to follow the stranger in a nocturnal
+</blockquote>
+
+<p class="pn">\- 162 -</p>
+
+<blockquote>
+journey across the pool, which is still 'black' and scarcely illuminated by the stranger's goldenness.) [US, 48-9].
+</blockquote>
+
+This is surely one of Heidegger's most bewildering passages. Perhaps our first task is to make some sense of the 'characters' we are confronted with here; Selanna, the strangers (<u>der Fremde</u>, <u>der Fremdling</u>; the gender of <u>das Fremde</u> from p.41 has now strangely metamorphosed), the brother and the sister. What is the meaning of this perplexing cast? What relation does Selanna, the lunar woman, have to the sister who speaks in lunar tones? Of Selanna, Krell writes: "Heidegger recollects the way the ancient Greek lyricists speak of the moon and stars; in the context of abscission, of the confluent twofold, and <u>seléné</u>, who as Semele is the mother of Dionysos..." [IM, 171]. In the classical myth Semele is tricked by Hera into demanding that her lover (Zeus) reveal himself to her in his full presence, and when he does so she is killed by his radiance. Has this any relation to the 'stranger's goldenness'? But following this apparently clear path we are soon plunged into a kind of mythological aporia, as Robert Graves notes in <u>The White Goddess</u>:
+
+<blockquote>
+The Vine-Dionysus once had no father, either. His nativity appears to have been that of an earlier Dionysus, the Toadstool-god; for the Greeks believed that mushrooms and toadstools were engendered by lightning - not sprung from seed like all other plants. When the tyrants of Athens, Corinth and Sicyon legalized Dionysus worship in their cities, they limited the orgies, it seems, by substituting wine for toadstools; thus the myth of the Toadstool-Dionysus became attached to the Vine-Dionysus, who now figured as a son of Semele the Theban and Zeus, Lord of Lightning. Yet Semele was the sister of Agave, who tore off her son Pentheus's head in a Dionysiac frenzy. [WG, 159].
+</blockquote>
+
+The attribution of a (patrilinear) genealogy to Dionysus is implicit with a project of repression. An intoxication that came from nowhere, from a bolt of lightning, is asked to show its birth-certificate. Vine, which Plato will later
+
+<p class="pn">\- 163 -</p>
+
+accommodate even to dialectic, displaces the fungus of the dionysian cults (<u>Amanita Muscaria</u>). The sacred mushroom of the cults is held to be responsible for those socially unassimilable deliria which are a threat to the <u>πόλις</u>.
+
+But what has this ancient policing of social pathology to do with Heidegger's interpretation of Trakl? How can a bridge be built between such ontic-empirical history, and the onto-transcendental question concerning the site of poetry? The spanning of such a gulf has been hindered by the medicalization of the history of derangement, and its reduction to the historico-psychiatric study of madness. But this regional investigation is nothing other than the contemporary instance of that discourse of the πόλις which first instituted a genealogy of Dionysus. Such a construction patently fails to mark the inherently delirious character of western history, and, therefore, of scientificity itself. This is not only a matter of ontotheology being rooted in a specific amnesia. The delirium of the grapheme implies, more radically, that any possible history must arise out of the hyperbolic forgetting of its constitutive arche-amnesia. Klossowski has even been led to suggest that western science is aphasic, because it is initiated in the default of a foundational discourse [NC, 16]. This default is not merely a passively accepted pathology; it is an inscribed, prescribed or actively administered pharmaco-pathology. The western response to writing has been that of a poisoning. This is why the fact that Selanna substitutes for a delirium without origin - which is equally a delirium of origins - seems to resonate with what Derrida entitles an <u>agression pharmakographique</u>.
+
+In a letter to Georges Izambard dated the thirteenth of May 1871 Rimbaud wrote about the relation of poetry to delirium and the loss of self-possession. In a play upon the classic formula of Cartesian subjectivism,
+
+<p class="pn">\- 164 -</p>
+
+poetry was depicted as a painfully achieved derangement of vision and a dislocation of the ego:
+
+<blockquote>
+<u>Maintenant, je m'encrapule le plus possible. Pourquoi? Je veux être poète, et je travaille à me rendre voyant: vous ne comprendrez pas du tout, et je ne saurais presque vous expliquer. Il s'agit d'arriver à l'inconnu par le dérèglement de tous les sens. Les souffrances sont énormes, mais il faut être fort, être né poète, et je me suis reconnu poète. Ce n'est pas du tout ma faute. C'est faux de dire: je pense. On devrait dire: On me pense. ... / JE est un autre.</u> (Now I degrade myself as far as possible. Why? I want to be a poet, and I am working to render myself <i>visionary</i>: you will not understand any of this, and I scarcely know how to explain it to you. It is necessary to arrive at the unknown by a deregulation of all the senses. The sufferings are enormous, but one must be strong, to be born a poet, and I recognize myself as a poet. This is not at all my fault. It is false to say: I think. One should say: one thinks me. ... / I is an other.) [R, 5-7].
+</blockquote>
+
+As if the confusional condition of poetic creation had already broken the resources of articulation, Rimbaud says that he cannot explain himself, as two years later in <u>Une Saison en Enfer</u> he will write: <u>Je comprends, et ne sachant m'expliquer sans paroles païennes, je voudrais me taire.</u> (I understand, and not knowing how to explain myself without pagan words, I would rather be silent.) [R, 304]. Poetry is therefore implicitly linked to a certain incommunicability, perhaps due to the alienation of the subject from the place where poetry, and no doubt poetizing thought itself, are to arise.
+
+In another letter, this time to Paul Demeny, dated the 15th of the same month, Rimbaud repeated the phrases <u><i>dérèglement de tous les sens</i></u> (only the emphasis is changed) and <u>JE est un autre</u>, but wrote at greater length to engender what is among the most incisive and powerful of all Europe's 'theoretical' or 'poetological' texts. There is not sufficient space here to
+
+<p class="pn">\- 165 -</p>
+
+discuss more than a few superficial aspects of this astonishing letter, which profoundly engages with the history of aesthetics from Aristotle (whose epochal forging determination of the sign Rimbaud brilliantly subverts) onward. It is only possible here briefly to indicate the intellectual rigor that underlies the thought of the delirium of language, from which point I shall return by the shortest route to Trakl and Heidegger. The letter first replicates the rhetoric of the <u>poète maudit</u> from the Izambard letter, stressing the necessity of intoxication, suffering, and exile:
+
+<blockquote>
+<u>Le Poète se fait voyant par un long, immense et raisonné dérèglement de tous les sens. Toutes les formes d'amour, de souffrance, de folie; il cherche lui-même, il épuise en lui tous les poisons, pour n'en garder que les quintessences. Ineffable torture où il a besoin de toute la foi, de toute la force surhumaine, où il devient entre tous le grand malade, le grand criminel, le grand maudit, - et le suprême Savant! - Car il arrive à l'inconnu! Puisqu'il a cultivé son âme, déjà riche, plus qu'aucun! Il arrive à l'inconnu, et quand, affolé, il finirait par perdre l'intelligence de ses visions, il les a vues! Qu'il crève dans son bondissement par les choses inouïes et innommables: viendront d'autres horribles travailleurs; ils commenceront par les horizons où l'autre s'est affaissé!</u> (The poet makes himself a <u>visionary</u> by a long, immense and rational derangement of all the senses. All forms of love, of suffering, of madness; he searches himself, he exhausts all poisons in himself, in order to preserve only their quintessences. Unspeakable torture where he has need of all faith, all super-human strength, where he becomes among everyone the great invalid, the great criminal, the great accursed one - and the supreme scholar! - Because he arrives at the unknown, since he has cultivated his soul, already rich, more than anybody! He arrives at the unknown, and when, bewildered, he ends by losing the intelligence of his visions, he has seen them! Let him die as he leaps through unheard of and unnamable things: other horrible workers will come; they will begin from the horizons where the other collapsed!) [R, 7-17].
+</blockquote>
+
+<p class="pn">\- 166 -</p>
+
+In this letter vital clues are given as to the profound interconnectedness of a certain derangement with poetic language. In a what at first seems to be a very traditional argument he writes: <u>...toute parole étant idée, le temps d'un langage universel viendra!</u> (... every word being an idea, the time will come for a universal language!) [R, 12]. This suggestion certainly seems to relate language to the representation of thought in a manner that would have been familiar to Aristotle, and which has been the staple nourishment of metaphysics for over two millenia. Such a judgement would be premature, however, since Rimbaud's discussion rapidly departs from anything that might be assimilated to the traditional thought of the sign. By idealizing all the components of the semiotic apparatus he interrupts the sublimation of the letter into the word, and therefore explodes the repression of typography within vocabulary. He continues:
+
+<blockquote>
+<u>Il faut être académicien - plus mort qu'un fossile, - pour parfaire un dictionnaire, de quelque langue que ce soit. Des faibles se mettraient à penser sur la première lettre de l'alphabet, qui pourraient vite ruer dans la folie!</u> (It is necessary to be an academic - deader than a fossil, - to perfect a dictionary, of whatever language. If the feeble-minded put themselves to think about the first letter of the alphabet they would soon rush into madness!) [R, 12-13].
+</blockquote>
+
+The alphabet and the dictionary - the totality of letters and the totality of words - are mapped onto each other, and both defy the encompassing movement that would exhaust them, or reach their end. By shattering the assumption of the closure of the alphabet Rimbaud attacks the bedrock of Western metaphysics, resisting the theoretical legitimations of a graphic regime so deeply rooted that the entire history of logocentrism is merely its symptom. It is here that the importance of the famous poem <u>Voyelles</u> is to be located, in which the first letter of the alphabet - <u>A noir</u> [R, 171] - is allotted the
+
+<p class="pn">\- 167 -</p>
+
+colour of ink. <u>Dérèglement</u>, therefore, disrupts the process that would exhaust the resources of language in a determinate stock of elements, and simultaneously resists the closure of the sign as an atomic signifying unity. Rimbaldian delirium has nothing in common with the theologically inspired epilepsies of 'genius'; it is rather the violent and unsublimated release of graphic energy. Such delirium is without symbolic expression, mobilized below the level of the word, and first accessible to thought only by means of thinking <u>sur la première lettre de l'alphabet</u>. This madness exceeds the symbolic order because it stems from the primordial specificity which is the unmasterable resource of any possible sign system. It enters into almost immediate rapport with the thought of <u>Geschlecht</u>.
+
+However, in Trakl's <u>Geistliche Dämmerung</u> the path of the pharmakon, the intoxicated voyage across the nocturnal pool, does not lead to a direct naming of <u>Geschlecht</u>. Instead it crosses the starry sky, through which the lunar voice of the sister resounds. What does the moon connote here? Perhaps to speak of the 'lunar' in this fashion is simply to speak of the way things appear in the night\*. In the poem <u>In der Heimat</u>, for instance, the sister is seen asleep
+
+____________________
+\* Trakl ends the poem <u>Am Moor</u> ('At the Moor') with the line <u>Erscheinung der Nacht: Kröten tauchen aus silbernen Wassern.</u> ('Appearance of the night: toads leap from silver waters.') [T, 54] suggesting that there is indeed an issue of nocturnal luminacy in Trakl's poetry; a becoming visible in the night, which is also an appearance of the night itself. The night is not merely a formal condition or scene for certain apparitions, it is also what is 'expressed' in the silver light of the moon and stars. The night itself finds a voice in the 'the lunar voice of the sister', that is also a <u>Silberstimme</u> ('silver voice'), a word that used in the poem <u>Hohenburg</u> [T, 51], and twice in the poem <u>Sebastian im Traum</u> (T,53).
+
+<p class="pn">\- 168 -</p>
+
+bathed in moonlight:
+
+<blockquote>
+<u>Der Schwester Schlaf ist schwer. Der Nachtwind wühlt</u>
+<u>In ihrem Haar, das mondner Glanz umspült.</u>
+(The sister's sleep is heavy. The nightwind burrows
+In her hair, bathed in the gleam of the moon.)† [T, 35].
+</blockquote>
+
+This apparent reduction or simplification of the problem only displaces our difficulties, however. The Traklean night (<u>Nacht</u>) is, as we have seen, the time of derangement (<u>Umnachtung</u>), consonant perhaps with the 'mania' that stems, like moon (and 'mind'), from the Indo-European root (<u>\*men(e)s-</u>). That the moon is associated with woman is indicated by the etymological relations between 'moon', 'month', and 'menses', but it is also the companion of lunatics and werewolves; figures with whom Trakl is not unconcerned.
+
+It is, fittingly, in the culminating lines of <u>Traum und Umnachtung</u> that this imagery (interwoven with many of the other crucial threads I have sought to mark out in previous sections) crosses a climactic threshold:
+
+<blockquote>
+<u>Steinige Oede fand er am Abend, Geleite eines Toten in das dunkle Haus des Vaters. Purpurne Wolke umwölkte sein Haupt, daß er schweigend über sein eigenes Blut und Bildnis herfiel, ein mondenes Antlitz; steinern ins Leere hinsank, da in zerbrochenem Spiegel, ein sterbender Jüngling, die Schwester erschien; die Nacht das verfluchte Geschlecht verschlang.</u>
+(He found a petrified desolation in the evening, the company of one deceased as he entered the dark house of the father. Purple clouds enwreathed his head, so that he fell upon his own blood and image, a lunar countenance; and fainted petrified into emptiness when, in a shattered mirror a dead youngster appeared, the sister; night enveloped the accursed genus.) [T, 84].
+</blockquote>
+
+____________________
+† I have slightly altered the sense and syntax in translation in an attempt to cope with the intractable German verb <u>umspülen</u> 'to wash around', which is used intransitively by Trakl in a manner I am incapable of reproducing in English.
+
+<p class="pn">\- 169 -</p>
+
+With a passage of such beauty, grandeur, and labyrinthine depths any response is likely at worst merely to irritate, and at best to increase our perplexity. I will only try to ask one simple question. Is there a connection to be made between the shattering of the mirror and a movement of astronomical imagery; between an explosion of desire that exceeds all introversion or reflection on the one hand, and a nocturnal or lunar process on the other? If such a connection were to be made it would pass by way of the sister, who is herself a threshold between the reflective order of the father's house and the illimitative gradations of the night sky. It is the 'night pool' with its graduated luminosities - a series of intensities which defy resolution within any dialectic of presence and absence - that flood onto the mirror with the sister; shattering every power of representation. At the point of a certain nocturnal delirium (or lunacy) the relation of the sister to the family is metamorphosed; she no longer obeys the law of the boundary by mediating the family with itself, sublimating its narcissism, or establishing its insertion into the order of signification by disappearing (leaving the father's house according to the exchange patterns of patrilineal exogamy, and thus as a metabolic or reproductive moment within a kinship structure); instead she breaches the family, by opening it onto an alterity which has not been appropriated in advance to any deep structure or encompassing system. It is this alterity that is traced by the luminosities of the night\*.
+
+____________________
+\* The sister is also associated with the moon towards the end of the prose poem <u>Offenbarung und Untergang</u>, first in the line <u>hob sich auf mondenen Flügeln über die grünenden Wipfel, kristallene Klippen das weiße Antlitz der Schwester</u> ('lifted by lunar wings above the greening treetops, crystal cliffs the sister's white countenance') that ends the penultimate paragraph. The final paragraph begins <u>Mit silbernen Sohlen stieg ich die dornigen Stufen</u>
+
+<p class="pn">\- 170 -</p>
+
+Perhaps the single most important Trakl text on this theme, in addition to the culmination of <u>Traum und Umnachtung</u>, is a poem called <u>Geburt</u> ('birth') [T, 64], where lunar imagery functions similarly as a haemorrhaging of familial interiority. The poem pivots upon a line at the end of the third stanza in which a sublimated incestuality works a stifling movement of interiorization: <u>Seufzend erblickt sein Bild der gefallene Engel</u> ("Sighing the fallen angel glimpsed his image"). It might seem as if the birth of the sister is to be absorbed in a retreat into the claustrophobic heart of the <u>Geschlecht</u>. But although the fourth stanza begins with an awakening in a musty room (<u>dumpfer Stube</u>) the one who thus awakes is 'a pale one' (<u>ein Bleiches</u>); 'lunar'. The eyes of the mother (or the midwife) (<u>steinernen Greisin</u>) are described as 'two moons', a reference taking us back out into the night (whose 'black wing touches the boy's temple'), and back to a crucial image from the second stanza; that of the decayed moon\*:
+
+____________________
+<u>hinab</u> ("With silver soles I descended the thorny steps") and speaks of <u>ein mondenes Gebilde, das langsam aus meinem Schatten trat</u> ("a lunar shape that slowly stepped from out of my shadow") [T, 97]. By stepping out of her brother's shadow the sister escapes the determinations of image, relection, or copy that could be returned to the same; to a self-mediated narcissism playing with representations as its own (or proper) alterity.
+
+____________________
+\* The ruined moon is also mentioned in <u>Sebastian im Traum</u> in the line <u>Da in jenem März der Mond verfiel.</u> ("Then, in that March, the moon was ruined.") (Ruin, from the Latin <u>ruere</u> 'to fall', cannot be used intransitively to capture the precise usage of <u>verfallen</u> in this case.) [T, 53]. The ruin of the moon is here taken as a datable event, emphasizing its referential entanglement in the processes of genre. Trakl's deployment of astronomical metaphor is not a retreat from history into timeless or archetypal symbolism, it is on the contrary a historicizing of the heavens; the opening of a genealogy through
+
+<p class="pn">\- 171 -</p>
+
+<blockquote>
+<u>Stille der Mutter; unter schwarzen Tannen</u><br>
+<u>Oeffnen sich die schlafenden Hände,</u><br>
+<u>Wenn verfallen der kalte Mond erscheint.</u><br>
+(Silence of the mother; under black pines / The sleeping hands open out / When the cold and ruined moon appears) [T, 64]
+</blockquote>
+
+It would be possible to interpret this ruin of the moon as a dialectical restoration of the inside, its order and its securities, as if what had defied the inside was now falling away into self-nihilation. It might thus be asserted: 'This nocturnal path, departing from everything we have always believed in, it has all collapsed into chaos now. Wasn't it obvious it was going to go terribly wrong? You should have listened to your pastor / parents / teachers / the police!' There is an alternative reading, however, according to which this ruination is an exaggeration or confirmation of the nocturnal path, and it this reading I shall attempt to confirm in the sections to follow.
+
+____________________
+conjugation with astronomical forces. For Heidegger's most explicit comments on Trakl and history see the final section of <u>Die Sprache im Gedicht</u>, especially [US, 80].
+
+<p class="pn">\- 172 -</p>
+
+<u>Part Four</u>
+
+<u>The Protraction of Difference</u>
+
+<blockquote>
+<i>O das Wohnen in der Stille der dämmernden Gartens,</i><br>
+<i>Da die Augen der Schwester sich rund und dunkel im Bruder aufgetan,</i><br>
+<i>Der Purpur ihrer zerbrochenen Münder</i><br>
+<i>In der Kühle des Abends hinschmolz.</i><br>
+<i>Herzzerreißende Stunde.</i><br>
+<br>
+<i>September reifte die goldene Birne. Süße von Weihrauch</i><br>
+<i>Und die Georgine brennt am alten Zaun</i><br>
+<i>Sagt wo waren wir, da wir auf schwarzem Kahn</i><br>
+<i>Im Abend vorüberzogen,</i><br>
+<br>
+<i>Darüberzog der Kranich. Die frierenden Arme</i><br>
+<i>Hielten Schwarzes umschlungen, und innen rann Blut.</i><br>
+<i>Und feuchtes Blau um unsre Schläfen. Arm' Kindlein.</i><br>
+<i>Tief sinnt aus wissenden Augen ein dunkles Geschlecht.</i><br>
+<br>
+[T, 176]
+</blockquote>
+
+<p class="pn">\- 173 -</p>
+
+### One: The Casting of the Sign
+
+The ruin of the moon might seem to block the nocturnal movement that passes from a claustrophobic interior into endless space, and that conjugates the dynasty with an unlimited alterity. But this would not be the case if the moon itself was, at least partially, a restrictive element across the path of departure, rather than being the sole gateway into the heavens. The ruin of the moon would then be a protraction of the nocturnal trajectory; a dissolution of the lunar that proceeds not as a negation of the night, but as a falling away of what is still too similar to the sun. This second possibility is supported by the terms of Heidegger's reading, since he is very precise, in his interpretation of the delirious journey across the nocturnal pool, about what he takes the meaning of the moon and the lunar woman to be. It is a constriction of a stellar luminescence rather than the ultimate elimination of sunlight; a fading and cooling of stars:
+
+<blockquote>
+<u>Das kühle Licht entstammt dem Scheinen der Mändin (Selanna). Rings um ihr Leuchten verblassen und erkühlen sogar, wie altgriechische Verse sagen, die Sterne.</u> (The cool light stems from the shining of the lunar woman (Selanna). Ringing her radiance, as ancient Greek verse says, the stars fade and even cool.) [US, 48-9].
+</blockquote>
+
+This interpretation might seem to lack all philosophical rigor, and perhaps even to forsake all reference to the 'theoretical' in general. In fact it contributes to a problematic of enormous importance, although one that has been fragmented and largely obliterated by the constitution of astronomy and astro-physics as positive sciences. This problem is that of
+
+<p class="pn">\- 174 -</p>
+
+real (and astronomically evident) differences that are in principle
+irreducible to mathematical formalism, and which are furthermore - as
+Deleuze has demonstrated in the closing sections of <u>Différence et
+Répétition</u> - a potential basis for a quite other and more comprehensive
+approach to mathematization (or theoretical quantification) without any
+recourse to ultimate identity or equalities. The obscuration of such
+differences within the constitution of astro-science has been, therefore,
+a deferral rather than a resolution, and leaves the issue in question as
+an explosive threat to the foundations of modern cosmology. The last
+confident, unitary, and explicit treatment of this matter is to be found
+in Hegel's '<u>Encyclopaedia</u>' in the transition from Finite Mechanics to
+Absolute Mechanics:
+
+<blockquote><u>Was kann die Sterne wegen ihrer Ruhe verehren; an Würde sind sie
+aber dem concreten Individuellen nicht gleich zu setzen. Die
+Erfüllung des Raums schlägt in unendlich viele Materien um; das ist
+aber nur das erste Ausschlagen, das den Anblick ergötzen kann.
+Dieser Licht-Ausschlag ist so wenig bewundernswürdig, als einer am
+Menschen, oder als die Menge von Fliegen.</u> (One can admire the stars
+because of their tranquillity; but they are not of equal dignity to
+the concrete individual. The filling of space breaks out into
+endless kinds of matter; but that [i.e. the casting of the stars] is
+only the first outbreak that can delight the eye. This outbreak of
+light is no more worthy of wonder than the outbreak of a rash in
+man, or than a swarm of flies.) [RE, 118].</blockquote>
+
+Philosophy is to turn its gaze away from the stars, learning from Thales
+perhaps, who fell into a hole whilst engaged in this pursuit. In a subtle
+but vigorous non-Ptolemaian, Hegel subordinates the stellar moment to the
+concrete and ordered bodies of the solar system, and these bodies are in
+turn subordinated to the development of terrestrial life. Partly this is
+
+<p class="pn">\- 175 -</p>
+
+due to the dialectical dignity of particularized actuality in comparison
+with abstract principle, so that astro-physical laws are sublated into
+their successively more concrete expositions in geology, biology,
+anthropology and cultural history. Yet there is something more
+primordially and uncontrollably disturbing in the vast and senseless
+dispersion of the stars, something which is even hideous, like a disease
+of the skin.
+
+What offends Hegel about the stars is the irrational facticity of
+their distribution; a scattering which obeys no discernible law. Hegel
+expresses his disdain for this distribution, and his anxiety before it,
+in a word that is also both a powerful description and an acknowledgment:
+<u>Ausschlag</u>, which can mean swing or deflection, but in this context means
+'outbreak' in the sense of a rash. The verb <u>ausschlagen</u> is even more
+multi-faceted, and can mean (among other possibilities) to knock or beat
+out, to waive, to burgeon or blossom, or to sweat. But Hegel is not
+speaking of the blossoming of the stars here, or at least, he does not
+want to do so. We must be careful not to lose track of the 'object' Hegel
+is isolating here; it is a differentiation that is at once senseless and
+sensible, an outbreak of irrationality in the redoubt of reason similar
+to that which Kant acknowledges in the <u>Schematismuslehre</u>. It is the
+differential principle of stars, flies, flocks of birds, leprosy and and
+dust; of astronomical, geological, ornithological\* and epidermal
+
+____________________
+\* The association of bird-flight and the emergence of signs is one of the
+richest threads of Trakl's poetry. In <u>In einem verlassenen Zimmer</u> ('In an
+Abandoned Room') occurs the line <u>Schwalben irre Zeichen ziehn</u> ("Swallows
+trace demented signs") [T, 16]; the final stanza of <u>Traum des Bösen</u>
+
+<p class="pn">\- 176 -</p>
+
+eruptions. Trakl names it with deft precision <u>Staub der Sterne</u> ('the dust
+of the stars'). In his reading of Trakl Heidegger also acknowledges this
+unity of <u>aus</u> and <u>Schlag</u> as a disruption 'of' sentience, but only if the
+'of' is read according to the subversive syntax of Heideggerian thought;
+as an 'of' that no longer presumes a prior and undisrupted subject. For
+Heidegger sentience is not exploded or threatened from without by the
+<u>Ausschlag</u>, it is from an ejection of the outbreak from the beginning:
+
+<blockquote><u>Trakl schaut den 'Geist' aus jenem Wesen, das in der ursprünglichen
+Bedeutung des Wortes 'Geist' genannt wird; denn <i>gheis</i> besagt:
+aufgebracht, entsetzt, außer sich sein.</u> (Trakl sees 'sentience' in
+terms of that weave that is named in the primordial signification of
+the word <u>Geist</u>; since <u>gheis</u> means: incensed, dislocated, being
+outside oneself.) [US, 60].</blockquote>
+
+Hegelian sentience could be described as <u>entsetzt</u> by cosmological
+eruption, but the sense of this outrage changes with Heidegger's
+radicalized approach, in which <u>Entsetztheit</u> has become a characteristic
+of eruption itself. Heidegger thus provides us with a hermeneutical key
+according to which every sentient reaction to the <u>Ausschlag</u> can be read
+as a symptom or repetition of it. It is no longer even that sentience is
+infected by irrationality; it is rather the very movement of infection,
+part of a contagion to which I will shortly return.
+
+____________________
+('Dream of Evil') begins <u>Das Vogelflugs wirre Zeichen lesen</u> / <u>Aussätzigen</u>
+("Lepers read the confused signs of bird-flight") [T, 19]; the second
+stanza of <u>An den Knaben Elis</u> ('To the Youth Elis') ends with the words
+<u>dunkle Deutung des Vogelflugs</u> ("the dark divining of bird-flight") [T, 17
+& 49] and <u>Der Herbst des Einsamen</u> contains the line <u>Der Vogelflug tönt von
+alten Sagen</u> ("The flight of birds resounds with ancient sagas") [T, 62].
+Wherever there is erratic dispersal and movement in undemarcated space
+Trakl anticipates the arising of sense, and a question of reading.
+
+<p class="pn">\- 177 -</p>
+
+Since the light of the stars is not a transcendental ground of
+phenomenality - but rather a differential effect, stemming from the
+isolation or uneven distribution of intensities - Hegel takes its claim
+to philosophical dignity as an offence. He determines starlight as a
+pathological luminescence, without order or intelligibility. The fading
+of stars is, therefore, among other things, a name for a necessary stage
+in Hegel's system. The senseless distribution of stellar material is
+repressed in the interest of the particularized (sub-)planetary body,
+which in turn furthers geocentrism and the infinitizing of light. This
+movement crushes difference under a logicized notion of significance.
+
+In contrast, Trakl brings the thought of the sign together with that
+of stellar dispersion, he writes: <u>O ihr Zeichen und Sterne.</u> ("O, you
+signs and stars.") [T, 63]. And partially echoing Rimbaud's words - <u>Un
+chant mystérieux tombe des astres d'or</u> (" - a mysterious song falls from
+stars of gold"), he mentions <u>die Silberstimmen der Sterne</u> ("the silver
+voice of the stars") [T, 53] and <u>Das letzte Gold verfallener Sterne.</u>
+("The last gold of ruined stars.") [T, 50]. The German word <u>Stern</u> derives
+from the Indo-European root <u>ster-</u> meaning to extend or spread out. It is
+from this root that the English word 'strew' - as well as 'star' -
+descends. The stars are traces of a primordial strewing; an explosive
+dispersion which in its formlessness defies mathematization or the
+reduction to order. It is the shock wave of this metaphorics which sweeps
+through Trakl's specifications of the sign, and it is perhaps for this
+reason that Trakl also names ruination in this context. Any order which
+is to be extracted from the strewing of difference will be dependent on
+this 'spreading out' (Latin <u>sternere</u>), it will not be metaphysical -
+dependent upon a transcendental difference - but 'stratophysical'; a
+
+<p class="pn">\- 178 -</p>
+
+movement between planes, or steps, of dispersion. Astrophysics is guided
+by its etymology to become a stratophysics; a materialist study of planes
+of distributed intensities.
+
+A stratum is a dimension of dispersion, flattened like a spiral
+galaxy. This flatness is just as crucial to the study of intensities as
+the trajectories traced within it, since - as has been briefly indicated
+in the previous discussion of rhythm - the stratification or stacking of
+surfaces is a pre-condition of energetic surplus. Only because of graphic
+redundancy - for example that stored in the difference between letter and
+word, between the words an alphabet makes possible and those which are
+realized - can energy be unevenly distributed within a stratum, and
+intensities generated\*. Trakl acknowledges this excitatory axis, which
+
+____________________
+\* The theory of information understands redundancy as the dimension of a
+message that does not function at the level of communication, but rather
+functions as a resource for the discrimination of communication in
+general from the incommunicative ('noise'), thus providing a layer of
+insulation against the degradation of the message. This formulation seems
+to me to lack two crucial elements: 1) It fails to provide any
+suggestions as to how the message participates in the constitution of
+redundancies (thus taking redundacy as a transcendental condition of
+communication). This first default leads to the preservation of the
+metaphysical distinction between semiotic and material processes
+(messages and techniques), which is otherwise profoundly shaken by the
+thought of redundancy; the thought, that is, of an isolation or 'de-
+naturalization' of the semiotic stratum proceeding by means of
+intensities or surpluses that invoke no element of negativity, but only
+gradations. 2) It fails to acknowledge the political dimension of
+redundancy as a means of trapping disruptive signals. It is this
+'trapping' within an intermediate zone between strata that first enables
+the categories of madness, perversion, deformity, disobedience and
+
+<p class="pn">\- 179 -</p>
+
+punctures and intensifies each plane of distribution, in the use of words
+related to the German verb <u>sinken</u> (to sink). Thus he writes:
+
+<blockquote><u>Von Lüften trunken sinken balde ein die Lider<br>
+Und öffnen leise sich zu fremden Sternenzeichen.</u><br>
+(Drunken with breezes the lids soon subside / And open 
+themselves to strange star-signs.) [T, 18].</blockquote>
+
+And:
+
+<blockquote><u>Zeichen und Sterne<br>
+Versinken leise im Abendweiher.</u><br>
+(Signs and stars / Sink quietly in the evening-pool). [T, 51].</blockquote>
+
+Stellar and semiotic materials are strewn both within and between
+discontinuous strata, and the intersections between these dimensions are
+the sites where the distinction between matter and meaning cannot be
+sustained. But what is the casting that executes this distribution?
+
+The tools Heidegger relies upon in his approach to the issues of
+exile into the night and astronomical dispersion stem from the 'ecstative
+analyses' of his Marburg meditations. The term he focuses upon as a
+possible entry point for such a discussion is 'flame'. He first gathers
+
+____________________
+indiscipline to be constituted, thus providing the basis for the
+associated but counterposed disciplinary programmes of pedagogy,
+psychiatry, punition etc. To fail to acknowledge such questions is to
+take the notion of noise as a purely passive and non-sentient
+interruption rather than as a strategically oriented 'jamming' of the
+message, and thus to ignore the conflictual aspects of both grammars and
+anti-grammatical subterfuges as they contend within the fluctuating space
+of redundancy or control. This default is typical of a technocratic
+scientificity which takes the question of power as having been always
+already resolved prior to the question of technique.
+
+<p class="pn">\- 180 -</p>
+
+Trakl's stellar thematic into that of flame with the suggestion: <u>Die
+Nacht flammt als der leuchtende Spiegel des Sternenweihers</u> ("The night
+flames as the lightening mirror of the starry sky") [US, 65]. He then
+proceeds: <u>Das Flammende ist das Außer-sich, das lichtet und erglänzen
+verzehren kann.</u> ("That which flames is the outside itself, that which
+clears and lets gleam, and that which in doing so can expand voraciously
+so that everything is consumed to white ash." [The expression <u>Außer sich</u>
+is such a clear index for Heidegger's notion of ecstasis that Hertz
+employs 'ek-stasis' as its translation in his rendering of this
+sentence.]) [US, 60]. The flame of the stars is explosive - or outside of
+itself - but this <u>Ausschlag</u> can be a gentle illumination or an
+uncontrolled devastation (an <u>Aufruhr</u>, 'revolt', 'turmoil' [US, 60]). It
+is about this 'or', with which I am attempting to indicate Heidegger's
+hope that the <u>Weiterfressung</u> can be deflected or suspended in
+contingency, that the ambiguous path of Heidegger's reading will turn.
+
+Ten pages earlier Heidegger poses this sense of an alternative
+between castings most acutely, and in so doing returns us to the question
+of infection. Examining Trakl's expression <u>das verfluchte Geschlecht</u>
+('the accursed genus') [T, 84] he points to a Greek word that can be
+translated equally be either <u>Schlag</u> or <u>Fluch</u>; <u>πληγή</u> ('curse', used by
+Democritus, as D. F. Krell has pointed out in a personal communication, to
+refer to the collision of atoms, <u>typia</u>). <u>τύπλα</u> is also translated by the
+Latin <u>plangere</u>, from which we derive the English 'plague', the German
+<u>Plage</u> (found in the sixth line of Trakl's poem <u>Föhn</u> [T, 67] and in the
+
+<p class="pn">\- 181 -</p>
+
+fifteenth line of <u>Allerseelen</u> ('All Soul's Day') [T, 211]. Heidegger's
+text reads:
+
+<blockquote><u>Womit ist dieses Geschlecht geschlagen, d.h. verflucht? Fluch heißt
+griechisch <u>πληγή</u>, unser Wort 'Schlag'. Der Fluch des verwesenden
+Geschlechtes besteht darin, daß dieses alte Geschlecht in die
+Zwietracht der Geschlechter auseinandergeschlagen ist. Aus ihr
+trachtet jedes der Geschlechter in das losgelassene Aufruhr der je
+vereinzelten und bloßen Wildheit des Wildes. Nicht die Zwiefache als
+solches, sondern die Zwietracht ist der Fluch. Sie trägt aus dem
+Aufruhr der blinden Wildheit das Geschlecht in die Entzweiung und
+verschlägt es so in die losgelassene Vereinzelung. Also entzweit und
+zerschlagen vermag das 'verfallene Geschlecht' von sich aus nicht
+mehr in den rechten Schlag zu finden.</u> (With what is this gen-us
+cast, i.e. cursed. Cursed names the Greek <u>πληγή</u>, our word
+'casting'. The curse of the decomposed gen-us consists in this, that
+this ancient gen-us is cast apart into the discord of gen-ders. Each
+of the gen-era strives for unleashed revolt in an always
+individuated and naked wildness of the beast. It is not the twofold
+that is the curse, but rather the discordance of the two. Out of the
+revolt of the blind wildness it carries the gen-us, cast away into
+torn duality and unleashed individuation. Thus divided and cast down
+the 'ruined gen-us' is no longer able to find the 'right cast').
+[US, 50].</blockquote>
+
+It would be possible to read this passage as if it were a development
+entirely internal to Heidegger's 'philosophy', and as if the reading of
+Trakl in which it is embedded were a mere eccentricity or modulation in
+the vocabulary of an unswerving intellectual pursuit. Such a reading
+would recall that according to Heidegger, ontotheology is the curse that
+leads beings to strive towards absolute mastery of the earth, erasing
+every trace of their dependence upon being. That difference of each being
+with respect to being is displaced by the differences among beings, and
+that being is converted into a mere disputed territory to be subdivided
+
+<p class="pn">\- 182 -</p>
+
+among conflicting beings. It would also recall that within this history
+everything thought of as 'real' has been distributed among exclusive
+concepts, through which beings represent themselves to themselves in
+their competitive distinctiveness, so that the differences,
+discriminations, and determinations of beings cease to speak of being. It
+would conclude that what is metaphysical (in the sense that Heidegger
+understands as the ontotheological) in dualities of genre is not that
+they are binary, but that this binarity monopolizes the interpretation of
+the being's difference from being. What is lost in ontical interpretation
+is the being of genre itself, the composition of ontical difference from
+out of the non-ontic. In other words, to think <u>Geschlecht</u> abstractly, but
+in a certain sense beyond ontotheology, it would be necessary only to
+insist (in a decisive Heideggerian trope) that ontical differentiation is
+not itself anything ontical.
+
+Yet Heidegger is not simply interpreting a word that circulates
+freely within the German language. He is attempting to read this word as
+he encounters it within the tortuous and vespertine labyrinth of Trakl's
+poetry. We must return to Heidegger's question, and attempt to ask it
+along with him: what is this cast, this curse or epidemic? We are
+assisted in this by Trakl's words, which lend us a faltering answer to
+place alongside Heidegger's discussion; the cast that has cursed us,
+surely that is what Trakl names <u>Aussatz</u>; leprosy, infection and
+exclusion. The spaces of difference across which the <u>Zwietracht</u> stretches
+and displaces itself (following the semantic instability of <u>Geschlecht</u>)
+are never to be found described by Trakl in terms that could be reduced
+to formal disjunctions or negative articulations. Instead he writes of
+<u>Mauern voll Aussatz</u> ("walls full of leprosy") [T, 41] echoing Rimbaud
+
+<p class="pn">\- 183 -</p>
+
+who, during his <u>Saison en Enfer</u> finds himself <u>assis, lépreux, sur les
+pots cassés et les orties, au pied d'un mur rongé par le soleil</u>
+("sitting, leprous, upon broken pots and nettles, at the foot of a wall
+gnawed by the sun.") [R, 302-3]. It seems at first surprising that
+Heidegger makes no mention of the frequent references to leprosy
+throughout Trakl's poetry\*, since <u>Aussatz</u> points to an <u>Aus-setzung</u> (the
+'cast out' of society'), a thought profoundly in accordance with the
+ecstative orientation of Heidegger's reading. Heidegger even has a space
+specifically allocated to disease in his reading. Not that he is
+particularly concerned with the German equivalent of this word: <u>Krankheit</u>
+(although he quotes Trakl's line <u>Wie scheint doch alles Werdende so
+krank!</u> ("How sick everything that is becoming seems!") [T, 29; US, 64].
+The disease which finds a place in Heidegger's text is the same as that
+which obsesses Trakl; it is the searing of stars, or the primordial and
+contagious eruption of the pathological. Yet the question remains; why
+does Heidegger refuse to follow Trakl and name this eruption <u>Aussatz</u>? It
+is this question which I shall attempt to address in the following
+section.
+
+____________________
+\* For instance, in <u>Kleines Konzert</u> ('Little Concert')
+<u>Aussätzigen winkt die Flut Genesung.</u> ("The torrent beckons lepers to
+convalescence.") [T, 25]; in <u>Drei Blicke in einen Opal</u> ('Three Glimpses
+in an Opal') <u>Die Knaben träumen wirr in dürren Weidensträhnen / Und ihre
+Stirnen sind von Aussatz kahl und rauh.</u> ("Youths dream confusedly among
+the pasture's dry bales / And their brows are bald and raw with leprosy")
+[T, 39] (see also [T, 40]); towards the end of <u>Helian</u> (in a line I have
+already cited) <u>Helians Seele sich im rosigen Spiegel beschaut / Und
+Schnee und Aussatz von seiner Stirne sinken.</u> ("Helians soul gazes on
+
+<p class="pn">\- 184 -</p>
+
+### Two: L'écriture mauvaise
+
+In pursuing the question of the curse that abuts onto Trakl's thematic of
+<u>Geschlecht</u>, Heidegger distinguishes between two cast(e)s and two dualities.
+There is a cursing cast or stamp that is associated with a reckless and
+destructive individualization and that generates antagonistic or conflictual
+binarity (<u>Zwietracht</u>), and there is a gentle sanft binarity (<u>Zwiefalt</u>) that
+escapes the contagion of the curse. Drawing upon a thought of pain <u>Schmerz</u> as
+a threshold and relation Heidegger seeks to ameliorate the pathological
+scorching of the stars:
+
+<blockquote><u>das Sanfte ist dem Wort nach das friedlich Sammelnde. Es verwandelt die
+Zwietracht, indem es das Verzehrende und sengende der Wildnis in den
+beruhigten Schmerz verwindet.</u> (gentleness is, following the word [<u>das
+Sanfte</u>] the peaceful gatherer. It metamorphoses discord, in that it turns
+what is injuring and searing in wildness to soothed pain. [US, 45].</blockquote>
+
+Heidegger's attempt to establish absolute distinctions within the history of
+oppositional thought necessitates a discrimination between types of duality.
+It is precisely because Derrida will refuse to underwrite such a discrimination
+that he must also re-inscribe continuities that are able to encompass the
+'critical' aspect of his own work. Heidegger is thus engaged in what we could
+legitimately describe as a 'gentle critique' of the history of metaphysics, this
+is an attempt to enter into a conciliatory <u>Zwiefalt</u> with such a history in
+
+____________________
+itself in the rosy mirror / And snow and leprosy sink from his brow.") [T, 43];
+and in <u>Verwandlung des Bösen</u> ('Metamorphosis of Evil') there is a <u>Minute
+stummer Zerstörung: auflauscht die Stirne des Aussätzigen unter dem kahlen
+Baum.</u> ("moment of mute devastation; the brow of the leper hearkens under the
+naked tree") [T, 56].
+
+<p class="pn">\- 185 -</p>
+
+order not to reproduce it. <u>Zwiefalt</u> would thus be a distantiation without
+protraction or propagation, an end to contagion. It is according to such a
+'logic' - a logic of purification and transcendence that Nietzsche would have
+recognized as a familiar foe - that the irruption of ecstative difference into
+a continuum of antagonism must refuse the name <u>Aussatz</u>, since such an
+irruption is to be conceived as 'pure'; beyond any possible process of
+infection.
+
+This move, as could be easily anticipated, is consistently challenged in
+Derrida's reading of Heidegger's work on <u>Geschlecht</u>, especially since the
+suppression of pathology that thus seems to characterize Heidegger's relation
+to the history of being is a stark symptom of phonocentric desire. For
+Derrida's response to Heidegger the question of binarity is fundamental, since
+the thought or inscription of duality is the point of access to logocentric
+discourse, and is thus the condition of any relation to the history of
+philosophy as the repression of writing. Derrida suggests that it is only
+through the repetition of a necessarily precarious series of distinctions that
+a discourse can be recognized as in any way 'rational'. The coherence of such
+distinctions - insofar as they discriminate the exteriority of the grapheme
+from itself, within a perpetual displacement of the terminology of this
+discrimination - conserves the history of logocentrism, which is taken to be
+and to determine history as such, thought within metaphysics as a detour to
+the restitution of full presence. Derrida's reading, then, confronts the passage
+we are now reading squarely with the assertion:
+
+<blockquote><u>Il y a donc deux coups, deux frappes, deux empreintes. Un premier coup
+vient frapper pour laisser son empreinte ou plutôt pour constituer de
+son empreinte un 'premier' Geschlecht. Mais le deuxième coup parait
+mauvais.</u> (There are therefore two strokes, two strikes, two imprints. A
+first stroke comes to strike in order to leave, or rather constitute, by
+its imprint, a 'first' <u>Geschlecht</u>. But the second stroke seems to be
+evil.) [Giii, 29].</blockquote>
+
+<p class="pn">\- 186 -</p>
+
+This statement is woven into what has been among the most continuous threads
+of Derrida's work. Already in <u>De la Grammatologie</u> the notion of a divine
+inscription of moral law in the soul was located within a profoundly deep-
+rooted and historically extended discourse, which systematically opposed two
+types of writing:
+
+<blockquote><u>Il y a donc une bonne et une mauvaise écriture: la bonne et naturelle,
+l'inscription divine dans le coeur et l'âme; la perverse et l'artificieuse,
+la technique, exilée dans l'extériorité du corps.</u> (There is therefore a
+good and an evil writing: the good and natural, the divine inscription in
+the heart and soul: the perverse and artificial, technique, exiled in the
+exteriority of the body.) [DG, 30].</blockquote>
+
+The traditional hierarchical distinction between good and evil writing is
+associated with a condemnation of technique, which already indicates that any
+investigation of this hierarchy is destined to enter into an intense
+negotiation with Heidegger's thinking. There is a profound tendency for the
+character of the technical to be denigrated within such structures, since it is
+marked from the first as a servant, unable to provide its own ends, and thus
+without intrinsic value. The derivativeness of the tool - which appropriates
+the stigma of inferiority from the scholastic <u>ens creatum</u> - is contrasted with
+a primordiality that is simultaneously cause, master, and justification of and
+for the tool's existence. The delay of the 'curse' - its secondariness - in
+Heidegger's text would thus be interpreted as the key to a hierarchical scheme
+organizing his discourse.
+
+Even more significant for our purposes, however, is the more detailed
+discussion of this scheme, within the context of what can be anachronistically
+called Plato's metaphysics, in <u>La Dissémination</u>. This discussion begins with a
+repetition of the distinction between two types of writing, a distinction which
+is now interpreted explicitly as comprehensive of philosophical discourse:
+
+<blockquote><u>Selon un schème qui dominera toute la philosophie occidentale, une bonne
+écriture (naturelle, vivante, savante, intelligible, intérieure, parlante)</u></blockquote>
+
+<p class="pn">\- 187 -</p>
+
+<blockquote><u>est opposée à une mauvaise écriture (artificieuse, moribonde, ignorante,
+sensible, extérieure, muette). Et la bonne ne peut être désignée que dans
+la métaphore de la mauvaise. La métaphoricité est la logique de la
+contamination et la contamination de la logique.</u> (According to a scheme
+which dominates all occidental philosophy, a good writing (natural, live,
+learned, intelligible, interior, spoken) is opposed to an evil writing
+(artificial, moribund, ignorant, sensible, exterior, mute). And the good
+cannot be indicated except through the metaphor of the evil.
+Metaphoricity is the logic of contamination and the contamination of
+logic.) [D, 172].</blockquote>
+
+This passage introduces two dimensions of enrichment to the question of
+writing's split history. Firstly, it deepens the notion of hierarchy, by linking
+it to the question of dependence. The tool follows the 'logic' of the supplement
+described in <u>De la Grammatologie</u> in that it is marked twice, once as the
+superfluous addition to a plenitude, and again as the compensation for a lack.
+It serves a 'master' only in such a way that the relation of dependence is open
+to inversion. Because the tool resists reduction to the contingency of simple
+excess it can 'serve' as a symptom of an originary non-plenitude, and thus
+betray the inadequacy of the origin. The logic of hierarchy - and logic is
+already at its 'origin' hierarchical' - is spun out of the relation between the
+terms of a distinction to the appropriation of this distinction itself. The
+master term is that one which at any moment dominates the inscription of the
+structure in which it is embedded. Derrida gives an example of this
+hierarchization in <u>La Dissémination</u>:
+
+<blockquote><u>On aura réfléchie, au passage, que le rapport (l'analogie) entre le
+rapport logos/âme et le rapport pharmakon/corps est lui-même désigné
+comme logos. Le nom du rapport est le même que celui de l'un des termes.
+Le pharmakon est compris dans la structure du logos. Cette compréhension
+est une domination et une décision.</u> (One will have reflected, in passing,
+that the relation (the analogy) between the relation logos/soul and the
+relation pharmakon/body is itself designated as logos. The name of the
+relation is the same as that of one of its terms. The pharmakon is
+comprehended in the structure of logos. That comprehension is a</blockquote>
+
+<p class="pn">\- 188 -</p>
+
+<blockquote>domination and a decision\*) [D, 133].</blockquote>
+
+The distinction between two types of writing is a more or less continuous,
+more or less unconscious strategy, aimed at the expropriation of all the
+powers of articulation which escape the hegemony of speech. The attempt is
+made to isolate a type of writing exterior to every potential for
+differentiation, a writing that would be the perfectly passive object of the
+organizing grid in which it was located. It is this project which Derrida
+suspects is protracted in Heidegger's distinction between <u>Zwiefalt</u> ('twofold')
+and <u>Zwietracht</u> ('discord').
+
+An important strand of Derrida's interpretation, therefore, leads
+ultimately to the conclusion that the Heideggerian discourse on duality
+participates in the order of phonocentrism. The <u>mal frappe</u> is understood as an
+complicit with a profound process of nomination that has always sought to
+mark a ' degraded writing'; the representation of representation, subordinated
+within a heavily value-laden opposition by the <u>premier coup</u>. This attempted
+marginalization of the grapheme is read as the 'return of the repressed', in
+the double sense that it rewrites metaphysics at the moment it attempts to
+leave it, whilst simultaneously marking the exorbitance of writing in the very
+exercize of repression. Heidegger is therefore seen to have 'accomplished' a
+
+____________________
+\* In addition to this text it is worth noting an earlier passage reinforcing
+this model: <u>Pour que ces valeurs contraires (bien/mal, vrai/faux,
+essence/apparence, dedans/dehors, etc.) puissent s'opposer, il faut que chacun
+des termes soit simplement extérieur à l'autre, c'est a dire que l'une des
+oppositions (dedans/dehors) soit déjà accréditée comme la matrice de toute
+opposition possible.</u> ("In order that these contrary values (good/evil,
+true/false, essence/appearance, inside/outside, etc.) are able to oppose each
+other, it is necessary that each of the terms be simply exterior to the other,
+which is to say that one of the oppositions (inside/outside) is already
+accredited as the matrix of all possible opposition.") [D, 117].
+
+<p class="pn">\- 189 -</p>
+
+discourse on the written sign akin to a failed censorship. It is with deep
+suspicion, then, that Derrida argues:
+
+<blockquote><u>Voici maintenant la formule qui me parait porter la force et l'énigme du
+texte, celle dont j'avais tenté d'indiquer les prémisses dans les Leçons
+de Marbourg (1928): 'Ce n'est pas la dualité comme telle, mais la
+dissension qui est la malediction'... La différence sexuelle n'est pas
+maudite, seulement ce qui la détermine en opposition, guerre ou
+déchirement.</u> (Here now is the formula that appears to me to bear the
+force and the enigma of the text, of which I have attempted to
+indicate the premises of the Marburg Lectures (1928): 'It is not duality
+as such, but dissension which is the curse' ... Sexual difference is not
+cursed, only that which determines it in opposition, war or separation.')
+[Giii, 30].</blockquote>
+
+Heidegger's attempt to conserve a non-antagonistic notion of (sexual)
+difference, prior to the 'cursed' duality of the evil stroke, is read by Derrida
+alongside a history of logocentric distinctions which he takes to be
+profoundly analogous. Heidegger's 'gesture' is <u>plus platonicien et plus chrétien
+qu'il n'y parait</u> ("more platonic and more christian than it appears") [Giii, 31].
+If this comment is in some sense a culmination of Derrida's reading it is not
+because of its definitive tone, but on the contrary because it is a promisory
+sign amongst the last broad strokes of a text which, we must remember, is
+radically incomplete. Derrida's necessarily problematical insertion of
+Heidegger's text into a continuous history of dichotomy is the conclusion only
+to a prolegomenon; the constitution of a terrain of reading that can be
+traversed in all directions without absolute or infinite transitions. It is the
+very insistence upon such a field of reading that simultaneously transgresses
+and affirms a logocentric history stretched between Plato and Heidegger, a
+'tradition' that itself both instantiates and repudiates the finitude of
+difference.
+
+<p class="pn">\- 190 -</p>
+
+In the reading of Plato in <u>La Dissémination</u> Derrida's distinction
+between good and evil writing traces the intricate foliage of an intriguing
+metaphorics:
+
+<blockquote><u>L'analogie: le rapport de l'écriture-simulacre à ce qu'elle représente -
+l'écriture vraie (la véritable écriture parce qu'elle est véritable,
+authentique, répondant à sa valeur, conforme à son essence, écriture de
+la vérité dans l'âme de celui qui a l'épistémè) -, ce rapport est
+analogue au rapport des semences fortes, fertiles, engendrant des
+produits nécessaires, durables, et nourrissants (semences fructifères)
+aux semences faibles, vite épuisées, superflues, donnant naissance à des
+produits éphémères (semences florifères). D'un côté, l'agriculteur patient
+et sensé ... de l'autre le jardinier de luxe, pressé et joueur.</u> (The
+analogy: the relation of writing-simulacrum to what it represents - true
+writing (true writing, because it is true, authentic, answering to its
+value, conforms to its essence, the writing of truth in the soul of him
+who possesses the episteme) -, this relation is <i>analogous</i> to the
+relation of seeds that are strong, fertile, engendering necessary
+produce, lasting and nourishing (fructiferous seeds) to weak seeds,
+quickly exhausted, superfluous, giving rise to ephemeral produce
+(floriferous seeds). On one side, the farmer who is patient and sensible
+... on the other the gardener of luxury, who is hasty and ludic.)
+[D, 173].</blockquote>
+
+The Platonic model of good writing corresponds to a fertility which is regular,
+controlled, utilitarian, as opposed to the wild, exotic, and sporadically
+exuberant growths - the <u>fleurs du mal</u> - of evil writing. Good writing is a
+restrained dissemination, one which holds open the possibility of re-
+appropriation and economic circulation. It is an ecology, or a coherent and
+self-sustaining organic system. Evil writing, on the contrary, is associated
+with reckless and unconstrained expenditure, self-squandering and dissolution:
+
+<blockquote><u>L'écriture et la parole sont donc maintenant deux sortes de trace, deux
+valeurs de la trace: l'une, l'écriture, est trace perdue, semence non
+viable, tout ce qui dans le sperme se dépense sans réserve, force égarée
+hors du champ de la vie, incapable d'engendrer, de se régénérer soi-même.
+Au contraire, la parole vive fait fructifier le capital, elle ne dévie pas</u></blockquote>
+
+<p class="pn">\- 191 -</p>
+
+<blockquote><u>la puissance séminale vers une jouissance sans paternité. Dans son
+séminaire, elle se conforme à la loi.</u> (Writing and speech are now,
+therefore, two types of trace, two values of the trace: one, writing, is a
+lost trace, a non-viable seed, everything in sperm that expends itself
+without reserve, stray force outside the field of life, incapable of
+engendering, of regenerating itself. On the contrary, living speech makes
+capital fructify, it does not divert the seminal power towards an
+ecstacy without paternity. In its seminar [or seminary] it conforms to
+the law.) [D, 176].</blockquote>
+
+By returning to the field of agricultural metaphor Derrida re-opens the most
+fertile trajectory of 'deconstruction', as it were. In reading <u>Die Sprache im
+Gedicht</u> he pursues the intertwining of this metaphorics with the hierarchized
+splitting of writing in Heidegger's discussion of <u>Geschlecht</u>. He focuses on the
+term <u>losgelassene Vereinzelung</u>, or 'unleashed individuation', which he comes to
+translate as <u>démariage déchaînée</u>. On 'unleashed' he comments: <u>Déchaînée: à la
+fois effrénée et déliée de tout, de tout engagement et de toute association,
+disséminée.</u> ("Unleashed: at the same time unbridled and untied from everything,
+from all involvement and from all association, disseminated") [Giii, 31]. The
+force of this move is reinforced by the pointed translation of <u>verschlägt</u> as
+<u>séparé</u> (separated) rather than as <u>égaré</u> (stray), which had been the most
+influential previous French translation (from Beaufret, Brokmeier, and Fédier's
+rendering of Heidegger's essay). The strategy of this translation is to align a
+certain fragment of Heidegger's discourse to the naming of writing as
+'dissemination' by way of an excursus into horticultural isolation. This is
+prepared by a discussion of <u>Vereinzelung</u>:
+
+<blockquote><u>C'est un mot intéressant puisque, dans le code de l'agriculture (que
+Heidegger préfère toujours à celui de l'industrie), il signifie le
+'démariage'. Je ne prétenderai pas que Heidegger y ait pensé. Pour les
+agriculteurs allemands, c'est ce que nous appelons, dans le code francais
+de l'agriculture le démariage, opération qui consiste à enlever,
+précisément pour les empêcher de se marier, donc de proliférer, une
+partie des jeunes plantes. Sacrifice et contrôle des naissances pour</u></blockquote>
+
+<p class="pn">\- 192 -</p>
+
+<blockquote><u>maintenir un peuplement optimal du champ. Par souci démographique, on
+limite ainsi la dissémination.</u> (It is an interesting word since, in the
+code of agriculture (which Heidegger always prefers to that of industry)
+it signifies 'thinning out'. I do not claim that Heidegger was thinking
+this here. For German agriculture it is what we call in the code of
+French agriculture <u>le démariage</u> ('thinning-out'), an operation which
+consists in removing a portion of the young plants, precisely in order
+to obstruct conjugation and therefore proliferation. Sacrifice and
+control of births in order to maintain an optimal population in the
+country. By demographic concern one thus limits dissemination.)
+[Giii, 31].</blockquote>
+
+Dissemination is propagated through relations that can be discussed in terms
+of 'conjugation', relations that have to be fundamentally dissociated from those
+that usually dominate the discourse of linguistics. The 'stamp' (<u>coup</u>, <u>Schlag</u>)
+ordering textuality is to have the 'form' of conjugal regulation; which is
+ultimately the manipulation of genealogies. Within this framework there is what
+at first seems to be a contradiction between 'unleashing' and 'individuation'.
+The former seems to deregulate conjugations whilst the latter seems to
+restrict them. But unleashing has a complicity with individuation, even though
+it transgresses the isolation which restricts uncontrolled dissemination. This
+complicity depends upon the fissile sense of separation which is as integral
+to dissemination as it is to the 'thinning-out' which constrains it. This
+should not be altogether surprising, since differance orchestrates
+logocentrism, and is thus the 'agent' of its own suppression, although the
+'logic' of this relation will require more detailed attention. In a telling play
+on the ambiguous resonances of <u>peuplement optimal du champ</u> ('optimal
+population in the country(side)') Derrida hints at a more disturbing complicity
+between romantic anti-industrialism and the eugenic designs of twentieth-
+century fascist politics. These references constitute a biting political subtext
+which delineates a 'special case' within the apparently universal tendency of
+human cultures to regulate sexual conjunctions. The anarchic arbitrariness of
+
+<p class="pn">\- 193 -</p>
+
+such conjunctions 'in the wild' threatens to explode every political
+constellation, and functions as the zero-point of social organization. The
+reaction to this threat - an unconscious cultural imperative to order in sexual
+life - is often taken by anthropologists to be the sole 'universal'
+characteristic of human social organization\*. Its emergence here, therefore,
+takes grammatology (the 'science' of dissemination and its displacements) to
+the acknowledged socio-cultural 'root' of the sign system in general, and marks
+the functioning of this system as already complicit in the suppression of
+writing. In other words, writing finds itself occupying two positions in a
+discourse which had seemed quite distinct; it is not only proliferated in the
+opening of culture, but is also the originary proliferation whose disorder
+provokes the cultural enterprise. The tendency of Derrida's reading here can be
+crudely formulated in the thesis that the other of proliferation is itself
+proliferation, a discovery which will not be successfully thought within
+metaphysical, which is to say, exclusive-oppositional concepts. What is most
+cultural is also that which is most natural: the unregulated dissemination
+which is both the condition of possibility of the sign system and the pool of
+arbitrariness which the sign is designed to obliterate.
+
+____________________
+\* Perhaps ironically, Derrida is almost perfectly aligned with Heidegger's
+discourse in the direction of these hints, since for Heidegger too - in this
+(1953) text at least - <u>Vereinzelung</u> has become the focus of a quasi-political
+critique. Although the degree to which the politics of <u>Vereinzelung</u> (eugenicist
+for Derrida, anarcho-militarist for Heidegger) can be geographically or
+historically situated seems somewhat vague in both cases, Heidegger seems
+rather less precise in his specification of both the nature and the locus of
+this outbreak than Derrida.
+
+<p class="pn">\- 194 -</p>
+
+### Three: Dissémination: the Hegelian antechamber
+
+Dissemination and <u>Geschlecht</u> are not radically alien concepts commenting upon each other from without; they are intimately and primordially interwoven. It might seem as if this interweaving were principally oppositional, as if <u>Geschlecht</u> were the regulation or regimentation of dissemination, the imposition of a limiting form. Such an interpretation supposes that dissemination can account for itself, but the very affirmation or inscription of unrestricted dispersion can be perpetuated only by the tenacity of a replicative resource; a metabolic function that makes possible the sustained default of identity. If, as I have argued, the energy of graphic processes stems primordially and irreducibly from specificity as such, type cannot be thought as a restraining inhibition, but is rather to be taken as the basic form of the stimulus or excitation in general. It is, indeed, relatively easy to pursue this energetic/economic 'base' of the disseminative drive within the metaphorical currency of Derrida's 'own' discourse, or, more precisely, within the terms of the complex credit machines which he mobilizes to re-cycle the texts he encounters in wide-ranging journeys across the Western graphic order.
+
+Dissemination is a name which plays on a quasi-etymological connection between <u>sémantique</u> and <u>semence</u>, and thus on semen, sowing, signs and seeds. The implications of this terminology can only be harvested by a careful process of gleaning. In addition to its effects upon Derrida's reading of Plato, the line of dissemination passes through, and profoundly influences, his encounter with Hegel. And also, most recently, it comes to modulate the terms of his prolonged reading of Heidegger. In describing Hegel's speculations on
+
+<p class="pn">\- 195 -</p>
+
+the preface - among the most critical moments of logocentric discourse - in the <u>Hors d'Oeuvre</u> to <u>La Dissémination</u> Derrida writes:
+
+<blockquote><u>Le logos est un fils, donc, et qui se détruirait sans la présence, sans l'assistance présente de son père. De son père qui répond. Pour lui et de lui. Sans son père, il n'est plus, précisément, qu'une écriture. C'est du moins ce que dit celui qui dit, c'est la thèse du père. La spécificité de l'écriture se rapportait donc à l'absence du père.</u> (The logos is a son, therefore, and one who would destroy himself without the presence, without the present assistance of his father. Of his father who answers. For and instead of him. Without his father he is, precisely, no more than writing. This is, at least, what is said by the one who speaks, it is the thesis of the father. The specificity of writing, therefore, relates itself to the absence of the father.) [D, 86].</blockquote>
+
+Dissemination is what the father must forbid himself, what he has always already forbidden himself, in order to be the father. Dissemination is fertility disengaged from the gesture of mastery, the disturbing and violent possibility of a disruption that would simultaneously explode the agro-technical and the socio-political foundations of patriarchal order.
+
+Dissemination perpetually threatens to break the relation with the father, and thus to shatter the hierarchical subordination of the <u>ens creatum</u> to the creator. A creativity escaping all surveillance and cognitive reappropriation would spell the death of the most cherished of Western fictions; that of the responsibility or answerability of the subject. The reaction against dissemination must therefore strive to conserve the integrity of power, in which potency and domination are tied together. Such a reaction - which takes the form of a discourse upon the unity of the conscience and omnipotence of the father - is the origin of monotheism. But dissemination is also an anxiety theoretically relieved in the thought of dialectical speculation:
+
+<blockquote><u>Ce retour à soi de la semence théologique intériorise sa propre négativité et sa propre différence à soi. La Vie du Concept est une</u></blockquote>
+
+<p class="pn">\- 196 -</p>
+
+<blockquote><u>nécessité qui, à inclure la dispersion de la semence, à la faire travailler au profit de l'Idée, en exclut du même coup toute perte ou toute productivité hasardeuse. L'exclusion est une inclusion. Par opposition à la différence séminale ainsi refoulée, la vérité qui se parle dans le cercle logocentrique, c'est le discours de ce qui revient au père.</u> (This return to itself of the theological seed interiorizes its own (or proper) negativity and its own difference from itself. The Life of the Concept is a necessity that, to include the dispersion of the seed, to make it work to the profit of the Idea, excludes in the same stroke all loss and all haphazard productivity. The exclusion is an inclusion. As opposed to the seminal difference thus repressed, the truth that speaks (to) itself within the logocentric circle is the discourse of that which comes back to the father.) [D, 56].</blockquote>
+
+In the Hegelian text logocentrism becomes militant, strenuously yet ambiguously self-conscious, and, in a manner analogous to Marx's Ricardo, 'cynical'. Hegel does not perpetuate the totalizing logocentric project naively, but develops it by thinking dispersion with remorseless and ingenious antagonism. And in the subtilization of its logocentric function - almost 'incidentally' - speculative dialectic becomes the most sophisticated of patrilineal ideologies. In his comments upon patriarchal religion in part II(c) of <u>Der Mann Moses und die monotheistische Religion</u> Freud traces a primordial complicity between intellectualism and the project of consolidating paternal lines of descent. Only the maternal relation is evidentially secured, due to the unity of procreation and pregnancy. The paternal relation is only able to establish itself through the mediation or supplementation of an intellectual process, by which it establishes a compensatory and cognitively constructed unity between childbirth and coition. It is the uneasy continuity of the alliance between 'idealism' and patriarchy, sustained into Hegel's speculative dialectic, which frames the historical space for the disruptive intervention of dissemination. This theological context also guides Derrida's other major discussion of the
+
+<p class="pn">\- 197 -</p>
+
+disseminative undertow to the Hegelian dialectic, his reading of Hegel's philosophy of the family in <u>Glas</u>.
+
+In <u>Glas</u> Derrida argues that the transition from nature to culture in Hegel's <u>Encyclopaedia</u> is an <u>Aufhebung</u> which simultaneously idealizes and represses the drive (<u>Trieb</u>). This movement places the human animal in a privileged relation to itself, and to its reproduction of itself. This privilege is realized in the family. Derrida suggests that Hegel's figure for this self-relation is the seed or germ (<u>Same</u>), and proceeds: <u>La germe (der Same) est aussi, en germe, la figure ontothéologique de la famille.</u> ("The germ (<u>der Same</u>) is thus, germinally, the ontotheological figure for the family.") [G, 38a]. He continues:
+
+<blockquote><u>Ce concept (de) germe (Same, semen, semence, sperme, graine) entre régulièrement en scène dans la dialectique spéculative. A des places et dans des régions du discourse encyclopédique qui sont à la fois homologues et distinctes, qu'il s'agisse de l'ordre végétal, biologique, anthropologique, onto-logique en général. Entre tous ces ordres, elle assure un système de correspondences figuratives.</u> (This concept of/as the germ (<u>Same</u>, semen, seed, sperm, grain) enters into the regions of encyclopaedic discourse which are at once homologous and distinct, so that it a matter of the vegetal, biological, anthropological, and onto-logical in general. Among all these orders it assures a system of figurative correspondences.) [G, 38a].</blockquote>
+
+The metaphorical web spun out of the figure of the seed binds Hegel's discourse together at a level beneath its superficial logical progression. The exorbitant finitude or specificity of the seed infiltrates and orchestrates the entire sytem (see 29a), thus overspilling the determinacy of any single moment. The dispersion of the figure throughout the system subverts the inhibition (<u>Hemmung</u>) necessary to dialectical transcendence. The working of the <u>semence</u> on Hegel's discourse is therefore already bound to an explosive specificity or
+
+<p class="pn">\- 198 -</p>
+
+to a detectable genus of traces or <u>semeia</u> that stubbornly resist the placements commensurate with logical order. 'Figurative correspondences' at once facilitate and betray the development of a text that would be organized solely according to the imperatives of 'philosophy'. Hegel's cultivation of the figure of the <u>semence</u> deploys a power of (dis)semination that both seeds and exceeds the control of reason. It engenders the first of these effects by replicating the gesture of reason, tracing the circle of re-appropriation:
+
+<blockquote><u>La figure de la semence (appelons-la provisoirement ainsi) est immédiatement déterminée: 1. comme la meilleure représentation du rapport à soi de l'esprit; 2. comme le trajet circulaire d'un retour à soi. Et dans la description de l'esprit qui revient à lui-même à travers son propre produit, après s'y être perdu, il y a plus qu'une simple commodité rhétorique à donner à l'esprit le nom du père.</u> (The figure of the seed (we will provisionally call it thus) is immediately determined: 1. as the best representation of the self-relation of spirit; 2. as the circular trajectory of a return to oneself. And in the representation of the spirit which comes back to itself through its proper product, after losing itself there, there is more than a simple rhetorical convenience in giving to the spirit the name of the father.) [G, 38a].</blockquote>
+
+The seed serves to illustrate that notorious cunning of reason which enables spirit to survive the most devastating extremes of alienation, weathering its negation by means of a peculiar latency which guides Hegel through the labyrinth of the Kantian <u>An sich</u>. In the seed identity slumbers through the desolate winter of blind positivity, passively drifting with the unreflective destinies of the inorganic. Reason does not confront the ferocity of its negation, but undertakes a strategic withdrawal into the invulnerability of an utterly minimal or germinal condition. The seed seems to accept the right of the inorganic, suspending all vitality, and even allying itself with the annihilation of the procreative generation. In this retreat spirit evades the
+
+<p class="pn">\- 199 -</p>
+
+death stroke of the irrational, encouraging the triumph of an other which blindly nurtures a concealed fate; that of returning to the same. Thus it is that in the symphonic development of the <u>Encyclopaedia</u> a unitary logical rationality accepts the fragmentation of a descent into the alienation of nature, since it is a nature which is secretly programmed to engender mind, and to serve as the terrestrial vehicle of a resurrected absolute reason. The circularity of the system thus finds its image in the (vegetable) seed: <u>Avec la semence commence la plante, mais elle (la semence) est en même temps le résultat de toute la vie de la plante.</u> ("With the seed the plant commences, but it (the seed) is at the same time the result of the plant's whole life.") [G, 39a]. The seed is the unity of telos and origin; the grounding of the being in itself. This image also describes the eventual departure from animality, which, as an inhibition, takes the form of reflexivity or self-relation. Man is the animal which grasps (<u>begreift</u>) the circularity of its being, and whose freedom stems from the manipulation or determination of its own determinacy. The sapient animal is the one which most fully engenders itself: <u>Plus que la plante ou l'animal, il est issu de son propre germe.</u> ("More than the plant or the animal he (man) is the issue of his own germ.") [G, 40a]. The seed which returns to itself, which narcissistically or incestuously involves itself in itself - that is the germ of reason. But the figure of return has persistently confounded the metaphysics of redemptive re-appropriation in the cases of
+
+____________________
+\* The solitude of the seed's auto-relation is an <u>Einsamkeit</u> that must negotiate at some level with the <u>Vereinzelung</u> that Heidegger introduces into the issue of <u>Geschlecht</u>. As far as I can tell D.F. Krell (in a personal communication) is the only person to tie this <u>-sam</u> of the <u>einsam</u> to the question of <u>Versammlung</u> (or 'gathering') and through the Gothic <u>sama</u>, Greek <u>ama</u>, to the question of the seed in the course of this discussion.
+
+<p class="pn">\- 200 -</p>
+
+Nietzsche, Freud, Heidegger, and Trakl; pointing always to an exacerbation rather than a resolution of rupture. Derrida argues that with Hegel too return leads somewhere else. Under what sign should we search for this 'elsewhere'?
+
+Derrida's reading of Hegel seeks to nurture a disruptive acknowledgement of difference in the Hegelian text, an acknowledgement that is perpetually spilling over into a nomination of dissemination. I must now restrict my attention to the facets of this project that feed directly into Derrida's encounter with Heidegger's 1953 discourse on <u>Geschlecht</u>. Whilst pursuing the spoor of the seed in <u>Glas</u> Derrida quotes Hegel on education (<u>Bildung</u>) - the self-cultivation which constitutes the humanity (as circular self-determination) of man - and suddenly 'stumbles' upon a word which he emphasizes by rendering it in both French (thus accidentally in English) and German: <u>discipline</u>, <u>Zucht</u>. <u>Zucht</u> stems from the verb <u>ziehen</u> (meaning to 'draw' or 'trace'), which is among the most crucial organizational factor for Heidegger's 'semiotics'. The humanity of man in Hegel's text is a function of the drawing inwards and upwards of (dis)semination; the cultivation of the seed. <u>Züchtung</u> marks the difference in the Hegelian text which is persistently named <u>Aufhebung</u>, but which cannot be contained by the disjunctive process of rationalization associated with this term. It is with the word <u>Zucht</u> that dissemination and <u>Geschlecht</u> are bound together, since it marks that primordial stimulus to metaphysics whose misrepresentation has always been simultaneous with the repression of any radical thematic of genre. In other words, when the control of dispersion is understood as the operation of the negative - as limit, determination, or transcendental purity - genre is necessarily misconceived as determination through negative articulation. This relation is perhaps most clear when re-phrased as the suggestion that <u>Zucht</u>
+
+<p class="pn">\- 201 -</p>
+
+names the refusal of incest, and is therefore the opening of type, which is a description of the drive.
+
+Hegel is aware of the implications of the thought of <u>Gattung</u> for that of the drive, although he interprets these in such a way that the subversion of type through sexuality is subordinated to its re-entrenchment:
+
+<blockquote><u>Die Gattung in ihm ist daher, als Spannung gegen die Unangemessenheit ihrer einzelnen Wirklichkeit, der Trieb, im Andern seiner Gattung sein Selbstgefühl zu erlangen, sich durch die Einung mit ihm zu integriren, und durch diese Vermittlung die Gattung mit sich zusammenzuschließen und zur Existenz zu bringen, - die Begattung.</u> (The type in it is therefore, as tension opposing the inadequacy of its singular reality, the drive to perpetuate its type in the other, integrating itself in the union with it, and by this means amalgamating the type with itself and bringing it into existence, - copulation.) [HE, 669].</blockquote>
+
+The stimulus to the drive is not taken to be the 'empirical' specificity of its type - a propulsion simultaneously immanent and <u>exogamic</u> - but the logical concept of specificity, i.e. singularity, which promises to resolve desire in the universal. By means of this peculiar twist Hegel manages to accept an excitatory reading of specificity, whilst still returning desire to the same, to an endogamy. It remains for us finally to re-appraise, in the context of this passage, how Trakl, Heidegger, and perhaps Derrida have re-written the trajectory of type.
+
+<p class="pn">\- 202 -</p>
+
+### Four: The Cultivation of the Grapheme
+
+Of the families of words that organize Heidegger's discourse on language there are two of particular insistence and flexibility, as Derrida indicates in his essay <u>La retrait de métaphore</u> (The retreat of metaphor). These are based upon the German verbs <u>reißen</u> (to tear) and <u>ziehen</u> (to draw). The title of Derrida's essay itself plays with the latter of these families, since <u>retrait</u> translates <u>entziehen</u>, a word normally rendered by the English 'withdraw' (although I have settled for 'retract', which derives from the much more plastic and variegated genus of words stemming from the Latin <u>tractus</u>, the stem of <u>trahere</u> 'to draw'). The relation of traction to tearing is undoubtedly an intricate one. Despite the plurality of associations and points of conjunction between these terms they settle quite tractably together upon the field of agricultural metaphor. The topic of this settlement can be demarcated by three quotations, the first from Heidegger's <u>Unterwegs zur Sprache</u>, the second from Derrida's <u>De la Grammatologie</u>, and the third from Nietzsche's <u>Also Sprach Zarathustra</u>. First, Heidegger:
+
+<blockquote><u>Die gesuchte Einheit des Sprachwesens heiße der Aufriß. Der Name heißt uns, das Eigene des Sprachwesens deutlicher zu erblicken. Riß ist dasselbe Wort wie ritzen. Wir kennen den 'Riß' häufig nur noch in der abgewerteten Form, z.B. als Riß in der Wand. Einen Acker auf- und umreißen, heißt aber heute noch in der Mundart: Furchen ziehen. Sie schließen den Acker auf, daß er Samen und Wachstum berge.</u> (The sought unity of the weft of language shall be called the sketch. The name calls upon us to examine what is proper to the weft of language with greater clarity. Cut is the same word as the verb to scratch. We know '<u>cut</u>' preponderantly only in its devalued from, e.g. as a crack in the wall. But to cut open or turn over a field is still used in dialect for the</blockquote>
+
+<p class="pn">\- 203 -</p>
+
+<blockquote>traction which ploughs furrows. They open the field so that it can shelter seeds and growth.) [251-2].</blockquote>
+
+Then Derrida:
+
+<blockquote><u>Il s'agit de l'écriture par sillons. Le sillon, c'est la ligne, telle que la trace le laboureur: la route - via rupta - fendue par le soc de la charrue. Le sillon de l'agriculture, nous nous en souvenons, ouvre la nature à la culture. Et l'on sait aussi que l'écriture naît avec l'agriculture qui ne va pas sans la sédentarisation.</u> (It is a question of writing by furrows. The furrow, that is the line, such as the one traced by the labourer: the way - via rupta - cut by the blade of the plough. The agricultural furrow, we remind ourselves, opens nature to cultivation (or culture). And one also knows that writing is born with agriculture, which occurs only with sedentarisation.) [DG, 407].</blockquote>
+
+And finally Nietzsche:
+
+<blockquote><u>Der nämlich bin ich von Grund und Anbeginn, ziehend, heranziehend, hinaufziehend, aufziehend, ein Zieher, Züchter und Zuchtmeister, der sich nicht umsonst einstmals zusprach: 'Werde, der du bist!'</u> (This I am from ground and origin, traction, attracting, upward traction, training, an extractor trait-raiser and training master, who once advised himself, and not without consequence: 'Become who you are'.) [Sii, 479].</blockquote>
+
+If Heidegger often seems eager to beat his pen into a ploughshare this is not the simple symptom of a reactionary rural nostalgia. It might even be the case that the thought opened by the rhetoric of the plough first allows us to make sense of the peculiar Germanic version of Arcadian conservatism (with which he is incontrovertibly entangled) in a way that escapes the terms of naïve historical progressivism. And the continuity of this metaphorical network in Derrida's discourse suggests that there is more to the matter than a mere regional peculiarity. Agriculture is not taken up as an arbitrary theme by a writing which is uncontaminated by problematics of fertility, propagation, irrigation, etc. The <u>ziehen</u> shared by agricultural and literary cultivation draws each to the other, whilst the <u>reißen</u> parting each from itself also parts
+
+<p class="pn">\- 204 -</p>
+
+each from the other. The manner of integration and dispersion of these domains cannot be simply assigned to a process that is proper to either. Contrasting the alternating directionality of ploughing with the uni-directionality of the written line Derrida asks <u>Pourquoi l'économie du scripteur a-t-elle rompu avec celle du laboureur?</u> ("Why has the economy of the writer broken with that of the labourer?") [DG, 407]. The departure of textual incision from the working of the earth, and from 'economic productivity' in general, is not a definitional foundation, but a crucial historical problem. It is entangled with (although not comprehended by) the familiar question about the origin of 'ideology', or with inscriptive practices represented as transcendental representations; reflectively detached and intellectually mastering the immanenent labour processes of a society. To develop this problematic of the interconnection of a metaphysics of inscriptions with agricultural metaphor is automatically to enter into the interstices between the theological determination of creation and the technology of fertility. Such an investigation broaches the question of the relation between monotheistic religion and rural culture, since the investment of religion is precisely the 'underwriting' of labour as servile immanence within a rigid distinction between creation and cultivation. The necessity of such a topic for Trakl interpretation is easily demonstrated, for instance by a quotation from <u>Traum und Umnachtung</u>:
+
+<blockquote><u>O, die dämmernden Frühlingswege des Sinnenden. Gerechter erfreut ihn die blühenden Hecke, die junge Saat des Landmanns und der singende Vogel, Gottes sanftes Geschöpf; die Abendglocke und die schöne Gemeine der Menschen. Daß er seines Schicksals vergäße und des dornigen Stachels.</u> (O, the twilit spring-paths of the sentient. More justly was he delighted by the blossoming hedges, the young seed-sowing of the yeoman and the singing bird, God's gentle creation; the evening bells and the beautiful human throng. That he might forget his destiny and the thorny spine.) [T, 82].</blockquote>
+
+<p class="pn">\- 205 -</p>
+
+The thought of cultivation proliferates both within and across the boundary of theology. It is the resource that was always already necessary to the project of determining the omnipotence of God, whilst simultaneously being the fuel of technological culture, and as such the driving force of an increasingly atheological and pragmatic nihilism. It is possible to collapse these lineages into a single inheritance, consolidated by the scholastic determination of being as <u>ens creatum</u>, but such a reduction arbitrarily prioritizes the monotheistic appropriation of the thought of technique over a techno-agricultural pre-history which seems in fact - and can be shown <u>de jure</u> to be - primary. The thought of absolute creation relates to the slow development of agricultural technique, with its relative degrees of manipulative potency, as hyperbole. Theological conception is to that extent dependent upon a pre-existing cultural trajectory, which it appropriates by means of an extrapolation to infinity. Terrestrial becoming is thus inscribed within an infinity which marks its boundary, and which recoils upon it to mark its strivings as insignificant. It is the term (and therefore the thought) of insignificance - a thought which encodes an important 'truth' - that we can begin to read as a name for a long denigrated intensity. Within this discussion such intensity has been predominantly named 'specificity'. The obvious difference between the sense of specificity as I have attempted to employ it, and that of insignificance in its theological sense - a difference which is meant to parallel (at last an aspect of) the distinction between Heidegger's 1953 employment of <u>Geschlecht</u> and that of his Marburg period - is that the former usage in each case resists the suggestion that the 'significance' of specificity in general is determinate. In other words, beyond theological conceptuality, insignificance as such - which is the measure of
+
+<p class="pn">\- 206 -</p>
+
+differential intensity, and which as the resource of every possible typography, comprehends in advance all significance - has no external limit, condition, or determination.
+
+By 1953 (as has been briefly suggested in the second section of the introduction) Heidegger no longer attempts to hold generic differentiation on one side of the ontological difference. This movement within Heidegger's work partly recapitulates the dissolution of the ontotheological project, which sought to isolate terrestrial specificity as pure immanence, divided infinitely from the transcendence of God. The ontological difference of the Marburg period both subverts and re-establishes (/displaces) this traditional hierarchy, since it sustains a thought of absolute and transcendental difference, whilst refusing to employ this difference to demarcate terrestrial and superterrestrial domains. To think the sense of difference opened by the dissolution of any stable opposition or transcendental distinction is a task that - despite its vitality, and due to its immensity - remains germinal. We have seen that such a re-thinking has crucial consequences for the conceptualization of language, temporality, and kinship relations since it undermines the thought of language as disjunctively articulated linguistic system, that of time as the infinite and sedentary condition for the subsumption of alterity, and that of desire as the endogamic tendency towards the reiteration of the same. Instead of these metaphysical schemas, Trakl depicts a <u>Geschlecht</u> propelled by the icy wave of eternity, specified by mossy steps which lead out of the father's house, and brought to an incest-crisis which (like primary narcissism) affirms the excitation or specificity that traces the first possibility of the alterity of the other. In the orientation of his desire to the <u>Geschlechtlichkeit</u> - the specificity or insignificance - he shares with his sister, Trakl simultaneously affirms the inexhaustible source of mortal difference that fuels (exogamic) desire. Such desire need not be
+
+<p class="pn">\- 207 -</p>
+
+conceived as an endogamic refusal of exogamy, a choice taken against alterity, since it can be interpreted as the primordial cathexis of the resource of exogamy; the shared and shifting intensive specificity which ejects desire into alterity. If we are now able to read the notion of transcendence as the indefinite nomadism that ruptures every stable identity, then Traklean incestuality could be described as <u>transcendental exogamy</u>. Yet however carefully 'transcendence' is re-read and re-written such a definition remains perilous and redolent of dialectical recuperation or repression.
+
+A certain 'incestuality' can, without ultimate paradox, be the cultivation of precisely those explosive forces that devastate any conceivable interiority. This is because, as Freud has clearly shown in his descriptions of the death drive, intensive specificities lead away from themselves. If they cultivate themselves it is only in order to depart more radically. So that returning to the strange equivalence of the pen and the plough in Heidegger's discourse we can see that it is not an incidental association or historical peculiarity, but stems from an acceptance of the irreducibility of what is natural (anterior to work) in language, which is the dependence that binds cultural distinction to a primordial power of propulsive differentiation; the <u>grapheme</u>. What is natural in language is the iron destiny that it must always stray from itself. Language acknowledges a kinship to agricultural technique in that it is incapable of constituting pure or stabilizing distinctions, but is only able to cultivate, displace, and exploit that resource of difference which has never been assimilated to a productive process. Culture only exists, therefore, as cultivation, or as the movement which participates in the propagation of graphic energy. It is according to such a perspective that Nietzsche describes
+
+____________________
+\* As Heidegger suggests in the Trakl essay itself: <u>Alle Formeln sind gefährlich</u> ("All formulae are dangerous") [US, 81].
+
+<p class="pn">\- 208 -</p>
+
+spirit as an elevation of the body without negation:
+
+<blockquote><u>Sagt mir, meine Brüder: was gilt uns als Schlechtes und Schlechtestes? Ist es nicht Entartung? - Und auf Entartung raten wir immer, wo die schenkende Seele fehlt.</u><br>
+<u>Aufwärts geht unser Weg, von der Art hinüber zur Über-Art. Aber ein Grauen ist uns der entartende Sinn, welcher spricht: 'Alles für mich'.</u><br>
+<u>Aufwärts fliegt unser Sinn: so ist er ein Gleichnis unseres Leibes, einer Erhöhung Gleichnis. Solcher Erhöhung Gleichnisse sind die Namen der Tugenden.</u><br>
+<u>Also geht der Leib durch die Geschichte, ein Werdender und ein Kämpfender. Und der Geist - was ist er ihm? Seiner Kämpfe und Siege Herold, Genoß und Widerhall.</u><br>
+(Tell me, my brothers: what counts as bad and worst with us? Is it not de-gen-eration - And we always suspect degeneration when the generous soul is lacking. / Our way goes upwards, away from the type up to the over-type. But something horrific is the degenerate sentience to us, which says 'everything for me.' / Our sentience flies upwards: thus is it an image (<u>Gleichnis</u>) of our bodies, an image of elevation. Such images of elevation are the names of the virtues. / Thus goes the body through history, something that becomes and struggles. And the spirit - what is that to the body? The herald, comrade and echo of its struggles and victories.) [Sii, 337].</blockquote>
+
+Cultivation does not negate the finitude of specificity but rather is, when inscribed beyond theological conceptuality, the intensification of type. This intensification, as we have seen, is neither the endogamic protection or purification of an interiority, it is the hypercathexis of a drive, and thus necessarily oriented to a deepened intermixture with alterity. The only 'preserve' reiterated by the 'over-type' is the exogamic propulsion itself. But this exogamy is not the system of regulated exchanges that reproduce patriarchal order. Such an order is on the contrary the symptom of a restriction in the development of exogamy which, although it widens the circulation of sexual conjunctions beyond the family by prohibiting incest, still confines this expansion to a circuit of reciprocal relations that depend
+
+<p class="pn">\- 209 -</p>
+
+upon patterns of cultural and racial recognition, and thus revert to a refusal of conjunction with the other. But without the propulsion of a radicalized exogamy, one that punctures such a residual incestuality and the stabilization of its displacement, the 'over-' of the 'over-type' has no meaning since, as Nietzsche repeatedly says, what can be affirmed in humanity is that it is a bridge, always already forsaking any specific interiority. What is most strongly cathected in the re-inscription is the 're-' not the inscription. And the residual inscription is itself only the trace of a perpetual wave of displacement, or of recurrent self-overcoming. The 'over-type' departs from any thought of transcendence as atemporal universality, since it protracts intensive specificity. In <u>Was Heisst Denken?</u> (<u>What Calls for Thinking?</u>) Heidegger marks a similar differentiation from the ontotheological notion of transcendence, but in terms of a retraction which opens the intensity of thought:
+
+<blockquote><u>Was sich uns entzieht, zieht uns dabei gerade mit, ob wir es sogleich und überhaupt merken oder nicht. Wenn wir in den Zug des Entziehens gelangen, sind wir - nur ganz anders als die Zugvögel - auf dem Zug zu dem, was uns anzieht, indem es sich entzieht. Sind wir als die so Angezogenen auf dem Zuge zu dem uns Ziehenden, dann ist unser Wesen schon durch dieses 'auf dem Zuge zu...' geprägt. Auf dem Zuge zu dem Sichentziehenden weisen wir selber auf dieses Sichentziehende. Wir sind wir, indem wir dahin weisen; nicht nachträglich und nicht nebenbei, sondern: dieses 'auf dem Zuge zu...' ist in sich ein wesenhaftes und darum ständiges Weisen auf das Sichentziehende. 'Auf dem Zuge zu...' sagt schon: zeigend auf das Sichentziehende.</u> (What retracts from us holds us thereby in its traction, whether or not we notice it then, or in general. When we find ourselves in the tract [<u>Zug</u>: feature, tension, migration, flock] of the retraction we are - although in a totally different way to migrating birds [<u>die Zugvögel</u>] - tracing that which attracts us, in that it retracts itself. If we are, attracted thus, tracing what holds us in its traction, our weft is printed by means of this 'on the trace of...'. Tracing that which retracts itself, we ourselves point to this self-</blockquote>
+
+<p class="pn">\- 210 -</p>
+
+<blockquote>
+retraction. In that we point there, we are who we are; not belatedly or in a supplementary fashion, but rather: this 'on the trace of...' is in itself the basic and perpetual fabric of a pointing to that which retracts itself. 'On the trace of...' already says: indicating that which retracts itself.) [WHD, 5-6].
+</blockquote>
+
+It is the space of this retraction - which it would be incautious to propriate too rapidly to '<u>be</u>ing' - that conditions the specificity of a historical plight, and thus provides the site of poetry. The thought of retraction substitutes a fluctuating and graduated historical condition for the ontological groundings of metaphysical historiography; we are not sited by memorials of a tradition, but rather by an energetics of forgetting. Since for 'us' - those whose plight is modernity - '<u>ontology</u>' is economics; we have been saved from being. Trakl is not the means to an ulterior objective, a gate or passage leading to the restitution of ontological foundations. The poet's name marks an explosion of intensity, the degrees (or mossy steps) of which register, measure, and further the departure of being. If poetry 'retrieves' the default of being it is only to propagate or exacerbate it. So that what we inherit to read is a like a bolt of lightning from beyond the stagnant language of ontotheology; a nomad stranger with the dust of the steppes on her boots and the cheekbones of a mongolian. It is perhaps only out of humour that we still name this vagrant a 'soul', for as Heidegger says:
+
+<blockquote><u>Die Seele ist ... als Seele im Grundzug ihres Wesens 'ein Fremdes auf Erden'. So bleibt sie das Unterwegs und folgt wandernd dem Zug ihres Wesens.</u> (The soul is ... as soul, 'something strange on the earth' in the grounding trait of its weft. Thus what remains for it is being underway, and it wanders, following the tract of its weft.) [US, 41].</blockquote>
+
+<p class="pn">\- 211 -</p>
+
+## Conclusion: Heidegger's Trakl: Writing, Kinship, and Desire
+
+In this text I have sought to indicate how Heidegger's <u>Die Sprache im Gedicht</u> can be read as an important episode in the late pre-history of that '<u>systematic</u>' textual suspicion that is currently termed '<u>deconstruction</u>'. This is not to suggest that Heidegger's work is teleologically oriented towards that of Derrida (even though the writing of both writers shares a peculiar and important characteristic; that of being exhausted in and through the task of compiling a vocabulary). It is rather to suggest that the programme of deconstruction is deeply rooted in those interrogations of difference which are especially characteristic of the most recent ('<u>Nietzschean</u>') phase of modern philosophy. This is the period within which the oppositional form of conceptuality in general is comprehensively 'critiqued' ('destroyed', 'deconstructed' etc.). Such interrogations of difference receive a crucial and problematic skewing in Heidegger's 1953 Trakl essay. But the writings of Heidegger, and partially through him, those of Trakl, both in-fluence and overspill any formulation of a graphematics (or science of the written trace), since they are not reducible to a series of '<u>ideas</u>' to be totalized and re-totalized, but are themselves organized graphic intensities which evade the appropriative movement of every representational project, and which subversively infiltrate the reason that seeks to master them. The attempt to thematize the grapheme (or the resource of writing) thus generates extreme '<u>interpretative</u>' contortions, and these can be traced in various texts which share the aspiration of rendering a word legible as a designation for the '<u>being</u>' (or pre-dichotomous fabric) of language, such
+
+<p class="pn">\- 212 -</p>
+
+as, for instance, those texts of Heidegger and Derrida encircling the word <u>Geschlecht</u>.
+
+The force of Heidegger's essay depends upon the interlocking of a number of words from Trakl's poetry, a network which Heidegger organizes in terms of <u>Abgeschiedenheit</u>, but which includes (along with <u>Geschlecht</u>) <u>Verwesung</u>, <u>Fremd</u>, <u>Heimkehr</u>, <u>Dämmerung</u>, <u>Ungeborene</u>, <u>Wild</u>, and many other terms, amongst which are various traces of the sister. This network can be somewhat crudely divided into a manifest and a latent series of associations, the former constituting a catastrophist historical interpretation of Trakl's poetry, whilst the latter reads history itself, in a subterranean fashion, as a convulsion of and within the repudiation of incest. <u>Abgeschiedenheit</u>, for instance, is both the departure from the ruin of a historically situated genus, and the genealogical discontinuity of a migration beyond any system of exogamy. The turning home into the dawn is both a return to the primordial historicizing of history, and a recapitulation of the infant's apparently endogamic and polymorphic desire. The <u>Wild</u> is both the animal which can only find itself in history, and that feral reality which does not recognize the laws of kinship. But these series are not mere antinomies, since they contribute to a re-thinking of exogamy, one which no longer determines it negatively as the prohibitive repression of desire. It is this positive ejection into alterity which provides the '<u>object</u>' of graphematics, because the general '<u>form</u>' of the inscription in general is the
+
+____________________
+\* Heidegger himself employs this trope of the 'and (also)' in his discussion of the colours in Trakl's poetry and their polyvocity (<u>Mehrdeutige</u>), a polyvocity that is not merely a bivocity (<u>Zweideutige</u>). More precisely, the immediate bivocity of poetic ambiguity is itself only one side of a more fundamental bivocity [US, 74-5].
+
+<p class="pn">\- 213 -</p>
+
+residual trace of precisely such an (always already) exploded or exceeded interiority or identity. An incestual culture is no more possible than the pure self-reproduction of the concept, and not only because the '<u>detour</u>' through the other is structurally integral to any possible '<u>inside</u>', but more fundamentally because that of which there can be an 'inside' must already have navigated a history; a history which is that of positive exogamy or positive alienation: - ecstasis.
+
+The dominant term of Heidegger's reading is <u>Abgeschiedenheit</u>; a name for the difference which separates Trakl's poetry from the history and genre of ontotheological metaphysics. This difference is only possible as a separation that no longer collapses back into traditional philosophical and theological concepts: negation, denial, opposition, sublation or determination. It is for this reason that the '<u>unwoven genus</u>' of metaphysics, which Heidegger discusses in the essay, cannot be thought as one pole of an antagonistic conceptual dichotomy. Difference does not divide or distinguish genera, it is rather the very drift of genera; the differential positivity, or that which is generic in the genus. This inherent departedness can be characterized by what Deleuze has named '<u>unilateral distinction</u>' (despite Deleuze's repudiation of generic conceptuality that contextualizes this expression), which I have rendered as '<u>specificity</u>' or '<u>intensity</u>'. Heidegger's work discloses a continuous radicalism in respect to this issue, since the '<u>matter</u>' of his investigation is from the start irreducibly differential. The ontological difference of the 1920's is a cleft '<u>in</u>' beings that cannot be dissolved within any tabulation of what is, despite the perpetual attempt of Western thinking to effect precisely this dissolution. It is almost a tautology to recall that the ontotheological project of repressing ontological difference has depended for the most part upon a distinction between God and other (subordinate) beings, the latter being thought as the totality of created
+
+<p class="pn">\- 214 -</p>
+
+beings. Such a conception collapses ontological difference onto an ontical table or grid, and thus articulates this difference according to abstracted differentiations which are reduced to the status of atomic and purely formal distinctions. But to break with this tradition it is not enough to prise ontological difference from ontico-structural tabulation, it is also crucial that this tabulation is <u>itself</u> ruptured, or ploughed-up. Ontical methodologies - such as those which have dominated the typological and taxonomic researches of both the natural and human sciences - could only be legitimate if ontological difference '<u>itself</u>' were a regional (and thus ontical) problematic. But to think ontological difference as the <u>difference between</u> being and beings is merely to repeat the prevalent repression of difference, conceiving it as the simple articulation of plenitudinal moments, or identities. In attempting to think a '<u>difference of</u>' which is not reducible to a '<u>difference between</u>' Heidegger is led to read <u>Abgeschiedenheit</u> through <u>Geschlecht</u>, or through that '<u>object</u>' for which difference is never an extrinsic determination. It is by following this path that <u>Geschlecht</u> can be read as the sign for the most radical protraction of Heidegger's Marburg meditation.
+
+Pursuing the traces of genre in Trakl's poetry leads Heidegger to "the beauty of a genus which turns home" (<u>die Schönheit eines heimkehrenden Geschlechts</u> [US, 74]), a theme he responds to with the modified thought of <u>abgeschiedenen Heimkehr</u> [US, 74]. Departure is qualified by a 'regression' which threatens to annul it, or to re-introduce the negative into differentiation. To interpret this movement is to participate in a complex web of readings whose most crucial <u>nexuses</u> are the Nietzschean thought of eternal recurrence and the Freudian theory of the death drive. These meditations have been haunted by persistent interpretations which have understood return as the reproduction or recovery of a forsaken identity. Eternal recurrence has thus been read as the
+
+<p class="pn">\- 215 -</p>
+
+closed circulation of transient identities, and the death drive as the negation of vital differentiation in the return to a condition of inorganic repose. These regressions may be read differently however; as the retrieval of migratory impulse, or the affirmation of difference. Nietzschean recurrence is open to an interpretation that would construe it as the re-energization or re-activation of difference, an exorbitant re-iteration of the drive which is constitutive for the will to power. Every overcoming is reinscribed by the rhythmic pulse of desire as a trajectory which cannot congeal into a condition of domination, and which must perpetually overcome what it has become. The death drive can similarly be read as a compulsive subversion of the organism by the movement of difference, a re-fetching (<u>Wiederholung</u>) of the departure from the inorganic, or of the trace marking a differential trajectory which cannot resolve itself into a stable organic state. Such readings suggest that <u>Heimkehr</u> might also be a more problematic movement than that of a simple restitution. The return which qualifies departure might be a re-departure, or return of departure, rather than a return from departure. A <u>heimkehrenden Geschlecht</u> would then be thought not as a genus withdrawing from its specificity into an undifferentiated state, but as a differentiation to the second power, a re-activated movement of specification, or an intensification (of difference).
+
+Intensification is an overcoming, which is to say that it is a process that cannot be accomplished within itself. Each intensification is thus associated with a more or less violent eradication of endogamic forces; an '<u>inner</u>' arche-agression whose most basic cultural form is termed 'incest prohibition'. It is only at this point that the thematic networks of <u>Geschlecht</u> and incest can be brought into a full negotiation. It is coherent but trivial to begin with <u>Geschlecht</u> as the space or arena of incest; this merely constitutes <u>Geschlecht</u> as a term in the analytic definition of incest, and develops the
+
+<p class="pn">\- 216 -</p>
+
+relation through sterile syllogisms. It is more significant that the genealogy of any <u>Geschlecht</u> - a re-tracing of the intensificatory processes constitutive of its specifications (cultivation of the grapheme) - leads to the discovery of a positive and non-systematic exogamy. '<u>Type</u>' can never have been a self-sufficient essence that could be placed into contingent and external relations; such a being would be the object of a theology, not of genealogy. A purely endogamic culture (and the discourse on purity is from the first contaminated by such a thought) would be a Leibnizian monad that depended on a God to constitute its resonance or harmony with an outer world. Beyond the (theological) terms of such a fantasy, any endogamy (even the deeply rooted endogamy sustaining our supposedly exogamic occidental patriarchy) can only be a deviation from a more primordial exogamy. Incest and <u>Geschlecht</u>, thought together in the context of such a deviation, enter into multiple synthetic relations; corresponding to transgressions of the will-to-power, refusals of interaction, or '<u>endo-stases</u>' at different levels of intensity. Incest is the autism of the genus.
+
+If there is a specificity to incest (thus allowing something to be said about it, and something that is not tautological) it is not because incest is the spontaneous movement or affirmation of type; this would make it, quite to the contrary, a '<u>night in which all cows are black</u>' or an elimination of all variation [PG, 20]. Incest is able to have a character only if it diverges from a migration - or drift of specification - whose incestual '<u>reflexion</u>' comes to it as a late possibility. Which is to say that incest arrives already laden with positive traits, or with an inheritance that can only accrue to a fundamentally '<u>exogamic</u>' process of intermixture with alterity. This is because positivity as the distribution and gradation of differences differentiated among themselves cannot be derived from a transcendental form or table, since positive or
+
+<p class="pn">\- 217 -</p>
+
+redundant difference is already presupposed by any possible graphic regime (in the form of an increasingly isolated genre of a-signifying semiotic materials\*), and thus by the apparatus that would inscribe the table of differences. Such traits can only be constituted through a history of real negotiations between forces, for if types do not come from the transcendental sphere - either that of Plato or that of the church - they must be disseminated by and among the denizens of the earth. Such an intermixture is a real rather than a logical assimilation of difference; an assimilation of difference <u>as</u> difference. This movement is less an appropriation than a constitution out of alterity, such as that which Freud conceives in the thought of the death drive, or Nietzsche depicts in the theory of forces†. The trait would thus suggest that identity does not precede relation, but is rather an abstraction from the positivity of the relation, so that incest (as the collapse of relation into identity) is more of a denial than an affirmation of <u>Geschlecht</u>.
+
+Does this mean that Traklean desire is anti-incestual? Or is Trakl's thematic of incest the symptom of a reaction against <u>Geschlecht</u>? Could Heidegger be right after all to make so little of the incestual theme in Trakl's poetry? These questions are a little too blunt. I am neither seeking to dissolve the traces of a shattering relation between Trakl and his sister into the
+
+____________________
+\* See Félix Guattari's many references to a-signifying semiotics in <u>La révolution moléculaire</u>.
+
+____________________
+† Despite the language of <u>Aneignung</u> ('appropriation') which characterizes many of his discussions, it is clear that Nietzsche is not postulating a self or identity that pre-exists the play of forces, since every possible <u>Ding an sich</u> - subject, substance, or even will - is subverted by the prosecution of genealogy.
+
+<p class="pn">\- 218 -</p>
+
+shabby normality of occidental conjugality, nor am I attempting to defend Heidegger's reading (or patrilineal 'exogamy' itself, which is unfortunately in no need of defenders) from the taboo-splintering fury of the Traklean text. Finally, I am not seeking to 'deconstruct' the dichotomy endogamy/exogamy by means of reversal and displacement, or at least, I am not engaged in an operation that is simply internal to a particular '<u>theory of the grapheme</u>' accepted as a final endogamous culture (which is not to suggest that Derrida either does or could write within the domain of his own work). It has rather been a matter of pointing to an exogamy which is blocked by the very possibility of incest, which is to say; by the reproduction of a '<u>transcendental</u>' kinship structure encompassing all conjugations. If the sister leads beyond this structure, out into the night, and away from the father's house, she is the '<u>object</u>' of an exogamy beyond exogamy, a cultivation beyond culture; this is a relation to alterity that cannot be achieved within the system thus violated, and one that is not even dependent upon it. To describe Trakl's thematic of the sister as '<u>incestuous</u>' is to propriate it to a category that is harmlessly internal to the system of occidental kinship, since any violation that can be so easily described according to the prevailing system of social and cultural articulations has already been neutralized and absorbed into the dominant order.
+
+Heidegger's <u>Die Sprache im Gedicht</u> is not without its pieties and blindnesses. It misconstrues many of the sister's traces in Trakl's poetry - sometimes it seems to deform almost all of them. Yet - in part - Heidegger's reading passes beyond incest, as well as falling short of it. The thought of ecstative gathering that propels Heidegger's reading of the icy wave of eternity and of fire; of the stranger and departure; and finally, after innumerable convolutions and contortions, the sister: this thought is also that of radically exogamic <u>Geschlechtlichkeit</u> or the cultivation of the grapheme. For cultivation
+
+<p class="pn">\- 219 -</p>
+
+of the grapheme is nothing other than the course of desire through the sign, or the passage it takes across the traces of '<u>its own</u>' past. Thus, when Heidegger's essay splices <u>Abgeschiedenheit</u> into <u>Geschlecht</u>, fusing desire with specificity, it re-opens a network of overgrown channels whose function has been forgotten - the hieroglyphic of a lost libidinal history - and allows negotiations to resume between Nietzsche's <u>Ueberart</u>, Rimbaud's <u>race inférieure</u>, and Trakl's <u>verfluchte Geschlecht</u>. If I find Heidegger more appealing as a canal-dredger than as a peasant or village craftsman (and on this point alone I have genuine <u>conviction</u>), it is because he escapes all piety, nostalgia, and chauvinism when, cutting channels through his beloved earth, he is able to make things flow.
+
+<p class="pn">\- 220 -</p>
+
+## Appendix: On the Translation Of The German Word <i>Wesen</i>
+
+Of all the words in Heidegger's vocabulary perhaps the most resistant to
+translation is the common German word <u>Wesen</u>, which would normally be
+translated as 'essence'. The scholastic distinction of <u>essentia</u> and <u>existentia</u>
+is unable to capture the sense of <u>Wesen</u>; since as well as denoting 'quiddity',
+<u>Wesen</u> is also marked in the conjugations of the verb to be in both English
+(the past tense: was) and German (the perfect: <u>gewesen</u>). Heidegger also
+stresses its etymological root in the Sanskrit <u>vas</u>, meaning to dwell, which
+becomes the Gothic <u>wisan</u>, to persist or remain. To complicate matters further,
+the word <u>verwesen</u>, a 'negation' of <u>Wesen</u> which means to decompose or decay,
+is of crucial importance to Trakl and to Heidegger's essay <u>Die Sprache im
+Gedicht</u>. Any reasonably adequate translation of <u>Wesen</u> should be able to
+undergo a similar modification.
+
+The importance of sustaining these relations first tempted me to
+translate <u>Wesen</u> consistently as 'composition'. This translation might have had
+the advantage of capturing the word's equivocal functioning as both a verb
+(in, for instance, the musical or painterly sense of the word 'composition')
+and a noun, which is very pronounced in Heidegger's usage. But the contortions
+involved in any consistent translation using this key were quite
+unmanageable. There was, for instance, a powerful tendency for temporal
+references to be displaced into spatial ones, and a skewing of the word from
+
+<p class="pn">\- 221 -</p>
+
+connotations of simplicity towards those of complexity. The cumulative effect
+of such transformations compromised the translation to such an extent that it
+proved unsustainable.
+
+The frustrations involved in attempting this translation of <u>Wesen</u> are
+compounded by a gradual sense of dispersion between a number of obscurely
+interrelated Latin roots. Yet here lies almost precisely the network of
+meanings that is required. A somewhat desperate gesture in this direction is
+possible by combining a fictitious etymological connection between the Middle
+High German <u>Wesen</u>, meaning 'being' (the root of <u>Wesen</u>) and the Latin words
+<u>vestis</u> ('garment' from which is derived the English 'vestiture', 'investment'
+etc.) and <u>vestigium</u> ('footstep' from which the English 'vestige' is descended).
+If these connections are read into 'vesting' - taken as a conflation of these
+two, apparently distinct, Latin etymologies - it should denote both a coming
+into one's own, and the trace of a weaving; both invested and investigable.
+And the movement of this pun, once started, opens tantalizingly into a series
+of terms - viscera, viscous, visitation - which all capture something of what
+the sense requires.
+
+However, neither 'composition' nor 'vesting' is able to provide reliable
+solutions to the 'empirical' difficulties of specific translations. In such
+cases, especially when the word is being tested and used 'technically' to mark
+temporal modalities, it is almost impossible to avoid relapsing into the use
+of the Latin <u>sistere</u>, which is more obviously translated by the German
+<u>stellen</u>, the English stand. The insistence of this word is in no way
+incidental since, like the (in many ways disastrous) use of 'nature' as a
+translation of <u>Wesen</u>, it indicates the entrenched dominion of the
+interpretation of being as intra-temporal permanence (<u>ständige Anwesenheit</u>)
+within Western languages, a characteristic reinforced by the Latinization of
+
+<p class="pn">\- 222 -</p>
+
+metaphysics. An example might be a passage from the essay <u>Das Wesen der
+Sprache</u> ('The weft of Language') in <u>Unterwegs zur Sprache</u>:
+
+<blockquote>Das Wort '<u>Wesen</u>' meint aber jetzt nicht mehr das, was etwas ist.
+'<u>Wesen</u>' hören wir als Zeitwort, wesend wie anwesend und abwesend.
+'<u>Wesen</u>' besagt währen, weilen. Allein die Wendung '<u>Es west</u>' sagt
+mehr als nur: Es währt und dauert. '<u>Es west</u>' meint: <u>Es west an</u>,
+während geht es uns an, be-wëgt und be-langt uns. (The word <u>Wesen</u> no
+longer means that which something is. We hear <u>Wesen</u> as a verb,
+persistence as insistence and desistance. <u>Wesen</u> implies to last, to
+stay. But the usage 'It <u>west</u>' says more than only that it lasts
+and endures. 'It <u>west</u>' means: it insists, whilst going it troubles
+us, moves and concerns us.) [US, 201].</blockquote>
+
+Not only does this translation defuse the particular 'philosophical' momentum
+with which Heidegger invests <u>Wesen</u>, it also fails to suggest a suitable
+counter-term that could be employed in the translation of <u>verwesen</u>. This
+problem also counts against the otherwise excellent 'haunt' which Reiner
+Schürmann long ago suggested as the sense of <u>Wesen</u> in Heidegger's essays on
+the early Greek thinkers (personal communication from D.F. Krell). In
+attempting to conserve this connection (<u>Wesen</u> / <u>verwesen</u>), which is the pivot
+upon which the entire thought of <u>Wesen</u> revolves within Heidegger's 1953 Trakl
+essay, another fictional solidarity suggests itself to the desperate
+commentator; this time between the 'here' of inherence, coherence, and
+adherence (from the Latin <u>haerere</u>), and the 'here' of heredity, inheritance,
+disinheritance etc (from the late Latin <u>hereditare</u>). Such a complex would at
+least tentatively capture the senses of location, quiddity, and temporalization
+(when following this path the absence of the word 'herence', which would
+surely be a beautiful translation, becomes almost physically painful). The
+value of 'disinherited' as a rendering of <u>verwesen</u> is less certain, but it
+seems to me sustainable. An alternative, though more obscure and less
+
+<p class="pn">\- 223 -</p>
+
+flexible, is 'dilapidation'. This would associate <u>Wesen</u> with the German
+<u>versteinern</u> (to petrify: see Heidegger's essay <u>Die Sprache</u>, (US 26-7)), and
+perhaps with the images of crystal that haunt Trakl's poetry.
+
+In the end, however, I have settled for words entering into a
+metaphorical chain linked to 'weft', including, for instance, 'fabric', 'weave'
+etc., and have used the first word in this series wherever possible. This is
+obviously far from satisfactory, and is perhaps little more than an
+inarticulate protest against the Latinate 'essence' and its connotations. I
+hope that this choice is unadventurous enough to avoid irritating the reader,
+and I await with interest the future translation attempts of others.
+
+<p class="pn">\- 224 -</p>
+
+## Bibliography
+
+
+```{=html}
+<style>
+.bib-section {
+line-height: 1.5;
+}
+.bib-section p {
+margin-top: 0.3em;
+margin-bottom: 0.3em;
+}
+.bib-entry {
+padding-left: 3em;
+text-indent: -3em;
+}
+.bib-sub {
+margin-left: 3em;
+text-indent: 0;
+padding-left: 0;
+}
+.bib-gap {
+margin-top: 1em !important;
+}
+</style>
+
+<div class="bib-section">
+<p class="bib-entry">Allison, David B. (ed.). <u>The New Nietzsche: Contemporary Styles of Interpretation</u>, contains Haar, M., 'Nietzsche and Metaphysical Language' pp. 5-36; and Lingis, Alphonso, 'The Will to Power' pp. 37-63, New York: Delta, 1977.</p>
+<p class="bib-entry bib-gap">Basil, Otto. <u>Trakl</u>, Reinbek bei Hamburg: Rowohlt, 1965.</p>
+<p class="bib-entry bib-gap">Baudelaire, Charles. <u>Oeuvres complètes</u>, Paris: Gallimard, 1975.</p>
+<p class="bib-sub"><u>Les paradis artificiels</u>, Paris: Garnier-Flammarion, 1966.</p>
+<p class="bib-entry bib-gap">Bernasconi, R. <u>The Question of Language in Heidegger's History of Being</u>, London: Macmillan, 1985.</p>
+<p class="bib-entry bib-gap">Bernstein, J. M. <u>The Philosophy of the Novel: Lukács, Marxism and the Dialectic of Form</u>, Brighton: Harvestor, 1981.</p>
+<p class="bib-entry bib-gap">Carlyle, Thomas. <u>Sartor Resartus</u>, London: Chapman and Hall, 1897.</p>
+<p class="bib-entry bib-gap">Deleuze, Gilles. <u>Différence et répétition</u>, Paris: P.U.F. 1976.</p>
+<p class="bib-sub"><u>Nietzsche et la philosophie</u>, Paris: Presses Universitaires de France, 1962.</p>
+<p class="bib-entry bib-gap">Deleuze, Gilles; and Guattari, Félix. <u>Capitalism et schizophrénie tome I: l'anti-oedipe</u>, Paris: Éditions de Minuit, 1972</p>
+<p class="bib-sub"><u>Capitalism et schizophrénie tome II: mille plateaux</u>, Paris: Editions de Minuit, 1980.</p>
+<p class="bib-sub"><u>Kafka: pour une littérature mineure</u>, Paris: Editions de Minuit, 1975.</p>
+<p class="bib-entry bib-gap">Derrida, Jacques. <u>La Carte postale, de Socrate à Freud et au-delà</u>, Paris: Aubier-Flammarion, 1980.</p>
+<p class="bib-sub"><u>La dissémination</u>, Paris: Editions du Seuil, 1972.</p>
+</div>
+<p class="pn">- 225 -</p>
+<div class="bib-section">
+<p class="bib-sub"><u>L'écriture et la différance</u>, Paris: Editions du Seuil, 1967.</p>
+<p class="bib-sub">'Geschlecht: différence sexuelle, différence ontologique', from Michel Haar (ed.) <u>Martin Heidegger</u> (see below).</p>
+<p class="bib-sub">'Geschlecht II: La main de l'homme selon Heidegger', published in Sallis, <u>Deconstruction and Philosophy</u>, see below.</p>
+<p class="bib-sub">'Interpréter les signatures (Nietzsche / Heidegger)', English translation (only) published in 'Philosophy and Literature' volume 10, number 2, tenth anniversary issue.</p>
+<p class="bib-sub">'Geschlecht III' unpublished paper, presented to participants of the Loyola Conference in March, 1985.</p>
+<p class="bib-sub"><u>Glas</u>, two volumes, Paris: Denoël/Gonthier, 1981.</p>
+<p class="bib-sub"><u>De la Grammatologie</u>, Paris: Editions de Minuit, 1967.</p>
+<p class="bib-sub"><u>Marges de la philosophie</u>, Paris: Editions de Minuit, 1972.</p>
+<p class="bib-sub"><u>L'oreille de l'autre</u>, Montreal: VLB éditeur 1982.</p>
+<p class="bib-entry bib-gap">Descartes, René, <u>Méditations métaphysiques</u>, Paris: Garnier-Flammarion, 1979.</p>
+<p class="bib-entry bib-gap">Foti, Veronique. 'Situating Heidegger Situating Trakl', published as 'The Path of the Stranger: On Heidegger's interpretation of Georg Trakl' in the 'Review of Existential Psychiatry', number 17 (1980-1), pp. 223-234.</p>
+<p class="bib-entry bib-gap">Freud, Sigmund. <u>Abriss der Psychoanalyse</u>, <u>Das Unbehagen in der Kultur</u>, Frankfurt am Main: Fischer Taschenbuch Verlag, 1953.</p>
+<p class="bib-sub"><u>Das Ich und das Es und andere metapsychologische Schriften</u>, (including also: 'Zur Einführung des Narzißmus', 'Triebe und Triebschicksale', 'Das Unbewußte', 'Jenseits des Lustprinzips', 'Das ökonomische Problem des Masochismus' and other papers), Frankfurt am Main: Fischer Taschenbuch Verlag, 1978.</p>
+<p class="bib-sub"><u>Drei Abhandlungen zur Sexualtheorie</u>, Frankfurt am Main: Fischer Taschenbuch Verlag, 1961.</p>
+<p class="bib-sub"><u>Totem und Tabu</u>, Frankfurt am Main: Fischer Taschenbuch Verlag, 1980</p>
+<p class="bib-entry bib-gap">Graves, Robert. <u>The White Goddess</u>, London: Faber and Faber, 1961.</p>
+</div>
+<p class="pn">- 226 -</p>
+<div class="bib-section">
+<p class="bib-entry bib-gap">Guevara, Che. <u>Guerrilla Warfare</u>, Harmondsworth: Penguin, 1969.</p>
+<p class="bib-entry bib-gap">Haar, Michel (ed.). <u>Martin Heidegger</u>, Cahier de l'Herne, 1983. See also 'Allison, David B. (Ed.)'.</p>
+<p class="bib-entry bib-gap">Heidegger, Martin.</p>
+<p class="bib-sub">Gesamtausgabe Band 4 <u>Erläuterung zu Hölderlin's Dichtung</u>, Frankfurt am Main: Vittorio Klostermann, 1981.</p>
+<p class="bib-sub">Gesamtausgabe Band 9 <u>Wegmarken</u>, Frankfurt am Main: Vittorio Klostermann, 1976.</p>
+<p class="bib-sub">Gesamtausgabe Band 24 <u>Grundprobleme der Phänomenologie</u>, Frankfurt am Main: Vittorio Klostermann, 1975.</p>
+<p class="bib-sub">Gesamtausgabe Band 25 <u>Kants Kritik der reinen Vernunft</u>, Frankfurt am Main: Vittorio Klostermann, 1977.</p>
+<p class="bib-sub">Gesamtausgabe Band 26 <u>Metaphysische Anfangsgründeder Logik im Ausgang von Leibniz</u>, Frankfurt am Main: Vittorio Klostermann, 1978.</p>
+<p class="bib-sub">Gesamtausgabe Band 39 <u>Hölderlin's 'Germanien' 'Der Rhein'</u>, Frankfurt am Main: Vittorio Klostermann, 1980.</p>
+<p class="bib-sub">Gesamtausgabe Band 52 <u>Hölderlin's 'Andenken'</u>, Frankfurt am Main: Vittorio Klostermann, 1982.</p>
+<p class="bib-sub">Gesamtausgabe Band 53 <u>Hölderlin's 'Der Ister'</u>, Frankfurt am Main: Vittorio Klostermann, 1984.</p>
+<p class="bib-sub"><u>Nietzsche</u>, two volumes, Pfullingen: Neske, 1961.</p>
+<p class="bib-sub"><u>Der Satz vom Grund</u>, Pfullingen: Neske, 1978.</p>
+<p class="bib-sub"><u>Sein und Zeit</u>, Tübingen: Max Niemeyer Verlag, 1979.</p>
+<p class="bib-sub"><u>Unterwegs zur Sprache</u>, Pfullingen: Neske, 1982. (Translated by Hertz and Stambaugh as <u>On the Way to Language</u>, London: Harper and Row, 1982. Also by Beaufret, Brokmeier, and Fédier as <u>Acheminementvers la parole</u>, Paris 1976.).</p>
+<p class="bib-sub"><u>Was Heisst Denken?</u>, Tübingen: Niemeyer, 1971.</p>
+<p class="bib-entry bib-gap">Hegel, G.W.F. <u>Phänomenologie des Geistes</u>, Frankfurt am Main: Verlag Ullstein, 1980.</p>
+<p class="bib-sub"><u>System der Philosophie, Zweiter Teil, Die Naturphilosophie</u>, from Sämtliche Werke, Band 9, Stuttgart: Fr.</p>
+</div>
+<p class="pn">- 227 -</p>
+<div class="bib-section">
+<p class="bib-sub">Frommanns Verlag, 1929.</p>
+<p class="bib-entry">Hölderlin, Friedrich. <u>Hymns and Fragments</u> (parallel text), Princeton: Princeton University Press, 1984.</p>
+<p class="bib-entry bib-gap">Irigaray, Luce. <u>Ce Sexe qui n'est pas Une</u>, Paris: Editions de Minuit, 1977.</p>
+<p class="bib-sub"><u>Speculum (de l'autre femme)</u>, Paris: Editions de Minuit, 1974.</p>
+<p class="bib-entry bib-gap">Jones, Ernest. <u>The Life and Work of Sigmund Freud</u> (abridged edition), Harmondsworth: Penguin, 1984.</p>
+<p class="bib-entry bib-gap">Kant, Immanuel. <u>Kritik der reinen Vernunft</u>, two volumes, Frankfurt am Main: Suhrkamp, 1974.</p>
+<p class="bib-sub"><u>Kritik der Urteilskraft</u>, Frankfurt am Main: Suhrkamp, 1974.</p>
+<p class="bib-entry bib-gap">Kierkegaard, Søren. <u>Concluding Unscientific Postscripta</u>, translated by D. F. Swenson and W. Lowrie, Princeton: Princeton University Press, 1968.</p>
+<p class="bib-entry bib-gap">Klossowski, Pierre. <u>Nietzsche et le cercle vicieux</u>, Paris: Mercure de France, 1978.</p>
+<p class="bib-entry bib-gap">Krell, David Farrell. <u>Intimations of Mortality</u>, London: Pennsylvania state university press, 1986.</p>
+<p class="bib-sub">'The Waves Source: Rhythm in the Languages of Poetry and Thought', see Wood, David, Ed. <u>Heidegger and Language</u> (pp. 25-50).</p>
+<p class="bib-entry bib-gap">Lacan, J, <u>Écrits I</u>, Paris: Editions du Seuil, 1966.</p>
+<p class="bib-sub"><u>Le séminaire Livre VII L'éthique de la psychanalyse</u>, Paris: 1986</p>
+<p class="bib-entry bib-gap">Lévi-Strauss, Claude, <u>Anthropologie Structurale</u>, Paris: Librairie Plon, 1958.</p>
+<p class="bib-sub"><u>Les Structures élémentaires de la Parenté</u>, Paris: Presses Universitaires de France 1949.</p>
+</div>
+<p class="pn">- 228 -</p>
+<div class="bib-section">
+<p class="bib-entry bib-gap">Lindenberger, Herbert. <u>Georg Trakl</u>, New York: Twayne Publishers, 1971.</p>
+<p class="bib-entry bib-gap">Lingis, Alphonso. See 'Allison David B. (Ed.)'.</p>
+<p class="bib-entry bib-gap">Marx, Karl. <u>Das Kapital I: Der Produktionsprozeß des Kapitals</u>, Frankfurt am Main: Verlag Ullstein, 1981.</p>
+<p class="bib-entry bib-gap">Melville, Herman. <u>Pierre: or, the Ambiguities</u>, New York: Signet, 1964.</p>
+<p class="bib-entry bib-gap">Musil, Robert. <u>Der Mann Ohne Eigenschaften</u>, volume III, from Gesammelte Werke in Einzelausgaben, Hamburg, 1956.</p>
+<p class="bib-entry bib-gap">Nietzsche, Friedrich. Werke, Herausgegeben von Karl Schlechta, Frankfurt am Main: Verlag Ullstein, 1980.</p>
+<p class="bib-sub"><u>Werke I: Die Geburt der Tragödie; Unzeitgemäße Betrachtungen; Menschliches, Allzumenschliches</u></p>
+<p class="bib-sub"><u>Werke II: Morgenröte; Die fröhliche Wissenschaft; Also sprach Zarathustra</u></p>
+<p class="bib-sub"><u>Werke III: Jenseits von Gut und Böse; Götzen-Dämmerung; Ecce Homo; Der Antichrist; Frühschriften; u.a.</u></p>
+<p class="bib-entry bib-gap">Novalis, <u>Dichtungen</u>, Reinbek bei Hamburg: Rowohlt, 1963.</p>
+<p class="bib-entry bib-gap">Plato. <u>The Collected Dialogues</u>, Princeton: Princeton University Press, 1982.</p>
+<p class="bib-entry bib-gap">Rimbaud, Arthur. <u>Collected Poems</u> (Parallel text), Harmondsworth: Penguin, 1986.</p>
+<p class="bib-entry bib-gap">Rose, G. <u>Dialectic of Nihilism</u>, Oxford: Basil Blackwell, 1984.</p>
+<p class="bib-entry bib-gap">Sallis, John, <u>The Gathering of Reason</u>, Ohio University Press, 1980</p>
+<p class="bib-sub"><u>Deconstruction and Philosophy</u>, London: University of Chicago Press, 1987</p>
+</div>
+<p class="pn">- 229 -</p>
+<div class="bib-section">
+<p class="bib-entry bib-gap">Saussure, Ferdinand de. <u>Cours de linguistique générale</u>, Wiesbaden 1967</p>
+<p class="bib-entry bib-gap">Schlechta, Karl. See 'Nietzsche'.</p>
+<p class="bib-entry bib-gap">Spoerri, Theodore. <u>Georg Trakl</u>, Bern 1954</p>
+<p class="bib-entry bib-gap">Starkie, Enid. <u>Arthur Rimbaud</u> (new and revised edition), London: Hamish Hamilton, 1947.</p>
+<p class="bib-entry bib-gap">Trakl, Georg, <u>Das dicherische Werk</u>, München: Deutscher Taschenbuch Verlag, 1972.</p>
+<p class="bib-sub"><u>Werke, Entwürfe, Briefe</u>, Stuttgart: Philipp Reclam jun. 1984.</p>
+<p class="bib-entry bib-gap">Vezin, François. 'Trakl au pays de Rimbaud', in 'Heidegger Studies', Volume I (1985), pp. 129-135.</p>
+<p class="bib-entry bib-gap">Wood, David (Ed.). <u>Heidegger and Language</u>, Warwick: Parousia Press, 1981.</p>
+<p class="bib-entry bib-gap">Wood, David, and Bernasconi, Robert (Eds.). <u>Time and Metaphysics</u>, Coventry: Parousia Press 1982.</p>
+</div>
+```
+
+## Metadata {.appendix}
+
+This was Nick Land's PhD thesis at the University of Essex, submitted in 1987-09.
+
+It was hosted as an extremely badly scanned pdf file at <https://www.are.na/block/10812105> uploaded by [Antonio Andreas](https://www.are.na/antonio-andreas/channels).
+
+Transcribed by Gemini 3 Pro and proofread by Yuxi Liu. Gemini's transcription was essentially perfect. Yuxi Liu's contribution was purely in plaintext and HTML formatting.
+
+See [`code`](./code) for the files. The PDF file is rehosted at [`code/Land_1987.pdf`](./code/Land_1987.pdf). The plaintext file transcribed by Gemini and proofread by Yuxi is rehosted at [`code/Land_1987_review.txt`](./code/Land_1987_reviewed.txt).

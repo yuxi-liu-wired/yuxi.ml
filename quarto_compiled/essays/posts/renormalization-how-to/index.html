@@ -100,9 +100,9 @@ div.csl-indent {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-927c7f2ff55d2ccf6c9d59d1f6133d6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,6 +129,18 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<link rel="prefetch" href="../../../search.json" as="fetch" crossorigin="">
+<script>
+// Auto-detect OS dark mode for first-time visitors.
+// Runs in <head> before Quarto's inline script reads localStorage.
+(function() {
+  if (localStorage.getItem("quarto-color-scheme") === null) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      localStorage.setItem("quarto-color-scheme", "alternate");
+    }
+  }
+})();
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -521,7 +533,7 @@ window.Quarto = {
 <p>The key insight of RN theory is that the long-distance behavior of a system does not depend on the details of the short-distance interactions. This is known as the universality hypothesis. Universality explains why systems that are very different at the microscopic level can have the same behavior at the macroscopic level. For example, water, oil, and electricity all exhibit the same percolation behavior near the percolation threshold, even though they are very different at the microscopic level.</p>
 <p>Universality also justifies the use of toy models to study physical systems. Toy models are simplified models that capture the essential features of a system without including all of the details. For example, the Ising model is a toy model of a magnet that captures the essential features of ferromagnetism without including all of the details of the interactions between the atoms.</p>
 <p>In this essay, we will explore the basic ideas of RN theory and see how it can be used to understand a variety of physical systems.</p>
-<p><img src="figure/banner/thumbnail_1.png" class="img-fluid"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/banner/thumbnail_1.png" class="img-fluid"></p>
 </section>
 <section id="the-logistic-map-rn-on-mathbbr" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="the-logistic-map-rn-on-mathbbr">The logistic map: RN on <span class="math inline">\(\mathbb{R}\)</span></h2>
@@ -531,7 +543,7 @@ window.Quarto = {
 <p>Consider a function <span class="math inline">\(f_r(x)=r x(1-x)\)</span>, and we want to study what happens when we iterate the map many times. The map might fall into a fixed point, a fixed cycle, or chaos. We can see all those cases in its <a href="https://en.wikipedia.org/wiki/Bifurcation_diagram">bifurcation diagram</a>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Logistic_Bifurcation_map_High_Resolution.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Logistic_Bifurcation_map_High_Resolution.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The bifurcation diagram of the logistic map. <a href="https://en.wikipedia.org/wiki/File:Logistic_Bifurcation_map_High_Resolution.png">Source</a></figcaption>
 </figure>
 </div>
@@ -539,35 +551,35 @@ window.Quarto = {
 <p>For example, when <span class="math inline">\(r=3.0\)</span>, we find that there is only a single intersection, at which point the slope is exactly <span class="math inline">\(+1\)</span>, indicating that it is a stable single fixed point, but is about to undergo a bifurcation.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/period_doubling_bifurcation.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/period_doubling_bifurcation.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The relationship between <span class="math inline">\(x_{n+2}\)</span> and <span class="math inline">\(x_{n}\)</span> as <span class="math inline">\(r\)</span> increases from <span class="math inline">\(2.7\)</span> to <span class="math inline">\(3.3\)</span>. Before the period doubling bifurcation occurs. The orbit converges to a single fixed point where the graph of <span class="math inline">\(f_r^2\)</span> intersects the diagonal line. As <span class="math inline">\(r\)</span> reaches <span class="math inline">\(3\)</span>, the intersection pitchforks into three. The middle intersection becomes unstable, but the two neighboring intersections remain stable.</figcaption>
 </figure>
 </div>
 <p>As <span class="math inline">\(r\)</span> increases to beyond <span class="math inline">\(r=3.0\)</span>, the intersection point splits to two, which is a period doubling. For example, when <span class="math inline">\(r=3.4\)</span>, there are three intersection points, with the middle one unstable, and the two others stable.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Logistic_iterates_3.4.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Logistic_iterates_3.4.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">When <span class="math inline">\(r=3.4\)</span>, there are three intersection points, with the middle one unstable, and the two others stable. <a href="https://en.wikipedia.org/wiki/File:Logistic_iterates_3.4.svg">Source</a></figcaption>
 </figure>
 </div>
 <p>As <span class="math inline">\(r\)</span> approaches <span class="math inline">\(r=3.45\)</span>, another period-doubling occurs in the same way. The period-doublings occur more and more frequently, until at a certain <span class="math inline">\(r \approx 3.56994567\)</span>, the period doublings become infinite, and the map becomes chaotic. This is the period-doubling route to chaos.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Logistic_iterates_3.56994567.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Logistic_iterates_3.56994567.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">When <span class="math inline">\(r \approx 3.56994567\)</span>, there are infinitely many intersections, and we have arrived at chaos via the period-doubling route. <a href="https://en.wikipedia.org/wiki/File:Logistic_iterates_with_r%3D3.56994567.svg">Source</a></figcaption>
 </figure>
 </div>
 <p>Something remarkable happens when we superimpose the graphs of <span class="math inline">\(f_r, f_r^2, f_r^4, \dots\)</span> when <span class="math inline">\(r\)</span> is at the critical point <span class="math inline">\(3.5699\dots\)</span>. We see that each iteration of the graph seems to resemble itself, except that it is scaled and rotated by 180 degrees. We can naturally guess that <span class="math inline">\(f_r^{\infty}\)</span> converges to a certain function that is infinitely jagged, such that it exactly resembles itself when scaled and rotated; that is, it is a fractal.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Logistic_iterates_together_r=3.56994567.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Logistic_iterates_together_r=3.56994567.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The graphs of <span class="math inline">\(f_r, f_r^2, f_r^4, \dots\)</span> when <span class="math inline">\(r\)</span> is at the critical point.</figcaption>
 </figure>
 </div>
 <p>As <span class="math inline">\(r\)</span> approaches the critical value, we can see how the graph of <span class="math inline">\(f_r^\infty\)</span> takes on more and more details, and at the critical point, becomes a perfect fractal.</p>
 <figure class="figure">
 <video controls="" width="100%">
-<source src="figure/Logistic_map_approaching_the_scaling_limit.mp4" type="video/mp4">
+<source src="/essays/posts/renormalization-how-to/figure/Logistic_map_approaching_the_scaling_limit.mp4" type="video/mp4">
 </video>
 <figcaption>
 The graphs of <span class="math inline">\(f_r, f_r^2, f_r^4, \dots\)</span> as <span class="math inline">\(r\)</span> approaches the critical point from below.
@@ -579,20 +591,20 @@ The graphs of <span class="math inline">\(f_r, f_r^2, f_r^4, \dots\)</span> as <
 <p>Looking at the bifurcation diagram, we can see a region, starting just after <span class="math inline">\(r = 3.8\)</span>, where there is a clear “window” with period <span class="math inline">\(3\)</span> bursting out of a sea of chaos. The window then bifurcates repeatedly, to stable cycles of periods <span class="math inline">\(6, 12, 24, \dots\)</span> until it all collapses back into the chaos again at around <span class="math inline">\(r \approx 3.8494344\)</span>. Though this is a different place, the bifurcation diagram looks suspiciously similar to the previous case.</p>
 <p>Not only that, if we look at the movie of <span class="math inline">\(f_r^\infty\)</span> as <span class="math inline">\(r\)</span> approaches this critical point, we again see the same jagged shape.</p>
 <video controls="" width="100%">
-<source src="figure/Logistic_map_approaching_the_period-3_scaling_limit.mp4" type="video/mp4">
+<source src="/essays/posts/renormalization-how-to/figure/Logistic_map_approaching_the_period-3_scaling_limit.mp4" type="video/mp4">
 </video>
 <p>Are we seeing some kind of <em>universal</em> feature of period-doubling routes to chaos? Is this a general pattern independent of the details of how exactly the logistic map is defined? What if we change to another dynamical system completely different?</p>
 <p>For example, we can consider the gauss map <span class="math inline">\(x_{n+1} = \exp(-\alpha x^2_n)+\beta\)</span>. For a fixed <span class="math inline">\(\alpha\)</span>, we can plot the bifurcation graph as we vary <span class="math inline">\(\beta\)</span>. Though it looks different, the two bifurcation graphs have a clear resemblance. This is an instance of <strong>universality</strong>, for which we will see <a href="#sec-universality">again and again later</a>. If <span class="math inline">\(f_r\)</span> is a family of curves with parabolic tops<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, then it will bifurcate just like the logistic curve.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Rigorously, we can describe it as follows. If <span class="math inline">\(F: \mathbb{R}^2 \to \mathbb{R}\)</span> is smooth, and for all <span class="math inline">\(r \in \mathbb{R}\)</span>, the function <span class="math inline">\(F(r, \cdot): \mathbb{R}\to \mathbb{R}\)</span> has a single global maximum, at which point <span class="math inline">\(\partial_x^2 F(r, x) &lt; 0\)</span>, then its bifurcation diagram looks the same as that of the logistic map, and it will have the same two scaling exponents <span class="math inline">\(\alpha, \delta\)</span>, to be calculated below.</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/bifurcation_gauss_logistic.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/bifurcation_gauss_logistic.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The bifurcation graphs of gauss map with <span class="math inline">\(\alpha = 5\)</span> and the logistic map.</figcaption>
 </figure>
 </div>
 <p>More to the issue at hand: why do the two graphs look similar?</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/logistic_bifurcation_graph_fractal.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/logistic_bifurcation_graph_fractal.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The bifurcation graph is self-similar. <a href="https://ja.wikipedia.org/wiki/ファイル:ロジスティック写像の窓の自己相似.png">Source</a></figcaption>
 </figure>
 </div>
@@ -607,7 +619,7 @@ f(x) = -\alpha f\left(f\left(\frac{x}{-\alpha} \right)\right)
 <p>Well, look back at the previous diagram of the first bifurcation:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/period_doubling_bifurcation.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/period_doubling_bifurcation.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The relationship between <span class="math inline">\(x_{n+2}\)</span> and <span class="math inline">\(x_{n}\)</span> as <span class="math inline">\(r\)</span> increases from <span class="math inline">\(2.7\)</span> to <span class="math inline">\(3.3\)</span>.</figcaption>
 </figure>
 </div>
@@ -618,7 +630,7 @@ f(x) = -\alpha f\left(f\left(\frac{x}{-\alpha} \right)\right)
 </blockquote>
 <p>And indeed, chaos theory, fractals, and RN all made early appearances in the study of turbulence.</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/logistics_scaling_invariant_function.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/logistics_scaling_invariant_function.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The center of <span class="math inline">\(f\)</span> rises, until the center of <span class="math inline">\(f^2\)</span> collapses, causing a bifurcation at <span class="math inline">\(r_1\)</span>. As <span class="math inline">\(r\)</span> increases beyond that point, the center of <span class="math inline">\(f^2\)</span> looks like a parabola again, looking like <span class="math inline">\(f\)</span> in miniature. Thus, as <span class="math inline">\(r\)</span> increases further, <span class="math inline">\(f^4\)</span> will eventually undergo a bifurcation that is similar to the previous bifurcation, except in miniature. <span class="citation" data-cites="strogatzNonlinearDynamicsChaos2015">(<a href="#ref-strogatzNonlinearDynamicsChaos2015" role="doc-biblioref">Strogatz 2015, 388</a>)</span></figcaption>
 </figure>
 </div>
@@ -633,13 +645,13 @@ f(x) = 1 - a_2 x^2 + a_4 x^4 + \dots
 <p>We can solve the equation numerically as the fixed point. We would start with <span class="math inline">\(f(x) = 1-x^2\)</span>, then guess a good <span class="math inline">\(\alpha\)</span> and repeatedly apply <span class="math inline">\(f \mapsto -\alpha f\left(f\left(\frac{x}{-\alpha} \right)\right)\)</span>. If we picked <span class="math inline">\(\alpha\)</span> correctly, we would have gotten the right result, as shown:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Logistic_scaling_limit_critical.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Logistic_scaling_limit_critical.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">At the point of chaos <span class="math inline">\(r^*=3.5699 \dots\)</span>, as we repeat the functional equation iteration <span class="math inline">\(f(x) \mapsto-\alpha f(f(-x / \alpha))\)</span> with <span class="math inline">\(\alpha=2.5029 \ldots\)</span>, we find that the map does converge to a limit. <a href="https://en.wikipedia.org/wiki/File:Logistic_scaling_limit,_r%3D3.56994567.svg">Source</a></figcaption>
 </figure>
 </div>
 <p>If <span class="math inline">\(\alpha\)</span> is not correct, the iterates would not converge; instead, they would have a zooming effect that looks cool.</p>
 <video controls="" width="100%">
-<source src="figure/Logistic_scaling_with_varying_scaling_factor.webm" type="video/webm">
+<source src="/essays/posts/renormalization-how-to/figure/Logistic_scaling_with_varying_scaling_factor.webm" type="video/webm">
 </video>
 <div class="callout callout-style-default callout-note callout-titled" title="Solving the equation at order 2">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -686,7 +698,7 @@ a_2 = \frac{1 + \sqrt{3}}{2} \approx 1.366
 <p><span class="math display">\[1-0x^2, 1-0.5 x^2, 1-x^2, 1-1.5x^2, \dots\]</span></p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/rn_flow_feigenbaum_2.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/rn_flow_feigenbaum_2.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">RN flow diagram of the self-similarity map at order 2.</figcaption>
 </figure>
 </div>
@@ -702,7 +714,7 @@ f_0 = 1-(a_2^* + \Delta)x^2, \quad f_1 = 1-(a_2^* + \delta\Delta)x^2, \quad f_1 
 <p>This is usually spoken in this way: the intervals between two bifurcations shrinks at a rate of <span class="math inline">\(\delta\)</span>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/logistic_bifurcation_graph_fractal_delta.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/logistic_bifurcation_graph_fractal_delta.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The bifurcation diagram for the logistic map. As the bifurcations approach the point of chaos, the interval between two bifurcations gets shorter and shorter, at a rate of <span class="math inline">\(\delta\)</span> per bifurcation. <a href="https://ja.wikipedia.org/wiki/ファイル:ロジスティック写像、周期倍分岐カスケードの軌道図.png">Source</a></figcaption>
 </figure>
 </div>
@@ -753,7 +765,7 @@ F(a_2, a_4) = \left(
 <p>This matrix has eigenvalues of <span class="math inline">\(4.843, -0.483\)</span>, so it is a saddle point, with <span class="math inline">\(\delta = 4.843\)</span>. The flow and the eigenvectors <span class="math inline">\((0.982, 0.190), (0.691, 0.723)\)</span> are plotted below.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/rn_flow_feigenbaum_4.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/rn_flow_feigenbaum_4.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">RN flow diagram of the self-similarity map at order 4. The two eigenvector directions at the fixed point are plotted as dashed lines.</figcaption>
 </figure>
 </div>
@@ -809,7 +821,7 @@ F(a_2, a_4) = \left(
 <li>Bravely calculate using the cheapest approximation you can think of. It often gets you within 50% of the right answer.</li>
 <li>But if you want accuracy, you can always use a computer and calculate many orders higher.</li>
 </ul>
-<p><img src="figure/banner/thumbnail_2.png" class="img-fluid"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/banner/thumbnail_2.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="ising-model-and-friends-rn-on-a-grid" class="level2 page-columns page-full">
@@ -838,7 +850,7 @@ F(a_2, a_4) = \left(
 <p>This section based on <span class="citation" data-cites="simkinReinventingWillis2011">(<a href="#ref-simkinReinventingWillis2011" role="doc-biblioref">Simkin and Roychowdhury 2011, sec. 10</a>)</span> and <span class="citation" data-cites="stinchcombeIntroductionScalingConcepts1991">(<a href="#ref-stinchcombeIntroductionScalingConcepts1991" role="doc-biblioref">Stinchcombe 1991</a>)</span>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/ising model.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/ising model.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">When an Ising model is at the critical temperature <span class="math inline">\(T_c\)</span>, coarse-graining would not end up with all-black or all-white, but would have the same amount of details no matter how much we coarse-grain. <span class="citation" data-cites="sethnaCourse6Crackling2007">(<a href="#ref-sethnaCourse6Crackling2007" role="doc-biblioref">Sethna 2007, fig. 13</a>)</span>.</figcaption>
 </figure>
 </div>
@@ -848,14 +860,14 @@ F(a_2, a_4) = \left(
 <p><span class="math display">\[p' = p^3 + 3p^2(1-p) = p^2(3-2p)\]</span></p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/hexagonal_decimation.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/hexagonal_decimation.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Kadanoff blocking on a triangular lattice. <span class="citation" data-cites="simkinReinventingWillis2011">(<a href="#ref-simkinReinventingWillis2011" role="doc-biblioref">Simkin and Roychowdhury 2011, fig. 1</a>)</span></figcaption>
 </figure>
 </div>
 <p>The equilibrium point is <span class="math inline">\(p=1/2\)</span>. This is the percolation probability. Let the reduced probability be <span class="math inline">\(\bar p = p-1/2\)</span>. We find that one iteration of the RN flow makes <span class="math inline">\(\bar p_{n+1} = \frac 32 \bar p - 2 \bar p^3\)</span> which is <span class="math inline">\(\approx \frac 32 \bar p_n\)</span> for small values of <span class="math inline">\(\bar p\)</span>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/rn_flow_hexagonal_grid_1.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/rn_flow_hexagonal_grid_1.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">RN flow for Kadanoff blocking on a triangular lattice.</figcaption>
 </figure>
 </div>
@@ -944,7 +956,7 @@ J \mapsto \frac 12 \ln \cosh(2J)
 <p>But this time, the RN flow has only a single stable fixed point at <span class="math inline">\(J = 0\)</span>. Not only that, since <span class="math inline">\(\frac 12 \ln \cosh(2J) \approx J^2\)</span> if <span class="math inline">\(J\)</span> is small, if we decimate for <span class="math inline">\(n\)</span> times, we would end up with <span class="math inline">\(J' \sim J^{2^n}\)</span>. What does this mean?</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/rn_flow_1d_ising.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/rn_flow_1d_ising.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The RN flow for the 1D Ising model has only one fixed point at zero.</figcaption>
 </figure>
 </div>
@@ -973,7 +985,7 @@ Z = \sum_s e^{-H}, \quad H = -J \sum_{i, j \text{ are neighbors}} s_i s_j
 <p>where again we have absorbed temperature into the Hamiltonian. To perform decimation, we paint the square grid like a checkerboard, and eliminate all the black-colored spins.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Kadanoff decimation.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Kadanoff decimation.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption"><a href="https://phas.ubc.ca/~berciu/TEACHING/PHYS502/PROJECTS/21-Jonah.pdf">Figure source</a></figcaption>
 </figure>
 </div>
@@ -1040,7 +1052,7 @@ Tip
 <p>Before we are finished with the Ising model, here is one more trick: the Migdal bond-moving trick. The idea is shown in the diagram.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/Migdal bond-moving.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Migdal bond-moving.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The Migdal bond-moving trick. <span class="citation" data-cites="kadanoffStatisticalPhysicsStatics1999">(<a href="#ref-kadanoffStatisticalPhysicsStatics1999" role="doc-biblioref">Kadanoff 1999b, fig. 14.2</a>)</span>.</figcaption>
 </figure>
 </div>
@@ -1063,12 +1075,12 @@ Tip
 <div aria-describedby="fig-migdal-rn-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img src="figure/Migdal_trick_ising.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Migdal_trick_ising.svg" class="img-fluid figure-img"></p>
 </div>
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img src="figure/Migdal_trick_ising_zoom.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/Migdal_trick_ising_zoom.svg" class="img-fluid figure-img"></p>
 </div>
 </div>
 </div>
@@ -1193,7 +1205,7 @@ a_4 = -\frac{1}{12}, a_6 = \frac{1}{45}, \dots
 </ul>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/generalized_random_walks_CLT.svg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/generalized_random_walks_CLT.svg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Three random walks generated from three distinct probability distributions: Gaussian, Cauchy, and Pareto <span class="math inline">\(\mu=0.7\)</span></figcaption>
 </figure>
 </div>
@@ -1261,14 +1273,14 @@ a_4 = -\frac{1}{12}, a_6 = \frac{1}{45}, \dots
 </div>
 </div>
 </div>
-<p><img src="figure/banner/thumbnail_7.png" class="img-fluid"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/banner/thumbnail_7.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="wilsons-nobel-prize-rn-in-momentum-space" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="wilsons-nobel-prize-rn-in-momentum-space">Wilson’s Nobel Prize: RN in momentum space</h2>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/firefox-renormalization-group-theory.jpeg" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/firefox-renormalization-group-theory.jpeg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Evolution of Firefox icon under RN flow in frequency space. The high-spatial-frequency details are summed away, leaving low-frequency broad brushstrokes.</figcaption>
 </figure>
 </div>
@@ -1309,7 +1321,7 @@ Z = \int_{\mathbb{R}^2 \to \mathbb{R}} D[\phi] \; e^{-S[\phi]}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/mattress_field_theory.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/mattress_field_theory.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">A mattress in space. The energy of the mattress is determined by the height of each point, and the height differences between neighboring points.</figcaption>
 </figure>
 </div>
@@ -1397,7 +1409,7 @@ S \mapsto S + \epsilon F[S]
 <li><p>Type it up in LaTeX.</p></li>
 <li><p>Suffer through peer review, or just put it up on arXiv.</p></li>
 </ol>
-<p><img src="figure/banner/thumbnail_4.png" class="img-fluid"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/banner/thumbnail_4.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="a-bag-of-intuitions" class="level2 page-columns page-full">
@@ -1439,14 +1451,14 @@ k_I \ln I = N = k_R \ln R
 <p>So far, we have seen again and again the common refrain of “the space of theories” and “moving to another theory”. It is time to make this clear. The space of possible theories is defined by the symmetry of the physical system, and the Renormalization Group (RG) flow defines a journey in this space.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/fisher_1998_fig_4.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/fisher_1998_fig_4.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption"><span class="citation" data-cites="fisherRenormalizationGroupTheory1998">(<a href="#ref-fisherRenormalizationGroupTheory1998" role="doc-biblioref">Fisher 1998, fig. 4</a>)</span></figcaption>
 </figure>
 </div>
 <p>Consider a generic RG flow in a generic space of theories. diagram for a system with two coupling constants <span class="math inline">\(K\)</span> and <span class="math inline">\(y\)</span>. Each point in the diagram represents a theory, and the arrows indicate the direction of the RG flow. The fixed points, where the arrows converge, correspond to theories that are scale-invariant.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/fisher_1998_fig_5.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/fisher_1998_fig_5.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption"><span class="citation" data-cites="fisherRenormalizationGroupTheory1998">(<a href="#ref-fisherRenormalizationGroupTheory1998" role="doc-biblioref">Fisher 1998, fig. 5</a>)</span></figcaption>
 </figure>
 </div>
@@ -1625,7 +1637,7 @@ and little whirls have lesser whirls and so on to viscosity.</p>
 <p>Now we increase the temperature towards the critical temperature. As we get hotter, thermal fluctuations become larger. In the ocean of liquid, a thermal fluctuation produces a droplet of vapor. This droplet secretes other material of the same density, and it grows larger and larger.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/kadanoff_1999_fig_1_3.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/kadanoff_1999_fig_1_3.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Vapor droplets inside an ocean of liquid. <span class="citation" data-cites="kadanoffOrderChaosII1999">(<a href="#ref-kadanoffOrderChaosII1999" role="doc-biblioref">Kadanoff 1999a, 298</a>)</span></figcaption>
 </figure>
 </div>
@@ -1633,7 +1645,7 @@ and little whirls have lesser whirls and so on to viscosity.</p>
 <p>Furthermore, each droplet itself is a nearly-critical system, so fluctuations appear within the droplets, in a delicate fractal.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/kadanoff_1999_fig_1_4.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/kadanoff_1999_fig_1_4.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Droplets inside droplets inside droplets… <span class="citation" data-cites="kadanoffOrderChaosII1999">(<a href="#ref-kadanoffOrderChaosII1999" role="doc-biblioref">Kadanoff 1999a, 299</a>)</span></figcaption>
 </figure>
 </div>
@@ -1656,7 +1668,7 @@ and little whirls have lesser whirls and so on to viscosity.</p>
 <p>If you take an Ising model at <span class="math inline">\(J\)</span> that is just a bit above <span class="math inline">\(J_c\)</span> and zoom out, then by the RN flow equation, the effective <span class="math inline">\(J\)</span> would keep increasing, and it becomes more and more uniform until it’s a perfect shade of black/white at <span class="math inline">\(J = +\infty\)</span>. Conversely, if you start with <span class="math inline">\(J\)</span> slightly below <span class="math inline">\(J_c\)</span> and keep zooming out, <span class="math inline">\(J\)</span> would approach <span class="math inline">\(0\)</span> and everything would become a uniform shade of gray, with the spins pointing up and down with no regard for any other spin. Balanced on a knife’s edge is <span class="math inline">\(J = J_c\)</span>, where there is interesting behavior at all levels of zooming.</p>
 <figure class="figure">
 <video controls="" width="100%">
-<source src="figure/renormalization_group_douglas_ashton.webm" type="video/webm">
+<source src="/essays/posts/renormalization-how-to/figure/renormalization_group_douglas_ashton.webm" type="video/webm">
 </video>
 <figcaption>
 Zooming in and out of the Ising model. Video by Douglas Ashton, taken from <a href="https://blog.dougmet.net/2012/04/the-renormalisation-group/">The Renormalisation Group | dougmet-dot-net</a>.
@@ -1680,7 +1692,7 @@ Zooming in and out of the Ising model. Video by Douglas Ashton, taken from <a hr
 <p>In the early 20th century, material scientists noticed the remarkable phenomenon of “corresponding states”. As first reported by <span class="citation" data-cites="guggenheimPrincipleCorrespondingStates1945">(<a href="#ref-guggenheimPrincipleCorrespondingStates1945" role="doc-biblioref">Guggenheim 1945</a>)</span>, scientists measured the density <span class="math inline">\(\rho\)</span> of many substances near their liquid-vapor critical point. They fixed pressure and increased temperature <span class="math inline">\(T\)</span> around the critical temperature <span class="math inline">\(T_c\)</span>. As they plotted the relation between <span class="math inline">\(T\)</span> and <span class="math inline">\(\rho\)</span>, rescaled by critical temperature <span class="math inline">\(T_c\)</span> and density at critical point <span class="math inline">\(\rho_c\)</span>, remarkably, all the substances fell onto a single curve.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/herbut_2007_corresponding_states.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/herbut_2007_corresponding_states.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">High-resolution reprint of <span class="citation" data-cites="guggenheimPrincipleCorrespondingStates1945">(<a href="#ref-guggenheimPrincipleCorrespondingStates1945" role="doc-biblioref">Guggenheim 1945, fig. 2</a>)</span> in <span class="citation" data-cites="herbutModernApproachCritical2007">(<a href="#ref-herbutModernApproachCritical2007" role="doc-biblioref">Herbut 2007, 13</a>)</span>.</figcaption>
 </figure>
 </div>
@@ -1712,7 +1724,7 @@ Zooming in and out of the Ising model. Video by Douglas Ashton, taken from <a hr
 <p>Historical science in its endeavor to draw nearer to truth continually takes smaller and smaller units for examination. But however small the units it takes, we feel that to take any unit disconnected from others, or to assume a beginning of any phenomenon, or to say that the will of many men is expressed by the actions of any one historic personage, is in itself false.</p>
 </blockquote>
 </div></div><p><strong><a href="https://en.wikipedia.org/wiki/The_Gateless_Barrier">Mumon’s Comment</a>:</strong> Historians search for the king’s motive and the general’s ambition. They build castles of personality, moats of actions, yet understand nothing of the war. The great black spider traps its preys with a net so dense that nothing is lost after it has digested all of them.</p>
-<p><img src="figure/banner/thumbnail_3.png" class="img-fluid"></p>
+<p><img src="/essays/posts/renormalization-how-to/figure/banner/thumbnail_3.png" class="img-fluid"></p>
 </section>
 </section>
 </section>

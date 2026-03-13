@@ -100,9 +100,9 @@ div.csl-indent {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-927c7f2ff55d2ccf6c9d59d1f6133d6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,6 +129,18 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<link rel="prefetch" href="../../../search.json" as="fetch" crossorigin="">
+<script>
+// Auto-detect OS dark mode for first-time visitors.
+// Runs in <head> before Quarto's inline script reads localStorage.
+(function() {
+  if (localStorage.getItem("quarto-color-scheme") === null) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      localStorage.setItem("quarto-color-scheme", "alternate");
+    }
+  }
+})();
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -566,7 +578,7 @@ window.Quarto = {
 </ul>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/network.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/network.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">An example network with the given architecture, with <span class="math inline">\(N=3, M = 10\)</span>.</figcaption>
 </figure>
 </div>
@@ -585,7 +597,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="grokking">Grokking</h3>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/learning curves.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/learning curves.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Learning curves showing grokking.</figcaption>
 </figure>
 </div>
@@ -613,21 +625,21 @@ window.Quarto = {
 <p>Directly inspecting the weight matrices, we notice suggestive wavy bands that resemble sine waves.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/weights ordered by frequency_unsorted.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/weights ordered by frequency_unsorted.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The weight matrices.</figcaption>
 </figure>
 </div>
 <p>Let’s sort them according to frequency, as found by running a Fourier transform and picking the highest peak:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/weights ordered by frequency.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/weights ordered by frequency.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The weight matrices, with columns ordered by frequency.</figcaption>
 </figure>
 </div>
 <p>We see that the learned neural network is probably doing some Fourier transform. This can be confirmed by plotting the activation map on every hidden neuron. Specifically, for each hidden neuron, we can calculate its activation for each of the <span class="math inline">\(N\times N\)</span> possible inputs. This is plotted as a heatmap with <span class="math inline">\(N\times N\)</span> pixels. We then get one heatmap per hidden neuron and display all of them in a grid:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/activation maps.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/activation maps.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">The activation pattern of neurons in the hidden layer as one scans through all possible inputs.</figcaption>
 </figure>
 </div>
@@ -639,32 +651,32 @@ window.Quarto = {
 <p>As one would expect, the neural network can successfully memorize arbitrary binary operations, without generalization (as there is no pattern to generalize).</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/learning curves_random.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/learning curves_random.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Learning curves for a neural network trained on a randomly initialized binary operation.</figcaption>
 </figure>
 </div>
 <p>For both null hypotheses, I tried interpreting them using the same methodology; they look as one might expect: complete noise.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/activation maps_null.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/activation maps_null.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Activation maps. (randomly initialized.)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/activation maps_random.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/activation maps_random.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Activation maps. (trained perform a randomly initialized binary operation)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/weights ordered by frequency_null.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/weights ordered by frequency_null.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Weight matrices. (randomly initialized)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/weights ordered by frequency_random.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/weights ordered by frequency_random.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Weight matrices. (trained perform a randomly initialized binary operation)</figcaption>
 </figure>
 </div>
@@ -694,7 +706,7 @@ window.Quarto = {
 </blockquote>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/taxonomy_decision_rules.png" class="img-fluid figure-img"></p>
+<p><img src="/essays/posts/grokking-modular-arithmetics/figure/taxonomy_decision_rules.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Figure 3 from <span class="citation" data-cites="geirhosShortcutLearningDeep2020">(<a href="#ref-geirhosShortcutLearningDeep2020" role="doc-biblioref">Geirhos et al. 2020</a>)</span></figcaption>
 </figure>
 </div>

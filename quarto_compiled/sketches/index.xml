@@ -16,7 +16,7 @@
 <link>https://yuxi.ml/sketches/</link>
 </image>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Sun, 01 Sep 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 01 Sep 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Phase-space quantum mechanics</title>
   <dc:creator>Yuxi Liu</dc:creator>
@@ -25,7 +25,7 @@
   <category>math</category>
   <category>physics</category>
   <guid>https://yuxi.ml/sketches/posts/phase-space-quantum-mechanics/</guid>
-  <pubDate>Sun, 01 Sep 2024 07:00:00 GMT</pubDate>
+  <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Notes for a talk on the history of neural networks</title>
@@ -36,7 +36,7 @@
   <category>AI</category>
   <category>cybernetics</category>
   <guid>https://yuxi.ml/sketches/posts/history-neural-networks-talk-notes/</guid>
-  <pubDate>Thu, 01 Aug 2024 07:00:00 GMT</pubDate>
+  <pubDate>Thu, 01 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Philosophical Sketches</title>
@@ -46,7 +46,7 @@
   <category>fun</category>
   <category>philosophy</category>
   <guid>https://yuxi.ml/sketches/posts/philosophical-sketches/</guid>
-  <pubDate>Sun, 16 Jun 2024 07:00:00 GMT</pubDate>
+  <pubDate>Sun, 16 Jun 2024 00:00:00 GMT</pubDate>
   <media:content url="https://yuxi.ml/sketches/posts/philosophical-sketches/figure/banner.png" medium="image" type="image/png"/>
 </item>
 <item>
@@ -57,7 +57,7 @@
   <category>fun</category>
   <category>fiction</category>
   <guid>https://yuxi.ml/sketches/posts/fictional-ideas/</guid>
-  <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 11 Jun 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Research ideas</title>
@@ -66,7 +66,7 @@
   <description><![CDATA[ Ideas for research. Free for a good home. ]]></description>
   <category>fun</category>
   <guid>https://yuxi.ml/sketches/posts/research-ideas/</guid>
-  <pubDate>Tue, 11 Jun 2024 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 11 Jun 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>How to do field-theoretic calculations</title>
@@ -77,7 +77,7 @@
   <category>physics</category>
   <category>scaling</category>
   <guid>https://yuxi.ml/sketches/posts/field-theory-how-to/</guid>
-  <pubDate>Thu, 11 Apr 2024 07:00:00 GMT</pubDate>
+  <pubDate>Thu, 11 Apr 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>A Scrapbook of Neural Network Lores</title>
@@ -88,7 +88,7 @@
   <category>scaling</category>
   <category>NN</category>
   <guid>https://yuxi.ml/sketches/posts/neural-network-scrapbook/</guid>
-  <pubDate>Thu, 18 Jan 2024 08:00:00 GMT</pubDate>
+  <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Information Warfare</title>
@@ -99,7 +99,7 @@
   <category>evolution</category>
   <category>sociology</category>
   <guid>https://yuxi.ml/sketches/posts/info-warfare/</guid>
-  <pubDate>Sat, 16 Dec 2023 08:00:00 GMT</pubDate>
+  <pubDate>Sat, 16 Dec 2023 00:00:00 GMT</pubDate>
   <media:content url="https://yuxi.ml/sketches/posts/info-warfare/figure/banner_2.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
@@ -109,7 +109,7 @@
   <description><![CDATA[ My quick reference for designing content for the Internet. ]]></description>
   <category>programming</category>
   <guid>https://yuxi.ml/sketches/posts/web-design-notes/</guid>
-  <pubDate>Sun, 10 Dec 2023 08:00:00 GMT</pubDate>
+  <pubDate>Sun, 10 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Notes on Using Linux</title>
@@ -118,7 +118,7 @@
   <description><![CDATA[ My quick reference for using Linux for doing things. ]]></description>
   <category>programming</category>
   <guid>https://yuxi.ml/sketches/posts/linux-notes/</guid>
-  <pubDate>Sat, 10 Dec 2022 08:00:00 GMT</pubDate>
+  <pubDate>Sat, 10 Dec 2022 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

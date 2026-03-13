@@ -80,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-cbcea019cb8b96c0a2d517fd4813f716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-4d59ffd7c762d3c89c7b751e5dd4ac8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-927c7f2ff55d2ccf6c9d59d1f6133d6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-20291332fd86636a88a3569cb3490cdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,6 +109,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link rel="prefetch" href="../../../search.json" as="fetch" crossorigin="">
+<script>
+// Auto-detect OS dark mode for first-time visitors.
+// Runs in <head> before Quarto's inline script reads localStorage.
+(function() {
+  if (localStorage.getItem("quarto-color-scheme") === null) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      localStorage.setItem("quarto-color-scheme", "alternate");
+    }
+  }
+})();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js" integrity="sha512-EKW5YvKU3hpyyOcN6jQnAxO/L8gts+YdYV6Yymtl8pk9YlYFtqJgihORuRoBXK8/cOIlappdU6Ms8KdK6yBCgA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
@@ -864,7 +876,7 @@ window.Quarto = {
 <p>However, recently “<a href="https://github.com/KellerJordan/Muon">Muon</a>” has generated quite a buzz on Twitter. It claims to be more efficient than AdamW, and is not just a minor tweak to Adam, but rather embodies some principles regarding the differences between vectors and matrices that are worth pondering. Let’s appreciate it together in this article.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/125501438.jpeg" class="img-fluid figure-img"></p>
+<p><img src="/docs/posts/2025-02-27-muon/figure/125501438.jpeg" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Muon vs AdamW (Source: <a href="https://x.com/Yuchenj_UW">@Yuchenj_UW on Twitter</a>)</figcaption>
 </figure>
 </div>
@@ -1350,7 +1362,7 @@ Code for generating the table above
 <p>This article explicates our latest technical report <a href="https://arxiv.org/abs/2502.16982"><em>Muon is Scalable for LLM Training</em></a>, which shares a relatively large-scale implementation of the Muon optimizer that we previously introduced in <a href="#sec-muon-appreciation"><em>Muon Appreciation</em></a>. We’ve also open-sourced the corresponding models (which we call “<a href="https://github.com/MoonshotAI/Moonlight">Moonlight</a>”, currently a 3B/16B MoE model).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We discovered a rather surprising conclusion: under our experimental settings, Muon can achieve nearly twice the training efficiency compared to Adam.</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;It’s named “Moonlight” because the authors are from Moonshot AI, whose Chinese name is 月之暗面 (“Dark Side of the Moon”).</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/1300601661.png" class="img-fluid figure-img"></p>
+<p><img src="/docs/posts/2025-02-27-muon/figure/1300601661.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Muon scaling law and the MMLU scores of Moonlight.</figcaption>
 </figure>
 </div>
@@ -1402,7 +1414,7 @@ Code for generating the table above
 <p>Continuing the experiment, sure enough, Muon consistently maintained its lead over Adam, as shown in Figure 2 of the paper:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/3675708776.png" class="img-fluid figure-img"></p>
+<p><img src="/docs/posts/2025-02-27-muon/figure/3675708776.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">With vs without weight decay.</figcaption>
 </figure>
 </div>
@@ -1574,7 +1586,7 @@ Code for generating the table above
 <p>Here, <span class="math inline">\(\boldsymbol{\sigma}=(\sigma_1,\sigma_2,\cdots,\sigma_n)\)</span> represents all the singular values of a parameter. Parameters trained by Muon have higher entropy, meaning a more uniform distribution of singular values, which indicates that these parameters are less easily compressed. This suggests that Muon more fully utilizes the potential of the parameters:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="figure/3782823216.png" class="img-fluid figure-img"></p>
+<p><img src="/docs/posts/2025-02-27-muon/figure/3782823216.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Weights trained by Muon have higher singular value entropy.</figcaption>
 </figure>
 </div>
