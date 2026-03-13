@@ -50,9 +50,9 @@ I wore my serious-business-dress and carried around *Behavioral Neurobiology: An
 
 "Not really. It never passed."
 
-"What? Didn't it... [furiously checks phone] I've been lied to."
+"What? Didn't it... \[furiously checks phone\] I've been lied to."
 
-"Apparently some Democrats just acted as if it has passed, and act accordingly. It is a form of realpolitik, because even though it didn't pass in form, it passed in spirit, because it 'should have passed', and if they legislate accordingly, eventually enough laws would come into being that the legal landscape would look just as if the amendment had really passed."
+"Apparently some Democrats just [act as it has already passed](https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2025/01/17/statement-from-president-joe-biden-on-the-equal-rights-amendment/). It is a form of realpolitik, because even though it didn't pass in form, it passed in spirit, because it 'should have passed', and if they legislate accordingly, eventually enough laws would come into being that the legal landscape would look just as if the amendment had passed in letter."
 
 "There is that phrase '[constitutional hardball](https://en.wikipedia.org/wiki/Constitutional_hardball)' [@tushnetConstitutionalHardball2003], it is a good description of what the US government has come to. The idea is that there is a positive feedback. As the president becomes more powerful, to make anything happen in the government, you'd have to go through the president, so the stakes become higher. And because the stakes are higher, as soon as your party gets a president in the White House, you try to really push it, to get your policy in, your people in, because you might never get a chance later. And laws get broken in spirit if not in letter. And when the other party takes power, they push further. And because this pushing needs to go through the president, the power of the president often gets increased as a side effect, or an instrumental goal of the pushing. So the power of the president just keeps ratcheting up."
 
