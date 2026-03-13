@@ -31,7 +31,7 @@
 These are content/source issues that Claude can't fix — they need manual Quarto source edits:
 
 - [ ] **Missing banner.png for philosophical-sketches.** `image: "figure/banner.png"` in frontmatter but `sketches/posts/philosophical-sketches/figure/banner.png` doesn't exist. Either create the image or remove the `image:` field.
-- [ ] **Broken cross-ref to nick-land code directory.** `/docs/posts/1987-09-nick-land/code` links to a directory with no index.html. Either add an index or link to a specific file instead.
+- [x] **Broken cross-ref to nick-land code directory.** Fixed with `autoindex on` for `/code/` paths in nginx. `/code` → `/code/` → directory listing.
 - [ ] **World Bank iframe refs.** Embedded World Bank HTML files reference `/favicon.ico` and `/indicator/...` which 404 on our domain. Either host the iframes locally with fixed paths, or accept the 404s (currently excluded from muffet tests).
 - [ ] **Add `image:` frontmatter to posts missing it.** Posts without explicit `image:` get auto-discovered thumbnails with bare relative paths (fixed at build-time by absolutify, but adding `image:` is cleaner). Affected posts:
   - `essays/posts/scaling-law-by-data-manifold/` — uncomment `# image: "figure/banner.png"`

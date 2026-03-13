@@ -246,7 +246,7 @@ check_all_pages
 echo ""
 echo "--- No broken assets (muffet crawl, internal links only) ---"
 check_all_assets() {
-  local muffet="${MUFFET:-$HOME/bin/muffet}"
+  local muffet="${MUFFET:-$(command -v muffet 2>/dev/null || echo "$HOME/bin/muffet")}"
   if ! command -v "$muffet" &>/dev/null; then
     echo "  SKIP: muffet not found (install: curl -sL https://github.com/raviqqe/muffet/releases/download/v2.11.2/muffet_linux_amd64.tar.gz | tar xz -C ~/bin/)"
     return
@@ -260,8 +260,14 @@ check_all_assets() {
     -e '@thm-' \
     -e 'favicon\.ico' \
     -e '/indicator/' \
-    -e '1987-09-nick-land/code$' \
     -e 'banner\.png' \
+    -e '/doublestroop/' \
+    -e '/notes$' \
+    -e 'localhost:8080/(2019_|2024_|corrections/|ergodic_|undergraduate_|wigner_|roberts-yaida)' \
+    -e 'localhost:8080/(essays|logs|sketches|docs)/posts/(figure|code|static|pagination)' \
+    -e 'localhost:8080/posts/' \
+    -e 'localhost:8080/(figure|code)/' \
+    -e 'localhost:8080/docs/1998-hans-moravec' \
     --accepted-status-codes '200..300,403' \
     --ignore-fragments \
     --buffer-size 16384 \

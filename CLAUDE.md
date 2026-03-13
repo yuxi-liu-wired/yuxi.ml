@@ -68,6 +68,12 @@ When adding vanity URLs, you must handle:
 - **Canonical short URLs.** `/cyc` not `/essays/posts/cyc/index.html`.
 - **Fragments preserved.** `/cyc#eurisko` must work, never `/cyc/#eurisko`.
 
+## Content authorship
+
+- **Never write user-facing plaintext content.** Descriptions, bios, page copy, and anything that represents Yuxi's voice must be written by Yuxi.
+- **Use obvious placeholders** like `"TODO(yuxi): describe this page"` and add the item to TODO.md under "Content fixes (Yuxi's responsibility)".
+- **Mechanical/factual text is fine**: alt text like `"Yuxi Liu"` for a profile photo, config values, code comments.
+
 ## Git conventions
 
 - **Make small, focused commits.** One logical change per commit (e.g., "fix nginx vanity URL", "add dark mode detection", "truncate search index"). Never bundle unrelated changes into a giant blob.
