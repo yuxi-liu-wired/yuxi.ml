@@ -52,5 +52,6 @@ These are content/source issues that Claude can't fix — they need manual Quart
 To deploy these changes:
 1. Re-render Quarto: `cd source && quarto render`
 2. Run truncation: `python3 scripts/truncate-search-index.py`
-3. Copy `server_infra/nginx/nginx.conf` to `/etc/nginx/nginx.conf` on the server
-4. Test with `nginx -t` then `systemctl reload nginx`
+3. Generate image variants: `node scripts/generate-image-variants.mjs`
+4. Copy `server_infra/nginx/nginx.conf` to `/etc/nginx/nginx.conf` on the server
+5. Test with `nginx -t` then `systemctl reload nginx`

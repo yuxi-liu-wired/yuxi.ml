@@ -18,8 +18,10 @@ deploy.sh         — runs deploy on remote via ssh
 ## Build & deploy
 
 - **Quarto render**: `cd source && quarto render` → outputs to `quarto_compiled/`
+- **Image optimization**: `node scripts/generate-image-variants.mjs` → generates `.avif` and `.webp` siblings for every image in `quarto_compiled/`. Run after every `quarto render`.
 - **Deploy**: `bash deploy.sh` (requires SSH to `yuxi-ml` host)
-- **Local nginx test**: `sudo bash server_infra/nginx/test-local.sh` (serves on localhost:8080)
+- **Local nginx test**: `bash server_infra/nginx/test-local.sh` (serves on localhost:8080)
+- **Lighthouse audit**: `node scripts/lighthouse-audit.mjs` (local) or `node scripts/lighthouse-live.mjs` (production). Requires Chromium.
 
 ## Nginx conventions
 
@@ -31,6 +33,15 @@ deploy.sh         — runs deploy on remote via ssh
 - The local container has nginx 1.22.1 with `--with-http_sub_module`.
 - Web root on production: `/var/www/yuxi.ml` (mirrors `quarto_compiled/`)
 - Ports 8080–8099 are forwarded from this container to the host.
+
+## Image optimization
+
+nginx serves optimized image formats automatically via content negotiation:
+
+- **Build step**: `node scripts/generate-image-variants.mjs` generates `.avif` (q50) and `.webp` (q75) files alongside every `.png`/`.jpg`/`.jpeg` in `quarto_compiled/`. Derivatives larger than the original are pruned. Requires `sharp` (npm).
+- **nginx**: A `map $http_accept $img_suffix` block in the `http` context picks `.avif` or `.webp` based on the browser's `Accept` header. The image `location` block does `try_files $uri$img_suffix $uri =404` with `Vary: Accept`.
+- **Result**: Browsers get AVIF (~89% smaller) or WebP (~83% smaller) transparently. No HTML changes needed — `<img src="photo.png">` still works.
+- **File naming**: `photo.png.avif` and `photo.png.webp` (suffix appended, not replaced).
 
 ## Vanity URLs
 
