@@ -91,6 +91,24 @@ check_body_not() {
   rm -f "$tmpf"
 }
 
+check_content_type() {
+  local desc="$1" url="$2" expected_type="$3"
+  ((TOTAL++))
+
+  local ct
+  ct=$(curl -sI "$BASE$url" 2>/dev/null | grep -i '^content-type:' | sed 's/^[Cc]ontent-[Tt]ype: *//;s/;.*//;s/\r//;s/ *$//')
+  if [[ "$ct" == "$expected_type" ]]; then
+    echo "  $(green PASS): $desc"
+    ((PASS++))
+  else
+    echo "  $(red FAIL): $desc"
+    echo "    URL: $url"
+    echo "    Expected content-type: $expected_type"
+    echo "    Got: $ct"
+    ((FAIL++))
+  fi
+}
+
 # ── Setup ────────────────────────────────────────────────────────
 
 echo "=== Nginx Test Suite ==="
@@ -165,6 +183,17 @@ echo "--- Query string preservation ---"
 check_status "/essays/posts/cyc/index.html?q=foo → /cyc?q=foo" "/essays/posts/cyc/index.html?q=foo" "301" "/cyc?q=foo"
 
 echo ""
+echo "--- .md source serving ---"
+check_status "/cyc.md serves 200"                               "/cyc.md"                           "200"
+check_body   "/cyc.md contains qmd frontmatter"                 "/cyc.md"                           "title: \"Cyc\""
+check_content_type "/cyc.md is text/plain"                      "/cyc.md"                           "text/plain"
+
+echo ""
+echo "--- Code directory: no 403 ---"
+check_status "/docs/posts/1987-09-nick-land/code → not 403"    "/docs/posts/1987-09-nick-land/code"  "404"
+check_status "/docs/posts/1987-09-nick-land/code/ocr.py → 200" "/docs/posts/1987-09-nick-land/code/ocr.py" "200"
+
+echo ""
 echo "--- 404 handling ---"
 check_status "nonexistent path → 404"                           "/this-does-not-exist"              "404"
 
@@ -178,6 +207,11 @@ fi
 echo "==========================================="
 
 # ── Teardown ─────────────────────────────────────────────────────
-nginx -s stop -c "$CONF" 2>/dev/null || true
+# Leave nginx running for manual inspection (on port 8080)
+if [[ $FAIL -eq 0 ]]; then
+  echo ""
+  echo "nginx left running on :$PORT for manual inspection."
+  echo "Stop with: nginx -s stop -c $CONF"
+fi
 
 [[ $FAIL -eq 0 ]] && exit 0 || exit 1
