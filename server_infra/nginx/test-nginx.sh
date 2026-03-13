@@ -198,6 +198,8 @@ echo "--- .md source serving ---"
 check_status "/cyc.md serves 200"                               "/cyc.md"                           "200"
 check_body   "/cyc.md contains qmd frontmatter"                 "/cyc.md"                           "title: \"Cyc\""
 check_content_type "/cyc.md is text/plain"                      "/cyc.md"                           "text/plain"
+check_status "non-vanity .md serves 200"                        "/docs/posts/1987-09-nick-land.md"  "200"
+check_content_type "non-vanity .md is text/plain"               "/docs/posts/1987-09-nick-land.md"  "text/plain"
 
 echo ""
 echo "--- Code directory: individual files served ---"
