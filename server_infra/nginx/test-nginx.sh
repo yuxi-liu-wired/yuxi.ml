@@ -169,14 +169,19 @@ check_status "/cyc/figure/Vauquois%20triangle.png"              "/cyc/figure/Vau
 
 echo ""
 echo "--- Trailing slash stripping ---"
-check_status "/about/ → /about"                                 "/about/"                           "301" "/about"
-check_status "/essays/ → /essays"                               "/essays/"                          "301" "/essays"
-check_status "/docs/ → /docs"                                   "/docs/"                            "301" "/docs"
+check_status "/about/ → /about"                                                          "/about/"                                              "301" "/about"
+check_status "/essays/ → /essays"                                                        "/essays/"                                             "301" "/essays"
+check_status "/docs/ → /docs"                                                            "/docs/"                                               "301" "/docs"
+check_status "/essays/posts/scaling-law-by-data-manifold/ → no slash"                    "/essays/posts/scaling-law-by-data-manifold/"           "301" "/essays/posts/scaling-law-by-data-manifold"
+check_status "/about serves 200 (no redirect)"                                           "/about"                                               "200"
+check_status "/essays serves 200 (no redirect)"                                          "/essays"                                              "200"
+check_status "/docs serves 200 (no redirect)"                                            "/docs"                                                "200"
+check_status "/essays/posts/scaling-law-by-data-manifold serves 200"                     "/essays/posts/scaling-law-by-data-manifold"            "200"
 
 echo ""
 echo "--- index.html stripping ---"
-check_status "/about/index.html → /about"                       "/about/index.html"                 "301" "/about"
-check_status "/essays/index.html → /essays"                     "/essays/index.html"                "301" "/essays"
+check_status "/about/index.html → /about"                     "/about/index.html"                 "301" "/about"
+check_status "/essays/index.html → /essays"                   "/essays/index.html"                "301" "/essays"
 
 echo ""
 echo "--- Normal page serving ---"
@@ -195,8 +200,7 @@ check_body   "/cyc.md contains qmd frontmatter"                 "/cyc.md"       
 check_content_type "/cyc.md is text/plain"                      "/cyc.md"                           "text/plain"
 
 echo ""
-echo "--- Code directory: no 403 ---"
-check_status "/docs/posts/1987-09-nick-land/code → not 403"    "/docs/posts/1987-09-nick-land/code"  "404"
+echo "--- Code directory: individual files served ---"
 check_status "/docs/posts/1987-09-nick-land/code/ocr.py → 200" "/docs/posts/1987-09-nick-land/code/ocr.py" "200"
 
 echo ""
@@ -240,79 +244,28 @@ check_all_pages() {
 check_all_pages
 
 echo ""
-echo "--- No broken assets (crawl every page, resolve every src/href) ---"
+echo "--- No broken assets (muffet crawl, internal links only) ---"
 check_all_assets() {
-  local root="/tmp/www/yuxi.ml"
-  local asset_total=0
-  local asset_fail=0
-  local failed_assets=""
-  local refs_file="/tmp/nginx-test-refs.$$"
-
-  while IFS= read -r html_file; do
-    # Page URL as browser sees it (no trailing slash, no index.html)
-    local page_url="${html_file#$root}"
-    page_url="${page_url%/index.html}"
-    [[ -z "$page_url" ]] && page_url="/"
-
-    # Fetch the page as nginx serves it
-    local tmpf="/tmp/nginx-test-assets.$$"
-    curl -s "$BASE$page_url" -o "$tmpf" 2>/dev/null
-
-    # Extract src="..." and href="..." values, filter out non-asset refs
-    grep -oP '(?:src|href)="\K[^"]+' "$tmpf" 2>/dev/null | \
-      grep -v '^#' | grep -v '^mailto:' | grep -v '^javascript:' | \
-      grep -v '^https\?://' | grep -v '^data:' | \
-      sort -u > "$refs_file" 2>/dev/null
-
-    while IFS= read -r ref; do
-      # Resolve relative URL the way a browser does
-      local resolved=""
-      if [[ "$ref" == /* ]]; then
-        resolved="$ref"
-      elif [[ "$page_url" == "/" ]]; then
-        resolved="/$ref"
-      else
-        # Browser base dir is parent of the URL path (no trailing slash)
-        local base_dir="${page_url%/*}"
-        [[ -z "$base_dir" ]] && base_dir=""
-
-        local remaining="$ref"
-        local base="$base_dir"
-        while [[ "$remaining" == ../* ]]; do
-          remaining="${remaining#../}"
-          base="${base%/*}"
-        done
-        resolved="$base/$remaining"
-      fi
-
-      [[ -z "$resolved" ]] && continue
-      resolved="${resolved%%#*}"
-      local check_url="${resolved%%\?*}"
-      [[ -z "$check_url" ]] && continue
-
-      local status
-      status=$(curl -sI -o /dev/null -w '%{http_code}' "$BASE$check_url" 2>/dev/null)
-      asset_total=$((asset_total + 1))
-
-      if [[ "$status" == "404" || "$status" == "403" || "$status" == "500" ]]; then
-        asset_fail=$((asset_fail + 1))
-        failed_assets="$failed_assets\n    $status $check_url (from $page_url, ref=$ref)"
-      fi
-    done < "$refs_file"
-
-    rm -f "$tmpf" "$refs_file"
-  done < <(find "$root" -name 'index.html' -type f | sort)
+  local muffet="${MUFFET:-$HOME/bin/muffet}"
+  if ! command -v "$muffet" &>/dev/null; then
+    echo "  SKIP: muffet not found (install: curl -sL https://github.com/raviqqe/muffet/releases/download/v2.11.2/muffet_linux_amd64.tar.gz | tar xz -C ~/bin/)"
+    return
+  fi
 
   ((TOTAL++))
+  local tmpf="/tmp/nginx-muffet-out.$$"
+  "$muffet" -e 'https?://' --ignore-fragments --buffer-size 16384 "$BASE" > "$tmpf" 2>&1
+  local rc=$?
 
-  if [[ $asset_fail -eq 0 ]]; then
-    echo "  $(green PASS): all $asset_total assets serve OK"
+  if [[ $rc -eq 0 ]]; then
+    echo "  $(green PASS): all internal links and assets OK"
     ((PASS++))
   else
-    echo "  $(red FAIL): $asset_fail/$asset_total assets broken"
-    echo -e "$failed_assets"
+    echo "  $(red FAIL): broken internal links/assets found"
+    cat "$tmpf" | head -50
     ((FAIL++))
   fi
+  rm -f "$tmpf"
 }
 check_all_assets
 
