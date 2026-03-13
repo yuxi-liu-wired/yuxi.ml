@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Copies quarto_compiled to /var/www/yuxi.ml and (re)starts local nginx on port 8787.
-# Usage: sudo bash server_infra/nginx/test-local.sh
+# Sets up /tmp/www/yuxi.ml from quarto_compiled and runs the test suite.
+# Usage: bash server_infra/nginx/test-local.sh
 
-CONF="$(cd "$(dirname "$0")" && pwd)/test-local.conf"
-PID=/tmp/nginx-test.pid
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-rm -rf /var/www/yuxi.ml
-cp -r "$(dirname "$0")/../../quarto_compiled" /var/www/yuxi.ml
+# Copy web root
+rm -rf /tmp/www/yuxi.ml
+mkdir -p /tmp/www
+cp -r "$ROOT/quarto_compiled" /tmp/www/yuxi.ml
 
-[ -f "$PID" ] && kill "$(cat "$PID")" 2>/dev/null || true
-nginx -c "$CONF"
-echo "Running on http://localhost:8787"
+# Run tests
+bash "$SCRIPT_DIR/test-nginx.sh"
