@@ -11,7 +11,7 @@
 - [ ] **Deploy more vanity URL aliases.**
 - [x] **Adding `.md` should show `.qmd` source verbatim.** `/cyc.md` serves raw `.qmd` as `text/plain`.
 - [x] **Fix 403 on code directories.** Individual files still served.
-- [ ] **Fix listing page thumbnails.** `src="posts/foo/figure/bar.png"` on `/essays`, `/docs`, `/logs`, `/sketches` resolves wrong without trailing slash. muffet doesn't flag these (may not check `<img src>`). Need build-time fix or nginx solution.
+- [x] **Fix listing page thumbnails.** Fixed by `absolutify-figure-paths.py`. Root cause: posts without explicit `image:` frontmatter get bare relative paths from Quarto's auto-discovery. The absolutify script catches these. For a cleaner fix, add `image:` to each post (see "Content fixes" section below).
 - [ ] **Remove `/posts/` from URLs.** Visitors don't need to see implementation details. Default: `/logs/2025-gwern-bair` not `/logs/posts/2025-gwern-bair`. `/essays/structure-interpretation-chinese-economy` not `/essays/posts/structure-interpretation-chinese-economy`. Pages with vanity slugs (like `/cyc`) keep their slug. Needs nginx rewrite rules for all `*/posts/*` paths + redirects from old URLs.
 - [ ] **Modularize nginx config.** Re-adopt the abandoned `_unused/` modular structure (`conf.d/`, `maps.d/`, `servers.d/`, `snippets/`) now that we have a sane test harness. Split the monolithic `nginx.conf` into includes.
 
@@ -33,6 +33,19 @@ These are content/source issues that Claude can't fix — they need manual Quart
 - [ ] **Missing banner.png for philosophical-sketches.** `image: "figure/banner.png"` in frontmatter but `sketches/posts/philosophical-sketches/figure/banner.png` doesn't exist. Either create the image or remove the `image:` field.
 - [ ] **Broken cross-ref to nick-land code directory.** `/docs/posts/1987-09-nick-land/code` links to a directory with no index.html. Either add an index or link to a specific file instead.
 - [ ] **World Bank iframe refs.** Embedded World Bank HTML files reference `/favicon.ico` and `/indicator/...` which 404 on our domain. Either host the iframes locally with fixed paths, or accept the 404s (currently excluded from muffet tests).
+- [ ] **Add `image:` frontmatter to posts missing it.** Posts without explicit `image:` get auto-discovered thumbnails with bare relative paths (fixed at build-time by absolutify, but adding `image:` is cleaner). Affected posts:
+  - `essays/posts/scaling-law-by-data-manifold/` — uncomment `# image: "figure/banner.png"`
+  - `essays/posts/grokking-modular-arithmetics/` — uncomment `# image: "figure/banner.png"`
+  - `sketches/posts/neural-network-scrapbook/` — uncomment `# image: "figure/banner.png"`
+  - `sketches/posts/fictional-ideas/` — uncomment `# image: "figure/banner.png"`
+  - `sketches/posts/field-theory-how-to/` — uncomment `# image: "figure/banner.png"`
+  - `sketches/posts/linux-notes/` — uncomment `# image: "figure/banner_1.png"`
+  - `sketches/posts/research-ideas/` — uncomment `# image: "figure/banner.png"`
+  - `sketches/posts/web-design-notes/` — uncomment `# image: "figure/banner_1.png"`
+  - `logs/posts/2025-patel-dinner/` — add `image:` field
+  - `logs/posts/2025-reprofro-party/` — add `image:` field
+  - `logs/posts/2025-whalefall/` — add `image:` field
+  - `logs/posts/2026-akses-ditolak/` — add `image:` field
 
 ## Deployment
 
