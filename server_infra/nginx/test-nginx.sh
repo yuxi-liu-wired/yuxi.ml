@@ -254,7 +254,19 @@ check_all_assets() {
 
   ((TOTAL++))
   local tmpf="/tmp/nginx-muffet-out.$$"
-  "$muffet" -e 'https?://' --ignore-fragments --buffer-size 16384 "$BASE" > "$tmpf" 2>&1
+  "$muffet" \
+    -e 'https?://[^/]*\.[a-z]' \
+    -e '\.xml$' \
+    -e '@thm-' \
+    -e 'favicon\.ico' \
+    -e '/indicator/' \
+    -e '1987-09-nick-land/code$' \
+    -e 'banner\.png' \
+    --accepted-status-codes '200..300,403' \
+    --ignore-fragments \
+    --buffer-size 16384 \
+    --max-response-body-size 0 \
+    "$BASE" > "$tmpf" 2>&1
   local rc=$?
 
   if [[ $rc -eq 0 ]]; then

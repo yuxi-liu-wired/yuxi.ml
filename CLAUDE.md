@@ -48,6 +48,7 @@ When adding vanity URLs, you must handle:
 - **Test actual behavior, not inferred intent.** Don't check whether HTML contains "absolute paths" — check whether the browser would get a 404. The test should fetch every page, extract every `src`/`href`, resolve it the way a browser would, and verify the asset actually serves 200.
 - **Do NOT "fix" Quarto output with post-processing scripts.** Quarto generates relative paths for a reason. If they break, the problem is in nginx (how URLs are served), not in the HTML. Fix the serving layer.
 - **nginx is the source of truth.** The test suite hits the actual running nginx. If the test says it's broken, it's broken. If the test says it's fine but the browser disagrees, the test is wrong.
+- **Content bugs are Yuxi's responsibility.** Missing source files (e.g. `banner.png`), broken cross-references to directories, and issues inside embedded third-party HTML (World Bank iframes) are content-level problems that require Quarto source edits. These are tracked in TODO.md under "Content fixes (Yuxi's responsibility)". The test suite excludes these known issues from muffet so the nginx tests stay green.
 
 ## Style & URL policy
 

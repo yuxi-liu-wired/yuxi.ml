@@ -26,6 +26,14 @@
 - [ ] **Fix uncopyable text.** See: <https://chatgpt.com/share/691bfbcd-4e60-8009-9487-f5a4bbc140db>
 - [ ] **Search only finds h2 headers, not h3+.**
 
+## Content fixes (Yuxi's responsibility)
+
+These are content/source issues that Claude can't fix — they need manual Quarto source edits:
+
+- [ ] **Missing banner.png for philosophical-sketches.** `image: "figure/banner.png"` in frontmatter but `sketches/posts/philosophical-sketches/figure/banner.png` doesn't exist. Either create the image or remove the `image:` field.
+- [ ] **Broken cross-ref to nick-land code directory.** `/docs/posts/1987-09-nick-land/code` links to a directory with no index.html. Either add an index or link to a specific file instead.
+- [ ] **World Bank iframe refs.** Embedded World Bank HTML files reference `/favicon.ico` and `/indicator/...` which 404 on our domain. Either host the iframes locally with fixed paths, or accept the 404s (currently excluded from muffet tests).
+
 ## Deployment
 
 To deploy these changes:

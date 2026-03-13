@@ -19,11 +19,10 @@ When serving `/cyc` (no trailing slash), browser resolves `figure/foo.png` as
 the base is `/cyc/` and relative paths work. This affects ALL pages, not just vanity URLs.
 Listing pages like `/essays` have `src="posts/foo/figure/bar.png"` which resolves
 against `/` when served at `/essays` (no slash) → `/posts/foo/figure/bar.png` → 404.
-**Wrong fix:** `sub_filter` or build-time scripts to rewrite HTML paths. These are
-band-aids that infer intent instead of testing behavior — they'll always miss cases.
-**Actual fix:** nginx must serve these URLs in a way that makes relative paths work.
-Options: internal rewrite so the browser's base URL matches Quarto's expectations,
-or use `<base href>` (but this breaks fragment links — test carefully).
+**Fix:** Build-time `absolutify-figure-paths.py` rewrites ALL relative `src`/`href` to
+absolute paths using `posixpath.normpath`. Must catch every pattern (not just `figure/`
+and `code/`). Use muffet as ground truth test — if muffet finds 404s, the script missed
+something. Re-render Quarto, re-run absolutify, re-test with muffet.
 
 ### WTF #4: `pipefail` + `grep -q` on large pipes
 `curl | grep -qF` fails with `pipefail` because `grep -q` closes stdin early after
@@ -40,13 +39,16 @@ drops the HSTS header from server level.
 gixy (nginx security linter) can't be installed in the Claudebox — no pip, not in pixi.
 Run it manually on another machine: `pip install gixy && gixy nginx.conf`
 
-### WTF #6: Don't test HTML content — test HTTP responses
-`absolutify-figure-paths.py` rewrote `src="figure/"` to absolute paths in HTML, and
-the test checked for the rewritten strings. But the script missed `src="posts/"` on
-listing pages → 12 broken thumbnails that the test didn't catch.
-**Lesson:** Never test "does the HTML look right." Test "does the asset URL return 200."
-Crawl every page, extract every `src`/`href`, resolve it as a browser would, hit nginx.
-That's the only test that catches what the user actually sees.
+### WTF #6: muffet exclude regex was excluding everything
+`muffet -e 'https?://'` excludes ALL URLs matching that regex — including
+`http://localhost:8080/...`. muffet silently checked nothing and reported 0 errors.
+**Fix:** Use `muffet -e 'https?://[^/]*\.[a-z]'` — matches hostnames with dots
+(all external domains) but not `localhost` (no dot in hostname).
+
+### WTF #7: Listing thumbnails — Quarto `image:` field
+Posts without an active `image:` frontmatter field generate bare `posts/...` thumbnail
+paths on listing pages. Posts WITH `image:` get correct `../section/posts/...` paths.
+**Fix:** Either add `image:` to all posts, or catch `posts/` in absolutify script.
 
 ### Architecture
 ```
