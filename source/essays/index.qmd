@@ -1,5 +1,6 @@
 ---
 title: "Essays"
+description: "Yuxi Liu's essays."
 listing:
   date-format: iso
   contents: posts

@@ -1,0 +1,13 @@
+# Embedded legacy HTML (archived documents, not ours to fix)
+quarto_compiled/docs/posts/**
+# World Bank embedded iframes
+quarto_compiled/essays/posts/structure-interpretation-chinese-economy/code/worldbank/**
+# Interactive projects with custom HTML
+quarto_compiled/projects/doublestroop/**
+# Embedded 3D visualization
+quarto_compiled/essays/posts/wigner-rotation/figure/**
+# Embedded game HTML
+quarto_compiled/logs/posts/2025-dream-ingress-answer/code/**
+# Empty stubs (Quarto drafts)
+quarto_compiled/essays/posts/ai-friendship-fermi-estimate/index.html
+quarto_compiled/essays/posts/ultramathematician/index.html

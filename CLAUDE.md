@@ -56,6 +56,7 @@ When adding vanity URLs, you must handle:
 
 ## Testing philosophy
 
+- **Verify end-to-end, never trust a single layer.** When a tool (Lighthouse, linter, test suite) reports an issue, verify it against what the server actually delivers: `curl` the live URL. Any layer can lie — Quarto might emit it but nginx might strip it, caching might be stale, the tool might be wrong. The only truth is the HTTP response the browser receives.
 - **Test actual behavior, not inferred intent.** Don't check whether HTML contains "absolute paths" — check whether the browser would get a 404. The test should fetch every page, extract every `src`/`href`, resolve it the way a browser would, and verify the asset actually serves 200.
 - **Do NOT "fix" Quarto output with post-processing scripts.** Quarto generates relative paths for a reason. If they break, the problem is in nginx (how URLs are served), not in the HTML. Fix the serving layer.
 - **nginx is the source of truth.** The test suite hits the actual running nginx. If the test says it's broken, it's broken. If the test says it's fine but the browser disagrees, the test is wrong.

@@ -7,6 +7,8 @@
 *.tmp*
 *tmp*/
 
+node_modules/
+
 .quarto/
 _frozen/
 *.jupyter_cache/

@@ -1,4 +1,5 @@
 ---
+description: "Personal website of Yuxi Liu"
 about:
   template: trestles
   id: about-block
