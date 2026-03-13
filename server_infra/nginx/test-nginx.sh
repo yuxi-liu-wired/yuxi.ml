@@ -121,6 +121,17 @@ if [[ ! -d /tmp/www/yuxi.ml ]]; then
   cp -r /workspace/yuxi.ml/quarto_compiled /tmp/www/yuxi.ml
 fi
 
+# Validate config syntax first
+echo "--- nginx -t (config validation) ---"
+if nginx -t -c "$CONF" 2>&1 | grep -q "test is successful"; then
+  echo "  $(green PASS): config syntax valid"
+else
+  echo "  $(red FAIL): config syntax invalid"
+  nginx -t -c "$CONF" 2>&1
+  exit 1
+fi
+echo ""
+
 # Stop any existing test nginx
 if [[ -f "$PID_FILE" ]]; then
   kill "$(cat "$PID_FILE")" 2>/dev/null || true
@@ -196,6 +207,43 @@ check_status "/docs/posts/1987-09-nick-land/code/ocr.py → 200" "/docs/posts/19
 echo ""
 echo "--- 404 handling ---"
 check_status "nonexistent path → 404"                           "/this-does-not-exist"              "404"
+
+echo ""
+echo "--- All pages servable (every index.html in web root) ---"
+check_all_pages() {
+  local root="/tmp/www/yuxi.ml"
+  local crawl_total=0
+  local crawl_fail=0
+  local failed_urls=""
+
+  while IFS= read -r html_file; do
+    # Convert file path to URL: strip root and /index.html
+    local url_path="${html_file#$root}"
+    url_path="${url_path%/index.html}"
+    [[ -z "$url_path" ]] && url_path="/"
+
+    local status
+    status=$(curl -sI -o /dev/null -w '%{http_code}' "$BASE$url_path" 2>/dev/null)
+    crawl_total=$((crawl_total + 1))
+
+    if [[ "$status" == "404" || "$status" == "403" || "$status" == "500" ]]; then
+      crawl_fail=$((crawl_fail + 1))
+      failed_urls="$failed_urls\n    $status $url_path"
+    fi
+  done < <(find "$root" -name 'index.html' -type f | sort)
+
+  ((TOTAL++))
+
+  if [[ $crawl_fail -eq 0 ]]; then
+    echo "  $(green PASS): all $crawl_total pages serve OK"
+    ((PASS++))
+  else
+    echo "  $(red FAIL): $crawl_fail/$crawl_total pages broken"
+    echo -e "$failed_urls"
+    ((FAIL++))
+  fi
+}
+check_all_pages
 
 echo ""
 echo "==========================================="

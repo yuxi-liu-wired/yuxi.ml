@@ -31,6 +31,10 @@ location block. The static-asset location with `add_header Cache-Control` silent
 drops the HSTS header from server level.
 **Fix:** Repeat HSTS in every location that has its own `add_header`.
 
+### Hard blocker: gixy
+gixy (nginx security linter) can't be installed in the Claudebox — no pip, not in pixi.
+Run it manually on another machine: `pip install gixy && gixy nginx.conf`
+
 ### Architecture
 ```
 server-level rewrites (vanity redirect, trailing slash strip, index.html strip)

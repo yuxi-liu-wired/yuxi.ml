@@ -9,8 +9,9 @@
 - [x] **Preserve fragments.** `#eurisko` survives — no intermediate `/cyc/` redirect step.
 - [x] **Fix query string stripping.** nginx `rewrite` preserves query strings by default.
 - [ ] **Deploy more vanity URL aliases.**
-- [ ] **Adding `.md` should show `.qmd` source verbatim.**
-- [ ] **Fix 403 on code directories.** `docs/posts/1987-09-nick-land/code/` gives 403.
+- [x] **Adding `.md` should show `.qmd` source verbatim.** `/cyc.md` serves raw `.qmd` as `text/plain`.
+- [x] **Fix 403 on code directories.** Returns 404 now (no index.html); individual files still served.
+- [ ] **Remove `/posts/` from URLs.** Visitors don't need to see implementation details. Default: `/logs/2025-gwern-bair` not `/logs/posts/2025-gwern-bair`. `/essays/structure-interpretation-chinese-economy` not `/essays/posts/structure-interpretation-chinese-economy`. Pages with vanity slugs (like `/cyc`) keep their slug. Needs nginx rewrite rules for all `*/posts/*` paths + redirects from old URLs.
 - [ ] **Modularize nginx config.** Re-adopt the abandoned `_unused/` modular structure (`conf.d/`, `maps.d/`, `servers.d/`, `snippets/`) now that we have a sane test harness. Split the monolithic `nginx.conf` into includes.
 
 ## Search
