@@ -168,9 +168,11 @@ check_status "/cyc/figure/opencyc-kb-browser.gif"               "/cyc/figure/ope
 check_status "/cyc/figure/Vauquois%20triangle.png"              "/cyc/figure/Vauquois%20triangle.png"  "200"
 
 echo ""
-echo "--- sub_filter: relative → absolute paths ---"
-check_body     "/cyc rewrites figure src"     "/cyc" 'src="/cyc/figure/'
-check_body_not "/cyc no bare figure src"      "/cyc" 'src="figure/'
+echo "--- Figure paths absolutified (build-time fix) ---"
+check_body     "/cyc has absolute figure paths"                     "/cyc" 'src="/essays/posts/cyc/figure/'
+check_body_not "/cyc no relative figure paths"                      "/cyc" 'src="figure/'
+check_body     "scaling-law page has absolute figure paths"         "/essays/posts/scaling-law-by-data-manifold" 'src="/essays/posts/scaling-law-by-data-manifold/figure/'
+check_body_not "scaling-law page no relative figure paths"          "/essays/posts/scaling-law-by-data-manifold" 'src="figure/'
 
 echo ""
 echo "--- Trailing slash stripping ---"
