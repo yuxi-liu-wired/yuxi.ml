@@ -12,7 +12,7 @@
 - [x] **Adding `.md` should show `.qmd` source verbatim.** `/cyc.md` serves raw `.qmd` as `text/plain`.
 - [x] **Fix 403 on code directories.** Individual files still served.
 - [x] **Fix listing page thumbnails.** Fixed by `absolutify-figure-paths.py`. Root cause: posts without explicit `image:` frontmatter get bare relative paths from Quarto's auto-discovery. The absolutify script catches these. For a cleaner fix, add `image:` to each post (see "Content fixes" section below).
-- [ ] **Remove `/posts/` from URLs.** Visitors don't need to see implementation details. Default: `/logs/2025-gwern-bair` not `/logs/posts/2025-gwern-bair`. `/essays/structure-interpretation-chinese-economy` not `/essays/posts/structure-interpretation-chinese-economy`. Pages with vanity slugs (like `/cyc`) keep their slug. Needs nginx rewrite rules for all `*/posts/*` paths + redirects from old URLs.
+- [x] **Remove `/posts/` from URLs.** Visitors don't need to see implementation details. Default: `/logs/2025-gwern-bair` not `/logs/posts/2025-gwern-bair`. `/essays/structure-interpretation-chinese-economy` not `/essays/posts/structure-interpretation-chinese-economy`. Pages with vanity slugs (like `/cyc`) keep their slug. See `server_infra/nginx/FEATURES.md` (2026-03-14).
 - [ ] **Modularize nginx config.** Re-adopt the abandoned `_unused/` modular structure (`conf.d/`, `maps.d/`, `servers.d/`, `snippets/`) now that we have a sane test harness. Split the monolithic `nginx.conf` into includes.
 
 ## Search

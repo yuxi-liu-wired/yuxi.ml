@@ -50,12 +50,28 @@ Posts without an active `image:` frontmatter field generate bare `posts/...` thu
 paths on listing pages. Posts WITH `image:` get correct `../section/posts/...` paths.
 **Fix:** Either add `image:` to all posts, or catch `posts/` in absolutify script.
 
+### WTF #8: Regex location `[^/]+` matches file extensions
+When stripping `/posts/` from URLs, the post page location `^/(section)/([^/]+)$`
+also matched `.md` URLs like `/essays/slug.md`, stealing them from the `.md` handler.
+Regex locations match in order of appearance — first match wins.
+**Fix:** Use `[^/.]+` to exclude dots from slug matching. Post slugs never contain dots.
+Same issue in server-level rewrite: `[^/.]+` prevents matching `slug.md` as a redirect.
+
 ### Architecture
 ```
-server-level rewrites (vanity redirect, trailing slash strip, index.html strip)
+server-level rewrites:
+  1. vanity redirect: /essays/posts/cyc → /cyc
+  2. strip /posts/: /section/posts/slug → /section/slug (301)
+  3. trailing slash strip
+  4. index.html strip
     ↓ (if no redirect)
-location = /cyc          → try_files (exact page)
-location ^~ /cyc/        → rewrite ... last (sub-resources → real path → re-match)
-location ~* \.(ext)$     → cache headers + try_files (static assets, incl. rewritten /cyc/* paths)
-location /               → try_files $uri $uri/index.html =404 (default)
+location = /cyc              → try_files (exact vanity page)
+location ^~ /cyc/            → rewrite ... last (vanity sub-resources)
+location ~ /section/slug$    → try_files /section/posts/slug/index.html (short post URLs)
+location ~ /section/slug/..  → rewrite ... last (short post sub-resources → re-match)
+location ~ /code             → autoindex
+location ~ \.md$             → rewrite to index.md, try_files
+location ~* \.(png|jpg|gif)$ → AVIF/WebP negotiation + cache headers
+location ~* \.(css|js|...)$  → cache headers
+location /                   → try_files $uri $uri/index.html =404 (default)
 ```
