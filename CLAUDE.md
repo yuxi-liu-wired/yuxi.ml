@@ -12,14 +12,14 @@ source/_quarto.yml — Quarto config
 quarto_compiled/  — Quarto output (HTML, assets) — this is what gets deployed
 server_infra/nginx/ — nginx configs (production + local test)
 scripts/          — utility scripts
-deploy.sh         — runs deploy on remote via ssh
+remote-deploy.sh  — tags, pushes, SSHs to server to deploy
 ```
 
 ## Build & deploy
 
 - **Quarto render**: `cd source && quarto render` → outputs to `quarto_compiled/`
 - **Image optimization**: `node scripts/generate-image-variants.mjs` → generates `.avif` and `.webp` siblings for every image in `quarto_compiled/`. Run after every `quarto render`.
-- **Deploy**: `bash deploy.sh` — tags `deploy-YYYY-MM-DD`, pushes to GitHub, SSHs to `yuxi-ml` and runs remote deploy. Multiple deploys per day get `.1`, `.2`, etc.
+- **Deploy**: `bash remote-deploy.sh` — tags `deploy-YYYY-MM-DD`, pushes to GitHub, SSHs to `yuxi-ml` and runs remote deploy. Multiple deploys per day get `.1`, `.2`, etc.
 - **Local nginx test**: `bash server_infra/nginx/test-local.sh` (serves on localhost:8080)
 - **Lighthouse audit**: `node scripts/lighthouse-audit.mjs` (local) or `node scripts/lighthouse-live.mjs` (production). Requires Chromium.
 
