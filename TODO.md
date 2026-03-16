@@ -47,11 +47,16 @@ These are content/source issues that Claude can't fix — they need manual Quart
   - `logs/posts/2025-whalefall/` — add `image:` field
   - `logs/posts/2026-akses-ditolak/` — add `image:` field
 
+## Performance
+
+- [x] **Subset bootstrap-icons font.** `pixi run python scripts/subset-bootstrap-icons.py` subsets the font to 4 used glyphs and strips unused CSS. 180KB woff → 896B woff2, 99KB CSS → 651B. Run after `generate-image-variants.mjs`.
+
 ## Deployment
 
 To deploy these changes:
 1. Re-render Quarto: `cd source && quarto render`
 2. Run truncation: `python3 scripts/truncate-search-index.py`
 3. Generate image variants: `node scripts/generate-image-variants.mjs`
-4. Copy `server_infra/nginx/nginx.conf` to `/etc/nginx/nginx.conf` on the server
-5. Test with `nginx -t` then `systemctl reload nginx`
+4. Subset bootstrap-icons: `pixi run python scripts/subset-bootstrap-icons.py`
+5. Copy `server_infra/nginx/nginx.conf` to `/etc/nginx/nginx.conf` on the server
+6. Test with `nginx -t` then `systemctl reload nginx`

@@ -14,9 +14,10 @@
 1. `cd source && quarto render`
 2. `python3 scripts/truncate-search-index.py`
 3. `node scripts/generate-image-variants.mjs`
-4. `npx html-validate "quarto_compiled/**/*.html"` — must pass with 0 errors
-5. Commit source first, compiled output separately
-6. `bash deploy.sh`
+4. `pixi run python scripts/subset-bootstrap-icons.py`
+5. `npx html-validate "quarto_compiled/**/*.html"` — must pass with 0 errors
+6. Commit source first, compiled output separately
+7. `bash remote-deploy.sh`
 
 ## Current test harnesses (fast → slow)
 

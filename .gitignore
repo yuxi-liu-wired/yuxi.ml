@@ -173,3 +173,6 @@ cython_debug/
 
 /.quarto/
 .Rproj.user
+# pixi environments
+.pixi/*
+!.pixi/config.toml

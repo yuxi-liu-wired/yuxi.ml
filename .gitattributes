@@ -323,3 +323,5 @@ Procfile          text
 
 # Prevents massive diffs from built files
 dist/*            binary
+# SCM syntax highlighting & preventing 3-way merges
+pixi.lock merge=binary linguist-language=YAML linguist-generated=true -diff
