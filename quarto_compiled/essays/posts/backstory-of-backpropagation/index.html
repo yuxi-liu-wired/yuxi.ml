@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -525,163 +541,163 @@ window.Quarto = {
 <p>To set the stage, we should at least quickly derive the backpropagation algorithm. In one sentence, backpropagation is an algorithm that calculates the gradient of every parameter in an acyclic directed graph with respect to a single final parameter.</p>
 <p>The graph can be finite or infinite, but in all cases, its acyclic directedness allows us to assign a “logical time” to each node.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Some nodes are independent variables: they point to other nodes, but no nodes point to <em>them</em>. Other nodes are dependent. If we know the independent variables, we can propagate their values <em>forward</em> in logical time and determine the values of every node. This is the “forward pass”. Backpropagation goes backwards in logical time.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;An existence proof that anything we might care about must have a logical time: Anything that happens, happens in the real world. The real world has a single direction in time. Therefore, any computation that can happen, must have a logical time that is identical with physical time.</p>
-<p>Note that logical time does not have to coincide with physical time. For example, to model goal-directed behavior, it might be better to put the physical future into the logical past.</p></div></div><p>We use the convention of putting derivatives on the rows. So for example, for <span class="math inline">\(f: \mathbb{R}^2\to\mathbb{R}^2\)</span>, we have</p>
-<p><span class="math display">\[
+<p>Note that logical time does not have to coincide with physical time. For example, to model goal-directed behavior, it might be better to put the physical future into the logical past.</p></div></div><p>We use the convention of putting derivatives on the rows. So for example, for <span class="math inline">f: \mathbb{R}^2\to\mathbb{R}^2</span>, we have</p>
+<p><span class="math display">
 \nabla_x f = \frac{df}{dx} = \begin{bmatrix}
 \frac{df_1}{dx_1} &amp; \frac{df_1}{dx_2} \\
 \frac{df_2}{dx_1} &amp; \frac{df_2}{dx_2}
 \end{bmatrix}
-\]</span></p>
+</span></p>
 <p>This convention simplifies a lot of equations, and completely avoids transposing any matrix.</p>
 <section id="discrete-logical-time" class="level3">
 <h3 class="anchored" data-anchor-id="discrete-logical-time">Discrete logical time</h3>
-<p>Consider an acyclic directed graph with a finite number of nodes. Each graph node is a finite-dimensional real vector, though they may have different dimensions. We order the acyclic graph on the number line, so that each node depends only on the earlier nodes. Now denote the graph nodes as <span class="math inline">\(x_0, x_1, \dots, x_T\)</span>. By our ordering, <span class="math inline">\(x_1\)</span> depends on only <span class="math inline">\(x_0\)</span>, and <span class="math inline">\(x_2\)</span> depends on only <span class="math inline">\(x_1, x_2\)</span>, and so on:</p>
-<p><span class="math display">\[
+<p>Consider an acyclic directed graph with a finite number of nodes. Each graph node is a finite-dimensional real vector, though they may have different dimensions. We order the acyclic graph on the number line, so that each node depends only on the earlier nodes. Now denote the graph nodes as <span class="math inline">x_0, x_1, \dots, x_T</span>. By our ordering, <span class="math inline">x_1</span> depends on only <span class="math inline">x_0</span>, and <span class="math inline">x_2</span> depends on only <span class="math inline">x_1, x_2</span>, and so on:</p>
+<p><span class="math display">
 \begin{aligned}
 x_0 &amp;= x_0 \\
 x_1 &amp;= f_1(x_0) \\
 &amp;\cdots \\
 x_T &amp;= f_T(x_0, x_1, \dots , x_{T-1})
 \end{aligned}
-\]</span></p>
-<p>Now we perform an infinitesimal perturbation on every one of its independent variables. A forward propagation then causes an infinitesimal perturbation on every variable, independent or dependent. Denote these as <span class="math inline">\(dx_0, dx_1, \dots, dx_T\)</span>. We can now compute the derivative of <span class="math inline">\(dx_T\)</span> with respect to every other variable by backpropagating the perturbation. Suppose we can see only <span class="math inline">\(dx_T\)</span>, then the change in <span class="math inline">\(x_T\)</span> due to <span class="math inline">\(dx_T\)</span> is the identity. That is,</p>
-<p><span class="math display">\[
+</span></p>
+<p>Now we perform an infinitesimal perturbation on every one of its independent variables. A forward propagation then causes an infinitesimal perturbation on every variable, independent or dependent. Denote these as <span class="math inline">dx_0, dx_1, \dots, dx_T</span>. We can now compute the derivative of <span class="math inline">dx_T</span> with respect to every other variable by backpropagating the perturbation. Suppose we can see only <span class="math inline">dx_T</span>, then the change in <span class="math inline">x_T</span> due to <span class="math inline">dx_T</span> is the identity. That is,</p>
+<p><span class="math display">
 \frac{dx_T}{dx_T} = I
-\]</span></p>
-<p>Now suppose we can see only <span class="math inline">\(dx_{T-1}\)</span>, then the change in <span class="math inline">\(x_T\)</span> due to <span class="math inline">\(dx_{T-1}\)</span> can only come from the final step in the forward propagation. Therefore</p>
-<p><span class="math display">\[
+</span></p>
+<p>Now suppose we can see only <span class="math inline">dx_{T-1}</span>, then the change in <span class="math inline">x_T</span> due to <span class="math inline">dx_{T-1}</span> can only come from the final step in the forward propagation. Therefore</p>
+<p><span class="math display">
 \frac{dx_T}{dx_{T-1}} = \nabla_{x_{T-1}} f_T(x_0, x_1, \dots , x_{T-1})
-\]</span></p>
-<p>Similarly, the change in <span class="math inline">\(x_T\)</span> due to <span class="math inline">\(dx_{T-2}\)</span> can come from either directly changing <span class="math inline">\(x_T\)</span> or from changing <span class="math inline">\(x_{T-1}\)</span> and thereby changing <span class="math inline">\(x_T\)</span>. Therefore,</p>
-<p><span class="math display">\[
+</span></p>
+<p>Similarly, the change in <span class="math inline">x_T</span> due to <span class="math inline">dx_{T-2}</span> can come from either directly changing <span class="math inline">x_T</span> or from changing <span class="math inline">x_{T-1}</span> and thereby changing <span class="math inline">x_T</span>. Therefore,</p>
+<p><span class="math display">
 \frac{dx_T}{dx_{T-2}} =
     \nabla_{x_{T-1}} f_{T}(x_0, x_1, \dots , x_{T-2}) +
     \underbrace{\frac{dx_T}{dx_{T-1}}\nabla_{x_{T-2}} f_{T-1}(x_0, x_1, \dots , x_{T-2})}_{\text{the chain rule}}
-\]</span></p>
+</span></p>
 <p>This generalizes to the rest of the steps.</p>
-<p>The above computation is fully general, but this makes it inefficient. In practical applications of backpropagation, the computation graph is usually very sparse, meaning that each <span class="math inline">\(x_t\)</span> only directly influence a few more nodes down the line. In standard neural networks, typically <span class="math inline">\(x_{t}\)</span> only directly influences <span class="math inline">\(x_{t+1}, x_{t+2}\)</span>. Thus, sparsity is vital for backpropagation to be relevant.</p>
-<p>As a side note, we could in fact compute <em>all</em> derivatives, not just the first, in one single backward pass. Other than the second derivatives <span class="math inline">\(\nabla^2_{x_t}x_T\)</span>, there is rarely any use for the other derivatives, such as <span class="math inline">\(\nabla_{x_t}\nabla_{x_s}x_T, \nabla^3_{x_t}x_T\)</span>, etc. The second derivative was occasionally used for neural networks circa 1990, with the further simplification that they only keep the positive diagonal entries of <span class="math inline">\(\nabla^2_{x_t}x_T\)</span> and set all other entries to zero <span class="citation" data-cites="lecunGeneralizationNetworkDesign1989">(<a href="#ref-lecunGeneralizationNetworkDesign1989" role="doc-biblioref">LeCun 1989</a>)</span>.</p>
+<p>The above computation is fully general, but this makes it inefficient. In practical applications of backpropagation, the computation graph is usually very sparse, meaning that each <span class="math inline">x_t</span> only directly influence a few more nodes down the line. In standard neural networks, typically <span class="math inline">x_{t}</span> only directly influences <span class="math inline">x_{t+1}, x_{t+2}</span>. Thus, sparsity is vital for backpropagation to be relevant.</p>
+<p>As a side note, we could in fact compute <em>all</em> derivatives, not just the first, in one single backward pass. Other than the second derivatives <span class="math inline">\nabla^2_{x_t}x_T</span>, there is rarely any use for the other derivatives, such as <span class="math inline">\nabla_{x_t}\nabla_{x_s}x_T, \nabla^3_{x_t}x_T</span>, etc. The second derivative was occasionally used for neural networks circa 1990, with the further simplification that they only keep the positive diagonal entries of <span class="math inline">\nabla^2_{x_t}x_T</span> and set all other entries to zero <span class="citation" data-cites="lecunGeneralizationNetworkDesign1989">(<a href="#ref-lecunGeneralizationNetworkDesign1989" role="doc-biblioref">LeCun 1989</a>)</span>.</p>
 </section>
 <section id="continuous-logical-time" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="continuous-logical-time">Continuous logical time</h3>
-<p>Consider the problem of controlling a car along a highway. We discard all details, so that the car is just a single dot on a line, and the state of the car is determined by its speed and velocity. To avoid waiting forever, we require time <span class="math inline">\(t\in [0, T]\)</span>. Write the state variable as follows:</p>
-<p><span class="math display">\[
+<p>Consider the problem of controlling a car along a highway. We discard all details, so that the car is just a single dot on a line, and the state of the car is determined by its speed and velocity. To avoid waiting forever, we require time <span class="math inline">t\in [0, T]</span>. Write the state variable as follows:</p>
+<p><span class="math display">
 x_t = (\text{location at time }t, \text{velocity at time }t)
-\]</span></p>
-<p>It might be confusing to use <span class="math inline">\(x_t\)</span> for the state at time <span class="math inline">\(t\)</span>, instead of for location, but it makes the notation consistent.</p>
-<p>Suppose the only thing we can influence is how much we press the pedal. Write <span class="math inline">\(u_t\)</span> to be the resulting acceleration we inflict on the car by pressing on the pedal. Further, assume that the car is slowed down by friction that is proportional to velocity. We then have:</p>
-<p><span class="math display">\[
+</span></p>
+<p>It might be confusing to use <span class="math inline">x_t</span> for the state at time <span class="math inline">t</span>, instead of for location, but it makes the notation consistent.</p>
+<p>Suppose the only thing we can influence is how much we press the pedal. Write <span class="math inline">u_t</span> to be the resulting acceleration we inflict on the car by pressing on the pedal. Further, assume that the car is slowed down by friction that is proportional to velocity. We then have:</p>
+<p><span class="math display">
 \dot x_t = f(x_t, u_t)
-\]</span></p>
-<p>where <span class="math inline">\(f(x_t, u_t) = (x_{t, 1}, -\mu x_{t, 1} + u_t)\)</span> is the dynamics equation of the system, and <span class="math inline">\(\mu\)</span> is the friction coefficient.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;To allow for time-varying dynamics, simply replace <span class="math inline">\(f(x_t, u_t)\)</span> with <span class="math inline">\(f(t, x_t, u_t)\)</span>. This clutters the notation without involving new ideas.</p></div></div><p>Now, we can draw the computation graph as before. The computation graph has a continuum of nodes, but it has a very simple structure. The graph has two kinds of nodes: the <span class="math inline">\(x_t\)</span> nodes and the <span class="math inline">\(u_t\)</span> nodes. Its independent variables are <span class="math inline">\(x_0\)</span> and all the <span class="math inline">\(u_t\)</span> nodes. Each <span class="math inline">\(x_{t+dt}\)</span> depends on only <span class="math inline">\(x_{t}\)</span> and <span class="math inline">\(u_t\)</span>. This makes the two propagations particularly simple.</p>
+</span></p>
+<p>where <span class="math inline">f(x_t, u_t) = (x_{t, 1}, -\mu x_{t, 1} + u_t)</span> is the dynamics equation of the system, and <span class="math inline">\mu</span> is the friction coefficient.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;To allow for time-varying dynamics, simply replace <span class="math inline">f(x_t, u_t)</span> with <span class="math inline">f(t, x_t, u_t)</span>. This clutters the notation without involving new ideas.</p></div></div><p>Now, we can draw the computation graph as before. The computation graph has a continuum of nodes, but it has a very simple structure. The graph has two kinds of nodes: the <span class="math inline">x_t</span> nodes and the <span class="math inline">u_t</span> nodes. Its independent variables are <span class="math inline">x_0</span> and all the <span class="math inline">u_t</span> nodes. Each <span class="math inline">x_{t+dt}</span> depends on only <span class="math inline">x_{t}</span> and <span class="math inline">u_t</span>. This makes the two propagations particularly simple.</p>
 <p>The forward propagation is obtained by integration, which we can unwrap into a form resembling the case of the discrete logical time:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 x_0 &amp;= x_0 \\
 x_{dt} &amp;= x_0 + f(x_0, u_0) dt \\
 &amp;\cdots \\
 x_{T} &amp;= x_{T-dt} + f(x_{T-dt}, u_{T-dt}) dt \\
 \end{aligned}
-\]</span></p>
-<p>The backpropagation is similarly obtained. By inspecting the computation graph, we can see that each <span class="math inline">\(u_t\)</span> only directly influences <span class="math inline">\(x_{t+dt}\)</span>, giving</p>
-<p><span class="math display">\[
+</span></p>
+<p>The backpropagation is similarly obtained. By inspecting the computation graph, we can see that each <span class="math inline">u_t</span> only directly influences <span class="math inline">x_{t+dt}</span>, giving</p>
+<p><span class="math display">
 \frac{dx_T}{du_t} = \frac{dx_T}{dx_{t+dt}} \nabla_{u_t}f(x_t, u_t) dt.
-\]</span></p>
-<p>It remains to compute <span class="math inline">\(\frac{dx_T}{dx_t}\)</span>. This can be found by backpropagation too, since each <span class="math inline">\(x_t\)</span> only directly influences <span class="math inline">\(x_{t+dt}\)</span>, we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>It remains to compute <span class="math inline">\frac{dx_T}{dx_t}</span>. This can be found by backpropagation too, since each <span class="math inline">x_t</span> only directly influences <span class="math inline">x_{t+dt}</span>, we have</p>
+<p><span class="math display">
 \frac{dx_T}{dx_t} = \frac{dx_T}{dx_{t+dt}} \left[I + \nabla_{x_t} f(x_t, u_t) dt\right].
-\]</span></p>
-<p>If we denote the gradient as <span class="math inline">\(g_t := \frac{dx_T}{dx_t}\)</span>, then we find an equation for <span class="math inline">\(g_t\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>If we denote the gradient as <span class="math inline">g_t := \frac{dx_T}{dx_t}</span>, then we find an equation for <span class="math inline">g_t</span>:</p>
+<p><span class="math display">
 g_t = \left[I + (g_t + \dot g_t dt) \nabla_{x_t} f(x_t, u_t) dt\right]\implies \dot g_t = -g_t\nabla_{x_t} f(x_t, u_t)
-\]</span></p>
-<p>This equation bottoms out at the end time, <span class="math inline">\(t=T\)</span>, for which <span class="math inline">\(g_T = \frac{dx_T}{dx_T} = I\)</span>. Thus we have the <a href="https://en.wikipedia.org/wiki/Costate_equation">costate equations</a>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>This equation bottoms out at the end time, <span class="math inline">t=T</span>, for which <span class="math inline">g_T = \frac{dx_T}{dx_T} = I</span>. Thus we have the <a href="https://en.wikipedia.org/wiki/Costate_equation">costate equations</a>:</p>
+<p><span class="math display">
 \begin{cases}
 g_T &amp;= I \\
 \dot g_t &amp;= - g_t \nabla_{x_t} f(x_t, u_t)
 \end{cases}
-\]</span></p>
+</span></p>
 <p>which must, as you can see, be integrated <em>backwards in time</em> – backpropagation again! Indeed, control theory practically compels us to find backpropagation.</p>
 </section>
 <section id="hybrid-logical-time" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="hybrid-logical-time">Hybrid logical time</h3>
 <p>When the computation graph has both nodes with discrete logical times and nodes with continuous logical times, we call such a system as having hybrid logical time.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;The name “hybrid” comes from “<a href="https://en.wikipedia.org/wiki/Hybrid_system">hybrid control theory</a>”, which are systems with both discrete changes, or jumps, and continuous changes, or flow. They appear whenever a digital device is used to control a continuous system, such as a computer piloting an airplane.</p></div></div><p>The idea can be illustrated by the fundamental problem in control theory: how to optimize control? You cannot optimize without optimizing a real number, so we write down the number as <span class="math inline">\(J\)</span>, representing the “cost” of the trajectory. For example, in driving a car, we might want to optimize comfort, time-until-arrival, and fuel cost. We can then write <span class="math inline">\(J\)</span> down as something like</p>
-<p><span class="math display">\[
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;The name “hybrid” comes from “<a href="https://en.wikipedia.org/wiki/Hybrid_system">hybrid control theory</a>”, which are systems with both discrete changes, or jumps, and continuous changes, or flow. They appear whenever a digital device is used to control a continuous system, such as a computer piloting an airplane.</p></div></div><p>The idea can be illustrated by the fundamental problem in control theory: how to optimize control? You cannot optimize without optimizing a real number, so we write down the number as <span class="math inline">J</span>, representing the “cost” of the trajectory. For example, in driving a car, we might want to optimize comfort, time-until-arrival, and fuel cost. We can then write <span class="math inline">J</span> down as something like</p>
+<p><span class="math display">
 J = \underbrace{(x_{T, 0} - x_{goal})^2}_{\text{location should be at the goal location at the end time}}
     + \underbrace{(x_{T, 1} - 0)^2}_{\text{speed should be zero at the end time}} + \int_0^T u_t^2 dt
-\]</span></p>
+</span></p>
 <p>More generally, the objective to be optimized is in the form</p>
-<p><span class="math display">\[
+<p><span class="math display">
 J = A(x_T) + \int_0^T L(x_t, u_t)dt
-\]</span></p>
-<p>for some real-valued functions <span class="math inline">\(A, L\)</span>.</p>
-<p>Of course, we can care about more than the state at the last time-step. We can care about multiple time-steps <span class="math inline">\(t_0, t_1, \dots, t_n\)</span> by writing down a cost function <span class="math inline">\(J = \sum_{i=0}^n A_i(x_{t_i}) + \int_0^T L(x_T, u_T)dt\)</span>, but this merely creates complications without introducing new ideas. Even more ornate computation graphs, weaving together multiple strands of continuous and discrete logical times, can be backpropagated in the same way without involving new ideas.</p>
-<p>Define the costate <span class="math inline">\(\lambda_t := \nabla_{x_t} J\)</span>, then the costate backpropagates as:</p>
-<p><span class="math display">\[
+</span></p>
+<p>for some real-valued functions <span class="math inline">A, L</span>.</p>
+<p>Of course, we can care about more than the state at the last time-step. We can care about multiple time-steps <span class="math inline">t_0, t_1, \dots, t_n</span> by writing down a cost function <span class="math inline">J = \sum_{i=0}^n A_i(x_{t_i}) + \int_0^T L(x_T, u_T)dt</span>, but this merely creates complications without introducing new ideas. Even more ornate computation graphs, weaving together multiple strands of continuous and discrete logical times, can be backpropagated in the same way without involving new ideas.</p>
+<p>Define the costate <span class="math inline">\lambda_t := \nabla_{x_t} J</span>, then the costate backpropagates as:</p>
+<p><span class="math display">
 \lambda_t = L(x_t, u_t) dt + \lambda_{t+dt}(I + \nabla_{x_t}f(x_t, u_t)dt)
-\]</span></p>
+</span></p>
 <p>and by simplifying, we have the costate equation:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{cases}
 \lambda_T &amp;= \nabla_{x_T} A(x_T) \\
 \dot \lambda_t &amp;= - \nabla_{x_t} L(x_t, u_t) - \lambda_t \nabla_{x_t} f(x_t, u_t)
 \end{cases}
-\]</span></p>
+</span></p>
 <p>which can be solved by integrating backward in time.</p>
-<p>Once we have obtained all the costates, we can compute <span class="math inline">\(\nabla_{u_t} J\)</span>. Since <span class="math inline">\(u_t\)</span> can only influence <span class="math inline">\(J\)</span> either directly via <span class="math inline">\(L(x_t, u_t)\)</span> or indirectly via <span class="math inline">\(x_t\)</span>, we have</p>
-<p><span class="math display">\[
+<p>Once we have obtained all the costates, we can compute <span class="math inline">\nabla_{u_t} J</span>. Since <span class="math inline">u_t</span> can only influence <span class="math inline">J</span> either directly via <span class="math inline">L(x_t, u_t)</span> or indirectly via <span class="math inline">x_t</span>, we have</p>
+<p><span class="math display">
 \nabla_{u_t} J = \left[\nabla_{u_t}f(x_t, u_t) \lambda_t + \nabla_{u_t}L(x_t, u_t)\right]dt
-\]</span></p>
-<p>Note that <span class="math inline">\(\nabla_{u_t} J\)</span> is an infinitesimal in <span class="math inline">\(dt\)</span>. This is qualitatively different from <span class="math inline">\(\nabla_{x_t}J = g_t\)</span>, which is not an infinitesimal, but a mere matrix. Why is it so? The simplest example suffices to illustrate.</p>
-<p>Consider a mass point sliding on a frictionless plane. When we perturb <span class="math inline">\(x_t\)</span>, we push it to the side by <span class="math inline">\(\delta x_{t, 0}\)</span> and also change its velocity by <span class="math inline">\(\delta x_{t, 1}\)</span>, and so at the end time <span class="math inline">\(T\)</span>, we would have changed <span class="math inline">\(x_T\)</span> by <span class="math inline">\((\delta x_{t, 0} + (T-t)\delta x_{t, 1}, \delta x_{t, 1})\)</span>, which is the same order of infinitesimal. Now, we can control the mass point by applying a force <span class="math inline">\(u_t\)</span>, which gives us the dynamics equation</p>
-<p><span class="math display">\[
+</span></p>
+<p>Note that <span class="math inline">\nabla_{u_t} J</span> is an infinitesimal in <span class="math inline">dt</span>. This is qualitatively different from <span class="math inline">\nabla_{x_t}J = g_t</span>, which is not an infinitesimal, but a mere matrix. Why is it so? The simplest example suffices to illustrate.</p>
+<p>Consider a mass point sliding on a frictionless plane. When we perturb <span class="math inline">x_t</span>, we push it to the side by <span class="math inline">\delta x_{t, 0}</span> and also change its velocity by <span class="math inline">\delta x_{t, 1}</span>, and so at the end time <span class="math inline">T</span>, we would have changed <span class="math inline">x_T</span> by <span class="math inline">(\delta x_{t, 0} + (T-t)\delta x_{t, 1}, \delta x_{t, 1})</span>, which is the same order of infinitesimal. Now, we can control the mass point by applying a force <span class="math inline">u_t</span>, which gives us the dynamics equation</p>
+<p><span class="math display">
 \dot x_t = (x_{t, 1}, u_t)
-\]</span></p>
-<p>To “perturb” <span class="math inline">\(u_t\)</span> by <span class="math inline">\(\delta u_t\)</span> does not make sense on its own, as a “spike” of <span class="math inline">\(\delta u_t\)</span> that lasts for zero amount of time does not show up in the system trajectory. One can apply a durationless jump in state, but one cannot apply a durationless force. Therefore, it only makes sense to perturb <span class="math inline">\(u_t\)</span> by <span class="math inline">\(\delta u_t\)</span> and persist the perturbation for <span class="math inline">\(dt\)</span> time. This perturbs the state at the end time by <span class="math inline">\(((T-t)\delta u_t dt , \delta u_t dt)\)</span>, which means that <span class="math inline">\(\nabla_{u_t}x_T\)</span> is proportional to <span class="math inline">\(dt\)</span>.</p>
+</span></p>
+<p>To “perturb” <span class="math inline">u_t</span> by <span class="math inline">\delta u_t</span> does not make sense on its own, as a “spike” of <span class="math inline">\delta u_t</span> that lasts for zero amount of time does not show up in the system trajectory. One can apply a durationless jump in state, but one cannot apply a durationless force. Therefore, it only makes sense to perturb <span class="math inline">u_t</span> by <span class="math inline">\delta u_t</span> and persist the perturbation for <span class="math inline">dt</span> time. This perturbs the state at the end time by <span class="math inline">((T-t)\delta u_t dt , \delta u_t dt)</span>, which means that <span class="math inline">\nabla_{u_t}x_T</span> is proportional to <span class="math inline">dt</span>.</p>
 </section>
 <section id="optimal-control-theory" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="optimal-control-theory">Optimal control theory</h3>
-<p>An optimal trajectory must have <span class="math inline">\(\nabla_{u_t} J = 0\)</span>, since otherwise, we could shave off a little piece of cost by giving <span class="math inline">\(u_t\)</span> a little boost in the opposite direction (infinitesimal gradient descent!). This gives us two equations that any optimal trajectory must satisfy</p>
-<p><span class="math display">\[
+<p>An optimal trajectory must have <span class="math inline">\nabla_{u_t} J = 0</span>, since otherwise, we could shave off a little piece of cost by giving <span class="math inline">u_t</span> a little boost in the opposite direction (infinitesimal gradient descent!). This gives us two equations that any optimal trajectory must satisfy</p>
+<p><span class="math display">
 \begin{cases}
 - \dot \lambda_t &amp;= \nabla_{x_t} L(x_t, u_t) + \lambda_t \nabla_{x_t} f(x_t, u_t) \\
 0                &amp;= \nabla_{u_t} L(x_t, u_t) + \lambda_t \nabla_{u_t} f(x_t, u_t) \\
 \end{cases}
-\]</span></p>
-<p>Now, what is the effect of perturbing <span class="math inline">\(u_t\)</span> by <span class="math inline">\(du_t\)</span>? It would perturb <span class="math inline">\(x_{t+dt}\)</span> by <span class="math inline">\(\nabla_{u_t} f(x_t, u_t) du_t dt\)</span>, a second-order infinitesimal. Consequently, it would perturb <span class="math inline">\(x_T\)</span> by only a second-order infinitesimal, and thus <span class="math inline">\(\lambda\)</span> too. Therefore, we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>Now, what is the effect of perturbing <span class="math inline">u_t</span> by <span class="math inline">du_t</span>? It would perturb <span class="math inline">x_{t+dt}</span> by <span class="math inline">\nabla_{u_t} f(x_t, u_t) du_t dt</span>, a second-order infinitesimal. Consequently, it would perturb <span class="math inline">x_T</span> by only a second-order infinitesimal, and thus <span class="math inline">\lambda</span> too. Therefore, we have</p>
+<p><span class="math display">
 \nabla_{u_t}\lambda_t = 0
-\]</span></p>
+</span></p>
 <p>giving us simplified equations for optimality:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{cases}
 - \dot \lambda_t &amp;= \nabla_{x_t} L(x_t, u_t) + \lambda_t \nabla_{x_t} f(x_t, u_t) \\
 0                &amp;= \nabla_{u_t} (L(x_t, u_t) + \lambda_t f(x_t, u_t)) \\
 \end{cases}
-\]</span></p>
-<p>Unfortunately, we cannot simplify the first equation similarly because <span class="math inline">\(\nabla_{x_t}\lambda_t \neq 0\)</span>. Still, it seems <span class="math inline">\(L(x_t, u_t) + \lambda_t f(x_t, u_t)\)</span> should be an important quantity:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Unfortunately, we cannot simplify the first equation similarly because <span class="math inline">\nabla_{x_t}\lambda_t \neq 0</span>. Still, it seems <span class="math inline">L(x_t, u_t) + \lambda_t f(x_t, u_t)</span> should be an important quantity:</p>
+<p><span class="math display">
 H(x_t, u_t, \lambda_t) := L(x_t, u_t) + \lambda_t f(x_t, u_t)
-\]</span></p>
-<p>The letters are meaningful. <span class="math inline">\(L\)</span> is the “Lagrangian”, and <span class="math inline">\(H\)</span> is the “Hamiltonian”. Indeed, classical Hamiltonian mechanics is a special case of optimal<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> control theory.</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;To be completely precise, it is a necessary but insufficient condition for optimality. Just like how a function can have zero derivatives on the peaks, valleys and shoulders, a trajectory can have zero functional derivative, even if it is the best, the worst, and the … shouldered? In jargon, we say that those conditions are <strong>first order optimality conditions</strong>, since they use only the derivative, not the second-derivative.</p></div></div><p>If we interpret economically the quantities, then <span class="math inline">\(J\)</span> is the cost of the entire trajectory, <span class="math inline">\(\lambda_t\)</span> is the marginal cost of the point <span class="math inline">\(x_t\)</span> in the trajectory, and <span class="math inline">\(L(x_t, u_t)\)</span> is the cost-rate at time <span class="math inline">\(t\)</span>. The second equation of optimality <span class="math inline">\(\nabla_{u_t} H(x_t, u_t, \lambda_t) = 0\)</span> states that when the trajectory is optimal, the marginal cost of control is zero: there is no saving in perturbing the control in any direction.</p>
+</span></p>
+<p>The letters are meaningful. <span class="math inline">L</span> is the “Lagrangian”, and <span class="math inline">H</span> is the “Hamiltonian”. Indeed, classical Hamiltonian mechanics is a special case of optimal<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> control theory.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;To be completely precise, it is a necessary but insufficient condition for optimality. Just like how a function can have zero derivatives on the peaks, valleys and shoulders, a trajectory can have zero functional derivative, even if it is the best, the worst, and the … shouldered? In jargon, we say that those conditions are <strong>first order optimality conditions</strong>, since they use only the derivative, not the second-derivative.</p></div></div><p>If we interpret economically the quantities, then <span class="math inline">J</span> is the cost of the entire trajectory, <span class="math inline">\lambda_t</span> is the marginal cost of the point <span class="math inline">x_t</span> in the trajectory, and <span class="math inline">L(x_t, u_t)</span> is the cost-rate at time <span class="math inline">t</span>. The second equation of optimality <span class="math inline">\nabla_{u_t} H(x_t, u_t, \lambda_t) = 0</span> states that when the trajectory is optimal, the marginal cost of control is zero: there is no saving in perturbing the control in any direction.</p>
 <p>Therefore, define the “optimized” Hamiltonian and the optimized control relative to it:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{cases}
 H^*(x_t, \lambda_t) &amp;:= \min_{u_t}H(x_t, u_t, \lambda_t) = \min_{u_t} \left(L(x_t, u_t) + \lambda_t f(x_t, u_t)\right) \\
 u^*(x_t, \lambda_t) &amp;:= \mathop{\mathrm{argmin}}_{u_t}H(x_t, u_t, \lambda_t)
 \end{cases}
-\]</span></p>
+</span></p>
 <p>Then, by <a href="https://en.wikipedia.org/wiki/Hotelling%27s_lemma">Hotelling’s lemma</a>, we derive the <a href="https://en.wikipedia.org/wiki/Hamiltonian_mechanics">Hamiltonian equations of motion</a>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{cases}
 - \dot \lambda_t &amp;= \nabla_{x_t} L(x_t, u_t^*) + \lambda_t \nabla_{x_t} f(x_t, u_t^*) &amp;= \nabla_{x_t} H^*(x_t, \lambda_t) \\
   \dot x_t       &amp;= f(x_t, u_t^*)                                                     &amp;= \nabla_{\lambda_t} H^*(x_t, \lambda_t) \\
 \end{cases}
-\]</span></p>
+</span></p>
 <p>This is often called the <a href="https://en.wikipedia.org/wiki/Pontryagin%27s_maximum_principle">Pontryagin’s maximum principle</a>, as Pontryagin’s school of optimal control theory is based on this principle and its extensions. Control theory was a national security issue during the Cold War, as it was used from the <a href="https://en.wikipedia.org/wiki/Space_Race">space race</a> to the <a href="https://en.wikipedia.org/wiki/Nuclear_arms_race">missile race</a>.</p>
 <p>In classical control theory, the equation is sometimes solved in closed form, as in the case of <a href="https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator">linear quadratic control</a>. When it cannot be solved in closed form, it can still be numerically solved using a continuous form of the Bellman equation. Similar to how the Hamiltonian equations have the alternative form of the <a href="https://en.wikipedia.org/wiki/Hamilton-Jacobi_equation">Hamilton–Jacobi equation</a>, the Pontryagin equations have an alternative form in the <a href="https://en.wikipedia.org/wiki/Hamilton-Jacobi_equation">Hamilton–Jacobi–Bellman equation</a>. Possibly, the name “dynamic programming” appears later in Paul Werbos’ invention of backpropagation, which he named “dynamic feedback”.</p>
 <p>In economics, one can modify this framework slightly to allow discounting cost over time, yielding theories about “optimal investment” such as the <a href="https://en.wikipedia.org/wiki/Ramsey%E2%80%93Cass%E2%80%93Koopmans_model">Ramsey optimal growth theory</a>.</p>
@@ -691,18 +707,18 @@ u^*(x_t, \lambda_t) &amp;:= \mathop{\mathrm{argmin}}_{u_t}H(x_t, u_t, \lambda_t)
 <h2 class="anchored" data-anchor-id="leibniz">Leibniz</h2>
 <p>The chain rule dates back to <em>Calculus Tangentium differentialis</em> [Differential calculus of tangents], a manuscript by Leibniz dated 1676 November <span class="citation" data-cites="childManuscriptsLeibnizHis1917">(<a href="#ref-childManuscriptsLeibnizHis1917" role="doc-biblioref">Child 1917</a>)</span>. It says</p>
 <blockquote class="blockquote">
-<p>it does not matter, whether or no the letters <span class="math inline">\(x, y, z\)</span> have any known relation, for this can be substituted afterward.</p>
+<p>it does not matter, whether or no the letters <span class="math inline">x, y, z</span> have any known relation, for this can be substituted afterward.</p>
 </blockquote>
-<p>In mathematical notation, he found that <span class="math inline">\(dy = dx \frac{dy}{dx}\)</span>, or in his notation, <span class="math inline">\(\overline{dy} = \overline{dx} \frac{dy}{dx}\)</span>, where the overbar denotes the thing to be differentiated. You can read it as a bracket: <span class="math inline">\(d(y) = d(x) \frac{dy}{dx}\)</span>.</p>
+<p>In mathematical notation, he found that <span class="math inline">dy = dx \frac{dy}{dx}</span>, or in his notation, <span class="math inline">\overline{dy} = \overline{dx} \frac{dy}{dx}</span>, where the overbar denotes the thing to be differentiated. You can read it as a bracket: <span class="math inline">d(y) = d(x) \frac{dy}{dx}</span>.</p>
 <p>He then gave the following examples<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Yes, there is a sign error. No, I’m not going to fix it. He just has to live with his mistakes.</p></div></div><p><span class="math display">\[
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Yes, there is a sign error. No, I’m not going to fix it. He just has to live with his mistakes.</p></div></div><p><span class="math display">
 \begin{aligned}
 &amp; \overline{d \sqrt[2]{a+b z+c z^2}} \text {. Let } a+b z+c z^2=x \text {; } \\
 \text{Then} \quad  &amp; \overline{d \sqrt[2]{x}}=-\frac{1}{2 \sqrt{x}} \text {, and } \frac{d x}{d z}=b+2 c z \text {; } \\
 \text{Therefore} \quad  &amp; \overline{d \sqrt{a+b z+c z^2}}=-\frac{b+2 c z}{2 \overline{d z} \sqrt{a+b z+c z^2}} \\
 &amp;
 \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="mcculloch-and-pitts" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="mcculloch-and-pitts">McCulloch and Pitts</h2>
@@ -730,12 +746,12 @@ u^*(x_t, \lambda_t) &amp;:= \mathop{\mathrm{argmin}}_{u_t}H(x_t, u_t, \lambda_t)
 <section id="frank-rosenblatt" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="frank-rosenblatt">Frank Rosenblatt</h2>
 <p>Frank Rosenblatt is the originator of the term “backpropagation”, or more precisely, “back-propagating error-correction procedure” <span class="citation" data-cites="rosenblattPrinciplesNeurodynamicsPerceptrons1962">(<a href="#ref-rosenblattPrinciplesNeurodynamicsPerceptrons1962" role="doc-biblioref">Rosenblatt 1962, vol. 55, chap. 13</a>)</span>, although it was quite far from our current use of backpropagation. He is the originator of many concepts in neural networks, and he was even popularly famous during his own time. During 1957–1962, he did a lot of the theory and experiments with perceptron networks. Some experiments ran on digital computer simulations, and others on the Mark I Perceptron, a bespoke machine that takes up a whole room.</p>
-<p>A perceptron is a function of the form <span class="math inline">\(\theta(w^T x + b)\)</span>, where <span class="math inline">\(\theta\)</span> is the 0-1 step function, and <span class="math inline">\(w \in \mathbb{R}^n, b \in \mathbb{R}\)</span> are its learnable parameters. A perceptron network is a network of perceptrons. Rosenblatt experimented with a large number of perceptron network architectures, but most often, he experimented with a certain 2-layered feedforward architecture, which is sometimes called “<em>the</em> perceptron machine”.</p>
-<p><em>The</em> perceptron machine is a machine that computes a function of type <span class="math inline">\(\{0, 1\}^n \to \{0, 1\}\)</span>. Its input layer is composed of units named “Stimulus units” or “S units”. The S units do not perform any computation, but merely pass binary outputs to the hidden layer. In the Mark I perceptron, the S units were 20×20 cadmium sulfide photocells, making a 400-pixel image. The hidden layer is composed of perceptrons named “Association units” or “A units”. Their outputs pass on to the output layer, composed of perceptrons named “Response units” or “R units”.</p>
+<p>A perceptron is a function of the form <span class="math inline">\theta(w^T x + b)</span>, where <span class="math inline">\theta</span> is the 0-1 step function, and <span class="math inline">w \in \mathbb{R}^n, b \in \mathbb{R}</span> are its learnable parameters. A perceptron network is a network of perceptrons. Rosenblatt experimented with a large number of perceptron network architectures, but most often, he experimented with a certain 2-layered feedforward architecture, which is sometimes called “<em>the</em> perceptron machine”.</p>
+<p><em>The</em> perceptron machine is a machine that computes a function of type <span class="math inline">\{0, 1\}^n \to \{0, 1\}</span>. Its input layer is composed of units named “Stimulus units” or “S units”. The S units do not perform any computation, but merely pass binary outputs to the hidden layer. In the Mark I perceptron, the S units were 20×20 cadmium sulfide photocells, making a 400-pixel image. The hidden layer is composed of perceptrons named “Association units” or “A units”. Their outputs pass on to the output layer, composed of perceptrons named “Response units” or “R units”.</p>
 <p>We can describe <em>the</em> perceptron machine in one equation:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f(x) = \theta\left(b^{R} + \sum_i w^{AR}_i \theta\left((w^{SA, i})^T x + b^{A}_i\right)\right)
-\]</span></p>
+</span></p>
 <p>Rosenblatt proved some mathematical theorems, the most important of which is the <a href="https://en.wikipedia.org/wiki/Perceptron#Learning_algorithm_for_a_single-layer_perceptron">perceptron convergence theorem</a>, which shows that assuming the dataset is linearly separable, then the perceptron learning algorithm converges after making a bounded number of errors<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. He also performed experiments on the Mark I Perceptron machine, IBM computers, and some other computers.</p>
 <div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;There is another technical assumption on the dataset, but it is omitted for space. Suffice to say it is satisfied for all finite datasets.</p></div></div><p>His theorems and experiments were exhaustively documented in his book <span class="citation" data-cites="rosenblattPrinciplesNeurodynamicsPerceptrons1962">(<a href="#ref-rosenblattPrinciplesNeurodynamicsPerceptrons1962" role="doc-biblioref">Rosenblatt 1962</a>)</span>. Its breadth is quite astonishing. It contains:</p>
 <ul>
@@ -772,15 +788,15 @@ f(x) = \theta\left(b^{R} + \sum_i w^{AR}_i \theta\left((w^{SA, i})^T x + b^{A}_i
 <section id="bernard-widrow-and-marcian-hoff" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="bernard-widrow-and-marcian-hoff">Bernard Widrow and Marcian Hoff</h2>
 <p>Widrow and Hoff worked on neural networks in the early 1960s. They started with training a single perceptron with gradient descent on the squared loss, then proceeded to spend years trying to train a two-layered network <em>without</em> gradient descent. I know – I cannot make this sound any less puzzling.</p>
-<p>The Widrow–Hoff machine, which they called the ADALINE (“ADAptive Linear NEuron”), is a function of type <span class="math inline">\(\mathbb{R}^n \to \{0,1\}\)</span> defined by</p>
-<p><span class="math display">\[
+<p>The Widrow–Hoff machine, which they called the ADALINE (“ADAptive Linear NEuron”), is a function of type <span class="math inline">\mathbb{R}^n \to \{0,1\}</span> defined by</p>
+<p><span class="math display">
 f(x) = \theta(w^T x + b)
-\]</span></p>
-<p>and here it is again, that dreaded Heaviside step-function that was the bane of every neural network before backpropagation. What was odd about this one is that ADALINE was <em>trained</em> by gradient descent with the squared loss function <span class="math inline">\(\frac 12 (w^T x + b - y)^2\)</span>, which is <em>continuous</em>, not discrete:</p>
-<p><span class="math display">\[
+</span></p>
+<p>and here it is again, that dreaded Heaviside step-function that was the bane of every neural network before backpropagation. What was odd about this one is that ADALINE was <em>trained</em> by gradient descent with the squared loss function <span class="math inline">\frac 12 (w^T x + b - y)^2</span>, which is <em>continuous</em>, not discrete:</p>
+<p><span class="math display">
 w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x + b - y) b
-\]</span></p>
-<p>The first ADALINE machine was a box that learned to classify binary patterns on a <span class="math inline">\(4 \times 4\)</span> grid. It was pretty amusing, as everything was done manually. The patterns were inputted by flipping 16 switches by hand. The error <span class="math inline">\(w^T x + b - y\)</span> was read from a voltmeter, and the parameters <span class="math inline">\(w, b\)</span> were individually adjusted by turning knobs controlling rheostats inside the box. They then automated the knob-turning process using electrochemical devices called memistors, though the pattern input <span class="math inline">\(x\)</span> and the desired output <span class="math inline">\(y\)</span> were still entered by manual switches.</p>
+</span></p>
+<p>The first ADALINE machine was a box that learned to classify binary patterns on a <span class="math inline">4 \times 4</span> grid. It was pretty amusing, as everything was done manually. The patterns were inputted by flipping 16 switches by hand. The error <span class="math inline">w^T x + b - y</span> was read from a voltmeter, and the parameters <span class="math inline">w, b</span> were individually adjusted by turning knobs controlling rheostats inside the box. They then automated the knob-turning process using electrochemical devices called memistors, though the pattern input <span class="math inline">x</span> and the desired output <span class="math inline">y</span> were still entered by manual switches.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/ADALINE.png" class="img-fluid figure-img" style="width:80.0%"></p>
@@ -811,7 +827,7 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 <p>They’re in the Adaline. In the perceptron, they’re all gone. I don’t know whether the machine was temperamental or what, but it was difficult to train. I argued with Rosenblatt about that first random layer. I said, “You’d be so much better off if you just took the signal from the pixels and ran them straight into the weights of the second layer.” He insisted that a perceptron had to be built this way because the human retina is built that way. That is, there’s a first layer that’s randomly connected to the retina. He said the reason why you can get something to interpret and make sense of random connections is because it’s adaptive. You can unravel all this random scrambling. What I was trying to do was to not model nature. I was trying to do some engineering.</p>
 </blockquote>
 <p>After the ADALINE showed good behavior, they went on and on trying to train a two-layered ADALINE (“MADALINE”, or “many ADALINE”), which of course could not be trained by gradient descent, because the hidden layer ADALINE units used the Heaviside step function! It is almost inconceivable nowadays, but they simply refused to use a continuous activation function and tried every other trick <em>except</em> that. They ended up with the <a href="https://en.wikipedia.org/wiki/ADALINE#MADALINE">MADALINE I rule</a>. In short, it was a heuristic rule for synthesizing supervision signals for the hidden layer, much like <a href="#frank-rosenblatt">Rosenblatt’s heuristic rule</a>.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;The MADALINE I machine consists of multiple hidden ADALINE units, and a single output layer consisting of a single unit. The output unit merely takes the majority vote from the hidden units. If the desired output is <span class="math inline">\(+1\)</span>, but the actual output is <span class="math inline">\(-1\)</span>, then the machine picks those ADALINE units that are negative, but closest to being positive, and make them update their weights, according to the ADALINE learning rule. It was thought of as a form of “minimal disturbance principle”.</p></div><div id="fn8"><p><sup>8</sup>&nbsp;Marvin Minsky would approve.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;The MADALINE I machine consists of multiple hidden ADALINE units, and a single output layer consisting of a single unit. The output unit merely takes the majority vote from the hidden units. If the desired output is <span class="math inline">+1</span>, but the actual output is <span class="math inline">-1</span>, then the machine picks those ADALINE units that are negative, but closest to being positive, and make them update their weights, according to the ADALINE learning rule. It was thought of as a form of “minimal disturbance principle”.</p></div><div id="fn8"><p><sup>8</sup>&nbsp;Marvin Minsky would approve.</p>
 <blockquote class="blockquote">
 <p>“[The perceptron] is such a simple machine that it would be astonishing if nature did not make use of it somewhere. It may be that one of the best things a neuron can have is a tiny Perceptron, since you get so much from it for so little. You can’t get one big Perceptron to do very much, but for some things it remains one of the most elegant and simple learning devices I know of.”<span class="citation" data-cites="bernsteinMarvinMinskysVision1981">(<a href="#ref-bernsteinMarvinMinskysVision1981" role="doc-biblioref">Bernstein 1981</a>)</span></p>
 </blockquote>
@@ -848,16 +864,16 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 <blockquote class="blockquote">
 <p>I’d read <em>Perceptrons</em>. And I thought, ’Well , somehow we have to figure out how to teach, how to train, a network that has more than one layer. Why can’t we do this?” … I knew about, as I say, the work of Rosenblatt and about the way he tried to do it. He had this idea of sending error signals back across layers, but he didn’t have a very principled way of doing it.</p>
 </blockquote>
-<p>Rumelhart knew that Bernard Widrow’s ADALINE essentially performs a linear regression <span class="math inline">\(Wx + b\)</span>, trained by the ADALINE learning rule, also called the “<a href="https://en.wikipedia.org/wiki/Delta_rule">delta rule</a>”:</p>
-<p><span class="math display">\[
+<p>Rumelhart knew that Bernard Widrow’s ADALINE essentially performs a linear regression <span class="math inline">Wx + b</span>, trained by the ADALINE learning rule, also called the “<a href="https://en.wikipedia.org/wiki/Delta_rule">delta rule</a>”:</p>
+<p><span class="math display">
 \Delta W = -\eta(Wxx^T + (b-y)x^T), \quad \Delta b = -\eta(b + Wx - y)
-\]</span></p>
+</span></p>
 <p>So he thought, how do I extend this to a “generalized delta rule”?</p>
 <blockquote class="blockquote">
 <p>So what we thought was we’d pretend they were linear, and we would compute the derivatives as if they were linear, and then we could train them. We did this on a one-layer system. That was what we called delta learning… “Well, we’ll just pretend like it’s linear, and figure out how to train it as if it were linear, and then we’ll put in these sigmoids. In that way, we can make a system that would work.”</p>
 </blockquote>
 <p>So he thought, well, if the activation functions are linear functions, then we just get a deep linear network, so we can still do the delta rule. If the activation functions are nonlinear, but differentiable, then we can approximate these by linear activations… and that should be a working, generalized delta rule!</p>
-<p>Thus, by a long and almost accidental route, Rumelhart arrived at the gradient descent algorithm without thinking about gradients. In hindsight, the ADALINE learning rule is really a special case of gradient descent on the loss function <span class="math inline">\(L = \frac 12 \|Wx + b - y\|^2\)</span>, but people back then didn’t think of it that way. They just thought of it as a not particularly efficient way to solve the linear equation <span class="math inline">\(y \approx Wx + b\)</span>. Of course, once he had discovered the generalized delta rule, he recognized it is really just gradient descent on L2 loss. Once you have figured out the result, you often become embarrassed by the pages upon pages of wasteful calculations you used to get there. A very relatable moment!</p>
+<p>Thus, by a long and almost accidental route, Rumelhart arrived at the gradient descent algorithm without thinking about gradients. In hindsight, the ADALINE learning rule is really a special case of gradient descent on the loss function <span class="math inline">L = \frac 12 \|Wx + b - y\|^2</span>, but people back then didn’t think of it that way. They just thought of it as a not particularly efficient way to solve the linear equation <span class="math inline">y \approx Wx + b</span>. Of course, once he had discovered the generalized delta rule, he recognized it is really just gradient descent on L2 loss. Once you have figured out the result, you often become embarrassed by the pages upon pages of wasteful calculations you used to get there. A very relatable moment!</p>
 <p>Backpropagation was rediscovered in 1982. The world would soon know it, and this time, it would not forget.</p>
 <p>It was not all smooth-sailing though. Backpropagation was terribly slow, taking over 1000 steps to converge, and Hinton believed it would get stuck in local minima. Indeed, these two objections, that backpropagation is slow, and gets stuck in local minima, are perennial objections, as we would see in the <a href="https://yuxi.ml/TODO">history of the second neural network winter</a>.</p>
 <p>Somewhat disappointed by the two objections, Rumelhart tried other methods, such as <a href="https://en.wikipedia.org/wiki/Competitive_learning">competitive learning</a>. Hinton left the book project to focus on his beloved Boltzmann machines, and would not return until 1985.</p>
@@ -931,7 +947,7 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/Hinton 8-3-8 task.svg" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">The 8-3-8 autoencoder. The input is a one-hot encoding of one integer from <span class="math inline">\((0:7)\)</span>, and the output should be a copy of the input. The middle layer has 3 units, which is sufficient for binary encoding. Hinton found the Boltzmann machine learned exactly this, and expected backpropagation to learn the same thing, but was surprised when it did not. In the picture, the input is a one-hot vector of the integer <code>3</code>, and the hidden layer encodes it as a binary <code>011</code>, which is then decoded to a one-hot vector of <code>3</code> again.</figcaption>
+<figcaption class="margin-caption">The 8-3-8 autoencoder. The input is a one-hot encoding of one integer from <span class="math inline">(0:7)</span>, and the output should be a copy of the input. The middle layer has 3 units, which is sufficient for binary encoding. Hinton found the Boltzmann machine learned exactly this, and expected backpropagation to learn the same thing, but was surprised when it did not. In the picture, the input is a one-hot vector of the integer <code>3</code>, and the hidden layer encodes it as a binary <code>011</code>, which is then decoded to a one-hot vector of <code>3</code> again.</figcaption>
 </figure>
 </div>
 <p>And so one year of excuses later, Hinton finally surrendered to backpropagation. They published the algorithm along with several examples, which became widely cited.</p>
@@ -956,7 +972,7 @@ w \leftarrow w - \alpha (w^T x + b - y) w, \quad b \leftarrow b - \alpha (w^T x 
 </blockquote>
 <p>For his masters (1969), he majored in mathematical physics, and minored in decision and control. During his PhD at Harvard, he had to take some compulsory courses, which he didn’t want to. To salvage the situation, he took computer courses which would provide him with some computer hours, a scarce resource at the time. I would guess the following event happened early 1971.</p>
 <blockquote class="blockquote">
-<p>Initially, I was going to do something on quantum physics. I learned something about partial differential equations, but not enough. I couldn’t produce a really useful product at the end of <span class="math inline">\(x\)</span> number of months.</p>
+<p>Initially, I was going to do something on quantum physics. I learned something about partial differential equations, but not enough. I couldn’t produce a really useful product at the end of <span class="math inline">x</span> number of months.</p>
 <p>So I went back to the committee, and I said, “Gee, I can’t do that, <strong>but I have this little method for adapting multilayer perceptrons. It’s really pretty trivial.</strong> It’s just a by-product of this model of intelligence I developed. And I’d like to do it for my paper for this computer course.”</p>
 <p>[Larry] Ho’s position was, “I understand you had this idea, and we were kind of open-minded. But look, at this point, you’ve worked in this course for three months, admittedly on something else. I’m sorry, you’re just going to have to take an incomplete in the course.”</p>
 <p>And I said, “You mean I can’t do it?”</p>
@@ -1049,10 +1065,10 @@ Figure&nbsp;1: Rosenblith images.
 </blockquote>
 <p>The brief description of the unpublished jitters machine was not making sense to me, so I looked around the literature. It was <em>so</em> unpublished that I found only two other references in the entire literature <span class="citation" data-cites="werbosApplicationsAdvancesNonlinear1982 werbosBuildingUnderstandingAdaptive1987">(<a href="#ref-werbosApplicationsAdvancesNonlinear1982" role="doc-biblioref">Werbos 1982</a>, <a href="#ref-werbosBuildingUnderstandingAdaptive1987" role="doc-biblioref">1987</a>)</span>, both by Werbos. According to him,</p>
 <blockquote class="blockquote">
-<p>There are also some technical reasons to expect better results with the new approach. Almost all of the old perceptron work was based on the McCulloch–Pitts model of the neuron, which was both discontinuous and non-differentiable. It was felt, in the 1950’s, that the output of a brain cell had to be 1 or 0, because the output consisted of sharp discrete “spikes.” More recent work in neurology has shown that higher brain cells output “bursts” or “volleys” of spikes, and that the strength of a volley may vary continuously in intensity. This suggests the CLU model to be discussed in the Appendix. In any event, to exploit basic numerical methods, one must use differentiable processing units. Minsky once experimented with a “jitters” machine, which estimated one derivative per time cycle by making brute-force changes in selected variables; however, the methods to be discussed in the Appendix yield derivatives of all variables and parameters in one major time cycle and thereby multiply efficiency in proportion to the number of parameters <span class="math inline">\((N)\)</span>, which may be huge.</p>
+<p>There are also some technical reasons to expect better results with the new approach. Almost all of the old perceptron work was based on the McCulloch–Pitts model of the neuron, which was both discontinuous and non-differentiable. It was felt, in the 1950’s, that the output of a brain cell had to be 1 or 0, because the output consisted of sharp discrete “spikes.” More recent work in neurology has shown that higher brain cells output “bursts” or “volleys” of spikes, and that the strength of a volley may vary continuously in intensity. This suggests the CLU model to be discussed in the Appendix. In any event, to exploit basic numerical methods, one must use differentiable processing units. Minsky once experimented with a “jitters” machine, which estimated one derivative per time cycle by making brute-force changes in selected variables; however, the methods to be discussed in the Appendix yield derivatives of all variables and parameters in one major time cycle and thereby multiply efficiency in proportion to the number of parameters <span class="math inline">(N)</span>, which may be huge.</p>
 <p><span class="citation" data-cites="werbosBuildingUnderstandingAdaptive1987">(<a href="#ref-werbosBuildingUnderstandingAdaptive1987" role="doc-biblioref">Werbos 1987</a>)</span></p>
 </blockquote>
-<p>This makes things clear enough. The jitters machine was an RL agent with multiple continuously adjustable parameters running a very primitive form of policy gradient. During every episode, it would estimate <span class="math inline">\(\partial_{\theta_i} R(\theta)\)</span> using finite difference, but since it used finite difference, it could estimate the partial derivative for one of the parameters <span class="math inline">\(\theta_i\)</span> – only <em>one</em>! No wonder it never managed to learn.</p>
+<p>This makes things clear enough. The jitters machine was an RL agent with multiple continuously adjustable parameters running a very primitive form of policy gradient. During every episode, it would estimate <span class="math inline">\partial_{\theta_i} R(\theta)</span> using finite difference, but since it used finite difference, it could estimate the partial derivative for one of the parameters <span class="math inline">\theta_i</span> – only <em>one</em>! No wonder it never managed to learn.</p>
 <p>It is almost comical how much they failed to just use gradient descent. It sometimes feels as if they did everything to <em>avoid</em> just taking the gradient. In the case of Minsky, he made it very clear, in the epilogue of <span class="citation" data-cites="minskyPerceptronsIntroductionComputational1988">(<a href="#ref-minskyPerceptronsIntroductionComputational1988" role="doc-biblioref">Minsky and Papert 1988</a>)</span>, that he did not believe in gradient descent, period. But what explains the gradient-phobia of the others…?</p>
 <p>Anyway, back to the interview. Werbos went to <a href="https://en.wikipedia.org/wiki/Jerome_Lettvin">Jerome Lettvin</a>, the neuroscientist famous for <em>What the Frog’s Eye Tells the Frog’s Brain</em>. Turns out he was a proto-<a href="https://en.wikipedia.org/wiki/Eliminativism">eliminativist</a>. While I am an eliminativist too, Werbos was a Freudian, which must have collided badly with eliminativism.</p>
 <blockquote class="blockquote">
@@ -1098,9 +1114,9 @@ Figure&nbsp;1: Rosenblith images.
 </div>
 <p>I did find this paper where he gave some details about which part of Freud he meant exactly:</p>
 <blockquote class="blockquote">
-<p>The model in Figure 1 is actually just a mathematical version of Freud’s model of psychodynamics, where the derivative of <span class="math inline">\(R_i\)</span> represents what Freud called the “cathexis” (or affect) or emotional charge or emotional energy attached to the object which <span class="math inline">\(R_i\)</span> represents. In other words, I came up with backpropagation by not just laughing at Freud’s “nonscientific” model, but by translating it into mathematics and showing that it works.</p>
+<p>The model in Figure 1 is actually just a mathematical version of Freud’s model of psychodynamics, where the derivative of <span class="math inline">R_i</span> represents what Freud called the “cathexis” (or affect) or emotional charge or emotional energy attached to the object which <span class="math inline">R_i</span> represents. In other words, I came up with backpropagation by not just laughing at Freud’s “nonscientific” model, but by translating it into mathematics and showing that it works.</p>
 <p>More concretely, Freud said that “if A causes B, a forward association or axon develops from A to B; and then, if there is an emotional charge on B, that energy flows backwards, to put a charge in A, proportional to the charge on B and to the strength of the forwards association from A to B.” That’s exactly what backpropagation does. Chronologically, I translated Freud into a way to calculate derivatives across a network of simple neurons (which Harvard simply did not believe), and then proved the more general chain rule for ordered derivatives to prove it and make it more powerful (and to graduate).</p>
-<p>Freud’s term “psychic energy” for this flow really captures the subjective feeling of this subjective reality, which Freud documents many, many times over in his works. (Though of course, it is not conserved like the energy operators of physics. It is a computational flow, however implemented.) But in my view, any really strong collective intelligence would have to be held together by the same kind of thing, propagated over a more complicated network topology, but still the same basic thing. And indeed, almost every major deep culture on earth has a term for the same kind of “psychic energy” at another level – like “qi” or “prana” or “charisma.” What’s more, several different types of derivatives (like derivatives of <span class="math inline">\(J\)</span> versus derivatives of error) need to be propagated, giving rise to different kinds of mental energy. Sensitivity to these flows, to the fact that they are not conserved, and to the mathematics of the factors which govern their flow, is of great importance, in my view and my experience.</p>
+<p>Freud’s term “psychic energy” for this flow really captures the subjective feeling of this subjective reality, which Freud documents many, many times over in his works. (Though of course, it is not conserved like the energy operators of physics. It is a computational flow, however implemented.) But in my view, any really strong collective intelligence would have to be held together by the same kind of thing, propagated over a more complicated network topology, but still the same basic thing. And indeed, almost every major deep culture on earth has a term for the same kind of “psychic energy” at another level – like “qi” or “prana” or “charisma.” What’s more, several different types of derivatives (like derivatives of <span class="math inline">J</span> versus derivatives of error) need to be propagated, giving rise to different kinds of mental energy. Sensitivity to these flows, to the fact that they are not conserved, and to the mathematics of the factors which govern their flow, is of great importance, in my view and my experience.</p>
 <p><span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Werbos 2011</a>)</span></p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center page-columns page-full">

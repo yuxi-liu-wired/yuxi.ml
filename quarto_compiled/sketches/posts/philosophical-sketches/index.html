@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -509,7 +525,7 @@ window.Quarto = {
 <p>For example, the chairman of China said, “There is no such thing as the so-called Thucydides Trap in the world. But should major countries time and again make the mistakes of strategic miscalculation, they might create such traps for themselves.”</p>
 <p>If a war between America and China happens, it would not be purely by human methods and human thinking. Such complex outcomes have complex causes, and human thinking is merely one part of many. Other causes include solar radiation, soil fertility, atmospheric circulation of water, secret patterns in the global flow of steel production, the relative abundance of uranium-235 in earth’s crust, and many many others.</p>
 <p>If a war breaks out, the thoughts and behaviors of the modern humans is just one part of the cause. The ancestors are also responsible. The sun, the crust, the atmosphere, the immutable laws of mathematics and physics. They all come together.</p>
-<p>I like to joke that humans are no more intelligent than a logical AND gate, because they keep trying to find “the root cause” of things that do not have root causes. If A and B and C together causes D, then which of <span class="math inline">\(\{A, B, C\}\)</span> is <em>the</em> root cause? The mathematical answer is simply “the root cause is undefined in such a situation”. The human answer is “the root cause is whichever is most amenable to human intervention”.</p>
+<p>I like to joke that humans are no more intelligent than a logical AND gate, because they keep trying to find “the root cause” of things that do not have root causes. If A and B and C together causes D, then which of <span class="math inline">\{A, B, C\}</span> is <em>the</em> root cause? The mathematical answer is simply “the root cause is undefined in such a situation”. The human answer is “the root cause is whichever is most amenable to human intervention”.</p>
 <p>And thus, if climate change is the problem, then human society is the root cause, not the atmospheric chemistry, or biological history of earth (without the carboniferous period, there would not be so much cheap coal for humans to burn up rapidly), etc, even if they are all parts of the complex cause of the complex effect of climate change.</p>
 <p>This is what I call “causal anthropocentrism”. It might be the most practical, motivating, and moral, but it’s wrong. All root causes are egocentric. Without a personal viewpoint, there are only causes, but not any root cause.</p>
 </section>
@@ -625,7 +641,7 @@ window.Quarto = {
 </blockquote>
 <p>Praise the extremists, for they expand the convex hull of possibilities.</p>
 <p>In high-dimensional space, the way of the golden mean is almost useless. – But in ultrametric space, it is <em>entirely</em> useless.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;In high dimensions, most probability mass of a gaussian distribution (and most other ones) are concentrated on a thin shell. Exponentially few points live in the middle. In an ultrametric space, <em>every</em> point inside a ball is equidistant to its edges, meaning that the “average” point is undefined. Also, a set of random sampled points in <span class="math inline">\(\mathbb{R}^n\)</span> for <span class="math inline">\(n\to \infty\)</span> look pretty ultrametric, with the characteristic fractal structure. <span class="citation" data-cites="aggarwalSurprisingBehaviorDistance2001 zubarevStochasticGenerationUltrametrics2014">(<a href="#ref-aggarwalSurprisingBehaviorDistance2001" role="doc-biblioref">Aggarwal, Hinneburg, and Keim 2001</a>; <a href="#ref-zubarevStochasticGenerationUltrametrics2014" role="doc-biblioref">Zubarev 2014</a>)</span> This probably has something to do with spin glass fractal energy landscapes.</p></div></div><p>A little extremism once in a while never hurts anybody.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;In high dimensions, most probability mass of a gaussian distribution (and most other ones) are concentrated on a thin shell. Exponentially few points live in the middle. In an ultrametric space, <em>every</em> point inside a ball is equidistant to its edges, meaning that the “average” point is undefined. Also, a set of random sampled points in <span class="math inline">\mathbb{R}^n</span> for <span class="math inline">n\to \infty</span> look pretty ultrametric, with the characteristic fractal structure. <span class="citation" data-cites="aggarwalSurprisingBehaviorDistance2001 zubarevStochasticGenerationUltrametrics2014">(<a href="#ref-aggarwalSurprisingBehaviorDistance2001" role="doc-biblioref">Aggarwal, Hinneburg, and Keim 2001</a>; <a href="#ref-zubarevStochasticGenerationUltrametrics2014" role="doc-biblioref">Zubarev 2014</a>)</span> This probably has something to do with spin glass fractal energy landscapes.</p></div></div><p>A little extremism once in a while never hurts anybody.</p>
 <p>Heidegger puts the lived world of ontological Dasein before the objective world of ontic objects. Cool. I will take him seriously if he could discover atomic physics <em>phenomenologically</em>.</p>
 <p>Kant managed to push God out of the front door (by <em>Critique of Pure Reason</em>) only to lead Him back through the window (by <em>Critique of Practical Reason</em>).</p>
 <p>If everyone becomes a judge, then there wouldn’t be any criminal left to judge. Therefore, by the Categorical Imperative…<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
@@ -641,7 +657,7 @@ window.Quarto = {
 <li>Depressed person: But I don’t want anything!</li>
 <li>Mathematician: Well, instead of <a href="https://en.wikipedia.org/wiki/Alexandroff_extension">one-point compactification</a> of the utility line…</li>
 </ul>
-<p>Frequentist proof of ontological nihilism <span class="math inline">\((p &lt; 10^{-9})\)</span>: Let the null hypothesis be “there is something rather than nothing”. The probability of my existence is lower than one in a billion, as any accidental change in the past billion years would have caused me to not have been born.</p>
+<p>Frequentist proof of ontological nihilism <span class="math inline">(p &lt; 10^{-9})</span>: Let the null hypothesis be “there is something rather than nothing”. The probability of my existence is lower than one in a billion, as any accidental change in the past billion years would have caused me to not have been born.</p>
 <p>Derridean deconstruction is an attempt to solve the information-atom problem: the mind-body problem for the information age. If you get one apple, then a copy, now you have two apples. If you get an IP packet, then a copy, now you still have just one. Thus we have the information-atom problem: You say that information is carried in the atoms, which acts upon the atoms, but how is it possible for information and atoms to interact if they are so different? Derridean deconstruction and its method of différance simply denies that copyable information exists, thus there is no such thing as the information-atom problem. Difference (atoms) is primary, and then identity (information) appears as an approximation.</p>
 <p>The most annoying part of the Hero’s Journey is that it has an unjustified symmetry breaking. Every formalization of the Hero’s Journey describes it as a directed cyclic graph with 17 points. However, every point in a cyclic graph may serve as the “origin”. The internal structure of the Journey does not allow treating any one of the 17 points as more special than the others, because they are all essential. This is the cyclic symmetry. In jargon, the Hero’s Journey is an additive torsor, not a group, since the origin is undefined. We can count from any node forwards. In 17 steps, we return, but this is true for any node, not just the “home” node.</p>
 <p>Someone just told me that the Hero’s Journey is not actually a cycle. Instead, it is a directed <em>linear</em> graph with 17 points. Well good to know! Then people should stop drawing it as a circle!</p>
@@ -716,7 +732,7 @@ window.Quarto = {
 <p>In our modern understanding, the medieval bestiaries show that the authors were improperly humanizing/Christianizing nature, but in the medieval understanding, the bestiaries reveal the deep meaning behind mundane reality, planted there by God, and the moderns have denatured Nature, willfully turned our eyes away from Nature, or Nature’s God, in our drive towards a mechanistic understanding of it. Our tendons have hardened into steel cables, and our eyes squinted into pinhole cameras, and we have turned our backs from God.</p>
 <p>I am not serious about reducing traditional literary criticism to “just a metaphor for the dangling pointer problem”. But I do argue that humanities, especially traditional literary criticism (the most human of all humanities), fail the naturalistic challenge: How can human emotions and meaning be the end-point of all interpretation, when humanity is just one part in a physical system? Isn’t it ridiculous to interpret stories as if they have true meanings that mysteriously always ends up in one of those human psychological phenomena? It is almost as ridiculous as Christians finding metaphors for Christ in every species, or me interpreting people as just bipedal metaphors for phenomena in computers and mechanics.</p>
 <p>People are not usually “about” computers or mechanics, but neither are stories usually “about” people. Humanization/demechanization is as justified as mechanization/dehumanization. Both have their uses as information-theoretic tools. Traditional humanities have spent a thousand years anthropomorphizing biohumans. It is high time to start mechanizing the humanities. I am not going as far as <a href="https://en.wikipedia.org/wiki/Friedrich_Kittler">Friedrich Kittler</a>’s “Austreibung des Geistes aus den Geisteswissenschaften” [“Driving out the human from Humanities”],<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> since anthropomorphism seems like a useful <a href="https://en.wikipedia.org/wiki/Effective_theory">effective theory</a>, or a kind of intuitive <a href="https://en.wikipedia.org/wiki/Renormalization">renormalization theory</a>. However surely it’s time to start trying some nonhuman models for the study of literature.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;In German, “Geist” can mean “ghost” or “spirit”, and “Geisteswissenschaften” [“humanities”] would mean more literally “spirit sciences”. So a direct translation would be “Driving out the spirits from the spirit-sciences”.</p></div></div><p>There are good reasons to try dehumanized models of biohumans, because it is already true in many practices! Advertising treats people as simple RL agents. Microeconomics treats people as a <span class="math inline">\(\max\)</span> function. Neurobiology treats people as a complicated mess far knottier than the most humanistic human model that has ever been humaniated. We have many dehumanized working models of biohumans already, and the humanities people needs to be gradient-updated on this account.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;In German, “Geist” can mean “ghost” or “spirit”, and “Geisteswissenschaften” [“humanities”] would mean more literally “spirit sciences”. So a direct translation would be “Driving out the spirits from the spirit-sciences”.</p></div></div><p>There are good reasons to try dehumanized models of biohumans, because it is already true in many practices! Advertising treats people as simple RL agents. Microeconomics treats people as a <span class="math inline">\max</span> function. Neurobiology treats people as a complicated mess far knottier than the most humanistic human model that has ever been humaniated. We have many dehumanized working models of biohumans already, and the humanities people needs to be gradient-updated on this account.</p>
 <blockquote class="blockquote">
 <p>MONSIEUR JOURDAIN: Oh, really? So when I say: “Nicole, bring me my slippers and fetch my nightcap.”, is that prose?</p>
 <p>PHILOSOPHY MASTER: Most clearly.</p>
@@ -784,13 +800,13 @@ window.Quarto = {
 <p>In the right light, at the right time, everything is extraordinary. — Aaron Rose</p>
 </blockquote>
 <p>I read this today, and spent an entire minute trying to figure out how the qualifiers bind. Is it</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \forall \text{Thing }a \exists \text{Light }l \exists \text{Time } t, \text{Extraordinary}(a, l, t)
-\]</span></p>
+</span></p>
 <p>or</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \exists \text{Light }l \exists \text{Time } t \forall \text{Thing }a, \text{Extraordinary}(a, l, t)
-\]</span></p>
+</span></p>
 <p>? Then I finally gave up and looked up Aaron Rose. He is a film maker. So he probably meant the second one.</p>
 
 

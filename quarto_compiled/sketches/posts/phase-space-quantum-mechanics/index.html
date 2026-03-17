@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -515,17 +531,17 @@ window.Quarto = {
 <ul>
 <li>a <strong>classical physics theory</strong> consists of several parts:
 <ul>
-<li>A smooth manifold with some extra structure on it. This is the arena on which physics happens. For example, the phase space is a smooth <span class="math inline">\(2n\)</span>-manifold with something special on it, called a Poisson bracket. This manifold is called the “underlying geometry”.</li>
+<li>A smooth manifold with some extra structure on it. This is the arena on which physics happens. For example, the phase space is a smooth <span class="math inline">2n</span>-manifold with something special on it, called a Poisson bracket. This manifold is called the “underlying geometry”.</li>
 <li>Some functions defined on the manifold. These functions are typically real-valued, but can also be tensor-valued, such as in continuum mechanics. They are called the “observables”.</li>
 <li>A set of partial differential equation on that smooth manifold. These are typically called the “equations of motion”. This set of equations must be compatible with the “extra structure” of the underlying geometry.</li>
 <li>A dictionary with two columns. On the left column are the mathematical structures defined above. On the right column are the physically real structures that can be seen in a lab.</li>
 </ul></li>
 <li>a <strong>quantum physics theory</strong> is less clear, because there are competing but equivalent conventions. In the standard convention <a href="https://en.wikipedia.org/wiki/Mathematical_Foundations_of_Quantum_Mechanics">(von Neumann, 1932)</a>, it is similar to the above, except that instead of functions defined on the manifold, we have linear operators defined on a Hilbert space.</li>
-<li>to <strong>quantize</strong> a classical physics theory is to produce a quantum physics theory containing a free constant <span class="math inline">\(\hbar &gt; 0\)</span>, such that the theory <em>somehow</em> reduces to the classical physics theory at the <span class="math inline">\(\hbar \downarrow 0\)</span> limit.</li>
+<li>to <strong>quantize</strong> a classical physics theory is to produce a quantum physics theory containing a free constant <span class="math inline">\hbar &gt; 0</span>, such that the theory <em>somehow</em> reduces to the classical physics theory at the <span class="math inline">\hbar \downarrow 0</span> limit.</li>
 <li>a <strong>quantization scheme</strong> is an algorithm for quantizing.</li>
 </ul>
 <p>There are many quantization schemes, because of several impossibility theorems telling you that there is no perfect quantization of the classical physics theory of even a single particle moving on a straight line. I mean, is it really such a big surprise? If there is a perfect quantization, would it still be a surprising quantum mechanics…?</p>
-<p>The simplest examples are found by <strong>canonical quantization</strong>, which is not a single quantization scheme, but rather, a style for quantizing. It typically involves explicitly computing with a fixed set of coordinates <span class="math inline">\(p_i, q_i\)</span> in phase space. This style is the one taught to undergrads.</p>
+<p>The simplest examples are found by <strong>canonical quantization</strong>, which is not a single quantization scheme, but rather, a style for quantizing. It typically involves explicitly computing with a fixed set of coordinates <span class="math inline">p_i, q_i</span> in phase space. This style is the one taught to undergrads.</p>
 <p>A more abstract style is <strong>geometric quantization</strong>, which typically involves manipulating phase space in the coordinate-free language of modern differential geometry. It is further abstracted to <strong>deformation quantization</strong>, which typically involves abstract algebra with many brackets and stars. Typically they start with a geometric quantization, and abstract out the axioms and properties, then start doing abstract algebra on it. Think of it as how Hilbert started with Euclid’s geometry and then went on to say</p>
 <blockquote class="blockquote">
 <p>One must be able to say at all times–instead of points, straight lines, and planes–tables, chairs, and beer mugs.</p>
@@ -549,13 +565,13 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>state space</td>
-<td><span class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n\)</span> with Poisson bracket</td>
-<td><span class="math inline">\(L^2 (\mathbb{R}^n)\)</span> and commutator</td>
+<td><span class="math inline">\mathbb{R}^n \times \mathbb{R}^n</span> with Poisson bracket</td>
+<td><span class="math inline">L^2 (\mathbb{R}^n)</span> and commutator</td>
 </tr>
 <tr class="even">
 <td>evolution of state</td>
 <td>path in phase space</td>
-<td>path in <span class="math inline">\(L^2 (\mathbb{R}^3)\)</span></td>
+<td>path in <span class="math inline">L^2 (\mathbb{R}^3)</span></td>
 </tr>
 <tr class="odd">
 <td>observable</td>
@@ -569,32 +585,32 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>object determining dynamics</td>
-<td>Hamiltonian function <span class="math inline">\(H(t, q, p)\)</span></td>
-<td>Hamiltonian (Schrödinger) operator <span class="math inline">\(\hat H(t)\)</span></td>
+<td>Hamiltonian function <span class="math inline">H(t, q, p)</span></td>
+<td>Hamiltonian (Schrödinger) operator <span class="math inline">\hat H(t)</span></td>
 </tr>
 <tr class="even">
 <td>canonical coordinates</td>
-<td>functions <span class="math inline">\(q_{1:n}, p_{1:n}\)</span></td>
-<td>operators <span class="math inline">\(\hat q_{1:n}, \hat p_{1:n}\)</span></td>
+<td>functions <span class="math inline">q_{1:n}, p_{1:n}</span></td>
+<td>operators <span class="math inline">\hat q_{1:n}, \hat p_{1:n}</span></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="canonical" class="level3">
 <h3 class="anchored" data-anchor-id="canonical">Canonical</h3>
-<p>The most commonly used and widely taught quantization is the <strong>canonical quantization</strong>. In this, the classical physics is the physics of a single particle in <span class="math inline">\(\mathbb{R}^n\)</span>. Its phase space is <span class="math inline">\(\mathbb{R}^{2n}\)</span>, with <em>canonical</em> coordinates <span class="math inline">\((q_{1:n}, p_{1:n})\)</span>, and the standard symplectic structure. This is the one taught to every student in a first course in Hamiltonian mechanics. Classical observables are polynomial functions in <span class="math inline">\(q_{1:n}, p_{1:n}\)</span>.</p>
-<p>In canonical quantization, each quantized classical observable is a map of type <span class="math inline">\(f \mapsto \hat f\)</span>, where <span class="math inline">\(f\)</span> is a function of type <span class="math inline">\(f: \mathbb{R}^{2n} \to \mathbb{R}\)</span>, and <span class="math inline">\(\hat f\)</span> is a linear operator of some kind. The defining feature of canonical quantization is that, whatever <span class="math inline">\(\hat f\)</span> should be, the <strong>canonical commutation relations</strong> are satisfied:</p>
-<p><span class="math display">\[
+<p>The most commonly used and widely taught quantization is the <strong>canonical quantization</strong>. In this, the classical physics is the physics of a single particle in <span class="math inline">\mathbb{R}^n</span>. Its phase space is <span class="math inline">\mathbb{R}^{2n}</span>, with <em>canonical</em> coordinates <span class="math inline">(q_{1:n}, p_{1:n})</span>, and the standard symplectic structure. This is the one taught to every student in a first course in Hamiltonian mechanics. Classical observables are polynomial functions in <span class="math inline">q_{1:n}, p_{1:n}</span>.</p>
+<p>In canonical quantization, each quantized classical observable is a map of type <span class="math inline">f \mapsto \hat f</span>, where <span class="math inline">f</span> is a function of type <span class="math inline">f: \mathbb{R}^{2n} \to \mathbb{R}</span>, and <span class="math inline">\hat f</span> is a linear operator of some kind. The defining feature of canonical quantization is that, whatever <span class="math inline">\hat f</span> should be, the <strong>canonical commutation relations</strong> are satisfied:</p>
+<p><span class="math display">
 \begin{aligned}{}
     [\hat q_j, \hat p_k] &amp;= i\hbar \delta_{jk}, \\
     [\hat q_j, \hat q_k] &amp;= 0, \\
     [\hat p_j, \hat p_k] &amp;= 0.
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>The two most famous canonical quantizations are:</p>
 <ul>
-<li>Heisenberg matrix quantization: <span class="math inline">\(\hat f\)</span> is a Hermitian square matrix with infinitely rows and columns.</li>
-<li>Schrödinger wavefunction quantization: <span class="math inline">\(\hat f\)</span> is a self-adjoint operator on <span class="math inline">\(L^2(\mathbb{R}^n)\)</span>, the L2 space of <span class="math inline">\(\mathbb{R}^n\)</span> with Lebesgue measure.</li>
+<li>Heisenberg matrix quantization: <span class="math inline">\hat f</span> is a Hermitian square matrix with infinitely rows and columns.</li>
+<li>Schrödinger wavefunction quantization: <span class="math inline">\hat f</span> is a self-adjoint operator on <span class="math inline">L^2(\mathbb{R}^n)</span>, the L2 space of <span class="math inline">\mathbb{R}^n</span> with Lebesgue measure.</li>
 </ul>
 <section id="heisenberg-matrix-quantization" class="level4">
 <h4 class="anchored" data-anchor-id="heisenberg-matrix-quantization">Heisenberg matrix quantization</h4>
@@ -604,7 +620,7 @@ window.Quarto = {
 <p><span class="citation" data-cites="heisenbergPhysicsEncountersConversations1971">(<a href="#ref-heisenbergPhysicsEncountersConversations1971" role="doc-biblioref">Heisenberg 1971, 61</a>)</span></p>
 </blockquote>
 <p>This was the Heisenberg matrix quantization. Consider the following matrices:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 P=\begin{bmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 2 &amp; 0 &amp; \cdots \\
@@ -616,20 +632,20 @@ P=\begin{bmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots \\
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
 \end{bmatrix}
-\]</span></p>
-<p>They satisfy <span class="math inline">\([Q, P] = -I, [Q, P^\dagger] = 0\)</span>. Thus, by standard manipulations with the commutator bracket, we find that</p>
-<p><span class="math display">\[
+</span></p>
+<p>They satisfy <span class="math inline">[Q, P] = -I, [Q, P^\dagger] = 0</span>. Thus, by standard manipulations with the commutator bracket, we find that</p>
+<p><span class="math display">
 [zQ + z^* Q^\dagger, wP + w^* P^\dagger] = (-zw + z^*w^*) I
-\]</span></p>
-<p>Thus, if we set <span class="math inline">\(z = w = \sqrt{-i\hbar/2}\)</span>, we would have two Hermitian matrices <span class="math inline">\(zQ + z^* Q^\dagger, wP + w^* P^\dagger\)</span> satisfying the canonical commutator relations. This is the simplest example of Heisenberg matrix quantization.</p>
+</span></p>
+<p>Thus, if we set <span class="math inline">z = w = \sqrt{-i\hbar/2}</span>, we would have two Hermitian matrices <span class="math inline">zQ + z^* Q^\dagger, wP + w^* P^\dagger</span> satisfying the canonical commutator relations. This is the simplest example of Heisenberg matrix quantization.</p>
 </section>
 <section id="schrödinger-wavefunction-quantization" class="level4">
 <h4 class="anchored" data-anchor-id="schrödinger-wavefunction-quantization">Schrödinger wavefunction quantization</h4>
 <p>In a series of papers, Schrödinger in 1926 proposed the wavefunction quantization for a single particle (among other things). It is defined as follows:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \widehat{q_j} \psi=q_j \psi, \quad \widehat{p_j} \psi=-i\hbar \frac{\partial \psi}{\partial q_j} \quad \text { for } \psi \in L^2(\mathbb{R}^n)
-\]</span></p>
-<p>where <span class="math inline">\(\hbar\)</span> is a positive constant.</p>
+</span></p>
+<p>where <span class="math inline">\hbar</span> is a positive constant.</p>
 </section>
 <section id="uniqueness" class="level4">
 <h4 class="anchored" data-anchor-id="uniqueness">Uniqueness</h4>
@@ -638,8 +654,8 @@ P=\begin{bmatrix}
 <div id="thm-todo" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1 (<span class="citation" data-cites="neumannEindeutigkeitSchroedingerschenOperatoren1931">(<a href="#ref-neumannEindeutigkeitSchroedingerschenOperatoren1931" role="doc-biblioref">Neumann 1931</a>)</span>)</strong></span> Assuming that</p>
 <ul>
-<li><span class="math inline">\(\hat p_k, \hat q_j\)</span> are self-adjoint operators on a Hilbert space.</li>
-<li><span class="math inline">\([\hat q_j, \hat p_k] = i\hbar \delta_{jk}\)</span>.</li>
+<li><span class="math inline">\hat p_k, \hat q_j</span> are self-adjoint operators on a Hilbert space.</li>
+<li><span class="math inline">[\hat q_j, \hat p_k] = i\hbar \delta_{jk}</span>.</li>
 <li>The operators are irreducible over the Hilbert space.</li>
 </ul>
 <p>Then there exists a unique representation up to unitary equivalence. In particular, Schrödinger wavefunction quantization and Heisenberg matrix quantization are equivalent.</p>
@@ -650,31 +666,31 @@ P=\begin{bmatrix}
 <h3 class="anchored" data-anchor-id="axiomatic">Axiomatic</h3>
 <p>We can write down some axioms for quantization. First, some definitions:</p>
 <ul>
-<li>A <strong>classical observable</strong> is a function of type <span class="math inline">\(f: \mathbb{R}^{n} \to \mathbb{C}\)</span>. Here, <span class="math inline">\(\mathbb{R}^n\)</span> should be thought of as the state space.</li>
-<li>A <strong>wavefunction</strong> is a nice<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> function of type <span class="math inline">\(\psi: \mathbb{R}^n \to \mathbb{C}\)</span>.</li>
+<li>A <strong>classical observable</strong> is a function of type <span class="math inline">f: \mathbb{R}^{n} \to \mathbb{C}</span>. Here, <span class="math inline">\mathbb{R}^n</span> should be thought of as the state space.</li>
+<li>A <strong>wavefunction</strong> is a nice<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> function of type <span class="math inline">\psi: \mathbb{R}^n \to \mathbb{C}</span>.</li>
 <li>A <strong>quantum observable</strong> is a linear operator on wavefunctions.</li>
-<li>A <strong>quantization</strong> is a map from classical observables <span class="math inline">\(f\)</span> to quantum observables <span class="math inline">\(\hat f\)</span>.</li>
+<li>A <strong>quantization</strong> is a map from classical observables <span class="math inline">f</span> to quantum observables <span class="math inline">\hat f</span>.</li>
 </ul>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;I’m pretty sure that being analytic, i.e.&nbsp;having a globally converging Taylor expansion, is nice enough.</p></div></div><p>With these definitions, we have the axioms of quantization:</p>
 <ul>
-<li>A1 (linearity): the correspondence <span class="math inline">\(f \mapsto \hat f\)</span> is linear;</li>
-<li>A2 (von Neumann rule): for any nice function <span class="math inline">\(\phi: \mathbb{R} \rightarrow \mathbb{R}\)</span> for which <span class="math inline">\(\widehat{\phi \circ f}\)</span> and <span class="math inline">\(\phi\left(\widehat f\right)\)</span> are well-defined, <span class="math inline">\(\widehat{\phi \circ f}=\phi\left(\widehat f\right)\)</span>; Here, “Nice” usually means polynomial, or analytic.</li>
-<li>A3 (Schrödinger): <span class="math inline">\(\hat q_j = q_j, \hat p_j = -i\hbar \partial_{q_j}\)</span>.</li>
-<li>A4 (bracket): <span class="math inline">\([\hat f, \hat g] = i\hbar \widehat{\{f, g\}}\)</span>, where <span class="math inline">\(\{f, g\} = \sum_i (\partial_{q_i}f \partial_{p_i} g - \partial_{p_i}f \partial_{q_i} g)\)</span>.</li>
-<li>A5 (identity): <span class="math inline">\(\hat 1 = 1\)</span>.</li>
+<li>A1 (linearity): the correspondence <span class="math inline">f \mapsto \hat f</span> is linear;</li>
+<li>A2 (von Neumann rule): for any nice function <span class="math inline">\phi: \mathbb{R} \rightarrow \mathbb{R}</span> for which <span class="math inline">\widehat{\phi \circ f}</span> and <span class="math inline">\phi\left(\widehat f\right)</span> are well-defined, <span class="math inline">\widehat{\phi \circ f}=\phi\left(\widehat f\right)</span>; Here, “Nice” usually means polynomial, or analytic.</li>
+<li>A3 (Schrödinger): <span class="math inline">\hat q_j = q_j, \hat p_j = -i\hbar \partial_{q_j}</span>.</li>
+<li>A4 (bracket): <span class="math inline">[\hat f, \hat g] = i\hbar \widehat{\{f, g\}}</span>, where <span class="math inline">\{f, g\} = \sum_i (\partial_{q_i}f \partial_{p_i} g - \partial_{p_i}f \partial_{q_i} g)</span>.</li>
+<li>A5 (identity): <span class="math inline">\hat 1 = 1</span>.</li>
 </ul>
-<p>For example, it is clear that either A3 or A4 implies the canonical commutator relations <span class="math inline">\([\hat q, \hat p] = i \hbar\)</span>.</p>
-<p>It is not obvious, but If <span class="math inline">\(X\)</span> is self-adjoint linear operator that commutes with all <span class="math inline">\(q_j, -i\hbar \partial_{q_j}\)</span> then it is <span class="math inline">\(aI\)</span> for some <span class="math inline">\(a \in \mathbb{C}\)</span>. This result is best shown by representation theory, as a corollary for showing that the representation is irreducible.</p>
+<p>For example, it is clear that either A3 or A4 implies the canonical commutator relations <span class="math inline">[\hat q, \hat p] = i \hbar</span>.</p>
+<p>It is not obvious, but If <span class="math inline">X</span> is self-adjoint linear operator that commutes with all <span class="math inline">q_j, -i\hbar \partial_{q_j}</span> then it is <span class="math inline">aI</span> for some <span class="math inline">a \in \mathbb{C}</span>. This result is best shown by representation theory, as a corollary for showing that the representation is irreducible.</p>
 <p>Unfortunately, it turns out that most combinations of the axioms are impossible to satisfy under minor assumptions:</p>
 <div id="thm-todo" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (Impossibility theorems)</strong></span> If all polynomials of <span class="math inline">\(p, q\)</span> of degree <span class="math inline">\(\leq 4\)</span> must be quantized, and we allow all linear and quadratic functions in the von Neumann rule, then</p>
+<p><span class="theorem-title"><strong>Theorem 2 (Impossibility theorems)</strong></span> If all polynomials of <span class="math inline">p, q</span> of degree <span class="math inline">\leq 4</span> must be quantized, and we allow all linear and quadratic functions in the von Neumann rule, then</p>
 <ul>
 <li>the axioms A123 are incompatible.</li>
 <li>the axioms A134 are incompatible.</li>
 <li>the axioms A24 are incompatible.</li>
 </ul>
 </div>
-<p>In the following proofs, let <span class="math inline">\(c = -i\hbar\)</span>. The statement of the theorem, as well as the proofs, came from <span class="citation" data-cites="aliQuantizationMethodsGuide2005">(<a href="#ref-aliQuantizationMethodsGuide2005" role="doc-biblioref">Ali and Engliš 2005</a>)</span>.</p>
+<p>In the following proofs, let <span class="math inline">c = -i\hbar</span>. The statement of the theorem, as well as the proofs, came from <span class="citation" data-cites="aliQuantizationMethodsGuide2005">(<a href="#ref-aliQuantizationMethodsGuide2005" role="doc-biblioref">Ali and Engliš 2005</a>)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof (A123)">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -687,14 +703,14 @@ P=\begin{bmatrix}
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>By A1 and A2, we can calculate <span class="math display">\[
+<p>By A1 and A2, we can calculate <span class="math display">
 \widehat{pq} = \frac 12 [(P+Q)^2 - P^2 - Q^2] = \frac{PQ+QP}{2}
-\]</span></p>
-<p>Similarly, we can calculate <span class="math inline">\(\widehat{p^2q^2}\)</span> in two ways. Their difference is</p>
-<p><span class="math display">\[
+</span></p>
+<p>Similarly, we can calculate <span class="math inline">\widehat{p^2q^2}</span> in two ways. Their difference is</p>
+<p><span class="math display">
 \frac 14 (PQPQ + QPQP + PQQP + QPPQ - PPQQ - PPQQ - QQPP - QQPP)
-\]</span></p>
-<p>Using <span class="math inline">\([Q,P] = i \hbar\)</span> to simplify, we obtain the difference of <span class="math inline">\(\frac 34 \hbar^2 \neq 0\)</span>.</p>
+</span></p>
+<p>Using <span class="math inline">[Q,P] = i \hbar</span> to simplify, we obtain the difference of <span class="math inline">\frac 34 \hbar^2 \neq 0</span>.</p>
 </div>
 </div>
 </div>
@@ -710,36 +726,36 @@ P=\begin{bmatrix}
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since <span class="math inline">\(\{p_iq_i, p_i\} = p_i, \{p_iq_i, q_i\} = -q_i\)</span>, let <span class="math inline">\(s := \sum_i p_iq_i\)</span>, we have by A4,</p>
-<p><span class="math display">\[
+<p>Since <span class="math inline">\{p_iq_i, p_i\} = p_i, \{p_iq_i, q_i\} = -q_i</span>, let <span class="math inline">s := \sum_i p_iq_i</span>, we have by A4,</p>
+<p><span class="math display">
 [\hat s, P_i] = -cP_i, \quad [\hat s, Q_i] = cQ_i
-\]</span></p>
-<p>By A3, <span class="math inline">\(\frac{\sum_i P_iQ_i+Q_iP_i}{2}\)</span> also satisfies the above two equations. Thus, <span class="math display">\[
+</span></p>
+<p>By A3, <span class="math inline">\frac{\sum_i P_iQ_i+Q_iP_i}{2}</span> also satisfies the above two equations. Thus, <span class="math display">
 \hat s = \frac 12 \sum_i (P_iQ_i+Q_iP_i) + zI
-\]</span></p>
-<p>for some constant <span class="math inline">\(z\)</span>.</p>
-<p>Similarly, for each <span class="math inline">\(m = 1, 2, 3, 4\)</span>, <span class="math display">\[
+</span></p>
+<p>for some constant <span class="math inline">z</span>.</p>
+<p>Similarly, for each <span class="math inline">m = 1, 2, 3, 4</span>, <span class="math display">
 \widehat{\sum_i q_i^m} = \sum_i Q_i^m + z_m I
-\]</span></p>
-<p>for some constant <span class="math inline">\(z_m\)</span>.</p>
-<p>By A4, <span class="math display">\[
+</span></p>
+<p>for some constant <span class="math inline">z_m</span>.</p>
+<p>By A4, <span class="math display">
 [\widehat{\sum_i p_iq_i}, \widehat{\sum_j q_j^m}] = -c \widehat{\{\sum_i p_i q_i, \sum_j q_j^m\}} = cm \widehat{\sum_j q_j^m}
-\]</span></p>
-<p>Previously, we have already found <span class="math inline">\(\widehat{\sum_i p_iq_i}, \widehat{\sum_j q_j^m}\)</span> up to an additive identity, so plugging them back in, and using A4, we obtain <span class="math display">\[
+</span></p>
+<p>Previously, we have already found <span class="math inline">\widehat{\sum_i p_iq_i}, \widehat{\sum_j q_j^m}</span> up to an additive identity, so plugging them back in, and using A4, we obtain <span class="math display">
 [\widehat{\sum_i p_iq_i}, \widehat{\sum_j q_j^m}] = cm \sum_j Q_j^m
-\]</span></p>
-<p>Thus, <span class="math inline">\(\widehat{\sum_j q_j^m} = \sum_j Q_j^m\)</span>. Similarly, <span class="math inline">\(\widehat{\sum_j p_j^m} = \sum_j P_j^m\)</span>.</p>
-<p>Since <span class="math inline">\(\{\sum_i p_i^2 , \sum_j q_j^3\} = -6 \sum_i q_i^2 p_i\)</span>, <span class="math display">\[
+</span></p>
+<p>Thus, <span class="math inline">\widehat{\sum_j q_j^m} = \sum_j Q_j^m</span>. Similarly, <span class="math inline">\widehat{\sum_j p_j^m} = \sum_j P_j^m</span>.</p>
+<p>Since <span class="math inline">\{\sum_i p_i^2 , \sum_j q_j^3\} = -6 \sum_i q_i^2 p_i</span>, <span class="math display">
 6c \widehat{\sum_i q_i^2 p_i} \stackrel{A4}{=} [\widehat{\sum_i p_i^2} , \widehat{\sum_j q_j^3}] = [\sum_i P_i^2, \sum_j Q_j^3] \stackrel{A3}{=} 3c\sum_i(P_i Q_i^2 + Q_i^2 P_i)
-\]</span></p>
-<p>Thus <span class="math inline">\(\widehat{\sum_i q_i^2 p_i} = \frac 12 \sum_i(P_i Q_i^2 + Q_i^2 P_i)\)</span>. Similarly for <span class="math inline">\(\widehat{\sum_i q_i p_i^2} = \frac 12 \sum_i(P_i^2 Q_i + Q_i P_i^2)\)</span></p>
-<p>Since <span class="math inline">\(\{\sum_i p_i^3, \sum_j q_j^3\} = -9\sum_i p_i^2 q_i^2\)</span>, <span class="math display">\[
+</span></p>
+<p>Thus <span class="math inline">\widehat{\sum_i q_i^2 p_i} = \frac 12 \sum_i(P_i Q_i^2 + Q_i^2 P_i)</span>. Similarly for <span class="math inline">\widehat{\sum_i q_i p_i^2} = \frac 12 \sum_i(P_i^2 Q_i + Q_i P_i^2)</span></p>
+<p>Since <span class="math inline">\{\sum_i p_i^3, \sum_j q_j^3\} = -9\sum_i p_i^2 q_i^2</span>, <span class="math display">
 \widehat{\sum_i p_i^2 q_i^2 } = \frac{1}{9c} [\sum_i P_i^3, \sum_j Q_j^3]  = \sum_i  (Q_i^2 P_i^2+2 c Q_i P_i+\frac{2}{3} c^2)
-\]</span></p>
-<p>Since <span class="math inline">\(\{\sum_i p_i^2q_i, \sum_j p_jq_j^2\} = -3 \sum_i p_i^2q_i^2\)</span>, <span class="math display">\[
+</span></p>
+<p>Since <span class="math inline">\{\sum_i p_i^2q_i, \sum_j p_jq_j^2\} = -3 \sum_i p_i^2q_i^2</span>, <span class="math display">
 \widehat{\sum_i p_i^2 q_i^2 } = \frac{1}{3c} [\frac 12 \sum_i(P_i^2 Q_i + Q_i P_i^2), \frac 12 \sum_i(P_i Q_i^2 + Q_i^2 P_i)]  = \sum_i (Q_i^2 P_i^2+2 c Q_i P_i+\frac{1}{3} c^2)
-\]</span></p>
-<p>They differ by <span class="math inline">\(\frac n3 c^2\)</span>, contradiction.</p>
+</span></p>
+<p>They differ by <span class="math inline">\frac n3 c^2</span>, contradiction.</p>
 </div>
 </div>
 </div>
@@ -756,38 +772,38 @@ P=\begin{bmatrix}
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This proof came from <span class="citation" data-cites="englisNogoTheoremNonlinear2002">(<a href="#ref-englisNogoTheoremNonlinear2002" role="doc-biblioref">Engliš 2002</a>)</span>.</p>
-<p>Though we no longer have homogeneity, we still have <span class="math inline">\(\widehat{t f} = t \hat f\)</span> for constant <span class="math inline">\(t \in \mathbb C\)</span>, by A2.</p>
-<p><span class="math inline">\(\{p^k, q^m\} = -km p^{k-1}q^{m-1}\)</span> for all <span class="math inline">\(k, m \geq 1\)</span>, so by A4, <span class="math inline">\(\widehat{p^{k-1}q^{m-1}} = \frac{1}{km c} [ P^k, Q^m]\)</span>.</p>
-<p>By A4, <span class="math inline">\(PQ- QP = c\)</span>. Then, by combinatorics,</p>
-<p><span class="math display">\[
+<p>Though we no longer have homogeneity, we still have <span class="math inline">\widehat{t f} = t \hat f</span> for constant <span class="math inline">t \in \mathbb C</span>, by A2.</p>
+<p><span class="math inline">\{p^k, q^m\} = -km p^{k-1}q^{m-1}</span> for all <span class="math inline">k, m \geq 1</span>, so by A4, <span class="math inline">\widehat{p^{k-1}q^{m-1}} = \frac{1}{km c} [ P^k, Q^m]</span>.</p>
+<p>By A4, <span class="math inline">PQ- QP = c</span>. Then, by combinatorics,</p>
+<p><span class="math display">
 P^k Q^m = \sum_{l=0}^k \binom{k}{l} \frac{m!}{(m-k+l)!} c^{k-l} Q^{m-k+l}P^l
-\]</span></p>
+</span></p>
 <p>This can be derived as a consequence of the general Leibniz rule. If we temporarily assume A3, then</p>
-<p><span class="math display">\[
+<p><span class="math display">
 P^k Q^m = c^k \partial^k(q^m \cdot) = c^k \sum_{l=0}^k \binom{k}{l}\partial^{k-l}(q^m) \partial^l(\cdot) = \sum_{l=0}^k \binom{k}{l} \frac{m!}{(m-k+l)!} c^{k-l} Q^{m-k+l}P^l
-\]</span></p>
-<p>Thus, <span class="math display">\[
+</span></p>
+<p>Thus, <span class="math display">
 [P^k, Q^m] = \sum_{l=0}^{k-1} \binom{k}{l} \frac{m!}{(m-k+l)!} c^{k-l} Q^{m-k+l}P^l = \sum_{l=1}^k\binom{k}{l} \frac{m! c^l}{(m-l)!} Q^{m-l} P^{k-l}
-\]</span></p>
-<p>Thus, <span class="math display">\[
+</span></p>
+<p>Thus, <span class="math display">
 \widehat{pq} = \frac{[P^2,Q^2]}{4c} = \frac{2c^2 + 4cQP}{4c} = QP + c/2
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \widehat{pq}^2 \stackrel{A2}{=} (QP + c/2)^2 = QQPP + 2cQP + c^2/4
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \widehat{ppqq} = \frac{[P^3,Q^3]}{9c} = \frac{6 c^3+18 c^2 Q P+9 c Q^2 P^2}{9 c} = Q^2P^2 + 2cQP + 2c^2/3
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \widehat{ppqq} - \widehat{pq}^2 = \frac{5}{12}c^2 \neq 0
-\]</span></p>
+</span></p>
 </div>
 </div>
 </div>
 <p>In summary, any 3 of A1234 are incompatible. If we only take 2 out of them, then</p>
 <ul>
-<li>12: Not quantum enough, since <span class="math inline">\(\hbar\)</span> does not appear at all. Indeed, we can set all operators to be commutative. The key property of non-commutativity is not enforced.</li>
-<li>13: Trivial, since we can arbitrarily assign <span class="math inline">\(\widehat{p^m q^n}\)</span> for the cases other than <span class="math inline">\((m,n) = (1,0), (0,1)\)</span>, then linearly extend.</li>
+<li>12: Not quantum enough, since <span class="math inline">\hbar</span> does not appear at all. Indeed, we can set all operators to be commutative. The key property of non-commutativity is not enforced.</li>
+<li>13: Trivial, since we can arbitrarily assign <span class="math inline">\widehat{p^m q^n}</span> for the cases other than <span class="math inline">(m,n) = (1,0), (0,1)</span>, then linearly extend.</li>
 <li>14: This is the van Hove prequantization.</li>
 <li>23: Possibly interesting.</li>
 <li>24: Impossible.</li>
@@ -796,7 +812,7 @@ P^k Q^m = c^k \partial^k(q^m \cdot) = c^k \sum_{l=0}^k \binom{k}{l}\partial^{k-l
 <p>Because of the impossibility theorems, something must be given up. The two common ways of giving up are:</p>
 <ul>
 <li>Geometric quantization: do not quantize most of the classical observables, and optionally give up von Neumann axiom (A2).</li>
-<li>Deformation quantization: give up von Neumann axiom (A2), and relax the bracket axiom (A4) to only hold in the limit: <span class="math inline">\([\hat f, \hat g] = i\hbar \widehat{\{f, g\}} + o(\hbar)\)</span>.</li>
+<li>Deformation quantization: give up von Neumann axiom (A2), and relax the bracket axiom (A4) to only hold in the limit: <span class="math inline">[\hat f, \hat g] = i\hbar \widehat{\{f, g\}} + o(\hbar)</span>.</li>
 </ul>
 <!-- ::: {.callout-note}
 
@@ -808,40 +824,40 @@ The property of being quadratic (or linear) is not invariant under canonical tra
 <section id="pseudo-differential-operator" class="level2">
 <h2 class="anchored" data-anchor-id="pseudo-differential-operator">Pseudo-differential operator</h2>
 <p>This section is skippable.</p>
-<p>A differential operator <span class="math inline">\(P\)</span> in position space become multiplication by a polynomial <span class="math inline">\(P(k)\)</span> in momentum space: <span class="math display">\[
+<p>A differential operator <span class="math inline">P</span> in position space become multiplication by a polynomial <span class="math inline">P(k)</span> in momentum space: <span class="math display">
 P[u](x) = \frac{1}{(2\pi)^{n}}\int dk e^{i \braket{k, x}} P(k) \hat u(k)
-\]</span></p>
-<p>If we allow for multiplication by more generic functions, and allow for the interaction between position and momentum, we get pseudo-differential operator: <span class="math display">\[
+</span></p>
+<p>If we allow for multiplication by more generic functions, and allow for the interaction between position and momentum, we get pseudo-differential operator: <span class="math display">
 P[u](x) = \frac{1}{(2\pi)^{n}}\int dk e^{i \braket{k, x}} P(x,k) \hat u(k)
-\]</span></p>
+</span></p>
 <p>DER. integral/differential operator</p>
-<p>Consider the differential operator <span class="math display">\[
+<p>Consider the differential operator <span class="math display">
 P(D) = \sum_{a_1, \dots, a_n} c_{a_1, \dots, a_n} (-i\partial_1)^{a_1} \cdots (-i\partial_n)^{a_n}
-\]</span></p>
-<p>Applying <span class="math inline">\(P\)</span> to a function <span class="math inline">\(u\)</span> can be done in Fourier space: <span class="math display">\[
+</span></p>
+<p>Applying <span class="math inline">P</span> to a function <span class="math inline">u</span> can be done in Fourier space: <span class="math display">
 P[u](x) = \frac{1}{(2\pi)^n} \int d^n k d^n y e^{i \braket{k, x-y}} u(y)  \sum_{a_1, \dots, a_n} c_{a_1, \dots, a_n} k_1^{a_1} \cdots k_n^{a_n}
-\]</span></p>
-<p>More succinctly, let <span class="math inline">\(\alpha\)</span> be the multiindex, and <span class="math inline">\(D^\alpha = (-i\partial_1)^{a_1} \cdots (-i\partial_n)^{a_n}\)</span>, then we have <span class="math display">\[
+</span></p>
+<p>More succinctly, let <span class="math inline">\alpha</span> be the multiindex, and <span class="math inline">D^\alpha = (-i\partial_1)^{a_1} \cdots (-i\partial_n)^{a_n}</span>, then we have <span class="math display">
 P(D) = \sum_\alpha c_\alpha D^\alpha
-\]</span></p>
+</span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span class="math display">
 P[u](x) = \frac{1}{(2\pi)^n} \int d^n k  e^{i \braket{k, x}} \hat u(k) P(k) = \frac{1}{(2\pi)^n} \int d^n k d^n y e^{i \braket{k, x-y}} u(y) P(k)
-\]</span></p>
-<p>To solve the differential equation <span class="math inline">\(P[u] = f\)</span>, it needs only inversion</p>
-<p><span class="math display">\[
+</span></p>
+<p>To solve the differential equation <span class="math inline">P[u] = f</span>, it needs only inversion</p>
+<p><span class="math display">
 u(x) = \frac{1}{(2\pi)^n} \int d^n k \frac{\hat f(k)}{P(k)} e^{i\braket{k,x}} = \frac{1}{(2\pi)^n} \int d^n k d^n y e^{i \braket{k, x-y}} \frac{ f(y)}{P(k)}
-\]</span></p>
+</span></p>
 <p>DEF. pseudo-differential operator</p>
-<p>A pseudo-differential operator <span class="math inline">\(P\)</span> on <span class="math inline">\(\mathbb{R}^n\)</span> is an operator defined by</p>
-<p><span class="math display">\[
+<p>A pseudo-differential operator <span class="math inline">P</span> on <span class="math inline">\mathbb{R}^n</span> is an operator defined by</p>
+<p><span class="math display">
 P[u](x) := \frac{1}{(2\pi)^n} \int d^n k  e^{i \braket{k, x}} \hat u(k) P(x, k) = \frac{1}{(2\pi)^n} \int d^n k d^n y e^{i \braket{k, x-y}} u(y) P(x, k)
-\]</span></p>
-<p>where <span class="math inline">\(P(x, k)\)</span> is a function of type <span class="math inline">\(\mathbb{R}^n \times \mathbb{R}^n \to \mathbb C\)</span>.</p>
-<p>Given a pseudo-differential operator, it can be inverted as before to solve pseudo-differential equations <span class="math inline">\(P[u] = f\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p>where <span class="math inline">P(x, k)</span> is a function of type <span class="math inline">\mathbb{R}^n \times \mathbb{R}^n \to \mathbb C</span>.</p>
+<p>Given a pseudo-differential operator, it can be inverted as before to solve pseudo-differential equations <span class="math inline">P[u] = f</span></p>
+<p><span class="math display">
 u(x) = \frac{1}{(2\pi)^n} \int d^n k \frac{\hat f(k)}{P(k, x)} e^{i\braket{k,x}} = \frac{1}{(2\pi)^n} \int d^n k d^n y e^{i \braket{k, x-y}} \frac{ f(y)}{P(k, x)}
-\]</span></p>
+</span></p>
 </section>
 <section id="star-product" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="star-product">Star product</h2>
@@ -850,41 +866,41 @@ u(x) = \frac{1}{(2\pi)^n} \int d^n k \frac{\hat f(k)}{P(k, x)} e^{i\braket{k,x}}
 <p><a href="https://terrytao.wordpress.com/2012/10/07/some-notes-on-weyl-quantisation/">Some notes on Weyl quantisation | What’s new</a></p>
 <section id="setup" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<p>On a <span class="math inline">\(2n\)</span>-dimensional symplectic structure, we fix some <span class="math inline">\(2n\)</span> canonical coordinates <span class="math inline">\(q_{1:n}, p_{1:n}\)</span>. These two <span class="math inline">\(n\)</span>-tuples are written as one big <span class="math inline">\(2n\)</span>-tuple <span class="math inline">\(\xi_{1:2n}\)</span> by <span class="math inline">\(\xi_{1:n} = q_{1:n}, \xi_{n+1:2n} = p_{1:n}\)</span>.</p>
+<p>On a <span class="math inline">2n</span>-dimensional symplectic structure, we fix some <span class="math inline">2n</span> canonical coordinates <span class="math inline">q_{1:n}, p_{1:n}</span>. These two <span class="math inline">n</span>-tuples are written as one big <span class="math inline">2n</span>-tuple <span class="math inline">\xi_{1:2n}</span> by <span class="math inline">\xi_{1:n} = q_{1:n}, \xi_{n+1:2n} = p_{1:n}</span>.</p>
 <p>The <strong>symplectic matrices</strong> are written as</p>
-<p><span class="math display">\[\omega_{ij} = \begin{bmatrix}
+<p><span class="math display">\omega_{ij} = \begin{bmatrix}
   &amp; q_{1:n} &amp; p_{1:n} \\
   q_{1:n} &amp; 0 &amp; -I \\
   p_{1:n} &amp; I &amp; 0
-  \end{bmatrix}\]</span></p>
-<p><span class="math display">\[\omega^{ij} = \begin{bmatrix}
+  \end{bmatrix}</span></p>
+<p><span class="math display">\omega^{ij} = \begin{bmatrix}
   &amp; q_{1:n} &amp; p_{1:n} \\
   q_{1:n} &amp; 0 &amp; I \\
   p_{1:n} &amp; -I &amp; 0
-  \end{bmatrix}\]</span></p>
+  \end{bmatrix}</span></p>
 <p>We use the <strong>Einstein summation</strong> convention: If an index is used twice in an expression, then it is summed over. It is not necessary for the index to appear once in the superscript and once in the subscript.</p>
 <p>The <strong>Poisson bracket</strong> is defined by</p>
-<p><span class="math display">\[\{f, g\} = \sum_i (\partial_{q_i}f \partial_{p_i} g - \partial_{p_i}f \partial_{q_i} g)\]</span></p>
+<p><span class="math display">\{f, g\} = \sum_i (\partial_{q_i}f \partial_{p_i} g - \partial_{p_i}f \partial_{q_i} g)</span></p>
 <p>I know there are two conventions for the Poisson bracket, but this is my convention and I’m sticking to it. I think this is the more common convention in the literature.</p>
-<p>Because I don’t want to type things out, if two vectors <span class="math inline">\(\tilde q, q\)</span> are dot-producted like <span class="math inline">\(\tilde q \cdot q\)</span>, I would just write <span class="math inline">\(\tilde q q\)</span>. It saves me a little hassle, and actually rarely leads to problems!</p>
+<p>Because I don’t want to type things out, if two vectors <span class="math inline">\tilde q, q</span> are dot-producted like <span class="math inline">\tilde q \cdot q</span>, I would just write <span class="math inline">\tilde q q</span>. It saves me a little hassle, and actually rarely leads to problems!</p>
 <p>The <strong>Fourier transform</strong> is defined by</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \tilde f(\tilde q) \int_{\mathbb{R}^n} f(q) e^{-i (\tilde q q)}d^n q,\quad f(q) = \frac{1}{(2\pi)^n}\int_{\mathbb{R}^n} \tilde f(\tilde q) e^{+i (\tilde q q)} d^n \tilde q
-\]</span></p>
+</span></p>
 <p>I know there are like, 4 conventions at least for the Fourier transform. So much hassle. The <strong>Dirac delta function</strong>, in this convention, becomes</p>
-<p><span class="math display">\[\delta^n( q - q_0 ) = \frac{1}{(2\pi)^n} \int_{\mathbb{R}^n} e^{-i (\tilde q (q - q_0))}d^n \tilde q\]</span></p>
-<p>The functions <span class="math inline">\(f, g\)</span> are <strong>formal power series</strong> with complex coefficients in the variables <span class="math inline">\(q_1, \dots, q_n, p_1, \dots, p_n, t\)</span>. That is, <span class="math inline">\(f, g \in S := \mathbb C[[q^{1:n}, p^{1:n}, t]]\)</span>. The following is an example:</p>
-<p><span class="math display">\[
+<p><span class="math display">\delta^n( q - q_0 ) = \frac{1}{(2\pi)^n} \int_{\mathbb{R}^n} e^{-i (\tilde q (q - q_0))}d^n \tilde q</span></p>
+<p>The functions <span class="math inline">f, g</span> are <strong>formal power series</strong> with complex coefficients in the variables <span class="math inline">q_1, \dots, q_n, p_1, \dots, p_n, t</span>. That is, <span class="math inline">f, g \in S := \mathbb C[[q^{1:n}, p^{1:n}, t]]</span>. The following is an example:</p>
+<p><span class="math display">
 \sum_{k=0}^\infty (k! q_1^k + k^2 p_2^k + t^{2k})
-\]</span></p>
-<p>The <strong>higher Poisson brackets</strong> are <span class="math inline">\(\{\cdot, \cdot\}_k\)</span>, where <span class="math inline">\(k = 0, 1, 2, \dots\)</span>. It will be shown later that <span class="math inline">\(\{f, g\}_0 = fg, \{f, g\}_1 = \{f, g\}\)</span>.</p>
-<p>The <strong>star product</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="math inline">\(f\star_t g\)</span> is a binary operation, where <span class="math inline">\(t\)</span> is a complex number. For each choice of <span class="math inline">\(t \in \mathbb{C}\)</span> we have a different star product. It has <em>many</em> definitions, but we will define it as an exponential sum of the higher Poisson brackets:</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Other names include: <strong>star product</strong>, <strong>Moyal star product</strong>, <strong>Weyl–Groenewold product</strong>, <strong>phase-space star product</strong>, and basically any combination thereof.</p></div></div><p><span class="math display">\[f\star_t g = \sum_{k=0}^\infty \frac{t^k}{k!} \{f, g\}_k\]</span></p>
+</span></p>
+<p>The <strong>higher Poisson brackets</strong> are <span class="math inline">\{\cdot, \cdot\}_k</span>, where <span class="math inline">k = 0, 1, 2, \dots</span>. It will be shown later that <span class="math inline">\{f, g\}_0 = fg, \{f, g\}_1 = \{f, g\}</span>.</p>
+<p>The <strong>star product</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="math inline">f\star_t g</span> is a binary operation, where <span class="math inline">t</span> is a complex number. For each choice of <span class="math inline">t \in \mathbb{C}</span> we have a different star product. It has <em>many</em> definitions, but we will define it as an exponential sum of the higher Poisson brackets:</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Other names include: <strong>star product</strong>, <strong>Moyal star product</strong>, <strong>Weyl–Groenewold product</strong>, <strong>phase-space star product</strong>, and basically any combination thereof.</p></div></div><p><span class="math display">f\star_t g = \sum_{k=0}^\infty \frac{t^k}{k!} \{f, g\}_k</span></p>
 <p>and then show the equivalence of the definitions.</p>
 <p>The Moyal bracket<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> is always defined as (Yes yes there are many definitions, you know the drill…):</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Also called the <strong>sine bracket</strong>.</p></div></div><p><span class="math display">\[\{\{f,g\}\}_t := \frac{f \star_t g - g \star_t f}{2t}\]</span></p>
-<p>If <span class="math inline">\(t\)</span> is not written explicitly, then it is by default <span class="math inline">\(t = i\hbar /2\)</span>. In that case, we have</p>
-<p><span class="math display">\[\{\{f,g\}\} := \frac{f \star g - g \star f}{i\hbar}\]</span></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Also called the <strong>sine bracket</strong>.</p></div></div><p><span class="math display">\{\{f,g\}\}_t := \frac{f \star_t g - g \star_t f}{2t}</span></p>
+<p>If <span class="math inline">t</span> is not written explicitly, then it is by default <span class="math inline">t = i\hbar /2</span>. In that case, we have</p>
+<p><span class="math display">\{\{f,g\}\} := \frac{f \star g - g \star f}{i\hbar}</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Too many brackets">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -931,47 +947,47 @@ A physician to the laws, making them whole again.</code></pre>
 <h4 class="anchored" data-anchor-id="axiomatic-1">Axiomatic</h4>
 <p>Axioms of deformation quantization, to be proved below.</p>
 <ul>
-<li><span class="math inline">\(f\star 1 = 1 \star f = f\)</span></li>
-<li><span class="math inline">\((f \star g)^* = (g^*) \star (f^*)\)</span></li>
-<li><span class="math inline">\(\{f, g\}_0 = fg\)</span></li>
-<li>(deformed canonical quantization) <span class="math inline">\(\{\{f, g\}\}_t = \{f, g\} + O(t^2)\)</span>.</li>
+<li><span class="math inline">f\star 1 = 1 \star f = f</span></li>
+<li><span class="math inline">(f \star g)^* = (g^*) \star (f^*)</span></li>
+<li><span class="math inline">\{f, g\}_0 = fg</span></li>
+<li>(deformed canonical quantization) <span class="math inline">\{\{f, g\}\}_t = \{f, g\} + O(t^2)</span>.</li>
 </ul>
 </section>
 <section id="direct" class="level4">
 <h4 class="anchored" data-anchor-id="direct">Direct</h4>
 <p>The “Poisson biderivative” operator</p>
-<p><span class="math display">\[\bar P = \sum_{i=1}^n \left(\overleftarrow{\partial_{q_i}} \cdot \overrightarrow{\partial_{p_i}}-\overleftarrow{\partial_{p_i}} \cdot \overrightarrow{\partial_{q_i}}\right) = \omega^{ij} \overleftarrow{\partial_{\xi_i}} \cdot \overrightarrow{\partial_{\xi_j}} \]</span></p>
-<p><span class="math display">\[
+<p><span class="math display">\bar P = \sum_{i=1}^n \left(\overleftarrow{\partial_{q_i}} \cdot \overrightarrow{\partial_{p_i}}-\overleftarrow{\partial_{p_i}} \cdot \overrightarrow{\partial_{q_i}}\right) = \omega^{ij} \overleftarrow{\partial_{\xi_i}} \cdot \overrightarrow{\partial_{\xi_j}} </span></p>
+<p><span class="math display">
 \{f, g\}_k=f \bar P^k g
-\]</span></p>
+</span></p>
 </section>
 <section id="tensor" class="level4">
 <h4 class="anchored" data-anchor-id="tensor">Tensor</h4>
-<p>Define two operators of type <span class="math inline">\(S \otimes S \to S \otimes S\)</span>:</p>
-<p><span class="math display">\[
+<p>Define two operators of type <span class="math inline">S \otimes S \to S \otimes S</span>:</p>
+<p><span class="math display">
 \begin{aligned}
 \Omega(f \otimes g) &amp;= \sum_{k=1}^n \partial_{q^k} f \otimes \partial_{p^k} g - \partial_{p^k} f  \otimes \partial_{q^k} g = \omega^{ij} \partial_{\xi_i} f  \otimes \partial_{\xi_j} g  \\
 Tr(f \otimes g) &amp;= fg
 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[\{f, g\}_k = (\operatorname{Tr}\circ \Omega^k)( f \otimes g)\]</span></p>
+</span></p>
+<p><span class="math display">\{f, g\}_k = (\operatorname{Tr}\circ \Omega^k)( f \otimes g)</span></p>
 <p>In classical invariant theory, these are called transvectants, or hyper-Jacobians. (Ovsienko, Roger, 1992)</p>
 </section>
 <section id="symplectic" class="level4">
 <h4 class="anchored" data-anchor-id="symplectic">Symplectic</h4>
-<p><span class="math inline">\(\Omega = \omega^{ij} \partial_i \wedge \partial_j\)</span> is the dual bivector to the symplectic form <span class="math inline">\(\omega_{ij} d\xi^i \wedge d\xi^j\)</span>.</p>
+<p><span class="math inline">\Omega = \omega^{ij} \partial_i \wedge \partial_j</span> is the dual bivector to the symplectic form <span class="math inline">\omega_{ij} d\xi^i \wedge d\xi^j</span>.</p>
 </section>
 <section id="weyl-transform" class="level4">
 <h4 class="anchored" data-anchor-id="weyl-transform">Weyl transform</h4>
-<p>Let the Weyl transform be <span class="math display">\[\hat f := \frac{1}{(2\pi)^{2n}} \iint_{\mathbb{R}^{2n}} d^n \tilde q d^n \tilde p \; \tilde f(\tilde q, \tilde p) e^{i  (\tilde q_j \hat q_j + \tilde p_j \hat p_j)}\]</span></p>
-<p>where <span class="math inline">\(\hat q_j = (q_j \cdot), \hat p_j = -i\hbar\partial_{q_j}\)</span> are operators satisfying the canonical commutator relations.</p>
-<p>Then, the star product is uniquely defined by <span class="math inline">\(\widehat{f \star g} = \hat f \hat g\)</span>.</p>
+<p>Let the Weyl transform be <span class="math display">\hat f := \frac{1}{(2\pi)^{2n}} \iint_{\mathbb{R}^{2n}} d^n \tilde q d^n \tilde p \; \tilde f(\tilde q, \tilde p) e^{i  (\tilde q_j \hat q_j + \tilde p_j \hat p_j)}</span></p>
+<p>where <span class="math inline">\hat q_j = (q_j \cdot), \hat p_j = -i\hbar\partial_{q_j}</span> are operators satisfying the canonical commutator relations.</p>
+<p>Then, the star product is uniquely defined by <span class="math inline">\widehat{f \star g} = \hat f \hat g</span>.</p>
 </section>
 <section id="fourier-analysis" class="level4">
 <h4 class="anchored" data-anchor-id="fourier-analysis">Fourier analysis</h4>
-<p><span class="math display">\[
+<p><span class="math display">
 f \star g= \frac{1}{(\pi \hbar)^{2n}} \int_{\mathbb{R}^{4n}} d^{2n} \zeta d^{2n} \zeta' f(\xi + \zeta) g(\xi  + \zeta') e^{\frac{2i}{\hbar} \omega^{jk} \zeta_j \zeta_k'}
-\]</span></p>
+</span></p>
 </section>
 </section>
 <section id="basic-properties" class="level3">
@@ -979,10 +995,10 @@ f \star g= \frac{1}{(\pi \hbar)^{2n}} \int_{\mathbb{R}^{4n}} d^{2n} \zeta d^{2n}
 <div id="prp-todo" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1</strong></span> &nbsp;</p>
 </div>
-<p><span class="math inline">\(\{f, g\}_k = (-1)^k \{g, f\}_k\)</span></p>
-<p><span class="math inline">\(\{\cdot, \cdot \}_k\)</span> is invariant under symplectic transforms.</p>
+<p><span class="math inline">\{f, g\}_k = (-1)^k \{g, f\}_k</span></p>
+<p><span class="math inline">\{\cdot, \cdot \}_k</span> is invariant under symplectic transforms.</p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2 (Multinomial expansion of the bracket)</strong></span> When <span class="math inline">\(n=1\)</span>, direct expansion shows that it has the form of a binomial expansion: <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 2 (Multinomial expansion of the bracket)</strong></span> When <span class="math inline">n=1</span>, direct expansion shows that it has the form of a binomial expansion: <span class="math display">
 \begin{aligned}
 \{f, g\}_0 &amp;= fg \\
 \{f, g\}_1 &amp;= (f_{q} g_{p} - f_{p} g_{q}) = \{f, g\} \\
@@ -991,45 +1007,45 @@ f \star g= \frac{1}{(\pi \hbar)^{2n}} \int_{\mathbb{R}^{4n}} d^{2n} \zeta d^{2n}
 &amp; \cdots \\
 \{f, g\}_k &amp;=  \sum_{\alpha + \beta = k} (-1)^{\alpha} \binom{k}{\alpha} (\partial_{q}^{\beta} \partial_{p}^{\alpha} f)(\partial_{p}^{\beta} \partial_{q}^{\alpha} g)
 \end{aligned}
-\]</span></p>
-<p>And in general, it is a multinomial expansion. <span class="math display">\[
+</span></p>
+<p>And in general, it is a multinomial expansion. <span class="math display">
 \{f, g\}_k = \sum_{|\alpha| + |\beta| = k} (-1)^{|\alpha|} \binom{k}{\alpha, \beta} (\partial_{q}^{\beta} \partial_{p}^{\alpha} f)(\partial_{p}^{\beta} \partial_{q}^{\alpha} g)
-\]</span></p>
-<p>where <span class="math inline">\(\alpha, \beta\)</span> are multiindices.</p>
-<p><span class="math display">\[\{f, g\}_k(q,p) = \left(\sum_i (\partial_{q_i}\partial_{p_i'} - \partial_{p_i}\partial_{q_i'}) \right)^k f(q, p)g(q', p') \Bigg|_{(q', p') = (q, p)} =  (\omega^{ij}\partial_{\xi_i}\partial_{\xi_j'} )^k f(q, p)g(q', p') \big|_{(q', p') = (q, p)}
-\]</span></p>
+</span></p>
+<p>where <span class="math inline">\alpha, \beta</span> are multiindices.</p>
+<p><span class="math display">\{f, g\}_k(q,p) = \left(\sum_i (\partial_{q_i}\partial_{p_i'} - \partial_{p_i}\partial_{q_i'}) \right)^k f(q, p)g(q', p') \Bigg|_{(q', p') = (q, p)} =  (\omega^{ij}\partial_{\xi_i}\partial_{\xi_j'} )^k f(q, p)g(q', p') \big|_{(q', p') = (q, p)}
+</span></p>
 </div>
 <p>For example,</p>
-<p>If <span class="math inline">\(f, g\)</span> are polynomials of degree <span class="math inline">\(m, n\)</span>, then <span class="math inline">\(\{f, g\}_k\)</span> is a polynomial of degree <span class="math inline">\(\leq m + n - 2k\)</span>.</p>
-<p><span class="math display">\[\begin{aligned}
+<p>If <span class="math inline">f, g</span> are polynomials of degree <span class="math inline">m, n</span>, then <span class="math inline">\{f, g\}_k</span> is a polynomial of degree <span class="math inline">\leq m + n - 2k</span>.</p>
+<p><span class="math display">\begin{aligned}
 \{q_i, q_j\}_k &amp;= \begin{cases} q_iq_j , &amp; k =0, \\ 0 &amp; \text{else}\end{cases}; \\
 \{p_i, p_j\}_k &amp;= \begin{cases} p_ip_j , &amp; k =0, \\ 0 &amp; \text{else}\end{cases};\\
 \{q_i, p_j\}_k &amp;= \begin{cases} q_ip_j , &amp; k =0, \\ \delta_{ij} &amp; k = 1, \\ 0 &amp; \text{else}\end{cases}
 \end{aligned}
-\]</span></p>
+</span></p>
 <div id="prp-0" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3</strong></span> <span class="math display">\[\begin{aligned}
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> <span class="math display">\begin{aligned}
 f \star_t g &amp;= (\operatorname{Tr}\circ e^{t\Omega})( f \otimes g) \\
 &amp;=  f e^{t \bar P} g \\
 &amp;=  f \left(\prod_i e^{t \overleftarrow{\partial_{q_i}} \cdot \overrightarrow{\partial_{p_i}}} e^{-t\overleftarrow{\partial_{p_i}} \cdot \overrightarrow{\partial_{q_i}}} \right) g
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>since the operators commute.</p>
 </div>
 <p>This allows formal expressions:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \{\{f, g\}\}_t = \left(\operatorname{Tr}\circ \frac{\sinh^{t\Omega}}{t} \right)( f \otimes g)  =  f \frac{\sinh(t\bar P)}{t} g
-\]</span></p>
-<p>For example, when <span class="math inline">\(n=1\)</span>,</p>
-<p><span class="math display">\[
+</span></p>
+<p>For example, when <span class="math inline">n=1</span>,</p>
+<p><span class="math display">
 f \star_t g = fg + t \{f, g\} + \frac 12 t^2 (f_{qq} g_{pp} - 2 f_{pq} g_{pq} + f_{pp} g_{qq}) + \cdots
-\]</span></p>
-<p><span class="math display">\[\begin{aligned}
+</span></p>
+<p><span class="math display">\begin{aligned}
 (f \star_t g)(q,p) &amp;= f\left(q_1 + t\overrightarrow{\partial_{p_1}}, \dots, p_1 - t\overrightarrow{\partial_{q_1}}, \dots\right) g(q,p) \\
 &amp;= f(q,p) g\left(q_1 - t\overleftarrow{\partial_{p_1}}, \dots, p_1 + t\overleftarrow{\partial_{q_1}}, \dots\right) \\
 &amp;= f\left(q_1 + t\overrightarrow{\partial_{p_1}}, \dots, p\right) g\left(q_1 - t\overleftarrow{\partial_{p_1}}, \dots, p\right)
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>and more generally, in any combination of the coordinates.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -1043,54 +1059,54 @@ f \star_t g = fg + t \{f, g\} + \frac 12 t^2 (f_{qq} g_{pp} - 2 f_{pq} g_{pq} + 
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Differentiation <span class="math inline">\(\partial_{\xi_i}\)</span> generates translation in <span class="math inline">\(\xi_i\)</span>. That is, <span class="math inline">\(e^{\partial_{\xi_i} t}\)</span> is equivalent to translation by <span class="math inline">\(t\)</span> in coordinate <span class="math inline">\(\xi_i\)</span>.</p>
+<p>Differentiation <span class="math inline">\partial_{\xi_i}</span> generates translation in <span class="math inline">\xi_i</span>. That is, <span class="math inline">e^{\partial_{\xi_i} t}</span> is equivalent to translation by <span class="math inline">t</span> in coordinate <span class="math inline">\xi_i</span>.</p>
 </div>
 </div>
 </div>
 <p>This is useful for evaluating the bracket of some Hamiltonians:</p>
-<p><span class="math display">\[\{\{T(p) + V(q), \cdot\}\}_t = \frac{V(q + t\nabla_p) - V(q - t\nabla_p)}{2t} -\frac{T(p + t\nabla_q) - T(p - t\nabla_q)}{2t}\]</span></p>
-<p>In particular, if <span class="math inline">\(T, V\)</span> are both quadratic polynomials, then <span class="math inline">\(\{\{T + V, \cdot\}\}_t = \{T + V, \cdot\}\)</span>. That is, it simplifies to just the Poisson bracket.</p>
+<p><span class="math display">\{\{T(p) + V(q), \cdot\}\}_t = \frac{V(q + t\nabla_p) - V(q - t\nabla_p)}{2t} -\frac{T(p + t\nabla_q) - T(p - t\nabla_q)}{2t}</span></p>
+<p>In particular, if <span class="math inline">T, V</span> are both quadratic polynomials, then <span class="math inline">\{\{T + V, \cdot\}\}_t = \{T + V, \cdot\}</span>. That is, it simplifies to just the Poisson bracket.</p>
 <section id="example-evaluations" class="level4">
 <h4 class="anchored" data-anchor-id="example-evaluations">Example evaluations</h4>
-<p>If <span class="math inline">\(f = e^{\sum_i (Q_i q_i + P_i p_i)} = e^{\Xi_i \xi_i}, g = e^{\sum_i (Q_i' q_i + P_i' p_i)} = e^{\Xi_i' \xi_i}\)</span>, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">f = e^{\sum_i (Q_i q_i + P_i p_i)} = e^{\Xi_i \xi_i}, g = e^{\sum_i (Q_i' q_i + P_i' p_i)} = e^{\Xi_i' \xi_i}</span>, then</p>
+<p><span class="math display">
 \begin{aligned}
 \{f, g\}_k &amp;= \left(\sum_i (Q_i P_i' - Q_i' P_i) \right)^k fg \\
   &amp;= (\omega^{ij} \Xi_i \Xi_j')^k fg
 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned}
   f \star_t g &amp;= e^{t \sum_i (Q_i P_i' - Q_i' P_i)} fg \\
   &amp;= e^{t \sum_i (Q_i P_i' - Q_i' P_i)} e^{\sum_i (Q_i+Q_i') q_i + (P_i+P_i') p_i} \\
   &amp;= e^{t\omega^{ij} \Xi_i \Xi_j'} e^{(\Xi_i + \Xi_i')\xi_i}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>By induction, the star product of any number of exponentials is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f_1 \star_t \cdots \star_t f_N = e^{t\omega^{ij} \sum_{1 \leq k &lt; l \leq N}\Xi_i^{(k)} \Xi_j^{(l)}}e^{\sum_{1 \leq k  \leq N} \Xi_i^{(k)}\xi_i}
-\]</span></p>
+</span></p>
 <p>regardless of how the star product associates.</p>
-<p>Taking partial derivative <span class="math inline">\(\partial_{Q}^{\alpha} \partial_{P}^{\beta}\partial_{Q'}^{\alpha'} \partial_{P'}^{\beta'} \big|_{Q,P,Q',P' = 0}\)</span>, we obtain <span class="math inline">\((q^{\alpha}p^{\beta})\star_t (q^{\alpha'}p^{\beta'})\)</span>.</p>
+<p>Taking partial derivative <span class="math inline">\partial_{Q}^{\alpha} \partial_{P}^{\beta}\partial_{Q'}^{\alpha'} \partial_{P'}^{\beta'} \big|_{Q,P,Q',P' = 0}</span>, we obtain <span class="math inline">(q^{\alpha}p^{\beta})\star_t (q^{\alpha'}p^{\beta'})</span>.</p>
 <p>In particular,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 q_i \star_t q_j = q_i q_j, \quad p_i \star_t p_j = p_i p_j, \quad q_i \star_t p_j = q_ip_j + \delta_{ij}t, \quad p_j \star_t q_i = q_i p_j- \delta_{ij}t
-\]</span></p>
+</span></p>
 <p>that is,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \xi_i \star_t \xi_j = \xi_i \xi_j + \omega^{ij}t
-\]</span></p>
+</span></p>
 <p>In general, the star product is very difficult to evaluate. Other than the “planar-wave” exponentials given above, we can also evaluate the star product of spherical gaussians:</p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4 (hyperbolic addition law)</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 4 (hyperbolic addition law)</strong></span> <span class="math display">
 e^{-\tanh (a) \frac{q^2 + p^2}{\hbar }} \star e^{-\tanh (b) \frac{q^2 + p^2}{\hbar }}
 = \frac{\tanh (a + b)}{\tanh (a) + \tanh (b)} e^{-\tanh (a+b) \frac{q^2 + p^2}{\hbar }}
-\]</span></p>
+</span></p>
 <p>Equivalently,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \exp \left(-\frac{a}{\hbar}\left(q^2+p^2\right)\right) \star \exp \left(-\frac{b}{\hbar}\left(q^2+p^2\right)\right)
 = \frac{1}{1+a b} \exp \left(-\frac{a+b}{\hbar(1+a b)}\left(q^2+p^2\right)\right)
-\]</span></p>
+</span></p>
 </div>
 </section>
 </section>
@@ -1099,8 +1115,8 @@ e^{-\tanh (a) \frac{q^2 + p^2}{\hbar }} \star e^{-\tanh (b) \frac{q^2 + p^2}{\hb
 <div id="prp-todo" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 5</strong></span> The Moyal bracket and the star product together make up a Poisson structure, that is,</p>
 <ul>
-<li><span class="math inline">\(f\star_t 1 = 1 \star_t f = f\)</span></li>
-<li><span class="math inline">\((f \star_t g)^* = (g^*) \star_t (f^*)\)</span> when <span class="math inline">\(t\)</span> is imaginary.</li>
+<li><span class="math inline">f\star_t 1 = 1 \star_t f = f</span></li>
+<li><span class="math inline">(f \star_t g)^* = (g^*) \star_t (f^*)</span> when <span class="math inline">t</span> is imaginary.</li>
 <li>The star product is associative.</li>
 </ul>
 </div>
@@ -1117,25 +1133,25 @@ e^{-\tanh (a) \frac{q^2 + p^2}{\hbar }} \star e^{-\tanh (b) \frac{q^2 + p^2}{\hb
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>(1). Direct calculation.</p>
-<p>(2). <span class="math inline">\(Tr\Pi^k (f\otimes g) = (-1)^k Tr\Pi^k (g\otimes f)\)</span></p>
+<p>(2). <span class="math inline">Tr\Pi^k (f\otimes g) = (-1)^k Tr\Pi^k (g\otimes f)</span></p>
 <p>(3). Because the star product is multilinear, it suffices to check associativity for exponential functions, which was already proven previously.</p>
 </div>
 </div>
 </div>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6 (Jacobi-like identities)</strong></span> (1). For any <span class="math inline">\(m = 0, 1, \dots\)</span>,</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 6 (Jacobi-like identities)</strong></span> (1). For any <span class="math inline">m = 0, 1, \dots</span>,</p>
+<p><span class="math display">
 \sum_k \binom mk \{\{f, g\}_k, h\}_{m-k} = \sum_k \binom mk \{f, \{g, h\}_k\}_{m-k}
-\]</span></p>
-<p>(2). The Moyal bracket contains only terms of order <span class="math inline">\(1, t^2, t^4, \dots\)</span>.</p>
-<p><span class="math display">\[\{\{f, g\}\}_t = \sum_{k\text{ odd}} \frac{t^{k-1}}{k!} = \{f, g\} + \frac 16 t^2 \{f, g\}_3 + \frac{1}{120}t^4 \{f, g\}_5 + \cdots
-\]</span></p>
-<p>In particular, with <span class="math inline">\(t=i\hbar /2\)</span>, <span class="math display">\[
+</span></p>
+<p>(2). The Moyal bracket contains only terms of order <span class="math inline">1, t^2, t^4, \dots</span>.</p>
+<p><span class="math display">\{\{f, g\}\}_t = \sum_{k\text{ odd}} \frac{t^{k-1}}{k!} = \{f, g\} + \frac 16 t^2 \{f, g\}_3 + \frac{1}{120}t^4 \{f, g\}_5 + \cdots
+</span></p>
+<p>In particular, with <span class="math inline">t=i\hbar /2</span>, <span class="math display">
 \{\{f, g\}\} = \{f, g\} + O(\hbar^2)
-\]</span></p>
-<p>(3). (Jacobi identity) For any even <span class="math inline">\(m = 0, 2, \dots\)</span>,</p>
-<p><span class="math display">\[\sum_{k \text{ odd}} \binom mk \left[\{f, \{g, h\}_k\}_{m-k}\right]_\circlearrowleft = 0
-\]</span> where the <span class="math inline">\(\circlearrowleft\)</span> means cyclically permuting the three terms <span class="math inline">\(f, g, h\)</span>, as in the usual case of Jacobi identity. For example, when <span class="math inline">\(m=2\)</span>, it simplifies to <span class="math display">\[\left[\{f, \{g, h\}\}\right]_\circlearrowleft\]</span></p>
+</span></p>
+<p>(3). (Jacobi identity) For any even <span class="math inline">m = 0, 2, \dots</span>,</p>
+<p><span class="math display">\sum_{k \text{ odd}} \binom mk \left[\{f, \{g, h\}_k\}_{m-k}\right]_\circlearrowleft = 0
+</span> where the <span class="math inline">\circlearrowleft</span> means cyclically permuting the three terms <span class="math inline">f, g, h</span>, as in the usual case of Jacobi identity. For example, when <span class="math inline">m=2</span>, it simplifies to <span class="math display">\left[\{f, \{g, h\}\}\right]_\circlearrowleft</span></p>
 <p>which is the Jacobi identity for the Poisson bracket.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
@@ -1150,9 +1166,9 @@ e^{-\tanh (a) \frac{q^2 + p^2}{\hbar }} \star e^{-\tanh (b) \frac{q^2 + p^2}{\hb
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>(1). Expand <span class="math inline">\((f \star_t g) \star_t h = f \star_t (g \star_t h)\)</span> in powers of <span class="math inline">\(t\)</span>, and match the coefficients.</p>
-<p>(2). Expand, and note that <span class="math inline">\(\{\{ f, g \}\}_k = (-1)^k\{\{ g, f \}\}_k\)</span>.</p>
-<p>(3). Expand the Jacobi identity for <span class="math inline">\(\{\{ \cdot, \cdot \}\}_t\)</span>.</p>
+<p>(1). Expand <span class="math inline">(f \star_t g) \star_t h = f \star_t (g \star_t h)</span> in powers of <span class="math inline">t</span>, and match the coefficients.</p>
+<p>(2). Expand, and note that <span class="math inline">\{\{ f, g \}\}_k = (-1)^k\{\{ g, f \}\}_k</span>.</p>
+<p>(3). Expand the Jacobi identity for <span class="math inline">\{\{ \cdot, \cdot \}\}_t</span>.</p>
 </div>
 </div>
 </div>
@@ -1163,37 +1179,37 @@ e^{-\tanh (a) \frac{q^2 + p^2}{\hbar }} \star e^{-\tanh (b) \frac{q^2 + p^2}{\hb
 <section id="fourier-analysis-1" class="level3">
 <h3 class="anchored" data-anchor-id="fourier-analysis-1">Fourier analysis</h3>
 <div id="thm-todo" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (Fourier transform of the star product)</strong></span> <span class="math display">\[(f \star g)(q, p) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^4} dp' dp'' dq' dq''  
+<p><span class="theorem-title"><strong>Theorem 4 (Fourier transform of the star product)</strong></span> <span class="math display">(f \star g)(q, p) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^4} dp' dp'' dq' dq''  
 f(q', p') g(q'', p'')
 \exp \left(\frac{2 i}{\hbar} ((qp' - pq') + (q'p'' - p'q'') + (q''p - p''q)  ) \right)
-\]</span></p>
+</span></p>
 </div>
 <p>I have not checked the following, but I <em>think</em> it is true.</p>
-<p><span class="math display">\[(f\star g) (\xi) = \frac{1}{(\hbar \pi)^{2n}}\int d^{2n}\xi' d^{2n}\xi'' f(\xi') g(\xi'') \exp \left(\frac{2 i}{\hbar} ((qp' - pq') + (q'p'' - p'q'') + (q''p - p''q)  ) \right)
-\]</span></p>
+<p><span class="math display">(f\star g) (\xi) = \frac{1}{(\hbar \pi)^{2n}}\int d^{2n}\xi' d^{2n}\xi'' f(\xi') g(\xi'') \exp \left(\frac{2 i}{\hbar} ((qp' - pq') + (q'p'' - p'q'') + (q''p - p''q)  ) \right)
+</span></p>
 <div id="lem-lone-star" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1 (lone star lemma)</strong></span> <span class="math display">\[\int(f\star g) (q,p)dqdp = \int f(q,p) g (q,p)dqdp
-\]</span></p>
+<p><span class="theorem-title"><strong>Lemma 1 (lone star lemma)</strong></span> <span class="math display">\int(f\star g) (q,p)dqdp = \int f(q,p) g (q,p)dqdp
+</span></p>
 </div>
 <p><span class="citation" data-cites="zachosSurveyStarProduct2001">(<a href="#ref-zachosSurveyStarProduct2001" role="doc-biblioref">Zachos 2001</a>)</span> gave a geometric trick picture for the star product.</p>
-<p>Let <span class="math inline">\(\vec r = (q, p)\)</span>, etc, then</p>
-<p><span class="math display">\[
+<p>Let <span class="math inline">\vec r = (q, p)</span>, etc, then</p>
+<p><span class="math display">
 (\vec r' - \vec r) \wedge (\vec r'' - \vec r) = \vec r \wedge \vec r' + \vec r' \wedge \vec r'' + \vec r'' \wedge \vec r = (qp' - pq') +(q'p'' - p'q'') +(q''p - p''q)
-\]</span></p>
-<p>This can be interpreted as twice the oriented area of a triangle, with orientation going in the direction of <span class="math inline">\(\vec r \to \vec r' \to \vec r''\)</span>. In this notation, we have</p>
-<p><span class="math display">\[(f \star g)(\vec r) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^4} d^2 \vec r' d^2 \vec r''
+</span></p>
+<p>This can be interpreted as twice the oriented area of a triangle, with orientation going in the direction of <span class="math inline">\vec r \to \vec r' \to \vec r''</span>. In this notation, we have</p>
+<p><span class="math display">(f \star g)(\vec r) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^4} d^2 \vec r' d^2 \vec r''
 f( \vec r') g(\vec r'')
 \exp \left(\frac{4 i}{\hbar} A(\vec r , \vec r' , \vec r'') \right)
-\]</span></p>
-<p><span class="math display">\[(f \star g \star h)(\vec r) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^6} d^6 (\vec r', \vec r'', \vec r''')
+</span></p>
+<p><span class="math display">(f \star g \star h)(\vec r) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^6} d^6 (\vec r', \vec r'', \vec r''')
 f( \vec r') g(\vec r'') h(\vec r''')
 \exp \left(\frac{4 i}{\hbar} A(\vec r , \vec r' , \vec r'') \right) \delta^2 (\vec r  - \vec r' + \vec r''- \vec r''' )
-\]</span></p>
+</span></p>
 <p>The Dirac delta in the integrand is a geometric restriction that forces the four vectors form a parallelogram.</p>
-<p><span class="math display">\[\int_{\mathbb{R}^2} d^2 \vec r (f \star g \star h)(\vec r) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^6} d^6 (\vec r', \vec r'', \vec r''')
+<p><span class="math display">\int_{\mathbb{R}^2} d^2 \vec r (f \star g \star h)(\vec r) = \frac{1}{(\hbar \pi)^2} \int_{\mathbb{R}^6} d^6 (\vec r', \vec r'', \vec r''')
 f( \vec r') g(\vec r'') h(\vec r''')
 \exp \left(\frac{4 i}{\hbar} A(\vec r , \vec r' , \vec r'') \right)
-\]</span></p>
+</span></p>
 </section>
 </section>
 <section id="quantum-mechanics-on-phase-space" class="level2 page-columns page-full">
@@ -1206,43 +1222,43 @@ f( \vec r') g(\vec r'') h(\vec r''')
 </ul>
 <section id="the-problem-of-ordering" class="level3">
 <h3 class="anchored" data-anchor-id="the-problem-of-ordering">The problem of ordering</h3>
-<p>When Schrödinger, Heisenberg, etc proposed quantum mechanics, they found that position and momentum, which in classical mechanics are represented as real-valued functions <span class="math inline">\(q_{1}, \dots, q_n , p_{1}, \dots, p_n\)</span> over phase space <span class="math inline">\(\mathbb{R}^{2n}\)</span>, must instead become self-adjoint linear operators <span class="math inline">\(\hat q_{1}, \dots, \hat q_n , \hat p_{1}, \dots, \hat p_n\)</span> over an inner product space (Hilbert space).</p>
-<p>Everyone agrees since (Heisenberg, 1925) and (Schrödinger, 1926) that <span class="math inline">\(\hat q, \hat p\)</span> must be quantized, and must satisfy the canonical commutator relations. Then (von Neumann, 1931) proved that under mild assumptions, there is only one choice (up to Hilbert space isomorphism). This is the choice that (is isomorphic to the choice that) everyone learns in quantum mechanics nowadays:</p>
-<p><span class="math display">\[
+<p>When Schrödinger, Heisenberg, etc proposed quantum mechanics, they found that position and momentum, which in classical mechanics are represented as real-valued functions <span class="math inline">q_{1}, \dots, q_n , p_{1}, \dots, p_n</span> over phase space <span class="math inline">\mathbb{R}^{2n}</span>, must instead become self-adjoint linear operators <span class="math inline">\hat q_{1}, \dots, \hat q_n , \hat p_{1}, \dots, \hat p_n</span> over an inner product space (Hilbert space).</p>
+<p>Everyone agrees since (Heisenberg, 1925) and (Schrödinger, 1926) that <span class="math inline">\hat q, \hat p</span> must be quantized, and must satisfy the canonical commutator relations. Then (von Neumann, 1931) proved that under mild assumptions, there is only one choice (up to Hilbert space isomorphism). This is the choice that (is isomorphic to the choice that) everyone learns in quantum mechanics nowadays:</p>
+<p><span class="math display">
 \hat q_i = (q_i \cdot), \quad \hat p_i = -i\hbar \partial_{q_i}
-\]</span></p>
+</span></p>
 <p>The problem is that people do not agree on how to quantize the other observables.</p>
-<p>The <strong>problem of ordering</strong> is that <span class="math inline">\(pq = qp\)</span> in classical mechanics, but <span class="math inline">\(\hat p \hat q \neq \hat q \hat p\)</span> in quantum mechanics. Therefore, one must decide on how to convert <span class="math inline">\(pq\)</span> to some <span class="math inline">\(\widehat{pq}\)</span> in quantum mechanics, consistently.</p>
-<p>Do we choose <span class="math inline">\(\hat q \hat p\)</span>, or <span class="math inline">\(\hat p \hat q\)</span>, or even something entirely different?</p>
+<p>The <strong>problem of ordering</strong> is that <span class="math inline">pq = qp</span> in classical mechanics, but <span class="math inline">\hat p \hat q \neq \hat q \hat p</span> in quantum mechanics. Therefore, one must decide on how to convert <span class="math inline">pq</span> to some <span class="math inline">\widehat{pq}</span> in quantum mechanics, consistently.</p>
+<p>Do we choose <span class="math inline">\hat q \hat p</span>, or <span class="math inline">\hat p \hat q</span>, or even something entirely different?</p>
 <p>Weyl’s solution is to preserve the symmetry as much as possible, by using symmetric polynomials:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \widehat{pq} = \widehat{qp} = \frac 12 (\hat q \hat p + \hat p \hat q)
-\]</span></p>
+</span></p>
 <p>and in general,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \widehat{\prod_{j=1}^N \xi_{k_j}} = \frac{1}{N!} \sum_{\sigma \in S_N} \prod_{j=1}^N \hat \xi_{k_\sigma(j)}
-\]</span></p>
+</span></p>
 <p>That is, the quantum operator corresponding to a product is the symmetric product.</p>
 </section>
 <section id="weyl-transform-1" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="weyl-transform-1">Weyl transform</h3>
 <p>The <strong>Weyl transform</strong> sends real-valued functions on phase space to self-adjoint linear operators. That is, it sends classical observables to quantum observables.</p>
-<p>Let <span class="math inline">\(f : \mathbb{R}^{2n} \to \mathbb{C}\)</span> be a nice function, then its Weyl transform is</p>
-<p><span class="math display">\[
+<p>Let <span class="math inline">f : \mathbb{R}^{2n} \to \mathbb{C}</span> be a nice function, then its Weyl transform is</p>
+<p><span class="math display">
 W[f] := \frac{1}{(2\pi)^{2n} } \int \tilde f(\tilde \xi) \exp\left({i \tilde \xi \cdot \widehat {\xi} } \right) d^{2n} \tilde\xi
-\]</span></p>
+</span></p>
 <p>The <strong>inverse Weyl transform</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Also called the Wigner map, or the Wigner transform.</p></div></div><p><span class="math display">\[
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Also called the Wigner map, or the Wigner transform.</p></div></div><p><span class="math display">
 W^{-1} [\hat f](q,p) =  \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} \hat f \ket{q-y/2}
-\]</span></p>
+</span></p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7 (equivalent definitions of Weyl transform)</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 7 (equivalent definitions of Weyl transform)</strong></span> <span class="math display">
 \begin{aligned}
       W[f] &amp;= \frac{1}{(2\pi)^{2n} } \int f(\xi) \exp\left({i \tilde \xi \cdot (\widehat {\xi} - \xi) } \right) d^{2n} \xi d^{2n} \tilde\xi \\
       &amp;= \frac{1}{(2\pi)^{2n} } \int f(q,p) \prod_{j=1}^n\exp\left[{i (\tilde q_j (\widehat {q_j} - q_j) + \tilde p_j (\widehat {p_j} - p_j) ) } \right] d^{n} q d^{n} p d^{n} \tilde q d^{n} \tilde q\\
       &amp;= \left(\frac{2}{(2\pi \hbar)^{\frac 32}}\right)^n  \int d^{2n}\xi d^{2n}\xi' f(q,p) \ket{q'} \bra{p'} e^{\frac{i}{\hbar}(q' \cdot p' - 2 (q' -q)\cdot (p'-p))}
       \end{aligned}
-\]</span></p>
+</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -1256,28 +1272,28 @@ W^{-1} [\hat f](q,p) =  \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} \hat f \ket
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>First is by the definition of the Fourier transform. Second is derived from the first because <span class="math inline">\(q_i, q_j\)</span> commute, and <span class="math inline">\(p_i, p_j\)</span> commute.</p>
+<p>First is by the definition of the Fourier transform. Second is derived from the first because <span class="math inline">q_i, q_j</span> commute, and <span class="math inline">p_i, p_j</span> commute.</p>
 <p>For the third one, By the Baker-Campbell-Hausdorff formula,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \exp\left({i \tilde \xi \cdot (\widehat {\xi} - \xi) } \right)
 &amp;= e^{\frac 12 i\hbar (\tilde q \cdot \tilde p) - i \tilde \xi \xi} e^{i \tilde q\cdot \hat q} e^{i \tilde p\cdot \hat p} \\
 &amp;= e^{\frac 12 i\hbar (\tilde q \cdot \tilde p) - i \tilde \xi \xi}\int d^n q' d^n p' \ket{q'} \bra{p'} e^{i (\tilde q \cdot q' + \tilde p \cdot p' + q' \cdot p' / \hbar)}
 \end{aligned}
-\]</span></p>
-<p>Plug it into the first equation, and integrate out <span class="math inline">\(d^{n} \tilde q, d^n \tilde p, d^{n} q, d^n q\)</span> one-by-one, using the Dirac delta trick of <span class="math inline">\(\int e^{i \tilde x x} d^n x = (2\pi)^n \delta^n(\tilde x)\)</span>.</p>
+</span></p>
+<p>Plug it into the first equation, and integrate out <span class="math inline">d^{n} \tilde q, d^n \tilde p, d^{n} q, d^n q</span> one-by-one, using the Dirac delta trick of <span class="math inline">\int e^{i \tilde x x} d^n x = (2\pi)^n \delta^n(\tilde x)</span>.</p>
 </div>
 </div>
 </div>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 8 (equivalent definitions of inverse Weyl transform)</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 8 (equivalent definitions of inverse Weyl transform)</strong></span> <span class="math display">
 \begin{aligned}
       W^{-1} [\hat f](q,p) &amp;=  \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} \hat f \ket{q-y/2} \\
       &amp;= \int d^n y e^{iq \cdot y/\hbar}~\bra{p+y/2} \hat f \ket{p-y/2} \\
       &amp;= \operatorname{Tr}\left[\hat f  \int d^n y e^{-ip \cdot y/\hbar}~ \ket{q-y/2} \bra{q+y/2} \right] \\
       &amp;= \operatorname{Tr}\left[\hat f  \int d^n y e^{i q \cdot y/\hbar}~ \ket{p+y/2} \bra{p-y/2} \right]
       \end{aligned}
-\]</span></p>
+</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -1296,18 +1312,18 @@ W^{-1} [\hat f](q,p) =  \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} \hat f \ket
 </div>
 </div>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 9 (special cases)</strong></span> Let <span class="math inline">\(f(q, p) = e^{i (\tilde \xi \cdot \xi)}\)</span>, then</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 9 (special cases)</strong></span> Let <span class="math inline">f(q, p) = e^{i (\tilde \xi \cdot \xi)}</span>, then</p>
+<p><span class="math display">
 \tilde f(\tilde \xi') = (2\pi)^{2n} \delta^{2n}(\tilde \xi' - \tilde \xi), \quad W[f] = e^{i (\tilde \xi \cdot \hat\xi)}
-\]</span></p>
+</span></p>
 <p>For monomials,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 W\left[\prod_{j=1}^N \xi_{k_j}\right] = \frac{1}{N!} \sum_{\sigma \in S_N} \prod_{j=1}^N \hat \xi_{k_{\sigma(j)}}
-\]</span></p>
-<p>In particular, if <span class="math inline">\(\prod_{j=1}^N \xi_{k_j}\)</span> contains only commuting variables (that is, <span class="math inline">\(p_i, q_i\)</span> do not simultaneously appear for each of <span class="math inline">\(i = 1, 2, \dots n\)</span>), then</p>
-<p><span class="math display">\[
+</span></p>
+<p>In particular, if <span class="math inline">\prod_{j=1}^N \xi_{k_j}</span> contains only commuting variables (that is, <span class="math inline">p_i, q_i</span> do not simultaneously appear for each of <span class="math inline">i = 1, 2, \dots n</span>), then</p>
+<p><span class="math display">
 W\left[\prod_{j=1}^N \xi_{k_j}\right] = \prod_{j=1}^N \xi_{j}
-\]</span></p>
+</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1321,39 +1337,39 @@ W\left[\prod_{j=1}^N \xi_{k_j}\right] = \prod_{j=1}^N \xi_{j}
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For any of the canonical variables <span class="math inline">\(\xi_j\)</span>, we let it go through the Fourier transform and then an inverse transform:</p>
-<p><span class="math display">\[
+<p>For any of the canonical variables <span class="math inline">\xi_j</span>, we let it go through the Fourier transform and then an inverse transform:</p>
+<p><span class="math display">
 \xi_j  = \frac{1}{(2\pi)^{2n} } \int \tilde \xi_j(\tilde \zeta) \exp\left({i \sum_j \tilde \zeta_j \xi_j } \right) d^{2n} \tilde\zeta
-\]</span></p>
-<p>Now, expand the exponent inside the integrand, but don’t allow <span class="math inline">\(\xi_j\)</span> to commute with <span class="math inline">\(\xi_k\)</span>, then we obtain a formal power series consisting of terms like</p>
-<p><span class="math display">\[
+</span></p>
+<p>Now, expand the exponent inside the integrand, but don’t allow <span class="math inline">\xi_j</span> to commute with <span class="math inline">\xi_k</span>, then we obtain a formal power series consisting of terms like</p>
+<p><span class="math display">
 (\text{complex-valued function})(\tilde \zeta) \cdot (\text{some monomial in }\xi_j)
-\]</span></p>
-<p>Now each complex-valued function coefficient integrates, leaving behind a complex-linear sum of monomials in <span class="math inline">\(\xi_i\)</span>.</p>
-<p>Since only the coefficients of <span class="math inline">\(\xi_j\)</span> remain, this means that doing the same formal manipulation with the Weyl transform would be nothing more than adding a hat <span class="math inline">\(\widehat{(\cdot)}\)</span>, giving us</p>
-<p><span class="math display">\[
+</span></p>
+<p>Now each complex-valued function coefficient integrates, leaving behind a complex-linear sum of monomials in <span class="math inline">\xi_i</span>.</p>
+<p>Since only the coefficients of <span class="math inline">\xi_j</span> remain, this means that doing the same formal manipulation with the Weyl transform would be nothing more than adding a hat <span class="math inline">\widehat{(\cdot)}</span>, giving us</p>
+<p><span class="math display">
 W[\xi_j] := \widehat{\xi_j}
-\]</span></p>
-<p>In general, if we have a monomial function <span class="math inline">\(f := \prod_{j=1}^N \xi_{k_j}\)</span>, then</p>
-<p><span class="math display">\[
+</span></p>
+<p>In general, if we have a monomial function <span class="math inline">f := \prod_{j=1}^N \xi_{k_j}</span>, then</p>
+<p><span class="math display">
 \begin{aligned}
     f &amp;= \frac{1}{(2\pi)^{2n} } \int \tilde f(\tilde \zeta) \exp\left({i \sum_j \tilde \zeta_j \xi_j } \right) d^{2n} \tilde\zeta \\
     &amp;=\sum_{M=0}^\infty \frac{1}{(2\pi)^{2n} } \frac{i^M}{M!}\int \tilde f(\tilde \zeta) \left( \sum_j \tilde \zeta_j \xi_j  \right)^M d^{2n} \tilde\zeta \\
 \end{aligned}
-\]</span></p>
-<p>As before, all the coefficients integrate to zero, except for the terms that results in the monomial of <span class="math inline">\(f\)</span>. Such terms occur only in <span class="math inline">\(\left( \sum_j \tilde \zeta_j \xi_j  \right)^N\)</span>, in the form of a sum:</p>
-<p><span class="math display">\[
+</span></p>
+<p>As before, all the coefficients integrate to zero, except for the terms that results in the monomial of <span class="math inline">f</span>. Such terms occur only in <span class="math inline">\left( \sum_j \tilde \zeta_j \xi_j  \right)^N</span>, in the form of a sum:</p>
+<p><span class="math display">
 \sum_{\sigma\in S_N} \prod_{j=1}^N \tilde \zeta_{k_{\sigma(j)}} \xi_{k_{\sigma(j)}}
-\]</span></p>
-<p>Now, the <span class="math inline">\(\prod_{j=1}^N \tilde \zeta_{k_{\sigma(j)}}\)</span> part commutes, but the <span class="math inline">\(\prod_{j=1}^N \xi_{k_{\sigma(j)}}\)</span> part does not. So we find that the coefficient in front of each <span class="math inline">\(\prod_{j=1}^N \xi_{k_{\sigma(j)}}\)</span> is the same, all of which are <span class="math inline">\(\frac{1}{N!}\)</span>.</p>
+</span></p>
+<p>Now, the <span class="math inline">\prod_{j=1}^N \tilde \zeta_{k_{\sigma(j)}}</span> part commutes, but the <span class="math inline">\prod_{j=1}^N \xi_{k_{\sigma(j)}}</span> part does not. So we find that the coefficient in front of each <span class="math inline">\prod_{j=1}^N \xi_{k_{\sigma(j)}}</span> is the same, all of which are <span class="math inline">\frac{1}{N!}</span>.</p>
 </div>
 </div>
 </div>
 <p>So far, we have defined by <em>fiat</em> a transform that we have called “the inverse Weyl transform”. However, we had better make sure it really is the inverse of “the Weyl transform”. We can now prove it.</p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 10</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 10</strong></span> <span class="math display">
 W^{-1}[W[f]] = f
-\]</span></p>
+</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
@@ -1367,8 +1383,8 @@ W^{-1}[W[f]] = f
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It suffices to prove this when <span class="math inline">\(f(q, p) = e^{i (\tilde \xi \cdot \xi)}\)</span>, since both <span class="math inline">\(W\)</span> and <span class="math inline">\(W^{-1}\)</span> are linear, and any function is the integral of some <span class="math inline">\(\int e^{i (\tilde \xi \cdot \xi)} \tilde f(\tilde \xi) d^{2n} \tilde \xi\)</span>, by Fourier transform.</p>
-<p><span class="math display">\[
+<p>It suffices to prove this when <span class="math inline">f(q, p) = e^{i (\tilde \xi \cdot \xi)}</span>, since both <span class="math inline">W</span> and <span class="math inline">W^{-1}</span> are linear, and any function is the integral of some <span class="math inline">\int e^{i (\tilde \xi \cdot \xi)} \tilde f(\tilde \xi) d^{2n} \tilde \xi</span>, by Fourier transform.</p>
+<p><span class="math display">
 \begin{aligned}
     W^{-1}[e^{i (\tilde \xi \cdot \hat\xi)}](q,p) &amp;= \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} e^{i (\tilde q \cdot \hat q + \tilde p \cdot \hat p)} \ket{q-y/2}\\
     &amp;= \int d^n y e^{-ip \cdot y/\hbar}~\bra{q+y/2} e^{i \tilde q \cdot \hat q/2} e^{i \tilde p \cdot \hat p} e^{i \tilde q \cdot \hat q/2} \ket{q-y/2}\\
@@ -1376,7 +1392,7 @@ W^{-1}[W[f]] = f
     &amp;= \int d^n y e^{-ip \cdot y/\hbar}~e^{i \tilde q \cdot q}  \delta^n(\hbar \tilde p + (q+ y/2) - (q - y/2) )\\
     &amp;= e^{i (\tilde q \cdot q + \tilde p \cdot p)}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>In the derivation, we used two facts: the Baker-Campbell-Hausdorff formula, and the fact that momentum is the generator for translation.</p>
 </div>
 </div>
@@ -1384,85 +1400,85 @@ W^{-1}[W[f]] = f
 <div id="prp-todo" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 11</strong></span> Some statements I have not checked, but I heard they are correct:</p>
 <ul>
-<li>If <span class="math inline">\(\hat H = T(\hat p) + V(\hat q)\)</span> for some analytic functions <span class="math inline">\(T, V\)</span>, then <span class="math inline">\(W[T(p) + V(q)] = \hat H\)</span></li>
-<li><span class="math inline">\(W[f] W[g] = W[f \star g]\)</span></li>
-<li><span class="math inline">\(\operatorname{Tr}( \hat A \hat B) =(2\pi \hbar)^{-n} \int AB d^n q d^n p\)</span></li>
+<li>If <span class="math inline">\hat H = T(\hat p) + V(\hat q)</span> for some analytic functions <span class="math inline">T, V</span>, then <span class="math inline">W[T(p) + V(q)] = \hat H</span></li>
+<li><span class="math inline">W[f] W[g] = W[f \star g]</span></li>
+<li><span class="math inline">\operatorname{Tr}( \hat A \hat B) =(2\pi \hbar)^{-n} \int AB d^n q d^n p</span></li>
 </ul>
 </div>
 <div id="thm-todo" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (correspondence principle)</strong></span> If <span class="math inline">\(f\)</span> is a polynomial of degree <span class="math inline">\(\leq 2\)</span>, and <span class="math inline">\(g\)</span> is a polynomial, then</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 5 (correspondence principle)</strong></span> If <span class="math inline">f</span> is a polynomial of degree <span class="math inline">\leq 2</span>, and <span class="math inline">g</span> is a polynomial, then</p>
+<p><span class="math display">
 [W[f] , W[g]] = i\hbar W[\{f, g\}]
-\]</span></p>
-<p>This is an instance of the correspondence principle <span class="math inline">\([\hat f, \hat g] = i\hbar \widehat{\{f, g\}}\)</span>.</p>
+</span></p>
+<p>This is an instance of the correspondence principle <span class="math inline">[\hat f, \hat g] = i\hbar \widehat{\{f, g\}}</span>.</p>
 </div>
 <div id="prp-todo" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 12 (functional analysis properties of the Weyl transform)</strong></span> &nbsp;</p>
 <ul>
-<li>If f is a real-valued function, then <span class="math inline">\(\Phi [f]\)</span> is self-adjoint.</li>
-<li>If f is an element of Schwartz space, then <span class="math inline">\(\Phi[f]\)</span> is trace-class.</li>
-<li><span class="math inline">\(\Phi [f]\)</span> is a densely defined unbounded operator.</li>
-<li>The map <span class="math inline">\(\Phi [f]\)</span> is one-to-one on the Schwartz space as a subspace of the square-integrable functions.</li>
+<li>If f is a real-valued function, then <span class="math inline">\Phi [f]</span> is self-adjoint.</li>
+<li>If f is an element of Schwartz space, then <span class="math inline">\Phi[f]</span> is trace-class.</li>
+<li><span class="math inline">\Phi [f]</span> is a densely defined unbounded operator.</li>
+<li>The map <span class="math inline">\Phi [f]</span> is one-to-one on the Schwartz space as a subspace of the square-integrable functions.</li>
 </ul>
 </div>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 13 (examples in <span class="math inline">\(n=1\)</span> case.)</strong></span> For any <span class="math inline">\(a, b\in \mathbb{C}, n \in \mathbb{N}\)</span>, we have</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 13 (examples in <span class="math inline">n=1</span> case.)</strong></span> For any <span class="math inline">a, b\in \mathbb{C}, n \in \mathbb{N}</span>, we have</p>
+<p><span class="math display">
 W[(a q + b p)^n] = (a \hat q + b \hat p)^n
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 W[e^{i(a q + b p)^n}] = e^{i(a \hat q + b \hat p)^n}
-\]</span></p>
+</span></p>
 <p>(McCoy’s formula):</p>
-<p><span class="math display">\[
+<p><span class="math display">
 W[ p^m q^n] = {1 \over 2^n}
       \sum_{r=0}^{n} {n \choose r}
       \hat q^r  \hat p^m  \hat q^{n-r}={1 \over 2^m}\sum_{s=0}^{m} {m \choose s} \hat p^s \hat q^{n}\hat p^{m-s}
-\]</span></p>
+</span></p>
 </div>
 </section>
 <section id="wave-function-transform" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="wave-function-transform">Wave function transform</h3>
-<p>The Weyl transform, when applied to a density operator <span class="math inline">\(\hat \rho\)</span>, yields a function on phase space. This function is called a <strong>Wigner function</strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Or a Wigner quasiprobability distribution, or a Wigner distribution, or… you know how it is.</p></div></div><p>The wave function is transformed the same way as its density operator, but we need to divide by an extra factor of <span class="math inline">\((2\pi \hbar)^n\)</span> for convenience.</p>
-<p><span class="math display">\[
+<p>The Weyl transform, when applied to a density operator <span class="math inline">\hat \rho</span>, yields a function on phase space. This function is called a <strong>Wigner function</strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Or a Wigner quasiprobability distribution, or a Wigner distribution, or… you know how it is.</p></div></div><p>The wave function is transformed the same way as its density operator, but we need to divide by an extra factor of <span class="math inline">(2\pi \hbar)^n</span> for convenience.</p>
+<p><span class="math display">
 \begin{aligned}
       W_{\hat \rho} :=&amp; \frac{1}{(2\pi \hbar)^n} W^{-1}[\hat \rho] \\
       =&amp;  \frac{1}{(2\pi \hbar)^n}\int d^n y e^{-ip \cdot y/\hbar}~\braket{q+y/2|\psi} \braket{\psi | q-y/2} \\
       =&amp;  \frac{1}{(2\pi)^n}\int d^n y e^{-ip \cdot y}~\braket{q+y\hbar /2|\psi} \braket{\psi | q-y\hbar /2} \\
       =&amp;  \frac{1}{(2\pi )^n}\int d^n y e^{-ip \cdot y}~\psi(q+y\hbar/2) \psi(q-y\hbar/2)^*
 \end{aligned}
-\]</span></p>
-<p>If <span class="math inline">\(\psi\)</span> is given in momentum coordinates, then we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>If <span class="math inline">\psi</span> is given in momentum coordinates, then we have</p>
+<p><span class="math display">
 W(q, p) = \frac{1}{(2\pi)^n} \int e^{-i\braket{y, q}}d^ny \; \psi(p - \hbar y/2) \psi(p + \hbar y/2)^*
-\]</span></p>
-<p>Note that <span class="math inline">\(W\)</span> has units of <span class="math inline">\(\hbar^{-n}\)</span>.</p>
+</span></p>
+<p>Note that <span class="math inline">W</span> has units of <span class="math inline">\hbar^{-n}</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$\hbar = 1$ convention">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><span class="math inline">\(\hbar = 1\)</span> convention
+<span class="screen-reader-only">Note</span><span class="math inline">\hbar = 1</span> convention
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the quantum phase space, areas <span class="math inline">\(pq\)</span> have units of <span class="math inline">\(\hbar\)</span>. By scaling both <span class="math inline">\(p, q\)</span> by <span class="math inline">\(\sqrt{\hbar}\)</span>, we can by convention set <span class="math inline">\(\hbar = 1\)</span>. In more detail, define the new scaled positions and momenta by <span class="math inline">\((q', p') := (q / \sqrt{\hbar}, p / \sqrt{\hbar})\)</span>, then phase-space areas become dimensionless. The Wigner function scales by <span class="math inline">\(W'(q, p) = \hbar^n W(q, p)\)</span>, and the wavefunction scales by <span class="math inline">\(\psi'(q') = \hbar^{-n/4} \psi(q)\)</span>.</p>
+<p>In the quantum phase space, areas <span class="math inline">pq</span> have units of <span class="math inline">\hbar</span>. By scaling both <span class="math inline">p, q</span> by <span class="math inline">\sqrt{\hbar}</span>, we can by convention set <span class="math inline">\hbar = 1</span>. In more detail, define the new scaled positions and momenta by <span class="math inline">(q', p') := (q / \sqrt{\hbar}, p / \sqrt{\hbar})</span>, then phase-space areas become dimensionless. The Wigner function scales by <span class="math inline">W'(q, p) = \hbar^n W(q, p)</span>, and the wavefunction scales by <span class="math inline">\psi'(q') = \hbar^{-n/4} \psi(q)</span>.</p>
 <p>In these new units, the Wigner transform is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/2)  \psi(q' - y/2)^*
-\]</span></p>
+</span></p>
 </div>
 </div>
 <div id="prp-todo" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 14</strong></span> &nbsp;</p>
 <ul>
-<li><span class="math inline">\(W\)</span> is real.</li>
-<li><span class="math inline">\(|\psi(q)|^2 = \int_{\mathbb{R}^n} W(q,p)d^n p\)</span></li>
-<li><span class="math inline">\(|\psi(p)|^2 = \int_{\mathbb{R}^n} W(q,p)d^n q\)</span></li>
-<li><span class="math inline">\(\int W(q, p) d^nqd^np = 1\)</span>.</li>
-<li><span class="math inline">\(|W(q, p)| \leq (\pi \hbar)^{-n}\)</span>.</li>
+<li><span class="math inline">W</span> is real.</li>
+<li><span class="math inline">|\psi(q)|^2 = \int_{\mathbb{R}^n} W(q,p)d^n p</span></li>
+<li><span class="math inline">|\psi(p)|^2 = \int_{\mathbb{R}^n} W(q,p)d^n q</span></li>
+<li><span class="math inline">\int W(q, p) d^nqd^np = 1</span>.</li>
+<li><span class="math inline">|W(q, p)| \leq (\pi \hbar)^{-n}</span>.</li>
 </ul>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
@@ -1478,9 +1494,9 @@ W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Check <span class="math inline">\(W^* = W\)</span>.</li>
+<li>Check <span class="math inline">W^* = W</span>.</li>
 </ol>
-<p>(2, 3) Use the Fourier expression of Dirac delta: <span class="math inline">\(\delta(t-t_0) = \frac{1}{2\pi} \int e^{i\omega(t-t_0)}d\omega\)</span>.</p>
+<p>(2, 3) Use the Fourier expression of Dirac delta: <span class="math inline">\delta(t-t_0) = \frac{1}{2\pi} \int e^{i\omega(t-t_0)}d\omega</span>.</p>
 <ol start="4" type="1">
 <li><p>Corollary of (2).</p></li>
 <li><p>Cauchy–Schwarz inequality.</p></li>
@@ -1498,21 +1514,21 @@ W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The position eigenstate has wavefunction <span class="math inline">\(\psi(q) = \sqrt{\delta^n(q-q_0)}\)</span>. However, if you plug it into the definition for <span class="math inline">\(W(q,p)\)</span>, you will discover that <span class="math inline">\(W(q, p)\)</span> must be identically zero for <span class="math inline">\(q \neq q_0\)</span>, and also must be independent of <span class="math inline">\(p\)</span>. This then means <span class="math inline">\(W(q, p)\)</span> should look something like <span class="math inline">\(C \delta^n(q-q_0)\)</span> for some <span class="math inline">\(C \in \mathbb{R}\)</span>. But no matter what <span class="math inline">\(C\)</span> you pick, it won’t allow <span class="math inline">\(\int W dq dp = 1\)</span>.</p>
+<p>The position eigenstate has wavefunction <span class="math inline">\psi(q) = \sqrt{\delta^n(q-q_0)}</span>. However, if you plug it into the definition for <span class="math inline">W(q,p)</span>, you will discover that <span class="math inline">W(q, p)</span> must be identically zero for <span class="math inline">q \neq q_0</span>, and also must be independent of <span class="math inline">p</span>. This then means <span class="math inline">W(q, p)</span> should look something like <span class="math inline">C \delta^n(q-q_0)</span> for some <span class="math inline">C \in \mathbb{R}</span>. But no matter what <span class="math inline">C</span> you pick, it won’t allow <span class="math inline">\int W dq dp = 1</span>.</p>
 </div>
 </div>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 15 (symmetries of <span class="math inline">\(W\)</span>)</strong></span> Let <span class="math inline">\(\psi(q)\)</span> be a wavefunction of a in position space <span class="math inline">\(\mathbb{R}^n\)</span>. We have:</p>
+<p><span class="theorem-title"><strong>Proposition 15 (symmetries of <span class="math inline">W</span>)</strong></span> Let <span class="math inline">\psi(q)</span> be a wavefunction of a in position space <span class="math inline">\mathbb{R}^n</span>. We have:</p>
 <ul>
-<li>If we translate <span class="math inline">\(\psi\)</span> by <span class="math inline">\(+\Delta q\)</span>, or equivalently, multiplying it by the operator <span class="math inline">\(e^{\Delta q \cdot \nabla_q}\)</span>, then we also translate its Wigner function by <span class="math inline">\(+\Delta q\)</span>.</li>
-<li>If we multiply <span class="math inline">\(\psi\)</span> by the operator <span class="math inline">\(e^{+i \Delta p \cdot q/\hbar}\)</span>, then we also translate its Wigner function by <span class="math inline">\(+\Delta p\)</span>.</li>
-<li>If we multiply it by the Hamiltonian of the quantum harmonic oscillator <span class="math inline">\(e^{-i \hat H t/\hbar}\)</span>, where <span class="math inline">\(\hat H := \frac{{\hat p}^2}{2m} + \frac{1}{2} m \omega^2 {\hat q}^2\)</span>, then we rotate its Wigner function by <span class="math inline">\(\omega t\)</span> around the ellipse with semiaxes <span class="math inline">\(\sqrt{1/m\omega^2}, \sqrt{m}\)</span>. That is, the new Wigner function satisfies <span class="math inline">\(W'(q, p) = W(q \cos(\omega t) - \frac{p}{m\omega} \sin(\omega t),  q m \omega \sin(\omega t) + p \cos(\omega t))\)</span>.</li>
+<li>If we translate <span class="math inline">\psi</span> by <span class="math inline">+\Delta q</span>, or equivalently, multiplying it by the operator <span class="math inline">e^{\Delta q \cdot \nabla_q}</span>, then we also translate its Wigner function by <span class="math inline">+\Delta q</span>.</li>
+<li>If we multiply <span class="math inline">\psi</span> by the operator <span class="math inline">e^{+i \Delta p \cdot q/\hbar}</span>, then we also translate its Wigner function by <span class="math inline">+\Delta p</span>.</li>
+<li>If we multiply it by the Hamiltonian of the quantum harmonic oscillator <span class="math inline">e^{-i \hat H t/\hbar}</span>, where <span class="math inline">\hat H := \frac{{\hat p}^2}{2m} + \frac{1}{2} m \omega^2 {\hat q}^2</span>, then we rotate its Wigner function by <span class="math inline">\omega t</span> around the ellipse with semiaxes <span class="math inline">\sqrt{1/m\omega^2}, \sqrt{m}</span>. That is, the new Wigner function satisfies <span class="math inline">W'(q, p) = W(q \cos(\omega t) - \frac{p}{m\omega} \sin(\omega t),  q m \omega \sin(\omega t) + p \cos(\omega t))</span>.</li>
 </ul>
 </div>
-<p>We say that a Wigner function is <strong>pure</strong> iff it is the Wigner function of a pure state <span class="math inline">\(\hat \rho = \ket{\psi}\bra{\psi}\)</span>. We then have</p>
+<p>We say that a Wigner function is <strong>pure</strong> iff it is the Wigner function of a pure state <span class="math inline">\hat \rho = \ket{\psi}\bra{\psi}</span>. We then have</p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 16 (properties of pure Wigner functions)</strong></span> <span class="math inline">\(W\)</span> is pure iff <span class="math inline">\(W \star W = (2\pi \hbar)^{-n} W\)</span>, which you can remember by noting that <span class="math inline">\(F\)</span> has units of <span class="math inline">\(\hbar^{-n}\)</span>, and that the units must agree on both sides.</p>
-<p>Any linear operator that preserves the star product preserves purity of Wigner functions. That is, if <span class="math inline">\(F\)</span> is a linear operator that satisfies <span class="math inline">\(F(W) \star F(W') = F(W \star W')\)</span>, then if <span class="math inline">\(W\)</span> is pure, then so is <span class="math inline">\(F(W)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 16 (properties of pure Wigner functions)</strong></span> <span class="math inline">W</span> is pure iff <span class="math inline">W \star W = (2\pi \hbar)^{-n} W</span>, which you can remember by noting that <span class="math inline">F</span> has units of <span class="math inline">\hbar^{-n}</span>, and that the units must agree on both sides.</p>
+<p>Any linear operator that preserves the star product preserves purity of Wigner functions. That is, if <span class="math inline">F</span> is a linear operator that satisfies <span class="math inline">F(W) \star F(W') = F(W \star W')</span>, then if <span class="math inline">W</span> is pure, then so is <span class="math inline">F(W)</span>.</p>
 <p>Translations and elliptic-rotations preserve the purity of Wigner functions.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
@@ -1527,21 +1543,21 @@ W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The first one is proved by the general theorem that <span class="math inline">\(\widehat{W \star W'} = \widehat{ W} \widehat{ W'}\)</span>, where the <span class="math inline">\(\widehat{\cdot}\)</span> denotes the Weyl transform. Pay attention to the fact that <span class="math inline">\((2\pi \hbar)^n\)</span> constant appeared because the Wigner function was defined by scaling the Weyl transform by that constant.</p>
+<p>The first one is proved by the general theorem that <span class="math inline">\widehat{W \star W'} = \widehat{ W} \widehat{ W'}</span>, where the <span class="math inline">\widehat{\cdot}</span> denotes the Weyl transform. Pay attention to the fact that <span class="math inline">(2\pi \hbar)^n</span> constant appeared because the Wigner function was defined by scaling the Weyl transform by that constant.</p>
 <p>The second one is a corollary of the first one.</p>
-<p>The third one is a corollary of the symmetries of <span class="math inline">\(W\)</span>.</p>
+<p>The third one is a corollary of the symmetries of <span class="math inline">W</span>.</p>
 </div>
 </div>
 </div>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 17</strong></span> Let <span class="math inline">\(\tilde W(x, y)\)</span> be the Fourier transform of <span class="math inline">\(W\)</span> on the momentum:</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 17</strong></span> Let <span class="math inline">\tilde W(x, y)</span> be the Fourier transform of <span class="math inline">W</span> on the momentum:</p>
+<p><span class="math display">
 \tilde W(x,y) := \int e^{i \braket{y,p}} d^n p W(x,p)
-\]</span></p>
-<p>A function <span class="math inline">\(W(q,p)\)</span> is the Wigner function of some wave function <span class="math inline">\(\psi(q)\)</span> iff</p>
-<p><span class="math display">\[
+</span></p>
+<p>A function <span class="math inline">W(q,p)</span> is the Wigner function of some wave function <span class="math inline">\psi(q)</span> iff</p>
+<p><span class="math display">
 \partial_{x+\hbar y / 2} \partial_{x+\hbar y / 2} \ln \tilde W(x, y) = 0
-\]</span></p>
+</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -1555,20 +1571,20 @@ W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(W\)</span> is the Wigner function of <span class="math inline">\(\psi\)</span>, then <span class="math inline">\(\tilde W(x,y) = \psi(x + \hbar y/2) \psi(x - \hbar y/2)^*\)</span>, so it is true.</p>
-<p>Conversely, if <span class="math inline">\(\partial_{x+\hbar y / 2} \partial_{x+\hbar y / 2} \ln \tilde W(x, y) = 0\)</span>, then it separates in variables, giving</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">W</span> is the Wigner function of <span class="math inline">\psi</span>, then <span class="math inline">\tilde W(x,y) = \psi(x + \hbar y/2) \psi(x - \hbar y/2)^*</span>, so it is true.</p>
+<p>Conversely, if <span class="math inline">\partial_{x+\hbar y / 2} \partial_{x+\hbar y / 2} \ln \tilde W(x, y) = 0</span>, then it separates in variables, giving</p>
+<p><span class="math display">
 \ln \tilde W(x, y) = f_+(x+\hbar y / 2 ) + C + f_- (x - \hbar y / 2) - C
-\]</span></p>
-<p>for some <span class="math inline">\(f_+, f_-\)</span>, and any constant <span class="math inline">\(C\)</span>.</p>
-<p>Given <span class="math inline">\(W(x, p, t)\)</span>, one can find the wavefunction through a two-step process. First, find the Fourier transform</p>
-<p><span class="math display">\[
+</span></p>
+<p>for some <span class="math inline">f_+, f_-</span>, and any constant <span class="math inline">C</span>.</p>
+<p>Given <span class="math inline">W(x, p, t)</span>, one can find the wavefunction through a two-step process. First, find the Fourier transform</p>
+<p><span class="math display">
 \begin{aligned}
     \widetilde{W}(x, y, t) &amp; =\frac{1}{2 \pi \hbar} \int_{-\infty}^{+\infty} W(x, p, t) e^{i p y / \hbar} d p \\
     &amp; =\frac{1}{2 \pi \hbar} \psi^*\left(x-\frac{1}{2} y, t\right) \psi\left(x+\frac{1}{2} y, t\right)
 \end{aligned}
-\]</span></p>
-<p>Second, select an arbitrary point <span class="math inline">\(x_0\)</span> where <span class="math inline">\(\widetilde{W}\left(x_0, 0, t\right)\)</span> does not vanish, and construct <span class="math inline">\(\psi\)</span> by … (I’m pretty sure it requires just a few more lines now.)</p>
+</span></p>
+<p>Second, select an arbitrary point <span class="math inline">x_0</span> where <span class="math inline">\widetilde{W}\left(x_0, 0, t\right)</span> does not vanish, and construct <span class="math inline">\psi</span> by … (I’m pretty sure it requires just a few more lines now.)</p>
 </div>
 </div>
 </div>
@@ -1576,10 +1592,10 @@ W'(q', p') = \frac{1}{2\pi} \int_{\mathbb{R}^n} d^n y\; e^{-ip' y } \psi(q' + y/
 <section id="gaussians" class="level3">
 <h3 class="anchored" data-anchor-id="gaussians">Gaussians</h3>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 18 (Wigner function of a Gaussian wavepacket)</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 18 (Wigner function of a Gaussian wavepacket)</strong></span> <span class="math display">
 W(q,p) = \rho_{\mathcal N(q_0, \Sigma_q)}(q) \rho_{\mathcal N(p_0, \Sigma_p)}(p)
-\]</span></p>
-<p>where <span class="math inline">\(\Sigma_q \Sigma_p = \frac 14 \hbar^2 I\)</span> reaches the lower bound of the uncertainty principle allows.</p>
+</span></p>
+<p>where <span class="math inline">\Sigma_q \Sigma_p = \frac 14 \hbar^2 I</span> reaches the lower bound of the uncertainty principle allows.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
@@ -1593,131 +1609,131 @@ W(q,p) = \rho_{\mathcal N(q_0, \Sigma_q)}(q) \rho_{\mathcal N(p_0, \Sigma_p)}(p)
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Suppose we have a gaussian wave packet with mean <span class="math inline">\(q_0\)</span> and variance <span class="math inline">\(\Sigma\)</span>, then its wave function is</p>
-<p><span class="math display">\[
+<p>Suppose we have a gaussian wave packet with mean <span class="math inline">q_0</span> and variance <span class="math inline">\Sigma</span>, then its wave function is</p>
+<p><span class="math display">
 \begin{aligned}
 \psi(q) &amp;= e^{i p_0 \cdot q} \sqrt{\rho_{\mathcal N(q_0, \Sigma)}(q)} \\
           &amp;= e^{i p_0 \cdot q} \sqrt{\frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} e^{-\frac 12 (q-q_0)^T \Sigma^{-1} (q-q_0)}}\\
       &amp;= \exp\left[ \frac 14 (q-\mu)^T \Sigma^{-1} (q-\mu) +  i \tilde q \cdot q - \frac 14 \ln \det \Sigma - \frac n4 \ln (2\pi) \right]
 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 W(q,p) =  \frac{1}{(\pi \hbar)^n}\int d^n y e^{-2ip \cdot y}~\psi(q+y) \psi(q-y)^* = \cdots = \rho_{\mathcal N(q_0, \Sigma)}(q) \rho_{\mathcal N(p_0, \hbar^2(4\Sigma )^{-1})}(p)
-\]</span></p>
+</span></p>
 </div>
 </div>
 </div>
 <p>There is a more general theorem <span class="citation" data-cites="curtrightConciseTreatiseQuantum2014">(<a href="#ref-curtrightConciseTreatiseQuantum2014" role="doc-biblioref">Curtright, Fairlie, and Zachos 2014, 23</a>)</span>:</p>
 <div id="thm-todo" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (uncertainty principle)</strong></span> For any wavefunction <span class="math inline">\(\psi\)</span>, the convolution of its Wigner function with any Gaussian satisfying <span class="math inline">\(\Sigma_p \Sigma_q \geq \frac 14 \hbar^2 I\)</span> is everywhere non-negative. In other words, all negative parts of the Wigner function is small and jagged. We cannot find a large contiguous region where the Wigner function is negative.</p>
+<p><span class="theorem-title"><strong>Theorem 6 (uncertainty principle)</strong></span> For any wavefunction <span class="math inline">\psi</span>, the convolution of its Wigner function with any Gaussian satisfying <span class="math inline">\Sigma_p \Sigma_q \geq \frac 14 \hbar^2 I</span> is everywhere non-negative. In other words, all negative parts of the Wigner function is small and jagged. We cannot find a large contiguous region where the Wigner function is negative.</p>
 </div>
 </section>
 <section id="time-evolution" class="level3">
 <h3 class="anchored" data-anchor-id="time-evolution">Time-evolution</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
   \frac{\partial W(x, p, t)}{\partial t}= &amp; -\frac{p}{m} \frac{\partial W(x, p, t)}{\partial x} \\
   &amp; -\int_{-\infty}^{+\infty} K\left(x, p^{\prime}\right) W\left(x, p+p^{\prime}, t\right) d p^{\prime}
   \end{aligned}
-\]</span></p>
-<p>where the kernel <span class="math inline">\(K(x, p)\)</span> is</p>
-<p><span class="math display">\[
+</span></p>
+<p>where the kernel <span class="math inline">K(x, p)</span> is</p>
+<p><span class="math display">
 K(x, p)=\frac{1}{2 \pi \hbar^2} \int_{-\infty}^{+\infty}\left[V\left(x-\frac{1}{2} y\right)-V\left(x+\frac{1}{2} y\right)\right] \sin (p y / \hbar) d y .
-\]</span></p>
+</span></p>
 <div id="thm-todo" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (Moyal’s evolution equation)</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 7 (Moyal’s evolution equation)</strong></span> <span class="math display">
 \partial_t W = \frac{H \star W - W \star H}{i\hbar} = \{\{H, W\}\}
-\]</span></p>
-<p>Notice how similar it is to the classical Liouville equation <span class="math inline">\(\partial_t \rho = \{H, \rho\}\)</span>, and the von Neumann equation <span class="math inline">\(\partial_t \hat \rho = \frac{\hat H \hat \rho - \hat \rho \hat H}{i\hbar}\)</span>.</p>
+</span></p>
+<p>Notice how similar it is to the classical Liouville equation <span class="math inline">\partial_t \rho = \{H, \rho\}</span>, and the von Neumann equation <span class="math inline">\partial_t \hat \rho = \frac{\hat H \hat \rho - \hat \rho \hat H}{i\hbar}</span>.</p>
 </div>
-<p>If <span class="math inline">\(\hat H = T(\hat p) + V(\hat q)\)</span> for some analytic functions <span class="math inline">\(T, V\)</span>, then</p>
-<p><span class="math display">\[
+<p>If <span class="math inline">\hat H = T(\hat p) + V(\hat q)</span> for some analytic functions <span class="math inline">T, V</span>, then</p>
+<p><span class="math display">
 H = W^{-1}[\hat H] = T(p) + V(q)
-\]</span></p>
+</span></p>
 <p>meaning that the quantum energy function in quantum phase space is exactly the same as the classical energy function in classical phase space. How nice.</p>
 </section>
 </section>
 <section id="quadratic-hamiltonian" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="quadratic-hamiltonian">Quadratic Hamiltonian</h2>
-<p>If the Hamiltonian <span class="math inline">\(H\)</span> is a sum of kinetic and potential energies, as <span class="math inline">\(H = T(p) + V(q)\)</span>, then we have the <strong>Bopp shift</strong> formulas:</p>
-<p><span class="math display">\[
+<p>If the Hamiltonian <span class="math inline">H</span> is a sum of kinetic and potential energies, as <span class="math inline">H = T(p) + V(q)</span>, then we have the <strong>Bopp shift</strong> formulas:</p>
+<p><span class="math display">
 \begin{aligned}
   (f \star_t g)(q,p) &amp;= f\left(q_1 + t\overrightarrow{\partial_{p_1}}, \dots, p_1 - t\overrightarrow{\partial_{q_1}}, \dots\right) g(q,p) \\
   &amp;= f(q,p) g\left(q_1 - t\overleftarrow{\partial_{p_1}}, \dots, p_1 + t\overleftarrow{\partial_{q_1}}, \dots\right) \\
   &amp;= f\left(q_1 + t\overrightarrow{\partial_{p_1}}, \dots, p\right) g\left(q_1 - t\overleftarrow{\partial_{p_1}}, \dots, p\right)
   \end{aligned}
-\]</span></p>
+</span></p>
 <p>Thus,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 H \star W = T(p - (i\hbar/2)\nabla_q) W + V(q +  (i\hbar/2) \nabla_p) W
-\]</span></p>
+</span></p>
 <p>and similarly for the other direction. Together, it means</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \partial_t W = \frac{T(p - (i\hbar/2)\nabla_q) - T(p + (i\hbar/2)\nabla_q)}{i\hbar} W + \frac{V(q + (i\hbar/2)\nabla_p) - V(q - (i\hbar/2)\nabla_p)}{i\hbar} W
-\]</span></p>
-<p>In particular, if <span class="math inline">\(T, V\)</span> are both quadratic, such as in the case of a harmonic oscillator <span class="math inline">\(H = \frac{p^2}{2m} + \frac 12 m\omega^2 q^2\)</span>, then we have</p>
-<p><span class="math display">\[
+</span></p>
+<p>In particular, if <span class="math inline">T, V</span> are both quadratic, such as in the case of a harmonic oscillator <span class="math inline">H = \frac{p^2}{2m} + \frac 12 m\omega^2 q^2</span>, then we have</p>
+<p><span class="math display">
 \partial_t W = -\nabla_p T \cdot \nabla_q W + \nabla_q V \cdot \nabla_p W = \{H, W\}
-\]</span></p>
+</span></p>
 <p>which is exactly the same as the classical Hamiltonian equations of motion.</p>
 <p>In other words, we can picture the phase-space evolution of a quantum harmonic oscillator’s Wigner function as exactly the same as if it is the phase space evolution in classical statistical mechanics. The only difference is that there are both regions of positive and negative probabilities. But at least it is all real-valued!</p>
 <section id="free-particle" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="free-particle">Free particle</h3>
-<p>For a particle in free space, the Hamiltonian is <span class="math inline">\(H = \frac{\|p\|^2}{2m}\)</span>. Thus, the Wigner function <span class="math inline">\(W\)</span> evolves by a simple shearing flow in phase space:</p>
-<p><span class="math display">\[
+<p>For a particle in free space, the Hamiltonian is <span class="math inline">H = \frac{\|p\|^2}{2m}</span>. Thus, the Wigner function <span class="math inline">W</span> evolves by a simple shearing flow in phase space:</p>
+<p><span class="math display">
 W(t, q, p) = W(0, q - pt/m, p)
-\]</span></p>
+</span></p>
 <p>This picture allows us to obtain some results by intuitively thinking about pictures.</p>
 <section id="gaussian-wavepacket" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="gaussian-wavepacket">Gaussian wavepacket</h4>
-<p>Consider the simplest case of a gaussian wavepacket on <span class="math inline">\(\mathbb{R}\)</span>, centered at <span class="math inline">\(q = 0\)</span>, with zero total momentum. Over time, it contracts, until its width <span class="math inline">\(\sigma_q\)</span> reaches a minimum, before spreading out again. Let <span class="math inline">\(t = 0\)</span> be the time of minimal width, so its wavefunction satisfies</p>
-<p><span class="math display">\[
+<p>Consider the simplest case of a gaussian wavepacket on <span class="math inline">\mathbb{R}</span>, centered at <span class="math inline">q = 0</span>, with zero total momentum. Over time, it contracts, until its width <span class="math inline">\sigma_q</span> reaches a minimum, before spreading out again. Let <span class="math inline">t = 0</span> be the time of minimal width, so its wavefunction satisfies</p>
+<p><span class="math display">
 \psi(0, q) = \sqrt{\rho_{N (0, \sigma_q^2)}(q)}
-\]</span></p>
-<p>where <span class="math inline">\(\rho_{N (0, \sigma_q^2)}\)</span> denotes the probability density function of the gaussian with mean <span class="math inline">\(0\)</span> and variance <span class="math inline">\(\sigma_q^2\)</span>. By direct calculation, its Wigner function is the probability density function of the gaussian with mean <span class="math inline">\((0, 0)\)</span> and variance <span class="math inline">\(\mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2)\)</span>, satisfying the uncertainty principle <span class="math inline">\(\sigma_q^2 \sigma_p^2 = \hbar^2/4\)</span>.</p>
-<p>More generally, a gaussian wavepacket with initial peak position <span class="math inline">\(q_0\)</span> and momentum <span class="math inline">\(p_0\)</span> has a Wigner function with mean <span class="math inline">\((q_0, p_0)\)</span> and variance <span class="math inline">\(\mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2)\)</span>. For concreteness, let <span class="math inline">\(q_0 &gt; 0, p_0 &lt; 0\)</span>. As time <span class="math inline">\(t\)</span> increases from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(t = 0\)</span>, the Wigner function shears to the left more and more, until it becomes an ellipse with major axes parallel to the <span class="math inline">\(p\)</span>-axis and the <span class="math inline">\(q\)</span>-axis right at <span class="math inline">\(t = 0\)</span>. The center of mass on the <span class="math inline">\(q\)</span>-axis is the projection of the center of the Wigner function, which moves at constant velocity <span class="math inline">\(p_0/m\)</span>. The <span class="math inline">\(q\)</span>-marginal distribution of the Wigner function first shrinks, reaching a minimum at <span class="math inline">\(t = 0\)</span>, before growing again. Its <span class="math inline">\(p\)</span>-axis marginal remains unchanged. This is shown in the following animation.</p>
+</span></p>
+<p>where <span class="math inline">\rho_{N (0, \sigma_q^2)}</span> denotes the probability density function of the gaussian with mean <span class="math inline">0</span> and variance <span class="math inline">\sigma_q^2</span>. By direct calculation, its Wigner function is the probability density function of the gaussian with mean <span class="math inline">(0, 0)</span> and variance <span class="math inline">\mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2)</span>, satisfying the uncertainty principle <span class="math inline">\sigma_q^2 \sigma_p^2 = \hbar^2/4</span>.</p>
+<p>More generally, a gaussian wavepacket with initial peak position <span class="math inline">q_0</span> and momentum <span class="math inline">p_0</span> has a Wigner function with mean <span class="math inline">(q_0, p_0)</span> and variance <span class="math inline">\mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2)</span>. For concreteness, let <span class="math inline">q_0 &gt; 0, p_0 &lt; 0</span>. As time <span class="math inline">t</span> increases from <span class="math inline">-\infty</span> to <span class="math inline">t = 0</span>, the Wigner function shears to the left more and more, until it becomes an ellipse with major axes parallel to the <span class="math inline">p</span>-axis and the <span class="math inline">q</span>-axis right at <span class="math inline">t = 0</span>. The center of mass on the <span class="math inline">q</span>-axis is the projection of the center of the Wigner function, which moves at constant velocity <span class="math inline">p_0/m</span>. The <span class="math inline">q</span>-marginal distribution of the Wigner function first shrinks, reaching a minimum at <span class="math inline">t = 0</span>, before growing again. Its <span class="math inline">p</span>-axis marginal remains unchanged. This is shown in the following animation.</p>
 <video controls="" width="100%">
 <source src="figure/shear_wigner.webm" type="video/webm">
 </video>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/shear_wigner.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Static frames from the animation. As time increases, a gaussian wavepacket shrinks, then spreads, on the <span class="math inline">\(q\)</span>-axis marginal. Its <span class="math inline">\(p\)</span>-axis marginal remains unchanged.</figcaption>
+<figcaption class="margin-caption">Static frames from the animation. As time increases, a gaussian wavepacket shrinks, then spreads, on the <span class="math inline">q</span>-axis marginal. Its <span class="math inline">p</span>-axis marginal remains unchanged.</figcaption>
 </figure>
 </div>
 </section>
 <section id="negative-probability-flow" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="negative-probability-flow">Negative probability flow</h4>
-<p>In <span class="citation" data-cites="villanuevaNegativeFlowProbability2020 goussevCommentNegativeFlow2020">(<a href="#ref-villanuevaNegativeFlowProbability2020" role="doc-biblioref">Villanueva 2020</a>; <a href="#ref-goussevCommentNegativeFlow2020" role="doc-biblioref">Goussev 2020</a>)</span>, it was noted that for a gaussian wavepacket with positive group velocity <span class="math inline">\(p_0 / m &gt; 0\)</span>, it is often the case that there is a paradoxical “negative probability flow”. Specifically, it was found that, if we stand at a point <span class="math inline">\(q_1 &gt; q_0\)</span>, and plot <span class="math inline">\(Pr(q &gt; q_1 | t)\)</span>, the probability that the particle is found at <span class="math inline">\(q &gt; q_1\)</span> at time <span class="math inline">\(t\)</span>, then as time passes, that probability first decreases, before it increases, even though the wavepacket always has positive group velocity. This is immediate in the phase space picture.</p>
-<p>Consider a gaussian wavepacket with <span class="math inline">\(W(0, q, p) = \rho_{N ((q_0, p_0), \mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2))}\)</span>, with <span class="math inline">\(q_0 &lt; 0, p_0 &gt; 0\)</span>. Geometrically, <span class="math inline">\(Pr(q &gt; q_1 | t)\)</span> is the integral of <span class="math inline">\(W(t, q, p)\)</span> on the region to the right of the vertical line <span class="math inline">\(q = q_1\)</span>, which is equal to the integral of <span class="math inline">\(W(0, q, p)\)</span> on the region to the right of the sheared line <span class="math inline">\(q = -\frac{t}{m} p\)</span>. The sheared line rotates clockwise over time.</p>
-<p>From the geometry of gaussian distributions, this integral can be pictorially calculated by finding the ellipse of constant <span class="math inline">\(\rho_{N ((q_0, p_0), \mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2))}\)</span> that is tangent to the sheared line. At <span class="math inline">\(t \to -\infty\)</span>, the sheared line is just the <span class="math inline">\(q\)</span>-axis. As <span class="math inline">\(t\)</span> increases, the sheared line rotates counterclockwise, and the tangent ellipse grows, until it hits the maximal size at some critical time <span class="math inline">\(t = t_{\text{critical}}\)</span>, at which point, the tangent ellipse is equal to</p>
-<p><span class="math display">\[
+<p>In <span class="citation" data-cites="villanuevaNegativeFlowProbability2020 goussevCommentNegativeFlow2020">(<a href="#ref-villanuevaNegativeFlowProbability2020" role="doc-biblioref">Villanueva 2020</a>; <a href="#ref-goussevCommentNegativeFlow2020" role="doc-biblioref">Goussev 2020</a>)</span>, it was noted that for a gaussian wavepacket with positive group velocity <span class="math inline">p_0 / m &gt; 0</span>, it is often the case that there is a paradoxical “negative probability flow”. Specifically, it was found that, if we stand at a point <span class="math inline">q_1 &gt; q_0</span>, and plot <span class="math inline">Pr(q &gt; q_1 | t)</span>, the probability that the particle is found at <span class="math inline">q &gt; q_1</span> at time <span class="math inline">t</span>, then as time passes, that probability first decreases, before it increases, even though the wavepacket always has positive group velocity. This is immediate in the phase space picture.</p>
+<p>Consider a gaussian wavepacket with <span class="math inline">W(0, q, p) = \rho_{N ((q_0, p_0), \mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2))}</span>, with <span class="math inline">q_0 &lt; 0, p_0 &gt; 0</span>. Geometrically, <span class="math inline">Pr(q &gt; q_1 | t)</span> is the integral of <span class="math inline">W(t, q, p)</span> on the region to the right of the vertical line <span class="math inline">q = q_1</span>, which is equal to the integral of <span class="math inline">W(0, q, p)</span> on the region to the right of the sheared line <span class="math inline">q = -\frac{t}{m} p</span>. The sheared line rotates clockwise over time.</p>
+<p>From the geometry of gaussian distributions, this integral can be pictorially calculated by finding the ellipse of constant <span class="math inline">\rho_{N ((q_0, p_0), \mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2))}</span> that is tangent to the sheared line. At <span class="math inline">t \to -\infty</span>, the sheared line is just the <span class="math inline">q</span>-axis. As <span class="math inline">t</span> increases, the sheared line rotates counterclockwise, and the tangent ellipse grows, until it hits the maximal size at some critical time <span class="math inline">t = t_{\text{critical}}</span>, at which point, the tangent ellipse is equal to</p>
+<p><span class="math display">
 \frac{(q-q_0)^2}{\sigma_q^2} + \frac{(p-p_0)^2}{\sigma_p^2} = \frac{(q_1-q_0)^2}{\sigma_q^2} + \frac{(0-p_0)^2}{\sigma_p^2}
-\]</span></p>
-<p>It is a simple exercise to show <span class="math inline">\(t_{\text{critical}} = -\frac{mp_0 \sigma_q^2}{(q_1- q_0) \sigma_p^2}\)</span>.</p>
+</span></p>
+<p>It is a simple exercise to show <span class="math inline">t_{\text{critical}} = -\frac{mp_0 \sigma_q^2}{(q_1- q_0) \sigma_p^2}</span>.</p>
 <p>After that, the tangent ellipse shrinks again. This is illustrated in the following figure.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/negative_probability_flow.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Illustration for the negative probability flow of a gaussian wavepacket. The dashed circle is the largest possible tangent ellipse. At <span class="math inline">\(t = t_{\text{critical}}\)</span>, the sheared line is tangent to the dashed circle.</figcaption>
+<figcaption class="margin-caption">Illustration for the negative probability flow of a gaussian wavepacket. The dashed circle is the largest possible tangent ellipse. At <span class="math inline">t = t_{\text{critical}}</span>, the sheared line is tangent to the dashed circle.</figcaption>
 </figure>
 </div>
-<p>By tracing out the pictures, we visually see that <span class="math inline">\(Pr(q &gt; q_1|t)\)</span> decreases over the region <span class="math inline">\(t \leq t_{\text{critical}}\)</span>, and increases over the region <span class="math inline">\(t \geq t_{\text{critical}}\)</span>.</p>
-<p>By a similar pictorial reasoning, if <span class="math inline">\(q_0 &gt; 0, p_0 &gt; 0\)</span>, then <span class="math inline">\(Pr(q &gt; q_1|t)\)</span> increases over the region <span class="math inline">\(t \leq t_{\text{critical}}\)</span>, and decreases over the region <span class="math inline">\(t \geq t_{\text{critical}}\)</span>. Only when <span class="math inline">\(q_0 = q_1\)</span> is <span class="math inline">\(Pr(q &gt; q_1|t)\)</span> strictly monotonic over all time.</p>
+<p>By tracing out the pictures, we visually see that <span class="math inline">Pr(q &gt; q_1|t)</span> decreases over the region <span class="math inline">t \leq t_{\text{critical}}</span>, and increases over the region <span class="math inline">t \geq t_{\text{critical}}</span>.</p>
+<p>By a similar pictorial reasoning, if <span class="math inline">q_0 &gt; 0, p_0 &gt; 0</span>, then <span class="math inline">Pr(q &gt; q_1|t)</span> increases over the region <span class="math inline">t \leq t_{\text{critical}}</span>, and decreases over the region <span class="math inline">t \geq t_{\text{critical}}</span>. Only when <span class="math inline">q_0 = q_1</span> is <span class="math inline">Pr(q &gt; q_1|t)</span> strictly monotonic over all time.</p>
 </section>
 <section id="wave-dispersion" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="wave-dispersion">Wave dispersion</h4>
 <p>As noted previously, a gaussian wave packet first shrinks, then grows, according to a precise formula proved in every introductory quantum mechanics course. We derive this formula geometrically.</p>
-<p>Without loss of generality, consider a wavepacket with zero group velocity, centered at <span class="math inline">\(q = 0\)</span>, reaching minimal width <span class="math inline">\(\sigma_q\)</span> at <span class="math inline">\(t=0\)</span>. Its Wigner function is <span class="math inline">\(\rho_{N((0, 0), \mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2))}\)</span>, where <span class="math inline">\(\sigma_q \sigma_p = \hbar / 2\)</span>.</p>
-<p>Now, consider its one-sigma ellipse <span class="math inline">\(\frac{q^2}{\sigma_q^2} + \frac{p^2}{\sigma_q^2} = 1\)</span>. It projects to an interval <span class="math inline">\([-\sigma_q, +\sigma_q]\)</span> on the <span class="math inline">\(q\)</span>-axis, meaning that at time <span class="math inline">\(t=0\)</span>, the probability of finding the particle within the interval <span class="math inline">\([-\sigma_q, +\sigma_q]\)</span> is plus-or-minus one-sigma, that is, 68.3%.</p>
-<p>Now, at time <span class="math inline">\(t\)</span>, the new one-sigma interval can be either found by shearing the Wigner function, or by shearing the <span class="math inline">\(q\)</span>-intervals. As pictured, the sheared <span class="math inline">\(q\)</span>-intervals are the tangent lines to the one-sigma ellipse satisfying <span class="math inline">\(q + \frac{t}{m} p = C\)</span>. The tangent points are</p>
-<p><span class="math display">\[
+<p>Without loss of generality, consider a wavepacket with zero group velocity, centered at <span class="math inline">q = 0</span>, reaching minimal width <span class="math inline">\sigma_q</span> at <span class="math inline">t=0</span>. Its Wigner function is <span class="math inline">\rho_{N((0, 0), \mathop{\mathrm{diag}}(\sigma_q^2, \sigma_p^2))}</span>, where <span class="math inline">\sigma_q \sigma_p = \hbar / 2</span>.</p>
+<p>Now, consider its one-sigma ellipse <span class="math inline">\frac{q^2}{\sigma_q^2} + \frac{p^2}{\sigma_q^2} = 1</span>. It projects to an interval <span class="math inline">[-\sigma_q, +\sigma_q]</span> on the <span class="math inline">q</span>-axis, meaning that at time <span class="math inline">t=0</span>, the probability of finding the particle within the interval <span class="math inline">[-\sigma_q, +\sigma_q]</span> is plus-or-minus one-sigma, that is, 68.3%.</p>
+<p>Now, at time <span class="math inline">t</span>, the new one-sigma interval can be either found by shearing the Wigner function, or by shearing the <span class="math inline">q</span>-intervals. As pictured, the sheared <span class="math inline">q</span>-intervals are the tangent lines to the one-sigma ellipse satisfying <span class="math inline">q + \frac{t}{m} p = C</span>. The tangent points are</p>
+<p><span class="math display">
 (q, p) = \left( \frac{\sigma_q}{\sqrt{1 + \left( \frac{\sigma_p t}{\sigma_q m}\right)^2}}, \frac{\sigma_p}{\sqrt{1 + \left( \frac{\sigma_p t}{\sigma_q m}\right)^{-2}}}\right)
-\]</span></p>
-<p>and so, the projection to the <span class="math inline">\(q\)</span>-axis has end points</p>
-<p><span class="math display">\[
+</span></p>
+<p>and so, the projection to the <span class="math inline">q</span>-axis has end points</p>
+<p><span class="math display">
 \pm \sigma_q\sqrt{1 + \left( \frac{\sigma_p t}{\sigma_q m}\right)^2} = \pm \sqrt{\sigma_q^2 + \left( \frac{\hbar t}{2m\sigma_q}\right)^2}
-\]</span></p>
+</span></p>
 <p>as expected.</p>
 <video controls="" width="100%">
 <source src="figure/gaussian_wavepacket_spreading.webm" type="video/webm">
@@ -1725,45 +1741,45 @@ W(t, q, p) = W(0, q - pt/m, p)
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/gaussian_wavepacket_spreading.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Illustration for gaussian wavepacket spreading. As time increases, the one-sigma circle projects to an interval on <span class="math inline">\(q\)</span>-axis, which shrinks as <span class="math inline">\(t \uparrow 0\)</span>, then grows as <span class="math inline">\(t \uparrow \infty\)</span>.</figcaption>
+<figcaption class="margin-caption">Illustration for gaussian wavepacket spreading. As time increases, the one-sigma circle projects to an interval on <span class="math inline">q</span>-axis, which shrinks as <span class="math inline">t \uparrow 0</span>, then grows as <span class="math inline">t \uparrow \infty</span>.</figcaption>
 </figure>
 </div>
-<p>In particular, for very large <span class="math inline">\(t\)</span>, the wavepacket spreads linearly. This is in fact a generic result for arbitrary waves. Specifically, the <span class="math inline">\(q\)</span>-marginal of the Wigner function at <span class="math inline">\(q = q_1\)</span> and time <span class="math inline">\(t\)</span> can be found by shearing a thin slice <span class="math inline">\(q \in [q_1, q_1 + \delta q]\)</span> back by <span class="math inline">\(\frac{pt}{m}\)</span>. If <span class="math inline">\(t\)</span> is large, then this thin slice, perpendicular to the <span class="math inline">\(q\)</span>-axis, is sheared to become almost perpendicular to the <span class="math inline">\(p\)</span>-axis instead, which is approximately <span class="math inline">\(p \in [mq_1 / t, m(q_1 + \delta q)/ t]\)</span>. Thus, we have</p>
-<p><span class="math display">\[
+<p>In particular, for very large <span class="math inline">t</span>, the wavepacket spreads linearly. This is in fact a generic result for arbitrary waves. Specifically, the <span class="math inline">q</span>-marginal of the Wigner function at <span class="math inline">q = q_1</span> and time <span class="math inline">t</span> can be found by shearing a thin slice <span class="math inline">q \in [q_1, q_1 + \delta q]</span> back by <span class="math inline">\frac{pt}{m}</span>. If <span class="math inline">t</span> is large, then this thin slice, perpendicular to the <span class="math inline">q</span>-axis, is sheared to become almost perpendicular to the <span class="math inline">p</span>-axis instead, which is approximately <span class="math inline">p \in [mq_1 / t, m(q_1 + \delta q)/ t]</span>. Thus, we have</p>
+<p><span class="math display">
 |\psi_q(t, q)|^2 \to \frac{m}{t}|\psi_p(0, mq_1 / t)|^2
-\]</span></p>
-<p>as <span class="math inline">\(t \to +\infty\)</span>.</p>
+</span></p>
+<p>as <span class="math inline">t \to +\infty</span>.</p>
 </section>
 <section id="hermitegauss-waves" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="hermitegauss-waves">Hermite–Gauss waves</h4>
-<p>For a simple harmonic oscillator with Hamiltonian <span class="math inline">\(\frac{p^2}{2m} + \frac 12 m\omega^2 q^2\)</span>, the evolution of the Wigner function is still the same as the classical one. Thus, the Wigner function simply rotates in phase space. A standing wave for a simple harmonic oscillator, then, is some wavefunction <span class="math inline">\(\psi(q)\)</span> such that its Wigner function is rotationally symmetric.</p>
+<p>For a simple harmonic oscillator with Hamiltonian <span class="math inline">\frac{p^2}{2m} + \frac 12 m\omega^2 q^2</span>, the evolution of the Wigner function is still the same as the classical one. Thus, the Wigner function simply rotates in phase space. A standing wave for a simple harmonic oscillator, then, is some wavefunction <span class="math inline">\psi(q)</span> such that its Wigner function is rotationally symmetric.</p>
 <p>It is proved in every introductory quantum mechanics course that such standing waves are precisely the Hermite–Gauss waves:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \psi_n(x) = \frac{1}{\sqrt{2^n\,n!}}  \left(\frac{m\omega}{\pi \hbar}\right)^{1/4}  e^{
 - \frac{m\omega x^2}{2 \hbar}} H_n\left(\sqrt{\frac{m\omega}{\hbar}} x \right), \qquad n = 0,1,2,\ldots.
-\]</span></p>
-<p>where <span class="math inline">\(H_n\)</span> are the <a href="https://en.wikipedia.org/wiki/Hermite_polynomials">physicist’s Hermite polynomials</a>. Therefore, by the previous picture of how the probability density spreads, we conclude that</p>
+</span></p>
+<p>where <span class="math inline">H_n</span> are the <a href="https://en.wikipedia.org/wiki/Hermite_polynomials">physicist’s Hermite polynomials</a>. Therefore, by the previous picture of how the probability density spreads, we conclude that</p>
 <div id="prp-todo" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 19</strong></span> The Hermite–Gauss waves are the only wavefunctions whose probability density functions retain their shapes during propagation in free space.</p>
 </div>
-<p>Furthermore, the exact same argument as the previous section allows us to compute how fast the wave spreads. Though the <span class="math inline">\(q\)</span>-marginal is no longer gaussian, we can still characterize its width by a single number.</p>
-<p>Concretely, let <span class="math inline">\(t=0\)</span> be the point in time where the wave has minimal spread – that is, the point at which its Wigner function has contour ellipses that are not tilted, but has major axes parallel to the <span class="math inline">\(q\)</span>-axis and the <span class="math inline">\(p\)</span>-axis. Let <span class="math inline">\(\sigma_q\)</span> be the quartile distance. That is, between <span class="math inline">\(q_{50\%}\)</span> and <span class="math inline">\(q_{75\%}\)</span>, where <span class="math inline">\(q_{75\%}\)</span> is the point such that <span class="math inline">\(Pr(q \leq q_{75\%}) = 75\%\)</span>.</p>
+<p>Furthermore, the exact same argument as the previous section allows us to compute how fast the wave spreads. Though the <span class="math inline">q</span>-marginal is no longer gaussian, we can still characterize its width by a single number.</p>
+<p>Concretely, let <span class="math inline">t=0</span> be the point in time where the wave has minimal spread – that is, the point at which its Wigner function has contour ellipses that are not tilted, but has major axes parallel to the <span class="math inline">q</span>-axis and the <span class="math inline">p</span>-axis. Let <span class="math inline">\sigma_q</span> be the quartile distance. That is, between <span class="math inline">q_{50\%}</span> and <span class="math inline">q_{75\%}</span>, where <span class="math inline">q_{75\%}</span> is the point such that <span class="math inline">Pr(q \leq q_{75\%}) = 75\%</span>.</p>
 <p>Since in the simple harmonic oscillator, the Wigner function just rotates around classically, we can calculate as if it is classical. This means that the energy conservation holds:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\sigma_p(0)^2}{2m} = \frac 12 m\omega^2 \sigma_q(0)^2 \implies \sigma_p(0)/\sigma_q(0) = m\omega
-\]</span></p>
+</span></p>
 <p>Now, the same geometric argument shows that</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \sigma_q(t) = \sigma_q(0)\sqrt{1 + \left( \frac{\sigma_p(0) t}{\sigma_q(0) m}\right)^2} = \sigma_q(0)\sqrt{1 + \left(\omega t\right)^2}
-\]</span></p>
-<p>which is a surprisingly simple and elegant formula. The case of the gaussian is recovered by noting that it is the only Hermite–Gauss wave that exactly reaches the minimum allowed by the uncertainty principle: <span class="math inline">\(\sigma_q(0) \sigma_p(0) = \hbar/2\)</span>, which, when combined with <span class="math inline">\(\sigma_p(0)/\sigma_q(0) = m\omega\)</span> that is satisfied by all Hermite–Gauss waves, gives us <span class="math inline">\(\omega = \frac{\hbar}{2 m \sigma_q^2}\)</span>, and so we recover the previous result of <span class="math inline">\(\sigma_q(t) = \sigma_q(0)\sqrt{1 + \left(\frac{\hbar t}{2 m \sigma_q^2}\right)^2}\)</span></p>
+</span></p>
+<p>which is a surprisingly simple and elegant formula. The case of the gaussian is recovered by noting that it is the only Hermite–Gauss wave that exactly reaches the minimum allowed by the uncertainty principle: <span class="math inline">\sigma_q(0) \sigma_p(0) = \hbar/2</span>, which, when combined with <span class="math inline">\sigma_p(0)/\sigma_q(0) = m\omega</span> that is satisfied by all Hermite–Gauss waves, gives us <span class="math inline">\omega = \frac{\hbar}{2 m \sigma_q^2}</span>, and so we recover the previous result of <span class="math inline">\sigma_q(t) = \sigma_q(0)\sqrt{1 + \left(\frac{\hbar t}{2 m \sigma_q^2}\right)^2}</span></p>
 <video controls="" width="100%">
 <source src="figure/gaussian_wavepacket_spreading_2.webm" type="video/webm">
 </video>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/gaussian_wavepacket_spreading_2.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Illustration for gaussian wavepacket spreading in a wavefunction corresponding to the <span class="math inline">\(n=2\)</span> eigenstate of the simple harmonic oscillator. As time increases, the one-sigma circle projects to an interval on <span class="math inline">\(q\)</span>-axis, which shrinks as <span class="math inline">\(t \uparrow 0\)</span>, then grows as <span class="math inline">\(t \uparrow \infty\)</span>.</figcaption>
+<figcaption class="margin-caption">Illustration for gaussian wavepacket spreading in a wavefunction corresponding to the <span class="math inline">n=2</span> eigenstate of the simple harmonic oscillator. As time increases, the one-sigma circle projects to an interval on <span class="math inline">q</span>-axis, which shrinks as <span class="math inline">t \uparrow 0</span>, then grows as <span class="math inline">t \uparrow \infty</span>.</figcaption>
 </figure>
 </div>
 <p>These results were previously proved in <span class="citation" data-cites="andrewsEvolutionFreeWave2008">(<a href="#ref-andrewsEvolutionFreeWave2008" role="doc-biblioref">Andrews 2008</a>)</span> analytically. However as far as the author knows, this is the first time these were derived geometrically, with minimal calculus.</p>
@@ -1771,58 +1787,58 @@ W(t, q, p) = W(0, q - pt/m, p)
 <section id="square-wave" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="square-wave">Square wave</h4>
 <p>As a concrete example of a wave that is not Hermite–Gauss, consider the square wave function</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \psi(q) = \begin{cases}a^{-1/2} &amp; \text{ if }q \in [-a/2, +a/2]\\ 0  &amp; \text{ else}\end{cases}
-\]</span></p>
+</span></p>
 <p>Its Wigner function is easily calculated as</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
       W_0(q, p) &amp;= \frac{1}{2a\pi \hbar} \int_{|q + y/2| \leq a/2, |q - y/2| \leq a/2} dy e^{-ipy /\hbar} \\
       &amp;= \frac{1}{2a\pi \hbar} \frac{\hbar}{-ip} e^{-ipy /\hbar}\Big|_{\max(2q - a, -2q- a)}^{\min(2q+a, -2q+a)}\\
       &amp;= \frac{1}{a \pi p} \sin\left(\frac{p(a - 2|q|)}{\hbar} \right)
       \end{aligned}
-\]</span></p>
-<p>when <span class="math inline">\(q \in [-a/2, +a/2]\)</span>. For larger values, <span class="math inline">\(W = 0\)</span>.</p>
-<p>The <span class="math inline">\(p\)</span>-marginal distribution is</p>
-<p><span class="math display">\[
+</span></p>
+<p>when <span class="math inline">q \in [-a/2, +a/2]</span>. For larger values, <span class="math inline">W = 0</span>.</p>
+<p>The <span class="math inline">p</span>-marginal distribution is</p>
+<p><span class="math display">
 \begin{aligned}
 \rho_p(p) &amp;:= \int_\mathbb{R}W_0(q,p)dq  \\
       &amp;= \int_{-a/2}^{+a/2} \frac{1}{a \pi p} \sin\left(\frac{p(a - 2|q|)}{\hbar} \right) dq \\
       &amp;= \frac{\hbar }{\pi a p^2} ( 1 - \cos(pa /\hbar))
 \end{aligned}
-\]</span></p>
-<p>Let <span class="math inline">\(f(t) := \frac{1 - \cos t}{\pi t^2} = \left(\frac{\operatorname{sinc}(t/2)}{\sqrt{2\pi}} \right)^2\)</span>, then <span class="math inline">\(\rho_p(p) = \frac{a}{\hbar} f(\frac{a}{\hbar}p)\)</span>. Thus, the <span class="math inline">\(p\)</span>-marginal distribution always has the same shape no matter what <span class="math inline">\(a\)</span> is.</p>
+</span></p>
+<p>Let <span class="math inline">f(t) := \frac{1 - \cos t}{\pi t^2} = \left(\frac{\operatorname{sinc}(t/2)}{\sqrt{2\pi}} \right)^2</span>, then <span class="math inline">\rho_p(p) = \frac{a}{\hbar} f(\frac{a}{\hbar}p)</span>. Thus, the <span class="math inline">p</span>-marginal distribution always has the same shape no matter what <span class="math inline">a</span> is.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/square_wave_wigner.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Wigner function of the square wave, and its <span class="math inline">\(p\)</span>-marginal distribution. <span class="math inline">\(a = 1.3, \hbar = 1\)</span></figcaption>
+<figcaption class="margin-caption">Wigner function of the square wave, and its <span class="math inline">p</span>-marginal distribution. <span class="math inline">a = 1.3, \hbar = 1</span></figcaption>
 </figure>
 </div>
-<p>Because at <span class="math inline">\(t=0\)</span>, the Wigner function is zero outside of <span class="math inline">\(q \in [-a/2, +a/2]\)</span>, at large <span class="math inline">\(t\)</span>, the probability that the particle is found at <span class="math inline">\([q, q + \delta q]\)</span> is the integral of <span class="math inline">\(W_0\)</span> over a the thin line passing <span class="math inline">\([q, q + \delta q]\)</span> at slope <span class="math inline">\(-m/t\)</span>. Thus, we have</p>
-<p><span class="math display">\[
+<p>Because at <span class="math inline">t=0</span>, the Wigner function is zero outside of <span class="math inline">q \in [-a/2, +a/2]</span>, at large <span class="math inline">t</span>, the probability that the particle is found at <span class="math inline">[q, q + \delta q]</span> is the integral of <span class="math inline">W_0</span> over a the thin line passing <span class="math inline">[q, q + \delta q]</span> at slope <span class="math inline">-m/t</span>. Thus, we have</p>
+<p><span class="math display">
 \begin{aligned}
 \int_\mathbb{R}W_t(q, p)dp
     &amp;\approx \frac mt\int_{-a/2}^{+a/2} W_0(q, p)dq \\
     &amp;= \frac{m}{t} \rho_p(qm/t) = \frac{\hbar t}{\pi m a q^2} \left(1 - \cos \left( \frac{ma}{\hbar t} q\right)\right) \\
     &amp;= \frac{am}{\hbar t} f \left(\frac{am}{\hbar t} q\right)
 \end{aligned}
-\]</span></p>
-<p>In particular, the higher-order waves are <em>not</em> disspated away, and so the square wave never converges to a gaussian wavepacket. In fact, it always converges to the same shape of <span class="math inline">\(f\)</span>. This is directly against the claim of <span class="citation" data-cites="mitaDispersionNonGaussianFree2007">(<a href="#ref-mitaDispersionNonGaussianFree2007" role="doc-biblioref">Mita 2007</a>)</span>, as previously pointed out by <span class="citation" data-cites="andrewsEvolutionFreeWave2008">(<a href="#ref-andrewsEvolutionFreeWave2008" role="doc-biblioref">Andrews 2008</a>)</span>.</p>
-<p>By the symmetry of the Wigner function in <span class="math inline">\(q\)</span> and <span class="math inline">\(p\)</span>, we have the following result: If the wavefunction satisfies <span class="math inline">\(\psi(q) = \sqrt{\frac{b}{\hbar} }\frac{\operatorname{sinc}(bq/2 \hbar)}{\sqrt{2\pi}}\)</span> at <span class="math inline">\(t=0\)</span>, then at large <span class="math inline">\(t\)</span>, the wavefunction converges to a square wave on the interval <span class="math inline">\([-bt/2m, +bt/2m]\)</span> with height <span class="math inline">\(\sqrt{\frac{m}{bt}}\)</span>.</p>
+</span></p>
+<p>In particular, the higher-order waves are <em>not</em> disspated away, and so the square wave never converges to a gaussian wavepacket. In fact, it always converges to the same shape of <span class="math inline">f</span>. This is directly against the claim of <span class="citation" data-cites="mitaDispersionNonGaussianFree2007">(<a href="#ref-mitaDispersionNonGaussianFree2007" role="doc-biblioref">Mita 2007</a>)</span>, as previously pointed out by <span class="citation" data-cites="andrewsEvolutionFreeWave2008">(<a href="#ref-andrewsEvolutionFreeWave2008" role="doc-biblioref">Andrews 2008</a>)</span>.</p>
+<p>By the symmetry of the Wigner function in <span class="math inline">q</span> and <span class="math inline">p</span>, we have the following result: If the wavefunction satisfies <span class="math inline">\psi(q) = \sqrt{\frac{b}{\hbar} }\frac{\operatorname{sinc}(bq/2 \hbar)}{\sqrt{2\pi}}</span> at <span class="math inline">t=0</span>, then at large <span class="math inline">t</span>, the wavefunction converges to a square wave on the interval <span class="math inline">[-bt/2m, +bt/2m]</span> with height <span class="math inline">\sqrt{\frac{m}{bt}}</span>.</p>
 </section>
 <section id="generic-wavepacket" class="level4">
 <h4 class="anchored" data-anchor-id="generic-wavepacket">Generic wavepacket</h4>
-<p>In general, the shape of the wave of any normalizable wave function <span class="math inline">\(\psi_q(q)\)</span>, propagating in free space, would, after a long time, converge to a translation-and-dilation of its <span class="math inline">\(p\)</span>-marginal distribution <span class="math inline">\(\psi_q(q)\)</span>, multiplied by a phase factor <span class="math inline">\(e^{iS(t, q)}\)</span>. Since the <span class="math inline">\(q\)</span>-marginal distribution can be arbitrary, the same is true for the <span class="math inline">\(p\)</span>-marginal distribution. In particular, we have the following theorem, which is immediate from the geometric intuition.</p>
+<p>In general, the shape of the wave of any normalizable wave function <span class="math inline">\psi_q(q)</span>, propagating in free space, would, after a long time, converge to a translation-and-dilation of its <span class="math inline">p</span>-marginal distribution <span class="math inline">\psi_q(q)</span>, multiplied by a phase factor <span class="math inline">e^{iS(t, q)}</span>. Since the <span class="math inline">q</span>-marginal distribution can be arbitrary, the same is true for the <span class="math inline">p</span>-marginal distribution. In particular, we have the following theorem, which is immediate from the geometric intuition.</p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 20</strong></span> If <span class="math inline">\(\rho\)</span> is a smooth probability density function on <span class="math inline">\(\mathbb{R}\)</span>, then there exists a wavefunction <span class="math inline">\(\psi\)</span> propagating in free space, such that for all large enough <span class="math inline">\(t\)</span>,</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 20</strong></span> If <span class="math inline">\rho</span> is a smooth probability density function on <span class="math inline">\mathbb{R}</span>, then there exists a wavefunction <span class="math inline">\psi</span> propagating in free space, such that for all large enough <span class="math inline">t</span>,</p>
+<p><span class="math display">
 |\psi(t, q)|^2 \to \frac{m}{t}\rho(mq/t)
-\]</span></p>
+</span></p>
 </div>
-<p>Such <span class="math inline">\(\psi(0, q)\)</span> can be found by taking the Wigner function of <span class="math inline">\(\sqrt{\rho(p)} e^{iS(p)}\)</span> for an arbitrary smooth function <span class="math inline">\(S\)</span>, rotating by 90 degrees in the phase plane, then taking the inverse Wigner transform.</p>
-<p>Previously, we showed that for almost any gaussian wavepacket, <span class="math inline">\(Pr(q &gt; q_1 | t)\)</span> the probability of finding the particle to the right of some point <span class="math inline">\(q_1\)</span> at time <span class="math inline">\(t\)</span>, would first increase then decrease, or first decrease then increase. In fact, this is true for almost any Wigner function, period. The Wigner function does not even need to be pure. It can be the Wigner function of a mixed state, and this would still be true.</p>
+<p>Such <span class="math inline">\psi(0, q)</span> can be found by taking the Wigner function of <span class="math inline">\sqrt{\rho(p)} e^{iS(p)}</span> for an arbitrary smooth function <span class="math inline">S</span>, rotating by 90 degrees in the phase plane, then taking the inverse Wigner transform.</p>
+<p>Previously, we showed that for almost any gaussian wavepacket, <span class="math inline">Pr(q &gt; q_1 | t)</span> the probability of finding the particle to the right of some point <span class="math inline">q_1</span> at time <span class="math inline">t</span>, would first increase then decrease, or first decrease then increase. In fact, this is true for almost any Wigner function, period. The Wigner function does not even need to be pure. It can be the Wigner function of a mixed state, and this would still be true.</p>
 <div id="prp-todo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 21</strong></span> For almost any mixed state of a particle propagating in free space, and almost any <span class="math inline">\(q_1\)</span>, the function <span class="math inline">\(t \mapsto Pr(q &gt; q_1 | t)\)</span> is not monotonic.</p>
+<p><span class="theorem-title"><strong>Proposition 21</strong></span> For almost any mixed state of a particle propagating in free space, and almost any <span class="math inline">q_1</span>, the function <span class="math inline">t \mapsto Pr(q &gt; q_1 | t)</span> is not monotonic.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
@@ -1836,11 +1852,11 @@ W(t, q, p) = W(0, q - pt/m, p)
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Fix some Wigner function <span class="math inline">\(W\)</span>. Define <span class="math inline">\(f(\theta)\)</span> to be the integral of <span class="math inline">\(W\)</span> to the right of the line passing <span class="math inline">\((q_1, 0)\)</span>, making an angle <span class="math inline">\(\theta\)</span> with the <span class="math inline">\(q\)</span>-axis. Then we have <span class="math inline">\(f(0) = 1 - f(\pi)\)</span>, and in general, <span class="math inline">\(f(\theta) = 1 - f(\pi + \theta)\)</span>. Thus, if <span class="math inline">\(f\)</span> reaches a global minimum at <span class="math inline">\(\theta\)</span>, then it reaches a global maximum at <span class="math inline">\(f(\theta + \pi)\)</span>. In particular, if <span class="math inline">\(f(0)\)</span> is neither the global minimum nor the global maximum, then <span class="math inline">\(f(\theta)\)</span> must reach either the global minimum or the global maximum at some <span class="math inline">\(\theta \in (0, \pi)\)</span>. Therefore, <span class="math inline">\(f\)</span> is not monotonic as <span class="math inline">\(\theta\)</span> rotates.</p>
+<p>Fix some Wigner function <span class="math inline">W</span>. Define <span class="math inline">f(\theta)</span> to be the integral of <span class="math inline">W</span> to the right of the line passing <span class="math inline">(q_1, 0)</span>, making an angle <span class="math inline">\theta</span> with the <span class="math inline">q</span>-axis. Then we have <span class="math inline">f(0) = 1 - f(\pi)</span>, and in general, <span class="math inline">f(\theta) = 1 - f(\pi + \theta)</span>. Thus, if <span class="math inline">f</span> reaches a global minimum at <span class="math inline">\theta</span>, then it reaches a global maximum at <span class="math inline">f(\theta + \pi)</span>. In particular, if <span class="math inline">f(0)</span> is neither the global minimum nor the global maximum, then <span class="math inline">f(\theta)</span> must reach either the global minimum or the global maximum at some <span class="math inline">\theta \in (0, \pi)</span>. Therefore, <span class="math inline">f</span> is not monotonic as <span class="math inline">\theta</span> rotates.</p>
 </div>
 </div>
 </div>
-<p>We can think of this as a “maximally non-dissipation” result. Unlike the heat equation, where all high-frequency fluctuations decay away, leaving behind just a single low-frequency gaussian mode, the Schrödinger equation results in a wave propagation that has no dissipation, but preserves the shape of <span class="math inline">\(|\psi_p(0)|^2\)</span> for all large times. This is unsurprising, as it is well-known that quantum mechanics does not dissipate.</p>
+<p>We can think of this as a “maximally non-dissipation” result. Unlike the heat equation, where all high-frequency fluctuations decay away, leaving behind just a single low-frequency gaussian mode, the Schrödinger equation results in a wave propagation that has no dissipation, but preserves the shape of <span class="math inline">|\psi_p(0)|^2</span> for all large times. This is unsurprising, as it is well-known that quantum mechanics does not dissipate.</p>
 </section>
 <section id="airy-wavepacket-non-spreading" class="level4">
 <h4 class="anchored" data-anchor-id="airy-wavepacket-non-spreading">Airy wavepacket non-spreading</h4>
@@ -1850,13 +1866,13 @@ W(t, q, p) = W(0, q - pt/m, p)
 <section id="simple-harmonic-oscillator" class="level3">
 <h3 class="anchored" data-anchor-id="simple-harmonic-oscillator">Simple harmonic oscillator</h3>
 <p>If in the Schrödinger picture, the Hamiltonian of the system is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat H = \sum_k \frac{\hat p_k^2}{2m_k} + V(\hat q)
-\]</span></p>
+</span></p>
 <p>then in the phase-space picture, the time-evolution of the Wigner quasiprobability distribution is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \partial_t W = \sum_k \left( -\frac{p_k}{m_k} \partial_{q_k} W + \partial_{q_k} V \partial_{p_k} W\right)
-\]</span></p>
+</span></p>
 </section>
 </section>
 <section id="quantum-computing" class="level2">

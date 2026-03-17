@@ -121,9 +121,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -480,7 +496,7 @@ window.Quarto = {
 <li><strong>1985</strong>: (the point at which this article was written)</li>
 <li><strong>1986–2035</strong>: Milestone B (a general theory of problem solving in AI), 1 to 50 years after Milestone A.</li>
 <li><strong>1991–2045</strong>: Milestones C (self-improving AI) and D (English comprehension) after Milestone B, 5 to 10 years after Milestone B.</li>
-<li><strong>2005</strong>: Hardware cost of a Milestone E machine to be <span class="math inline">\(\sim 10^5\)</span> USD.</li>
+<li><strong>2005</strong>: Hardware cost of a Milestone E machine to be <span class="math inline">\sim 10^5</span> USD.</li>
 <li><strong>2001–2055</strong>: Milestone E (human-level AI in specific fields), “a few years” (10 years?) after Milestones C and D.</li>
 <li><strong>2011–2065</strong>: Milestone F (same number of human-level AI as human computer scientists), 10 years after achieving Milestone E.
 <ul>
@@ -556,25 +572,25 @@ window.Quarto = {
 <p>Some of the most critical capabilities of very intelligent machines depend on their being much more intelligent than humans. How long will it take to go to Milestone F and then to G?</p>
 <p>The number of creative scientists and engineers that are responsible for the advancement of computer science, are at most several thousand. After we have reached Milestone E, it shouldn’t take much more than ten years to construct ten thousand duplicates of our original ‘Milestone E’ machine, and have a total computing capability close to that of the computer science community. The ten year figure seems reasonable when one notes that the cost of these machines will keep halving every four years or so, and also that the new ‘artificial’ computer scientists will help speed the construction of the new machines.</p>
 <p>While there is normally an exponential decrease in computing cost with time (halving every four years or so), when the artificial intelligence community is as large as the human scientific community, the halving time itself will halve, so we get halving in two years instead of four.</p>
-<p>Suppose <span class="math inline">\(c\)</span> is the size of our computer science community at time <span class="math inline">\(t\)</span>. We define this to be 1 at time zero. <span class="math inline">\(R\)</span> is the rate at which we expend money on our AI computers to effectively increase the size of our computer science community. <span class="math inline">\(t\)</span> is the time in years, from our origin point. <span class="math inline">\(x\)</span> is the amount of computing power we get for a dollar at a particular time. We will set <span class="math inline">\(x=1\)</span> at <span class="math inline">\(t=0\)</span>. First,</p>
-<p><span class="math display">\[\mathrm{d} c / \mathrm{d} t=R x.\]</span></p>
+<p>Suppose <span class="math inline">c</span> is the size of our computer science community at time <span class="math inline">t</span>. We define this to be 1 at time zero. <span class="math inline">R</span> is the rate at which we expend money on our AI computers to effectively increase the size of our computer science community. <span class="math inline">t</span> is the time in years, from our origin point. <span class="math inline">x</span> is the amount of computing power we get for a dollar at a particular time. We will set <span class="math inline">x=1</span> at <span class="math inline">t=0</span>. First,</p>
+<p><span class="math display">\mathrm{d} c / \mathrm{d} t=R x.</span></p>
 <p>The rate of increase of our (partly artificial) computer science community is the product of our rate of expenditure times the efficiency of that expenditure. Next</p>
-<p><span class="math display">\[\mathrm{d} \ln x / \mathrm{d} t=A c.\]</span></p>
-<p>This says that the rate of change of the log of our efficiency is proportional to the size of our computer science community. If <span class="math inline">\(c\)</span> were to be kept constant at 1 , then we would want eq. (2) to give a doubling of <span class="math inline">\(x\)</span> every four years. This gives <span class="math inline">\(A=\)</span> (In 2) <span class="math inline">\(/ 4=0.1733\)</span>. With conditions <span class="math inline">\(c=1\)</span> and <span class="math inline">\(x=1\)</span> at <span class="math inline">\(t=0\)</span>, we obtain from (1) and (2)</p>
-<p><span class="math display">\[
+<p><span class="math display">\mathrm{d} \ln x / \mathrm{d} t=A c.</span></p>
+<p>This says that the rate of change of the log of our efficiency is proportional to the size of our computer science community. If <span class="math inline">c</span> were to be kept constant at 1 , then we would want eq. (2) to give a doubling of <span class="math inline">x</span> every four years. This gives <span class="math inline">A=</span> (In 2) <span class="math inline">/ 4=0.1733</span>. With conditions <span class="math inline">c=1</span> and <span class="math inline">x=1</span> at <span class="math inline">t=0</span>, we obtain from (1) and (2)</p>
+<p><span class="math display">
 \mathrm{d} c / \mathrm{d} t=A\left(c^2-1\right) / 2+R
-\]</span></p>
-<p>This equation has the property that for any positive value of <span class="math inline">\(R\)</span>, the value of <span class="math inline">\(c\)</span> will at some finite time <span class="math inline">\(t=T\)</span>, approach infinity.</p>
-<p><span class="math display">\[
+</span></p>
+<p>This equation has the property that for any positive value of <span class="math inline">R</span>, the value of <span class="math inline">c</span> will at some finite time <span class="math inline">t=T</span>, approach infinity.</p>
+<p><span class="math display">
 \begin{aligned}
 \text{For }R=1, &amp;T=4.62\text{ years},\\
 \text{For }R=0.1, &amp;T=11.11\text{ years},\\
 \text{For }R=0.01, &amp;T=21.51\text{ years},\\
 \end{aligned}
-\]</span></p>
-<p>A value of <span class="math inline">\(R=1\)</span> means that if we kept <span class="math inline">\(x\)</span> constant at 1, at the end of one year we would have invested enough in our AI computer to equal its capacity to that of the human computer science community.</p>
+</span></p>
+<p>A value of <span class="math inline">R=1</span> means that if we kept <span class="math inline">x</span> constant at 1, at the end of one year we would have invested enough in our AI computer to equal its capacity to that of the human computer science community.</p>
 <p>Usually, when infinities like this one occur in science, they indicate a breakdown of the validity of the equations as we approach the infinity point. The critical part of the equations appears to be continued exponential decrease in computation cost. So far, this rate of improvement has been possible only because of radically new technologies that were introduced – i.e.&nbsp;first vacuum tubes, then transistors, then integrated circuits, and then large scale integrated circuits. There appear to be several new technologies on the horizon that are adequate for maintaining the progress for several more orders of magnitude – as for the technologies over the horizon that have not yet been discovered, we only have a faith based on performance of the past.</p>
-<p>A decrease in computation cost by a factor of 1000 would, at the present rate of progress, take about 40 years. At the present time, a reasonable guess at the cost of hardware with the computing power of a human brain might be ten million dollars. Ten thousand of such machines would cost 100 billion dollars now, and 100 million dollars forty years from now. This 100 million would put us at <span class="math inline">\(t=0\)</span> for eq. (3). At a continued expenditure of ten million dollars a year, it would take about 11 more years to get to the ‘infinity point’. Though infinity is a bit high, it seems very likely that we could achieve a growth factor of at least 100 in these 11 years – and so we reach Milestone G.</p>
+<p>A decrease in computation cost by a factor of 1000 would, at the present rate of progress, take about 40 years. At the present time, a reasonable guess at the cost of hardware with the computing power of a human brain might be ten million dollars. Ten thousand of such machines would cost 100 billion dollars now, and 100 million dollars forty years from now. This 100 million would put us at <span class="math inline">t=0</span> for eq. (3). At a continued expenditure of ten million dollars a year, it would take about 11 more years to get to the ‘infinity point’. Though infinity is a bit high, it seems very likely that we could achieve a growth factor of at least 100 in these 11 years – and so we reach Milestone G.</p>
 </section>
 <section id="effects-of-a-large-agi-society-upon-human-society" class="level3">
 <h3 class="anchored" data-anchor-id="effects-of-a-large-agi-society-upon-human-society">Effects of a large AGI society upon human society</h3>
@@ -612,7 +628,7 @@ window.Quarto = {
 <p>In the present case, I have two afterthoughts which, to some extent have effects that cancel each other.</p>
 <p>My estimate for the present day hardware cost of a machine having the information processing capacity of a human, may have been low by a factor of anywhere from 3 to 10.</p>
 <p>On the other hand, I feel that my estimate of the machine size necessary to emulate the community of computer scientists may have been high by a factor of at least the same amount and probably much more.</p>
-<p>The reason is that multiplying the information processing capacity of a machine by <span class="math inline">\(n\)</span> increases its scientific productivity by a factor of much more than <span class="math inline">\(n\)</span>. In the case of humans, two scientists, working more or less independently, will have about twice the productivity of one.</p>
+<p>The reason is that multiplying the information processing capacity of a machine by <span class="math inline">n</span> increases its scientific productivity by a factor of much more than <span class="math inline">n</span>. In the case of humans, two scientists, working more or less independently, will have about twice the productivity of one.</p>
 <p>If, however, these scientists are able to communicate very well, the productivity is far greater. Note that this communication is largely verbal via channels of very small capacity. They have very poor access to non-verbal concepts used in each others “internal language”.</p>
 <p>In a large intelligent machine having many times single human information processing capacity, we expect that all parts of the machine will have very rapid access to each other, in all conceivable detail. This facilitates cooperation between these parts that is considerably more productive than communication between individual humans.</p>
 </section>

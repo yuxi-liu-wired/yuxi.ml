@@ -85,9 +85,25 @@ ul.task-list li input[type="checkbox"] {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -427,10 +443,10 @@ window.Quarto = {
 <p><a href="undergraduate_thesis/thesis.pdf"><em>Beyond expectations, but within limits – the theory of coherent risk measures</em></a>.</p>
 <p>For a quick summary, see my <a href="undergraduate_thesis/seminar_talk/seminal_talk_slides.pdf">seminar presentation</a>.</p>
 <p>My undergraduate thesis written in 2019 at ANU, on the topic of <a href="https://en.wikipedia.org/wiki/Coherent_risk_measure">coherent risk measures</a>. The first chapter is a readable introduction to risk measures in general (as in, why we might need to use more than the mean and the variance). The rest of it is very dry and I imagine it is of only interest to specialists. The centerpiece of the thesis is a straightforward proof of the central limit theorem for <a href="https://en.wikipedia.org/wiki/Expected_shortfall">CVaR</a>, which is a slight generalization of expectation. Like the central limit theorem, this theorem states that the sample CVaR converges to the true CVaR like</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\text{sample CVaR}_\alpha - \text{true CVaR}_\alpha}{\sqrt N} \xrightarrow{d} \mathcal N(0, \sigma^2(\alpha))
-\]</span></p>
-<p>where <span class="math inline">\(\sigma^2(\alpha)\)</span> has a certain expression. As soon as I have calculated it myself, thinking that I had finally made a new discovery, I found it published before in the literature. Still my expression is simpler than the previous publications, so I believe it is still worth something after all.</p>
+</span></p>
+<p>where <span class="math inline">\sigma^2(\alpha)</span> has a certain expression. As soon as I have calculated it myself, thinking that I had finally made a new discovery, I found it published before in the literature. Still my expression is simpler than the previous publications, so I believe it is still worth something after all.</p>
 </section>
 <section id="corrections" class="level2">
 <h2 class="anchored" data-anchor-id="corrections">Corrections</h2>

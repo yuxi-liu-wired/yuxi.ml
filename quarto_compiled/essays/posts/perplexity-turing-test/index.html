@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -523,93 +539,93 @@ window.Quarto = {
 <section id="turing-test" class="level3">
 <h3 class="anchored" data-anchor-id="turing-test">Turing test</h3>
 <p>In the <a href="https://en.wikipedia.org/wiki/Turing_test">Turing test</a>, there are three players: one judge and two players. The first player is a human, and the second is a machine. The judge asks each player text questions and receives text answers. The judge must decide who is the human.</p>
-<p>We consider a simplified Turing test. In this test, the judge does not ask, and simply receives <em>one</em> stream of text <span class="math inline">\(X_{1:\infty}\)</span>. The judge must decide whether the stream is produced by the human or the machine, and do so quickly.</p>
+<p>We consider a simplified Turing test. In this test, the judge does not ask, and simply receives <em>one</em> stream of text <span class="math inline">X_{1:\infty}</span>. The judge must decide whether the stream is produced by the human or the machine, and do so quickly.</p>
 <p>Cast in the language of statistical hypothesis testing, we have two hypotheses:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: “the stream is produced by the human”;</li>
-<li><span class="math inline">\(H_1\)</span>: “the stream is produced by the machine”.</li>
+<li><span class="math inline">H_0</span>: “the stream is produced by the human”;</li>
+<li><span class="math inline">H_1</span>: “the stream is produced by the machine”.</li>
 </ul>
-<p>The judge would read from the stream <span class="math inline">\(X_{1:\infty}\)</span>, <code>o-n-e- -t-o-k-e-n</code> at a time, and at each token, decide whether to take another one, or announce its judgment: <span class="math inline">\(H_0\)</span> or <span class="math inline">\(H_1\)</span>.</p>
-<p>As the organizers of the Turing test, we would start the test by flipping a fair coin to decide whether to use the human or the machine. Therefore, <span class="math inline">\(Pr(H_0) = Pr(H_1)\)</span>, and by Bayes, the posterior log-probability ratio is</p>
-<p><span class="math display">\[
+<p>The judge would read from the stream <span class="math inline">X_{1:\infty}</span>, <code>o-n-e- -t-o-k-e-n</code> at a time, and at each token, decide whether to take another one, or announce its judgment: <span class="math inline">H_0</span> or <span class="math inline">H_1</span>.</p>
+<p>As the organizers of the Turing test, we would start the test by flipping a fair coin to decide whether to use the human or the machine. Therefore, <span class="math inline">Pr(H_0) = Pr(H_1)</span>, and by Bayes, the posterior log-probability ratio is</p>
+<p><span class="math display">
 \ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)} = \ln\frac{Pr(H_0|X_{1:n})}{Pr(H_1|X_{1:n})}
-\]</span></p>
-<p>This allows us to use the <a href="https://en.wikipedia.org/wiki/Sequential_probability_ratio_test">sequential probability ratio test</a> (SPRT). The judge would decide on two decision boundaries, and calculate <span class="math inline">\(\ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}\)</span> at each token. It would stop and announce the decision as soon as the quantity exceeds one of the boundaries.</p>
-<p>For example, suppose the judge wants to decide when the odds ratio is 10 to 1, then it would set the decision boundaries to be <span class="math inline">\([-\ln 10, + \ln 10]\)</span>. If <span class="math inline">\(\ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}\)</span> goes above <span class="math inline">\(+\ln 10\)</span> when <span class="math inline">\(n = 60\)</span>, then the judge would announce “<span class="math inline">\(H_0\)</span>” at that point.</p>
-<p>The <span class="math inline">\(\ln 10\)</span> is a good rule of thumb, which we will use for the remainder of the essay.</p>
+</span></p>
+<p>This allows us to use the <a href="https://en.wikipedia.org/wiki/Sequential_probability_ratio_test">sequential probability ratio test</a> (SPRT). The judge would decide on two decision boundaries, and calculate <span class="math inline">\ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}</span> at each token. It would stop and announce the decision as soon as the quantity exceeds one of the boundaries.</p>
+<p>For example, suppose the judge wants to decide when the odds ratio is 10 to 1, then it would set the decision boundaries to be <span class="math inline">[-\ln 10, + \ln 10]</span>. If <span class="math inline">\ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}</span> goes above <span class="math inline">+\ln 10</span> when <span class="math inline">n = 60</span>, then the judge would announce “<span class="math inline">H_0</span>” at that point.</p>
+<p>The <span class="math inline">\ln 10</span> is a good rule of thumb, which we will use for the remainder of the essay.</p>
 </section>
 <section id="sequential-hypothesis-testing" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="sequential-hypothesis-testing">Sequential hypothesis testing</h3>
 <p>Consider the following simple equation:</p>
-<p><span id="eq-sprt"><span class="math display">\[
+<p><span id="eq-sprt"><span class="math display">
 \underbrace{\frac 1n \mathbb{E}_{X \sim Pr(\cdot | H_0)}\left[ \ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}\right]}_{\text{$\frac 1n D_{KL}(Pr(\cdot | H_0)\| Pr(\cdot | H_1))$}} = \underbrace{\frac 1n
 \mathbb{E}_{X \sim Pr(\cdot | H_0)}\left[\ln\frac{1}{Pr(X_{1:n}|H_1)}\right]}_{\text{negative log-likelihood loss per token}} - \underbrace{\frac 1n  \mathbb{E}_{X \sim Pr(\cdot | H_0)}\left[\frac{1}{\ln Pr(X_{1:n}|H_0)}\right]}_{\text{entropy rate of the human itself}}
-\tag{1}\]</span></span></p>
+\tag{1}</span></span></p>
 <p>The first term is the KL-divergence per token between the machine and the human. Roughly speaking, it is how different they are, per token emitted. It is an information-theoretic quantity.</p>
-<p>The second term is negative log-likelihood loss per token. This is what language models are trained to minimize. We write it as <span class="math inline">\(L\)</span>.</p>
-<p>The third term is the entropy rate of the human. It is how random the human is. We write it as <span class="math inline">\(L_\infty\)</span>, because it is the theoretical minimal loss that the language model can reach.</p>
+<p>The second term is negative log-likelihood loss per token. This is what language models are trained to minimize. We write it as <span class="math inline">L</span>.</p>
+<p>The third term is the entropy rate of the human. It is how random the human is. We write it as <span class="math inline">L_\infty</span>, because it is the theoretical minimal loss that the language model can reach.</p>
 <p>If the machine is a perfect replica of the human, then the second term is zero, and the first term equals the third term.</p>
-<p>Assuming that the human is an ergodic speakers of English,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> we can sample an infinite stream <span class="math inline">\(X_{1:\infty}\)</span> from the human, then call up the <a href="#sec-smb-theorem">Shannon–McMillan–Breiman theorem</a> and find that</p>
+<p>Assuming that the human is an ergodic speakers of English,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> we can sample an infinite stream <span class="math inline">X_{1:\infty}</span> from the human, then call up the <a href="#sec-smb-theorem">Shannon–McMillan–Breiman theorem</a> and find that</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;In short, an ergodic speaker is someone who has only one speech. If you hear it speak once for a very long time, then hear it speak again for a very long time, then you can take the first and shift it around, so that it looks like the second over a very long sub-segment. Ergodic speakers allow you to take the average over a single very long speech, and be assured that it is close to the average over all possible speeches.</p>
-<p>In long, see <a href="#sec-ergodic-theory">the appendix on ergodic theory</a>.</p></div></div><p><span class="math display">\[
+<p>In long, see <a href="#sec-ergodic-theory">the appendix on ergodic theory</a>.</p></div></div><p><span class="math display">
 \frac 1n \ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)} \to L - L_\infty
-\]</span></p>
-<p>On the other hand, if the machine is also an ergodic speaker of English, then we can sample an infinite stream <span class="math inline">\(X_{1:\infty}\)</span> from the machine, then call up the SMB theorem and find that</p>
-<p><span class="math display">\[
+</span></p>
+<p>On the other hand, if the machine is also an ergodic speaker of English, then we can sample an infinite stream <span class="math inline">X_{1:\infty}</span> from the machine, then call up the SMB theorem and find that</p>
+<p><span class="math display">
 \frac 1n \ln\frac{Pr(X_{1:n}|H_1)}{Pr(X_{1:n}|H_0)} \to L' - L_\infty'
-\]</span></p>
-<p>where unfortunately, we have the odd <span class="math inline">\(L'\)</span> and <span class="math inline">\(L_\infty'\)</span>, defined by</p>
-<p><span class="math display">\[
+</span></p>
+<p>where unfortunately, we have the odd <span class="math inline">L'</span> and <span class="math inline">L_\infty'</span>, defined by</p>
+<p><span class="math display">
 L' := \lim_n \frac 1n
 \mathbb{E}_{X \sim Pr(\cdot | H_1)}\left[\ln\frac{1}{Pr(X_{1:n}|H_0)}\right], \quad L_\infty' := \lim_n \frac 1n
 \mathbb{E}_{X \sim Pr(\cdot | H_1)}\left[\ln\frac{1}{Pr(X_{1:n}|H_1)}\right]
-\]</span></p>
-<p>We can interpret them as the loss of the human at imitating the machine, and the entropy rate of the machine itself. When the machine is close enough to the human, we can take the approximation <span class="math inline">\(L' \approx L,  L_\infty' \approx L_\infty\)</span>.</p>
-<p>Now, define the log-ratio at step <span class="math inline">\(n\)</span> to be <span class="math inline">\(r_n := \frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}\)</span>. During a Turing test, the judge calculates</p>
-<p><span class="math display">\[
+</span></p>
+<p>We can interpret them as the loss of the human at imitating the machine, and the entropy rate of the machine itself. When the machine is close enough to the human, we can take the approximation <span class="math inline">L' \approx L,  L_\infty' \approx L_\infty</span>.</p>
+<p>Now, define the log-ratio at step <span class="math inline">n</span> to be <span class="math inline">r_n := \frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}</span>. During a Turing test, the judge calculates</p>
+<p><span class="math display">
 \begin{aligned}
 r_0 &amp;= 1 \\
 r_1 &amp;= r_0 + \frac{Pr(X_{1:1}|H_0)}{Pr(X_{1:1}|H_1)} \\
 r_2 &amp;= r_1 + \frac{Pr(X_{1:2}|X_{1:1}, H_0)}{Pr(X_{1:2}|X_{1:1}, H_1)} \\
 &amp;\cdots
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>So, imagine that such a perfect judge is going through a Turing test, upon receiving “my cat is technically”, and we are listening on its thoughts:</p>
 <ul>
-<li>“If it were a human, then it would start with ‘my’ with probability <span class="math inline">\(0.01\)</span>. If it were a machine, then <span class="math inline">\(0.05\)</span>. Therefore, the odds ratio is 2 to 1.”</li>
-<li>“If it were a human, then it would follow ‘my’ with ‘cat’ with probability <span class="math inline">\(0.01\)</span>. If it were a machine, then <span class="math inline">\(0.033\)</span>. Therefore, the odds ratio is 3 to 1.”</li>
-<li>“If it were a human, then it would follow ‘is’ with ‘my cat’ with probability… I do not know. However, I do know that the odds <em>ratio</em> is 2 to 1. Now that the total odds ratio is 12 to 1, I can decide: <span class="math inline">\(H_0\)</span>.”</li>
+<li>“If it were a human, then it would start with ‘my’ with probability <span class="math inline">0.01</span>. If it were a machine, then <span class="math inline">0.05</span>. Therefore, the odds ratio is 2 to 1.”</li>
+<li>“If it were a human, then it would follow ‘my’ with ‘cat’ with probability <span class="math inline">0.01</span>. If it were a machine, then <span class="math inline">0.033</span>. Therefore, the odds ratio is 3 to 1.”</li>
+<li>“If it were a human, then it would follow ‘is’ with ‘my cat’ with probability… I do not know. However, I do know that the odds <em>ratio</em> is 2 to 1. Now that the total odds ratio is 12 to 1, I can decide: <span class="math inline">H_0</span>.”</li>
 </ul>
-<p>We see that the judge does not have to know the probabilities <span class="math inline">\(Pr(X_{1:n}|H_0)\)</span> and <span class="math inline">\(Pr(X_{1:n}|H_1)\)</span>, only their <em>ratio</em>. This might be a minor point, but this idea of likelihood ratio is quite important. It is like “I don’t know how often you say ‘cat’ but I know that you say it twice as often than I do!”.</p>
-<p>Let <span class="math inline">\(T^*\)</span> be the time it takes for the judge to decide.</p>
-<p><span class="math display">\[T^* \approx \frac{\ln 10}{L - L_\infty}\]</span></p>
-<p>Intuitively, each token <em>on average</em> moves the log-probability-ratio away from 0 by another <span class="math inline">\((L-L_\infty)\)</span>. Decision is triggered when it finally moves out of the interval <span class="math inline">\([-\ln 10, +\ln 10]\)</span>.</p>
+<p>We see that the judge does not have to know the probabilities <span class="math inline">Pr(X_{1:n}|H_0)</span> and <span class="math inline">Pr(X_{1:n}|H_1)</span>, only their <em>ratio</em>. This might be a minor point, but this idea of likelihood ratio is quite important. It is like “I don’t know how often you say ‘cat’ but I know that you say it twice as often than I do!”.</p>
+<p>Let <span class="math inline">T^*</span> be the time it takes for the judge to decide.</p>
+<p><span class="math display">T^* \approx \frac{\ln 10}{L - L_\infty}</span></p>
+<p>Intuitively, each token <em>on average</em> moves the log-probability-ratio away from 0 by another <span class="math inline">(L-L_\infty)</span>. Decision is triggered when it finally moves out of the interval <span class="math inline">[-\ln 10, +\ln 10]</span>.</p>
 <p>We are not able to simply look at a few tokens, draw a straight line, and call it a day, because the trajectory of log-probability-ratio is much closer to a random walk with drift. Subjectively, if you were a judge and watching the log-probability-ratio moving, you’d see ups and downs, keeping you in suspense, until it finally crosses the decision boundaries.</p>
 </section>
 <section id="slowdown-factor" class="level3">
 <h3 class="anchored" data-anchor-id="slowdown-factor">Slowdown factor</h3>
 <p>To perform the SPRT as described, the judge must know intimately the difference between a human and a machine. Can the judge do that? Can anyone know, with certainty, that I would start my speech with “Forty cats …” with a probability that is <em>exactly</em> 32.42 times that of GPT-3?</p>
 <p>As a crude approximation, we can model real-world judges as slowed-down version of the perfect judge. We can imagine that at each step, instead of updating the log-ratio by</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \ln r_{n+1} \leftarrow \ln r_n + \ln \frac{Pr(X_{n+1}|H_0, X_{1:n})}{Pr(X_{n+1}|H_1, X_{1:n})}
-\]</span></p>
+</span></p>
 <p>we update it by</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \ln r_{n+1} \leftarrow \ln r_n + \frac 1s \ln \frac{Pr(X_{n+1}|H_0, X_{1:n})}{Pr(X_{n+1}|H_1, X_{1:n})}
-\]</span></p>
-<p>where <span class="math inline">\(s &gt; 1\)</span> is the <strong>slowdown factor</strong>. This implies that if it takes <span class="math inline">\(\sim T\)</span> tokens for the perfect judge to reach a likelihood ratio of <span class="math inline">\(r\)</span>, it would take <span class="math inline">\(\sim sT\)</span> tokens for a human judge.</p>
+</span></p>
+<p>where <span class="math inline">s &gt; 1</span> is the <strong>slowdown factor</strong>. This implies that if it takes <span class="math inline">\sim T</span> tokens for the perfect judge to reach a likelihood ratio of <span class="math inline">r</span>, it would take <span class="math inline">\sim sT</span> tokens for a human judge.</p>
 </section>
 <section id="measuring-the-slowdown-factor" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="measuring-the-slowdown-factor">Measuring the slowdown factor</h3>
-<p>The slowdown factor <span class="math inline">\(s\)</span> is unknown.</p>
+<p>The slowdown factor <span class="math inline">s</span> is unknown.</p>
 <blockquote class="blockquote">
 <p>Informed by an internal poll, we enforce a lognormal distribution with a median of 53.1, a 15th percentile estimate of 9.84, and an 85th percentile of 290. <span class="citation" data-cites="atkinsonDirectApproachInteractive2023">(<a href="#ref-atkinsonDirectApproachInteractive2023" role="doc-biblioref">Atkinson 2023</a>)</span></p>
 </blockquote>
-<p>The original paper <span class="citation" data-cites="barnettScalingTransformativeAutoregressive2023">(<a href="#ref-barnettScalingTransformativeAutoregressive2023" role="doc-biblioref">Barnett and Besiroglu 2023a</a>)</span> contains no estimate of <span class="math inline">\(s\)</span>. They did propose to measure it experimentally by running the Turing test with a human judge and two language models. One model <span class="math inline">\(H_0\)</span> “perfectly imitates humans” by simply sampling a random text segment from a corpus, and the other model <span class="math inline">\(H_1\)</span> is a trained language model, finetuned to imitate the same corpus. They claimed that for any piece of text <span class="math inline">\(X_{1:n}\)</span>, they can calculate the log-ratio <span class="math inline">\(\ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}\)</span>, but I found it difficult: Suppose <span class="math inline">\(X_{1:n} = \text{ technically fork}\)</span>, which is unlikely but possible, yet the phrase never appears in the corpus, what should be <span class="math inline">\(Pr(X_{1:n}|H_0)\)</span>? We can use one of the many smoothing tricks <span class="citation" data-cites="jurafskySpeechLanguageProcessing2023">(<a href="#ref-jurafskySpeechLanguageProcessing2023" role="doc-biblioref">Jurafsky and Martin 2023, chap. 3</a>)</span>, but this gets complicated.</p>
+<p>The original paper <span class="citation" data-cites="barnettScalingTransformativeAutoregressive2023">(<a href="#ref-barnettScalingTransformativeAutoregressive2023" role="doc-biblioref">Barnett and Besiroglu 2023a</a>)</span> contains no estimate of <span class="math inline">s</span>. They did propose to measure it experimentally by running the Turing test with a human judge and two language models. One model <span class="math inline">H_0</span> “perfectly imitates humans” by simply sampling a random text segment from a corpus, and the other model <span class="math inline">H_1</span> is a trained language model, finetuned to imitate the same corpus. They claimed that for any piece of text <span class="math inline">X_{1:n}</span>, they can calculate the log-ratio <span class="math inline">\ln\frac{Pr(X_{1:n}|H_0)}{Pr(X_{1:n}|H_1)}</span>, but I found it difficult: Suppose <span class="math inline">X_{1:n} = \text{ technically fork}</span>, which is unlikely but possible, yet the phrase never appears in the corpus, what should be <span class="math inline">Pr(X_{1:n}|H_0)</span>? We can use one of the many smoothing tricks <span class="citation" data-cites="jurafskySpeechLanguageProcessing2023">(<a href="#ref-jurafskySpeechLanguageProcessing2023" role="doc-biblioref">Jurafsky and Martin 2023, chap. 3</a>)</span>, but this gets complicated.</p>
 <section id="my-ideas" class="level4">
 <h4 class="anchored" data-anchor-id="my-ideas">My ideas</h4>
-<p>What I think would work well is if both <span class="math inline">\(H_0\)</span>and <span class="math inline">\(H_1\)</span> are language models, perhaps even the same model with different sampling temperatures, then the human judge only has to distinguish the two models.</p>
-<p>Perhaps we can make this into a gambling game. The human subject would be presented with two long outputs from two hidden Markov models. Then the subject becomes the judge of a Turing test: “Are you seeing the output from machine 0 or machine 1?”. At each step, the subject can either pay a few cents of fake money to see another character, or stop and make a bet with the entire bankroll: “I bet 70% of my bankroll on machine 0 and the rest on machine 1!”. Both bets have payoff odds of <span class="math inline">\(2:1\)</span>. I believe that if the cost of seeing another character is <em>just right</em>, the subject would be nudged to make a decision at exactly <span class="math inline">\(10:1\)</span> posterior odds ratio on the two hypotheses “machine 0” and “machine 1”.</p>
+<p>What I think would work well is if both <span class="math inline">H_0</span>and <span class="math inline">H_1</span> are language models, perhaps even the same model with different sampling temperatures, then the human judge only has to distinguish the two models.</p>
+<p>Perhaps we can make this into a gambling game. The human subject would be presented with two long outputs from two hidden Markov models. Then the subject becomes the judge of a Turing test: “Are you seeing the output from machine 0 or machine 1?”. At each step, the subject can either pay a few cents of fake money to see another character, or stop and make a bet with the entire bankroll: “I bet 70% of my bankroll on machine 0 and the rest on machine 1!”. Both bets have payoff odds of <span class="math inline">2:1</span>. I believe that if the cost of seeing another character is <em>just right</em>, the subject would be nudged to make a decision at exactly <span class="math inline">10:1</span> posterior odds ratio on the two hypotheses “machine 0” and “machine 1”.</p>
 <p>A diffusion guessing game: The user uploads a lot of MIDI musics. The program plays back note by note, but adds increasingly severe distortions (add a gaussian or Poisson noise to each note). The user guesses which music it is. The more noise there is, the longer it should take the user to guess. Compare the length with the Bayesian optimal predictor.</p>
 </section>
 <section id="human-or-not" class="level4 page-columns page-full">
@@ -618,73 +634,73 @@ r_2 &amp;= r_1 + \frac{Pr(X_{1:2}|X_{1:1}, H_0)}{Pr(X_{1:2}|X_{1:1}, H_1)} \\
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;There was no mention of whether the bots had to decide the same question.</p></div></div><blockquote class="blockquote">
 <p>The conversations have a “ping-pong” structure that prevents players from sending two consecutive messages without a response, in order to ensure a balanced and dynamic exchange. Each message, limited to a maximum of 100 characters, has to be composed and sent within a 20-second window, and the chat ends after 2 minutes, usually consisting of 4-5 messages from each side. This ensures that players don’t have to wait for too long, so they can remain engaged with the game and a constant suspense is kept. Once the conversation is over, players are prompted to guess whether their conversational partner was a fellow human or an AI bot. <span class="citation" data-cites="jannaiHumanNotGamified2023">(<a href="#ref-jannaiHumanNotGamified2023" role="doc-biblioref">Jannai et al. 2023</a>)</span></p>
 </blockquote>
-<p>I counted that during a typical message, each side sends <span class="math inline">\([20, 40]\)</span> English words in total, or <span class="math inline">\([30, 50]\)</span> tokens. In <span class="math inline">\([60\%, 70\%]\)</span> of trials, the human participant judged correctly. This suggests that the log-ratio achieved after <span class="math inline">\([30, 50]\)</span> tokens is around the range of <span class="math inline">\([\pm \ln 6/4, \pm \ln 7/3]\)</span>. In other words, the average log-ratio per token is</p>
-<p><span class="math display">\[
+<p>I counted that during a typical message, each side sends <span class="math inline">[20, 40]</span> English words in total, or <span class="math inline">[30, 50]</span> tokens. In <span class="math inline">[60\%, 70\%]</span> of trials, the human participant judged correctly. This suggests that the log-ratio achieved after <span class="math inline">[30, 50]</span> tokens is around the range of <span class="math inline">[\pm \ln 6/4, \pm \ln 7/3]</span>. In other words, the average log-ratio per token is</p>
+<p><span class="math display">
 \frac{[\ln 6/4, \ln 7/3]}{[30, 50]} \in [0.01, 0.03] \;\rm{ nat/token}
-\]</span></p>
-<p>They used several different AI, ranging between Jurassic-2, GPT-4, and Cohere. None of them have published their training compute or loss curves. The only good estimate is for GPT-4, which has training cost <span class="math inline">\(C = 2\times 10^{25}\rm{FLOP}\)</span>.</p>
-<p>Assuming that <a href="#eq-chinchilla-scaling">Chinchilla scaling</a> holds, average log-ratio per token that an ideal judge should achieve is <span class="math inline">\(L - L_\infty = \frac{1070}{C^{0.154}} = 0.14 \;\rm{ nat/token}\)</span>. Therefore,</p>
-<p><span class="math display">\[s \in [5, 14]\]</span></p>
-<p>I did not expect the estimate to be nearly symmetric around <span class="math inline">\(10\)</span>.</p>
+</span></p>
+<p>They used several different AI, ranging between Jurassic-2, GPT-4, and Cohere. None of them have published their training compute or loss curves. The only good estimate is for GPT-4, which has training cost <span class="math inline">C = 2\times 10^{25}\rm{FLOP}</span>.</p>
+<p>Assuming that <a href="#eq-chinchilla-scaling">Chinchilla scaling</a> holds, average log-ratio per token that an ideal judge should achieve is <span class="math inline">L - L_\infty = \frac{1070}{C^{0.154}} = 0.14 \;\rm{ nat/token}</span>. Therefore,</p>
+<p><span class="math display">s \in [5, 14]</span></p>
+<p>I did not expect the estimate to be nearly symmetric around <span class="math inline">10</span>.</p>
 </section>
 </section>
 </section>
 <section id="entropy-of-natural-languages" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="entropy-of-natural-languages">Entropy of natural languages</h2>
-<p>In <a href="#eq-sprt" class="quarto-xref">Equation&nbsp;1</a>, we argued that <span class="math inline">\(L_\infty\)</span> <em>should</em> be interpreted as the entropy rate of the source, usually human-generated English. Unfortunately, unlike that of coin flips or Markov chains, the entropy rate of English cannot be calculated, only estimated. Fortunately, it can be estimated in several ways, and we can check their agreement.</p>
-<p>Since tokenizers are temporary, but English is permanent, we convert all units to <span class="math inline">\(\;\rm{bit/character}\)</span> for easy comparison.</p>
+<p>In <a href="#eq-sprt" class="quarto-xref">Equation&nbsp;1</a>, we argued that <span class="math inline">L_\infty</span> <em>should</em> be interpreted as the entropy rate of the source, usually human-generated English. Unfortunately, unlike that of coin flips or Markov chains, the entropy rate of English cannot be calculated, only estimated. Fortunately, it can be estimated in several ways, and we can check their agreement.</p>
+<p>Since tokenizers are temporary, but English is permanent, we convert all units to <span class="math inline">\;\rm{bit/character}</span> for easy comparison.</p>
 <section id="sec-chinchilla-scaling" class="level3">
 <h3 class="anchored" data-anchor-id="sec-chinchilla-scaling">Chinchilla scaling</h3>
-<p>In the Chinchilla scaling law paper, the authors trained many language models with various sizes from a single architecture family, and fitted a statistical law to the data, giving <span class="math inline">\(L_\infty = 1.69 \;\rm{ nat/token}\)</span> (without error bars, unfortunately) <span class="citation" data-cites="hoffmannTrainingComputeOptimalLarge2022">(<a href="#ref-hoffmannTrainingComputeOptimalLarge2022" role="doc-biblioref">Hoffmann et al. 2022, 25</a>)</span>.</p>
-<p>To find the effective <span class="math inline">\(\;\rm{bit/character}\)</span> for the Chinchilla scaling law, we need to convert <span class="math inline">\(\rm{nat}\)</span> to <span class="math inline">\(\rm{bit}\)</span>, and <span class="math inline">\(\rm{token}\)</span> to <span class="math inline">\(\rm{character}\)</span>. The first is easy: <span class="math inline">\(1 \;\mathrm{bit} = \ln(2)\;\mathrm{nat}\)</span>. The second can be estimated by running a tokenizer over a large natural English corpus. I have estimated this by running the GPT-2 tokenizer on the <a href="https://paperswithcode.com/dataset/wikitext-2"><code>WikiText-2</code></a> corpus, and found that on average,</p>
-<p><span class="math display">\[
+<p>In the Chinchilla scaling law paper, the authors trained many language models with various sizes from a single architecture family, and fitted a statistical law to the data, giving <span class="math inline">L_\infty = 1.69 \;\rm{ nat/token}</span> (without error bars, unfortunately) <span class="citation" data-cites="hoffmannTrainingComputeOptimalLarge2022">(<a href="#ref-hoffmannTrainingComputeOptimalLarge2022" role="doc-biblioref">Hoffmann et al. 2022, 25</a>)</span>.</p>
+<p>To find the effective <span class="math inline">\;\rm{bit/character}</span> for the Chinchilla scaling law, we need to convert <span class="math inline">\rm{nat}</span> to <span class="math inline">\rm{bit}</span>, and <span class="math inline">\rm{token}</span> to <span class="math inline">\rm{character}</span>. The first is easy: <span class="math inline">1 \;\mathrm{bit} = \ln(2)\;\mathrm{nat}</span>. The second can be estimated by running a tokenizer over a large natural English corpus. I have estimated this by running the GPT-2 tokenizer on the <a href="https://paperswithcode.com/dataset/wikitext-2"><code>WikiText-2</code></a> corpus, and found that on average,</p>
+<p><span class="math display">
 1 \;\rm{token} = 4.5 \;\rm{character} = 0.85 \;\rm{word}
-\]</span></p>
-<p>Thus, <span class="math inline">\(L_\infty \approx \frac{1.69}{4.5\times \ln 2} = 0.54 \;\rm{bit/character}\)</span>.</p>
+</span></p>
+<p>Thus, <span class="math inline">L_\infty \approx \frac{1.69}{4.5\times \ln 2} = 0.54 \;\rm{bit/character}</span>.</p>
 </section>
 <section id="turing-completeness" class="level3">
 <h3 class="anchored" data-anchor-id="turing-completeness">Turing-completeness</h3>
-<p>Unfortunately, to lower-bound entropy rates, we typically have to make strong assumptions, because in general, lower-bounding entropy is not computable. For example, the entropy of <span class="math inline">\(982148086513282306647093844\dots\)</span> appears to be <span class="math inline">\(\ln 10\)</span>, but it is in fact zero, because those are the digits of <span class="math inline">\(10^{100} \pi\)</span> starting at the radix point. In general, this means we have all the hairy problems of measuring the Kolmogorov complexity.</p>
-<p>There is also another problem: Probabilistically speaking, there is no such thing as the entropy rate of a single sequence. We can convert a single sequence into a stochastic process, by, for example, sampling a random positive integer <span class="math inline">\(n\)</span>, then start the sequence at the <span class="math inline">\(n\)</span>-th place. The problem is that we really have two versions of the same word “entropy”, one is by minimal description length, and another is by probability. The two versions are connected by Shannon coding theorem, but they are not the same.</p>
-<p>This is similar to the Halting problem. It’s possible in general to prove that a machine halts: just run it. It’s not possible in general to prove that it does not halt. Similarly, there is a program <span class="math inline">\(P\)</span>, such that given any input <span class="math inline">\(x\)</span>, it will output a sequence of numbers <span class="math inline">\(P(x)_1, P(x)_2, \dots\)</span> that can converge to the Kolmogorov complexity <em>from above</em>: <span class="math inline">\(P(x)_1 &gt; P(x)_2 &gt; \cdots, \lim_n P(x)_n = K(x)\)</span>. The program just runs every possible Turing machine in parallel.</p>
+<p>Unfortunately, to lower-bound entropy rates, we typically have to make strong assumptions, because in general, lower-bounding entropy is not computable. For example, the entropy of <span class="math inline">982148086513282306647093844\dots</span> appears to be <span class="math inline">\ln 10</span>, but it is in fact zero, because those are the digits of <span class="math inline">10^{100} \pi</span> starting at the radix point. In general, this means we have all the hairy problems of measuring the Kolmogorov complexity.</p>
+<p>There is also another problem: Probabilistically speaking, there is no such thing as the entropy rate of a single sequence. We can convert a single sequence into a stochastic process, by, for example, sampling a random positive integer <span class="math inline">n</span>, then start the sequence at the <span class="math inline">n</span>-th place. The problem is that we really have two versions of the same word “entropy”, one is by minimal description length, and another is by probability. The two versions are connected by Shannon coding theorem, but they are not the same.</p>
+<p>This is similar to the Halting problem. It’s possible in general to prove that a machine halts: just run it. It’s not possible in general to prove that it does not halt. Similarly, there is a program <span class="math inline">P</span>, such that given any input <span class="math inline">x</span>, it will output a sequence of numbers <span class="math inline">P(x)_1, P(x)_2, \dots</span> that can converge to the Kolmogorov complexity <em>from above</em>: <span class="math inline">P(x)_1 &gt; P(x)_2 &gt; \cdots, \lim_n P(x)_n = K(x)</span>. The program just runs every possible Turing machine in parallel.</p>
 <p>There are two catches.</p>
-<p>One, it is impossible to know in general whether <span class="math inline">\(P(x)_n\)</span> is the last time it will output, or whether if we wait a few more eternities, we will see another output <span class="math inline">\(P(x)_{n+1}\)</span>.</p>
-<p>Two, it is also impossible to have a program <span class="math inline">\(P'\)</span> that approaches it from below: <span class="math inline">\(P(x)_1 &lt; P(x)_2 &lt; \cdots, \lim_n P(x)_n = K(x)\)</span>. Otherwise, we would have a machine that can calculate the Busy Beaver function.</p>
-<p><span class="citation" data-cites="feutrillReviewShannonDifferential2021">(<a href="#ref-feutrillReviewShannonDifferential2021" role="doc-biblioref">Feutrill and Roughan 2021</a>)</span> reviews the entropy rate formulas for several commonly used models. An ergodic Markov chain with stationary distribution <span class="math inline">\(\pi_i\)</span> and transition probabilities <span class="math inline">\(p_{ij}\)</span> has entropy rate <span class="math inline">\(-\sum_{ij}\pi_i p_{ij}\ln p_{ij}\)</span>. For the hidden Markov model, there is no known closed-form formula in the transition probabilities, though there are upper and lower bounds <span class="citation" data-cites="coverElementsInformationTheory2006">(<a href="#ref-coverElementsInformationTheory2006" role="doc-biblioref">T. M. Cover and Thomas 2006</a>, Theorem 4.5.1)</span>.</p>
+<p>One, it is impossible to know in general whether <span class="math inline">P(x)_n</span> is the last time it will output, or whether if we wait a few more eternities, we will see another output <span class="math inline">P(x)_{n+1}</span>.</p>
+<p>Two, it is also impossible to have a program <span class="math inline">P'</span> that approaches it from below: <span class="math inline">P(x)_1 &lt; P(x)_2 &lt; \cdots, \lim_n P(x)_n = K(x)</span>. Otherwise, we would have a machine that can calculate the Busy Beaver function.</p>
+<p><span class="citation" data-cites="feutrillReviewShannonDifferential2021">(<a href="#ref-feutrillReviewShannonDifferential2021" role="doc-biblioref">Feutrill and Roughan 2021</a>)</span> reviews the entropy rate formulas for several commonly used models. An ergodic Markov chain with stationary distribution <span class="math inline">\pi_i</span> and transition probabilities <span class="math inline">p_{ij}</span> has entropy rate <span class="math inline">-\sum_{ij}\pi_i p_{ij}\ln p_{ij}</span>. For the hidden Markov model, there is no known closed-form formula in the transition probabilities, though there are upper and lower bounds <span class="citation" data-cites="coverElementsInformationTheory2006">(<a href="#ref-coverElementsInformationTheory2006" role="doc-biblioref">T. M. Cover and Thomas 2006</a>, Theorem 4.5.1)</span>.</p>
 </section>
 <section id="guessing-game" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="guessing-game">Guessing game</h3>
-<p>The earliest attempt to measure the entropy rate of English is by Shannon himself <span class="citation" data-cites="shannonPredictionEntropyPrinted1951">(<a href="#ref-shannonPredictionEntropyPrinted1951" role="doc-biblioref">Shannon 1951</a>)</span>: <span class="math inline">\([0.6, 1.3] \;\rm{bit/character}\)</span>. He obtained the estimate by presenting human subjects <span class="math inline">\(n-1\)</span> characters from a text, and ask them to guess the next character repeatedly, until they got it right. In this case, the optimal strategy is to construct the <span class="math inline">\(n\)</span>-gram table, and pick the argmax character for the given <span class="math inline">\((n-1)\)</span>-gram, then the arg-next-max, and so on.</p>
-<p>Let <span class="math inline">\(N\)</span> be the total number of characters allowed – Shannon’s experiment used <span class="math inline">\(N = 27\)</span>, with 26 lowercase letters and one white space. Let <span class="math inline">\(p_k\)</span> be the frequency that the subject makes exactly <span class="math inline">\(k\)</span> guesses – including the correct guess, so that <span class="math inline">\(\sum_{k=1}^N p_k = 1\)</span>. By convention, <span class="math inline">\(p_{N+1} := 0\)</span>. Shannon derived both an upper and a lower bound for the entropy per character:</p>
-<p><span class="math display">\[
+<p>The earliest attempt to measure the entropy rate of English is by Shannon himself <span class="citation" data-cites="shannonPredictionEntropyPrinted1951">(<a href="#ref-shannonPredictionEntropyPrinted1951" role="doc-biblioref">Shannon 1951</a>)</span>: <span class="math inline">[0.6, 1.3] \;\rm{bit/character}</span>. He obtained the estimate by presenting human subjects <span class="math inline">n-1</span> characters from a text, and ask them to guess the next character repeatedly, until they got it right. In this case, the optimal strategy is to construct the <span class="math inline">n</span>-gram table, and pick the argmax character for the given <span class="math inline">(n-1)</span>-gram, then the arg-next-max, and so on.</p>
+<p>Let <span class="math inline">N</span> be the total number of characters allowed – Shannon’s experiment used <span class="math inline">N = 27</span>, with 26 lowercase letters and one white space. Let <span class="math inline">p_k</span> be the frequency that the subject makes exactly <span class="math inline">k</span> guesses – including the correct guess, so that <span class="math inline">\sum_{k=1}^N p_k = 1</span>. By convention, <span class="math inline">p_{N+1} := 0</span>. Shannon derived both an upper and a lower bound for the entropy per character:</p>
+<p><span class="math display">
 \sum_{k=1}^N k(p_k - p_{k+1}) \ln k \leq H \leq - \sum_{k=1}^N p_k \ln p_k
-\]</span></p>
-<p>The upper bound is proved by <a href="https://en.wikipedia.org/wiki/Shannon's_source_coding_theorem">Shannon’s source coding theorem</a>. Taking a human subject, copy it, then they can be used as an encoder-decoder pair.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The lower bound is not only tricky to prove, but also <strong>wrong</strong> in general. It is only correct when the human subject is <em>the optimal</em> <span class="math inline">\(N\)</span>-gram predictor, <em>and</em> when the language <em>is</em> exactly generated by an <span class="math inline">\(N\)</span>-gram model.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;It still works even if the humans are pseudorandom. We just have to whisper the same <abbr title="Random Number Generator">RNG</abbr> seed into both humans’ ears, and then they would behave in the same pseudorandom way.</p></div><div id="fn5"><p><sup>5</sup>&nbsp;The simplest counterexample: Suppose the source is binary, and satisfies <span class="math inline">\(X_{n+1} = X_{n} + 1 \mod 2\)</span>, so it has zero entropy. Nevertheless, the human intentionally guesses wrong the first time. Therefore, we have <span class="math inline">\(p_2 = 1\)</span>, and we have violated the lower bound by <span class="math inline">\(2\ln 2 &gt; 0\)</span>.</p>
-<p>This source can be made ergodic by adding an <span class="math inline">\(\epsilon\)</span> amount of coin-flip noise: <span class="math inline">\(X_{n+1} = X_{n} + 1 \mod 2\)</span> with probability <span class="math inline">\(1-\epsilon\)</span>. This would still give us <span class="math inline">\(2\ln 2 + O(\epsilon) &gt; O(\epsilon \ln \epsilon)\)</span>.</p></div></div><p><span class="citation" data-cites="burtonLongrangeConstraintsStatistical1955">(<a href="#ref-burtonLongrangeConstraintsStatistical1955" role="doc-biblioref">Burton and Licklider 1955</a>)</span> uses the same method as Shannon, but with longer contexts and texts from more books (Shannon sampled all passages from just one book). They found that English has “redundancy” in <span class="math inline">\([0.6, 0.8]\)</span>, meaning that English has entropy rate <span class="math inline">\(\ln 27 \times (1- [0.6, 0.8]) = [0.7, 1.3] \;\rm{bit/character}\)</span>.</p>
-<p>Over the years, others devised other methods to estimate this entropy. For example, <span class="citation" data-cites="coverConvergentGamblingEstimate1978">(<a href="#ref-coverConvergentGamblingEstimate1978" role="doc-biblioref">T. Cover and King 1978</a>)</span> used a gambling game estimation, in the style of the <a href="https://en.wikipedia.org/wiki/Kelly_criterion">Kelly criterion</a>. Subjects were required to divide their entire bankroll into 27 differently-sized bets over 27 possibilities (26 letters and 1 whitespace). The right bet pays back 27-fold, and the other bets are lost. Let <span class="math inline">\(S_n\)</span> be the size of bankroll after <span class="math inline">\(n\)</span> rounds of betting, then</p>
-<p><span class="math display">\[
+</span></p>
+<p>The upper bound is proved by <a href="https://en.wikipedia.org/wiki/Shannon's_source_coding_theorem">Shannon’s source coding theorem</a>. Taking a human subject, copy it, then they can be used as an encoder-decoder pair.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The lower bound is not only tricky to prove, but also <strong>wrong</strong> in general. It is only correct when the human subject is <em>the optimal</em> <span class="math inline">N</span>-gram predictor, <em>and</em> when the language <em>is</em> exactly generated by an <span class="math inline">N</span>-gram model.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;It still works even if the humans are pseudorandom. We just have to whisper the same <abbr title="Random Number Generator">RNG</abbr> seed into both humans’ ears, and then they would behave in the same pseudorandom way.</p></div><div id="fn5"><p><sup>5</sup>&nbsp;The simplest counterexample: Suppose the source is binary, and satisfies <span class="math inline">X_{n+1} = X_{n} + 1 \mod 2</span>, so it has zero entropy. Nevertheless, the human intentionally guesses wrong the first time. Therefore, we have <span class="math inline">p_2 = 1</span>, and we have violated the lower bound by <span class="math inline">2\ln 2 &gt; 0</span>.</p>
+<p>This source can be made ergodic by adding an <span class="math inline">\epsilon</span> amount of coin-flip noise: <span class="math inline">X_{n+1} = X_{n} + 1 \mod 2</span> with probability <span class="math inline">1-\epsilon</span>. This would still give us <span class="math inline">2\ln 2 + O(\epsilon) &gt; O(\epsilon \ln \epsilon)</span>.</p></div></div><p><span class="citation" data-cites="burtonLongrangeConstraintsStatistical1955">(<a href="#ref-burtonLongrangeConstraintsStatistical1955" role="doc-biblioref">Burton and Licklider 1955</a>)</span> uses the same method as Shannon, but with longer contexts and texts from more books (Shannon sampled all passages from just one book). They found that English has “redundancy” in <span class="math inline">[0.6, 0.8]</span>, meaning that English has entropy rate <span class="math inline">\ln 27 \times (1- [0.6, 0.8]) = [0.7, 1.3] \;\rm{bit/character}</span>.</p>
+<p>Over the years, others devised other methods to estimate this entropy. For example, <span class="citation" data-cites="coverConvergentGamblingEstimate1978">(<a href="#ref-coverConvergentGamblingEstimate1978" role="doc-biblioref">T. Cover and King 1978</a>)</span> used a gambling game estimation, in the style of the <a href="https://en.wikipedia.org/wiki/Kelly_criterion">Kelly criterion</a>. Subjects were required to divide their entire bankroll into 27 differently-sized bets over 27 possibilities (26 letters and 1 whitespace). The right bet pays back 27-fold, and the other bets are lost. Let <span class="math inline">S_n</span> be the size of bankroll after <span class="math inline">n</span> rounds of betting, then</p>
+<p><span class="math display">
 H \leq \ln 27 - \limsup_n \frac 1n \ln S_n
-\]</span></p>
-<p>They found that <span class="math inline">\(H \leq 1.3 \;\rm{bit/character}\)</span>.</p>
-<p>The guesser does not have to be a human. It can very well be a language model. <span class="citation" data-cites="brownEstimateUpperBound1992">(<a href="#ref-brownEstimateUpperBound1992" role="doc-biblioref">Brown et al. 1992</a>)</span> made a simple trigram model over the Brown corpus (600 million words), and found that it gives <span class="math inline">\(H \leq 1.75 \;\rm{bit/character}\)</span>. <span class="citation" data-cites="behrjrEstimatingComparingEntropy2002">(<a href="#ref-behrjrEstimatingComparingEntropy2002" role="doc-biblioref">Behr Jr et al. 2002</a>)</span> used a model that combines multiple n-gram models, giving <span class="math inline">\(H \leq 1.46 \;\rm{bit/character}\)</span>.</p>
+</span></p>
+<p>They found that <span class="math inline">H \leq 1.3 \;\rm{bit/character}</span>.</p>
+<p>The guesser does not have to be a human. It can very well be a language model. <span class="citation" data-cites="brownEstimateUpperBound1992">(<a href="#ref-brownEstimateUpperBound1992" role="doc-biblioref">Brown et al. 1992</a>)</span> made a simple trigram model over the Brown corpus (600 million words), and found that it gives <span class="math inline">H \leq 1.75 \;\rm{bit/character}</span>. <span class="citation" data-cites="behrjrEstimatingComparingEntropy2002">(<a href="#ref-behrjrEstimatingComparingEntropy2002" role="doc-biblioref">Behr Jr et al. 2002</a>)</span> used a model that combines multiple n-gram models, giving <span class="math inline">H \leq 1.46 \;\rm{bit/character}</span>.</p>
 <p>A <a href="https://www.lesswrong.com/posts/htrZrxduciZ5QaCjw/language-models-seem-to-be-much-better-than-humans-at-next">more recent attempt in 2022</a> is crucial, as it seems to show humans are already surpassed by the best language models like GPT-3 in terms of reaching low perplexity, but I haven’t yet studied it in detail.</p>
 </section>
 <section id="lossless-compression" class="level3">
 <h3 class="anchored" data-anchor-id="lossless-compression">Lossless compression</h3>
-<p>Another way to estimate is by lossless compression of a large corpus, since the entropy rate is the lower bound on compression rate. In more detail, if you have a source of information emitting symbols, and its symbol stream has an entropy rate of <span class="math inline">\(x \;\mathrm{bit/symbol}\)</span>, then it takes at least <span class="math inline">\(\sim xl\)</span> bits to encode a long segment with <span class="math inline">\(l\)</span> symbols. Furthermore, this lower bound is approachable using the <a href="https://en.wikipedia.org/wiki/Entropy_coding">entropy encoding</a>.</p>
-<p>The <a href="http://prize.hutter1.net/">Hutter prize</a> is a competition for compressing a <span class="math inline">\(10^9\)</span>-byte corpus from the English Wikipedia (<code>enwik9</code>). For the size of the finished product, both the algorithm and the compressed data must be counted. In particular, if a neural network is used, then the size of the neural network weights must be counted as well.</p>
-<p>The <code>enwik9</code> dataset is in <code>XML</code> format, and thus contains a lot of non-English content like <code>&lt;timestamp&gt;2005-12-27T18:46:47Z&lt;/timestamp&gt;</code>. It has <span class="math inline">\(10^9\)</span> bytes. It is tricky to decide how to clean it up to remove all the <code>XML</code> formatting. As a simple estimate, we simply counted its characters:</p>
-<p><span class="math display">\[
+<p>Another way to estimate is by lossless compression of a large corpus, since the entropy rate is the lower bound on compression rate. In more detail, if you have a source of information emitting symbols, and its symbol stream has an entropy rate of <span class="math inline">x \;\mathrm{bit/symbol}</span>, then it takes at least <span class="math inline">\sim xl</span> bits to encode a long segment with <span class="math inline">l</span> symbols. Furthermore, this lower bound is approachable using the <a href="https://en.wikipedia.org/wiki/Entropy_coding">entropy encoding</a>.</p>
+<p>The <a href="http://prize.hutter1.net/">Hutter prize</a> is a competition for compressing a <span class="math inline">10^9</span>-byte corpus from the English Wikipedia (<code>enwik9</code>). For the size of the finished product, both the algorithm and the compressed data must be counted. In particular, if a neural network is used, then the size of the neural network weights must be counted as well.</p>
+<p>The <code>enwik9</code> dataset is in <code>XML</code> format, and thus contains a lot of non-English content like <code>&lt;timestamp&gt;2005-12-27T18:46:47Z&lt;/timestamp&gt;</code>. It has <span class="math inline">10^9</span> bytes. It is tricky to decide how to clean it up to remove all the <code>XML</code> formatting. As a simple estimate, we simply counted its characters:</p>
+<p><span class="math display">
 997,520,891 \text{ characters} = 1,000,000,000 \text{ bytes}
-\]</span></p>
+</span></p>
 <p>Therefore, the entropy rate is</p>
-<p><span id="eq-hutter-prize-entropy-rate"><span class="math display">\[
+<p><span id="eq-hutter-prize-entropy-rate"><span class="math display">
 \frac{8\times 10^8 / 997,520,891}{\text{compression ratio}} = \frac{8.02}{\text{compression ratio}}\;\rm{bit/character}
-\tag{2}\]</span></span></p>
-<p>The standard zip algorithm can compress it down to about 300 Mb in size, a compression ratio of <span class="math inline">\(\sim 3\times\)</span>. Over the years, the progress has been slow but somewhat steady. The current winning entry (Kaido Orav, 2024) has a compression ratio of <span class="math inline">\(8.88\times\)</span>. If we extrapolate the prize-winning entries over the years, it seems that the best possible compression ratio is <span class="math inline">\(\sim 10\times\)</span>.</p>
-<p>Similar to the Hutter prize, the <a href="https://mattmahoney.net/dc/text.html">Large Text Compression Benchmark</a> also asks for compressing the <code>enwik9</code> dataset. However, there is no limit to the algorithm runtime or size, so the compression ratio for this benchmark is always higher. Currently (2024-01-19), the maximal compression rate reached is <span class="math inline">\(9.35\times\)</span> with <a href="https://bellard.org/nncp/"><code>nncp v3.2</code></a>, which uses a small Transformer model.</p>
-<p><span class="citation" data-cites="grassbergerDataCompressionEntropy2002">(<a href="#ref-grassbergerDataCompressionEntropy2002" role="doc-biblioref">Grassberger 2002</a>)</span> used a substitutional compression algorithm with increasingly large codebooks. When the codebook had 6000 codes, the algorithm gave <span class="math inline">\(h \leq 1.82 \;\rm{bit/character}\)</span>. By extrapolating the {codebook size}-{entropy rate} curve to an infinitely large codebook, they estimated that English has entropy rate <span class="math inline">\(0.7 \pm 0.2 \;\rm{bit/character}\)</span>.</p>
+\tag{2}</span></span></p>
+<p>The standard zip algorithm can compress it down to about 300 Mb in size, a compression ratio of <span class="math inline">\sim 3\times</span>. Over the years, the progress has been slow but somewhat steady. The current winning entry (Kaido Orav, 2024) has a compression ratio of <span class="math inline">8.88\times</span>. If we extrapolate the prize-winning entries over the years, it seems that the best possible compression ratio is <span class="math inline">\sim 10\times</span>.</p>
+<p>Similar to the Hutter prize, the <a href="https://mattmahoney.net/dc/text.html">Large Text Compression Benchmark</a> also asks for compressing the <code>enwik9</code> dataset. However, there is no limit to the algorithm runtime or size, so the compression ratio for this benchmark is always higher. Currently (2024-01-19), the maximal compression rate reached is <span class="math inline">9.35\times</span> with <a href="https://bellard.org/nncp/"><code>nncp v3.2</code></a>, which uses a small Transformer model.</p>
+<p><span class="citation" data-cites="grassbergerDataCompressionEntropy2002">(<a href="#ref-grassbergerDataCompressionEntropy2002" role="doc-biblioref">Grassberger 2002</a>)</span> used a substitutional compression algorithm with increasingly large codebooks. When the codebook had 6000 codes, the algorithm gave <span class="math inline">h \leq 1.82 \;\rm{bit/character}</span>. By extrapolating the {codebook size}-{entropy rate} curve to an infinitely large codebook, they estimated that English has entropy rate <span class="math inline">0.7 \pm 0.2 \;\rm{bit/character}</span>.</p>
 </section>
 <section id="summary" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
@@ -701,68 +717,68 @@ H \leq \ln 27 - \limsup_n \frac 1n \ln S_n
 <tr class="odd">
 <td><span class="citation" data-cites="grassbergerDataCompressionEntropy2002">(<a href="#ref-grassbergerDataCompressionEntropy2002" role="doc-biblioref">Grassberger 2002</a>)</span></td>
 <td>compression, extrapolation</td>
-<td><span class="math inline">\(0.7 \pm 0.2 \;\rm{bit/character}\)</span></td>
-<td><span class="math inline">\(\sim[0.5, 0.9]\)</span></td>
+<td><span class="math inline">0.7 \pm 0.2 \;\rm{bit/character}</span></td>
+<td><span class="math inline">\sim[0.5, 0.9]</span></td>
 </tr>
 <tr class="even">
 <td><a href="http://prize.hutter1.net/">Hutter prize</a> (Kaido Orav, 2024)</td>
 <td>compression</td>
-<td>compression ratio <span class="math inline">\(\geq 8.88\)</span></td>
-<td><span class="math inline">\(\leq 0.90\)</span></td>
+<td>compression ratio <span class="math inline">\geq 8.88</span></td>
+<td><span class="math inline">\leq 0.90</span></td>
 </tr>
 <tr class="odd">
 <td>Hutter prize extrapolated</td>
 <td>compression, extrapolation</td>
-<td>compression ratio <span class="math inline">\(\sim 10\)</span></td>
-<td><span class="math inline">\(\sim 0.80\)</span></td>
+<td>compression ratio <span class="math inline">\sim 10</span></td>
+<td><span class="math inline">\sim 0.80</span></td>
 </tr>
 <tr class="even">
 <td><a href="https://mattmahoney.net/dc/text.html">Large Text Compression Benchmark</a> (<code>nncp v3.2</code>, 2023)</td>
 <td>compression</td>
-<td>compression ratio <span class="math inline">\(\geq 9.35\)</span></td>
-<td><span class="math inline">\(\leq 0.86\)</span></td>
+<td>compression ratio <span class="math inline">\geq 9.35</span></td>
+<td><span class="math inline">\leq 0.86</span></td>
 </tr>
 <tr class="odd">
 <td><span class="citation" data-cites="shannonPredictionEntropyPrinted1951">(<a href="#ref-shannonPredictionEntropyPrinted1951" role="doc-biblioref">Shannon 1951</a>)</span></td>
 <td>guessing game</td>
-<td><span class="math inline">\(\in [0.6, 1.3] \;\rm{bit/character}\)</span></td>
-<td><span class="math inline">\(\in [0.6, 1.3]\)</span></td>
+<td><span class="math inline">\in [0.6, 1.3] \;\rm{bit/character}</span></td>
+<td><span class="math inline">\in [0.6, 1.3]</span></td>
 </tr>
 <tr class="even">
 <td><span class="citation" data-cites="burtonLongrangeConstraintsStatistical1955">(<a href="#ref-burtonLongrangeConstraintsStatistical1955" role="doc-biblioref">Burton and Licklider 1955</a>)</span></td>
 <td>guessing game</td>
-<td><span class="math inline">\(\in [0.6, 1.3] \;\rm{bit/character}\)</span></td>
-<td><span class="math inline">\(\in [0.7, 1.3]\)</span></td>
+<td><span class="math inline">\in [0.6, 1.3] \;\rm{bit/character}</span></td>
+<td><span class="math inline">\in [0.7, 1.3]</span></td>
 </tr>
 <tr class="odd">
 <td><span class="citation" data-cites="coverConvergentGamblingEstimate1978">(<a href="#ref-coverConvergentGamblingEstimate1978" role="doc-biblioref">T. Cover and King 1978</a>)</span></td>
 <td>guessing game</td>
-<td><span class="math inline">\(\leq 1.3 \;\rm{bit/character}\)</span></td>
-<td><span class="math inline">\(\leq 1.3\)</span></td>
+<td><span class="math inline">\leq 1.3 \;\rm{bit/character}</span></td>
+<td><span class="math inline">\leq 1.3</span></td>
 </tr>
 <tr class="even">
 <td><span class="citation" data-cites="brownEstimateUpperBound1992">(<a href="#ref-brownEstimateUpperBound1992" role="doc-biblioref">Brown et al. 1992</a>)</span></td>
 <td>3-gram language model</td>
-<td><span class="math inline">\(\leq 1.75 \;\rm{bit/character}\)</span></td>
-<td><span class="math inline">\(\leq 1.75\)</span></td>
+<td><span class="math inline">\leq 1.75 \;\rm{bit/character}</span></td>
+<td><span class="math inline">\leq 1.75</span></td>
 </tr>
 <tr class="odd">
 <td><span class="citation" data-cites="behrjrEstimatingComparingEntropy2002">(<a href="#ref-behrjrEstimatingComparingEntropy2002" role="doc-biblioref">Behr Jr et al. 2002</a>)</span></td>
 <td>n-gram language model</td>
-<td><span class="math inline">\(\leq 1.46 \;\rm{bit/character}\)</span></td>
-<td><span class="math inline">\(\leq 1.46\)</span></td>
+<td><span class="math inline">\leq 1.46 \;\rm{bit/character}</span></td>
+<td><span class="math inline">\leq 1.46</span></td>
 </tr>
 <tr class="even">
 <td><span class="citation" data-cites="kaplanScalingLawsNeural2020">(<a href="#ref-kaplanScalingLawsNeural2020" role="doc-biblioref">Kaplan et al. 2020</a>)</span></td>
 <td>Transformer language model, extrapolation</td>
-<td><span class="math inline">\(\sim 1.7 \;\rm{nat/token}\)</span></td>
-<td><span class="math inline">\(\sim 0.57\)</span></td>
+<td><span class="math inline">\sim 1.7 \;\rm{nat/token}</span></td>
+<td><span class="math inline">\sim 0.57</span></td>
 </tr>
 <tr class="odd">
 <td><span class="citation" data-cites="hoffmannTrainingComputeOptimalLarge2022">(<a href="#ref-hoffmannTrainingComputeOptimalLarge2022" role="doc-biblioref">Hoffmann et al. 2022</a>)</span></td>
 <td>Transformer language model, extrapolation</td>
-<td><span class="math inline">\(L_\infty = 1.69 \;\rm{nat/token}\)</span></td>
-<td><span class="math inline">\(\sim 0.54\)</span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></td>
+<td><span class="math inline">L_\infty = 1.69 \;\rm{nat/token}</span></td>
+<td><span class="math inline">\sim 0.54</span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></td>
 </tr>
 </tbody>
 </table>
@@ -772,25 +788,25 @@ H \leq \ln 27 - \limsup_n \frac 1n \ln S_n
 </section>
 <section id="sec-forecasting-agi" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="sec-forecasting-agi">Forecasting AGI</h2>
-<p>According to the <a href="https://en.wikipedia.org/wiki/Neural_scaling_law#Chinchilla_scaling_(Hoffmann,_et_al,_2022)">Chinchilla scaling law</a> <span class="citation" data-cites="hoffmannTrainingComputeOptimalLarge2022">(<a href="#ref-hoffmannTrainingComputeOptimalLarge2022" role="doc-biblioref">Hoffmann et al. 2022</a>)</span>, if we have a fixed amount of computing budget <span class="math inline">\(C\)</span>, by choosing the model and dataset size correctly, the minimal reducible loss achievable is</p>
-<p><span id="eq-chinchilla-scaling"><span class="math display">\[
+<p>According to the <a href="https://en.wikipedia.org/wiki/Neural_scaling_law#Chinchilla_scaling_(Hoffmann,_et_al,_2022)">Chinchilla scaling law</a> <span class="citation" data-cites="hoffmannTrainingComputeOptimalLarge2022">(<a href="#ref-hoffmannTrainingComputeOptimalLarge2022" role="doc-biblioref">Hoffmann et al. 2022</a>)</span>, if we have a fixed amount of computing budget <span class="math inline">C</span>, by choosing the model and dataset size correctly, the minimal reducible loss achievable is</p>
+<p><span id="eq-chinchilla-scaling"><span class="math display">
 L - L_\infty = \frac{1070}{(C/\;\rm{FLOP})^{0.154}} \;\rm{nat/token}
-\tag{3}\]</span></span></p>
-<p>Assuming a slowdown factor <span class="math inline">\(s\)</span>, that the judge decides when the odds ratio is <span class="math inline">\(r:1\)</span>, and the Chinchilla scaling law, we have a direct method to predict how long a language model can survive in a Turing test, according to the cost of training compute <span class="math inline">\(C\)</span>:</p>
-<p><span class="math display">\[T^* \sim \frac{s\ln r}{1070}(C/\;\rm{FLOP})^{0.154} \;\rm{token}\]</span></p>
-<p>This gives, as a rule of thumb, <span class="math inline">\(100\times\)</span> compute means <span class="math inline">\(2 \times\)</span> length of survival in a Turing test.</p>
-<p>For example, assuming a slowdown factor of <span class="math inline">\(s=10\)</span>, and that the judge decides when the odds ratio is <span class="math inline">\(10:1\)</span>, for a language model to survive for 1000 tokens, it needs</p>
-<p><span class="math display">\[L - L_\infty \leq 10 \times \ln 10 / 1000 = 0.023 \;\rm{nat/token}\]</span></p>
-<p>If GPT-4 costs <span class="math inline">\(2\times 10^{25} \;\rm{FLOP}\)</span> in compute, and <span class="math inline">\(1 \;\rm{word} \approx 1.2 \;\rm{token}\)</span>, then</p>
-<p><span class="math display">\[T^* \approx 170 \text{ tokens} \approx 150 \text{ words}\]</span></p>
+\tag{3}</span></span></p>
+<p>Assuming a slowdown factor <span class="math inline">s</span>, that the judge decides when the odds ratio is <span class="math inline">r:1</span>, and the Chinchilla scaling law, we have a direct method to predict how long a language model can survive in a Turing test, according to the cost of training compute <span class="math inline">C</span>:</p>
+<p><span class="math display">T^* \sim \frac{s\ln r}{1070}(C/\;\rm{FLOP})^{0.154} \;\rm{token}</span></p>
+<p>This gives, as a rule of thumb, <span class="math inline">100\times</span> compute means <span class="math inline">2 \times</span> length of survival in a Turing test.</p>
+<p>For example, assuming a slowdown factor of <span class="math inline">s=10</span>, and that the judge decides when the odds ratio is <span class="math inline">10:1</span>, for a language model to survive for 1000 tokens, it needs</p>
+<p><span class="math display">L - L_\infty \leq 10 \times \ln 10 / 1000 = 0.023 \;\rm{nat/token}</span></p>
+<p>If GPT-4 costs <span class="math inline">2\times 10^{25} \;\rm{FLOP}</span> in compute, and <span class="math inline">1 \;\rm{word} \approx 1.2 \;\rm{token}</span>, then</p>
+<p><span class="math display">T^* \approx 170 \text{ tokens} \approx 150 \text{ words}</span></p>
 <p>meaning it has a good chance of passing the Turing test if limited to only 150 words. For context, the <em>Attention is All You Need</em> paper has an abstract that’s 200 tokens long.</p>
-<p>A typical scientific paper is about 4000 words long, which is <span class="math inline">\(27\times\)</span> that of 150 words, so it would need <span class="math inline">\(27^{1/0.153} = (2\times 10^9)\times\)</span> that of compute. Assuming that GPT-4 cost 10 million USD to train, this hypothetical AI would cost <span class="math inline">\(2\times 10^{16}\)</span> USD, or 200 years of global GDP<sub>2023</sub>.</p>
+<p>A typical scientific paper is about 4000 words long, which is <span class="math inline">27\times</span> that of 150 words, so it would need <span class="math inline">27^{1/0.153} = (2\times 10^9)\times</span> that of compute. Assuming that GPT-4 cost 10 million USD to train, this hypothetical AI would cost <span class="math inline">2\times 10^{16}</span> USD, or 200 years of global GDP<sub>2023</sub>.</p>
 <p>This implies that the first AGI will not be a scaled-up GPT – autoregressive transformer generatively pretrained on a lightly filtered text dataset. It has to include something else, perhaps multimodal data, high-quality data, better architecture, etc. Even if we were to attempt to merely scale it up, turning earth into a GPT-factory,<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> with even 50% of global GDP devoted,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> and with 2% growth rate forever, it would still take 110 years,<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> arriving at year 2133. Whole brain emulation would likely take less time.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Consider this anecdote from <a href="https://en.wikipedia.org/wiki/Edward_Teller">Edward Teller</a>:</p>
 <blockquote class="blockquote">
 <p>The possibilities of developing an atomic weapon and the desirability of doing it secretly were discussed at a Princeton University conference in which I participated in March 1939… Bohr said this rare variety could not be separated from common uranium except by turning the country into a gigantic factory. Bohr was worried that this could be done and that an atomic bomb could be developed–but he hoped that neither could be accomplished. Years later, when Bohr came to Los Alamos, I was prepared to say, “You see…” But before I could open my mouth, he said: “You see, I told you it couldn’t be done without turning the whole country into a factory. You have done just that.” <span class="citation" data-cites="tellerLegacyHiroshima1975">(<a href="#ref-tellerLegacyHiroshima1975" role="doc-biblioref">Teller and Brown 1975</a>)</span></p>
 </blockquote>
-</div><div id="fn8"><p><sup>8</sup>&nbsp;Only in a life-or-death situation does 50% of GDP get devoted to one purpose. For example, that is about the level of GDP devoted to war production during WWII in the major combatant countries. The USA spent 4 trillion USD<sub>2011</sub> over 6 years out of an annual GDP of 1.3 trillion USD<sub>2011</sub>.</p></div><div id="fn9"><p><sup>9</sup>&nbsp;Solve for <span class="math inline">\(x\)</span> in <span class="math inline">\(200 = \sum_{k=0}^x 0.5 \times 1.02^k\)</span>.</p></div><div id="fn10"><p><sup>10</sup>&nbsp;<iframe src="https://www.metaculus.com/questions/question_embed/2813/?theme=dark" style="height:430px; width:100%; max-width:550px"></iframe></p></div></div></section>
+</div><div id="fn8"><p><sup>8</sup>&nbsp;Only in a life-or-death situation does 50% of GDP get devoted to one purpose. For example, that is about the level of GDP devoted to war production during WWII in the major combatant countries. The USA spent 4 trillion USD<sub>2011</sub> over 6 years out of an annual GDP of 1.3 trillion USD<sub>2011</sub>.</p></div><div id="fn9"><p><sup>9</sup>&nbsp;Solve for <span class="math inline">x</span> in <span class="math inline">200 = \sum_{k=0}^x 0.5 \times 1.02^k</span>.</p></div><div id="fn10"><p><sup>10</sup>&nbsp;<iframe src="https://www.metaculus.com/questions/question_embed/2813/?theme=dark" style="height:430px; width:100%; max-width:550px"></iframe></p></div></div></section>
 <section id="sec-ergodic-theory" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="sec-ergodic-theory">Appendix: Ergodic theory</h2>
 <p>Since we used ergodic theory during the essay, we should quickly explain what it is about. This section is foundational, but the full complexity is not necessary.</p>
@@ -798,76 +814,76 @@ L - L_\infty = \frac{1070}{(C/\;\rm{FLOP})^{0.154}} \;\rm{nat/token}
 <h3 class="anchored" data-anchor-id="measure-theoretic-pov">Measure-theoretic POV</h3>
 <p>I know, you know too, nobody really likes measure theory any more than pianists like practicing scales hundreds of times. Still, it is at the right level of abstraction for many theories, including probability.</p>
 <p>We omit all mentions of “almost-everywhere”, “except on a set of measure zero”, and similar annoying phrases. As long as you never make a union of uncountable many subsets, you will not be hurt by this omission.</p>
-<p>A <a href="https://en.wikipedia.org/wiki/Probability_space">probability space</a> is a measurable space with a measure of <span class="math inline">\(1\)</span>. We write it as <span class="math inline">\((\Omega, \mathcal B, Pr)\)</span>, where <span class="math inline">\(\mathcal B\)</span> is the sigma-algebra of measurable sets, and <span class="math inline">\(Pr\)</span> is the probability measure. We also write <span class="math inline">\(\mu\)</span> for the measure.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Pronounced “mu” – it is a pun because both “mu” and “measure” starts with “m”.</p></div></div><p>We consider a single measurable function <span class="math inline">\(T : \Omega \to \Omega\)</span>, and call it the <strong>shift map</strong>.</p>
-<p>We demand that <span class="math inline">\(T\)</span> <em>must</em> <strong>preserve measure</strong>. That is, <span class="math inline">\(\forall S \in \mathcal B\)</span>, we have <span class="math inline">\(Pr(T^{-1}(S)) = Pr(S)\)</span>.</p>
-<p>A subset is <strong>measurable</strong> iff it is an element of <span class="math inline">\(\mathcal B\)</span>. A measurable set is also called an <strong>event</strong>.</p>
-<p>A subset <span class="math inline">\(S \in \mathcal B\)</span> is <span class="math inline">\(T\)</span>-invariant iff <span class="math inline">\(T^{-1}(S) = S\)</span> almost everywhere.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Let <span class="math inline">\(\mathcal I\)</span> be the set of all <span class="math inline">\(T\)</span>-invariant subsets:</p>
-<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;That is, except on a subset of measure zero: <span class="math inline">\(Pr(T^{-1}(S) - S) = 0\)</span> and <span class="math inline">\(Pr(S - T^{-1}(S)) = 0\)</span>. This is the last time we will measure this.</p></div></div><p><span class="math display">\[
+<p>A <a href="https://en.wikipedia.org/wiki/Probability_space">probability space</a> is a measurable space with a measure of <span class="math inline">1</span>. We write it as <span class="math inline">(\Omega, \mathcal B, Pr)</span>, where <span class="math inline">\mathcal B</span> is the sigma-algebra of measurable sets, and <span class="math inline">Pr</span> is the probability measure. We also write <span class="math inline">\mu</span> for the measure.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Pronounced “mu” – it is a pun because both “mu” and “measure” starts with “m”.</p></div></div><p>We consider a single measurable function <span class="math inline">T : \Omega \to \Omega</span>, and call it the <strong>shift map</strong>.</p>
+<p>We demand that <span class="math inline">T</span> <em>must</em> <strong>preserve measure</strong>. That is, <span class="math inline">\forall S \in \mathcal B</span>, we have <span class="math inline">Pr(T^{-1}(S)) = Pr(S)</span>.</p>
+<p>A subset is <strong>measurable</strong> iff it is an element of <span class="math inline">\mathcal B</span>. A measurable set is also called an <strong>event</strong>.</p>
+<p>A subset <span class="math inline">S \in \mathcal B</span> is <span class="math inline">T</span>-invariant iff <span class="math inline">T^{-1}(S) = S</span> almost everywhere.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Let <span class="math inline">\mathcal I</span> be the set of all <span class="math inline">T</span>-invariant subsets:</p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;That is, except on a subset of measure zero: <span class="math inline">Pr(T^{-1}(S) - S) = 0</span> and <span class="math inline">Pr(S - T^{-1}(S)) = 0</span>. This is the last time we will measure this.</p></div></div><p><span class="math display">
 \mathcal I := \{S \in \mathcal B : T^{-1}(S) = S\}
-\]</span></p>
-<p>Now, obviously any set of measure zero or one are <span class="math inline">\(T\)</span>-invariant. We say that those are <em>trivially</em> <span class="math inline">\(T\)</span>-invariant. We say that <span class="math inline">\(T\)</span> is <strong>ergodic</strong> iff <span class="math inline">\(\mathcal I\)</span> has only such trivial subsets. In other words, <span class="math inline">\(T\)</span> is ergodic iff it cannot be factored into two nontrivial chunks:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Now, obviously any set of measure zero or one are <span class="math inline">T</span>-invariant. We say that those are <em>trivially</em> <span class="math inline">T</span>-invariant. We say that <span class="math inline">T</span> is <strong>ergodic</strong> iff <span class="math inline">\mathcal I</span> has only such trivial subsets. In other words, <span class="math inline">T</span> is ergodic iff it cannot be factored into two nontrivial chunks:</p>
+<p><span class="math display">
 S, S' \text{ partitions } \Omega,\quad \text{such that } T^{-1}(S) = S ,\; T^{-1}(S') = S',\; Pr(S) &gt; 0 ,\; Pr(S') &gt; 0
-\]</span></p>
-<p>We <em>usually</em> ask <span class="math inline">\(T\)</span> to also be ergodic, though sometimes we don’t need that.</p>
-<p>Ergodic maps have many very good properties. We will use the following one. For the theorem, you can picture it as the real space <span class="math inline">\(\mathbb{R}^n\)</span> with the gaussian probability distribution, but in fact, it applies for just about everything we would care about, such as the space of English texts, <a href="https://en.wikipedia.org/wiki/Queueing_theory">queuing jobs</a>, <a href="https://en.wikipedia.org/wiki/Wiener_process">random walks</a>, etc.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+</span></p>
+<p>We <em>usually</em> ask <span class="math inline">T</span> to also be ergodic, though sometimes we don’t need that.</p>
+<p>Ergodic maps have many very good properties. We will use the following one. For the theorem, you can picture it as the real space <span class="math inline">\mathbb{R}^n</span> with the gaussian probability distribution, but in fact, it applies for just about everything we would care about, such as the space of English texts, <a href="https://en.wikipedia.org/wiki/Queueing_theory">queuing jobs</a>, <a href="https://en.wikipedia.org/wiki/Wiener_process">random walks</a>, etc.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;Except pathological examples constructed by logicians who have nothing better to do than to care about the continuum hypothesis, large cardinals, and the arithmetic hierarchy. Those who desire the rigor-mortis of logic, let them have it.</p></div></div><div id="thm-ergodic-dense-orbit" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Dense orbits)</strong></span> If the state space is a <a href="https://en.wikipedia.org/wiki/Second-countable_space">topological space with a countable basis</a>, and any nonempty open set has positive measure, then almost any <span class="math inline">\(X\in\Omega\)</span> has a dense orbit.</p>
+<p><span class="theorem-title"><strong>Theorem 1 (Dense orbits)</strong></span> If the state space is a <a href="https://en.wikipedia.org/wiki/Second-countable_space">topological space with a countable basis</a>, and any nonempty open set has positive measure, then almost any <span class="math inline">X\in\Omega</span> has a dense orbit.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(U\)</span> be a nonempty open set.</p>
-<p><span class="math inline">\(\Omega - \cup_{i \geq 0} T^{-i}U\)</span> is <span class="math inline">\(T\)</span>-invariant, and since it excludes <span class="math inline">\(U\)</span>, it does not have the full measure. Since <span class="math inline">\(T\)</span> is ergodic, the set actually has zero measure.</p>
-<p>Now, <span class="math inline">\(\cup(\Omega - \cup T^{-i}U)\)</span> is a union of countably many zero-measure sets, so it still has zero measure. By expanding the definition, this is the set of all points with non-dense orbit.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">U</span> be a nonempty open set.</p>
+<p><span class="math inline">\Omega - \cup_{i \geq 0} T^{-i}U</span> is <span class="math inline">T</span>-invariant, and since it excludes <span class="math inline">U</span>, it does not have the full measure. Since <span class="math inline">T</span> is ergodic, the set actually has zero measure.</p>
+<p>Now, <span class="math inline">\cup(\Omega - \cup T^{-i}U)</span> is a union of countably many zero-measure sets, so it still has zero measure. By expanding the definition, this is the set of all points with non-dense orbit.</p>
 </div>
 <p>Finally, there is a common theme in ergodic theory. There are rigorous versions of it, but instead of going for rigor, the spirit is more important:</p>
 <div id="thm-ergodic-decomposition" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 2 (ergodic decomposition)</strong></span> Any interesting map is a partition/sum/integral of ergodic maps.</p>
 </div>
-<p>For example, the shear map on the unit square <span class="math inline">\([0, 1]^2\)</span> defined by</p>
-<p><span class="math display">\[
+<p>For example, the shear map on the unit square <span class="math inline">[0, 1]^2</span> defined by</p>
+<p><span class="math display">
 (x, y) \mapsto (x, x+y \mod 1)
-\]</span></p>
-<p>can be thought of as an integral over rotations: For each <span class="math inline">\(x \in [0, 1]\)</span>, we have <span class="math inline">\(T_x : y \mapsto x+y\mod 1\)</span>. For almost all <span class="math inline">\(x\in [0, 1]\)</span>, we have <span class="math inline">\(T_x\)</span> an <a href="https://en.wikipedia.org/wiki/Irrational_rotation">irrational rotation</a>, thus ergodic.</p>
+</span></p>
+<p>can be thought of as an integral over rotations: For each <span class="math inline">x \in [0, 1]</span>, we have <span class="math inline">T_x : y \mapsto x+y\mod 1</span>. For almost all <span class="math inline">x\in [0, 1]</span>, we have <span class="math inline">T_x</span> an <a href="https://en.wikipedia.org/wiki/Irrational_rotation">irrational rotation</a>, thus ergodic.</p>
 </section>
 <section id="sequence-pov" class="level3">
 <h3 class="anchored" data-anchor-id="sequence-pov">Sequence POV</h3>
 <p>We must interpret the language of measure theory, which is dead like chalk dust, back into the language of sequence predictions, which is alive like reinforced concrete.</p>
-<p>Each point in the state space <span class="math inline">\(X\in \Omega\)</span> is a text: a stream of tokens infinite both forwards and backwards. The state space <span class="math inline">\(\Omega\)</span> is the all possible texts <span class="math inline">\((X_n)_n\)</span>. We assume that all tokens come from the same finite-size alphabet, for example, the 128 ASCII symbols.</p>
-<p>The shift map on the state space <span class="math inline">\(T : \Omega \to \Omega\)</span> is defined by moving the origin to the right by one:</p>
-<p><span class="math display">\[
+<p>Each point in the state space <span class="math inline">X\in \Omega</span> is a text: a stream of tokens infinite both forwards and backwards. The state space <span class="math inline">\Omega</span> is the all possible texts <span class="math inline">(X_n)_n</span>. We assume that all tokens come from the same finite-size alphabet, for example, the 128 ASCII symbols.</p>
+<p>The shift map on the state space <span class="math inline">T : \Omega \to \Omega</span> is defined by moving the origin to the right by one:</p>
+<p><span class="math display">
 T(\dots, X_{-1}, X_0, X_1, \dots) := (\dots, X_0, X_1, X_2, \dots)
-\]</span></p>
-<p>The shift map is measure-preserving, meaning that the process is <strong>stationary</strong>: We could have started reading at any point, and we would still expect to see the same kind of probability distribution. It would not be like “Sorry, the word ‘cat’ appears with zero probability when <span class="math inline">\(n \geq 1000\)</span>.”. It would be like “No matter where we start reading, we should expect to the first three tokens to be ‘cat’ with probability <span class="math inline">\(10^{-4}\)</span>.”.</p>
-<p>Repeatedly applying the shift map <span class="math inline">\(T\)</span> is just reading through the stream, one token at a time:</p>
-<p><span class="math display">\[
+</span></p>
+<p>The shift map is measure-preserving, meaning that the process is <strong>stationary</strong>: We could have started reading at any point, and we would still expect to see the same kind of probability distribution. It would not be like “Sorry, the word ‘cat’ appears with zero probability when <span class="math inline">n \geq 1000</span>.”. It would be like “No matter where we start reading, we should expect to the first three tokens to be ‘cat’ with probability <span class="math inline">10^{-4}</span>.”.</p>
+<p>Repeatedly applying the shift map <span class="math inline">T</span> is just reading through the stream, one token at a time:</p>
+<p><span class="math display">
 \text{...Lorem ipsum ...} \mapsto \text{...orem ipsum d...} \mapsto \text{...rem ipsum do...} \mapsto \cdots
-\]</span></p>
-<p>A periodic point of <span class="math inline">\(T\)</span> is a text that repeats itself like a broken record. For example, <span class="math inline">\(X := \text{... and and and ...}\)</span> satisfies <span class="math inline">\(T^4X = X\)</span>.</p>
-<p>A <span class="math inline">\(T\)</span>-invariant set <span class="math inline">\(S\subset \Omega\)</span> is a set of texts, such that if we take any text <span class="math inline">\(X\)</span> from <span class="math inline">\(S\)</span>, and jump either forwards or backwards for an arbitrary amount, we get another set in <span class="math inline">\(S\)</span>. In other words, <span class="math inline">\(S\)</span> is a set of token streams where there is no origin: you can start reading from any token.</p>
-<p>A probability distribution over <span class="math inline">\(\Omega\)</span> describes the probability of observing various kinds of text streams.</p>
-<p>If we can partition <span class="math inline">\(\Omega\)</span> into two subsets <span class="math inline">\(P, Q\)</span>, with probabilities <span class="math inline">\(\epsilon &gt; 0, 1-\epsilon &gt; 0\)</span>, then it means that any text from <span class="math inline">\(P\)</span> is different from any text from <span class="math inline">\(Q\)</span>, after any shift. It is as if there are two languages, and each text can be exclusively written in one language only.</p>
+</span></p>
+<p>A periodic point of <span class="math inline">T</span> is a text that repeats itself like a broken record. For example, <span class="math inline">X := \text{... and and and ...}</span> satisfies <span class="math inline">T^4X = X</span>.</p>
+<p>A <span class="math inline">T</span>-invariant set <span class="math inline">S\subset \Omega</span> is a set of texts, such that if we take any text <span class="math inline">X</span> from <span class="math inline">S</span>, and jump either forwards or backwards for an arbitrary amount, we get another set in <span class="math inline">S</span>. In other words, <span class="math inline">S</span> is a set of token streams where there is no origin: you can start reading from any token.</p>
+<p>A probability distribution over <span class="math inline">\Omega</span> describes the probability of observing various kinds of text streams.</p>
+<p>If we can partition <span class="math inline">\Omega</span> into two subsets <span class="math inline">P, Q</span>, with probabilities <span class="math inline">\epsilon &gt; 0, 1-\epsilon &gt; 0</span>, then it means that any text from <span class="math inline">P</span> is different from any text from <span class="math inline">Q</span>, after any shift. It is as if there are two languages, and each text can be exclusively written in one language only.</p>
 <p>We wish to consider only texts created by some imaginary “universal English speaker”. In particular, we do not want it to get stuck in one sub-language of English, then never escape from it. That is, we assume the universal speaker is <strong>ergodic</strong>.</p>
 <p>Now imagine that we randomly sample two pieces of text generated by the universal speaker, and we shift the first text around to match it against the second. By <a href="#thm-ergodic-dense-orbit" class="quarto-xref">Theorem&nbsp;1</a>, the orbit of the first text is dense in the space of all possible English texts spoken by the universal speaker. We can gamify this situation thus:</p>
 <ul>
-<li>Prover: “I take one piece of text <span class="math inline">\(x\)</span>, then another piece <span class="math inline">\(x'\)</span>.”.</li>
-<li>Challenger: “I challenge you to find a stretch of text from <span class="math inline">\(x\)</span> that matches the <span class="math inline">\(-1000:1000\)</span> stretch in <span class="math inline">\(x'\)</span>.”.</li>
-<li>Prover asks <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">a team of immortal monkeys</a> to do the task. A million years later: “At <span class="math inline">\(49134819\)</span>.”.</li>
-<li>Challenger verifies that <span class="math inline">\(T^{49134819}(x)_{-1000:1000} = (x')_{-1000:1000}\)</span>.</li>
+<li>Prover: “I take one piece of text <span class="math inline">x</span>, then another piece <span class="math inline">x'</span>.”.</li>
+<li>Challenger: “I challenge you to find a stretch of text from <span class="math inline">x</span> that matches the <span class="math inline">-1000:1000</span> stretch in <span class="math inline">x'</span>.”.</li>
+<li>Prover asks <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">a team of immortal monkeys</a> to do the task. A million years later: “At <span class="math inline">49134819</span>.”.</li>
+<li>Challenger verifies that <span class="math inline">T^{49134819}(x)_{-1000:1000} = (x')_{-1000:1000}</span>.</li>
 </ul>
 </section>
 <section id="sec-smb-theorem" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="sec-smb-theorem">Shannon–McMillan–Breiman</h3>
-<p>If someone has created an infinite sequence of coin flips <span class="math inline">\(X_{-\infty:+\infty}\)</span>, then revealed it to us one by one, then each reveal would give us <span class="math inline">\(1 \;\rm{bit} = \ln 2 \;\rm{nat}\)</span>. The long-term average obtained per reveal is still <span class="math inline">\(\ln 2 \;\rm{nat}\)</span>, a rather boring situation.</p>
+<p>If someone has created an infinite sequence of coin flips <span class="math inline">X_{-\infty:+\infty}</span>, then revealed it to us one by one, then each reveal would give us <span class="math inline">1 \;\rm{bit} = \ln 2 \;\rm{nat}</span>. The long-term average obtained per reveal is still <span class="math inline">\ln 2 \;\rm{nat}</span>, a rather boring situation.</p>
 <p>How do we measure the entropy of an English speaker? It speaks token by token, and we have to measure the average information we obtain per token. The problem is that there are two senses of “average”. It could be the time-average: we listen to the speaker speak for a very long time, and calculate the entropy in the speech. It could be the ensemble-average: we listen to the speaker speak for a very long time, then do it again, then again, etc, then average together the time-averages.</p>
 <p>If the speaker is ergodic, then the speaker essentially has just one speech, and any two samples of its speech are just translations of each other.<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> Consequently, it is intuitively clear that with probability 1, the time-average of the entropy of one speech equals the ensemble-average of the entropy of all speeches. Intuitively, with probability 1,</p>
-<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;Statistical mechanists might recognize this as saying that the language is <a href="https://en.wikipedia.org/wiki/Self-averaging">self-averaging</a>. That is, sampling many speeches from the language is essentially the same as sampling one very long speech that we then cut into many sub-speeches.</p></div></div><p><span class="math display">\[
+<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;Statistical mechanists might recognize this as saying that the language is <a href="https://en.wikipedia.org/wiki/Self-averaging">self-averaging</a>. That is, sampling many speeches from the language is essentially the same as sampling one very long speech that we then cut into many sub-speeches.</p></div></div><p><span class="math display">
 \frac{1}{n} \ln Pr(X_{1:n}) \to \mathbb{E}\left[\frac{1}{n} \ln Pr(X_{1:n})\right]
-\]</span></p>
+</span></p>
 <p>For non-ergodic speakers. We simply <a href="@thm-ergodic-decomposition">decompose the speaker into an ensemble of ergodic speakers</a>, then apply the SMB theorem to each one. It is like the strong law of large numbers. Intuitively, with probability 1,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{1}{n} \ln Pr(X_{1:n}| X \text{ is type }i)\to \mathbb{E}\left[\frac{1}{n} \ln Pr(X_{1:n}) | X \text{ is type }i\right]
-\]</span></p>
+</span></p>
 <p>This is the <a href="https://en.wikipedia.org/wiki/Shannon-McMillan-Breiman_theorem">Shannon–McMillan–Breiman theorem</a>.</p>
 <p>In textbooks and Wikipedia, the SMB theorem is stated rigorously, but you have already understood the idea of SMB, and the rigorous versions are simply paraphrases of the idea.</p>
 

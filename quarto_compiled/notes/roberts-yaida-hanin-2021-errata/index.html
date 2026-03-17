@@ -121,9 +121,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -506,10 +522,10 @@ how many steps we took to get to the minimum, or whether we used gradient descen
 <ul>
 <li>Somewhere in the book (maybe in Chapter 4?) give the following intuition for the infinite-width limit:
 <ul>
-<li>At the infinite width limit, the neural network degenerates into a sequence of continuous functions <span class="math inline">\(G^{(1)}, \dots, G^{(L)}\)</span>, such that the preactivations in the neural network, upon input <span class="math inline">\(x\)</span>, becomes independent random samples from gaussian distributions: <span class="math inline">\(z^{(l)}_{i} \sim N(0, G^{(l)}(x))\)</span>.</li>
-<li>You can then calculate how <span class="math inline">\(G^{(l+1)}(x)\)</span> is derived from <span class="math inline">\(G^{(l)}\)</span> by a simple argument with gaussians.</li>
+<li>At the infinite width limit, the neural network degenerates into a sequence of continuous functions <span class="math inline">G^{(1)}, \dots, G^{(L)}</span>, such that the preactivations in the neural network, upon input <span class="math inline">x</span>, becomes independent random samples from gaussian distributions: <span class="math inline">z^{(l)}_{i} \sim N(0, G^{(l)}(x))</span>.</li>
+<li>You can then calculate how <span class="math inline">G^{(l+1)}(x)</span> is derived from <span class="math inline">G^{(l)}</span> by a simple argument with gaussians.</li>
 </ul></li>
-<li>I think it would be good to introduce kernel linear regression in a simple setting. Perhaps at “Probability, Correlation and Statistics, and All That” since it is such a simple and general technique in statistics. Then later, in the chapter on Bayesian learning, one can immediately point out that in the “6.3.2 Let’s Not Wire Together”, we are seeing just a standard kernel regression. And later, in Chapter 10, one can immediately point out that this is kernel regression where the kernel matrix is <span class="math inline">\(\Theta\)</span>.</li>
+<li>I think it would be good to introduce kernel linear regression in a simple setting. Perhaps at “Probability, Correlation and Statistics, and All That” since it is such a simple and general technique in statistics. Then later, in the chapter on Bayesian learning, one can immediately point out that in the “6.3.2 Let’s Not Wire Together”, we are seeing just a standard kernel regression. And later, in Chapter 10, one can immediately point out that this is kernel regression where the kernel matrix is <span class="math inline">\Theta</span>.</li>
 </ul>
 </section>
 <section id="feynman-diagrams" class="level3">
@@ -521,8 +537,8 @@ how many steps we took to get to the minimum, or whether we used gradient descen
 <h3 class="anchored" data-anchor-id="quartic-interaction-intuition">Quartic interaction intuition</h3>
 <p>For the quartic interaction, a few pictures could really make it clear. I drew some schematically:</p>
 <p><img src="figure/image_1728687316057_0.png" class="img-fluid"></p>
-<p>The pictures make it clear that one effect of quartic interaction is to create correlations between the squared preactivations of neurons. Sometimes it is a negative correlation (as in the <span class="math inline">\(c=-2\)</span> picture) and sometimes it is a positive correlation (as in the <span class="math inline">\(c = 6\)</span> picture), and sometimes it is more subtle. The <span class="math inline">\(c=2\)</span> picture has circular contours like gaussian distribution, but it does not mean that <span class="math inline">\(z_{i, \alpha}^2, z_{j, \beta}^2\)</span> are independent. The dependence is more subtle.</p>
-<p>More generally, the effect is to correlate <span class="math inline">\(z_{i, \alpha_1}z_{i, \alpha_2}\)</span> and <span class="math inline">\(z_{j, \alpha_3}z_{j, \alpha_4}\)</span>, but this is too difficult to plot. Still, these contour plots give a good mental picture.</p>
+<p>The pictures make it clear that one effect of quartic interaction is to create correlations between the squared preactivations of neurons. Sometimes it is a negative correlation (as in the <span class="math inline">c=-2</span> picture) and sometimes it is a positive correlation (as in the <span class="math inline">c = 6</span> picture), and sometimes it is more subtle. The <span class="math inline">c=2</span> picture has circular contours like gaussian distribution, but it does not mean that <span class="math inline">z_{i, \alpha}^2, z_{j, \beta}^2</span> are independent. The dependence is more subtle.</p>
+<p>More generally, the effect is to correlate <span class="math inline">z_{i, \alpha_1}z_{i, \alpha_2}</span> and <span class="math inline">z_{j, \alpha_3}z_{j, \alpha_4}</span>, but this is too difficult to plot. Still, these contour plots give a good mental picture.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -552,62 +568,62 @@ how many steps we took to get to the minimum, or whether we used gradient descen
 <section id="normalized-vectors" class="level3">
 <h3 class="anchored" data-anchor-id="normalized-vectors">Normalized vectors</h3>
 <p>Many formulas can be made more intuitive by using the following convention on normalizing vectors:</p>
-<p>Define the <strong>normalized activation vectors</strong> <span class="math inline">\(\bar \sigma_{\alpha}^{(\ell)} := \sigma^{(\ell)}_{\alpha} / \sqrt{n_\ell}\)</span>.</p>
-<p>We can motivate this by arguing that a good neural network should have all activations in a layer roughly <span class="math inline">\(O(1)\)</span> random, and close to independent (so that they don’t collapse to a low-dimensional subspace). Then, <span class="math inline">\(\bar \sigma_{\alpha}^{(\ell)}\)</span> would have norm <span class="math inline">\(O(1)\)</span>.</p>
+<p>Define the <strong>normalized activation vectors</strong> <span class="math inline">\bar \sigma_{\alpha}^{(\ell)} := \sigma^{(\ell)}_{\alpha} / \sqrt{n_\ell}</span>.</p>
+<p>We can motivate this by arguing that a good neural network should have all activations in a layer roughly <span class="math inline">O(1)</span> random, and close to independent (so that they don’t collapse to a low-dimensional subspace). Then, <span class="math inline">\bar \sigma_{\alpha}^{(\ell)}</span> would have norm <span class="math inline">O(1)</span>.</p>
 <p>For example, equation (4.76) then becomes</p>
-<p><span class="math display">\[\frac{1}{n_{\ell}} V_{\left(\alpha_1 \alpha_2\right)\left(\alpha_3 \alpha_4\right)}^{(\ell+1)}  = (C_W^{(\ell+1)})^2 \mathrm{Cov}[\bar \sigma_{\alpha_1}^{(\ell)} \cdot \bar \sigma_{\alpha_2}^{(\ell)}, \bar \sigma_{\alpha_3}^{(\ell)} \cdot \bar \sigma_{\alpha_4}^{(\ell)}]\]</span></p>
+<p><span class="math display">\frac{1}{n_{\ell}} V_{\left(\alpha_1 \alpha_2\right)\left(\alpha_3 \alpha_4\right)}^{(\ell+1)}  = (C_W^{(\ell+1)})^2 \mathrm{Cov}[\bar \sigma_{\alpha_1}^{(\ell)} \cdot \bar \sigma_{\alpha_2}^{(\ell)}, \bar \sigma_{\alpha_3}^{(\ell)} \cdot \bar \sigma_{\alpha_4}^{(\ell)}]</span></p>
 </section>
 <section id="shape-of-the-kernels" class="level3">
 <h3 class="anchored" data-anchor-id="shape-of-the-kernels">Shape of the kernels</h3>
 <p>I think the equation (6.48) is very important and should be put in Chapter 1.2. It should not be relegated to a footnote. In particular, it gives the best picture for what the kernel is actually doing. I have attached a picture showing what I meant.</p>
-<p>I think this equation + picture can be put very early on, at the start of “Chapter 1.2 Probability, Correlation and Statistics, and All That”, since if we are going to get an “effective theory” we should say up front what are the key effective variables. It took me some time to figure out that the effect of the kernel <span class="math inline">\(K\)</span> is to characterize the effective <em>shape</em> of an activation triangle!</p>
-<p>I think you can teach this effectively as follows: Given that we have two high-dimensional vectors <span class="math inline">\(y_+, y_-\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> where <span class="math inline">\(n\)</span> is a large number, distributed as <span class="math inline">\(y \sim N(0, \delta_{ij} K_{\alpha \beta})\)</span>, that is</p>
-<p><span class="math display">\[p(y_+, y_-) \propto \exp\left[-\frac 12 \sum_{i, j, \alpha, \beta} y_{+, i, \alpha}y_{-, j, \beta} K^{\alpha \beta} \delta^{ij}\right]\]</span></p>
-<p>We don’t want to know the exact orientation, just the shape of the triangle formed by <span class="math inline">\(0, y_-, y_+\)</span>. Then, we can characterize the shape of the triangle with three numbers <span class="math inline">\(Y_{[0]}, Y_{[1]}, Y_{[2]}\)</span> defined by … and we divide by <span class="math inline">\(\sqrt n\)</span> because we want to normalize the size of the triangle to be <span class="math inline">\(O(1)\)</span> even as <span class="math inline">\(n\)</span> grows towards infinity (This should remind you of the central limit theorem). Similarly, we divide <span class="math inline">\(K\)</span> by <span class="math inline">\(n\)</span> to obtain <span class="math inline">\(\hat K\)</span>. Now, it is routine to calculate</p>
-<p><span class="math display">\[
+<p>I think this equation + picture can be put very early on, at the start of “Chapter 1.2 Probability, Correlation and Statistics, and All That”, since if we are going to get an “effective theory” we should say up front what are the key effective variables. It took me some time to figure out that the effect of the kernel <span class="math inline">K</span> is to characterize the effective <em>shape</em> of an activation triangle!</p>
+<p>I think you can teach this effectively as follows: Given that we have two high-dimensional vectors <span class="math inline">y_+, y_-</span> in <span class="math inline">\mathbb{R}^n</span> where <span class="math inline">n</span> is a large number, distributed as <span class="math inline">y \sim N(0, \delta_{ij} K_{\alpha \beta})</span>, that is</p>
+<p><span class="math display">p(y_+, y_-) \propto \exp\left[-\frac 12 \sum_{i, j, \alpha, \beta} y_{+, i, \alpha}y_{-, j, \beta} K^{\alpha \beta} \delta^{ij}\right]</span></p>
+<p>We don’t want to know the exact orientation, just the shape of the triangle formed by <span class="math inline">0, y_-, y_+</span>. Then, we can characterize the shape of the triangle with three numbers <span class="math inline">Y_{[0]}, Y_{[1]}, Y_{[2]}</span> defined by … and we divide by <span class="math inline">\sqrt n</span> because we want to normalize the size of the triangle to be <span class="math inline">O(1)</span> even as <span class="math inline">n</span> grows towards infinity (This should remind you of the central limit theorem). Similarly, we divide <span class="math inline">K</span> by <span class="math inline">n</span> to obtain <span class="math inline">\hat K</span>. Now, it is routine to calculate</p>
+<p><span class="math display">
 p(\hat y_+, \hat y_-) = (4\pi^2 (4 \hat K_{[2]}\hat K_{[0]} - \hat K_{[1]}^2))^{-n/2} \exp \left[ - \frac{2\hat K_{[0]} Y_{[2]} + 2\hat K_{[2]} Y_{[0]} - \hat K_{[1]} Y_{[1]}}{4 \hat K_{[2]}\hat K_{[0]} - \hat K_{[1]}^2}\right]
-\]</span></p>
-<p>Then, a geometric argument shows that conditional on <span class="math inline">\(Y_{[1]} = 0\)</span>, the maximal likelihood estimate of <span class="math inline">\(Y_{[0]}\)</span> is <span class="math inline">\(n \hat K_{[0]} = K_{[0]}\)</span>.</p>
+</span></p>
+<p>Then, a geometric argument shows that conditional on <span class="math inline">Y_{[1]} = 0</span>, the maximal likelihood estimate of <span class="math inline">Y_{[0]}</span> is <span class="math inline">n \hat K_{[0]} = K_{[0]}</span>.</p>
 </section>
 <section id="faster-solution-of-recursion-relations" class="level3">
 <h3 class="anchored" data-anchor-id="faster-solution-of-recursion-relations">Faster solution of recursion relations</h3>
 <p>There is a faster way to solve the recursion relations like Eq (9.85). I will solve it as an example:</p>
 <p>First, rewrite it as a differential equation:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 y' \approx -2p_\perp y/x + C x^{2-2p_\perp}
-\]</span></p>
-<p>where we have substituted <span class="math inline">\(y\)</span> for <span class="math inline">\(A\)</span>, and <span class="math inline">\(x\)</span> for <span class="math inline">\(\ell\)</span>.</p>
-<p>Then, plug it into Wolfram Alpha, we find the solution is <span class="math display">\[
+</span></p>
+<p>where we have substituted <span class="math inline">y</span> for <span class="math inline">A</span>, and <span class="math inline">x</span> for <span class="math inline">\ell</span>.</p>
+<p>Then, plug it into Wolfram Alpha, we find the solution is <span class="math display">
 y = \frac{1}{3} C x^{1-p_\perp} + c_1 x^{-p_\perp-2}
-\]</span></p>
-<p>where <span class="math inline">\(c_1\)</span> is an arbitrary constant.</p>
+</span></p>
+<p>where <span class="math inline">c_1</span> is an arbitrary constant.</p>
 <p>In general, the recursion formula has not one, but two possible leading terms. In all cases that appeared in the book, the second leading term is not actually leading, so all the equations turned out exactly correct. Still, it should be pointed out.</p>
 <p>For example, the recursive equation (9.79) has, as its lowest terms, <em>two</em> terms:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 F^{(\ell)}=\frac{1}{\left(5-p_{\perp}\right)}\left[\frac{1}{\left(-a_1\right)}\right]\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \sigma_1^2}{\left(-a_1\right)}\right]\left(\frac{1}{\ell}\right)^{p_{\perp}-1} + \frac{c}{\ell^4} + \cdots
-\]</span></p>
-<p>Of course, if we assume <span class="math inline">\(p_\perp \leq 5\)</span>, then indeed we can ignore the <span class="math inline">\(c/\ell^4\)</span> term. This needs to be proven, as follows:</p>
-<p>The <span class="math inline">\(K^* = 0\)</span> universality class requires <span class="math inline">\(a_1 &lt; 0\)</span>. Given that, we have</p>
-<p><span class="math display">\[p_\perp = 1 + \frac{\frac 14 (\sigma_2/\sigma_1)^2}{a_1} \leq 1\]</span></p>
-<p>with equality reached when <span class="math inline">\(\sigma_2 = 0\)</span>.</p>
+</span></p>
+<p>Of course, if we assume <span class="math inline">p_\perp \leq 5</span>, then indeed we can ignore the <span class="math inline">c/\ell^4</span> term. This needs to be proven, as follows:</p>
+<p>The <span class="math inline">K^* = 0</span> universality class requires <span class="math inline">a_1 &lt; 0</span>. Given that, we have</p>
+<p><span class="math display">p_\perp = 1 + \frac{\frac 14 (\sigma_2/\sigma_1)^2}{a_1} \leq 1</span></p>
+<p>with equality reached when <span class="math inline">\sigma_2 = 0</span>.</p>
 <p>Similarly, the recursive equation (9.80) also has <em>two</em> lowest terms:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \sigma_1^2}{\left(-a_1\right)}\right]^2\left(\frac{1}{\ell}\right)^{2 p_{\perp}-3} + \frac{c}{\ell^{2p_\perp}} + \cdots
-\]</span></p>
-<p>although in this case, the second term is dominated by the first regardless of what <span class="math inline">\(p_\perp\)</span> is.</p>
-<p>Similarly, Eq (10.77) on page 272 has an extra term of order <span class="math inline">\(O(1/\ell^{p_\perp})\)</span>, which is negligible only because <span class="math inline">\(p_\perp \leq 1\)</span>.</p>
+</span></p>
+<p>although in this case, the second term is dominated by the first regardless of what <span class="math inline">p_\perp</span> is.</p>
+<p>Similarly, Eq (10.77) on page 272 has an extra term of order <span class="math inline">O(1/\ell^{p_\perp})</span>, which is negligible only because <span class="math inline">p_\perp \leq 1</span>.</p>
 </section>
 <section id="symmetry-groups" class="level3">
 <h3 class="anchored" data-anchor-id="symmetry-groups">Symmetry groups</h3>
-<p>On page 83, the symmetry group of the indices of <span class="math inline">\(V\)</span> is the symmetry group of the square. Specifically, you can imagine labelling a square’s vertices with <span class="math inline">\(\alpha_1, \alpha_3, \alpha_2, \alpha_4\)</span>, counterclockwise. Then any rotation and reflection of the square is a permutation of its four vertices that does not change <span class="math inline">\(V\)</span>.</p>
-<p>Since the symmetry group of the square has 8 elements, this explains the factor of <span class="math inline">\(\frac 18\)</span> in (4.44). I think this improves footnote <code>7</code>.</p>
+<p>On page 83, the symmetry group of the indices of <span class="math inline">V</span> is the symmetry group of the square. Specifically, you can imagine labelling a square’s vertices with <span class="math inline">\alpha_1, \alpha_3, \alpha_2, \alpha_4</span>, counterclockwise. Then any rotation and reflection of the square is a permutation of its four vertices that does not change <span class="math inline">V</span>.</p>
+<p>Since the symmetry group of the square has 8 elements, this explains the factor of <span class="math inline">\frac 18</span> in (4.44). I think this improves footnote <code>7</code>.</p>
 <p>Similarly, on page 209, 210. I think the symmetries can be geometrically pictured as follows:</p>
 <ul>
-<li>For each of <span class="math inline">\(A, B, D, F, V\)</span>, write the indices clockwise on the vertices of a quadrilateral, as 1324.</li>
-<li><span class="math inline">\(A_{(12)(34)}, V_{(12)(34)}\)</span> both have symmetry of the square.</li>
-<li><span class="math inline">\(B_{(12)(34)}\)</span> has symmetry of the square in <span class="math inline">\(l=1\)</span>, and subsequently, rectangle.</li>
-<li><span class="math inline">\(D_{(12)(34)}\)</span> has symmetry of the square in <span class="math inline">\(l=1\)</span>, and subsequently, rhombus.</li>
-<li><span class="math inline">\(F_{(12)(34)}\)</span> has symmetry of the square in <span class="math inline">\(l=1\)</span>, of the rhombus in <span class="math inline">\(l=2\)</span>, and subsequently, no symmetry.</li>
+<li>For each of <span class="math inline">A, B, D, F, V</span>, write the indices clockwise on the vertices of a quadrilateral, as 1324.</li>
+<li><span class="math inline">A_{(12)(34)}, V_{(12)(34)}</span> both have symmetry of the square.</li>
+<li><span class="math inline">B_{(12)(34)}</span> has symmetry of the square in <span class="math inline">l=1</span>, and subsequently, rectangle.</li>
+<li><span class="math inline">D_{(12)(34)}</span> has symmetry of the square in <span class="math inline">l=1</span>, and subsequently, rhombus.</li>
+<li><span class="math inline">F_{(12)(34)}</span> has symmetry of the square in <span class="math inline">l=1</span>, of the rhombus in <span class="math inline">l=2</span>, and subsequently, no symmetry.</li>
 </ul>
 </section>
 <section id="dimensional-analysis" class="level3">
@@ -622,63 +638,63 @@ B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \s
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(z, x, \sigma\)</span></td>
+<td><span class="math inline">z, x, \sigma</span></td>
 <td>1</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\sigma'\)</span></td>
+<td><span class="math inline">\sigma'</span></td>
 <td>0</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(W, C_W\)</span></td>
+<td><span class="math inline">W, C_W</span></td>
 <td>0</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(b\)</span></td>
+<td><span class="math inline">b</span></td>
 <td>1</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(C_b\)</span></td>
+<td><span class="math inline">C_b</span></td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(S\)</span></td>
+<td><span class="math inline">S</span></td>
 <td>0</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\lambda_{\mu\nu}\)</span></td>
-<td>Same as <span class="math inline">\(\theta_\mu \theta_\nu\)</span></td>
+<td><span class="math inline">\lambda_{\mu\nu}</span></td>
+<td>Same as <span class="math inline">\theta_\mu \theta_\nu</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\lambda_b\)</span></td>
+<td><span class="math inline">\lambda_b</span></td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\lambda_W\)</span></td>
+<td><span class="math inline">\lambda_W</span></td>
 <td>0</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\Theta, H\)</span></td>
+<td><span class="math inline">\Theta, H</span></td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(G, K\)</span></td>
+<td><span class="math inline">G, K</span></td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(g\)</span></td>
+<td><span class="math inline">g</span></td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\chi_\parallel, \chi_\perp\)</span></td>
+<td><span class="math inline">\chi_\parallel, \chi_\perp</span></td>
 <td>0</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(h\)</span></td>
+<td><span class="math inline">h</span></td>
 <td>-2</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(V, D, F, B, A, P, Q\)</span></td>
+<td><span class="math inline">V, D, F, B, A, P, Q</span></td>
 <td>4</td>
 </tr>
 </tbody>
@@ -700,14 +716,14 @@ B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \s
 <ul>
 <li>For Eq (4.46) and (4.57), add a footnote to the alert reader who is getting confused by the serial expansion. I think something like
 <ul>
-<li>“To the alert reader: If you are confused by the fact that the second term seems to have order <span class="math inline">\(O(vn^2) = O(n)\)</span>, good job paying attention! Consider proceeding directly to reading the”Marginalization over Neurons” section. But the short answer is that we can set <span class="math inline">\(1 \ll n_2 \ll n_1 = n\)</span> for now, calculate, then proceed to layer 3. When calculating layer 3, we will note that the <span class="math inline">\(O(n_2)\)</span> terms exactly cancel out, so that we can then take the <span class="math inline">\(n_2 \to n\)</span> limit and get the same outcome.”</li>
+<li>“To the alert reader: If you are confused by the fact that the second term seems to have order <span class="math inline">O(vn^2) = O(n)</span>, good job paying attention! Consider proceeding directly to reading the”Marginalization over Neurons” section. But the short answer is that we can set <span class="math inline">1 \ll n_2 \ll n_1 = n</span> for now, calculate, then proceed to layer 3. When calculating layer 3, we will note that the <span class="math inline">O(n_2)</span> terms exactly cancel out, so that we can then take the <span class="math inline">n_2 \to n</span> limit and get the same outcome.”</li>
 </ul></li>
 </ul></li>
 <li>Page 88. For the derivation of Eq (4.61), explain a bit more:
 <ul>
-<li>Start with Eq (4.46). Enumerate the possible <span class="math inline">\(j_1, j_2\)</span>. The only cases where the covariance inside the bracket is nonzero are when <span class="math inline">\(j_1=i_1 \neq j_2\)</span> ( <span class="math inline">\(n\)</span> terms), <span class="math inline">\(j_2=i_1 \neq j_1\)</span> ( <span class="math inline">\(n\)</span> terms) and <span class="math inline">\(i_1=j_1=j_2\)</span> (1 term). Now, simplify using the index symmetry of <span class="math inline">\(v\)</span>.</li>
+<li>Start with Eq (4.46). Enumerate the possible <span class="math inline">j_1, j_2</span>. The only cases where the covariance inside the bracket is nonzero are when <span class="math inline">j_1=i_1 \neq j_2</span> ( <span class="math inline">n</span> terms), <span class="math inline">j_2=i_1 \neq j_1</span> ( <span class="math inline">n</span> terms) and <span class="math inline">i_1=j_1=j_2</span> (1 term). Now, simplify using the index symmetry of <span class="math inline">v</span>.</li>
 </ul></li>
-<li>Page 103. After “In going through this calculation in your personal notes or on the margins of this book, you can explicitly see the cancellation…”, add the sentence: “The order <span class="math inline">\(n_\ell\)</span> terms in Eq (4.111) and (4.113) exactly cancel each other out.”</li>
+<li>Page 103. After “In going through this calculation in your personal notes or on the margins of this book, you can explicitly see the cancellation…”, add the sentence: “The order <span class="math inline">n_\ell</span> terms in Eq (4.111) and (4.113) exactly cancel each other out.”</li>
 </ul>
 </section>
 <section id="chapter-5" class="level2 page-columns page-full">
@@ -720,11 +736,11 @@ B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \s
 <figcaption class="margin-caption">The midpoint kernel</figcaption>
 </figure>
 </div>
-<p>The kernel perturbation into <span class="math inline">\(K_{[̄0]}, \delta K_{[̄1]}, \delta\delta K_{[̄2]}\)</span>.</p>
+<p>The kernel perturbation into <span class="math inline">K_{[̄0]}, \delta K_{[̄1]}, \delta\delta K_{[̄2]}</span>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/chapter_5_kernel_perturbation.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">The kernel perturbation into <span class="math inline">\(K_{[̄0]}, \delta K_{[̄1]}, \delta\delta K_{[̄2]}\)</span>.</figcaption>
+<figcaption class="margin-caption">The kernel perturbation into <span class="math inline">K_{[̄0]}, \delta K_{[̄1]}, \delta\delta K_{[̄2]}</span>.</figcaption>
 </figure>
 </div>
 <p>How two activation vectors (signal propagation) propagate through a critically tuned neural network at initialization.</p>
@@ -735,28 +751,28 @@ B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \s
 </figure>
 </div>
 <ul>
-<li>Page 112. Add “Of course, <span class="math inline">\(g\)</span> is not a function of <span class="math inline">\(K\)</span> only, but rather depends on <span class="math inline">\(\sigma\)</span> as well. We suppress this dependence.”</li>
-<li>Page 115. For “To do so, we will find it convenient to project the full kernel matrix…”, I suggest instead of that, write this: “Because <span class="math inline">\(K\)</span> has 4 entries, it can be regarded as a vector in <span class="math inline">\(\mathbb{R}^4\)</span>. Because it is symmetric, it is in a 3-dimensional subspace. Thus, we can decompose it with three orthogonal vectors:”</li>
+<li>Page 112. Add “Of course, <span class="math inline">g</span> is not a function of <span class="math inline">K</span> only, but rather depends on <span class="math inline">\sigma</span> as well. We suppress this dependence.”</li>
+<li>Page 115. For “To do so, we will find it convenient to project the full kernel matrix…”, I suggest instead of that, write this: “Because <span class="math inline">K</span> has 4 entries, it can be regarded as a vector in <span class="math inline">\mathbb{R}^4</span>. Because it is symmetric, it is in a 3-dimensional subspace. Thus, we can decompose it with three orthogonal vectors:”</li>
 <li>page 118
 <ul>
-<li>Point out that <span class="math inline">\(\hat e^u\)</span> is just the vector pointing in the angle <span class="math inline">\(45^\circ - \delta \theta\)</span> where <span class="math inline">\(\delta \theta = \frac{\delta K_{[1]}^{(\ell)}}{2 K_{00}^{(\ell)}}\)</span>, and <span class="math inline">\(\hat e^w\)</span> is <span class="math inline">\(\hat e^u\)</span> rotated by 90 degrees, since symmetric matrices always have perpendicular eigenvectors.</li>
-<li>Point out that <span class="math inline">\(\delta \theta\)</span> can be found just using <span class="math inline">\(K_{00}, \delta K_{[1]}\)</span>, saving some effort.</li>
+<li>Point out that <span class="math inline">\hat e^u</span> is just the vector pointing in the angle <span class="math inline">45^\circ - \delta \theta</span> where <span class="math inline">\delta \theta = \frac{\delta K_{[1]}^{(\ell)}}{2 K_{00}^{(\ell)}}</span>, and <span class="math inline">\hat e^w</span> is <span class="math inline">\hat e^u</span> rotated by 90 degrees, since symmetric matrices always have perpendicular eigenvectors.</li>
+<li>Point out that <span class="math inline">\delta \theta</span> can be found just using <span class="math inline">K_{00}, \delta K_{[1]}</span>, saving some effort.</li>
 </ul></li>
 <li>Page 119.
 <ul>
-<li>The logical relation between <span class="math inline">\(u\)</span> and <span class="math inline">\(z_0\)</span> is unclear. In particular, it seems we have a double definition for <span class="math inline">\(z_0\)</span>.</li>
-<li>First definition: <span class="math inline">\(z_0\)</span> is the preactivation corresponding to the midpoint input. That is, <span class="math inline">\(z_0 = z^{(\ell)}_i(x_0)\)</span>.</li>
-<li>Second definition: <span class="math inline">\(\frac{u^2}{2 \lambda_u}=\frac{z_0^2}{2 K_{00}^{(\ell)}}\)</span>.</li>
-<li>If both definitions are equally true, then we must prove that they give the same <span class="math inline">\(z_0\)</span>. This is not proven, and I think it is actually false.</li>
-<li>I think <span class="math inline">\(z_0\)</span> is purely defined by the second definition, for the simple reason that everything in this page is just doing a gaussian integral in <span class="math inline">\(\mathbb{R}^2\)</span>. Definition 1 requires <span class="math inline">\(x_0\)</span> to exist, but this page does not require <span class="math inline">\(x_0\)</span> to exist. Therefore, the second definition is how <span class="math inline">\(z_0\)</span> is defined.</li>
-<li>The first “definition” is not a definition, but an interpretation. I think that it should be interpreted as this: Suppose that <span class="math inline">\(x_\pm = x_0 \pm \delta x\)</span>, then <span class="math display">\[z_0 = z_i^{(\ell)}(x_0) + O(\delta^2)\]</span></li>
+<li>The logical relation between <span class="math inline">u</span> and <span class="math inline">z_0</span> is unclear. In particular, it seems we have a double definition for <span class="math inline">z_0</span>.</li>
+<li>First definition: <span class="math inline">z_0</span> is the preactivation corresponding to the midpoint input. That is, <span class="math inline">z_0 = z^{(\ell)}_i(x_0)</span>.</li>
+<li>Second definition: <span class="math inline">\frac{u^2}{2 \lambda_u}=\frac{z_0^2}{2 K_{00}^{(\ell)}}</span>.</li>
+<li>If both definitions are equally true, then we must prove that they give the same <span class="math inline">z_0</span>. This is not proven, and I think it is actually false.</li>
+<li>I think <span class="math inline">z_0</span> is purely defined by the second definition, for the simple reason that everything in this page is just doing a gaussian integral in <span class="math inline">\mathbb{R}^2</span>. Definition 1 requires <span class="math inline">x_0</span> to exist, but this page does not require <span class="math inline">x_0</span> to exist. Therefore, the second definition is how <span class="math inline">z_0</span> is defined.</li>
+<li>The first “definition” is not a definition, but an interpretation. I think that it should be interpreted as this: Suppose that <span class="math inline">x_\pm = x_0 \pm \delta x</span>, then <span class="math display">z_0 = z_i^{(\ell)}(x_0) + O(\delta^2)</span></li>
 </ul></li>
-<li>page 121. Eq (5.53) should have another entry, which will be useful later: <span class="math display">\[
+<li>page 121. Eq (5.53) should have another entry, which will be useful later: <span class="math display">
 \braket{(z^2 - K)\sigma \sigma }_K / (2K^2) = \braket{z\sigma' \sigma}_K / K = \underbrace{\braket{\sigma'' \sigma + \sigma' \sigma'}_K}_{\text{new}}
-\]</span></li>
+</span></li>
 </ul>
 <p>Both equations in this can be proved by Stein’s lemma, which in this case says</p>
-<p><span class="math display">\[\braket{F(z) z}_K = K\braket{F'(z)}_K\]</span></p>
+<p><span class="math display">\braket{F(z) z}_K = K\braket{F'(z)}_K</span></p>
 <ul>
 <li>page 125. Add a table. Perhaps something like</li>
 </ul>
@@ -797,14 +813,14 @@ B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \s
 </tbody>
 </table>
 <ul>
-<li>page 127. In “5.3.1 General Strategy”, The new Eq (5.53) allows us to get a much simpler condition than Eq (5.73). Solve for <span class="math inline">\(\chi_\perp(K) = \chi_\|(K)\)</span> would give us</li>
+<li>page 127. In “5.3.1 General Strategy”, The new Eq (5.53) allows us to get a much simpler condition than Eq (5.73). Solve for <span class="math inline">\chi_\perp(K) = \chi_\|(K)</span> would give us</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \braket{\sigma'' \sigma}_K = 0
-\]</span></p>
-<p>This then allows us to get the results by direct calculation, without checking it numerically. For example: - For many activation functions, <span class="math inline">\(\braket{\sigma'' \sigma}_K = 0\)</span> has only soluion <span class="math inline">\(K = 0\)</span>, at which point we have <span class="math inline">\(C_W = 1 / \sigma'(0)^2, C_b = -(\sigma(0) / \sigma'(0))^2\)</span>. This requires <span class="math inline">\(\sigma'(0)  \neq  0, \sigma(0) = 0\)</span>. - softplus activation - <span class="math inline">\(\sigma(z) = \ln(1+e^z)\)</span>. - Because both <span class="math inline">\(\sigma, \sigma'' &gt; 0\)</span>, there is no critical <span class="math inline">\(K\)</span>. - monomial activation - <span class="math inline">\(\sigma(z) = |z|^p\)</span>, with <span class="math inline">\(p &gt; 1\)</span>. By scale invariance, <span class="math inline">\(\braket{\sigma'' \sigma}_K = K^{p-1}\braket{\sigma'' \sigma}_1\)</span>, so <span class="math inline">\(K = 0\)</span> is the solution. But this violates the condition <span class="math inline">\(\sigma'(0) = 0\)</span>, so there is no criticality. - sigmoid activation - <span class="math inline">\(\sigma(z) = 1/(1 + e^{-z})\)</span>. Its second derivative is odd, so <span class="math inline">\(\braket{\sigma''}_K = 0\)</span>. This means <span class="math inline">\(\braket{\sigma'' \sigma}_K = \braket{(\sigma - 1/2)'' (\sigma-1/2)}_K\)</span>, at which point we reduce to the case of <span class="math inline">\(\tanh\)</span>. - Just like the case of <span class="math inline">\(\tanh\)</span>, we have <span class="math inline">\(K = 0\)</span>, but in this case we don’t have <span class="math inline">\(\sigma(0) = 0\)</span>. - tanh activation - Because <span class="math inline">\(\tanh''(z) \tanh(z) &lt; 0\)</span> except at <span class="math inline">\(z = 0\)</span>, the only critical solution is <span class="math inline">\(K = 0\)</span>. - sin activation - In the integral <span class="math display">\[
+</span></p>
+<p>This then allows us to get the results by direct calculation, without checking it numerically. For example: - For many activation functions, <span class="math inline">\braket{\sigma'' \sigma}_K = 0</span> has only soluion <span class="math inline">K = 0</span>, at which point we have <span class="math inline">C_W = 1 / \sigma'(0)^2, C_b = -(\sigma(0) / \sigma'(0))^2</span>. This requires <span class="math inline">\sigma'(0)  \neq  0, \sigma(0) = 0</span>. - softplus activation - <span class="math inline">\sigma(z) = \ln(1+e^z)</span>. - Because both <span class="math inline">\sigma, \sigma'' &gt; 0</span>, there is no critical <span class="math inline">K</span>. - monomial activation - <span class="math inline">\sigma(z) = |z|^p</span>, with <span class="math inline">p &gt; 1</span>. By scale invariance, <span class="math inline">\braket{\sigma'' \sigma}_K = K^{p-1}\braket{\sigma'' \sigma}_1</span>, so <span class="math inline">K = 0</span> is the solution. But this violates the condition <span class="math inline">\sigma'(0) = 0</span>, so there is no criticality. - sigmoid activation - <span class="math inline">\sigma(z) = 1/(1 + e^{-z})</span>. Its second derivative is odd, so <span class="math inline">\braket{\sigma''}_K = 0</span>. This means <span class="math inline">\braket{\sigma'' \sigma}_K = \braket{(\sigma - 1/2)'' (\sigma-1/2)}_K</span>, at which point we reduce to the case of <span class="math inline">\tanh</span>. - Just like the case of <span class="math inline">\tanh</span>, we have <span class="math inline">K = 0</span>, but in this case we don’t have <span class="math inline">\sigma(0) = 0</span>. - tanh activation - Because <span class="math inline">\tanh''(z) \tanh(z) &lt; 0</span> except at <span class="math inline">z = 0</span>, the only critical solution is <span class="math inline">K = 0</span>. - sin activation - In the integral <span class="math display">
 \braket{\sin''(z) \sin(z)}_K = -\frac{1}{\sqrt{2\pi K}} \int e^{-\frac{z^2}{2K}}\sin^2(z) \; dz
-\]</span> the integrand is positive except at isolated points <span class="math inline">\(0, \pm \pi, \dots\)</span>, so the only critical solution is <span class="math inline">\(K = 0\)</span>.<br>
+</span> the integrand is positive except at isolated points <span class="math inline">0, \pm \pi, \dots</span>, so the only critical solution is <span class="math inline">K = 0</span>.<br>
 - For example, the SWISH function gives</p>
 <p><img src="figure/image_1728506805876_0.png" class="img-fluid"></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -890,59 +906,59 @@ B^{(\ell)}=\frac{1}{3}\left[\widetilde{\lambda}_b+\frac{\widetilde{\lambda}_W \s
 <ul>
 <li>page 133 “Lastly, let us note for all aspiring “activation designers” out there that we can…”
 <ul>
-<li>I have designed a concrete example. The general strategy is to just design a sum of linear transforms of <span class="math inline">\(\tanh\)</span>. <span class="math display">\[
+<li>I have designed a concrete example. The general strategy is to just design a sum of linear transforms of <span class="math inline">\tanh</span>. <span class="math display">
 \sigma(z) = \tanh(z) - \frac 18 \tanh(2z)
-\]</span></li>
+</span></li>
 </ul></li>
 </ul>
-<p>with <span class="math inline">\(\sigma_1 = 3/4, \sigma_5 = -48, a_1 = 0, a_2 = -16\)</span>, <span class="math inline">\(K \sim \frac{1}{\sqrt{8l}}\)</span>.</p>
+<p>with <span class="math inline">\sigma_1 = 3/4, \sigma_5 = -48, a_1 = 0, a_2 = -16</span>, <span class="math inline">K \sim \frac{1}{\sqrt{8l}}</span>.</p>
 <p>I wonder if anyone has tried this so far? Does it work better for very deep networks?</p>
 <ul>
-<li>page 136: “one can check that <span class="math inline">\((-a_1) &lt; 0\)</span>” I think it’d be best to actually write the exact value, for completeness. The exact value is <span class="math inline">\(-a_1 = -3/4 &lt; 0\)</span>.</li>
+<li>page 136: “one can check that <span class="math inline">(-a_1) &lt; 0</span>” I think it’d be best to actually write the exact value, for completeness. The exact value is <span class="math inline">-a_1 = -3/4 &lt; 0</span>.</li>
 <li>page 139: It’d be nice to sketch the derivations for Eq (5.108)–(5.110). I sketch it out as follows:
 <ul>
-<li>The recursion for <span class="math inline">\(K\)</span> is Eq (4.90).</li>
-<li>The recursion for <span class="math inline">\(V\)</span> is found by plugging the formula for <span class="math inline">\(g\)</span> Eq (4.108) into Eq (4.90), and noticing that <span class="math inline">\(\chi_\|(K^l)\)</span> appears in it. Since we only need to calculate <span class="math inline">\(V^{(l+1)}\)</span> to order <span class="math inline">\(O(1)\)</span>, we need only the <span class="math inline">\(g^l = K^l + O(1/n)\)</span> part.</li>
-<li>The recursion for <span class="math inline">\(G^{\{1\}}\)</span> is by simplifying Eq (4.115).</li>
+<li>The recursion for <span class="math inline">K</span> is Eq (4.90).</li>
+<li>The recursion for <span class="math inline">V</span> is found by plugging the formula for <span class="math inline">g</span> Eq (4.108) into Eq (4.90), and noticing that <span class="math inline">\chi_\|(K^l)</span> appears in it. Since we only need to calculate <span class="math inline">V^{(l+1)}</span> to order <span class="math inline">O(1)</span>, we need only the <span class="math inline">g^l = K^l + O(1/n)</span> part.</li>
+<li>The recursion for <span class="math inline">G^{\{1\}}</span> is by simplifying Eq (4.115).</li>
 </ul></li>
 <li>page 147: The painful integral does not have to be painful. Here’s how I did it:</li>
 </ul>
-<p>I drew on paper the contour plot of <span class="math inline">\(ReLU(z_+) ReLU(z_-)\)</span>, and noted that it looks like hyperbolas in the first quadrant. Then I drew contour plot of the normal distribution <span class="math inline">\(N(0, K^{(l)})\)</span> and noted that it is an ellipse. Now, by a squeeze in the diagonal direction, then a scaling, we can change the normal distribution into a standard normal distribution. This changes the hyperbolas into different hyperbolas. Looking at the hyperbolas, I thought “This reminds me of the hyperbolic/Lorentz transformation in special relativity.” and that’s how I figured out the trick.</p>
+<p>I drew on paper the contour plot of <span class="math inline">ReLU(z_+) ReLU(z_-)</span>, and noted that it looks like hyperbolas in the first quadrant. Then I drew contour plot of the normal distribution <span class="math inline">N(0, K^{(l)})</span> and noted that it is an ellipse. Now, by a squeeze in the diagonal direction, then a scaling, we can change the normal distribution into a standard normal distribution. This changes the hyperbolas into different hyperbolas. Looking at the hyperbolas, I thought “This reminds me of the hyperbolic/Lorentz transformation in special relativity.” and that’s how I figured out the trick.</p>
 <p>First, reparameterize</p>
-<p><span class="math display">\[K^{(l)} = K_d^{(l)} \begin{bmatrix} 1 &amp; \cos \psi^{(l)} \\ \cos\psi^{(l)} &amp; 1\end{bmatrix} = K_d^{(l)}\sin \psi^{(l)} \begin{bmatrix} \cosh \phi^{(l)} &amp; \sinh \phi^{(l)} \\ \sinh \phi^{(l)} &amp; \cosh \phi^{(l)}\end{bmatrix} \]</span></p>
+<p><span class="math display">K^{(l)} = K_d^{(l)} \begin{bmatrix} 1 &amp; \cos \psi^{(l)} \\ \cos\psi^{(l)} &amp; 1\end{bmatrix} = K_d^{(l)}\sin \psi^{(l)} \begin{bmatrix} \cosh \phi^{(l)} &amp; \sinh \phi^{(l)} \\ \sinh \phi^{(l)} &amp; \cosh \phi^{(l)}\end{bmatrix} </span></p>
 <p>This is useful because taking the square root of a hyperbolic transform matrix is easy: just divide the hyperbolic angle by 2.</p>
-<p>Therefore, a random variable <span class="math inline">\(z \sim N(0, K^{(l)})\)</span> is equivalent to</p>
-<p><span class="math display">\[z = \sqrt{K_d^{(l)}\sin \psi^{(l)}} \begin{bmatrix} \cosh \frac{\phi^{(l)}}{2} &amp; \sinh \frac{\phi^{(l)}}{2} \\ \sinh \frac{\phi^{(l)}}{2} &amp; \cosh \frac{\phi^{(l)}}{2} \end{bmatrix} \begin{bmatrix}x\\y\end{bmatrix}\]</span></p>
-<p>where <span class="math inline">\(x, y\)</span> are standard normal.</p>
-<p>The region of integration is <span class="math inline">\(z_+ &gt; 0, z_- &gt; 0\)</span>, which is the region bounded by two rays of slope <span class="math inline">\(-\theta_0, \frac \pi 2 + \theta_0\)</span> where</p>
-<p><span class="math display">\[\tan\theta_0 = \tanh \frac{\phi^{(l)}}{2} \implies \theta_0 = \frac\pi 4 - \frac{\psi^{(l)}}{2}\]</span></p>
+<p>Therefore, a random variable <span class="math inline">z \sim N(0, K^{(l)})</span> is equivalent to</p>
+<p><span class="math display">z = \sqrt{K_d^{(l)}\sin \psi^{(l)}} \begin{bmatrix} \cosh \frac{\phi^{(l)}}{2} &amp; \sinh \frac{\phi^{(l)}}{2} \\ \sinh \frac{\phi^{(l)}}{2} &amp; \cosh \frac{\phi^{(l)}}{2} \end{bmatrix} \begin{bmatrix}x\\y\end{bmatrix}</span></p>
+<p>where <span class="math inline">x, y</span> are standard normal.</p>
+<p>The region of integration is <span class="math inline">z_+ &gt; 0, z_- &gt; 0</span>, which is the region bounded by two rays of slope <span class="math inline">-\theta_0, \frac \pi 2 + \theta_0</span> where</p>
+<p><span class="math display">\tan\theta_0 = \tanh \frac{\phi^{(l)}}{2} \implies \theta_0 = \frac\pi 4 - \frac{\psi^{(l)}}{2}</span></p>
 <p>Now the integral becomes</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{1}{2\pi} \int e^{-\frac{x^2+y^2}{2}} \left( x \cosh\frac{\phi^{(l)}}{2} + y \sinh\frac{\phi^{(l)}}{2}\right)\left(x \sinh\frac{\phi^{(l)}}{2} + y \cosh\frac{\phi^{(l)}}{2}\right) K_d^{(l)} \sin\psi^{(l)} dxdy
-\]</span></p>
+</span></p>
 <p>In polar coordinates, this splits to a product of two simple integrals.</p>
 </section>
 <section id="chapter-6" class="level2">
 <h2 class="anchored" data-anchor-id="chapter-6">Chapter 6</h2>
 <ul>
-<li>page 173: It’d be good to start the section “6.3.2 Let’s Not Wire Together” by saying “In this section we derive the conditional distribution of the network’s output on the test set, conditional on the training set. We will do this by marginalizing a multivariate gaussian to derive <span class="math inline">\(z_B^{(L)}|y_A \sim N(m^\infty_{i,\beta}, \mathbb K_{\beta_1 \beta_2} \delta_{i_1i_2})\)</span>, where <span class="math inline">\(m^\infty, \mathbb K \delta\)</span> are the mean vector and the variance tensor. So if you know how to marginalize a gaussian, try to derive Eq (6.57) and Eq (6.64) yourself. (This should remind you of kernel regression and gaussian processes.) Then continue reading from Eq (6.66).”.
+<li>page 173: It’d be good to start the section “6.3.2 Let’s Not Wire Together” by saying “In this section we derive the conditional distribution of the network’s output on the test set, conditional on the training set. We will do this by marginalizing a multivariate gaussian to derive <span class="math inline">z_B^{(L)}|y_A \sim N(m^\infty_{i,\beta}, \mathbb K_{\beta_1 \beta_2} \delta_{i_1i_2})</span>, where <span class="math inline">m^\infty, \mathbb K \delta</span> are the mean vector and the variance tensor. So if you know how to marginalize a gaussian, try to derive Eq (6.57) and Eq (6.64) yourself. (This should remind you of kernel regression and gaussian processes.) Then continue reading from Eq (6.66).”.
 <ul>
 <li>I know you are trying to make this textbook truly introductory and I appreciate that. However, I think most machine learning and physicists researchers know how to marginalize a gaussian, since it is essential for gaussian processes and statistical mechanics (and this section is basically statistical mechanics + neural network gaussian process).</li>
 <li>It took me a bit too long to figure out that this is what the section is saying (what with all those gigantic symbols and formulas), so I think stating up front what the section is about would be great.</li>
 </ul></li>
 <li>page 177: I think it’d be good to point out that kernel methods also require a matrix inversion and thus is also impractical for large datasets. To be more precise, this section is about the neural network gaussian process, which is equivalent to Bayesian kernel ridge regression.</li>
-<li>page 179: We can make it sharper: “At the infinite width limit, every single neuron (both hidden and output) is completely independent from every other neuron, and we have <span class="math display">\[
+<li>page 179: We can make it sharper: “At the infinite width limit, every single neuron (both hidden and output) is completely independent from every other neuron, and we have <span class="math display">
 p(z_D^{(1)}, \dots, z_D^{(L)}) =\prod_{l=1}^L \prod_{i_l} p(z_{i, D}^{(l)})
-\]</span> which makes it clear that this is as”no representation” as it gets.”<br>
+</span> which makes it clear that this is as”no representation” as it gets.”<br>
 </li>
 <li>page 181. Eq (6.78) can be made even clearer like this:</li>
 </ul>
-<p><span class="math display">\[\mathbb{E}\left[\left(z_2^{(\ell)}\right)^2 \Big| \check z_1\right] - \mathbb{E}\left[\left(z_2^{(\ell)}\right)^2\right] = \left[\left(\check{z}_1^{(\ell)}\right)^2-\mathbb{E}\left[\left(z_1^{(\ell)}\right)^2\right]\right]\left[\frac{V^{(\ell)}}{2n_{\ell-1}\left(G^{(\ell)}\right)^2}\right] + O(1/n^2)\]</span></p>
+<p><span class="math display">\mathbb{E}\left[\left(z_2^{(\ell)}\right)^2 \Big| \check z_1\right] - \mathbb{E}\left[\left(z_2^{(\ell)}\right)^2\right] = \left[\left(\check{z}_1^{(\ell)}\right)^2-\mathbb{E}\left[\left(z_1^{(\ell)}\right)^2\right]\right]\left[\frac{V^{(\ell)}}{2n_{\ell-1}\left(G^{(\ell)}\right)^2}\right] + O(1/n^2)</span></p>
 </section>
 <section id="chapter-7" class="level2">
 <h2 class="anchored" data-anchor-id="chapter-7">Chapter 7</h2>
 <ul>
-<li>Page 196. learning-rate tensor should be explicitly called symmetric. That is, <span class="math inline">\(\lambda_{\mu \nu} = \lambda_{\nu\mu }\)</span>.</li>
+<li>Page 196. learning-rate tensor should be explicitly called symmetric. That is, <span class="math inline">\lambda_{\mu \nu} = \lambda_{\nu\mu }</span>.</li>
 <li>Page 198. “not necessarily positive” -&gt; “not necessarily positive-definite”.</li>
 <li>Page 198.
 <ul>
@@ -965,28 +981,28 @@ p(z_D^{(1)}, \dots, z_D^{(L)}) =\prod_{l=1}^L \prod_{i_l} p(z_{i, D}^{(l)})
 <ul>
 <li>page 244. I find the phrase “As we retroactively saw in §9.2” deeply confusing. If it is “retroactive” as in “In hindsight, …” then we did <em>NOT</em> see it back then, so we cannot say we “saw” it. Indeed, this proves it is mathematically impossible to “retroactively saw” anything. I suggest saying it like this instead:
 <ul>
-<li><p>Using this new perspective, please look back to §9.2, especially equation (9.43). At criticality, if we are to satisfy the equivalence principle, we must have <span class="math display">\[
+<li><p>Using this new perspective, please look back to §9.2, especially equation (9.43). At criticality, if we are to satisfy the equivalence principle, we must have <span class="math display">
 \cdots \sim \lambda_b^{(\ell-1)} \sim \lambda_W^{(\ell-1)} A_2 K^{\star}  \sim \lambda_b^{(\ell)} \sim \lambda_W^{(\ell)} A_2 K^{\star}
-\]</span> that is,<br>
-<span class="math display">\[\cdots \sim \lambda_b^{(\ell-1)} \sim \lambda_W^{(\ell-1)}  \sim \lambda_b^{(\ell)} \sim \lambda_W^{(\ell)}\]</span></p></li>
-<li><p>Now, suppose we train multiple MLP of the same width on the same dataset, but with different depths, we would have <span class="math inline">\(\Theta^{(L)} =(\lambda_b + \lambda_W A_2 K^*) L\)</span>. Then, if we set <span class="math display">\[
+</span> that is,<br>
+<span class="math display">\cdots \sim \lambda_b^{(\ell-1)} \sim \lambda_W^{(\ell-1)}  \sim \lambda_b^{(\ell)} \sim \lambda_W^{(\ell)}</span></p></li>
+<li><p>Now, suppose we train multiple MLP of the same width on the same dataset, but with different depths, we would have <span class="math inline">\Theta^{(L)} =(\lambda_b + \lambda_W A_2 K^*) L</span>. Then, if we set <span class="math display">
 \lambda_b = \tilde \lambda_b / L, \quad \lambda_W = \tilde \lambda_W / L
-\]</span> then <span class="math inline">\(\Theta^{(L)} = (\tilde\lambda_b + \tilde\lambda_W A_2 K^*)\)</span> regardless of depth <span class="math inline">\(L\)</span>. This is beneficial in practice as it allows us to tune learning rates <span class="math inline">\(\tilde\lambda_b, \tilde\lambda_W\)</span> on a shallow and narrow network quickly, then pick the best setting, and use those to train a deep and wide network, while being reasonably certain that the learning rates would <em>transfer</em> correctly.<br>
+</span> then <span class="math inline">\Theta^{(L)} = (\tilde\lambda_b + \tilde\lambda_W A_2 K^*)</span> regardless of depth <span class="math inline">L</span>. This is beneficial in practice as it allows us to tune learning rates <span class="math inline">\tilde\lambda_b, \tilde\lambda_W</span> on a shallow and narrow network quickly, then pick the best setting, and use those to train a deep and wide network, while being reasonably certain that the learning rates would <em>transfer</em> correctly.<br>
 </p></li>
-<li><p>Intuitively, this means that with the first gradient update step, the change in each of <span class="math inline">\(b^{(l)}, W^{(l)}\)</span> contributed to changing the loss by an approximately equal portion of <span class="math inline">\(\Delta \mathcal L_A/(2L)\)</span>.</p></li>
+<li><p>Intuitively, this means that with the first gradient update step, the change in each of <span class="math inline">b^{(l)}, W^{(l)}</span> contributed to changing the loss by an approximately equal portion of <span class="math inline">\Delta \mathcal L_A/(2L)</span>.</p></li>
 </ul></li>
 <li>page 245: Same comment applies for “we retroactively saw in §9.3”. I suggest this instead:
 <ul>
-<li>Using this new perspective, please look back to §9.3, especially equation (9.69). At criticality, if we are to satisfy the equivalence principle, the contribution of each layer’s weights and biases to the final NTK must be of order <span class="math inline">\(1/L\)</span> : <span class="math display">\[
+<li>Using this new perspective, please look back to §9.3, especially equation (9.69). At criticality, if we are to satisfy the equivalence principle, the contribution of each layer’s weights and biases to the final NTK must be of order <span class="math inline">1/L</span> : <span class="math display">
 \lambda_b^{(l)} (l/L)^{p_\perp} \sim \lambda_b^{(l)} \frac 1l (l/L)^{p_\perp} \sim \frac 1L
-\]</span></li>
+</span></li>
 </ul></li>
 </ul>
 <p>which can be satisfied by<br>
-<span class="math display">\[
+<span class="math display">
 \lambda_b^{(\ell)}=\widetilde{\lambda}_b\left(\frac{1}{\ell}\right)^{p_{\perp}} L^{p_{\perp}-1},
 \quad \lambda_W^{(\ell)}=\widetilde{\lambda}_W \left(\frac{L}{\ell}\right)^{p_{\perp}-1}
-\]</span></p>
+</span></p>
 </section>
 <section id="chapter-10" class="level2">
 <h2 class="anchored" data-anchor-id="chapter-10">Chapter 10</h2>
@@ -995,39 +1011,39 @@ p(z_D^{(1)}, \dots, z_D^{(L)}) =\prod_{l=1}^L \prod_{i_l} p(z_{i, D}^{(l)})
 <ul>
 <li>page 279: I think (10.110) can be explained better as follows:
 <ul>
-<li>We have to fit a function <span class="math inline">\((\epsilon_1, \epsilon_2) \mapsto \Theta_{\epsilon_1, \epsilon_2}\)</span>. Write it as <span class="math inline">\(f(x, y)\)</span>. By Taylor expansion, <span class="math display">\[f(x,y) = f(0,0) + \partial_x f(0,0) x  + \partial_x f(0,0) x + \frac 12 (\partial_{xx} f(0,0) xx + \partial_{yy} f(0,0) yy +2 \partial_{xy} f(0,0) xy) + O(x^3,y^3)\]</span></li>
-<li>If we know that <span class="math inline">\(f(x,y) = f(y,x)\)</span>, then we have <span class="math inline">\(\partial_{x}f(0,0) =\partial_{y} f(0,0)\)</span> and <span class="math inline">\(\partial_{xx}f(0,0) =\partial_{yy} f(0,0)\)</span>, so there are only 4 free coefficients. In particular, if we have a degree-2 polynomial <span class="math inline">\(p(x,y)\)</span> that is equal to <span class="math inline">\(f\)</span> for <span class="math inline">\((x,y) = (\pm 1, \pm 1)\)</span>, then we have <span class="math display">\[f(x,y) = p(x,y) + O(x^3, y^3)\]</span></li>
+<li>We have to fit a function <span class="math inline">(\epsilon_1, \epsilon_2) \mapsto \Theta_{\epsilon_1, \epsilon_2}</span>. Write it as <span class="math inline">f(x, y)</span>. By Taylor expansion, <span class="math display">f(x,y) = f(0,0) + \partial_x f(0,0) x  + \partial_x f(0,0) x + \frac 12 (\partial_{xx} f(0,0) xx + \partial_{yy} f(0,0) yy +2 \partial_{xy} f(0,0) xy) + O(x^3,y^3)</span></li>
+<li>If we know that <span class="math inline">f(x,y) = f(y,x)</span>, then we have <span class="math inline">\partial_{x}f(0,0) =\partial_{y} f(0,0)</span> and <span class="math inline">\partial_{xx}f(0,0) =\partial_{yy} f(0,0)</span>, so there are only 4 free coefficients. In particular, if we have a degree-2 polynomial <span class="math inline">p(x,y)</span> that is equal to <span class="math inline">f</span> for <span class="math inline">(x,y) = (\pm 1, \pm 1)</span>, then we have <span class="math display">f(x,y) = p(x,y) + O(x^3, y^3)</span></li>
 </ul></li>
 </ul>
 </section>
 <section id="chapter-11" class="level2">
 <h2 class="anchored" data-anchor-id="chapter-11">Chapter 11</h2>
 <ul>
-<li>page 312-313: (11.67) and (11.70) are trivial to evaluate if we use Dirac delta function: <span class="math inline">\(\sigma'' = (a_+ - a_-)\delta\)</span>.</li>
+<li>page 312-313: (11.67) and (11.70) are trivial to evaluate if we use Dirac delta function: <span class="math inline">\sigma'' = (a_+ - a_-)\delta</span>.</li>
 </ul>
 </section>
 <section id="chapter" class="level2">
 <h2 class="anchored" data-anchor-id="chapter">Chapter ∞</h2>
-<p>For ∞.2 Training at Finite Width, I find calling <span class="math inline">\(F\)</span> the “damping force” very puzzling. If we take the limit of continuous time, we will have something like</p>
-<p><span class="math display">\[
+<p>For ∞.2 Training at Finite Width, I find calling <span class="math inline">F</span> the “damping force” very puzzling. If we take the limit of continuous time, we will have something like</p>
+<p><span class="math display">
 \dot z(t) = -H z(t) + F(t)
-\]</span></p>
-<p>In this case, <span class="math inline">\(F\)</span> is not damping. Indeed, without “damping”, the system would just exponentially decay to zero. If anything, <span class="math inline">\(H\)</span> is the damping! I would rather call <span class="math inline">\(F\)</span> the “driving” force.</p>
+</span></p>
+<p>In this case, <span class="math inline">F</span> is not damping. Indeed, without “damping”, the system would just exponentially decay to zero. If anything, <span class="math inline">H</span> is the damping! I would rather call <span class="math inline">F</span> the “driving” force.</p>
 <p>For ∞.2 Training at Finite Width, it is useful to use matrix tensor product notation. In fact, a lot of it is really just high-school Olympiad methods in linear recurrence relation, but the heavy notation makes it hard to recognize.</p>
-<p>For example, <span class="math inline">\(X_{II}\)</span> can be written simply as <span class="math display">\[
+<p>For example, <span class="math inline">X_{II}</span> can be written simply as <span class="math display">
 X_{II} = \eta \left(I^{\otimes 2} - (I - \eta \tilde H)^{\otimes 2}\right)^{-1}
-\]</span> This allows us to simply evaluate:</p>
-<p><span class="math display">\[\begin{aligned}
+</span> This allows us to simply evaluate:</p>
+<p><span class="math display">\begin{aligned}
     b(t) &amp;= \eta \left(\sum_{s=0}^{t-1} ((I - \eta \tilde H)^s)^{\otimes 2}\right) \epsilon^F(0)^{\otimes 2} \\
     &amp;= \eta \left(I^{\otimes 2} - (I - \eta \tilde H)^{\otimes 2}\right)^{-1}\left(I^{\otimes 2} - ((I - \eta \tilde H)^t)^{\otimes 2}\right) \epsilon^F(0)^{\otimes 2}\\
     &amp;= X_{II} ((z-y)^{\otimes 2} - \epsilon^F(t)^{\otimes 2})
-    \end{aligned}\]</span> and similarly for <span class="math inline">\(c(t), X_{II}\)</span>.</p>
-<p>Equation (∞.122) directly results in (∞.123), without any derivation: <span class="math display">\[z^I(t) = \eta \sum_s F(s) - \hat H \eta \sum_s z^I(s) \implies \eta \sum_s z^I(s) = \hat H^{-1}\left(\eta \sum_s F(s) - z^I(t)\right)\]</span></p>
+    \end{aligned}</span> and similarly for <span class="math inline">c(t), X_{II}</span>.</p>
+<p>Equation (∞.122) directly results in (∞.123), without any derivation: <span class="math display">z^I(t) = \eta \sum_s F(s) - \hat H \eta \sum_s z^I(s) \implies \eta \sum_s z^I(s) = \hat H^{-1}\left(\eta \sum_s F(s) - z^I(t)\right)</span></p>
 </section>
 <section id="errors" class="level2">
 <h2 class="anchored" data-anchor-id="errors">Errors</h2>
 <ul>
-<li>page 213. (8.49) should be <span class="math inline">\(\sigma_{j;\alpha_1}\sigma_{j;\alpha_2}\)</span>.
+<li>page 213. (8.49) should be <span class="math inline">\sigma_{j;\alpha_1}\sigma_{j;\alpha_2}</span>.
 <ul>
 <li><img src="figure/image_1729134428057_0.png" class="img-fluid"></li>
 </ul></li>
@@ -1035,22 +1051,22 @@ X_{II} = \eta \left(I^{\otimes 2} - (I - \eta \tilde H)^{\otimes 2}\right)^{-1}
 <ul>
 <li><img src="figure/image_1729107225787_0.png" class="img-fluid"></li>
 </ul></li>
-<li>page 252, Eq (10.12) should have <span class="math inline">\(i, i\)</span> not <span class="math inline">\(i_1, i_2\)</span>
+<li>page 252, Eq (10.12) should have <span class="math inline">i, i</span> not <span class="math inline">i_1, i_2</span>
 <ul>
 <li><img src="figure/image_1729389509725_0.png" class="img-fluid"></li>
 </ul></li>
 <li>page 280, (10.113) (10.114)
 <ul>
 <li><img src="figure/image_1729725268825_0.png" class="img-fluid"></li>
-<li>Consider the special case where <span class="math inline">\(y = z^{(L)}\)</span> at the beginning. If this is the case, then the network would learn nothing, so we should have <span class="math inline">\(z^{(L)}(T) = z^{(L)}\)</span>. This then requires the signs to be in the way I wrote it.</li>
+<li>Consider the special case where <span class="math inline">y = z^{(L)}</span> at the beginning. If this is the case, then the network would learn nothing, so we should have <span class="math inline">z^{(L)}(T) = z^{(L)}</span>. This then requires the signs to be in the way I wrote it.</li>
 <li><img src="figure/image_1729725542189_0.png" class="img-fluid"></li>
 </ul></li>
 <li>page 281, (10.115), (10.116) needs to remove the factor of 4 as well.</li>
-<li>page 303, Eq (11.37) should have <span class="math inline">\(\delta_3\)</span>
+<li>page 303, Eq (11.37) should have <span class="math inline">\delta_3</span>
 <ul>
 <li><img src="figure/image_1729906535683_0.png" class="img-fluid"></li>
 </ul></li>
-<li>page 307, Eq (11.48) should use <span class="math inline">\(G\)</span> instead of <span class="math inline">\(K\)</span>. At least, it would be less confusing since the rest of the chapter uses <span class="math inline">\(G\)</span>, even though <span class="math inline">\(K\)</span> and <span class="math inline">\(G\)</span> are defined to be equal.
+<li>page 307, Eq (11.48) should use <span class="math inline">G</span> instead of <span class="math inline">K</span>. At least, it would be less confusing since the rest of the chapter uses <span class="math inline">G</span>, even though <span class="math inline">K</span> and <span class="math inline">G</span> are defined to be equal.
 <ul>
 <li><img src="figure/image_1729911263588_0.png" class="img-fluid"></li>
 </ul></li>

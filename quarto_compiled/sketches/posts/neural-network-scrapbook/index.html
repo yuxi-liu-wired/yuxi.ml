@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -554,7 +570,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Big-picture considerations like susceptibility to the noisy-TV problem are important for the choice of a good exploration algorithm. However, we found that getting seemingly-small details right in our simple algorithm made the difference between an agent that never leaves the first room and an agent that can pass the first level. To add stability to the training, we avoided saturation of the features and brought the intrinsic rewards to a predictable range. We also noticed <strong>significant improvements in performance of RND every time we discovered and fixed a bug</strong> (our favorite one involved accidentally zeroing an array which resulted in extrinsic returns being treated as non-episodic; we realized this was the case only after being puzzled by the extrinsic value function looking suspiciously periodic). Getting such details right was a significant part of achieving high performance even with algorithms conceptually similar to prior work. This is one reason to prefer simpler algorithms where possible. <span class="citation" data-cites="burdaReinforcementLearningPredictionbased2018">(<a href="#ref-burdaReinforcementLearningPredictionbased2018" role="doc-biblioref">Burda and Edwards 2018</a>)</span></p>
 </blockquote>
-<p>Around 2019, Gwern, Shawn Presser, and others, trained <span class="math inline">\(512\times 512\)</span> image generation models using the BigGAN architecture. However, they used <a href="https://github.com/google/compare_gan"><code>compare_gan</code></a>, which had a multiply-by-zero bug. Somehow it still worked, but not well enough compared to the original <a href="https://github.com/ajbrock/BigGAN-PyTorch"><code>BigGAN</code></a>.</p>
+<p>Around 2019, Gwern, Shawn Presser, and others, trained <span class="math inline">512\times 512</span> image generation models using the BigGAN architecture. However, they used <a href="https://github.com/google/compare_gan"><code>compare_gan</code></a>, which had a multiply-by-zero bug. Somehow it still worked, but not well enough compared to the original <a href="https://github.com/ajbrock/BigGAN-PyTorch"><code>BigGAN</code></a>.</p>
 <blockquote class="blockquote">
 <p>Our primary goal was to train &amp; release 512px BigGAN models on not just ImageNet but all the other datasets we had like anime datasets. The compare_gan BigGAN implementation turned out to have a subtle +1 gamma bug which stopped us from reaching results comparable to the model; while we beat our heads against the wall trying to figure out why it was working but not well enough (figuring it out far too late, after we had disbanded) … “Neural nets want to work” – even if they start out being effectively multiplied by zero. <span class="citation" data-cites="branwenGANsDidntFail2022">(<a href="#ref-branwenGANsDidntFail2022" role="doc-biblioref">Branwen 2022</a>)</span></p>
 </blockquote>
@@ -582,11 +598,11 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>In his talk “Artificial Intelligence Vision: Progress and Non-Progress”, Takeo Kanade (from Carnegie Mellon) noted that computer memories back in the 1960s were tiny by today’s standards and could hold only one image at a time. For his doctoral dissertation in 1974, Takeo had shown that, though his program could find a tank in one image, it was too difficult for it to do so in other images where the tank was in a different position and the lighting was different. But, by the time his early students graduated, the programs they designed could recognize tanks under more general conditions because computers were more powerful. Today his students’ programs can recognize tanks in any image. The difference is that today we have access to millions of images that sample a wide range of poses and lighting conditions, and computers are millions of times more powerful. <span class="citation" data-cites="sejnowskiDeepLearningRevolution2018">(<a href="#ref-sejnowskiDeepLearningRevolution2018" role="doc-biblioref">Sejnowski 2018, 256</a>)</span></p>
 </blockquote>
-<p>There was not a lot of actual research on tank recognition. <span class="citation" data-cites="kanalRecognitionSystemDesign1964">(<a href="#ref-kanalRecognitionSystemDesign1964" role="doc-biblioref">Kanal and Randall 1964</a>)</span> contains some good pictures. The network was a two-layered perceptron network, of type <span class="math inline">\(\mathbb{R}^{N \times N} \to \{0, 1\}^{32\times 32} \to \{0, 1\}^{24} \to \{0, 1\}\)</span>. It works as follows:</p>
+<p>There was not a lot of actual research on tank recognition. <span class="citation" data-cites="kanalRecognitionSystemDesign1964">(<a href="#ref-kanalRecognitionSystemDesign1964" role="doc-biblioref">Kanal and Randall 1964</a>)</span> contains some good pictures. The network was a two-layered perceptron network, of type <span class="math inline">\mathbb{R}^{N \times N} \to \{0, 1\}^{32\times 32} \to \{0, 1\}^{24} \to \{0, 1\}</span>. It works as follows:</p>
 <ul>
-<li>The grayscale photo is down-scaled and binarized by convolution with a <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator">discrete Laplace filter</a>: <span class="math inline">\(\mathbb{R}^{N \times N} \to \{0, 1\}^{32\times 32}\)</span>.</li>
-<li>The weights for the 24 hidden perceptrons are constructed by <a href="https://en.wikipedia.org/wiki/Linear_discriminant_analysis">linear discriminant analysis</a>: <span class="math inline">\(\{0, 1\}^{32\times 32} \to \{0, 1\}^{24}\)</span></li>
-<li>The output perceptron is learned by the <a href="https://en.wikipedia.org/wiki/Perceptron#Learning_algorithm_for_a_single-layer_perceptron">perceptron learning rule</a>: <span class="math inline">\(\{0, 1\}^{24} \to \{0, 1\}\)</span>.</li>
+<li>The grayscale photo is down-scaled and binarized by convolution with a <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator">discrete Laplace filter</a>: <span class="math inline">\mathbb{R}^{N \times N} \to \{0, 1\}^{32\times 32}</span>.</li>
+<li>The weights for the 24 hidden perceptrons are constructed by <a href="https://en.wikipedia.org/wiki/Linear_discriminant_analysis">linear discriminant analysis</a>: <span class="math inline">\{0, 1\}^{32\times 32} \to \{0, 1\}^{24}</span></li>
+<li>The output perceptron is learned by the <a href="https://en.wikipedia.org/wiki/Perceptron#Learning_algorithm_for_a_single-layer_perceptron">perceptron learning rule</a>: <span class="math inline">\{0, 1\}^{24} \to \{0, 1\}</span>.</li>
 </ul>
 <div id="fig-kanal-1964-neural-tanks" class="quarto-layout-panel page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full">
@@ -641,7 +657,7 @@ Figure&nbsp;1: Images from <span class="citation" data-cites="kanalRecognitionSy
 </section>
 <section id="the-second-neural-network-winter" class="level2">
 <h2 class="anchored" data-anchor-id="the-second-neural-network-winter">The second neural network winter</h2>
-<p><a href="https://yuxi.ml/essays/posts/perceptron-controversy/#connectionism-19451970">The first neural network winter</a> started around 1965, when the main research centers pivoted away from neural networks: the Stanford Research Institute group turned to symbolic AI; the Bernard Widrow group turned to using <em>single</em> neurons as adaptive filters; the Frank Rosenblatt group died from lack of funds and then the literal death of Rosenblatt in 1971. It rose again around 1985, when backpropagation and improved compute allowed researchers to train neural networks on the order of <span class="math inline">\(10^4\)</span> parameters and <span class="math inline">\(4\)</span> layers.</p>
+<p><a href="https://yuxi.ml/essays/posts/perceptron-controversy/#connectionism-19451970">The first neural network winter</a> started around 1965, when the main research centers pivoted away from neural networks: the Stanford Research Institute group turned to symbolic AI; the Bernard Widrow group turned to using <em>single</em> neurons as adaptive filters; the Frank Rosenblatt group died from lack of funds and then the literal death of Rosenblatt in 1971. It rose again around 1985, when backpropagation and improved compute allowed researchers to train neural networks on the order of <span class="math inline">10^4</span> parameters and <span class="math inline">4</span> layers.</p>
 <p>Something strange happened during the 1990 – 2010 period: the neural network research community silently disappeared again for another 20 years. Unlike the previous case, there was no great mythology or drama about this winter, no <em>Perceptron</em> controversy.</p>
 <p>I would like to find out why.</p>
 <blockquote class="blockquote">

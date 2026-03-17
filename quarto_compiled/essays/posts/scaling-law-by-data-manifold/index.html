@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -492,19 +508,19 @@ window.Quarto = {
 
 
 <p>This is a theory of neural scaling law, proposed by <span class="citation" data-cites="bahriExplainingNeuralScaling2021 sharmaScalingLawsData2022">(<a href="#ref-bahriExplainingNeuralScaling2021" role="doc-biblioref">Bahri et al. 2021</a>; <a href="#ref-sharmaScalingLawsData2022" role="doc-biblioref">Sharma and Kaplan 2022</a>)</span></p>
-<p>According to this theory, a neural network, when trained to convergence, allocates its <span class="math inline">\(N\)</span> parameters in two parts: * A fixed number of parameters that map the data to an intrinsic data manifold of dim <span class="math inline">\(d\)</span>. * All other parameters that handle pieces of this manifold. Loss <span class="math inline">\(\propto\)</span> the volume of each manifold piece.</p>
-<p>They argued that the loss function should scale as <span class="math inline">\(L \propto N^{-4/d}\)</span> for cross-entropy and mean-square losses.</p>
+<p>According to this theory, a neural network, when trained to convergence, allocates its <span class="math inline">N</span> parameters in two parts: * A fixed number of parameters that map the data to an intrinsic data manifold of dim <span class="math inline">d</span>. * All other parameters that handle pieces of this manifold. Loss <span class="math inline">\propto</span> the volume of each manifold piece.</p>
+<p>They argued that the loss function should scale as <span class="math inline">L \propto N^{-4/d}</span> for cross-entropy and mean-square losses.</p>
 <section id="the-manifold-hypothesis" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="the-manifold-hypothesis">The manifold hypothesis</h2>
-<p>Consider the space of all MNIST images. Each MNIST image is a 28x28 grayscale, so the total space is <span class="math inline">\(\mathbb R^{28\times 28} = \mathbb R^{784}\)</span>.</p>
-<p>However, as you may have seen in experiments with the VAE, most of the MNIST dataset “collapses” onto a much smaller subset of <span class="math inline">\(\mathbb R^{784}\)</span>. This is the “(intrinsic) data manifold”, with a dimension much smaller than <span class="math inline">\(784\)</span>. Indeed, the very fact that the intrinsic dimension is small allows us to have meaningful “2D slices” of the dataset:</p>
+<p>Consider the space of all MNIST images. Each MNIST image is a 28x28 grayscale, so the total space is <span class="math inline">\mathbb R^{28\times 28} = \mathbb R^{784}</span>.</p>
+<p>However, as you may have seen in experiments with the VAE, most of the MNIST dataset “collapses” onto a much smaller subset of <span class="math inline">\mathbb R^{784}</span>. This is the “(intrinsic) data manifold”, with a dimension much smaller than <span class="math inline">784</span>. Indeed, the very fact that the intrinsic dimension is small allows us to have meaningful “2D slices” of the dataset:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/cvae_latent_space.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption class="margin-caption">Figure from <a href="https://web.archive.org/web/20231123105455/https://www.tensorflow.org/tutorials/generative/cvae"><em>Convolutional Variational Autoencoder</em> - Tensorflow Core Tutorials</a>. More images can be found in <a href="https://savadikarc.github.io/post/2020/01/30/vae_vis/"><em>Visualizing the Variational Autoencoder</em></a>, and can be regenerated in about 10 minutes with a Google Colab GPU.</figcaption>
 </figure>
 </div>
-<p>Real data can be expensive, though, which is why we often use “toy” datasets with known dimensions, generated by a known random process. For example, the following is the “Swiss roll” dataset. It is generated by first populating a 2D square <span class="math inline">\([0, 1]^2\)</span>, then use a function <span class="math inline">\(f: \mathbb R^2 \to \mathbb R^3\)</span> to “roll up” the square into 3D space.</p>
+<p>Real data can be expensive, though, which is why we often use “toy” datasets with known dimensions, generated by a known random process. For example, the following is the “Swiss roll” dataset. It is generated by first populating a 2D square <span class="math inline">[0, 1]^2</span>, then use a function <span class="math inline">f: \mathbb R^2 \to \mathbb R^3</span> to “roll up” the square into 3D space.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/Isomap_on_Swiss_roll.png" class="img-fluid figure-img"></p>
@@ -514,81 +530,81 @@ window.Quarto = {
 </section>
 <section id="deriving-the-scaling-law" class="level2">
 <h2 class="anchored" data-anchor-id="deriving-the-scaling-law">Deriving the scaling law</h2>
-<p>We can get a feel for where the number <span class="math inline">\(4/d\)</span> came from by studying a simpler model.</p>
+<p>We can get a feel for where the number <span class="math inline">4/d</span> came from by studying a simpler model.</p>
 <section id="prototype-case" class="level3">
 <h3 class="anchored" data-anchor-id="prototype-case">Prototype case</h3>
-<p>Consider a problem of regression. We have to learn the true function on the <span class="math inline">\(n\)</span>-dimensional cube: <span class="math inline">\(f: [0, 1]^d \to \mathbb{R}\)</span>. Assume it is <a href="https://en.wikipedia.org/wiki/Lipschitz_continuity">Lipschitz continuous</a>, that is, its first derivative is upper bounded by <span class="math inline">\(\lambda\)</span>. In particular, this means <span class="math inline">\(|f(x) - f(y)| \leq \lambda |x-y|\)</span> for all <span class="math inline">\(x, y\)</span> in the domain.</p>
-<p>We approximate the true function with a piecewise-constant function <span class="math inline">\(\hat f: [0, 1]^d \to \mathbb{R}\)</span>, meaning that its graph looks like a staircase. We divide the cube into <span class="math inline">\(N\)</span> equal smaller cubic pieces, and define <span class="math inline">\(\hat f\)</span> to be equal to the value of <span class="math inline">\(f\)</span> at the center of each cubic piece.</p>
+<p>Consider a problem of regression. We have to learn the true function on the <span class="math inline">n</span>-dimensional cube: <span class="math inline">f: [0, 1]^d \to \mathbb{R}</span>. Assume it is <a href="https://en.wikipedia.org/wiki/Lipschitz_continuity">Lipschitz continuous</a>, that is, its first derivative is upper bounded by <span class="math inline">\lambda</span>. In particular, this means <span class="math inline">|f(x) - f(y)| \leq \lambda |x-y|</span> for all <span class="math inline">x, y</span> in the domain.</p>
+<p>We approximate the true function with a piecewise-constant function <span class="math inline">\hat f: [0, 1]^d \to \mathbb{R}</span>, meaning that its graph looks like a staircase. We divide the cube into <span class="math inline">N</span> equal smaller cubic pieces, and define <span class="math inline">\hat f</span> to be equal to the value of <span class="math inline">f</span> at the center of each cubic piece.</p>
 <div id="thm-mse-scaling" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1</strong></span> When the loss is mean square error, it scales like <span class="math inline">\(L = \Theta(N^{-2/d})\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> When the loss is mean square error, it scales like <span class="math inline">L = \Theta(N^{-2/d})</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>With <span class="math inline">\(N\)</span> parameters, we can divide the <span class="math inline">\([0, 1]^d\)</span> cube into <span class="math inline">\(N\)</span> equal parts, therefore, each cube has side length <span class="math inline">\(N^{-1/d}\)</span>. Therefore, the distance between the center of each cube and the point farthest from the center is also <span class="math inline">\(\Theta(N^{-1/d})\)</span>.</p>
-<p>Now, since the function has bounded first derivative, we know that the difference between the function value at the center of the cube and the function value at the farthest point is bounded by <span class="math inline">\(\lambda \cdot \Theta(N^{-1/d}) = \Theta(N^{-1/d})\)</span>. Therefore, the mean square loss on each individual little cube is bounded by <span class="math inline">\(\Theta(N^{-2/d})\)</span>.</p>
-<p>And since the overall mean square loss is the average of the loss on each individual cube, the total loss is also bounded by <span class="math inline">\(\Theta(N^{-2/d})\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>With <span class="math inline">N</span> parameters, we can divide the <span class="math inline">[0, 1]^d</span> cube into <span class="math inline">N</span> equal parts, therefore, each cube has side length <span class="math inline">N^{-1/d}</span>. Therefore, the distance between the center of each cube and the point farthest from the center is also <span class="math inline">\Theta(N^{-1/d})</span>.</p>
+<p>Now, since the function has bounded first derivative, we know that the difference between the function value at the center of the cube and the function value at the farthest point is bounded by <span class="math inline">\lambda \cdot \Theta(N^{-1/d}) = \Theta(N^{-1/d})</span>. Therefore, the mean square loss on each individual little cube is bounded by <span class="math inline">\Theta(N^{-2/d})</span>.</p>
+<p>And since the overall mean square loss is the average of the loss on each individual cube, the total loss is also bounded by <span class="math inline">\Theta(N^{-2/d})</span>.</p>
 </div>
 </section>
 <section id="generalization" class="level3">
 <h3 class="anchored" data-anchor-id="generalization">Generalization</h3>
-<p>More generally, if <span class="math inline">\(f\)</span> has bounded second-derivative, and we use a piecewise-linear <span class="math inline">\(\hat f\)</span> function approximator, then the mean square loss scales like <span class="math inline">\(\Theta(N^{-4/d})\)</span>. By piece-wise linear, we mean that the domain of <span class="math inline">\(\hat f\)</span> is divided into little cubes, and it is linear on each little cube.</p>
+<p>More generally, if <span class="math inline">f</span> has bounded second-derivative, and we use a piecewise-linear <span class="math inline">\hat f</span> function approximator, then the mean square loss scales like <span class="math inline">\Theta(N^{-4/d})</span>. By piece-wise linear, we mean that the domain of <span class="math inline">\hat f</span> is divided into little cubes, and it is linear on each little cube.</p>
 <p>Indeed, this generalizes in the obvious way:</p>
 <div id="thm-general-case" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2</strong></span> If the loss is mean <span class="math inline">\(p\)</span>-th power loss, <span class="math inline">\(f\)</span> has bounded <span class="math inline">\(k+1\)</span>-th order derivatives, and <span class="math inline">\(\hat f\)</span> is composed of piece-wise <span class="math inline">\(k\)</span>-degree polynomials, then the loss scales like <span class="math inline">\(\Theta(N^{-p(k+1)/d})\)</span>.</p>
-<p>Since the KL-divergence is approximately MSE loss when the predictor is close to correct, the loss scales like <span class="math inline">\(\Theta(N^{-2(k+1)/d})\)</span> in this case.</p>
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> If the loss is mean <span class="math inline">p</span>-th power loss, <span class="math inline">f</span> has bounded <span class="math inline">k+1</span>-th order derivatives, and <span class="math inline">\hat f</span> is composed of piece-wise <span class="math inline">k</span>-degree polynomials, then the loss scales like <span class="math inline">\Theta(N^{-p(k+1)/d})</span>.</p>
+<p>Since the KL-divergence is approximately MSE loss when the predictor is close to correct, the loss scales like <span class="math inline">\Theta(N^{-2(k+1)/d})</span> in this case.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>We prove another case where the loss is still mean square error, but <span class="math inline">\(f\)</span> has bounded <span class="math inline">\(2\)</span>-th order derivatives.</p>
-<p>By Taylor expansion, if we use the first-order Taylor expansion to approximate <span class="math inline">\(f\)</span> at the center of each cube, then the error is bounded by <span class="math inline">\(\Theta(N^{-2/d})\)</span>. And since the mean square loss is the average of the square of the error, the total mean squared loss is bounded by <span class="math inline">\(\Theta(N^{-4/d})\)</span> on each little cube.</p>
-<p>And since the overall mean square loss is the average of the loss on each individual cube, the total loss is also bounded by <span class="math inline">\(\Theta(N^{-4/d})\)</span>.</p>
-<p>For the general case, take the Taylor expansion to the <span class="math inline">\(k\)</span>-th order at the center of each little cube.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>We prove another case where the loss is still mean square error, but <span class="math inline">f</span> has bounded <span class="math inline">2</span>-th order derivatives.</p>
+<p>By Taylor expansion, if we use the first-order Taylor expansion to approximate <span class="math inline">f</span> at the center of each cube, then the error is bounded by <span class="math inline">\Theta(N^{-2/d})</span>. And since the mean square loss is the average of the square of the error, the total mean squared loss is bounded by <span class="math inline">\Theta(N^{-4/d})</span> on each little cube.</p>
+<p>And since the overall mean square loss is the average of the loss on each individual cube, the total loss is also bounded by <span class="math inline">\Theta(N^{-4/d})</span>.</p>
+<p>For the general case, take the Taylor expansion to the <span class="math inline">k</span>-th order at the center of each little cube.</p>
 </div>
 </section>
 <section id="scaling-of-nearest-neighbor-rule" class="level3">
 <h3 class="anchored" data-anchor-id="scaling-of-nearest-neighbor-rule">Scaling of nearest neighbor rule</h3>
-<p>What is the worst possible scaling? It would be when <span class="math inline">\(k=0\)</span> and <span class="math inline">\(p=1\)</span>, giving us <span class="math inline">\(L = \Theta(N^{-1/d})\)</span>. What does this mean? To have <span class="math inline">\(k=0\)</span> means that we use piecewise-constant fitting function <span class="math inline">\(\hat f\)</span>. To have <span class="math inline">\(p=1\)</span> means that we are using the L1-loss. This is essentially piecewise constant, median regression.</p>
+<p>What is the worst possible scaling? It would be when <span class="math inline">k=0</span> and <span class="math inline">p=1</span>, giving us <span class="math inline">L = \Theta(N^{-1/d})</span>. What does this mean? To have <span class="math inline">k=0</span> means that we use piecewise-constant fitting function <span class="math inline">\hat f</span>. To have <span class="math inline">p=1</span> means that we are using the L1-loss. This is essentially piecewise constant, median regression.</p>
 <p>Under mild assumptions, the nearest neighbor rule for classification has the same form of scaling, where the loss is not L1-loss, but 0-1 loss.</p>
 <p>People have found sharper scaling laws under assuming nicer datasets, using complicated functional analysis tools scaling laws. A dataset can be “nice” in several ways. One way is to have few outliers: it should have a thin tail, looking more like a box, rather than a gently rising hill. Another way is to have smoothly varying boundaries: its boundary should not look “bumpy”. See <span class="citation" data-cites="yangTwoPhasesScaling2023">(<a href="#ref-yangTwoPhasesScaling2023" role="doc-biblioref">Yang and Zhang 2023</a>)</span> for a brief review and further citations to the literature.</p>
 </section>
 </section>
 <section id="experiments" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
-<p>According to the theory, if the data manifold has dimension <span class="math inline">\(d\)</span>, then as we scale up a neural network with <span class="math inline">\(N\)</span> parameters, the MSE loss of a fully-trained network would scale like <span class="math inline">\(L \sim N^{-\alpha}\)</span>, where <span class="math inline">\(\alpha \approx 4/d\)</span>. We test this in two ways, once with synthetic datasets, where we know that the data manifold has the desired number of dimensions, and once with the <a href="https://en.wikipedia.org/wiki/CIFAR-10">CIFAR-10</a> dataset, where we do not have the dimension of the data manifold, and must estimate it.</p>
+<p>According to the theory, if the data manifold has dimension <span class="math inline">d</span>, then as we scale up a neural network with <span class="math inline">N</span> parameters, the MSE loss of a fully-trained network would scale like <span class="math inline">L \sim N^{-\alpha}</span>, where <span class="math inline">\alpha \approx 4/d</span>. We test this in two ways, once with synthetic datasets, where we know that the data manifold has the desired number of dimensions, and once with the <a href="https://en.wikipedia.org/wiki/CIFAR-10">CIFAR-10</a> dataset, where we do not have the dimension of the data manifold, and must estimate it.</p>
 <p>All code for generating the dataset, and for analyzing the dataset, are in a GitHub repo: <a href="https://github.com/yuxi-liu-wired/scaling-law-by-data-manifold"><code>yuxi-liu-wired/scaling-law-by-data-manifold</code></a>.</p>
 <section id="synthetic-data-manifolds" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="synthetic-data-manifolds">Synthetic data manifolds</h3>
-<p>Since Consider the simplest data manifold: <span class="math inline">\(\mathbb R^d\)</span>, affine-transformed, then embedded in <span class="math inline">\(\mathbb R^n\)</span>, with <span class="math inline">\(n &gt; d\)</span>.</p>
+<p>Since Consider the simplest data manifold: <span class="math inline">\mathbb R^d</span>, affine-transformed, then embedded in <span class="math inline">\mathbb R^n</span>, with <span class="math inline">n &gt; d</span>.</p>
 <p>To synthesize such a data manifold, we randomly initialize a <strong>teacher network</strong>, so-called because it implements the function that a <strong>student network</strong> will fit to by supervised training. Each teacher network is constructed thus:</p>
 <ul>
-<li>The number of neurons in each layer are: <span class="math inline">\([d, 9, 600, 600, 1]\)</span></li>
+<li>The number of neurons in each layer are: <span class="math inline">[d, 9, 600, 600, 1]</span></li>
 <li>It has 0 bias.</li>
-<li>The weights between layers are sampled from <span class="math inline">\(\mathcal N(0, m^{-1/2})\)</span> , where <span class="math inline">\(m\)</span> is the input size of the layer (a form of He initialization).</li>
+<li>The weights between layers are sampled from <span class="math inline">\mathcal N(0, m^{-1/2})</span> , where <span class="math inline">m</span> is the input size of the layer (a form of He initialization).</li>
 <li>The activation function at the second (with 9 neurons) and last layers are identity. All other activation functions are ReLU.</li>
 </ul>
-<p>Once we have constructed a teacher network, we use it to generate a dataset <span class="math inline">\(\{(x_i, y_i)\}_i\)</span> in this way:</p>
+<p>Once we have constructed a teacher network, we use it to generate a dataset <span class="math inline">\{(x_i, y_i)\}_i</span> in this way:</p>
 <ul>
-<li>Generate random gaussian vectors <span class="math inline">\(\{t_i\}_i\)</span> in <span class="math inline">\(\mathbb R^d\)</span>, with mean <span class="math inline">\(0\)</span> and std <span class="math inline">\(I_{d\times d}\)</span>.</li>
-<li>For each <span class="math inline">\(t \in \{t_i\}_i\)</span>, push <span class="math inline">\(t\)</span> through the teacher network.</li>
-<li>Let <span class="math inline">\(x \in \mathbb R^9\)</span> be the teacher network activation at the second layer, with 9 neurons.</li>
-<li>Let <span class="math inline">\(y \in \mathbb R\)</span> be the teacher network output.</li>
+<li>Generate random gaussian vectors <span class="math inline">\{t_i\}_i</span> in <span class="math inline">\mathbb R^d</span>, with mean <span class="math inline">0</span> and std <span class="math inline">I_{d\times d}</span>.</li>
+<li>For each <span class="math inline">t \in \{t_i\}_i</span>, push <span class="math inline">t</span> through the teacher network.</li>
+<li>Let <span class="math inline">x \in \mathbb R^9</span> be the teacher network activation at the second layer, with 9 neurons.</li>
+<li>Let <span class="math inline">y \in \mathbb R</span> be the teacher network output.</li>
 </ul>
 <p>First, we define the “student” neural network architecture:</p>
 <ul>
-<li>The number of neurons in each layer are: <span class="math inline">\([9, n, n, 1]\)</span>.</li>
+<li>The number of neurons in each layer are: <span class="math inline">[9, n, n, 1]</span>.</li>
 <li>The biases are initialized to 0.</li>
-<li>The weights between layers are sampled from <span class="math inline">\(\mathcal N(0, m^{-1/2})\)</span>, where <span class="math inline">\(m\)</span> is the input size of the layer (a form of He initialization).</li>
+<li>The weights between layers are sampled from <span class="math inline">\mathcal N(0, m^{-1/2})</span>, where <span class="math inline">m</span> is the input size of the layer (a form of He initialization).</li>
 <li>All activation functions are ReLU.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/teacher_neural_network.svg" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">An example teacher network architecture with <span class="math inline">\([9, 5, 5, 1]\)</span> neurons.</figcaption>
+<figcaption class="margin-caption">An example teacher network architecture with <span class="math inline">[9, 5, 5, 1]</span> neurons.</figcaption>
 </figure>
 </div>
 <p>The parameter count is</p>
-<p><span class="math display">\[
+<p><span class="math display">
 N = \underbrace{(n+n+1)}_{\text{first layer}} + \underbrace{(9n + n^2 + n)}_{\text{second layer}}
-\]</span></p>
-<p>With these settings, I ran the experiment many times, for <span class="math inline">\(N\)</span> ranging from <span class="math inline">\(500\)</span> to <span class="math inline">\(10000\)</span>, and <span class="math inline">\(d\)</span> from <span class="math inline">\(2\)</span> to <span class="math inline">\(18\)</span>. The results do not look as clean as given in the paper, despite that I have tried my best to match the experimental design as specified in the paper.</p>
+</span></p>
+<p>With these settings, I ran the experiment many times, for <span class="math inline">N</span> ranging from <span class="math inline">500</span> to <span class="math inline">10000</span>, and <span class="math inline">d</span> from <span class="math inline">2</span> to <span class="math inline">18</span>. The results do not look as clean as given in the paper, despite that I have tried my best to match the experimental design as specified in the paper.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/training_runs_and_linear_fits.png" class="img-fluid figure-img"></p>
@@ -598,7 +614,7 @@ N = \underbrace{(n+n+1)}_{\text{first layer}} + \underbrace{(9n + n^2 + n)}_{\te
 </section>
 <section id="cifar-10" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="cifar-10">CIFAR-10</h3>
-<p>The CIFAR-10 dataset is a popular benchmark, consisting of 32-by-32 RGB images in 10 different image classes, with 6,000 images per class. While the images live in a space of dimension <span class="math inline">\(32^2 \times 3 = 3072\)</span>, <span class="citation" data-cites="sharmaScalingLawsData2022">(<a href="#ref-sharmaScalingLawsData2022" role="doc-biblioref">Sharma and Kaplan 2022</a>)</span> reports that the CIFAR-10 images lies in a data manifold with dimension of only around 16–18.</p>
+<p>The CIFAR-10 dataset is a popular benchmark, consisting of 32-by-32 RGB images in 10 different image classes, with 6,000 images per class. While the images live in a space of dimension <span class="math inline">32^2 \times 3 = 3072</span>, <span class="citation" data-cites="sharmaScalingLawsData2022">(<a href="#ref-sharmaScalingLawsData2022" role="doc-biblioref">Sharma and Kaplan 2022</a>)</span> reports that the CIFAR-10 images lies in a data manifold with dimension of only around 16–18.</p>
 <p>To fit the dataset, I trained a family of convolutional networks with 3 convolution layers and 2 fully connected layers on CIFAR-10. In order to run a controlled experiment, I varied as few parameters as possible, with the following designs:</p>
 <ul>
 <li>The network architecture is fixed, and the network parameter count is changed by changing a single number: the number of channels in the convolutional layers.</li>
@@ -606,8 +622,8 @@ N = \underbrace{(n+n+1)}_{\text{first layer}} + \underbrace{(9n + n^2 + n)}_{\te
 <li>Each training run lasts 50 epochs, with batch size 128.</li>
 <li>The optimizer is <code>AdamW</code> with <code>lr=5e-4</code>.</li>
 </ul>
-<p>With these settings, I generated all the data and logged them into TensorBoard log files, then cleaned them up for quantile regression. Plotting in log-log scale, with the x-axis being the model parameter count, and the y-axis being the cross-entropy loss, we would get a downward sloping line. Our hope is that the line should have a slope of close to <span class="math inline">\(-4/d\)</span>, where <span class="math inline">\(d \approx 17\)</span>.</p>
-<p>This is exactly what I have found. Not only is it true for cross-entropy loss, it is also true for classification accuracy (0-1 loss), except the slope is <span class="math inline">\(+4/d\)</span>.</p>
+<p>With these settings, I generated all the data and logged them into TensorBoard log files, then cleaned them up for quantile regression. Plotting in log-log scale, with the x-axis being the model parameter count, and the y-axis being the cross-entropy loss, we would get a downward sloping line. Our hope is that the line should have a slope of close to <span class="math inline">-4/d</span>, where <span class="math inline">d \approx 17</span>.</p>
+<p>This is exactly what I have found. Not only is it true for cross-entropy loss, it is also true for classification accuracy (0-1 loss), except the slope is <span class="math inline">+4/d</span>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/violin_plot_with_linear_fits.png" class="img-fluid figure-img"></p>

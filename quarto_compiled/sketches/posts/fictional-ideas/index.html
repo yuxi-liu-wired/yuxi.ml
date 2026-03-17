@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -536,7 +552,7 @@ window.Quarto = {
 </section>
 <section id="tinkerheads-the-neoliberal-pathway" class="level4">
 <h4 class="anchored" data-anchor-id="tinkerheads-the-neoliberal-pathway">Tinkerheads: the neoliberal pathway</h4>
-<p>A world 20 years into the future. No AI revolution, but there is some brain-computer interfacing. Some of the CEOs started tinkering with their brains to increase productivity, and with their input-output channels. During a transition period, perhaps lasting ten years or so, the top executives are those that install the latest personality tweaks to their brainwares so that they are the most productive and focused. For them, even dating and altruism will be only a tool to further the expectation of the company’s long-term <span class="math inline">\(\log(\text{growth rate})\)</span>.</p>
+<p>A world 20 years into the future. No AI revolution, but there is some brain-computer interfacing. Some of the CEOs started tinkering with their brains to increase productivity, and with their input-output channels. During a transition period, perhaps lasting ten years or so, the top executives are those that install the latest personality tweaks to their brainwares so that they are the most productive and focused. For them, even dating and altruism will be only a tool to further the expectation of the company’s long-term <span class="math inline">\log(\text{growth rate})</span>.</p>
 <p>When these tinkerheads interface to each other, they speak in a mumbled wave of numbers. To people not tinkered in the head, they shrug and laugh at those CEO, “These superrich and their ridiculous dreams of becoming superhuman… don’t they realize that they are nothing more than human? They talk in numbers, but only as a fake facade, a useless ‘upgrade’ to real honest talk. They symbolize and metabolize, but they babble nonsense. What symbol corresponds to ‘responsibility’, which corresponds to ‘wish’, which corresponds to ‘believe’?”</p>
 <p>A few argued back, saying “Deaf people talk to each other with a whole language of gestures. These gestures are not merely miming, or hand-spelling. Similarly, tinkerheads talk with a whole language that is not a mere miming, or number-spelling, of wisdoms. We may even say that they have found a more effective wisdom. Like Galileo discovering that the book of nature is written in mathematics, not Hebrew, they discovered that the book of man is written in mathematics, not stories.”</p>
 <p>The superrich parties continued, but now there are two kinds. The unproductive ones, or the “real parties”, attended by those “old money” who do not deign to earn money by their own means. The productive ones, attended by the tinkerheads. The friends and families of tinkerheads either get tinkered or fall away. Yachts and castles and mansions would be bought, perhaps, but only to interface with the old money.</p>

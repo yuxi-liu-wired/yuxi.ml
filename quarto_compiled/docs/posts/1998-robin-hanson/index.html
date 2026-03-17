@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -560,39 +576,39 @@ window.Quarto = {
 <p>This model is one of the simplest models of <em>endogenous growth</em>, allowing for real long-term growth within the model and implicitly including all forms of capital improvement, including research and development. The model’s main simplification is that it does not explicitly distinguish between various forms of capital and consumption, aggregating them instead to a single generic form.</p>
 <p>First some notation, including standard values where applicable.</p>
 <ul>
-<li><span class="math inline">\(n\)</span> = growth rate of world population, now <span class="math inline">\(\sim 1.4\% / \rm{yr}\)</span>.</li>
-<li><span class="math inline">\(g\)</span> = growth rate of world per-capita consumption, now <span class="math inline">\(\sim 2\% / \rm{yr}\)</span>.</li>
-<li><span class="math inline">\(p\)</span> = typical discount rate, <span class="math inline">\(\sim 3\% / \rm{yr}\)</span> (= factor of <span class="math inline">\(2\)</span> in <span class="math inline">\(23\)</span> years).</li>
-<li><span class="math inline">\(a\)</span> = typical risk-aversion, <span class="math inline">\(\sim 1\quad\)</span> (<span class="math inline">\(a = -c u''/u'\)</span> for utility <span class="math inline">\(u(c)\)</span> of consumption rate <span class="math inline">\(c\)</span>).</li>
-<li><span class="math inline">\(r\)</span> = real market rate of return (not the risk-less interest rate).</li>
-<li><span class="math inline">\(s\)</span> = savings, fraction of world capital making more capital.</li>
-<li><span class="math inline">\(A\)</span> = growth rate of invested capital (corrected for depreciation).</li>
-<li><span class="math inline">\(i\)</span> = internality, fraction of investment return the investor gets.</li>
+<li><span class="math inline">n</span> = growth rate of world population, now <span class="math inline">\sim 1.4\% / \rm{yr}</span>.</li>
+<li><span class="math inline">g</span> = growth rate of world per-capita consumption, now <span class="math inline">\sim 2\% / \rm{yr}</span>.</li>
+<li><span class="math inline">p</span> = typical discount rate, <span class="math inline">\sim 3\% / \rm{yr}</span> (= factor of <span class="math inline">2</span> in <span class="math inline">23</span> years).</li>
+<li><span class="math inline">a</span> = typical risk-aversion, <span class="math inline">\sim 1\quad</span> (<span class="math inline">a = -c u''/u'</span> for utility <span class="math inline">u(c)</span> of consumption rate <span class="math inline">c</span>).</li>
+<li><span class="math inline">r</span> = real market rate of return (not the risk-less interest rate).</li>
+<li><span class="math inline">s</span> = savings, fraction of world capital making more capital.</li>
+<li><span class="math inline">A</span> = growth rate of invested capital (corrected for depreciation).</li>
+<li><span class="math inline">i</span> = internality, fraction of investment return the investor gets.</li>
 </ul>
 <p>We have five primary equations using these parameters.</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \text{Supply of Capital:} \quad r &amp;= p + ag \\
 \text{Demand for Capital:} \quad A &amp;= A(s) \\
 \text{Capital Rental:} \quad r &amp;= iA \\
 \text{Accounting:} \quad g+n &amp;= sA
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>SUPPLY: The supply of capital for investment depends on how fast consumption is growing relative to the typical rate at which people discount the future. If people were risk-neutral, the market return would equal the typical discount rate. But for risk-adverse people who plan to consume more tomorrow than today, stuff today is worth more.</p>
-<p>DEMAND: The demand function <span class="math inline">\(A(s)\)</span> describes the investment projects that current technology makes possible. It says what the expected total (private and external) return on the worst project would be if a fraction <span class="math inline">\(s\)</span> of total income were invested.</p>
+<p>DEMAND: The demand function <span class="math inline">A(s)</span> describes the investment projects that current technology makes possible. It says what the expected total (private and external) return on the worst project would be if a fraction <span class="math inline">s</span> of total income were invested.</p>
 <p>RENTAL: The rental price of capital depends on how fast a unit of capital can produce more capital, corrected for the fact that an investor may not internalize all the costs or benefits of a project. A project may, for example, create improvements in technology that others can copy.</p>
 <p>ACCOUNTING: The total growth rate in consumption and capital depends on how productive capital is, and on what fraction of income is saved.</p>
 <p>Some comments:</p>
 <ol type="1">
-<li>Typical utility parameter values are predicted from evolutionary selection. When trading resources for a parent now vs.&nbsp;for a child a generation from now, it matters that a child shares only half a parent’s genes. And unit risk-aversion, which is log utility <span class="math inline">\(u(c) = log(c)\)</span>, is selected for, at least regarding shocks to all copies of a gene, such as the total market risk in the CAPM.</li>
-<li>These equations allow for different people to own different amounts of capital, and for different investment projects to have different returns and internality. This is because the supply equation is a very general implication of maximizing expected discounted utility, and the internality parameter <span class="math inline">\(i\)</span> can be considered an average over the projects tried.</li>
-<li>We have neglected the probably-weak dependence of internality <span class="math inline">\(i\)</span> on the savings rate <span class="math inline">\(s\)</span>. Having <span class="math inline">\(i&lt;1\)</span> says that investment projects on net benefit non-investors, while <span class="math inline">\(i&gt;1\)</span> says that non-investors are on net harmed.</li>
-<li>We’ve set the market return equal to the average return, and so are assuming no long-term property rights in projects. A projects happens at the first time its return becomes competitive. Relaxing this assumption is equivalent to reducing the internality <span class="math inline">\(i\)</span>, which then becomes more dependent on savings <span class="math inline">\(s\)</span>.</li>
-<li><span class="math inline">\(A(s)\)</span> summarizes all technical change which creates economic growth. It does not, however, describe <em>changes</em> in the growth rate. neralize While the return to any one not-yet-started project typically rises with time as technology improves, the best projects will be done first, so the <span class="math inline">\(A(s)\)</span> function may rise or fall with time. <span class="math inline">\(A(s)\)</span> also falls if the number of attractive investments did not grow as fast as the economy did.</li>
-<li>The growth rate <span class="math inline">\(g\)</span> in the accounting equation is really the growth rate of capital, while the rate <span class="math inline">\(g\)</span> in the demand equation is the growth rate of consumption. When savings <span class="math inline">\(s\)</span> is constant, such as with demand <span class="math inline">\(A(s)\)</span> unchanging with time, these are the same thing. We are thus assuming that the growth rate of savings <span class="math inline">\(s\)</span> is much less than the growth rate of consumption <span class="math inline">\(g\)</span>.</li>
-<li>We are using depreciation-corrected parameters <span class="math inline">\(A\)</span> and <span class="math inline">\(s\)</span> in the above equations. To have a depreciation <span class="math inline">\(d\)</span> appear explicitly, change to raw terms <span class="math inline">\(A_0, s_0\)</span>, where <span class="math inline">\(A_0 = A + d\)</span> and <span class="math inline">\(s_0 = (s A+d)/A_0\)</span>. The accounting and rental equations become <span class="math inline">\(n + g = s_0 A_0 - d\)</span> and <span class="math inline">\(r = i (A_0-d)\)</span>. For non-human capital, depreciation is typically <span class="math inline">\(\sim 5\% / \rm{yr}\)</span>.</li>
+<li>Typical utility parameter values are predicted from evolutionary selection. When trading resources for a parent now vs.&nbsp;for a child a generation from now, it matters that a child shares only half a parent’s genes. And unit risk-aversion, which is log utility <span class="math inline">u(c) = log(c)</span>, is selected for, at least regarding shocks to all copies of a gene, such as the total market risk in the CAPM.</li>
+<li>These equations allow for different people to own different amounts of capital, and for different investment projects to have different returns and internality. This is because the supply equation is a very general implication of maximizing expected discounted utility, and the internality parameter <span class="math inline">i</span> can be considered an average over the projects tried.</li>
+<li>We have neglected the probably-weak dependence of internality <span class="math inline">i</span> on the savings rate <span class="math inline">s</span>. Having <span class="math inline">i&lt;1</span> says that investment projects on net benefit non-investors, while <span class="math inline">i&gt;1</span> says that non-investors are on net harmed.</li>
+<li>We’ve set the market return equal to the average return, and so are assuming no long-term property rights in projects. A projects happens at the first time its return becomes competitive. Relaxing this assumption is equivalent to reducing the internality <span class="math inline">i</span>, which then becomes more dependent on savings <span class="math inline">s</span>.</li>
+<li><span class="math inline">A(s)</span> summarizes all technical change which creates economic growth. It does not, however, describe <em>changes</em> in the growth rate. neralize While the return to any one not-yet-started project typically rises with time as technology improves, the best projects will be done first, so the <span class="math inline">A(s)</span> function may rise or fall with time. <span class="math inline">A(s)</span> also falls if the number of attractive investments did not grow as fast as the economy did.</li>
+<li>The growth rate <span class="math inline">g</span> in the accounting equation is really the growth rate of capital, while the rate <span class="math inline">g</span> in the demand equation is the growth rate of consumption. When savings <span class="math inline">s</span> is constant, such as with demand <span class="math inline">A(s)</span> unchanging with time, these are the same thing. We are thus assuming that the growth rate of savings <span class="math inline">s</span> is much less than the growth rate of consumption <span class="math inline">g</span>.</li>
+<li>We are using depreciation-corrected parameters <span class="math inline">A</span> and <span class="math inline">s</span> in the above equations. To have a depreciation <span class="math inline">d</span> appear explicitly, change to raw terms <span class="math inline">A_0, s_0</span>, where <span class="math inline">A_0 = A + d</span> and <span class="math inline">s_0 = (s A+d)/A_0</span>. The accounting and rental equations become <span class="math inline">n + g = s_0 A_0 - d</span> and <span class="math inline">r = i (A_0-d)</span>. For non-human capital, depreciation is typically <span class="math inline">\sim 5\% / \rm{yr}</span>.</li>
 </ol>
-<p>The first four columns of the following table shows historical estimates for the annual per-capita and population growth rates <span class="math inline">\(g, n\)</span> for four different dates from 1750 to 1995. (Warning: the per-capita growth estimate for 1750 is very crude.) Using the above model and our standard values for preference parameters <span class="math inline">\(a, p\)</span>, we then infer the next two columns, an annual rate of return <span class="math inline">\(r\)</span> and a savings fraction <span class="math inline">\(s/i\)</span> for each date. The return estimates seem roughly within reason.</p>
+<p>The first four columns of the following table shows historical estimates for the annual per-capita and population growth rates <span class="math inline">g, n</span> for four different dates from 1750 to 1995. (Warning: the per-capita growth estimate for 1750 is very crude.) Using the above model and our standard values for preference parameters <span class="math inline">a, p</span>, we then infer the next two columns, an annual rate of return <span class="math inline">r</span> and a savings fraction <span class="math inline">s/i</span> for each date. The return estimates seem roughly within reason.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 2%">
@@ -622,14 +638,14 @@ window.Quarto = {
 <tr class="even">
 <td></td>
 <td></td>
-<td><span class="math inline">\(g\)</span></td>
-<td><span class="math inline">\(n\)</span></td>
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(s/i\)</span></td>
-<td><span class="math inline">\(A\)</span></td>
-<td><span class="math inline">\(s\)</span></td>
-<td><span class="math inline">\(A_0\)</span></td>
-<td><span class="math inline">\(s_0\)</span></td>
+<td><span class="math inline">g</span></td>
+<td><span class="math inline">n</span></td>
+<td><span class="math inline">r</span></td>
+<td><span class="math inline">s/i</span></td>
+<td><span class="math inline">A</span></td>
+<td><span class="math inline">s</span></td>
+<td><span class="math inline">A_0</span></td>
+<td><span class="math inline">s_0</span></td>
 </tr>
 <tr class="odd">
 <td>1995</td>
@@ -681,32 +697,32 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Somewhat arbitrarily assuming internality <span class="math inline">\(i = 50\%\)</span>, and using the standard value of depreciation <span class="math inline">\(d = 5\%\)</span>, the rest of the table gives estimates for total return and savings <span class="math inline">\(A\)</span>, <span class="math inline">\(s\)</span>, and their raw values <span class="math inline">\(A_0, s_0\)</span>. A standard estimate of <span class="math inline">\(56\%\)</span> for current raw total savings roughly fits with the standard values that <span class="math inline">\(\sim 20\%\)</span> of raw savings is invested in non-human capital, which gets <span class="math inline">\(\sim 1/3\)</span> of income. Note that the savings growth rate seems to be growing at <span class="math inline">\(\sim 0.3\%/\rm{yr}\)</span>, which is much less than the per-capita growth rate, as we had assumed.</p>
+<p>Somewhat arbitrarily assuming internality <span class="math inline">i = 50\%</span>, and using the standard value of depreciation <span class="math inline">d = 5\%</span>, the rest of the table gives estimates for total return and savings <span class="math inline">A</span>, <span class="math inline">s</span>, and their raw values <span class="math inline">A_0, s_0</span>. A standard estimate of <span class="math inline">56\%</span> for current raw total savings roughly fits with the standard values that <span class="math inline">\sim 20\%</span> of raw savings is invested in non-human capital, which gets <span class="math inline">\sim 1/3</span> of income. Note that the savings growth rate seems to be growing at <span class="math inline">\sim 0.3\%/\rm{yr}</span>, which is much less than the per-capita growth rate, as we had assumed.</p>
 <section id="what-fast-growth-requires" class="level4">
 <h4 class="anchored" data-anchor-id="what-fast-growth-requires">What fast growth requires</h4>
-<p>Assuming that preference parameters <span class="math inline">\(a, p\)</span> don’t change much, what does this model say about the possibility of an economic “singularity,” that is, very large growth rates <span class="math inline">\(g\)</span> in per-capita consumption? Such growth rates, if they persisted long, would imply vast changes in per-capita consumption in a single human generation.</p>
-<p>The demand equation says that per-capita consumption growth <span class="math inline">\(g\)</span> can’t get very large unless the interest rate <span class="math inline">\(r\)</span> does, and the rental equation says that the interest rate <span class="math inline">\(r\)</span> can’t get very large unless the total return <span class="math inline">\(A\)</span> does. The accounting equation also says that total consumption growth <em>n+g</em> can’t get very large unless total return <span class="math inline">\(A\)</span> does.</p>
-<p>Using our equations to eliminate <span class="math inline">\(r\)</span> and <span class="math inline">\(g\)</span>, we get a market equation, with capital demand on the left and capital supply on the right,</p>
-<p><span class="math display">\[
+<p>Assuming that preference parameters <span class="math inline">a, p</span> don’t change much, what does this model say about the possibility of an economic “singularity,” that is, very large growth rates <span class="math inline">g</span> in per-capita consumption? Such growth rates, if they persisted long, would imply vast changes in per-capita consumption in a single human generation.</p>
+<p>The demand equation says that per-capita consumption growth <span class="math inline">g</span> can’t get very large unless the interest rate <span class="math inline">r</span> does, and the rental equation says that the interest rate <span class="math inline">r</span> can’t get very large unless the total return <span class="math inline">A</span> does. The accounting equation also says that total consumption growth <em>n+g</em> can’t get very large unless total return <span class="math inline">A</span> does.</p>
+<p>Using our equations to eliminate <span class="math inline">r</span> and <span class="math inline">g</span>, we get a market equation, with capital demand on the left and capital supply on the right,</p>
+<p><span class="math display">
 A(s) = \frac{p-an}{i - as}.
-\]</span></p>
-<p>For <span class="math inline">\(p &lt; an\)</span> and <span class="math inline">\(as &lt; i\)</span>, this gives the functional form shown in the figure in the body of the paper. Thus the relevant savings fraction is actually <span class="math inline">\(s/i\)</span>, savings relative to internality, rather than savings relative to total income.</p>
+</span></p>
+<p>For <span class="math inline">p &lt; an</span> and <span class="math inline">as &lt; i</span>, this gives the functional form shown in the figure in the body of the paper. Thus the relevant savings fraction is actually <span class="math inline">s/i</span>, savings relative to internality, rather than savings relative to total income.</p>
 <p>The limits to fast growth appear more directly in</p>
-<p><span class="math display">\[
+<p><span class="math display">
 g = s \frac{p - n}{i - as}.
-\]</span></p>
-<p>Thus the only way to allow very fast growth <span class="math inline">\(g \gg p\)</span> is for <span class="math inline">\(s \sim i/a\)</span> without <span class="math inline">\(n \sim p\)</span>. Thus since <span class="math inline">\(s&lt; 1\)</span>, we require <span class="math inline">\(i &lt; a\)</span>.</p>
-<p>Thus an economic singularity, <span class="math inline">\(g \gg p\)</span>, requires:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Thus the only way to allow very fast growth <span class="math inline">g \gg p</span> is for <span class="math inline">s \sim i/a</span> without <span class="math inline">n \sim p</span>. Thus since <span class="math inline">s&lt; 1</span>, we require <span class="math inline">i &lt; a</span>.</p>
+<p>Thus an economic singularity, <span class="math inline">g \gg p</span>, requires:</p>
+<p><span class="math display">
 i &lt; a, \quad s \sim i/a, \quad A(i/a) \gg p
-\]</span></p>
+</span></p>
 <p>That is, for unit (i.e., log) risk-aversion, an economic singularity requires that</p>
 <ol type="1">
 <li>Investment projects on net benefit, rather than hurt, non-investors.</li>
 <li>Savings must be carefully balanced near the internality parameter.</li>
 <li>The return expected for the worst invested-in project becomes very large.</li>
 </ol>
-<p>The bottom line is that this model does allow for an economic singularity under certain circumstances. The historical increase in the savings fraction has been roughly constant with time for the last two centuries, suggesting a near 100% savings fraction near the year 2150. Our ignorance about the internality parameter is cause for concern. Thus it is possible, though not obvious, that a continuation of historical trends will result in an economic singularity of <span class="math inline">\(g \gg p\)</span> in roughly a century and a half.</p>
+<p>The bottom line is that this model does allow for an economic singularity under certain circumstances. The historical increase in the savings fraction has been roughly constant with time for the last two centuries, suggesting a near 100% savings fraction near the year 2150. Our ignorance about the internality parameter is cause for concern. Thus it is possible, though not obvious, that a continuation of historical trends will result in an economic singularity of <span class="math inline">g \gg p</span> in roughly a century and a half.</p>
 </section>
 </section>
 

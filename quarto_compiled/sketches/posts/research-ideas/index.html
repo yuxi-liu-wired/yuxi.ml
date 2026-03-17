@@ -121,9 +121,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -475,7 +491,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
 <section id="correlation-gradient-ascends-to-causation" class="level3">
 <h3 class="anchored" data-anchor-id="correlation-gradient-ascends-to-causation">Correlation gradient ascends to causation</h3>
-<p>The idea is that by gradient-ascending correlation, we would eventually arrive at a high-correlation pair of variables, which should be quite causally related. Naively, this is false. If the basic structure is a complex causal diagram, then a local maximum for <span class="math inline">\(\mathop{\mathrm{argmax}}_Y R_{XY}\)</span> might be where <span class="math inline">\(Y\)</span> is far downstream of <span class="math inline">\(X\)</span>, and connected by many weak paths.</p>
+<p>The idea is that by gradient-ascending correlation, we would eventually arrive at a high-correlation pair of variables, which should be quite causally related. Naively, this is false. If the basic structure is a complex causal diagram, then a local maximum for <span class="math inline">\mathop{\mathrm{argmax}}_Y R_{XY}</span> might be where <span class="math inline">Y</span> is far downstream of <span class="math inline">X</span>, and connected by many weak paths.</p>
 <p>However, there was a case-report that it works in biochemistry, where the following sequence was used to discover how to chemically induce meiosis (<a href="https://denovo.substack.com/p/meiosis-is-all-you-need"><em>Meiosis is all you need</em>, Metacelsus 2022</a>):</p>
 <ol type="1">
 <li>Take a diploid cell line (probably ESC or iPSC or PGCLC)</li>
@@ -484,7 +500,7 @@ window.Quarto = {
 <li>Fuse two haploid cells to re-generate a diploid cell line.</li>
 <li>Repeat as desired. At the end, either differentiate the cells into oocytes or perform nuclear transfer into a donor oocyte.</li>
 </ol>
-<p>What I think <em>might</em> work out is if we find <span class="math inline">\(X, Y\)</span> such that <span class="math inline">\(\nabla_X r_{X,Y} = 0\)</span> and <span class="math inline">\(\nabla_Y r_{X,Y} = 0\)</span>, where the gradient <span class="math inline">\(\nabla\)</span> does not literally mean <span class="math inline">\(d/dx\)</span>, but rather, what happens if we move from <span class="math inline">\(X\)</span> to an adjacent variable. However, what is “adjacent”? We can’t say that “adjacent” means “directly connected on the causal graph” because if we know the causal graph, then our problem is solved!</p>
+<p>What I think <em>might</em> work out is if we find <span class="math inline">X, Y</span> such that <span class="math inline">\nabla_X r_{X,Y} = 0</span> and <span class="math inline">\nabla_Y r_{X,Y} = 0</span>, where the gradient <span class="math inline">\nabla</span> does not literally mean <span class="math inline">d/dx</span>, but rather, what happens if we move from <span class="math inline">X</span> to an adjacent variable. However, what is “adjacent”? We can’t say that “adjacent” means “directly connected on the causal graph” because if we know the causal graph, then our problem is solved!</p>
 </section>
 </section>
 <section id="ai" class="level2">

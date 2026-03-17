@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -548,11 +564,11 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Brains are survival engines, not truth detectors. If self-deception promotes fitness, the brain lies. Stops noticing – irrelevant things. Truth never matters. Only fitness. By now you don’t experience the world as it exists at all. You experience a simulation built from assumptions. Shortcuts. Lies. Whole species is agnosiac by default. <span class="citation" data-cites="wattsFirefall2017">(<a href="#ref-wattsFirefall2017" role="doc-biblioref">Watts 2017</a>)</span></p>
 </blockquote>
-<p>Consider the simplest case. Every round of interaction has two individuals. The interaction is symmetric (so there is no issue of “who goes first”). If I play <span class="math inline">\(s\)</span> and you play <span class="math inline">\(t\)</span>, then my payoff from the interaction is <span class="math inline">\(\pi(s|t)\)</span>, and your payoff is <span class="math inline">\(\pi(t|s)\)</span>. In this simplified case, we say that <span class="math inline">\(s\)</span> is…</p>
+<p>Consider the simplest case. Every round of interaction has two individuals. The interaction is symmetric (so there is no issue of “who goes first”). If I play <span class="math inline">s</span> and you play <span class="math inline">t</span>, then my payoff from the interaction is <span class="math inline">\pi(s|t)</span>, and your payoff is <span class="math inline">\pi(t|s)</span>. In this simplified case, we say that <span class="math inline">s</span> is…</p>
 <ul>
-<li>a <strong>Nash equilibrium</strong> iff for any other strategy <span class="math inline">\(s' \neq s\)</span>, we have <span class="math inline">\(\pi(s'|s) \leq \pi(s|s)\)</span>;</li>
-<li>an <strong>evolutionarily stable strategy</strong> (ESS) iff either <span class="math inline">\(\pi(s'|s) &lt; \pi(s|s)\)</span> or <span class="math inline">\(\pi(s'|s) = \pi(s|s)\)</span> but <span class="math inline">\(\pi(s|s') &gt; \pi(s'|s')\)</span>;</li>
-<li>a <strong>strict Nash equilibrium</strong> iff <span class="math inline">\(\pi(s'|s) &lt; \pi(s|s)\)</span>.</li>
+<li>a <strong>Nash equilibrium</strong> iff for any other strategy <span class="math inline">s' \neq s</span>, we have <span class="math inline">\pi(s'|s) \leq \pi(s|s)</span>;</li>
+<li>an <strong>evolutionarily stable strategy</strong> (ESS) iff either <span class="math inline">\pi(s'|s) &lt; \pi(s|s)</span> or <span class="math inline">\pi(s'|s) = \pi(s|s)</span> but <span class="math inline">\pi(s|s') &gt; \pi(s'|s')</span>;</li>
+<li>a <strong>strict Nash equilibrium</strong> iff <span class="math inline">\pi(s'|s) &lt; \pi(s|s)</span>.</li>
 </ul>
 <p>Intuitively speaking, if you play the Nash equilibrium, you would be like “Why bother changing my strategy?”. If you play the strict Nash equilibrium, you would be like “I would be actively punished to change my strategy.”. The ESS is an interesting intermediate case where the first deviant might be fine, but the second deviant <em>would</em> be punished. This captures the idea of a stable population. It is not a matter of whether an individual might unilaterally want to change – individuals are not agents and have no desire at all. It is rather a matter of whether one kind of population could neutrally drift into another kind of population, or be actively replaced by an invasion of mutants.</p>
 </section>
@@ -805,10 +821,10 @@ window.Quarto = {
 <p>God is a Lobster, or a double pincer, a double bind. Not only do strata come at least in pairs, but in a different way each stratum is double (it itself has several layers). Each stratum exhibits phenomena constitutive of double articulation. Articulate twice, B-A, BA. This is not at all to say that the strata speak or are language based. Double articulation is so extremely variable that we cannot begin with a general model, only a relatively simple case. The first articulation chooses or deducts, from unstable particle-flows, metastable molecular or quasi-molecular units (substances) upon which it imposes a statistical order of connections and successions (forms). <span class="citation" data-cites="deleuzeThousandPlateausCapitalism1987">(<a href="#ref-deleuzeThousandPlateausCapitalism1987" role="doc-biblioref">Deleuze and Guattari 1987, chap. 3</a>)</span></p>
 </blockquote>
 <p>A mathematician might look at this passage, and, if not immediately dismissing it as word salad, start writing down equations like</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \exists G : G \in \text{Lobster}, \exists P : \text{isPincers}(G, P), \exists B, A: P = BAAB, \dots.
-\]</span></p>
-<p>They would then attempt to define an algebraic structure – call it <span class="math inline">\(L\)</span>-sequences, <span class="math inline">\(L\)</span> for “lobster” – and try to construct examples of <span class="math inline">\(L\)</span>-sequences. Deleuze and Guattari never made such an attempt.</p>
+</span></p>
+<p>They would then attempt to define an algebraic structure – call it <span class="math inline">L</span>-sequences, <span class="math inline">L</span> for “lobster” – and try to construct examples of <span class="math inline">L</span>-sequences. Deleuze and Guattari never made such an attempt.</p>
 <blockquote class="blockquote">
 <p>One of the fundamental tasks of the State is to striate the space over which it reigns, or to utilize smooth spaces as a means of communication in the service of striated space. It is a vital concern of every State not only to vanquish nomadism but to control migrations and, more generally, to establish a zone of rights over an entire “exterior,” over all of the flows traversing the ecumenon. <span class="citation" data-cites="deleuzeThousandPlateausCapitalism1987">(<a href="#ref-deleuzeThousandPlateausCapitalism1987" role="doc-biblioref">Deleuze and Guattari 1987, 385</a>)</span></p>
 </blockquote>
@@ -820,8 +836,8 @@ window.Quarto = {
 <p>The literal text of continental philosophy is typically made of complex sentences, and filled with allusions to past literature, word-plays, puns, neologisms, and foreign words. To interpret them coherently, you need concentration, patience, and to have read the prerequisite texts. Consequently, such texts allow those few readers who can actually interpret them coherently a lot of bragging rights and all the pleasures of being in a society of esoteric wisdom. One can get a distinct feeling of this by going into the local university’s philosophy department and eavesdrop on their late-night discussions, or going to an online forum of continental philosophy.</p>
 <p>However, if they are merely hard to understand, they would not have more followers than modern set theory, which is equally complex and arcane:</p>
 <blockquote class="blockquote">
-<p>Theorem 44: The generic mantle of <span class="math inline">\(V\)</span> is a definable transitive class in <span class="math inline">\(V\)</span>, containing all ordinals, invariant under set forcing, and a model of the ZF axioms of set theory.</p>
-<p>Proof: The generic mantle is a definable transitive class containing all ordinals and closed under the Gödel operations, because it is the intersection of the generic grounds, each of which has those closure properties in the corresponding extension of <span class="math inline">\(V\)</span>. So by Fact 10, in order to show that <span class="math inline">\(gM\)</span> is an inner model, it remains to show merely that it is almost universal, which we do below… <span class="citation" data-cites="fuchsSettheoreticGeology2015">(<a href="#ref-fuchsSettheoreticGeology2015" role="doc-biblioref">Fuchs, Hamkins, and Reitz 2015</a>)</span></p>
+<p>Theorem 44: The generic mantle of <span class="math inline">V</span> is a definable transitive class in <span class="math inline">V</span>, containing all ordinals, invariant under set forcing, and a model of the ZF axioms of set theory.</p>
+<p>Proof: The generic mantle is a definable transitive class containing all ordinals and closed under the Gödel operations, because it is the intersection of the generic grounds, each of which has those closure properties in the corresponding extension of <span class="math inline">V</span>. So by Fact 10, in order to show that <span class="math inline">gM</span> is an inner model, it remains to show merely that it is almost universal, which we do below… <span class="citation" data-cites="fuchsSettheoreticGeology2015">(<a href="#ref-fuchsSettheoreticGeology2015" role="doc-biblioref">Fuchs, Hamkins, and Reitz 2015</a>)</span></p>
 </blockquote>
 <p>Even a complete outsider to mathematics could quickly understand naive set theory, with an hour of tutorial on drawing circles and dots and Venn diagrams. Modern set theory, while a vast complication over the simple picture of Venn diagrams, is not different in kind. If the outsider looks at the paper on set-theoretic geology and asks “But what does it have to do with geology?”, I can reply simply, “It is a one-way analogy. Set theorists noticed that they can start with ZF set theory and add the Axiom of Choice to get ZFC set theory, then add ZFC-consistency to get an even bigger set theory, and so on. So they thought ‘What if we went the other way? Going down instead of up?’ So they tried making smaller set theories below ZF set theory, and smaller, and smaller, all the way down the ‘mantle’ and below.”</p>
 <p>There we go, I have explained set-theoretic geology. Reading it, everyone can see that set-theoretic geology has no relevance to actual geology, anymore than the Conway’s Game of Life has relevance to actual biology.</p>

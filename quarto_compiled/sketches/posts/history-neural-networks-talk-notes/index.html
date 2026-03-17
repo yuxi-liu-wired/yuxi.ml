@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -839,9 +855,9 @@ window.Quarto = {
 </section>
 <section id="mcculloch-and-pitts-1943" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="mcculloch-and-pitts-1943">McCulloch and Pitts (1943)</h3>
-<p>The paper <span class="citation" data-cites="mccullochLogicalCalculusIdeas1943">(<a href="#ref-mccullochLogicalCalculusIdeas1943" role="doc-biblioref">McCulloch and Pitts 1943</a>)</span> is the foundational paper for artificial neural networks. Often cited, rarely read. In modern language, the paper considered neural networks with integer weights, integer biases, 0-1 activation functions, and constant time-delays. The constant time-delay means that the neural network operates in clock-ticks, so that the state of a neuron at time <span class="math inline">\(t\)</span> is decided by the inputs to it at time <span class="math inline">\(t-1\)</span>. This is necessary for two things:</p>
+<p>The paper <span class="citation" data-cites="mccullochLogicalCalculusIdeas1943">(<a href="#ref-mccullochLogicalCalculusIdeas1943" role="doc-biblioref">McCulloch and Pitts 1943</a>)</span> is the foundational paper for artificial neural networks. Often cited, rarely read. In modern language, the paper considered neural networks with integer weights, integer biases, 0-1 activation functions, and constant time-delays. The constant time-delay means that the neural network operates in clock-ticks, so that the state of a neuron at time <span class="math inline">t</span> is decided by the inputs to it at time <span class="math inline">t-1</span>. This is necessary for two things:</p>
 <ol type="1">
-<li>Formalized Hebbian learning: if A has a potential synapse to B, and A fired at time <span class="math inline">\(t\)</span>, then B fired at time <span class="math inline">\(t+1\)</span>, then the potential synapse becomes a real synapse.</li>
+<li>Formalized Hebbian learning: if A has a potential synapse to B, and A fired at time <span class="math inline">t</span>, then B fired at time <span class="math inline">t+1</span>, then the potential synapse becomes a real synapse.</li>
 <li>To make recurrent neural networks work.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
@@ -967,10 +983,10 @@ window.Quarto = {
 <section id="adaline" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="adaline">ADALINE</h3>
 <p>ADALINE (adaptive linear) and MADALINE (many ADALINE).</p>
-<p>The ADALINE is a single perceptron <span class="math display">\[
+<p>The ADALINE is a single perceptron <span class="math display">
 \theta\left(\sum_i w_i x_i + b\right)
-\]</span></p>
-<p>and its learning rule is gradient descent on squared error <span class="math inline">\((\sum_i w_i x_i + b - y)^2\)</span>.</p>
+</span></p>
+<p>and its learning rule is gradient descent on squared error <span class="math inline">(\sum_i w_i x_i + b - y)^2</span>.</p>
 <p><img src="figure/ADALINE.png" class="img-fluid"></p>
 <p>It used <em>manual input</em> by flipping 16 switches <em>by hand</em>. The first version (“knobby ADALINE”) had weights implemented as rheostats, with knobs turned <em>by hand</em>!!! Later versions used memistors that do gradient descent automatically.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
@@ -1082,7 +1098,7 @@ window.Quarto = {
 <p>Paul Werbos spending 10 years (1972–1982) unable to publish backpropagation, and almost starved.</p>
 <p>He developed the backprop in 1971 or 1972 for his PhD thesis, as a mathematical version of Freudian psychoanalysis.</p>
 <blockquote class="blockquote">
-<p>The model in Figure 1 is actually just a mathematical version of Freud’s model of psychodynamics, where the derivative of <span class="math inline">\(R_i\)</span> represents what Freud called the “cathexis” (or affect) or emotional charge or emotional energy attached to the object which <span class="math inline">\(R_i\)</span> represents. In other words, I came up with backpropagation by not just laughing at Freud’s “nonscientific” model, but by translating it into mathematics and showing that it works. <span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Werbos 2011</a>)</span></p>
+<p>The model in Figure 1 is actually just a mathematical version of Freud’s model of psychodynamics, where the derivative of <span class="math inline">R_i</span> represents what Freud called the “cathexis” (or affect) or emotional charge or emotional energy attached to the object which <span class="math inline">R_i</span> represents. In other words, I came up with backpropagation by not just laughing at Freud’s “nonscientific” model, but by translating it into mathematics and showing that it works. <span class="citation" data-cites="werbosNeuralNetworksPath2011">(<a href="#ref-werbosNeuralNetworksPath2011" role="doc-biblioref">Werbos 2011</a>)</span></p>
 </blockquote>
 <p>The PhD committee was unconvinced, so he had to find a supporting advisor.</p>
 <blockquote class="blockquote">
@@ -1222,7 +1238,7 @@ window.Quarto = {
 <p>Marvin Minsky insisted for decades that large neural networks do not work in theory (as we saw), so it only <em>appears</em> to work in practice.</p>
 <blockquote class="blockquote">
 <p>13.5 Why Prove Theorems?</p>
-<p><em>Why did you prove all these complicated theorems? Couldn’t you just take a perceptron and see if it can recognize <span class="math inline">\(\psi_{\text {CONNECTED}}\)</span>?</em></p>
+<p><em>Why did you prove all these complicated theorems? Couldn’t you just take a perceptron and see if it can recognize <span class="math inline">\psi_{\text {CONNECTED}}</span>?</em></p>
 <p>No.&nbsp;(1969)</p>
 <p><span class="citation" data-cites="minskyPerceptronsIntroductionComputational1988">(<a href="#ref-minskyPerceptronsIntroductionComputational1988" role="doc-biblioref">Minsky and Papert 1988, 239</a>)</span></p>
 </blockquote>

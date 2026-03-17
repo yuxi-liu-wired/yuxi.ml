@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -504,20 +520,20 @@ window.Quarto = {
 <p>For those interpretations, see <a href="https://yuxi.ml/essays/posts/perceptron-controversy/"><em>The Perceptron Controversy</em></a>.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Let <span class="math inline">\(R\)</span> be a finite set, where “R” can be read as “region” or “rectangle”.</p>
+<p>Let <span class="math inline">R</span> be a finite set, where “R” can be read as “region” or “rectangle”.</p>
 <div id="def-perceptron" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Perceptron)</strong></span> A perceptron is a binary function of type <span class="math inline">\(\{0, 1\}^R \to \{0, 1\}\)</span>, defined by a weight vector <span class="math inline">\(w\)</span> and a threshold number <span class="math inline">\(b\)</span>:</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 1 (Perceptron)</strong></span> A perceptron is a binary function of type <span class="math inline">\{0, 1\}^R \to \{0, 1\}</span>, defined by a weight vector <span class="math inline">w</span> and a threshold number <span class="math inline">b</span>:</p>
+<p><span class="math display">
 \Phi(x) := \theta(w^T x + b)
-\]</span></p>
-<p>where <span class="math inline">\(\theta(t) := 1_{t \geq 0}\)</span> is the 0-1 step function.</p>
+</span></p>
+<p>where <span class="math inline">\theta(t) := 1_{t \geq 0}</span> is the 0-1 step function.</p>
 </div>
 <div id="def-perceptron-machine" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (perceptron machine)</strong></span> A perceptron machine with <span class="math inline">\(k\)</span> hidden neurons is a function of type <span class="math inline">\(\{0, 1\}^R \to \{0, 1\}\)</span>, defined by</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 2 (perceptron machine)</strong></span> A perceptron machine with <span class="math inline">k</span> hidden neurons is a function of type <span class="math inline">\{0, 1\}^R \to \{0, 1\}</span>, defined by</p>
+<p><span class="math display">
 \Phi(x) := \psi_{k+1}(\psi_1(x), \psi_2(x), \dots , \psi_k(x))
-\]</span></p>
-<p>where <span class="math inline">\(\psi_1, \dots, \psi_k\)</span> are (hidden) perceptrons in the hidden layer, and <span class="math inline">\(\psi_{k+1}\)</span> is the single output perceptron.</p>
+</span></p>
+<p>where <span class="math inline">\psi_1, \dots, \psi_k</span> are (hidden) perceptrons in the hidden layer, and <span class="math inline">\psi_{k+1}</span> is the single output perceptron.</p>
 </div>
 <div id="def-predicate-order" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 3 (perceptron orders)</strong></span> The order of a hidden perceptron is the number of nonzero weights.</p>
@@ -532,15 +548,15 @@ window.Quarto = {
 </section>
 <section id="over-finite-sets" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="over-finite-sets">Over finite sets</h2>
-<p>While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a <a href="https://en.wikipedia.org/wiki/Reduction_(complexity)">computational reduction</a> to the special case of mask perceptron machines. Most of the book considers the problem of classifying subsets of families of planar square grids, such as <span class="math inline">\(\{1, 2, 3\} \times \{1, 2, 3, 4\}\)</span>. A subset is inputted to the perceptron machine by setting inputs in the subset to <span class="math inline">\(1\)</span>, and the rest to <span class="math inline">\(0\)</span>. Consequently, it is natural to consider this special case of perceptron machines.</p>
-<p>While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a <a href="https://en.wikipedia.org/wiki/Reduction_(complexity)">computational reduction</a> to the special case of the mask perceptron machine. Most of the book considers the problem of classifying subsets of families of planar square grids, such as <span class="math inline">\(\{1, 2, 3\} \times \{1, 2, 3, 4\}\)</span>. A subset is input to the perceptron machine by setting inputs in the subset to <span class="math inline">\(1\)</span>, and the rest to <span class="math inline">\(0\)</span>. Consequently, it is natural to consider this special case of perceptron machines.</p>
+<p>While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a <a href="https://en.wikipedia.org/wiki/Reduction_(complexity)">computational reduction</a> to the special case of mask perceptron machines. Most of the book considers the problem of classifying subsets of families of planar square grids, such as <span class="math inline">\{1, 2, 3\} \times \{1, 2, 3, 4\}</span>. A subset is inputted to the perceptron machine by setting inputs in the subset to <span class="math inline">1</span>, and the rest to <span class="math inline">0</span>. Consequently, it is natural to consider this special case of perceptron machines.</p>
+<p>While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a <a href="https://en.wikipedia.org/wiki/Reduction_(complexity)">computational reduction</a> to the special case of the mask perceptron machine. Most of the book considers the problem of classifying subsets of families of planar square grids, such as <span class="math inline">\{1, 2, 3\} \times \{1, 2, 3, 4\}</span>. A subset is input to the perceptron machine by setting inputs in the subset to <span class="math inline">1</span>, and the rest to <span class="math inline">0</span>. Consequently, it is natural to consider this special case of perceptron machines.</p>
 <div id="def-predicate-order" class="theorem definition page-columns page-full">
-<p><span class="theorem-title"><strong>Definition 5 (mask perceptron machine)</strong></span> A mask for <span class="math inline">\(A\subset R\)</span> is a function of type <span class="math inline">\(\{0, 1\}^R \to \mathbb{R}\)</span>, such that <span class="math inline">\(\psi(x) = 1\)</span> if <span class="math inline">\(x_i = 1\)</span> for all <span class="math inline">\(i \in A\)</span>, and otherwise <span class="math inline">\(\psi(x) = 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 5 (mask perceptron machine)</strong></span> A mask for <span class="math inline">A\subset R</span> is a function of type <span class="math inline">\{0, 1\}^R \to \mathbb{R}</span>, such that <span class="math inline">\psi(x) = 1</span> if <span class="math inline">x_i = 1</span> for all <span class="math inline">i \in A</span>, and otherwise <span class="math inline">\psi(x) = 0</span>.</p>
 <p>A mask perceptron machine is a perceptron machine where each hidden perceptron is a mask, and the threshold of the output perceptron is zero. In other words, it is of form</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(x) = \theta\left(\sum_{i=1}^k a_i \psi_{A_i}(x)\right)
-\]</span></p>
-<p>where each <span class="math inline">\(\psi_{A_i}\)</span> is a mask, each <span class="math inline">\(a_i\in \mathbb{R}\)</span>, and <span class="math inline">\(k\)</span> is the number of hidden perceptrons.</p>
+</span></p>
+<p>where each <span class="math inline">\psi_{A_i}</span> is a mask, each <span class="math inline">a_i\in \mathbb{R}</span>, and <span class="math inline">k</span> is the number of hidden perceptrons.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/perceptron_fig_0_2.png" class="img-fluid figure-img"></p>
@@ -549,78 +565,78 @@ window.Quarto = {
 </div>
 </div>
 <div id="thm-predicate-order" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Theorem 1.5.1)</strong></span> Restricting to mask perceptron machines does not change perceptron orders. That is, any boolean function implemented by a perceptron machine of order <span class="math inline">\(k\)</span> can be implemented by a mask perceptron machine of order at most <span class="math inline">\(k\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 1 (Theorem 1.5.1)</strong></span> Restricting to mask perceptron machines does not change perceptron orders. That is, any boolean function implemented by a perceptron machine of order <span class="math inline">k</span> can be implemented by a mask perceptron machine of order at most <span class="math inline">k</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Take one such perceptron machine. The threshold of the output perceptron can be removed by adding a hidden perceptron that always outputs <span class="math inline">\(1\)</span> – in other words, <span class="math inline">\(\psi_\emptyset\)</span>, the mask of the empty set. Now it remains to decompose each hidden perceptron into masks with the same order, or less.</p>
-<p>Let <span class="math inline">\(\psi\)</span> be a hidden perceptron with nonzero weights on the input points <span class="math inline">\(x_{i_1}, \dots, x_{i_k}\)</span>; then, its output is determined by the values of <span class="math inline">\(x_{i_1}, \dots, x_{i_k}\)</span>. Therefore, we can partition the binary set <span class="math inline">\(\{0, 1\}^{i_1, \dots, i_k}\)</span> into two subsets <span class="math inline">\(A_0, A_1\)</span>, such that for any input <span class="math inline">\(x\in\{0, 1\}^R\)</span>, we have <span class="math inline">\(\psi(x) = 1\)</span> iff <span class="math inline">\((x_{i_1}, \dots, x_{i_k}) \in A_1\)</span>.</p>
-<p>In other words, we only need to look at the binary values <span class="math inline">\(x_{i_1}, \dots, x_{i_k}\)</span> to determine the binary output <span class="math inline">\(\psi(x)\)</span>.</p>
-<p>Therefore, we can replace <span class="math inline">\(\psi\)</span> with a boolean formula on <span class="math inline">\(x_{i_1}, \dots, x_{i_k}\)</span>, then expand it to obtain up to <span class="math inline">\(2^k\)</span> masks, each of order at most <span class="math inline">\(k\)</span>.</p>
-<p>For example, suppose <span class="math inline">\(\psi\)</span> has nonzero weights on <span class="math inline">\(x_1, x_2\)</span>, and is 1 on all odd-sized subsets, then we can write it as a boolean formula:</p>
-<p><span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span>Take one such perceptron machine. The threshold of the output perceptron can be removed by adding a hidden perceptron that always outputs <span class="math inline">1</span> – in other words, <span class="math inline">\psi_\emptyset</span>, the mask of the empty set. Now it remains to decompose each hidden perceptron into masks with the same order, or less.</p>
+<p>Let <span class="math inline">\psi</span> be a hidden perceptron with nonzero weights on the input points <span class="math inline">x_{i_1}, \dots, x_{i_k}</span>; then, its output is determined by the values of <span class="math inline">x_{i_1}, \dots, x_{i_k}</span>. Therefore, we can partition the binary set <span class="math inline">\{0, 1\}^{i_1, \dots, i_k}</span> into two subsets <span class="math inline">A_0, A_1</span>, such that for any input <span class="math inline">x\in\{0, 1\}^R</span>, we have <span class="math inline">\psi(x) = 1</span> iff <span class="math inline">(x_{i_1}, \dots, x_{i_k}) \in A_1</span>.</p>
+<p>In other words, we only need to look at the binary values <span class="math inline">x_{i_1}, \dots, x_{i_k}</span> to determine the binary output <span class="math inline">\psi(x)</span>.</p>
+<p>Therefore, we can replace <span class="math inline">\psi</span> with a boolean formula on <span class="math inline">x_{i_1}, \dots, x_{i_k}</span>, then expand it to obtain up to <span class="math inline">2^k</span> masks, each of order at most <span class="math inline">k</span>.</p>
+<p>For example, suppose <span class="math inline">\psi</span> has nonzero weights on <span class="math inline">x_1, x_2</span>, and is 1 on all odd-sized subsets, then we can write it as a boolean formula:</p>
+<p><span class="math display">
 \left(x_1 \wedge \neg x_2\right) \vee\left(\neg x_1 \wedge x_2\right) = x_1\left(1-x_2\right)+\left(1-x_1\right) x_2 = x_1 + x_2 - 2 x_1 x_2
-\]</span></p>
+</span></p>
 </div>
 <p>The next tool they used is symmetry, formulated in the language of <a href="https://en.wikipedia.org/wiki/Group_action">finite group actions</a>.</p>
-<p>Let <span class="math inline">\(S_R\)</span> be the permutation group on the elements of <span class="math inline">\(R\)</span>, and <span class="math inline">\(G\)</span> be a subgroup of <span class="math inline">\(S_R\)</span>. We say that a boolean function <span class="math inline">\(\psi\)</span> is <span class="math inline">\(G\)</span>-invariant iff <span class="math inline">\(\psi \circ g=\psi\)</span> for any <span class="math inline">\(g \in G\)</span>. That is, for any <span class="math inline">\(X \subset R\)</span>, we have <span class="math inline">\(\psi(X) = \psi(g(X))\)</span>. For example, the parity function is <span class="math inline">\(S_R\)</span>-invariant, since any permutation of the set preserves the size, and thus the parity, of any of its subsets.</p>
+<p>Let <span class="math inline">S_R</span> be the permutation group on the elements of <span class="math inline">R</span>, and <span class="math inline">G</span> be a subgroup of <span class="math inline">S_R</span>. We say that a boolean function <span class="math inline">\psi</span> is <span class="math inline">G</span>-invariant iff <span class="math inline">\psi \circ g=\psi</span> for any <span class="math inline">g \in G</span>. That is, for any <span class="math inline">X \subset R</span>, we have <span class="math inline">\psi(X) = \psi(g(X))</span>. For example, the parity function is <span class="math inline">S_R</span>-invariant, since any permutation of the set preserves the size, and thus the parity, of any of its subsets.</p>
 <div id="thm-group-invariance" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (group invariance theorem)</strong></span> If a boolean function is <span class="math inline">\(G\)</span>-invariant, where <span class="math inline">\(G\)</span> is a finite group, then any perceptron machine computing it can be converted to a perceptron machine <span class="math inline">\(\theta(\sum_i a_i \psi_i)\)</span>, such that if <span class="math inline">\(\psi_i = \psi_j \circ g\)</span> for some <span class="math inline">\(g \in G\)</span>, then <span class="math inline">\(a_i = a_j\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 2 (group invariance theorem)</strong></span> If a boolean function is <span class="math inline">G</span>-invariant, where <span class="math inline">G</span> is a finite group, then any perceptron machine computing it can be converted to a perceptron machine <span class="math inline">\theta(\sum_i a_i \psi_i)</span>, such that if <span class="math inline">\psi_i = \psi_j \circ g</span> for some <span class="math inline">g \in G</span>, then <span class="math inline">a_i = a_j</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Take the group-action average: any mask <span class="math inline">\(\psi\)</span> is equal to <span class="math inline">\(\frac{1}{|G|} \sum_{g\in G} \psi\circ g\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Take the group-action average: any mask <span class="math inline">\psi</span> is equal to <span class="math inline">\frac{1}{|G|} \sum_{g\in G} \psi\circ g</span>.</p>
 </div>
 <p>Once the groundwork was laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.</p>
-<p>Consider the parity function. It is <span class="math inline">\(1\)</span> iff exactly an odd number of inputs are <span class="math inline">\(1\)</span> and the rest are <span class="math inline">\(0\)</span>.</p>
+<p>Consider the parity function. It is <span class="math inline">1</span> iff exactly an odd number of inputs are <span class="math inline">1</span> and the rest are <span class="math inline">0</span>.</p>
 <div id="thm-parity-order" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Theorem 3.1)</strong></span> The parity function has order <span class="math inline">\(|R|\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 3 (Theorem 3.1)</strong></span> The parity function has order <span class="math inline">|R|</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Since the parity function is <span class="math inline">\(S_R\)</span>-invariant, if it is implemented by a perceptron machine of order <span class="math inline">\(k\)</span>, it is implemented by some mask perceptron machine <span class="math inline">\(\theta(\sum_{A_i \subset R} a_{A_i} \psi_{A_i})\)</span>, where each mask is of size <span class="math inline">\(\leq k\)</span>, and each weight <span class="math inline">\(a_{A_i}\)</span> depends only on the size of <span class="math inline">\(A_i\)</span>. Let <span class="math inline">\(b_{|A_i|} = a_{A_i}\)</span> be those coefficients. It remains to show <span class="math inline">\(b_{|R|} \neq 0\)</span>.</p>
-<p>For each <span class="math inline">\(X \subset R\)</span>, we have by explicit computation</p>
-<p><span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span>Since the parity function is <span class="math inline">S_R</span>-invariant, if it is implemented by a perceptron machine of order <span class="math inline">k</span>, it is implemented by some mask perceptron machine <span class="math inline">\theta(\sum_{A_i \subset R} a_{A_i} \psi_{A_i})</span>, where each mask is of size <span class="math inline">\leq k</span>, and each weight <span class="math inline">a_{A_i}</span> depends only on the size of <span class="math inline">A_i</span>. Let <span class="math inline">b_{|A_i|} = a_{A_i}</span> be those coefficients. It remains to show <span class="math inline">b_{|R|} \neq 0</span>.</p>
+<p>For each <span class="math inline">X \subset R</span>, we have by explicit computation</p>
+<p><span class="math display">
 \theta\left(\sum_{A_i \subset R} a_{A_i} \psi_{A_i}\right) = 1\left[f(|X|) \geq 0\right]
-\]</span></p>
-<p>where <span class="math inline">\(f(t) := \sum_{i=0}^{|R|}b_i \binom{t}{i}\)</span> is a polynomial in <span class="math inline">\(t\)</span>. Since this perceptron machine implements the parity function, as <span class="math inline">\(t\)</span> increases from <span class="math inline">\(0\)</span> to <span class="math inline">\(|R|\)</span>, the function <span class="math inline">\(f(t) + \epsilon\)</span> must intersect the <span class="math inline">\(x\)</span>-axis at least <span class="math inline">\(|R|\)</span> times for some real value <span class="math inline">\(\epsilon\)</span>. Since <span class="math inline">\(f\)</span> is a polynomial, it must have at least order <span class="math inline">\(|R|\)</span>, thus <span class="math inline">\(b_{|R|} \neq 0\)</span>.</p>
+</span></p>
+<p>where <span class="math inline">f(t) := \sum_{i=0}^{|R|}b_i \binom{t}{i}</span> is a polynomial in <span class="math inline">t</span>. Since this perceptron machine implements the parity function, as <span class="math inline">t</span> increases from <span class="math inline">0</span> to <span class="math inline">|R|</span>, the function <span class="math inline">f(t) + \epsilon</span> must intersect the <span class="math inline">x</span>-axis at least <span class="math inline">|R|</span> times for some real value <span class="math inline">\epsilon</span>. Since <span class="math inline">f</span> is a polynomial, it must have at least order <span class="math inline">|R|</span>, thus <span class="math inline">b_{|R|} \neq 0</span>.</p>
 </div>
 <div id="thm-one-in-a-box" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (Theorem 3.2, one-in-a-box)</strong></span> Let <span class="math inline">\(A_1, A_2, \dots, A_m\)</span> be disjoint subsets of <span class="math inline">\(R\)</span>, each of size <span class="math inline">\(4 m^2\)</span>, and define the predicate <span class="math inline">\(\psi(X) = \forall i, \left|X \cap A_i\right|&gt;0\)</span>; that is, there is at least one point of <span class="math inline">\(X\)</span> in each <span class="math inline">\(A_i\)</span>. The order of <span class="math inline">\(\psi\)</span> is <span class="math inline">\(\geq m\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 4 (Theorem 3.2, one-in-a-box)</strong></span> Let <span class="math inline">A_1, A_2, \dots, A_m</span> be disjoint subsets of <span class="math inline">R</span>, each of size <span class="math inline">4 m^2</span>, and define the predicate <span class="math inline">\psi(X) = \forall i, \left|X \cap A_i\right|&gt;0</span>; that is, there is at least one point of <span class="math inline">X</span> in each <span class="math inline">A_i</span>. The order of <span class="math inline">\psi</span> is <span class="math inline">\geq m</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let the order of <span class="math inline">\(\psi\)</span> be <span class="math inline">\(k\)</span>.</p>
-<p>The predicate <span class="math inline">\(\psi\)</span> is invariant with respect to the group <span class="math inline">\(S_{A_1} \times \cdots \times S_{A_m}\)</span>, so by the same construction as the proof of <a href="#thm-group-invariance" class="quarto-xref">Theorem&nbsp;2</a>, there exists a polynomial <span class="math inline">\(P(t_1, \dots, t_m)\)</span>, where <span class="math inline">\(P\)</span> has order <span class="math inline">\(k\)</span>, and</p>
-<p><span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span>Let the order of <span class="math inline">\psi</span> be <span class="math inline">k</span>.</p>
+<p>The predicate <span class="math inline">\psi</span> is invariant with respect to the group <span class="math inline">S_{A_1} \times \cdots \times S_{A_m}</span>, so by the same construction as the proof of <a href="#thm-group-invariance" class="quarto-xref">Theorem&nbsp;2</a>, there exists a polynomial <span class="math inline">P(t_1, \dots, t_m)</span>, where <span class="math inline">P</span> has order <span class="math inline">k</span>, and</p>
+<p><span class="math display">
 \forall t_1, \dots , t_m \in \{0, 1, \dots , 4m^2\}, P(t_1, \dots , t_m) &lt; 0 \iff t_1 = 0 \vee \cdots \vee t_m = 0
-\]</span></p>
-<p>Now define <span class="math inline">\(Q(t) := P((t-1)^2, (t-3)^2, \dots, (t-2m+1)^2)\)</span>. By the above equation, <span class="math inline">\(Q &lt; 0\)</span> at <span class="math inline">\(t=1, 3, \dots, 2m - 1\)</span> and <span class="math inline">\(Q \geq 0\)</span> at <span class="math inline">\(t = 0, 2, \dots, 2m\)</span>. Thus, <span class="math inline">\(Q\)</span> has order <span class="math inline">\(\geq 2m\)</span>. Thus, <span class="math inline">\(2k \geq 2m\)</span>.</p>
+</span></p>
+<p>Now define <span class="math inline">Q(t) := P((t-1)^2, (t-3)^2, \dots, (t-2m+1)^2)</span>. By the above equation, <span class="math inline">Q &lt; 0</span> at <span class="math inline">t=1, 3, \dots, 2m - 1</span> and <span class="math inline">Q \geq 0</span> at <span class="math inline">t = 0, 2, \dots, 2m</span>. Thus, <span class="math inline">Q</span> has order <span class="math inline">\geq 2m</span>. Thus, <span class="math inline">2k \geq 2m</span>.</p>
 </div>
 <div id="thm-and-or" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (Theorem 4.0)</strong></span> There exist predicates <span class="math inline">\(\psi_1\)</span> and <span class="math inline">\(\psi_2\)</span> of order 1 such that <span class="math inline">\(\psi_1 \wedge \psi_2\)</span> and <span class="math inline">\(\psi_1 \vee \psi_2\)</span> are not of finite order. Specifically, if we partition <span class="math inline">\(R\)</span> into three equal subsets <span class="math inline">\(A, B, C\)</span>, then the boolean function does not have bounded order:</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 5 (Theorem 4.0)</strong></span> There exist predicates <span class="math inline">\psi_1</span> and <span class="math inline">\psi_2</span> of order 1 such that <span class="math inline">\psi_1 \wedge \psi_2</span> and <span class="math inline">\psi_1 \vee \psi_2</span> are not of finite order. Specifically, if we partition <span class="math inline">R</span> into three equal subsets <span class="math inline">A, B, C</span>, then the boolean function does not have bounded order:</p>
+<p><span class="math display">
 (|X \cap A| &gt; |X \cap C|) \wedge (|X \cap B| &gt; |X \cap C|)
-\]</span></p>
-<p>even though both <span class="math inline">\(|X \cap A| &gt; |X \cap C|\)</span> and <span class="math inline">\(|X \cap B| &gt; |X \cap C|\)</span> are of order <span class="math inline">\(1\)</span>.</p>
+</span></p>
+<p>even though both <span class="math inline">|X \cap A| &gt; |X \cap C|</span> and <span class="math inline">|X \cap B| &gt; |X \cap C|</span> are of order <span class="math inline">1</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(|X \cap A| &gt; |X \cap C|\)</span> is computed by the order-<span class="math inline">\(1\)</span> perceptron machine <span class="math inline">\(\theta\left(\sum_{i\in A} x_i - \sum_{i \in C}x_i\right)\)</span>, and similarly for the other one.</p>
-<p>To show the composite boolean function is not of bounded order, suppose otherwise, then by the same argument as the previous proof, we can construct a sequence of polynomials <span class="math inline">\(P_1(a, b, c), P_2(a, b, c), P_3(a, b, c), \dots\)</span>, such that each <span class="math inline">\(P_n\)</span> is the polynomial corresponding to the perceptron machine for the case where <span class="math inline">\(|A| = |B| = |C| = n\)</span>, and each of them has order at most <span class="math inline">\(M\)</span>, for some fixed <span class="math inline">\(M\)</span>.</p>
-<p>Being the polynomial corresponding to the perceptron machine for the case where <span class="math inline">\(|A| = |B| = |C| = n\)</span> means precisely that</p>
-<p><span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">|X \cap A| &gt; |X \cap C|</span> is computed by the order-<span class="math inline">1</span> perceptron machine <span class="math inline">\theta\left(\sum_{i\in A} x_i - \sum_{i \in C}x_i\right)</span>, and similarly for the other one.</p>
+<p>To show the composite boolean function is not of bounded order, suppose otherwise, then by the same argument as the previous proof, we can construct a sequence of polynomials <span class="math inline">P_1(a, b, c), P_2(a, b, c), P_3(a, b, c), \dots</span>, such that each <span class="math inline">P_n</span> is the polynomial corresponding to the perceptron machine for the case where <span class="math inline">|A| = |B| = |C| = n</span>, and each of them has order at most <span class="math inline">M</span>, for some fixed <span class="math inline">M</span>.</p>
+<p>Being the polynomial corresponding to the perceptron machine for the case where <span class="math inline">|A| = |B| = |C| = n</span> means precisely that</p>
+<p><span class="math display">
 a &gt; c \wedge b &gt; c \implies P_n(a, b, c) \geq 0; \neg (a &gt; c \wedge b &gt; c) \implies P_n(a, b, c) &lt; 0;
-\]</span></p>
-<p>for all <span class="math inline">\(a, b, c \in \{0, 1, \dots, n\}\)</span>. This implies that each <span class="math inline">\(P_1, P_2, \dots \neq 0\)</span>. Now, divide each polynomial by the root-sum-square of its coefficients, so that if we interpret the coefficients of each <span class="math inline">\(P_n\)</span> as a point in a high-dimensional space, the point falls on the unit sphere in that space. Since the unit sphere is compact, there exists a limit point, which we write as <span class="math inline">\(P(a, b, c)\)</span>.</p>
+</span></p>
+<p>for all <span class="math inline">a, b, c \in \{0, 1, \dots, n\}</span>. This implies that each <span class="math inline">P_1, P_2, \dots \neq 0</span>. Now, divide each polynomial by the root-sum-square of its coefficients, so that if we interpret the coefficients of each <span class="math inline">P_n</span> as a point in a high-dimensional space, the point falls on the unit sphere in that space. Since the unit sphere is compact, there exists a limit point, which we write as <span class="math inline">P(a, b, c)</span>.</p>
 <p>By the limit construction, we have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \forall a, b, c \in \mathbb{N}, \quad a &gt; c \wedge b &gt; c \implies P(a, b, c) \geq 0; \neg (a &gt; c \wedge b &gt; c) \implies P(a, b, c) \leq 0;
-\]</span></p>
-<p>If we color the points <span class="math inline">\(\mathbb{N}^3\)</span> with black for <span class="math inline">\(P &lt; 0\)</span> and white for <span class="math inline">\(P \geq 0\)</span>, then we can see the dusty outlines of a pyramid. We can construct a solid pyramid by zooming.</p>
-<p>Let <span class="math inline">\(M'\)</span> be the order of <span class="math inline">\(P\)</span>, then we can “zoom out” by taking the <a href="https://en.wikipedia.org/wiki/Homogeneous_function">projective limit</a> <span class="math inline">\(Q(a, b, c) := \lim_{t \to \infty} t^{-M'} P(ta, tb, tc)\)</span>. This <span class="math inline">\(Q\)</span> is a homogeneous polynomial, and by continuity,</p>
-<p><span class="math display">\[
+</span></p>
+<p>If we color the points <span class="math inline">\mathbb{N}^3</span> with black for <span class="math inline">P &lt; 0</span> and white for <span class="math inline">P \geq 0</span>, then we can see the dusty outlines of a pyramid. We can construct a solid pyramid by zooming.</p>
+<p>Let <span class="math inline">M'</span> be the order of <span class="math inline">P</span>, then we can “zoom out” by taking the <a href="https://en.wikipedia.org/wiki/Homogeneous_function">projective limit</a> <span class="math inline">Q(a, b, c) := \lim_{t \to \infty} t^{-M'} P(ta, tb, tc)</span>. This <span class="math inline">Q</span> is a homogeneous polynomial, and by continuity,</p>
+<p><span class="math display">
 \forall a, b, c \geq 0, \quad a &gt; c \wedge b &gt; c \implies P(a, b, c) \geq 0; a &lt; c \vee b &lt; c \implies P(a, b, c) \leq 0;
-\]</span></p>
-<p>This implies that <span class="math inline">\(P\)</span> is identically zero on the “creased curve” <span class="math inline">\(\{ a, b, c \geq 0, a = c \vee b = c\}\)</span> in the projective plane, which is not an algebraic curve, therefore it is identically zero, contradiction.</p>
+</span></p>
+<p>This implies that <span class="math inline">P</span> is identically zero on the “creased curve” <span class="math inline">\{ a, b, c \geq 0, a = c \vee b = c\}</span> in the projective plane, which is not an algebraic curve, therefore it is identically zero, contradiction.</p>
 </div>
 <div id="thm-connectedness-order" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Theorem 5.1)</strong></span> The connectedness function has order <span class="math inline">\(\Omega(|R|^{1/3})\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Theorem 5.1)</strong></span> The connectedness function has order <span class="math inline">\Omega(|R|^{1/3})</span>.</p>
 </div>
 <div class="proof page-columns page-full">
 <p><span class="proof-title"><em>Proof</em>. </span>If we have a mask perceptron machine that can solve the connectedness problem, then it can be repurposed<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to solve the one-in-a-box problem of the following kind:</p>
@@ -630,19 +646,19 @@ a &gt; c \wedge b &gt; c \implies P_n(a, b, c) \geq 0; \neg (a &gt; c \wedge b &
 <figcaption class="margin-caption">Figure 5.2</figcaption>
 </figure>
 </div>
-<p>In the picture, the rectangle <span class="math inline">\(R\)</span> has width <span class="math inline">\(4m^2\)</span> and height <span class="math inline">\(2m+1\)</span>. We fill in all the odd-numbered rows, and use the machine to solve the one-in-a-box problem for the even-numbered rows. By <a href="#thm-one-in-a-box" class="quarto-xref">Theorem&nbsp;4</a>, the machine has order <span class="math inline">\(\geq m = \Omega(|R|^{1/3})\)</span>.</p>
+<p>In the picture, the rectangle <span class="math inline">R</span> has width <span class="math inline">4m^2</span> and height <span class="math inline">2m+1</span>. We fill in all the odd-numbered rows, and use the machine to solve the one-in-a-box problem for the even-numbered rows. By <a href="#thm-one-in-a-box" class="quarto-xref">Theorem&nbsp;4</a>, the machine has order <span class="math inline">\geq m = \Omega(|R|^{1/3})</span>.</p>
 </div>
 <p>In fact, it turns out that essentially the only locally conjunctive topological invariant is the Euler number.</p>
 <div id="thm-euler-number" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (Theorem 5.8.1)</strong></span> The Euler number itself is <span class="math inline">\(E(X) = \sum_{i \in R} x_i - \sum_{i, j \in R} x_ix_j + \sum_{i, j, k, l  \in R} x_ix_jx_kx_l\)</span>, where the <span class="math inline">\(i, j\in R\)</span> ranges only over adjacent points, and <span class="math inline">\(i, j, k, l  \in R\)</span> ranges only over quadruples that form a square. Thus the Euler number itself has order <span class="math inline">\(4\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 7 (Theorem 5.8.1)</strong></span> The Euler number itself is <span class="math inline">E(X) = \sum_{i \in R} x_i - \sum_{i, j \in R} x_ix_j + \sum_{i, j, k, l  \in R} x_ix_jx_kx_l</span>, where the <span class="math inline">i, j\in R</span> ranges only over adjacent points, and <span class="math inline">i, j, k, l  \in R</span> ranges only over quadruples that form a square. Thus the Euler number itself has order <span class="math inline">4</span>.</p>
 </div>
 <div id="thm-euler-number" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8 (Theorem 5.9)</strong></span> If <span class="math inline">\(\psi\)</span> is a boolean function, and it depends only on the topology of the input figure, and its order is upper-bounded by some number <span class="math inline">\(k\)</span> that does not grow even as <span class="math inline">\(R\)</span> grows into a larger and larger rectangle, then <span class="math inline">\(\psi\)</span> is of form <span class="math inline">\(f \circ E\)</span>, for some function <span class="math inline">\(f: \mathbb{N}\to 2\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 8 (Theorem 5.9)</strong></span> If <span class="math inline">\psi</span> is a boolean function, and it depends only on the topology of the input figure, and its order is upper-bounded by some number <span class="math inline">k</span> that does not grow even as <span class="math inline">R</span> grows into a larger and larger rectangle, then <span class="math inline">\psi</span> is of form <span class="math inline">f \circ E</span>, for some function <span class="math inline">f: \mathbb{N}\to 2</span>.</p>
 </div>
 </section>
 <section id="over-infinite-spaces" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="over-infinite-spaces">Over infinite spaces</h2>
-<p>Chapters 6–9 continue in the same style, but move to the case where the input space is made of one or two copies of the infinite line <span class="math inline">\(\mathbb{Z}\)</span>, or the infinite plane <span class="math inline">\(\mathbb{Z}^2\)</span>, and the predicate to recognize is still translation-invariant. In order to avoid blowing up the perceptron machine with infinities, they restricted to the case where the input figure is of finite size, meaning that <span class="math inline">\(\sum_i x_i\)</span> is finite.</p>
+<p>Chapters 6–9 continue in the same style, but move to the case where the input space is made of one or two copies of the infinite line <span class="math inline">\mathbb{Z}</span>, or the infinite plane <span class="math inline">\mathbb{Z}^2</span>, and the predicate to recognize is still translation-invariant. In order to avoid blowing up the perceptron machine with infinities, they restricted to the case where the input figure is of finite size, meaning that <span class="math inline">\sum_i x_i</span> is finite.</p>
 <p>Chapter 6 develops the idea of “spectra” of images. For example, the following picture shows that if we were to design a perceptron machine using only masks of size up to 2, and translation-invariant weights, then it cannot possibly distinguish between the two tetris-like pieces, because both figures contain exactly 4 instances of single-square, 1 instance of two squares side by side, and so on.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -650,80 +666,80 @@ a &gt; c \wedge b &gt; c \implies P_n(a, b, c) \geq 0; \neg (a &gt; c \wedge b &
 <figcaption class="margin-caption">page 100</figcaption>
 </figure>
 </div>
-<p>Sections 6.1–6.5 of the chapter studies the same idea for masks of size up to 4. For example, Section 6.4 shows that “<span class="math inline">\(X\)</span> is the perimeter of a complete circle” is of order <span class="math inline">\(4\)</span>.</p>
-<p>Section 6.6 claims that “recognizing figures in context” is generally not locally conjunctive, although they gave only two examples. Specifically, they showed that the predicate “<span class="math inline">\(X\)</span> is a horizontal line across the rectangle” is order 2, the predicate “<span class="math inline">\(X\)</span> contains one horizontal line across the plane” is not locally conjunctive. The same is true for the case with “a hollow square” instead of “a horizontal line”.</p>
+<p>Sections 6.1–6.5 of the chapter studies the same idea for masks of size up to 4. For example, Section 6.4 shows that “<span class="math inline">X</span> is the perimeter of a complete circle” is of order <span class="math inline">4</span>.</p>
+<p>Section 6.6 claims that “recognizing figures in context” is generally not locally conjunctive, although they gave only two examples. Specifically, they showed that the predicate “<span class="math inline">X</span> is a horizontal line across the rectangle” is order 2, the predicate “<span class="math inline">X</span> contains one horizontal line across the plane” is not locally conjunctive. The same is true for the case with “a hollow square” instead of “a horizontal line”.</p>
 <p>Chapter 7 uses the “stratification” construction to explicitly demonstrate that several binocular predicates are of finite order, but requires exponentially growing weights. It is essentially the same idea as <a href="https://en.wikipedia.org/wiki/G%C3%B6del_numbering">Gödel numbering</a>. A single illustrative example suffices to demonstrate the general point.</p>
 <div id="exm-line-symmetry" class="theorem example page-columns page-full">
-<p><span class="theorem-title"><strong>Example 1</strong></span> Given a line <span class="math inline">\(\mathbb{Z}\)</span>, how to construct a perceptron machine that detects that input figure is symmetric?</p>
-<p>Suppose we know for certain that the input figure has leftmost point <span class="math inline">\(m\)</span> and rightmost point <span class="math inline">\(n\)</span>, then we can test for symmetry by computing the value of:</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Example 1</strong></span> Given a line <span class="math inline">\mathbb{Z}</span>, how to construct a perceptron machine that detects that input figure is symmetric?</p>
+<p>Suppose we know for certain that the input figure has leftmost point <span class="math inline">m</span> and rightmost point <span class="math inline">n</span>, then we can test for symmetry by computing the value of:</p>
+<p><span class="math display">
 f_{m, n}(x) := \sum_{i = 0}^{n-m} x_{m+i}(x_{n-i} - 1)
-\]</span></p>
-<p>We have that <span class="math inline">\(f_{m, n}(x) = 0\)</span> if the figure is symmetric, and <span class="math inline">\(f_{m, n}(x) \leq -1\)</span> otherwise.</p>
-<p>Now we define the entire perceptron machine by <span class="math inline">\(\sum_{m \leq n} M_{n - m} x_m x_n (f_{m, n}(x) - 1/2)\)</span>. If the sequence of <span class="math inline">\(M_0, M_1, \dots\)</span> grows as <span class="math inline">\((d!)^2\)</span> roughly <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, then the largest bracket <span class="math inline">\((m, n)\)</span> would “veto” every smaller bracket contained within, and so the entire perceptron machine is effectively first testing for the smallest interval containing the figure, before testing the symmetry within that interval.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Expanding term by term, we have <span class="math inline">\(|f_{m, n}(x) - 1/2| \leq 2(n-m) + \frac{1}{2}\)</span>. Therefore, in order for <span class="math inline">\(M_d\)</span> to “veto” every other bracket within, we need</p>
-<p><span class="math display">\[
+</span></p>
+<p>We have that <span class="math inline">f_{m, n}(x) = 0</span> if the figure is symmetric, and <span class="math inline">f_{m, n}(x) \leq -1</span> otherwise.</p>
+<p>Now we define the entire perceptron machine by <span class="math inline">\sum_{m \leq n} M_{n - m} x_m x_n (f_{m, n}(x) - 1/2)</span>. If the sequence of <span class="math inline">M_0, M_1, \dots</span> grows as <span class="math inline">(d!)^2</span> roughly <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, then the largest bracket <span class="math inline">(m, n)</span> would “veto” every smaller bracket contained within, and so the entire perceptron machine is effectively first testing for the smallest interval containing the figure, before testing the symmetry within that interval.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Expanding term by term, we have <span class="math inline">|f_{m, n}(x) - 1/2| \leq 2(n-m) + \frac{1}{2}</span>. Therefore, in order for <span class="math inline">M_d</span> to “veto” every other bracket within, we need</p>
+<p><span class="math display">
 M_d \frac 12 &gt; \sum_{d' = 1}^{d-1} \left(M_{d'}(\frac 12 + 2d')(d-d' + 1)\right)
-\]</span></p>
-<p>Here <span class="math inline">\(d\)</span> should be read as “distance between two ends of a bracket”.</p>
-<p>To bound the growth rate, we bound the recurrence relation <span class="math inline">\(M_d = \sum_{d' = 1}^{d-1} \left(M_{d'}(4d' + 1)(d-d' + 1)\right)\)</span>. The sum on the right is bounded by</p>
-<p><span class="math display">\[
+</span></p>
+<p>Here <span class="math inline">d</span> should be read as “distance between two ends of a bracket”.</p>
+<p>To bound the growth rate, we bound the recurrence relation <span class="math inline">M_d = \sum_{d' = 1}^{d-1} \left(M_{d'}(4d' + 1)(d-d' + 1)\right)</span>. The sum on the right is bounded by</p>
+<p><span class="math display">
 \sum_{d' = 1}^{d-1} \left(M_{d'}(4d' + 1)(d-d' + 1)\right) \in \Theta{\left[
     \sum_{d' = 1}^{d-1} \left(M_{d'}d'\right),
     d^2\sum_{d' = 1}^{d-1} \left(M_{d'}\right)\right]}
-\]</span></p>
-<p>The lower bound implies <span class="math inline">\(M_d = \Omega((d!)^2 \times d^{-1})\)</span> and the upper bound implies <span class="math inline">\(M_d = O((d!)^2 \times (d+1)^2)\)</span>.</p></div></div></div>
+</span></p>
+<p>The lower bound implies <span class="math inline">M_d = \Omega((d!)^2 \times d^{-1})</span> and the upper bound implies <span class="math inline">M_d = O((d!)^2 \times (d+1)^2)</span>.</p></div></div></div>
 <p>They made similar constructions for perceptron machines that decide whether two infinite lines or planes are translates of each other, whether two planes are translation and approximate dilations of each other, and whether a line or a plane is the translation of a fixed figure.</p>
-<p>Chapter 8 studies diameter-limited perceptron machines, meaning that not only are the hidden perceptrons assumed to be masks of bounded size, those masks are assumed to be contained in a circle of radius <span class="math inline">\(M\)</span> for some finite <span class="math inline">\(M\)</span>. It is intended to be a formalization of the intuition that the perceptron machines should model a real pair of eyes scanning a plane, and each retina is a circular disk with finite radius. No results in chapter 8 were used further in the book, and they resemble the case of finite-order perceptron machines, so we do not discuss the results in detail.</p>
+<p>Chapter 8 studies diameter-limited perceptron machines, meaning that not only are the hidden perceptrons assumed to be masks of bounded size, those masks are assumed to be contained in a circle of radius <span class="math inline">M</span> for some finite <span class="math inline">M</span>. It is intended to be a formalization of the intuition that the perceptron machines should model a real pair of eyes scanning a plane, and each retina is a circular disk with finite radius. No results in chapter 8 were used further in the book, and they resemble the case of finite-order perceptron machines, so we do not discuss the results in detail.</p>
 <p>Chapter 9 shows that the connectedness problem is easy to solve using small serial programs, a contrast to the case of perceptron machines. The overarching lesson is that connectedness is an “inherently serial” decision problem. The whole chapter is beautiful computational complexity theory, in the same style of solving fun mathematical puzzles, similar to <span class="citation" data-cites="minskyComputationFiniteInfinite1967">(<a href="#ref-minskyComputationFiniteInfinite1967" role="doc-biblioref">Minsky 1967</a>)</span>.</p>
-<p>They designed a robot (a finite state machine) that moves around the plane, and can solve the connectedness problem, with a memory size of just two. Namely, it only needs to store up to two locations <span class="math inline">\((x, y), (x', y')\)</span> in its memory during its operation, and it eventually halts in one of three states “empty”, “connected”, and “disconnected”. Notice that a robot with no memory can still remember a finite number of states. It is simply that those memory slots are its finite states, which do not scale with the size of the problem. The little robot with a “memory size of two” really has a memory size of <span class="math inline">\(2 \log_2|R|\)</span> bits, because it can remember two coordinates from the square <span class="math inline">\(R\)</span>, no matter how large the square grows.</p>
+<p>They designed a robot (a finite state machine) that moves around the plane, and can solve the connectedness problem, with a memory size of just two. Namely, it only needs to store up to two locations <span class="math inline">(x, y), (x', y')</span> in its memory during its operation, and it eventually halts in one of three states “empty”, “connected”, and “disconnected”. Notice that a robot with no memory can still remember a finite number of states. It is simply that those memory slots are its finite states, which do not scale with the size of the problem. The little robot with a “memory size of two” really has a memory size of <span class="math inline">2 \log_2|R|</span> bits, because it can remember two coordinates from the square <span class="math inline">R</span>, no matter how large the square grows.</p>
 <p>They then described a few other more exotic computational models, such as a “pebble machine”, meaning a robot that has no memory, but provided with a single pebble. It can drop the pebble anywhere, and it can pick it up again. One can think of this as an intermediate level between pure finite state machines, which cannot write at all, and a Turing machine, which can write as much as it wants. They left as an exercise for the reader the task of translating the previous robot with two memory slots to this robot with one pebble. They conjectured that a finite state machine (a robot with no pebbles) would be unable to solve the task, but they could not prove it. I did a brief literature search and it seemed to be still unsolved.</p>
 </section>
 <section id="learning-theory" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="learning-theory">Learning theory</h2>
 <p>They claimed that Chapter 10 is part of the learning theory. However, it does not actually involve learning. Whereas in the construction <a href="#exm-line-symmetry" class="quarto-xref">Example&nbsp;1</a>, we saw coefficients growing exponentially on an infinite plane, chapter 10 proves similar results on a finite plane.</p>
 <div id="exm-parity-order" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (Theorem 10.1)</strong></span> Suppose we have a perceptron machine that tests for parity; then, by <a href="#thm-parity-order" class="quarto-xref">Theorem&nbsp;3</a>, it must have order <span class="math inline">\(|R|\)</span>. As in the construction given in the proof, we use the group invariance theorem to obtain a group-symmetric machine with the form <span class="math inline">\(\theta(\sum_{i=0}^{|R|}\binom{|X|}{i} b_i)\)</span>, where <span class="math inline">\(b_0, b_1, \dots, b_{|R|}\)</span> are real numbers. Then, assuming the machine is “reliable”, we can prove that <span class="math inline">\((-1)^{M} b_{M+1} \geq 2^{M}\)</span> for any <span class="math inline">\(M \in \{0, 1, \dots, |R|-1\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 2 (Theorem 10.1)</strong></span> Suppose we have a perceptron machine that tests for parity; then, by <a href="#thm-parity-order" class="quarto-xref">Theorem&nbsp;3</a>, it must have order <span class="math inline">|R|</span>. As in the construction given in the proof, we use the group invariance theorem to obtain a group-symmetric machine with the form <span class="math inline">\theta(\sum_{i=0}^{|R|}\binom{|X|}{i} b_i)</span>, where <span class="math inline">b_0, b_1, \dots, b_{|R|}</span> are real numbers. Then, assuming the machine is “reliable”, we can prove that <span class="math inline">(-1)^{M} b_{M+1} \geq 2^{M}</span> for any <span class="math inline">M \in \{0, 1, \dots, |R|-1\}</span>.</p>
 <p>Since the group-symmetric construction can only average out the most extreme values, this implies that, before the group-symmetric construction, our perceptron machine had even more extreme coefficients.</p>
-<p>A “reliable” machine is a <a href="https://en.wikipedia.org/wiki/Support_vector_machine">support vector machine</a> with margin <span class="math inline">\(\geq 1/2\)</span>. That is, it is a machine such that <span class="math display">\[
+<p>A “reliable” machine is a <a href="https://en.wikipedia.org/wiki/Support_vector_machine">support vector machine</a> with margin <span class="math inline">\geq 1/2</span>. That is, it is a machine such that <span class="math display">
 \sum_{i=0}^{|R|}\binom{|X|}{i} b_i \begin{cases}
 \geq 1 &amp; \text{ if $|X|$ is odd}
 \leq 0 &amp; \text{ if $|X|$ is even}
 \end{cases}
-\]</span></p>
+</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Define <span class="math inline">\(A_n = \sum_{i=0}^n \binom{n}{i}b_i\)</span>. Since the machine is reliable, we have that <span class="math inline">\((-1)^{n}(A_{n+1} - A_n) \geq 1\)</span> for each <span class="math inline">\(n = 0, 1, \dots, |R|-1\)</span>. Simplifying the binomial coefficients, we have <span class="math inline">\(A_{n+1} - A_n = \sum_i \binom{n}{i} b_{i+1}\)</span>. Note that we use the convenient convention that <span class="math inline">\(\binom{x}{y} = 0\)</span> if <span class="math inline">\(x &lt; y\)</span>.</p>
-<p>Now fix any <span class="math inline">\(M \in \{0, 1, \dots, |R|-1\}\)</span>, and evaluate the following inequality:</p>
-<p><span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span>Define <span class="math inline">A_n = \sum_{i=0}^n \binom{n}{i}b_i</span>. Since the machine is reliable, we have that <span class="math inline">(-1)^{n}(A_{n+1} - A_n) \geq 1</span> for each <span class="math inline">n = 0, 1, \dots, |R|-1</span>. Simplifying the binomial coefficients, we have <span class="math inline">A_{n+1} - A_n = \sum_i \binom{n}{i} b_{i+1}</span>. Note that we use the convenient convention that <span class="math inline">\binom{x}{y} = 0</span> if <span class="math inline">x &lt; y</span>.</p>
+<p>Now fix any <span class="math inline">M \in \{0, 1, \dots, |R|-1\}</span>, and evaluate the following inequality:</p>
+<p><span class="math display">
 2^{M} = \sum_n \binom{M}{n} \cdot 1 \leq \sum_n \binom{M}{n} (-1)^{n}(A_{n+1} - A_n)
-\]</span></p>
-<p>By manipulating the binomial coefficients, the right side simplifies to <span class="math inline">\((-1)^M b_{M+1}\)</span>.</p>
+</span></p>
+<p>By manipulating the binomial coefficients, the right side simplifies to <span class="math inline">(-1)^M b_{M+1}</span>.</p>
 </div>
 <p>Sections 10.2 and 10.3 construct two pathological examples. By restricting the shapes of hidden perceptron masks, they proved that certain predicates required superexponential weights. Section 10.4 purports to extend the group invariance theorem to the infinite case.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> None of these are used elsewhere in the book. They are virtuoso performances. However, they interpreted this as a serious problem:</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;They purported to show in Theorem 10.4.1 that, if the weights are bounded, then the group invariance theorem applies again, but the proof is false, with a counterexample being <span class="math inline">\(\sum_{n \in \mathbb{Z}}e^{-n^2}x_n - e^{-n^4}x_nx_{n+1}\)</span>. The theorem <em>might</em> still be correct with another proof, but I cannot find one.</p></div></div><blockquote class="blockquote">
-<p>A proof, in Chapter 10, that coefficients can grow much faster than exponentially with <span class="math inline">\(|R|\)</span> has serious consequences both practically and conceptually: the use of more memory capacity to store the coefficients than to list all the figures strains the idea that the machine is making some kind of abstraction</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;They purported to show in Theorem 10.4.1 that, if the weights are bounded, then the group invariance theorem applies again, but the proof is false, with a counterexample being <span class="math inline">\sum_{n \in \mathbb{Z}}e^{-n^2}x_n - e^{-n^4}x_nx_{n+1}</span>. The theorem <em>might</em> still be correct with another proof, but I cannot find one.</p></div></div><blockquote class="blockquote">
+<p>A proof, in Chapter 10, that coefficients can grow much faster than exponentially with <span class="math inline">|R|</span> has serious consequences both practically and conceptually: the use of more memory capacity to store the coefficients than to list all the figures strains the idea that the machine is making some kind of abstraction</p>
 </blockquote>
 <p>In Chapter 11, they <em>finally</em> began discussing perceptron learning, which is of a very restrictive form.</p>
 <div id="def-perceptron-learning" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Perceptron learning)</strong></span> To train a perceptron machine is to <em>fix</em> its hidden perceptrons, and adjust the weights and threshold of <em>only</em> the single output perceptron by the perceptron learning rule. For this chapter, it is cleaner to change the convention so that each perceptron outputs <span class="math inline">\(-1, +1\)</span> instead of <span class="math inline">\(0, 1\)</span>.</p>
-<p>Since only the output perceptron is adapted, it suffices to discuss the case where there are <em>no</em> hidden perceptrons, and we only need to adapt the weights of a single perceptron. That is, we have a dataset <span class="math inline">\(D\)</span>, and we sample some <span class="math inline">\((x, y) \in D\)</span>, and verify that <span class="math inline">\(y = \theta(\braket{w, x})\)</span>.</p>
-<p>If this is true for all <span class="math inline">\((x, y) \in D\)</span>, then the perceptron learning has converged. Otherwise, we update <span class="math inline">\(w\)</span> using <span class="math inline">\(w \leftarrow w + \alpha y x\)</span>, where <span class="math inline">\(\alpha &gt; 0\)</span> is the learning rate.</p>
+<p><span class="theorem-title"><strong>Definition 6 (Perceptron learning)</strong></span> To train a perceptron machine is to <em>fix</em> its hidden perceptrons, and adjust the weights and threshold of <em>only</em> the single output perceptron by the perceptron learning rule. For this chapter, it is cleaner to change the convention so that each perceptron outputs <span class="math inline">-1, +1</span> instead of <span class="math inline">0, 1</span>.</p>
+<p>Since only the output perceptron is adapted, it suffices to discuss the case where there are <em>no</em> hidden perceptrons, and we only need to adapt the weights of a single perceptron. That is, we have a dataset <span class="math inline">D</span>, and we sample some <span class="math inline">(x, y) \in D</span>, and verify that <span class="math inline">y = \theta(\braket{w, x})</span>.</p>
+<p>If this is true for all <span class="math inline">(x, y) \in D</span>, then the perceptron learning has converged. Otherwise, we update <span class="math inline">w</span> using <span class="math inline">w \leftarrow w + \alpha y x</span>, where <span class="math inline">\alpha &gt; 0</span> is the learning rate.</p>
 </div>
 <div id="def-perceptron-learning" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Perceptron learning theorem)</strong></span> Let <span class="math inline">\(D\)</span> be a dataset with radius <span class="math inline">\(R = \max_{(x, y) \in D} \|x\|\)</span>. If there exists some unit <span class="math inline">\(w^*\)</span> such that <span class="math inline">\(\gamma = \min_{(x, y) \in D} y\braket{w^*, x}\)</span>, then the perceptron learning algorithm converges after making at most <span class="math inline">\((R/\gamma)^2\)</span> updates.</p>
+<p><span class="theorem-title"><strong>Definition 7 (Perceptron learning theorem)</strong></span> Let <span class="math inline">D</span> be a dataset with radius <span class="math inline">R = \max_{(x, y) \in D} \|x\|</span>. If there exists some unit <span class="math inline">w^*</span> such that <span class="math inline">\gamma = \min_{(x, y) \in D} y\braket{w^*, x}</span>, then the perceptron learning algorithm converges after making at most <span class="math inline">(R/\gamma)^2</span> updates.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By linearity of the learning rule, we can deal only with the case where <span class="math inline">\(\alpha = 1\)</span>.</p>
-<p>By multiplying each <span class="math inline">\(x\)</span> with its <span class="math inline">\(y\)</span>, we can deal only with the case where all <span class="math inline">\(y = +1\)</span>.</p>
-<p>By rotating and scaling the space, we can deal only with the case where <span class="math inline">\(w^* = (1, 0, \dots, 0)\)</span>, and <span class="math inline">\(\gamma = 1\)</span>.</p>
-<p>Now, each weight update increases the first coordinate of <span class="math inline">\(w\)</span> by at least <span class="math inline">\(1\)</span>, so after <span class="math inline">\(n\)</span> updates, <span class="math inline">\(\|w\| \geq n\)</span>. However, each weight update of <span class="math inline">\(w \leftarrow w + x\)</span> uses a vector <span class="math inline">\(x\)</span> that is pointing in a direction perpendicular to <span class="math inline">\(w\)</span>, or worse, pointing against <span class="math inline">\(w\)</span>. Therefore, by Pythagorean theorem, <span class="math inline">\(\|w\|^2\)</span> increases by at most <span class="math inline">\(\|x\|^2 \leq R^2\)</span>. So after <span class="math inline">\(n\)</span> updates, <span class="math inline">\(\|w\|^2 \leq nR^2\)</span>.</p>
-<p>Combining the two results, we have <span class="math inline">\(n \leq R^2\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By linearity of the learning rule, we can deal only with the case where <span class="math inline">\alpha = 1</span>.</p>
+<p>By multiplying each <span class="math inline">x</span> with its <span class="math inline">y</span>, we can deal only with the case where all <span class="math inline">y = +1</span>.</p>
+<p>By rotating and scaling the space, we can deal only with the case where <span class="math inline">w^* = (1, 0, \dots, 0)</span>, and <span class="math inline">\gamma = 1</span>.</p>
+<p>Now, each weight update increases the first coordinate of <span class="math inline">w</span> by at least <span class="math inline">1</span>, so after <span class="math inline">n</span> updates, <span class="math inline">\|w\| \geq n</span>. However, each weight update of <span class="math inline">w \leftarrow w + x</span> uses a vector <span class="math inline">x</span> that is pointing in a direction perpendicular to <span class="math inline">w</span>, or worse, pointing against <span class="math inline">w</span>. Therefore, by Pythagorean theorem, <span class="math inline">\|w\|^2</span> increases by at most <span class="math inline">\|x\|^2 \leq R^2</span>. So after <span class="math inline">n</span> updates, <span class="math inline">\|w\|^2 \leq nR^2</span>.</p>
+<p>Combining the two results, we have <span class="math inline">n \leq R^2</span>.</p>
 </div>
-<p>Modifying the proof slightly, and applying the conclusion of <a href="#exm-parity-order" class="quarto-xref">Example&nbsp;2</a>, we find that starting with the zero weight vector, it takes at least <span class="math inline">\(2^{|R|}/|R|\)</span> steps to learn the parity function.</p>
+<p>Modifying the proof slightly, and applying the conclusion of <a href="#exm-parity-order" class="quarto-xref">Example&nbsp;2</a>, we find that starting with the zero weight vector, it takes at least <span class="math inline">2^{|R|}/|R|</span> steps to learn the parity function.</p>
 <p>They then suggested that, since gradient descent is “just” a more efficient perceptron learning rule, it also cannot escape local optima. No “local learning rule” can escape local optima, unlike symbolic programs that are provably capable of finding global optima.</p>
 <p>If the dataset is not linearly separable, then the perceptron weights will not converge. However, the perceptron cycling theorem shows that if the dataset is finite, then the perceptron weights will still be trapped within a large but finite disk, no matter how the dataset is sampled.</p>
-<p>Chapter 12 is not very mathematical, and consists mainly of quick sketches<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> of other algorithms for learning. Those included: lookup table, nearest neighbor, k-means, ISODATA, maximum likelihood, Bayes, naive Bayes, etc. Sections 12.6 and 12.7 study variations on a toy problem: given a subset of <span class="math inline">\(\{0, 1\}^n\)</span>, decide whether an <span class="math inline">\(n\)</span>-bit word is in it or not. This had relevance to the time-space tradeoff, a perennial topic in computational complexity.</p>
+<p>Chapter 12 is not very mathematical, and consists mainly of quick sketches<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> of other algorithms for learning. Those included: lookup table, nearest neighbor, k-means, ISODATA, maximum likelihood, Bayes, naive Bayes, etc. Sections 12.6 and 12.7 study variations on a toy problem: given a subset of <span class="math inline">\{0, 1\}^n</span>, decide whether an <span class="math inline">n</span>-bit word is in it or not. This had relevance to the time-space tradeoff, a perennial topic in computational complexity.</p>
 <div class="no-row-height column-margin column-container"><div id="fn5"><blockquote class="blockquote"><sup>5</sup>&nbsp;
 <p>In this chapter we will study a few of these to indicate points of contact with the perceptron and to reveal deep differences. … The chapter is written more in the spirit of inciting students to research than of offering solutions to problems.</p>
 </blockquote>
@@ -747,7 +763,7 @@ M_d \frac 12 &gt; \sum_{d' = 1}^{d-1} \left(M_{d'}(\frac 12 + 2d')(d-d' + 1)\rig
 </blockquote>
 </div></div><blockquote class="blockquote">
 <p>13.5 Why Prove Theorems?</p>
-<p><em>Why did you prove all these complicated theorems? Couldn’t you just take a perceptron and see if it can recognize <span class="math inline">\(\psi_{\text {CONNECTED}}\)</span>?</em></p>
+<p><em>Why did you prove all these complicated theorems? Couldn’t you just take a perceptron and see if it can recognize <span class="math inline">\psi_{\text {CONNECTED}}</span>?</em></p>
 <p>No.</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center page-columns page-full">

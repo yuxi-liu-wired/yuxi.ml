@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -611,8 +627,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>“Actually, there is a way to do it even ‘for free’, as in there is no extra cost compared to a standard forward pass. Basically you randomly permute one matrix sometimes, and the user votes. If the random permutation gets higher votes, then put the random permutation in place. It’s like A/B testing.”</p>
 <p>“But how… how would that be better than LoRA backprop? Sounds like the sample complexity would be really high…”</p>
 <p>“Sounds like evolutionary algorithm, really. Those are very sample-heavy.”</p>
-<p>The proposer then described something about how this could be done more efficiently, but I didn’t understand it. Now I think about it, it, it is more sample-heavy than RL. Consider the toy example: You have <span class="math inline">\(\theta\)</span> the neural network parameters, and <span class="math inline">\(L(\theta)\)</span> the loss function. You want to optimize <span class="math inline">\(L(\theta)\)</span> by randomly jumping <span class="math inline">\(\theta\)</span> by some <span class="math inline">\(\delta \theta\)</span>. Then, since <span class="math inline">\(L(\theta + \delta \theta) - L(\theta) \approx \braket{\nabla_\theta L , \delta \theta}\)</span>, the probability that this improves <span class="math inline">\(L\)</span> is <span class="math inline">\(\sim 1/2\)</span>, assuming that <span class="math inline">\(\delta\theta\)</span> is small. However, how big is this improvement? Counterintuitively, the probability that a random sample on a <span class="math inline">\(d\)</span>-dimensional sphere is concentrated in a band of <span class="math inline">\(\pm O(1/\sqrt d)\)</span> around its equator. Therefore, the expected improvement of taking this <span class="math inline">\(\delta \theta\)</span> step is just <span class="math inline">\(O(1/\sqrt d)\)</span>.</p>
-<p>Is this worthwhile? A single “jitter” comparison requires 2 forward passes, costing 4 FLOP, while a single backprop costs 6 FLOP. This means that if you just want to improve the model, backprop is much more efficient, since <span class="math inline">\(4\sqrt d \gg 6\)</span>. Although, as the speaker suggested, this could be mildly useful in the particular case where you are a big LLM provider who needs to serve many customers really fast, but the customers are also willing to make a lot of votes, <em>and</em> don’t mind slight service degradation on half of the replies. I would say this is a very niche situation, but yeah, in that very niche situation, jittering would be better than backprop.</p>
+<p>The proposer then described something about how this could be done more efficiently, but I didn’t understand it. Now I think about it, it, it is more sample-heavy than RL. Consider the toy example: You have <span class="math inline">\theta</span> the neural network parameters, and <span class="math inline">L(\theta)</span> the loss function. You want to optimize <span class="math inline">L(\theta)</span> by randomly jumping <span class="math inline">\theta</span> by some <span class="math inline">\delta \theta</span>. Then, since <span class="math inline">L(\theta + \delta \theta) - L(\theta) \approx \braket{\nabla_\theta L , \delta \theta}</span>, the probability that this improves <span class="math inline">L</span> is <span class="math inline">\sim 1/2</span>, assuming that <span class="math inline">\delta\theta</span> is small. However, how big is this improvement? Counterintuitively, the probability that a random sample on a <span class="math inline">d</span>-dimensional sphere is concentrated in a band of <span class="math inline">\pm O(1/\sqrt d)</span> around its equator. Therefore, the expected improvement of taking this <span class="math inline">\delta \theta</span> step is just <span class="math inline">O(1/\sqrt d)</span>.</p>
+<p>Is this worthwhile? A single “jitter” comparison requires 2 forward passes, costing 4 FLOP, while a single backprop costs 6 FLOP. This means that if you just want to improve the model, backprop is much more efficient, since <span class="math inline">4\sqrt d \gg 6</span>. Although, as the speaker suggested, this could be mildly useful in the particular case where you are a big LLM provider who needs to serve many customers really fast, but the customers are also willing to make a lot of votes, <em>and</em> don’t mind slight service degradation on half of the replies. I would say this is a very niche situation, but yeah, in that very niche situation, jittering would be better than backprop.</p>
 <hr>
 <p>“Well, I just published an <a href="https://gwern.net/blog/2025/pinball-hacking">essay about hacking pinball machines</a>, and of course, it is still about AI. Reward hacking. You could hack the leaderboard, or pay someone to say that they totally saw you get a high score. Etc.”</p>
 <p>“I mean, the speedrunning community has such high epistemic standards. So there was this speedrun, and someone actually exhaustively enumerated every single possible button press to formally prove that the speedrun record was impossible.”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>

@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -500,18 +516,18 @@ window.Quarto = {
 <p><a href="https://en.wikipedia.org/wiki/Mixture_of_experts">Mixture of Experts</a> is an old technique dating back to 1991, but it has become a vital component of modern deep learning to get around the memory bottleneck. There is not much theory to speak of, because this is honestly a very simple technique. Let’s say you have a few predictive models. Each model is an <strong>expert</strong>. Now you take all of them and combine their predictions <em>in some way</em> – that’s <strong>mixture of experts</strong>.</p>
 <section id="mixing" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="mixing">Mixing</h3>
-<p>Consider a simple example. Suppose we are to classify points on the <span class="math inline">\(\mathbb{R}^2\)</span> plane into 2 classes. Suppose that we can only use a single linear-logistic function <span class="math inline">\(f(x) = \frac{1}{1 + e^{w^T x + b}}\)</span>, then we can write down this classifier:</p>
-<p><span class="math display">\[
+<p>Consider a simple example. Suppose we are to classify points on the <span class="math inline">\mathbb{R}^2</span> plane into 2 classes. Suppose that we can only use a single linear-logistic function <span class="math inline">f(x) = \frac{1}{1 + e^{w^T x + b}}</span>, then we can write down this classifier:</p>
+<p><span class="math display">
 \hat y := \begin{cases}
 1, \quad &amp; \text{if }f(x) &gt; 0 \\
 0 , &amp; \text{otherwise}
 \end{cases}
-\]</span></p>
+</span></p>
 <p>In other words, we have a <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression model</a>.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/Exam_pass_logistic_curve.svg" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="margin-caption">An example of a logistic regression model. The curve shows the estimated probability of passing an exam versus hours studying. If we have to do a binary prediction, then we predict <span class="math inline">\(\hat y = 1\)</span> iff <span class="math inline">\(x \geq 2.7\)</span>, that is, we predict the student would pass the exam iff they had studied more than 2.7 hours. Figure from <a href="https://en.wikipedia.org/wiki/File:Exam_pass_logistic_curve.svg">Wikipedia</a></figcaption>
+<figcaption class="margin-caption">An example of a logistic regression model. The curve shows the estimated probability of passing an exam versus hours studying. If we have to do a binary prediction, then we predict <span class="math inline">\hat y = 1</span> iff <span class="math inline">x \geq 2.7</span>, that is, we predict the student would pass the exam iff they had studied more than 2.7 hours. Figure from <a href="https://en.wikipedia.org/wiki/File:Exam_pass_logistic_curve.svg">Wikipedia</a></figcaption>
 </figure>
 </div>
 <p>Like perceptrons, logistic regression is simple, fast, and has a very elegant theory – and <a href="https://yuxi.ml/essays/posts/perceptron-controversy/#interpreting-the-xor-problem">like perceptrons, logistic regression does not work if the underlying system is not linearly separable</a>.</p>
@@ -523,47 +539,47 @@ window.Quarto = {
 </figure>
 </div>
 <p>Let’s design the 2 experts manually, and somehow combine them. The 2 experts should each handle one of the edges:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f_1(x, y) = \frac{1}{e^{10 x}+1}, \quad f_2(x, y) = \frac{1}{e^{10 y}+1}
-\]</span></p>
-<p>In words, <span class="math inline">\(f_1\)</span> is a smooth approximation to the 0-1 function that sends <span class="math inline">\((x, y)\)</span> to <span class="math inline">\(1\)</span> iff <span class="math inline">\(x &gt; 0\)</span>, and similarly, <span class="math inline">\(f_2\)</span> is a smooth approximation to the 0-1 function that sends <span class="math inline">\((x, y)\)</span> to <span class="math inline">\(1\)</span> iff <span class="math inline">\(y &gt; 0\)</span>. How do we combine them?</p>
-<p>We can add another “manager” which is an expert at picking experts. It would pick <span class="math inline">\(f_1\)</span> if the point <span class="math inline">\((x, y)\)</span> falls above the diagonal line <span class="math inline">\(x=y\)</span>, and pick <span class="math inline">\(f_2\)</span> otherwise. This would then give us</p>
-<p><span class="math display">\[
+</span></p>
+<p>In words, <span class="math inline">f_1</span> is a smooth approximation to the 0-1 function that sends <span class="math inline">(x, y)</span> to <span class="math inline">1</span> iff <span class="math inline">x &gt; 0</span>, and similarly, <span class="math inline">f_2</span> is a smooth approximation to the 0-1 function that sends <span class="math inline">(x, y)</span> to <span class="math inline">1</span> iff <span class="math inline">y &gt; 0</span>. How do we combine them?</p>
+<p>We can add another “manager” which is an expert at picking experts. It would pick <span class="math inline">f_1</span> if the point <span class="math inline">(x, y)</span> falls above the diagonal line <span class="math inline">x=y</span>, and pick <span class="math inline">f_2</span> otherwise. This would then give us</p>
+<p><span class="math display">
 f(x, y) = \begin{cases}
 f_1(x, y), \quad &amp;\text{if } y-x &gt; 0 \\
 f_2(x, y), \quad &amp;\text{if } y-x &lt; 0
 \end{cases}
-\]</span></p>
+</span></p>
 <p>This is the simplest example of <strong>sparsely-gated MoE</strong>. For each point, the manager picks the right expert to call, and call that expert. The other expert does not ever need to be activated, saving half the compute, the manager’s computation is so simple that it does not cost anything compared to the expert’s computation, which contains an exponential.</p>
 <p>We can also combine the experts by a linear function, as in</p>
-<p><span class="math display">\[
+<p><span class="math display">
 f(x, y) = \sum_{i = 1}^2 p_i(x, y) f_i(x, y)
-\]</span></p>
-<p>where <span class="math inline">\((p_1, p_2)\)</span> is a probability distribution over the experts that depends on <span class="math inline">\((x, y)\)</span>, such as <span class="math inline">\(\mathop{\mathrm{softmax}}(A(x, y))\)</span> where <span class="math inline">\(A\)</span> is a linear operator, that is, a matrix. For lack of a better word, I call this <strong>dense MoE</strong>.</p>
+</span></p>
+<p>where <span class="math inline">(p_1, p_2)</span> is a probability distribution over the experts that depends on <span class="math inline">(x, y)</span>, such as <span class="math inline">\mathop{\mathrm{softmax}}(A(x, y))</span> where <span class="math inline">A</span> is a linear operator, that is, a matrix. For lack of a better word, I call this <strong>dense MoE</strong>.</p>
 </section>
 <section id="sparsifying" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="sparsifying">Sparsifying</h3>
 <p>Given a MoE, there are two ways to use it. One can use it as-is, but then every expert must be consulted on every query, defeating the main purpose of MoE in the age of large models: conditional computing. Therefore, the model should be sparsified.</p>
-<p>In the first MoE paper <span class="citation" data-cites="jacobsAdaptiveMixturesLocal1991">(<a href="#ref-jacobsAdaptiveMixturesLocal1991" role="doc-biblioref">Jacobs et al. 1991</a>)</span>, they manually inspected the weights (the matrix <span class="math inline">\(A\)</span> in our notation), and found that some experts would never be called on any input. Then they just removed those experts. This can be understood as sparsification “at compile time”.</p>
-<p>In the toy model, I trained 6 logistic regression experts to classify 2-dimensional points, so the matrix <span class="math inline">\(A\)</span> has 6 rows and 2 columns. To sparsify the model at compile time to only <span class="math inline">\(k\)</span> experts, I took the matrix <span class="math inline">\(A\)</span> and ranked them according to their L2-norm, found the top-<span class="math inline">\(k\)</span> rows of them, then mask out all the other experts. The resulting heat maps at various levels of <span class="math inline">\(k \in 1:6\)</span> are as follows.</p>
+<p>In the first MoE paper <span class="citation" data-cites="jacobsAdaptiveMixturesLocal1991">(<a href="#ref-jacobsAdaptiveMixturesLocal1991" role="doc-biblioref">Jacobs et al. 1991</a>)</span>, they manually inspected the weights (the matrix <span class="math inline">A</span> in our notation), and found that some experts would never be called on any input. Then they just removed those experts. This can be understood as sparsification “at compile time”.</p>
+<p>In the toy model, I trained 6 logistic regression experts to classify 2-dimensional points, so the matrix <span class="math inline">A</span> has 6 rows and 2 columns. To sparsify the model at compile time to only <span class="math inline">k</span> experts, I took the matrix <span class="math inline">A</span> and ranked them according to their L2-norm, found the top-<span class="math inline">k</span> rows of them, then mask out all the other experts. The resulting heat maps at various levels of <span class="math inline">k \in 1:6</span> are as follows.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/sparsified_moe_various_levels.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Heat maps of the compile-time sparsified MoE at various levels of sparsity.</figcaption>
 </figure>
 </div>
-<p>As expected, when <span class="math inline">\(k=1\)</span>, we have only one expert taking care of everything, and end up with a linear classifier. When <span class="math inline">\(k=2\)</span>, the sparsified MoE looks much closer to the correct classifier. When <span class="math inline">\(k \geq 3\)</span>, it becomes indistinguishable.</p>
-<p>Now, for the <strong>sparsely-gated MoE</strong>, the sparsification is done “at runtime”. That is, for each input <span class="math inline">\(x\)</span>, we find the top-<span class="math inline">\(k\)</span> experts <em>for this specific</em> <span class="math inline">\(x\)</span>, and use those experts:</p>
-<p><span class="math display">\[w(x) = \mathop{\mathrm{softmax}}(\mathrm{top}_k(Ax))\]</span></p>
-<p>where <span class="math inline">\(\mathrm{top}_k(v)\)</span> preserves the top-k entries of <span class="math inline">\(v\)</span>, but set all other entries to <span class="math inline">\(-\infty\)</span>. This means we have to keep all experts at runtime, since each expert might be needed for some specific input point, but every input point would only activate a few experts. The key is that the activated experts depend on <span class="math inline">\(x\)</span>, unlike the MoE sparsified at compile time, which always activates the same few experts. This means we can achieve a lower sparsity, and less compute. We trade memory for performance and compute.</p>
-<p>In the same toy model, the resulting heat maps at various levels of <span class="math inline">\(k \in 1:6\)</span> are as follows.</p>
+<p>As expected, when <span class="math inline">k=1</span>, we have only one expert taking care of everything, and end up with a linear classifier. When <span class="math inline">k=2</span>, the sparsified MoE looks much closer to the correct classifier. When <span class="math inline">k \geq 3</span>, it becomes indistinguishable.</p>
+<p>Now, for the <strong>sparsely-gated MoE</strong>, the sparsification is done “at runtime”. That is, for each input <span class="math inline">x</span>, we find the top-<span class="math inline">k</span> experts <em>for this specific</em> <span class="math inline">x</span>, and use those experts:</p>
+<p><span class="math display">w(x) = \mathop{\mathrm{softmax}}(\mathrm{top}_k(Ax))</span></p>
+<p>where <span class="math inline">\mathrm{top}_k(v)</span> preserves the top-k entries of <span class="math inline">v</span>, but set all other entries to <span class="math inline">-\infty</span>. This means we have to keep all experts at runtime, since each expert might be needed for some specific input point, but every input point would only activate a few experts. The key is that the activated experts depend on <span class="math inline">x</span>, unlike the MoE sparsified at compile time, which always activates the same few experts. This means we can achieve a lower sparsity, and less compute. We trade memory for performance and compute.</p>
+<p>In the same toy model, the resulting heat maps at various levels of <span class="math inline">k \in 1:6</span> are as follows.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/sparsely_gated_moe_various_levels.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">Heat maps of the sparsely-gated MoE at various levels of sparsity.</figcaption>
 </figure>
 </div>
-<p>Compared with the compile-time sparsified MoE, the sparsely-gated MoE is already usable when <span class="math inline">\(k=1\)</span>, and it looks like a piecewise-linear classifier. When <span class="math inline">\(k=2\)</span>, it already becomes indistinguishable from the correct classifier.</p>
+<p>Compared with the compile-time sparsified MoE, the sparsely-gated MoE is already usable when <span class="math inline">k=1</span>, and it looks like a piecewise-linear classifier. When <span class="math inline">k=2</span>, it already becomes indistinguishable from the correct classifier.</p>
 </section>
 </section>
 <section id="brief-history" class="level2 page-columns page-full">
@@ -632,12 +648,12 @@ f(x, y) = \sum_{i = 1}^2 p_i(x, y) f_i(x, y)
 <p>While classical statistics and machine learning was mainly constrained by how many partial derivatives and integrals the statistician can calculate confidently on paper,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> deep learning is mainly constrained by memory and compute budget.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;If you want a taste of the old days, look at the formulas inside <span class="citation" data-cites="jordanHierarchicalMixturesExperts1994">(<a href="#ref-jordanHierarchicalMixturesExperts1994" role="doc-biblioref">Jordan and Jacobs 1994</a>)</span>. They explicitly calculated the expectation-maximization algorithms for learning a hierarchy of linear experts.</p></div></div><p>So when the deep learning era came circa 2012, people immediately started looking into how to perform conditional computing, that is, to save compute by only calling a small portion of the model. The idea is that you would have different portions of the model be specialized for different forms of input, and for each input, the model would first cheaply find out which expert should handle it, then call upon only the few specialized experts to handle this particular input.</p>
 <p>The first paper on applying MoE to deep learning was <span class="citation" data-cites="eigenLearningFactoredRepresentations2013">(<a href="#ref-eigenLearningFactoredRepresentations2013" role="doc-biblioref">Eigen, Ranzato, and Sutskever 2013</a>)</span>, one year after <a href="https://en.wikipedia.org/wiki/AlexNet">AlexNet</a>. However, the deep MoE (DMoE) proposed in the paper has no sparsity, and so it has no modern offsprings. For history’s sake, here’s how it worked.</p>
-<p>Let <span class="math inline">\(f_{1, 1}, f_{1, 2}, \dots, f_{1, n}\)</span> be <span class="math inline">\(n\)</span> feedforward modules with the same number of input and output neurons. Now, each can be treated as an expert, and be mixed by</p>
-<p><span class="math display">\[
+<p>Let <span class="math inline">f_{1, 1}, f_{1, 2}, \dots, f_{1, n}</span> be <span class="math inline">n</span> feedforward modules with the same number of input and output neurons. Now, each can be treated as an expert, and be mixed by</p>
+<p><span class="math display">
 f_1(x) = \sum_i g_{1, i}(x) f_{1, i}(x)
-\]</span></p>
-<p>where <span class="math inline">\(g_{1, i}\)</span> is a tiny neural network, the <strong>gating network</strong> for this MoE layer. Now, stack multiple such layers, and we would obtain a DMoE. As one can see, such a network still has to use all the parameters in each forward pass, and therefore saves no compute. It is simply a case of the dense MoE.</p>
-<p>Modern<sub>2020s</sub> deep learning really arrived with the sparsely-gated MoE <span class="citation" data-cites="shazeerOutrageouslyLargeNeural2017">(<a href="#ref-shazeerOutrageouslyLargeNeural2017" role="doc-biblioref">Shazeer et al. 2017</a>)</span>, which saves compute. Specifically, if each layer contains <span class="math inline">\(8\)</span> experts, but only <span class="math inline">\(2\)</span> are consulted, then the cost of compute is only about <span class="math inline">\(1/4\)</span> for the full model.</p>
+</span></p>
+<p>where <span class="math inline">g_{1, i}</span> is a tiny neural network, the <strong>gating network</strong> for this MoE layer. Now, stack multiple such layers, and we would obtain a DMoE. As one can see, such a network still has to use all the parameters in each forward pass, and therefore saves no compute. It is simply a case of the dense MoE.</p>
+<p>Modern<sub>2020s</sub> deep learning really arrived with the sparsely-gated MoE <span class="citation" data-cites="shazeerOutrageouslyLargeNeural2017">(<a href="#ref-shazeerOutrageouslyLargeNeural2017" role="doc-biblioref">Shazeer et al. 2017</a>)</span>, which saves compute. Specifically, if each layer contains <span class="math inline">8</span> experts, but only <span class="math inline">2</span> are consulted, then the cost of compute is only about <span class="math inline">1/4</span> for the full model.</p>
 </section>
 <section id="why-moe-for-deep-learning" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="why-moe-for-deep-learning">Why MoE for deep learning?</h2>
@@ -646,7 +662,7 @@ f_1(x) = \sum_i g_{1, i}(x) f_{1, i}(x)
 <li>You really need to push the metric up by a few points.</li>
 <li>You can’t train a dense model larger than the frontier model, because it simply fails to converge, or the hyperparameter settings for the small models don’t work for the larger one (and you can’t just run a grid search to find it because it costs a million dollars to do a single run).</li>
 <li>You can train around 10 copies of the frontier model, because while you don’t have the money to do grid search beyond the current frontier, you have the money to train 10 at the frontier.</li>
-<li>You can’t infer a dense model larger than the frontier one, because one dense model <span class="math inline">\(N\)</span> times as wide would cost you <span class="math inline">\(N^2\)</span> amount of storage <em>and</em> compute, while if you just train <span class="math inline">\(N\)</span> experts, each with roughly the same architecture as the dense model, it would cost you about <span class="math inline">\(N\)</span> amount of storage <em>and</em> about <span class="math inline">\(2\)</span> amount of compute (if only 2 experts are called per question).</li>
+<li>You can’t infer a dense model larger than the frontier one, because one dense model <span class="math inline">N</span> times as wide would cost you <span class="math inline">N^2</span> amount of storage <em>and</em> compute, while if you just train <span class="math inline">N</span> experts, each with roughly the same architecture as the dense model, it would cost you about <span class="math inline">N</span> amount of storage <em>and</em> about <span class="math inline">2</span> amount of compute (if only 2 experts are called per question).</li>
 <li>Indeed, if there are too many parameters, then it can’t even be fit onto a good GPU and must be split across GPUs, and then the GPU–GPU communication becomes a serious problem (the “von Neumann bottleneck”).</li>
 </ul>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
@@ -677,13 +693,13 @@ f_1(x) = \sum_i g_{1, i}(x) f_{1, i}(x)
 </blockquote>
 <p>This might not have been a serious problem in the past, when neural networks were seen as merely a form of high-dimensional statistical model learnable by any one of the typical statistical algorithms (maximal likelihood, Bayesian inference, expectation maximization…), but nowadays, MoE are used because you need to throw more compute at the problem, but cannot afford a larger dense model. In this case, it would defeat the purpose of MoE if some experts end up neglected.</p>
 <p>It is no coincidence, then, that the sparsely-gated MoE paper <span class="citation" data-cites="shazeerOutrageouslyLargeNeural2017">(<a href="#ref-shazeerOutrageouslyLargeNeural2017" role="doc-biblioref">Shazeer et al. 2017</a>)</span> specifically used two auxiliary loss functions to encourage the experts to have equal “weight” over time. It was simplified to just one in the Switch Transformers paper <span class="citation" data-cites="fedusSwitchTransformersScaling2022">(<a href="#ref-fedusSwitchTransformersScaling2022" role="doc-biblioref">Fedus, Zoph, and Shazeer 2022</a>)</span>.</p>
-<p>Specifically, consider the sparsely-gated MoE with <span class="math inline">\(k=1\)</span> – where just the top-ranked expert is consulted every time. Let <span class="math inline">\(n\)</span> be the number of experts, and consider a batch of queries <span class="math inline">\(\{x_1, x_2, ..., x_T\}\)</span>, then the auxiliary loss of the batch is</p>
-<p><span class="math display">\[
+<p>Specifically, consider the sparsely-gated MoE with <span class="math inline">k=1</span> – where just the top-ranked expert is consulted every time. Let <span class="math inline">n</span> be the number of experts, and consider a batch of queries <span class="math inline">\{x_1, x_2, ..., x_T\}</span>, then the auxiliary loss of the batch is</p>
+<p><span class="math display">
 L := n \sum_{i=1}^n f_i P_i
-\]</span></p>
-<p>where <span class="math inline">\(f_i=\frac{1}{T} \#(\text{queries sent to expert $i$})\)</span> is the fraction of time where expert <span class="math inline">\(i\)</span> is ranked highest, and <span class="math inline">\(P_i=\frac{1}{T} \sum_{j=1}^T w_i\left(x_j\right)\)</span> is the fraction of weight on expert <span class="math inline">\(i\)</span>.</p>
-<p>In the original paper, they claimed that we can obtain the minimal auxiliary loss <span class="math inline">\(L\)</span> at the limit where every expert has equal weight <span class="math inline">\(1 / n\)</span> on all samples, and every expert is ranked the highest equally often.</p>
-<p>Plugging in the equations, we find it is <span class="math inline">\(1\)</span>. Unfortunately, <a href="#sec-appendix-load-balancing-error">this is technically wrong</a>. When there are many experts and large batch, a way to let <span class="math inline">\(L\)</span> approach <span class="math inline">\(1/2\)</span>. It is not difficult to show that <span class="math inline">\(1/2\)</span> is the true lower bound. Seeing that Google has been training those huge models since 2017, this definitely works in practice, despite being slightly incorrect.</p>
+</span></p>
+<p>where <span class="math inline">f_i=\frac{1}{T} \#(\text{queries sent to expert $i$})</span> is the fraction of time where expert <span class="math inline">i</span> is ranked highest, and <span class="math inline">P_i=\frac{1}{T} \sum_{j=1}^T w_i\left(x_j\right)</span> is the fraction of weight on expert <span class="math inline">i</span>.</p>
+<p>In the original paper, they claimed that we can obtain the minimal auxiliary loss <span class="math inline">L</span> at the limit where every expert has equal weight <span class="math inline">1 / n</span> on all samples, and every expert is ranked the highest equally often.</p>
+<p>Plugging in the equations, we find it is <span class="math inline">1</span>. Unfortunately, <a href="#sec-appendix-load-balancing-error">this is technically wrong</a>. When there are many experts and large batch, a way to let <span class="math inline">L</span> approach <span class="math inline">1/2</span>. It is not difficult to show that <span class="math inline">1/2</span> is the true lower bound. Seeing that Google has been training those huge models since 2017, this definitely works in practice, despite being slightly incorrect.</p>
 <p>There are plenty of other choices for load balancing, which are rather technical details. For example, the z-loss stabilizes mixed-precision training by discouraging logits that are too far from zero, avoiding large round-off errors <span class="citation" data-cites="zophSTMoEDesigningStable2022">(<a href="#ref-zophSTMoEDesigningStable2022" role="doc-biblioref">Zoph et al. 2022, secs. 3.3–3.4</a>)</span>.</p>
 </section>
 
@@ -691,18 +707,18 @@ L := n \sum_{i=1}^n f_i P_i
 
 <div id="quarto-appendix" class="default page-columns page-full"><section id="sec-appendix-load-balancing-error" class="level2 appendix page-columns page-full"><h2 class="anchored quarto-appendix-heading">Appendix: Error in load balancing</h2><div class="quarto-appendix-contents page-columns page-full">
 
-<p>Let one expert get <span class="math inline">\(1/2 - \epsilon\)</span> on every question, but is never consulted on anything, and let every other <span class="math inline">\(n-1\)</span> expert evenly divide the rest of the questions. For example, this is how the weights should be distributed when there are 3 experts on 4 questions:</p>
-<p><span class="math display">\[
+<p>Let one expert get <span class="math inline">1/2 - \epsilon</span> on every question, but is never consulted on anything, and let every other <span class="math inline">n-1</span> expert evenly divide the rest of the questions. For example, this is how the weights should be distributed when there are 3 experts on 4 questions:</p>
+<p><span class="math display">
 \begin{bmatrix}
 \frac 12 - \epsilon &amp; \frac 12 + \epsilon &amp; 0 \\
 \frac 12 - \epsilon &amp; \frac 12 + \epsilon &amp; 0 \\
 \frac 12 - \epsilon &amp; 0 &amp; \frac 12 + \epsilon \\
 \frac 12 - \epsilon &amp; 0 &amp; \frac 12 + \epsilon \\
 \end{bmatrix}
-\]</span></p>
-<p>giving <span class="math inline">\(L = \frac 34 (1+2\epsilon)\)</span>. By generalizing this construction, when there are many experts and large batch, we have <span class="math inline">\(L \to 1/2\)</span>. It is not difficult to show that <span class="math inline">\(1/2\)</span> is the true lower bound.</p>
-<p>With the global optimization method of <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html">dual annealing</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, Python found something close to the true lower bound, as shown in the figure. The load balancing matrix has a bright strip of <span class="math inline">\(1/2 - \epsilon\)</span>, and slightly brighter dots of <span class="math inline">\(1/2+\epsilon\)</span> jumping around the matrix, as expected.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;I tried using local optimization with SciPy’s <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize"><code>minimize</code></a>, but it always fails to converge to <span class="math inline">\(\sim 1/2\)</span>. It even fails to converge to <span class="math inline">\(\sim 1\)</span>. Indeed, often it just moves around the initial point a bit then immediately gives up and stops. My suspicion is that the loss landscape is too jagged.</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
+</span></p>
+<p>giving <span class="math inline">L = \frac 34 (1+2\epsilon)</span>. By generalizing this construction, when there are many experts and large batch, we have <span class="math inline">L \to 1/2</span>. It is not difficult to show that <span class="math inline">1/2</span> is the true lower bound.</p>
+<p>With the global optimization method of <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html">dual annealing</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, Python found something close to the true lower bound, as shown in the figure. The load balancing matrix has a bright strip of <span class="math inline">1/2 - \epsilon</span>, and slightly brighter dots of <span class="math inline">1/2+\epsilon</span> jumping around the matrix, as expected.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;I tried using local optimization with SciPy’s <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize"><code>minimize</code></a>, but it always fails to converge to <span class="math inline">\sim 1/2</span>. It even fails to converge to <span class="math inline">\sim 1</span>. Indeed, often it just moves around the initial point a bit then immediately gives up and stops. My suspicion is that the loss landscape is too jagged.</p></div></div><div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="figure/load_balancing_directly_optimized.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption class="margin-caption">The result of minimizing load-balancing loss, with 10 experts and 10 questions.</figcaption>

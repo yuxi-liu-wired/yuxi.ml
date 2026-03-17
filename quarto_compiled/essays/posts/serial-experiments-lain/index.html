@@ -141,9 +141,25 @@ div.csl-indent {
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -617,12 +633,12 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="sec-schumann-frequency">Schumann frequency</h3>
 <p>While the Schumann frequency plays a fundamental role in SEL, its technical details are completely irrelevant (just like most <a href="https://en.wikipedia.org/wiki/Technobabble">technobabbles</a>). This section describes briefly how you can easily do an almost-correct calculation of the Schumann resonance frequencies: 8 Hz, 14 Hz, 20 Hz…</p>
 <p>In short, the lowest frequency is simply by dimensional analysis:</p>
-<p><span class="math display">\[f_0 \approx \frac{\text{speed of light}}{\text{circumference of earth}} = \frac{c}{2 \pi R}\]</span></p>
+<p><span class="math display">f_0 \approx \frac{\text{speed of light}}{\text{circumference of earth}} = \frac{c}{2 \pi R}</span></p>
 <p>Intuitively speaking, this is treating the ionosphere of earth as if it’s a circular tube, a hula-hoop around the waist of earth, and the lowest Schumann resonance is the lowest-degree standing wave in the hula-hoop.</p>
 <p>To find the higher frequencies, we can simply calculate the higher-degree standing waves in the hula-hoop:</p>
-<p><span class="math display">\[f_n \approx \frac{c n}{2 \pi R}\]</span></p>
+<p><span class="math display">f_n \approx \frac{c n}{2 \pi R}</span></p>
 <p>For comparison, a spherical cavity of an ideal conductor has resonance frequencies exactly solvable, as</p>
-<p><span class="math display">\[f_n = \frac{c}{2\pi R}\sqrt{n(n+1)}\]</span></p>
+<p><span class="math display">f_n = \frac{c}{2\pi R}\sqrt{n(n+1)}</span></p>
 <p>which is very close to our super fast estimate above.</p>
 
 

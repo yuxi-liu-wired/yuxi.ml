@@ -121,9 +121,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 })();
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -477,8 +493,8 @@ window.Quarto = {
 <p>This article walks through the evolution from MHA, MQA, GQA to MLA, gradually introducing the design principles of MLA.</p>
 <section id="mha" class="level2">
 <h2 class="anchored" data-anchor-id="mha">MHA</h2>
-<p>MHA (<strong><font color="red">M</font></strong>ulti-<strong><font color="red">H</font></strong>ead <strong><font color="red">A</font></strong>ttention) is a form of attention proposed in the seminal <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a>, the foundation of current mainstream LLMs. Mathematically, MHA is equivalent to the concatenation of multiple independent single-head attentions. Assuming the input (row) vector sequence is <span class="math inline">\(\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_l\)</span>, where <span class="math inline">\(\boldsymbol{x}_i\in\mathbb{R}^d\)</span>, then MHA can be formally written as</p>
-<p><span class="math display">\[
+<p>MHA (<strong><font color="red">M</font></strong>ulti-<strong><font color="red">H</font></strong>ead <strong><font color="red">A</font></strong>ttention) is a form of attention proposed in the seminal <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a>, the foundation of current mainstream LLMs. Mathematically, MHA is equivalent to the concatenation of multiple independent single-head attentions. Assuming the input (row) vector sequence is <span class="math inline">\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_l</span>, where <span class="math inline">\boldsymbol{x}_i\in\mathbb{R}^d</span>, then MHA can be formally written as</p>
+<p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -488,16 +504,16 @@ window.Quarto = {
 \boldsymbol{v}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d\times d_v}
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>For simplicity, the scaling factor of the Attention matrix is omitted here. In practice, a common setting is <span class="math inline">\(d_k = d_v = d / h\)</span>, so we have</p>
+</span></p>
+<p>For simplicity, the scaling factor of the Attention matrix is omitted here. In practice, a common setting is <span class="math inline">d_k = d_v = d / h</span>, so we have</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>model name</th>
-<th><span class="math inline">\(d\)</span></th>
-<th><span class="math inline">\(h\)</span></th>
-<th><span class="math inline">\(d_k\)</span></th>
-<th><span class="math inline">\(d_v\)</span></th>
+<th><span class="math inline">d</span></th>
+<th><span class="math inline">h</span></th>
+<th><span class="math inline">d_k</span></th>
+<th><span class="math inline">d_v</span></th>
 </tr>
 </thead>
 <tbody>
@@ -517,7 +533,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Since we only consider the causal attention used by mainstream autoregressive LLMs here, when generating recursively token by token, the newly predicted <span class="math inline">\((t+1)\)</span>-th token will not affect the already calculated <span class="math inline">\(\boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}\)</span>. Therefore, we can cache this part of the result for subsequent generation calls, avoiding unnecessary repeated calculations. This is the so-called <strong>KV Cache</strong>.</p>
+<p>Since we only consider the causal attention used by mainstream autoregressive LLMs here, when generating recursively token by token, the newly predicted <span class="math inline">(t+1)</span>-th token will not affect the already calculated <span class="math inline">\boldsymbol{k}_{\leq t}^{(s)} ,\boldsymbol{v}_{\leq t}^{(s)}</span>. Therefore, we can cache this part of the result for subsequent generation calls, avoiding unnecessary repeated calculations. This is the so-called <strong>KV Cache</strong>.</p>
 <p>The subsequent MQA, GQA, and MLA are all products developed around the theme of “How do we reduce KV Cache while ensuring the best possible performance?”.</p>
 </section>
 <section id="bottleneck" class="level2">
@@ -532,8 +548,8 @@ window.Quarto = {
 <section id="mqa" class="level2">
 <h2 class="anchored" data-anchor-id="mqa">MQA</h2>
 <p>MQA, which stands for “<strong><font color="red">M</font></strong>ulti-<strong><font color="red">Q</font></strong>uery <strong><font color="red">A</font></strong>ttention”, is a very simple attempt to reduce KV Cache. It was first proposed in <a href="https://arxiv.org/abs/1911.02150">Fast Transformer Decoding: One Write-Head is All You Need</a> (2019), which means that even before the LLM craze, reducing KV Cache was already a topic of great interest to researchers.</p>
-<p>The idea behind MQA is simple: directly let all Attention Heads share the same K and V. In terms of formulas, this means removing the superscript <span class="math inline">\({}^{(s)}\)</span> from all <span class="math inline">\(\boldsymbol{k},\boldsymbol{v}\)</span> in MHA:</p>
-<p><span class="math display">\[
+<p>The idea behind MQA is simple: directly let all Attention Heads share the same K and V. In terms of formulas, this means removing the superscript <span class="math inline">{}^{(s)}</span> from all <span class="math inline">\boldsymbol{k},\boldsymbol{v}</span> in MHA:</p>
+<p><span class="math display">
 \begin{equation}\require{cancel}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -543,15 +559,15 @@ window.Quarto = {
 \boldsymbol{v}_i^{\color{#ccc}{\smash{\bcancel{(s)}}}} = \boldsymbol{x}_i\boldsymbol{W}_v^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{\color{#ccc}{\smash{\bcancel{(s)}}}}\in\mathbb{R}^{d\times d_v}
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>Models that use MQA include <a href="https://arxiv.org/pdf/2204.02311">PaLM</a>, <a href="https://arxiv.org/abs/2305.06161">StarCoder</a>, and <a href="https://arxiv.org/abs/2312.11805">Gemini</a>, among others. It’s clear that MQA directly reduces the KV Cache to <span class="math inline">\(1/h\)</span> of its original size, which is very significant and, from the perspective of saving video memory alone, is already the upper limit.</p>
-<p>In terms of performance, the loss in most tasks appears to be relatively limited, and MQA’s supporters believe that this loss can be compensated for through further training. In addition, it’s worth noting that because MQA shares K and V, there is just one matrix for projecting the hidden vector to the key vector, and another for projecting to the value vector, instead of <span class="math inline">\(h\)</span> of them. Thus, the number of parameters for Attention will be reduced by nearly half. To keep the total number of model parameters unchanged, the size of feed-forward or gated linear unit is usually increased accordingly, which can also compensate for some of the performance loss.</p>
+</span></p>
+<p>Models that use MQA include <a href="https://arxiv.org/pdf/2204.02311">PaLM</a>, <a href="https://arxiv.org/abs/2305.06161">StarCoder</a>, and <a href="https://arxiv.org/abs/2312.11805">Gemini</a>, among others. It’s clear that MQA directly reduces the KV Cache to <span class="math inline">1/h</span> of its original size, which is very significant and, from the perspective of saving video memory alone, is already the upper limit.</p>
+<p>In terms of performance, the loss in most tasks appears to be relatively limited, and MQA’s supporters believe that this loss can be compensated for through further training. In addition, it’s worth noting that because MQA shares K and V, there is just one matrix for projecting the hidden vector to the key vector, and another for projecting to the value vector, instead of <span class="math inline">h</span> of them. Thus, the number of parameters for Attention will be reduced by nearly half. To keep the total number of model parameters unchanged, the size of feed-forward or gated linear unit is usually increased accordingly, which can also compensate for some of the performance loss.</p>
 </section>
 <section id="gqa" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="gqa">GQA</h2>
 <p>However, some people are concerned that MQA compresses the KV Cache too much, which could affect the model’s learning efficiency and the final results. To address this, a transitional version between MHA and MQA, called GQA (<strong><font color="red">G</font></strong>rouped-<strong><font color="red">Q</font></strong>uery <strong><font color="red">A</font></strong>ttention), was developed. It originated from the paper <a href="https://arxiv.org/abs/2305.13245">GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</a>, which was published last year.</p>
-<p>In retrospect, the idea behind GQA is also quite naive: it divides all Heads into <span class="math inline">\(g\)</span> groups (where <span class="math inline">\(g\)</span> is a divisor of <span class="math inline">\(h\)</span>), and each group shares the same KV pair:</p>
-<p><span class="math display">\[
+<p>In retrospect, the idea behind GQA is also quite naive: it divides all Heads into <span class="math inline">g</span> groups (where <span class="math inline">g</span> is a divisor of <span class="math inline">h</span>), and each group shares the same KV pair:</p>
+<p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -561,22 +577,22 @@ window.Quarto = {
 \boldsymbol{v}_i^{\color{red}{(\lceil sg/h\rceil)}} = \boldsymbol{x}_i\boldsymbol{W}_v^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{\color{red}{(\lceil sg/h\rceil)}}\in\mathbb{R}^{d\times d_v}
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>Here, <span class="math inline">\(\lceil\cdot\rceil\)</span> is the ceiling function. GQA provides a natural transition from MHA to MQA. When <span class="math inline">\(g=h\)</span>, it is MHA; when <span class="math inline">\(g=1\)</span>, it is MQA. When <span class="math inline">\(1 &lt; g &lt; h\)</span>, it only compresses the KV Cache to <span class="math inline">\(g/h\)</span>. The compression rate is not as good as MQA, but it also provides greater flexibility and better guarantees in terms of effectiveness. The most well-known users of GQA are probably Meta’s open-source <a href="https://llama.meta.com/llama2"><code>Llama-2-70B</code></a>, and the entire <a href="https://llama.meta.com/llama3/"><code>Llama-3</code> series</a>. Other models using GQA include <a href="https://arxiv.org/abs/2312.08688"><code>TigerBot</code></a>, <a href="https://arxiv.org/abs/2401.02954"><code>DeepSeek-V1</code></a>, <a href="https://arxiv.org/abs/2402.19173"><code>StarCoder2</code></a>, <a href="https://arxiv.org/abs/2403.04652">Yi</a>, <a href="https://github.com/THUDM/ChatGLM2-6B"><code>ChatGLM2-6B</code></a>, and <a href="https://github.com/THUDM/ChatGLM3"><code>ChatGLM3</code></a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> There are many more models using GQA than models using MQA.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Though the <code>ChatGLM</code> report claims to use “Multi-Query Attention” in <a href="https://arxiv.org/pdf/2406.12793#page=3">page 3 of the report</a>, it is actually using GQA with <span class="math inline">\(g=2\)</span>, as you can see in <a href="https://arxiv.org/pdf/2406.12793#page=5">page 5 of the report</a>.</p></div></div><p><code>llama-2/3-70B</code> uses <span class="math inline">\(g=8\)</span>, and it is the same for most other models of similar parameter count that uses GQA. This is not an accident, but a deliberate choice for efficient inference. We know that a model of 70B scale cannot be deployed on a single GPU (A100/H100 80G) without extreme quantization. If a single GPU is not enough, then a single node can be used. Generally, a node contains up to 8 GPUs. As we said earlier, each attention head is actually computed independently and then concatenated. When <span class="math inline">\(g=8\)</span>, it is possible to have each GPU to calculate the Attention Head corresponding to one set of KV. This maximizes KV diversity under the constraint of minimal inter-GPU communication.</p>
+</span></p>
+<p>Here, <span class="math inline">\lceil\cdot\rceil</span> is the ceiling function. GQA provides a natural transition from MHA to MQA. When <span class="math inline">g=h</span>, it is MHA; when <span class="math inline">g=1</span>, it is MQA. When <span class="math inline">1 &lt; g &lt; h</span>, it only compresses the KV Cache to <span class="math inline">g/h</span>. The compression rate is not as good as MQA, but it also provides greater flexibility and better guarantees in terms of effectiveness. The most well-known users of GQA are probably Meta’s open-source <a href="https://llama.meta.com/llama2"><code>Llama-2-70B</code></a>, and the entire <a href="https://llama.meta.com/llama3/"><code>Llama-3</code> series</a>. Other models using GQA include <a href="https://arxiv.org/abs/2312.08688"><code>TigerBot</code></a>, <a href="https://arxiv.org/abs/2401.02954"><code>DeepSeek-V1</code></a>, <a href="https://arxiv.org/abs/2402.19173"><code>StarCoder2</code></a>, <a href="https://arxiv.org/abs/2403.04652">Yi</a>, <a href="https://github.com/THUDM/ChatGLM2-6B"><code>ChatGLM2-6B</code></a>, and <a href="https://github.com/THUDM/ChatGLM3"><code>ChatGLM3</code></a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> There are many more models using GQA than models using MQA.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Though the <code>ChatGLM</code> report claims to use “Multi-Query Attention” in <a href="https://arxiv.org/pdf/2406.12793#page=3">page 3 of the report</a>, it is actually using GQA with <span class="math inline">g=2</span>, as you can see in <a href="https://arxiv.org/pdf/2406.12793#page=5">page 5 of the report</a>.</p></div></div><p><code>llama-2/3-70B</code> uses <span class="math inline">g=8</span>, and it is the same for most other models of similar parameter count that uses GQA. This is not an accident, but a deliberate choice for efficient inference. We know that a model of 70B scale cannot be deployed on a single GPU (A100/H100 80G) without extreme quantization. If a single GPU is not enough, then a single node can be used. Generally, a node contains up to 8 GPUs. As we said earlier, each attention head is actually computed independently and then concatenated. When <span class="math inline">g=8</span>, it is possible to have each GPU to calculate the Attention Head corresponding to one set of KV. This maximizes KV diversity under the constraint of minimal inter-GPU communication.</p>
 </section>
 <section id="mla" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="mla">MLA</h2>
 <p>With the groundwork laid by MHA, MQA, and GQA, it becomes relatively easier to understand MLA (<strong><font color="red">M</font></strong>ulti-head <strong><font color="red">L</font></strong>atent <strong><font color="red">A</font></strong>ttention). The technical report for <code>DeepSeek-V2</code> introduces MLA from the perspective of low-rank projection, leading some readers to ask questions like “Why has LoRA been around for so long, and yet MLA, which is essentially just low-rank projection applied of KV Cache, took such a long time to appear?”.</p>
 <p>However, the author believes that the low-rank projection perspective doesn’t get to the heart of the matter. Because if we’re talking about low-rank projection, the fact is that if we stack all the K and V of GQA together, we’ll find that GQA is <em>also</em> basically low-rank projection:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{equation}\underbrace{\left[\boldsymbol{k}_i^{(1)},\cdots,\boldsymbol{k}_i^{(g)},\boldsymbol{v}_i^{(1)},\cdots,\boldsymbol{v}_i^{(g)}\right]}_{\boldsymbol{c}_i\in\mathbb{R}^{g(d_k+d_v)}} = \boldsymbol{x}_i \underbrace{\left[\boldsymbol{W}_k^{(1)},\cdots,\boldsymbol{W}_k^{(g)},\boldsymbol{W}_v^{(1)},\cdots,\boldsymbol{W}_v^{(g)}\right]}_{\boldsymbol{W}_c\in\mathbb{R}^{d\times g(d_k+d_v)}}\end{equation}
-\]</span></p>
-<p>Here, we combine all <span class="math inline">\(\boldsymbol{k}_i^{(s)},\boldsymbol{v}_i^{(s)}\)</span> and denote them as <span class="math inline">\(\boldsymbol{c}_i\)</span>. The corresponding projection matrices are also combined and denoted as <span class="math inline">\(\boldsymbol{W}_c\)</span>. Note that generally <span class="math inline">\(d_c = g(d_k+d_v) &lt; d\)</span>, such as in <code>Llama-2-70B</code> where <span class="math inline">\(g = 8, d_k = d_v = 128\)</span>, so <span class="math inline">\(d_c = 2048 &lt; d = 8192\)</span>, so the transformation from <span class="math inline">\(\boldsymbol{x}_i\)</span> to <span class="math inline">\(\boldsymbol{c}_i\)</span> is <em>also</em> a low-rank projection. Therefore, the essential improvement of MLA is not the low-rank projection itself, but what is done after the low-rank projection.</p>
+</span></p>
+<p>Here, we combine all <span class="math inline">\boldsymbol{k}_i^{(s)},\boldsymbol{v}_i^{(s)}</span> and denote them as <span class="math inline">\boldsymbol{c}_i</span>. The corresponding projection matrices are also combined and denoted as <span class="math inline">\boldsymbol{W}_c</span>. Note that generally <span class="math inline">d_c = g(d_k+d_v) &lt; d</span>, such as in <code>Llama-2-70B</code> where <span class="math inline">g = 8, d_k = d_v = 128</span>, so <span class="math inline">d_c = 2048 &lt; d = 8192</span>, so the transformation from <span class="math inline">\boldsymbol{x}_i</span> to <span class="math inline">\boldsymbol{c}_i</span> is <em>also</em> a low-rank projection. Therefore, the essential improvement of MLA is not the low-rank projection itself, but what is done after the low-rank projection.</p>
 <section id="part-1" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
-<p>What does GQA do after the projection? First, it divides the vector <span class="math inline">\(\boldsymbol{c}_i\)</span> into two halves, using them as K and V respectively. Then, each half is further divided into <span class="math inline">\(g\)</span> parts as <span class="math inline">\(\boldsymbol{k}_1^{(s)}, \dots, \boldsymbol{k}_g^{(s)}, \boldsymbol{v}_1^{(s)}, \dots, \boldsymbol{v}_g^{(s)}\)</span>, and each is then copied <span class="math inline">\(h/g\)</span> times, in order to “fill up” the K and V needed by <span class="math inline">\(h\)</span> Attention Heads. We know that splitting and copying are simple linear transformations, so MLA’s first key idea is to replace these simple linear transformations with general linear transformations to enhance the model’s capacity:</p>
-<p><span class="math display">\[
+<p>What does GQA do after the projection? First, it divides the vector <span class="math inline">\boldsymbol{c}_i</span> into two halves, using them as K and V respectively. Then, each half is further divided into <span class="math inline">g</span> parts as <span class="math inline">\boldsymbol{k}_1^{(s)}, \dots, \boldsymbol{k}_g^{(s)}, \boldsymbol{v}_1^{(s)}, \dots, \boldsymbol{v}_g^{(s)}</span>, and each is then copied <span class="math inline">h/g</span> times, in order to “fill up” the K and V needed by <span class="math inline">h</span> Attention Heads. We know that splitting and copying are simple linear transformations, so MLA’s first key idea is to replace these simple linear transformations with general linear transformations to enhance the model’s capacity:</p>
+<p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -587,25 +603,25 @@ window.Quarto = {
 \boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c}
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>However, while this approach theoretically increases the model’s capacity, let’s not forget that the main purpose of GQA is to reduce KV Cache. For the sake of saving computation and communication costs, we generally cache the projected <span class="math inline">\(\boldsymbol{k}_i, \boldsymbol{v}_i\)</span> rather than the pre-projected <span class="math inline">\(\boldsymbol{c}_i\)</span> or <span class="math inline">\(\boldsymbol{x}_i\)</span>. However, MLA’s approach, by using different projection matrices, makes all K and V Heads distinct again. This means the KV Cache size would revert to the same size as MHA, which goes against the very design purpose of GQA.</p>
+</span></p>
+<p>However, while this approach theoretically increases the model’s capacity, let’s not forget that the main purpose of GQA is to reduce KV Cache. For the sake of saving computation and communication costs, we generally cache the projected <span class="math inline">\boldsymbol{k}_i, \boldsymbol{v}_i</span> rather than the pre-projected <span class="math inline">\boldsymbol{c}_i</span> or <span class="math inline">\boldsymbol{x}_i</span>. However, MLA’s approach, by using different projection matrices, makes all K and V Heads distinct again. This means the KV Cache size would revert to the same size as MHA, which goes against the very design purpose of GQA.</p>
 <p>To solve this problem, MLA uses a simple clever identity on the dot-attention to circumvent this problem. First, we proceed as usual during the training. Then, during the inference, we use this identity</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{equation}\boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top} = \left(\boldsymbol{x}_t\boldsymbol{W}_q^{(s)}\right) \left(\boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\right){}^{\top} = \boldsymbol{x}_t\left(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\right)\boldsymbol{c}_i^{\top} \end{equation}
-\]</span></p>
-<p>This means that during the inference phase, we can merge <span class="math inline">\(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> as the projection matrix for Q.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Then, <span class="math inline">\(\boldsymbol{c}_i\)</span> replaces the original <span class="math inline">\(\boldsymbol{k}_i\)</span>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Note a detail here. Merging <span class="math inline">\(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> into a single matrix is only valid assuming infinite precision. In practice, if we use single precision, especially <code>BF16</code>, the precision loss after the matrix-merge is often noticeable. After multiple layers, this loss may become large enough that we would have to post-process.</p></div></div><p>Similarly, since there is another projection matrix after <span class="math inline">\(\boldsymbol{o}_t\)</span>, the <span class="math inline">\(\boldsymbol{W}_v^{(s)}\)</span> in <span class="math inline">\(\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}\)</span> can also be absorbed into the subsequent projection matrix. Thus, equivalently, <span class="math inline">\(\boldsymbol{v}_i\)</span> can also be replaced by <span class="math inline">\(\boldsymbol{c}_i\)</span>. Specifically, after the attention weights <span class="math inline">\(\alpha_{tj}^{(s)}\)</span> are computed using the dot-attention mechanism, we upcast the latent vector <span class="math inline">\(\boldsymbol{c}_i\)</span> to the value vector <span class="math inline">\(\boldsymbol{v}_i^{(s)}\)</span> using <span class="math inline">\(\boldsymbol{W}_v^{(s)}\)</span>, do a weighted sum with the attention weights, then use a final output projection by <span class="math inline">\(\boldsymbol{W}_o^{(s)}\)</span>. We can do the same merge at inference time:</p>
-<p><span class="math display">\[
+</span></p>
+<p>This means that during the inference phase, we can merge <span class="math inline">\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}</span> as the projection matrix for Q.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Then, <span class="math inline">\boldsymbol{c}_i</span> replaces the original <span class="math inline">\boldsymbol{k}_i</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Note a detail here. Merging <span class="math inline">\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}</span> into a single matrix is only valid assuming infinite precision. In practice, if we use single precision, especially <code>BF16</code>, the precision loss after the matrix-merge is often noticeable. After multiple layers, this loss may become large enough that we would have to post-process.</p></div></div><p>Similarly, since there is another projection matrix after <span class="math inline">\boldsymbol{o}_t</span>, the <span class="math inline">\boldsymbol{W}_v^{(s)}</span> in <span class="math inline">\boldsymbol{v}_i^{(s)} = \boldsymbol{c}_i\boldsymbol{W}_v^{(s)}</span> can also be absorbed into the subsequent projection matrix. Thus, equivalently, <span class="math inline">\boldsymbol{v}_i</span> can also be replaced by <span class="math inline">\boldsymbol{c}_i</span>. Specifically, after the attention weights <span class="math inline">\alpha_{tj}^{(s)}</span> are computed using the dot-attention mechanism, we upcast the latent vector <span class="math inline">\boldsymbol{c}_i</span> to the value vector <span class="math inline">\boldsymbol{v}_i^{(s)}</span> using <span class="math inline">\boldsymbol{W}_v^{(s)}</span>, do a weighted sum with the attention weights, then use a final output projection by <span class="math inline">\boldsymbol{W}_o^{(s)}</span>. We can do the same merge at inference time:</p>
+<p><span class="math display">
 \boldsymbol{v}_t = \sum_{j\leq t} \boldsymbol{c}_j \left(\sum_{s=1}^h \alpha_{tj}^{(s)} \boldsymbol{W}_v^{(s)} \boldsymbol{W}_o^{(s)\top}\right)
-\]</span></p>
-<p>This means that at this point, the KV Cache only needs to store all <span class="math inline">\(\boldsymbol{c}_i\)</span>, instead of all <span class="math inline">\(\boldsymbol{k}_i^{(s)}\)</span> and <span class="math inline">\(\boldsymbol{v}_i^{(s)}\)</span>. Note that <span class="math inline">\(\boldsymbol{c}_i\)</span> is independent of <span class="math inline">\({}^{(s)}\)</span>, which means it is shared by all heads. In other words, during the inference phase, MLA can be converted into an MQA via a clever identity.</p>
-<p>To reiterate, the key theme of this article has always been reducing the KV Cache. So what has MLA achieved so far? The answer is that it has enhanced the capacity of GQA through different projection matrices, while maintaining the same size of KV Cache during inference. Conversely, if we only need capacities similar to GQA, can we further reduce the KV Cache? In other words, <span class="math inline">\(d_c\)</span> doesn’t need to be <span class="math inline">\(g(d_k+d_v)\)</span>, but can be a smaller value (<code>DeepSeek-V2</code> uses <span class="math inline">\(d_c = 512\)</span>), thereby further compressing the KV Cache. This is the key idea of MLA.</p>
+</span></p>
+<p>This means that at this point, the KV Cache only needs to store all <span class="math inline">\boldsymbol{c}_i</span>, instead of all <span class="math inline">\boldsymbol{k}_i^{(s)}</span> and <span class="math inline">\boldsymbol{v}_i^{(s)}</span>. Note that <span class="math inline">\boldsymbol{c}_i</span> is independent of <span class="math inline">{}^{(s)}</span>, which means it is shared by all heads. In other words, during the inference phase, MLA can be converted into an MQA via a clever identity.</p>
+<p>To reiterate, the key theme of this article has always been reducing the KV Cache. So what has MLA achieved so far? The answer is that it has enhanced the capacity of GQA through different projection matrices, while maintaining the same size of KV Cache during inference. Conversely, if we only need capacities similar to GQA, can we further reduce the KV Cache? In other words, <span class="math inline">d_c</span> doesn’t need to be <span class="math inline">g(d_k+d_v)</span>, but can be a smaller value (<code>DeepSeek-V2</code> uses <span class="math inline">d_c = 512</span>), thereby further compressing the KV Cache. This is the key idea of MLA.</p>
 </section>
 <section id="part-2" class="level3">
 <h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
 <p>Everything seems perfect, and it looks like we’re about to finish cooking an ideal design that is both good and economical. But hold on, if we think a little deeper, we’ll find that MLA, as it stands, has an unavoidable flaw – it’s incompatible with <a href="https://arxiv.org/abs/2104.09864">RoPE (Rotary Position Embedding)</a>.</p>
-<p>We just mentioned that the key step for MLA to maintain the same KV Cache size as GQA is “merging <span class="math inline">\(\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> into a single (position-independent) matrix as the projection matrix for Q”. However, if RoPE is added, this step becomes impossible. This is because RoPE is a position-dependent, <span class="math inline">\(d_k\times d_k\)</span> block diagonal matrix <span class="math inline">\(\boldsymbol{\mathcal{R}}_m\)</span>, satisfying <span class="math inline">\(\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}\)</span>. When RoPE is added to MLA, it inserts an additional term <span class="math inline">\(\boldsymbol{\mathcal{R}}_{t-i}\)</span> between <span class="math inline">\(\boldsymbol{W}_q^{(s)}\)</span> and <span class="math inline">\(\boldsymbol{W}_k^{(s)}{}^{\top}\)</span>:</p>
-<p><span class="math display">\[
+<p>We just mentioned that the key step for MLA to maintain the same KV Cache size as GQA is “merging <span class="math inline">\boldsymbol{W}_q^{(s)}\boldsymbol{W}_k^{(s)}{}^{\top}</span> into a single (position-independent) matrix as the projection matrix for Q”. However, if RoPE is added, this step becomes impossible. This is because RoPE is a position-dependent, <span class="math inline">d_k\times d_k</span> block diagonal matrix <span class="math inline">\boldsymbol{\mathcal{R}}_m</span>, satisfying <span class="math inline">\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}</span>. When RoPE is added to MLA, it inserts an additional term <span class="math inline">\boldsymbol{\mathcal{R}}_{t-i}</span> between <span class="math inline">\boldsymbol{W}_q^{(s)}</span> and <span class="math inline">\boldsymbol{W}_k^{(s)}{}^{\top}</span>:</p>
+<p><span class="math display">
 \begin{equation}
 \begin{aligned}
 \boldsymbol{q}_i^{(s)} &amp;= \boldsymbol{x}_i\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\\
@@ -613,15 +629,15 @@ window.Quarto = {
 \boldsymbol{q}_t^{(s)} \boldsymbol{k}_i^{(s)}{}^{\top} &amp;= \left(\boldsymbol{x}_t\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_t}\right) \left(\boldsymbol{c}_i\boldsymbol{W}_k^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\right){}^{\top} = \boldsymbol{x}_t\left(\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}\right)\boldsymbol{c}_i^{\top}
 \end{aligned}
 \end{equation}
-\]</span></p>
-<p>The term <span class="math inline">\(\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}\)</span> cannot be combined into a static projection matrix (since it’s related to the position difference <span class="math inline">\(t-i\)</span>, which is not static), thus the key idea of MLA could not be combined with RoPE.</p>
-<p>Some time ago, I had the honor of discussing this issue with the DeepSeek team. This problem turned out to be fundamental, so I couldn’t actually offer any effective advice at the time. The simplest approach is to just give up RoPE and switch to another position encoding scheme that uses positional encoding based on attention bias, such as <a href="https://arxiv.org/abs/2108.12409">ALiBi</a>. However, DeepSeek’s experiments show that it is significantly inferior to RoPE (note that MLA <em>can</em> use RoPE, but after adding RoPE, the identity transformation trick cannot be used to reduce KV Cache). I also suggested trying <a href="https://arxiv.org/abs/2212.10356">Sandwich</a>, which doesn’t monotonically decay to negative infinity like ALiBi, so it might have better results, but it feels like a band-aid hack, not a real solution. Another compromise is to change the input of <span class="math inline">\(\boldsymbol{q}_i\)</span> to <span class="math inline">\(\boldsymbol{c}_i\)</span> as well, and then add RoPE after <span class="math inline">\(\boldsymbol{c}_i\)</span>, i.e.,</p>
-<p><span class="math display">\[
+</span></p>
+<p>The term <span class="math inline">\boldsymbol{W}_q^{(s)}\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_{t-i}}\boldsymbol{W}_k^{(s)}{}^{\top}</span> cannot be combined into a static projection matrix (since it’s related to the position difference <span class="math inline">t-i</span>, which is not static), thus the key idea of MLA could not be combined with RoPE.</p>
+<p>Some time ago, I had the honor of discussing this issue with the DeepSeek team. This problem turned out to be fundamental, so I couldn’t actually offer any effective advice at the time. The simplest approach is to just give up RoPE and switch to another position encoding scheme that uses positional encoding based on attention bias, such as <a href="https://arxiv.org/abs/2108.12409">ALiBi</a>. However, DeepSeek’s experiments show that it is significantly inferior to RoPE (note that MLA <em>can</em> use RoPE, but after adding RoPE, the identity transformation trick cannot be used to reduce KV Cache). I also suggested trying <a href="https://arxiv.org/abs/2212.10356">Sandwich</a>, which doesn’t monotonically decay to negative infinity like ALiBi, so it might have better results, but it feels like a band-aid hack, not a real solution. Another compromise is to change the input of <span class="math inline">\boldsymbol{q}_i</span> to <span class="math inline">\boldsymbol{c}_i</span> as well, and then add RoPE after <span class="math inline">\boldsymbol{c}_i</span>, i.e.,</p>
+<p><span class="math display">
 \begin{equation}\boldsymbol{q}_i^{(s)} = \boldsymbol{c}_i\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\boldsymbol{W}_q^{(s)},\quad\boldsymbol{k}_i^{(s)} = \boldsymbol{c}_i\color{#3ce2f7}{\boldsymbol{\mathcal{R}}_i}\boldsymbol{W}_k^{(s)}\end{equation}
-\]</span></p>
-<p>In this way, <span class="math inline">\(\boldsymbol{\mathcal{R}}_i\)</span> can be absorbed into <span class="math inline">\(\boldsymbol{c}_i\)</span>, but then we lose the <span class="math inline">\(\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}\)</span> operation. In this case, RoPE no longer implements relative position through absolute position, but simply adds absolute positions to Q and K, forcing the model to learn end-to-end how to extract the relative position information that it needs to do its job.</p>
-<p>The final released MLA adopts a hybrid approach – each Attention Head’s Q and K adds <span class="math inline">\(d_r\)</span> dimensions for adding RoPE, where the added dimensions for K are shared across all Heads:</p>
-<p><span class="math display">\[
+</span></p>
+<p>In this way, <span class="math inline">\boldsymbol{\mathcal{R}}_i</span> can be absorbed into <span class="math inline">\boldsymbol{c}_i</span>, but then we lose the <span class="math inline">\boldsymbol{\mathcal{R}}_m\boldsymbol{\mathcal{R}}_n^{\top}=\boldsymbol{\mathcal{R}}_{m-n}</span> operation. In this case, RoPE no longer implements relative position through absolute position, but simply adds absolute positions to Q and K, forcing the model to learn end-to-end how to extract the relative position information that it needs to do its job.</p>
+<p>The final released MLA adopts a hybrid approach – each Attention Head’s Q and K adds <span class="math inline">d_r</span> dimensions for adding RoPE, where the added dimensions for K are shared across all Heads:</p>
+<p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -632,13 +648,13 @@ window.Quarto = {
 \boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c}
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>In this way, the dimensions without RoPE can repeat the operation described in <a href="#part-1">Part 1</a>. During inference, the KV Cache only needs to store <span class="math inline">\(\boldsymbol{c}_i\)</span>. The newly added dimensions with RoPE can be used to supplement positional information. And since all Heads share them, only <span class="math inline">\(d_r\)</span> dimensions are added to the K Cache. The original paper took <span class="math inline">\(d_r = d_k / 2 = 64\)</span>, which is a small increase compared to the original <span class="math inline">\(d_c = 512\)</span>.</p>
+</span></p>
+<p>In this way, the dimensions without RoPE can repeat the operation described in <a href="#part-1">Part 1</a>. During inference, the KV Cache only needs to store <span class="math inline">\boldsymbol{c}_i</span>. The newly added dimensions with RoPE can be used to supplement positional information. And since all Heads share them, only <span class="math inline">d_r</span> dimensions are added to the K Cache. The original paper took <span class="math inline">d_r = d_k / 2 = 64</span>, which is a small increase compared to the original <span class="math inline">d_c = 512</span>.</p>
 </section>
 <section id="part-3" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
 <p>One final detail: the final iteration of MLA also changes the input of Q to a low-rank projection form. This is not related to reducing KV Cache, but mainly to reduce the amount of parameters and the corresponding gradients<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> during training that occupy GPU memory:</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;The original paper said “Moreover, in order to reduce the activation memory during training, we also perform low-rank compression for the queries, even if it cannot reduce the KV cache”, which I personally don’t quite understand.</p></div></div><p><span class="math display">\[
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;The original paper said “Moreover, in order to reduce the activation memory during training, we also perform low-rank compression for the queries, even if it cannot reduce the KV cache”, which I personally don’t quite understand.</p></div></div><p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -650,9 +666,9 @@ window.Quarto = {
 \boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c} \\
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>Note the second term in <span class="math inline">\(\boldsymbol{k}_i^{(s)}\)</span>, the part with RoPE, its input is still <span class="math inline">\(\boldsymbol{x}_i\)</span> and not <span class="math inline">\(\boldsymbol{c}_i\)</span>. This maintains the original paper’s setting, and it’s not a typo. Also, <span class="math inline">\(d_c' = 1536\)</span> in the original paper, which is different from <span class="math inline">\(d_c=512\)</span>. Also, we put the MHA with RoPE below for easy comparison:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Note the second term in <span class="math inline">\boldsymbol{k}_i^{(s)}</span>, the part with RoPE, its input is still <span class="math inline">\boldsymbol{x}_i</span> and not <span class="math inline">\boldsymbol{c}_i</span>. This maintains the original paper’s setting, and it’s not a typo. Also, <span class="math inline">d_c' = 1536</span> in the original paper, which is different from <span class="math inline">d_c=512</span>. Also, we put the MHA with RoPE below for easy comparison:</p>
+<p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}, \boldsymbol{o}_t^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\right] \\[10pt]
@@ -662,10 +678,10 @@ window.Quarto = {
 \boldsymbol{v}_i^{(s)} = \boldsymbol{x}_i\boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d_v},\quad \boldsymbol{W}_v^{(s)}\in\mathbb{R}^{d\times d_v}
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>It can be observed that, during the training phase, apart from an additional low-rank projection step and RoPE being added only in some dimensions, MLA is essentially the same as MHA where the Q and K Head Size is changed from <span class="math inline">\(d_k\)</span> to <span class="math inline">\(d_k + d_r\)</span>.</p>
+</span></p>
+<p>It can be observed that, during the training phase, apart from an additional low-rank projection step and RoPE being added only in some dimensions, MLA is essentially the same as MHA where the Q and K Head Size is changed from <span class="math inline">d_k</span> to <span class="math inline">d_k + d_r</span>.</p>
 <p>The MLA in the inference phase is changed to:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{equation}
 \begin{gathered}
 \boldsymbol{o}_t = \left[\boldsymbol{o}_t^{(1)}\boldsymbol{W}_v^{(1)}, \boldsymbol{o}_t^{(2)}\boldsymbol{W}_v^{(2)}, \cdots, \boldsymbol{o}_t^{(h)}\boldsymbol{W}_v^{(h)}\right] \\[10pt]
@@ -677,10 +693,10 @@ window.Quarto = {
 \boldsymbol{c}_i = \boldsymbol{x}_i \boldsymbol{W}_c\in\mathbb{R}^{d_c},\quad \boldsymbol{W}_c\in\mathbb{R}^{d\times d_c} \\
 \end{gathered}
 \end{equation}
-\]</span></p>
-<p>At this point, the Head Size of Q and K becomes <span class="math inline">\(d_c + d_r\)</span>, while the Head Size of V becomes <span class="math inline">\(d_c\)</span>. According to the original paper’s settings, this is equal to <span class="math inline">\(4d_k = 4d_v\)</span>. So this inference-time change, although in effect reduces the KV Cache, increases the computational cost of inference.</p>
+</span></p>
+<p>At this point, the Head Size of Q and K becomes <span class="math inline">d_c + d_r</span>, while the Head Size of V becomes <span class="math inline">d_c</span>. According to the original paper’s settings, this is equal to <span class="math inline">4d_k = 4d_v</span>. So this inference-time change, although in effect reduces the KV Cache, increases the computational cost of inference.</p>
 <p>So why does it still improve inference efficiency? This brings us back to the issue discussed in the <a href="#bottleneck">Bottleneck</a> section. We can divide LLM inference into two parts: inference on the prompt for generating the first Token (Prefill) and generating each subsequent token (Generation). The Prefill stage involves parallel computation over all tokens in the prompt and storing the corresponding KV Cache. This stage can be bottlenecked by all of computation, bandwidth, and memory. Although MLA increases the computational cost, the reduction in KV Cache also reduces the pressure on memory and bandwidth, so it’s roughly equal trade-off without benefit or cost. However, in the Generation stage, since only one token is computed at each step, it is only bottlenecked by bandwidth and memory. Therefore, the introduction of MLA can theoretically significantly improve the speed of Generation.</p>
-<p>There is another detail that fully reflects this characteristic. In a typical LLM architecture, the parameters satisfy <span class="math inline">\(h \times d_k = d\)</span>, meaning <code>num_heads * head_size = hidden_size</code>. However, <code>DeepSeek-V2</code> is different. It has <span class="math inline">\(d_k=128, d=5120\)</span>, but <span class="math inline">\(h=128\)</span>, which is 3 times the usual setting! This is because the KV Cache size of MLA is independent of <span class="math inline">\(h\)</span>, thus, increasing <span class="math inline">\(h\)</span> only increases the computational cost and improves the model’s ability, but it does not increase the KV Cache, so it does not cause a speed bottleneck.</p>
+<p>There is another detail that fully reflects this characteristic. In a typical LLM architecture, the parameters satisfy <span class="math inline">h \times d_k = d</span>, meaning <code>num_heads * head_size = hidden_size</code>. However, <code>DeepSeek-V2</code> is different. It has <span class="math inline">d_k=128, d=5120</span>, but <span class="math inline">h=128</span>, which is 3 times the usual setting! This is because the KV Cache size of MLA is independent of <span class="math inline">h</span>, thus, increasing <span class="math inline">h</span> only increases the computational cost and improves the model’s ability, but it does not increase the KV Cache, so it does not cause a speed bottleneck.</p>
 </section>
 </section>
 <section id="summary" class="level2">
