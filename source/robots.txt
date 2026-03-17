@@ -4,3 +4,4 @@ Disallow:
 Sitemap: https://yuxi.ml/sitemap.xml
 # All content that I can release under the Public Domain, are released to the Public Domain
 # If the Public Domain is not available under your jurisdiction, then they are released under CC0 1.0 Universal
+# You can add `.md` after a URL to obtain its source code version. For example: <https://yuxi.ml/cyc> -> <https://yuxi.ml/cyc.md> 
