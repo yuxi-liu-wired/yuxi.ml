@@ -41,7 +41,7 @@ done
 git tag "$tag"
 echo "Tagged: $tag"
 
-git push origin main --tags
+git push origin "refs/tags/$tag"
 echo "Pushed to GitHub"
 
 ssh yuxi-ml '~/deploy.sh'
