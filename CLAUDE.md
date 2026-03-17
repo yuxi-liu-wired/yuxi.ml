@@ -84,6 +84,6 @@ When adding vanity URLs, you must handle:
 ## Quarto notes
 
 - Themes: flatly (light) + darkly (dark) with custom SCSS overrides
-- Search: uses Quarto's built-in fuse.js search with a JSON index (`search.json`). Run `python3 scripts/truncate-search-index.py` after `quarto render` to trim it (~3.7MB → ~500KB).
+- Search: uses Quarto's built-in fuse.js search with a JSON index (`search.json`). It's lazy-loaded (only fetched when the user opens search), so its size doesn't affect page load performance. Do not truncate it — that loses search content.
 - Site URL: `https://yuxi.ml/`
 - Output dir: `../quarto_compiled` (relative to `source/`)

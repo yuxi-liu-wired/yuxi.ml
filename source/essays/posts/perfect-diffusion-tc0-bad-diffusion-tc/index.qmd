@@ -221,7 +221,7 @@ An example would be the word problem for finite groups: Given a finite group $G$
 
 While usually, a diffusion model is used for generating from a continuous state space such as $\mathbb{R}^d$, it can be used to model discrete distributions as well. This is necessary for language modeling. We consider the case closest to continuous state space modeling -- quantization: One divides the continuous state space $\mathbb{R}^d$ into regions, and assigns a token to each region. This then allows sampling a discrete distribution from a diffusion model with continuous state space. Formally, if $\Sigma = \{a_1, a_2, \dots, a_M\}$ is the alphabet, then we divide $\mathbb{R}^d$ into $M$ regions $V_1, \dots, V_M$, such that each region $V_i$ maps to a token $a_i$.
 
-Also, as usual in circuit complexity theory, we need more than a single score-network $f_\theta$, but rather, a full sequence of them, so we define a **$\mathsf{TC**^0$ family of score-networks} to be a family of feed-forward neural networks $f_{\theta, 0}, f_{\theta, 1}, \dots$ , such that:
+Also, as usual in circuit complexity theory, we need more than a single score-network $f_\theta$, but rather, a full sequence of them, so we define a **$\mathsf{TC}^0$ family of score-networks** to be a family of feed-forward neural networks $f_{\theta, 0}, f_{\theta, 1}, \dots$ , such that:
 
 * Each $f_{\theta, n}$ takes as input $n+2$ elements $x_1, \dots, x_n, x, t$, and produces an output $f_{\theta, n}(x, t | x_1, \dots, x_n)$.
 * The family $f_{\theta, n}$ has $O(1)$ depth and $\mathsf{poly}(n)$ width.

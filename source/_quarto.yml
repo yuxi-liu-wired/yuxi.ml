@@ -83,6 +83,7 @@ execute:
 
 format:
   html:
+    html-math-method: katex
     fontsize: 1.1em
     theme: 
       light: 
@@ -98,7 +99,9 @@ format:
     code-tools: false
     code-link: true
     anchor-sections: true
-    include-in-header: html/detect-color-scheme.html
+    include-in-header:
+      - html/detect-color-scheme.html
+      - html/katex-copy-tex.html
     include-after-body: html/copy-anchors-js.html
     fig-cap-location: margin
     reference-location: margin
