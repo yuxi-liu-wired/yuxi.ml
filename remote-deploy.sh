@@ -15,14 +15,19 @@ if ! git diff --quiet || ! git diff --cached --quiet; then
   exit 1
 fi
 
-# Ensure local main is up to date with remote
+# Ensure local main is up to date with remote (push if ahead, abort if behind)
 git fetch origin main
 local_head="$(git rev-parse HEAD)"
 remote_head="$(git rev-parse origin/main)"
 if [[ "$local_head" != "$remote_head" ]]; then
-  echo "WARNING: Local main ($local_head) differs from origin/main ($remote_head)." >&2
-  echo "Push or pull first, then re-run." >&2
-  exit 1
+  if git merge-base --is-ancestor "$remote_head" "$local_head"; then
+    echo "Local is ahead of origin — pushing..."
+    git push origin main
+  else
+    echo "ERROR: Local main has diverged from or is behind origin/main." >&2
+    echo "Pull/rebase first, then re-run." >&2
+    exit 1
+  fi
 fi
 
 tag="deploy-$(date +%Y-%m-%d)"
