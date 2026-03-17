@@ -176,3 +176,13 @@ cython_debug/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# Claude Code local config
+.claude/settings.local.json
+
+# Playwright CLI scratch artifacts
+.playwright-cli/
+source/.playwright-cli/
+
+# Scratch Python package (unused)
+src/

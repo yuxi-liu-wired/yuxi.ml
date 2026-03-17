@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 // Run Lighthouse against live yuxi.ml
+import { readdirSync } from 'fs';
+import { join } from 'path';
 import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 
-const CHROME_PATH = '/home/node/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome';
+const PW_DIR = join(process.env.HOME, '.cache', 'ms-playwright');
+const chromium = readdirSync(PW_DIR).filter(d => d.startsWith('chromium-')).sort().pop();
+if (!chromium) throw new Error('No Chromium found in ' + PW_DIR);
+const CHROME_PATH = join(PW_DIR, chromium, 'chrome-linux64', 'chrome');
 
 const PAGES = [
   { name: 'Home', url: 'https://yuxi.ml/' },
