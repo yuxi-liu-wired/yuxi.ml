@@ -1,3 +1,10 @@
+/*-- scss:defaults --*/
+
+// Inline code: override the light-mode $code-bg (#f8f9fa) so the compiled
+// base `code {}` rule gets a dark-appropriate value from the start.
+$code-bg: #2d2d2d;
+$code-color: #bb8acf;  // light purple — mirrors the dark purple (#7d12ba) used in light mode
+
 /*-- scss:rules --*/
 
 #quarto-document-content.page-full {
